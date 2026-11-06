@@ -1,0 +1,70 @@
+{
+  "event_id": "CTF-3234",
+  "event_title": "squ1rrel CTF 2026",
+  "title": "redactr",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "image-deblurring",
+    "milp",
+    "rust-reversing"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/squ1rrel/2026/redactr/",
+    "https://ctf42.online/ctfs/squ1rrel/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/squ1rrel/2026/rev/redactr"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/squ1rrel-CTF-2026-Writeups/tree/main/rev/Redactr"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/squ1rrel/2026/rev/redactr",
+    "https://ctf42.online/ctfs/squ1rrel/2026/redactr/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/squ1rrel_2026/redactr/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/squ1rrel-CTF-2026-Writeups/main/rev/Redactr/README.md",
+      "bytes": 11631,
+      "sha256": "348b0bcedda267897cea3c9a12370c6d978833bec0dbaeef41557b9db677989d",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/squ1rrel_2026/redactr/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/squ1rrel/2026/rev/redactr/README.md",
+      "bytes": 47,
+      "sha256": "90ae4764653980deb3bf608b176eb389c88a1118b68a750c6830ba28ffea5457",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/squ1rrel_2026/redactr/attachments/upstream/blurred.png",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/squ1rrel/2026/rev/redactr/blurred.png",
+      "bytes": 26515,
+      "sha256": "f7bcd2d03a0bba895082ed1a73121c02adc81a03e555949ca86913d1a9300bf3",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/squ1rrel_2026/redactr/attachments/upstream/redactr",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/squ1rrel/2026/rev/redactr/redactr",
+      "bytes": 590600,
+      "sha256": "73620c5d841f9a9bf503fa4f0ba2f4ee808efe0f1225d90953f4ccc9be3b7ab5",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/squ1rrel/2026/redactr/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/squ1rrel/2026/redactr/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

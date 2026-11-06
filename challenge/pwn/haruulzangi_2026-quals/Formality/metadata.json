@@ -1,0 +1,62 @@
+{
+  "event_id": "CTF-3379",
+  "event_title": "Haruulzangi CTF 2026 Qualifier",
+  "title": "Formality",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "uninitialized-memory",
+    "heap-overflow"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/haruulzangi/2026-quals/formality/",
+    "https://ctf42.online/ctfs/haruulzangi/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/pwn/Formality"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/pwn/formality"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/pwn/Formality",
+    "https://ctf42.online/ctfs/haruulzangi/2026-quals/formality/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/haruulzangi_2026-quals/Formality/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/main/pwn/formality/README.md",
+      "bytes": 4579,
+      "sha256": "18efa1af7ec49f459088484e74e83c0d301adbc506a5669fc2784719e66ba653",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/haruulzangi_2026-quals/Formality/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Haruulzangi/2026/Quals/pwn/Formality/README.md",
+      "bytes": 164,
+      "sha256": "71896116a826b50405654a8e18a41bcd36f79e13c3fd390901682562de2b5112",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/haruulzangi_2026-quals/Formality/attachments/upstream/pwn_formality.tar.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Haruulzangi/2026/Quals/pwn/Formality/pwn_formality.tar.gz",
+      "bytes": 1092085,
+      "sha256": "1ad639e89c25a3379eab967372c03953c6fe766fa377109915824d66d35ba2f8",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/formality/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/haruulzangi/2026-quals/formality/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

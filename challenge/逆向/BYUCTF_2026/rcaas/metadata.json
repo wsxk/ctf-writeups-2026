@@ -1,0 +1,51 @@
+{
+  "event_id": "CTF-3247",
+  "event_title": "BYUCTF 2026",
+  "category": "逆向",
+  "title": "rcaas",
+  "dirname": "BYUCTF_2026",
+  "source_urls": [
+    "https://github.com/BYU-CSA/BYUCTF-2026/tree/HEAD/rev/rcaas"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/rcaas/README.md",
+      "local": "writeups/README.md",
+      "size_expected": 631,
+      "git_blob_sha": "bf14ce0ca3184cc1d453865a9b31b501b744f418",
+      "status": "downloaded",
+      "bytes": 631,
+      "sha256": "def4dceffdca9f671cfb14cccb6b109b222136653ca3a8b7bc5018a9f31c8ccb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/rcaas/rcaas",
+      "local": "attachments/rcaas",
+      "size_expected": 7994444,
+      "git_blob_sha": "7ab210facc7096cfd5df0e7a36cd1917cbe88cc7",
+      "status": "downloaded",
+      "bytes": 7994444,
+      "sha256": "d5a27189a22c769d6e6b94e2248b88cab33708ffe02c13fe8dc58f333c7bc7c1"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/rcaas/solve.py",
+      "local": "writeups/solve.py",
+      "size_expected": 1833,
+      "git_blob_sha": "997247b5bd64e7f6e29030571c2d9fdcb8821e60",
+      "status": "downloaded",
+      "bytes": 1833,
+      "sha256": "4dffe68522d847af8407d8801377c3324248669affe5ac2c70f4d85e5ab0fed4"
+    }
+  ],
+  "notes": "官方比赛仓库，README包含Solve章节；保留官方解题脚本及附件。",
+  "directory": "逆向/BYUCTF_2026/rcaas",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/rcaas/README.md",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/rcaas/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/rcaas/rcaas"
+  ],
+  "attachment_status": "downloaded"
+}

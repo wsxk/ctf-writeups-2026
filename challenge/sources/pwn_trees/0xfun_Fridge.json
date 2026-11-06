@@ -1,0 +1,23 @@
+{
+  "sha": "8898a695f322cae0108409979bf35f6e4ce94d58",
+  "url": "https://api.github.com/repos/sajjadium/ctf-archives/git/trees/8898a695f322cae0108409979bf35f6e4ce94d58",
+  "tree": [
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a63aaa068e0de3b390261b1ea933c5890e14e80",
+      "size": 285,
+      "url": "https://api.github.com/repos/sajjadium/ctf-archives/git/blobs/3a63aaa068e0de3b390261b1ea933c5890e14e80"
+    },
+    {
+      "path": "vuln",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f8bc43ea93ce06ae1ebac7b394b79b3c01ee99e",
+      "size": 15296,
+      "url": "https://api.github.com/repos/sajjadium/ctf-archives/git/blobs/8f8bc43ea93ce06ae1ebac7b394b79b3c01ee99e"
+    }
+  ],
+  "truncated": false
+}

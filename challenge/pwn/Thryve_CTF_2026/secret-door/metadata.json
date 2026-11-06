@@ -1,0 +1,58 @@
+{
+  "event_id": "CTF-3330",
+  "event_title": "Thryve CTF 2026",
+  "category": "pwn",
+  "title": "secret-door",
+  "source_urls": [
+    "https://github.com/hax1ng/thryve-ctf-2026-writeups/tree/main/pwn/secret-door",
+    "https://ctftime.org/event/3330/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/secret-door/README.md",
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/secret-door/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/secret-door/anime_player",
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/secret-door/player_files.zip"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载原题ZIP和二进制",
+  "attachment_complete": true,
+  "artifacts": [
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/secret-door/README.md",
+      "kind": "writeups",
+      "bytes": 8172,
+      "sha256": "689e1865baf3196ed7cbd3a30c9ca9ec179aaf527acc44ff5feed30f8240097e"
+    },
+    {
+      "path": "attachments/anime_player",
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/secret-door/anime_player",
+      "kind": "attachments",
+      "bytes": 27352,
+      "sha256": "13c8441cc96900eea87c44ba6cb9ad91b1e832f4b473ae3969d60219ce1ebbf3"
+    },
+    {
+      "path": "attachments/player_files.zip",
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/secret-door/player_files.zip",
+      "kind": "attachments",
+      "bytes": 8034,
+      "sha256": "394148394cfbfa0770833f59279d793bded33b1da59bb57d292120f6a7f10704"
+    },
+    {
+      "path": "writeups/solve.py",
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/secret-door/solve.py",
+      "kind": "writeups",
+      "bytes": 2693,
+      "sha256": "187d6f58a86c737925ac8e808f692fc56f48a62c45a7259546d2a3bb3ff4fffc"
+    }
+  ],
+  "has_verified_solution": true,
+  "notes": [
+    "参赛者仓库快照；只下载，未执行。",
+    "Abyss Oracle仓库README明确大镜像未提交，module.asm是解题者反汇编结果，不能当作原始模块附件。"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06"
+}

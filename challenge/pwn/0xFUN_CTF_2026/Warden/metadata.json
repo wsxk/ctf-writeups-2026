@@ -1,0 +1,75 @@
+{
+  "event_id": "CTF-3081",
+  "event_title": "0xFUN CTF 2026",
+  "category": "pwn",
+  "title": "Warden",
+  "source_urls": [
+    "https://github.com/marlithor-cyber/0xfun-2026-writeups/tree/main/pwn/Warden",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/Warden",
+    "https://ctftime.org/event/3081/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/Warden/README.md",
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/Warden/output.txt",
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/Warden/send.py",
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/Warden/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/Warden/README.md",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/Warden/warden-player.zip"
+  ],
+  "writeup_status": "已下载参赛者正文及解题脚本",
+  "attachment_status": "已下载题目镜像附件",
+  "notes": [
+    "writeup来自解题者原始仓库；附件来自CTF Archives镜像。只保存文件，未执行。"
+  ],
+  "artifacts": [
+    {
+      "path": "writeups/Warden/README.md",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/Warden/README.md",
+      "bytes": 3553,
+      "sha256": "ed25c7a0799f8610f44fe49575e5669f1ef8ef58f81708714e1302a3802e91c9",
+      "kind": "writeups"
+    },
+    {
+      "path": "writeups/Warden/output.txt",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/Warden/output.txt",
+      "bytes": 659,
+      "sha256": "ca81e3aeb026a64956592dda483bd801642d99826694f5759cb124595a9e15b4",
+      "kind": "writeups"
+    },
+    {
+      "path": "writeups/Warden/send.py",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/Warden/send.py",
+      "bytes": 1022,
+      "sha256": "7d4deae106ae1b4acd8c2cf9f6aae319232ea7186a40b4ad72ac45e0a7606eb2",
+      "kind": "writeups"
+    },
+    {
+      "path": "writeups/Warden/solve.py",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/Warden/solve.py",
+      "bytes": 2625,
+      "sha256": "fe18ed72e6690a84a8a49dcf53b941d18b61589bc3e07a545fd527a05e8faf10",
+      "kind": "writeups"
+    },
+    {
+      "path": "attachments/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/Warden/README.md",
+      "bytes": 82,
+      "sha256": "224b945d034d2859eb5632d4c0fab2e3f599a0504f38ed0effb13698efc32a4b",
+      "kind": "attachments"
+    },
+    {
+      "path": "attachments/warden-player.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/Warden/warden-player.zip",
+      "bytes": 10332,
+      "sha256": "848232ba38fb0f0728d4894616af8470955836b90479684fa73da19cbb630591",
+      "kind": "attachments"
+    }
+  ],
+  "download_errors": [],
+  "has_verified_solution": true,
+  "attachment_complete": true,
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06"
+}

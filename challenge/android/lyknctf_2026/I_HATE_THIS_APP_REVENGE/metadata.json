@@ -1,0 +1,68 @@
+{
+  "event_id": "CTF-3280",
+  "event_title": "LYKNCTF",
+  "title": "I_HATE_THIS_APP_REVENGE",
+  "category": "android",
+  "original_category": "Reverse",
+  "tags": [
+    "aes-ctr-fixed-key"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/lyknctf/2026/i_hate_this_app_revenge/",
+    "https://ctf42.online/ctfs/lyknctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/rev/I_HATE_THIS_APP_REVENGE"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/lyknctf-2026-crack-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/rev/I_HATE_THIS_APP_REVENGE",
+    "https://ctf42.online/ctfs/lyknctf/2026/i_hate_this_app_revenge/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "android/lyknctf_2026/I_HATE_THIS_APP_REVENGE/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/lyknctf-2026-crack-writeup/",
+      "bytes": 191749,
+      "sha256": "3a2db87b32aa3ec462c9206c70f1dd33cf401deb4712f2aedcc2dddd3693a380",
+      "kind": "writeup"
+    },
+    {
+      "path": "android/lyknctf_2026/I_HATE_THIS_APP_REVENGE/attachments/upstream/726471288_122216388452484307_639451856029278247_n.enc.bin",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/LYKNCTF/2026/rev/I_HATE_THIS_APP_REVENGE/726471288_122216388452484307_639451856029278247_n.enc.bin",
+      "bytes": 33112,
+      "sha256": "4215a0045b8f7f98c729814c04ca7e986548af243000c39156bbb1fce7b79902",
+      "kind": "attachment"
+    },
+    {
+      "path": "android/lyknctf_2026/I_HATE_THIS_APP_REVENGE/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/LYKNCTF/2026/rev/I_HATE_THIS_APP_REVENGE/README.md",
+      "bytes": 652,
+      "sha256": "9ee3c0385cdd8b9068e7848a8b9646fe7bbecaa4b95df169c29a3c9b13923a15",
+      "kind": "attachment"
+    },
+    {
+      "path": "android/lyknctf_2026/I_HATE_THIS_APP_REVENGE/attachments/upstream/fuoverflow_learning.rar",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/LYKNCTF/2026/rev/I_HATE_THIS_APP_REVENGE/fuoverflow_learning.rar",
+      "bytes": 5046910,
+      "sha256": "67bdb50f034ebc3ad92f876735a39d08114145e1b66d6248711190832381a6de",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/lyknctf/2026/i_hate_this_app_revenge/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/lyknctf/2026/i_hate_this_app_revenge/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

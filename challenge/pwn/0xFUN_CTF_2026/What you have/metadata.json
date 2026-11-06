@@ -1,0 +1,67 @@
+{
+  "event_id": "CTF-3081",
+  "event_title": "0xFUN CTF 2026",
+  "category": "pwn",
+  "title": "What you have",
+  "source_urls": [
+    "https://github.com/marlithor-cyber/0xfun-2026-writeups/tree/main/pwn/what",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/What_you_have",
+    "https://ctftime.org/event/3081/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/what/README.md",
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/what/output.txt",
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/what/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/What_you_have/README.md",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/What_you_have/chall"
+  ],
+  "writeup_status": "已下载参赛者正文及解题脚本",
+  "attachment_status": "已下载题目镜像附件",
+  "notes": [
+    "writeup来自解题者原始仓库；附件来自CTF Archives镜像。只保存文件，未执行。"
+  ],
+  "artifacts": [
+    {
+      "path": "writeups/what/README.md",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/what/README.md",
+      "bytes": 1460,
+      "sha256": "d4713d4b716d96c9c749aaca2bb757402eef0002d7dd1fdaf6c9d080a3a25e9c",
+      "kind": "writeups"
+    },
+    {
+      "path": "writeups/what/output.txt",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/what/output.txt",
+      "bytes": 307,
+      "sha256": "4c1f3d4cb29e5721287f30abe142a81ce53448fe5f436d7c01b99af2c79c7843",
+      "kind": "writeups"
+    },
+    {
+      "path": "writeups/what/solve.py",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/what/solve.py",
+      "bytes": 1166,
+      "sha256": "83a3082b398479cf8799ff6baeb693092f57c93d6fa457b794ab98a976cc66f2",
+      "kind": "writeups"
+    },
+    {
+      "path": "attachments/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/What_you_have/README.md",
+      "bytes": 82,
+      "sha256": "dcb9dd839a85e142aad4aa8380a29f47b3c2eb1f85afdd3f68d6610c741047a2",
+      "kind": "attachments"
+    },
+    {
+      "path": "attachments/chall",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/What_you_have/chall",
+      "bytes": 12768,
+      "sha256": "13c44383d9874de2217fd1e7adbad6f5d3cb1c3083dd0045e5509bc46a1be1c0",
+      "kind": "attachments"
+    }
+  ],
+  "download_errors": [],
+  "has_verified_solution": true,
+  "attachment_complete": true,
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06"
+}

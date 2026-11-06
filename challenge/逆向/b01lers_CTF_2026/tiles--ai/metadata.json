@@ -1,0 +1,61 @@
+{
+  "event_id": "CTF-3153",
+  "event_title": "b01lers CTF 2026",
+  "category": "逆向",
+  "title": "tiles--ai",
+  "dirname": "b01lers_CTF_2026",
+  "source_urls": [
+    "https://github.com/b01lers/b01lers-ctf-2026-public/tree/HEAD/src/rev/tiles--ai"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/tiles--ai/chal.json",
+      "local": "attachments/chal.json",
+      "size_expected": 541,
+      "git_blob_sha": "abc62917380440a12f3e89fffb14738a0777db99",
+      "status": "downloaded",
+      "bytes": 541,
+      "sha256": "460bf45c4edd4595b7a312c81d564d5f2e659d4348cec98907eda92fbf983189"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/tiles--ai/dist/chall",
+      "local": "attachments/dist/chall",
+      "size_expected": 71304,
+      "git_blob_sha": "2e36c4c33ed3b41b2b6ccae43f772e04f28b7fbb",
+      "status": "downloaded",
+      "bytes": 71304,
+      "sha256": "ff0eee8096b03f5253919f2eed04b26ee04b05e603db4968e3519bb7388de913"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/tiles--ai/solve/dfs_solver.py",
+      "local": "writeups/solve/dfs_solver.py",
+      "size_expected": 3122,
+      "git_blob_sha": "9901c563f06d8929eca1a7883537e00b5b0ced9d",
+      "status": "downloaded",
+      "bytes": 3122,
+      "sha256": "03ebcf9ceb263f0caed29baae1bacbb33e71d89e71d7b9954a74eed6b6bd9d87"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/tiles--ai/solve/solves.txt",
+      "local": "writeups/solve/solves.txt",
+      "size_expected": 137,
+      "git_blob_sha": "9da36905a6a1d4b1fa8e2800e0e9f546a79db2dd",
+      "status": "downloaded",
+      "bytes": 137,
+      "sha256": "dbc99e48e2c416b729364f41364344619e786af63f46e5846f643d1271e04f1e"
+    }
+  ],
+  "notes": "官方dist题目包及sol/solve解答目录。模板README未作为writeup。",
+  "directory": "逆向/b01lers_CTF_2026/tiles--ai",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/tiles--ai/solve/dfs_solver.py",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/tiles--ai/solve/solves.txt"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/tiles--ai/chal.json",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/tiles--ai/dist/chall"
+  ],
+  "attachment_status": "downloaded"
+}

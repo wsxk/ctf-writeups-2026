@@ -1,0 +1,64 @@
+{
+  "event_id": "CTF-3159",
+  "event_title": "PwnSec CTF 2026",
+  "title": "Zigerions",
+  "category": "虚拟化",
+  "original_category": "Reverse",
+  "tags": [
+    "layered-reversing",
+    "vmprotect",
+    "gameboy"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/pwnsec/2026/zigerions/",
+    "https://ctf42.online/ctfs/pwnsec/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/Zigerions"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/rev/zigerions"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/Zigerions",
+    "https://ctf42.online/ctfs/pwnsec/2026/zigerions/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/pwnsec_2026/Zigerions/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/pwnsec-ctf-2026/main/rev/zigerions/README.md",
+      "bytes": 6220,
+      "sha256": "2012db20a49d60a715fcba9000dd124d98c49e8e834a557ac1a86a0d099cbd92",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/pwnsec_2026/Zigerions/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/PwnSec/2026/rev/Zigerions/README.md",
+      "bytes": 127,
+      "sha256": "1a53568f7098a7a39f72cf7482cf79d9515e31bbd1ebbc578564838863edf451",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/pwnsec_2026/Zigerions/attachments/upstream/public.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/PwnSec/2026/rev/Zigerions/public.zip",
+      "bytes": 11215257,
+      "sha256": "39f883b263363a25d52f2227dca764bacf4fa5f4c534baab0d1701a232ebae83",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/pwnsec/2026/zigerions/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/pwnsec/2026/zigerions/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

@@ -1,0 +1,199 @@
+{
+  "event_id": "CTF-3095",
+  "event_title": "TAMUctf 2026",
+  "category": "逆向",
+  "title": "challenge7",
+  "dirname": "TAMUctf_2026",
+  "source_urls": [
+    "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/rev/challenge7",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TAMUctf/2026/rev/challenge7"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/Dockerfile",
+      "local": "attachments/Dockerfile",
+      "size_expected": 789,
+      "git_blob_sha": "0586028c313c1d3a3b280af894baefedbc3d92a7",
+      "status": "downloaded",
+      "bytes": 789,
+      "sha256": "2331819a15efa534999a20dc2cdcb0c9a0daf2e227e9fbdac9a2c99501dc03e6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/Makefile",
+      "local": "attachments/Makefile",
+      "size_expected": 2774,
+      "git_blob_sha": "9fe1d6e6de0407c42d6461ca0512de771c7c22cc",
+      "status": "downloaded",
+      "bytes": 2774,
+      "sha256": "39758ad93a40ab88465239705adbcfea51db4881f81d6091c48e074ceb1dc6c7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/README.md",
+      "local": "attachments/README.md",
+      "size_expected": 323,
+      "git_blob_sha": "fe4cf48f368902f8e540b9ffd38cb9e14d9343c8",
+      "status": "downloaded",
+      "bytes": 323,
+      "sha256": "db901fe763a3f040d6d76cbf412b99ed2a674973b660a912f477da8c89fc4eb7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/config.toml",
+      "local": "attachments/config.toml",
+      "size_expected": 158,
+      "git_blob_sha": "8d495116655172f1c07d3e5cb87edfc1c553a109",
+      "status": "downloaded",
+      "bytes": 158,
+      "sha256": "01b49aff997f8b0a5d7ee89a5fd9d281ece9024dc2417d38cd039ff273eadf23"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/flag.txt",
+      "local": "attachments/flag.txt",
+      "size_expected": 44,
+      "git_blob_sha": "2fc5ee38f4aad21afa845f4034a9116f1ff2512d",
+      "status": "downloaded",
+      "bytes": 44,
+      "sha256": "02ca9f9be53af2b829eb83708c94389ca630cf04815128c451d1f98270bea075"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/scripts/gen_inner_chunks.py",
+      "local": "attachments/scripts/gen_inner_chunks.py",
+      "size_expected": 10843,
+      "git_blob_sha": "6113302f7f06498abd72063153faaa86db3a4866",
+      "status": "downloaded",
+      "bytes": 10843,
+      "sha256": "d12b4abc55ad956215ae1323ea139dab7fe4c03b955c093509c0d1dc551431a5"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/scripts/gen_inner_expected.py",
+      "local": "attachments/scripts/gen_inner_expected.py",
+      "size_expected": 2307,
+      "git_blob_sha": "f2921bf2c41cd4278cac5085c3b3477de4e406e5",
+      "status": "downloaded",
+      "bytes": 2307,
+      "sha256": "8c44cc0d125bf99780328d42349819499e81bb8dc906a5449554e9450bbc4acf"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/scripts/gen_self_hash.py",
+      "local": "attachments/scripts/gen_self_hash.py",
+      "size_expected": 1706,
+      "git_blob_sha": "f896be86e904b96138eb30cf16bf91a1ea3b6b8e",
+      "status": "downloaded",
+      "bytes": 1706,
+      "sha256": "e0e0bfa1cca10879c8a036b859afffd288f468dcd539c25ee133694eebc8a48c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/solve/recover_inner_payload.py",
+      "local": "writeups/solve/recover_inner_payload.py",
+      "size_expected": 6524,
+      "git_blob_sha": "e26bf394856710d1e2ec90822af7f499f09d30d1",
+      "status": "downloaded",
+      "bytes": 6524,
+      "sha256": "fda4bea1de0889ee6b007366a36830961144f8b1d24f25b9c540a8f80f1abfc8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/solve/solve_inner.py",
+      "local": "writeups/solve/solve_inner.py",
+      "size_expected": 1463,
+      "git_blob_sha": "d3b47a2e3bfb7180630da442b29faa8f919f7f06",
+      "status": "downloaded",
+      "bytes": 1463,
+      "sha256": "b1520223be99555830814c777b5cd86683c3bd4afed88eb2e4318b8e939040f2"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/src/inner.c",
+      "local": "attachments/src/inner.c",
+      "size_expected": 3174,
+      "git_blob_sha": "00886e7ebc52281be9abb91ef5e06871c6a89397",
+      "status": "downloaded",
+      "bytes": 3174,
+      "sha256": "376a930f94204db487dfe9a7bfd8810727fb33624a204f79ef0bcf79d8e536a9"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/src/inner_chunks.h",
+      "local": "attachments/src/inner_chunks.h",
+      "size_expected": 284675,
+      "git_blob_sha": "38ffe0588c84ba2f675f5c93915c39113f61e0b0",
+      "status": "downloaded",
+      "bytes": 284675,
+      "sha256": "c133734e9ed14bf66d8d6145484528fc5ce068d6d5db42d232bb85931f450a0f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/src/inner_expected.h",
+      "local": "attachments/src/inner_expected.h",
+      "size_expected": 432,
+      "git_blob_sha": "f85a922e357c4e0dc4b80955686e5e66a2027aed",
+      "status": "downloaded",
+      "bytes": 432,
+      "sha256": "4fc0ad98779852691cffb39864cd936b26581cc58ab04322bf8ff8fef39339ac"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/src/loader_abi.h",
+      "local": "attachments/src/loader_abi.h",
+      "size_expected": 798,
+      "git_blob_sha": "6ba6684b51e83d5f4f9691259b0dffc4e8c8af95",
+      "status": "downloaded",
+      "bytes": 798,
+      "sha256": "eff05f5cf8acd399f0f1018e3af1136339a6af5c6d3f13979acccb2aa2f4584b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/src/main.c",
+      "local": "attachments/src/main.c",
+      "size_expected": 16867,
+      "git_blob_sha": "67d33321f9e28e9bd777e49f029730856fce5da4",
+      "status": "downloaded",
+      "bytes": 16867,
+      "sha256": "ede2fadd01486d7021b80375d995171a390f0044dd1d64f0aeed2144355809d6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/src/self_hash.h",
+      "local": "attachments/src/self_hash.h",
+      "size_expected": 381,
+      "git_blob_sha": "18b6a03ab5ebd7d2ddc0fedc5ac83124add4bf86",
+      "status": "downloaded",
+      "bytes": 381,
+      "sha256": "2a27196874b39a5ab02bacb8abb7d3af17ff0e49a5316f86194ace2ca899063b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/challenge7/README.md",
+      "local": "attachments/archived_handout/README.md",
+      "status": "downloaded",
+      "bytes": 71,
+      "sha256": "0a547960142143af6f50317883c5a49d264502c70eb458e9f5ae51022e0321de"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/challenge7/challenge7.tar.gz",
+      "local": "attachments/archived_handout/challenge7.tar.gz",
+      "status": "downloaded",
+      "bytes": 45556,
+      "sha256": "8581c25af42242aab7ce9a14b1a0ee269a5aa61b955cb6b41364937589075d2f"
+    }
+  ],
+  "notes": "官方仓库源码/构建材料及求解脚本，另从sajjadium/ctf-archives的2026目录配对下载原始题包（archived_handout）。未构建或执行。",
+  "attachment_kind": "original_package_and_official_source",
+  "directory": "逆向/TAMUctf_2026/challenge7",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/solve/recover_inner_payload.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/solve/solve_inner.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/Dockerfile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/Makefile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/README.md",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/config.toml",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/flag.txt",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/scripts/gen_inner_chunks.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/scripts/gen_inner_expected.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/scripts/gen_self_hash.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/src/inner.c",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/src/inner_chunks.h",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/src/inner_expected.h",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/src/loader_abi.h",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/src/main.c",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/src/self_hash.h",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/challenge7/README.md",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/challenge7/challenge7.tar.gz"
+  ],
+  "attachment_status": "downloaded"
+}

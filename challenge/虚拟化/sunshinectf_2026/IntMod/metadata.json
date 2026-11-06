@@ -1,0 +1,64 @@
+{
+  "event_id": "CTF-3399",
+  "event_title": "SunshineCTF 2026",
+  "title": "IntMod",
+  "category": "虚拟化",
+  "original_category": "Reverse",
+  "tags": [
+    "signal-driven-vm",
+    "anti-debugging",
+    "self-decrypting-code"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/sunshinectf/2026/intmod/",
+    "https://ctf42.online/ctfs/sunshinectf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/rev/IntMod"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/SunshineCTF-2026/tree/main/rev/intmod"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/rev/IntMod",
+    "https://ctf42.online/ctfs/sunshinectf/2026/intmod/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/sunshinectf_2026/IntMod/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/SunshineCTF-2026/main/rev/intmod/README.md",
+      "bytes": 5025,
+      "sha256": "74f744594a7ea39598db7c0afea03b9ecb6f09717c4cb967e0cd32e6e81ae850",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/sunshinectf_2026/IntMod/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SunshineCTF/2026/rev/IntMod/README.md",
+      "bytes": 203,
+      "sha256": "f6d5274270e7cb5610b9d7301935429a952a918838c75c9d837d7de5e305540a",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/sunshinectf_2026/IntMod/attachments/upstream/intmod",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SunshineCTF/2026/rev/IntMod/intmod",
+      "bytes": 44008,
+      "sha256": "d697850eea882b87ff1cf02b4559117d7d1279d015ab248c4125cb4dc994b3b2",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/sunshinectf/2026/intmod/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/sunshinectf/2026/intmod/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

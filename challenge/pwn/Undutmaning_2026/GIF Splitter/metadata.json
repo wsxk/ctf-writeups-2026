@@ -1,0 +1,65 @@
+{
+  "event_id": "CTF-2987",
+  "event_title": "Undutmaning 2026",
+  "category": "pwn",
+  "title": "GIF Splitter",
+  "source_urls": [
+    "https://github.com/ACM-VIT/z0d1ak-writeups/tree/HEAD/Undutmaning%202026/pwn/GIF%20Splitter",
+    "https://ctftime.org/event/2987/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/ACM-VIT/z0d1ak-writeups/HEAD/Undutmaning%202026/pwn/GIF%20Splitter/README.md"
+  ],
+  "attachment_urls": [
+    "https://media.githubusercontent.com/media/ACM-VIT/z0d1ak-writeups/HEAD/Undutmaning%202026/pwn/GIF%20Splitter/chall.tar.gz",
+    "https://media.githubusercontent.com/media/ACM-VIT/z0d1ak-writeups/HEAD/Undutmaning%202026/pwn/GIF%20Splitter/docker_selfhost.tar.gz"
+  ],
+  "writeup_status": "未取得有效writeup：上游解答为空占位/模板",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "ACM-VIT/z0d1ak-writeups",
+  "repository_tree_sha": "52613ef9352d65fc7b07f004b2c51138f193fefe",
+  "artifacts": [
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/ACM-VIT/z0d1ak-writeups/HEAD/Undutmaning%202026/pwn/GIF%20Splitter/README.md",
+      "bytes": 1781,
+      "sha256": "d207c885aa85ee1f9d9a44c4411561d0280b7ac2a2a59357fe8528a3a814a560",
+      "git_blob_sha1": "9fa0d537831ad46701317404cafd7cc97b9a1555",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall.tar.gz",
+      "url": "https://media.githubusercontent.com/media/ACM-VIT/z0d1ak-writeups/HEAD/Undutmaning%202026/pwn/GIF%20Splitter/chall.tar.gz",
+      "bytes": 14216,
+      "sha256": "383b10631a86482a2b02bbc0fc3210d4c93f6cef808eec8d1238044077295ef8",
+      "git_blob_sha1": "42da984a9ff9c03f221ee6c25b70d92c73ba1c5c",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": true
+    },
+    {
+      "path": "attachments/docker_selfhost.tar.gz",
+      "url": "https://media.githubusercontent.com/media/ACM-VIT/z0d1ak-writeups/HEAD/Undutmaning%202026/pwn/GIF%20Splitter/docker_selfhost.tar.gz",
+      "bytes": 1305378,
+      "sha256": "c24feae3ee6e0eb274983ae5db1eaa69130ed3008d0c92c2ec17275cf17d238d",
+      "git_blob_sha1": "511d6264e8c99ad8425d57e98555f367ae765008",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": true
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": false,
+  "prose_files": [],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": false
+}

@@ -1,0 +1,49 @@
+{
+  "event_id": "CTF-3033",
+  "event_title": "ASIS CTF Quals 2026",
+  "title": "ASIS_Arch",
+  "category": "虚拟化",
+  "original_category": "Reverse",
+  "tags": [
+    "custom-vm",
+    "emulator-reversing"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/asis/2026-quals/asis_arch/",
+    "https://ctf42.online/ctfs/asis/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/ASIS_Arch"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/asis-arch"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/ASIS_Arch",
+    "https://ctf42.online/ctfs/asis/2026-quals/asis_arch/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/asis_2026-quals/ASIS_Arch/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/ASIS-CTF-Quals-2026/main/rev/asis-arch/README.md",
+      "bytes": 4807,
+      "sha256": "50564944cf121dec53279286a19e40e0af47fcfc5df245c2a96ab7b2bc4c7d3f",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/asis_2026-quals/ASIS_Arch/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/asis/2026-quals/asis_arch/folder.zip?kind=files",
+      "bytes": 30741,
+      "sha256": "dbcb45ed2079265ecbb63ffa8761a9de0f91aaf3130168bf45cd32b16b3676de",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

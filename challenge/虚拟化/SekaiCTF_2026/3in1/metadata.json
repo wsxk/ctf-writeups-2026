@@ -1,0 +1,369 @@
+{
+  "event_id": "CTF-3113",
+  "event_title": "SekaiCTF 2026",
+  "category": "虚拟化",
+  "title": "3in1",
+  "source_urls": [
+    "https://ctftime.org/event/3113/",
+    "https://github.com/project-sekai-ctf/sekaictf-2026/tree/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/solution/send.py",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/solution/solve.js",
+    "https://qyn.app/blog/sekaictf-2026-3in1",
+    "https://qyn.app/qyn-avatar.png",
+    "https://qyn.app/_astro/sekaictf-2026-3in1.COhIoiQ4_Z16HAK7.webp"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/README.md",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/bios-microvm.bin",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/README.md",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/Dockerfile.run",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/bios.bin",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/bzImage",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/bios-256k.bin",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/efi-ne2k_pci.rom",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/efi-eepro100.rom",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/efi-pcnet.rom",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/efi-e1000e.rom",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/efi-virtio.rom",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/efi-e1000.rom",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/efi-rtl8139.rom",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/kvmvapic.bin",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/linuxboot_dma.bin",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/efi-vmxnet3.rom",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/pxe-pcnet.rom",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/pxe-rtl8139.rom",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/pxe-e1000.rom",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/pxe-eepro100.rom",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/pxe-ne2k_pci.rom",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/vgabios-ramfb.bin",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/vgabios-bochs-display.bin",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/vgabios-qxl.bin",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/vgabios-ati.bin",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/vgabios-cirrus.bin",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/vgabios-stdvga.bin",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/pxe-virtio.rom",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/vgabios-virtio.bin",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/vgabios-vmware.bin",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/vgabios.bin",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/docker-compose.yml",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/flag.txt",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/patches/qemu_2.patch",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/patches/qemu_1.patch",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/readflag.c",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/run.sh",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/patches/ladybird_1.patch",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/run.py",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/kona.yaml",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/initramfs.cpio.gz",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/qemu-system-x86_64"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": "QEMU 虚拟化安全题。保留官方运行环境与官方 solution；MTE 官方仅公布二进制 solver，未找到完整文字题解，故解答形式单独标明。",
+  "files": [
+    {
+      "path": "attachments/README.md",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/README.md",
+      "bytes": 519,
+      "sha256": "22c34ae91f5d6aa9e50193bcac427cb555c010546c93780839749eae176223d6"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/bios-microvm.bin",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/bios-microvm.bin",
+      "bytes": 131072,
+      "sha256": "d226177d125aaf1b91e507738f4e9a0ade9474169b211751f78be08008cb394c"
+    },
+    {
+      "path": "attachments/challenge/README.md",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/README.md",
+      "bytes": 513,
+      "sha256": "cbf2c8503f6a9c8b442aa46c72218c668bab6f17a7a2def695dfce7abf591417"
+    },
+    {
+      "path": "attachments/challenge/Dockerfile.run",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/Dockerfile.run",
+      "bytes": 2049,
+      "sha256": "5c3c56a78644d0025c68448aa88148d7a2c220bbc2159734de585a6767659f28"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/bios.bin",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/bios.bin",
+      "bytes": 131072,
+      "sha256": "3dfd946d0c03ab0e022f84f10c3eb5f1dd507761f73e7d8067511ba35a10f776"
+    },
+    {
+      "path": "attachments/challenge/artifacts/bzImage",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/bzImage",
+      "bytes": 1135616,
+      "sha256": "57e6ec548d08b5d802e651879cff3b6ca40660e2eb98c76fceec1974fe6b6605"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/bios-256k.bin",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/bios-256k.bin",
+      "bytes": 262144,
+      "sha256": "ae6f6aa973aaccc143f57aa960fb035fd9de4daee4ad0cd713322f8c259e7650"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/efi-ne2k_pci.rom",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/efi-ne2k_pci.rom",
+      "bytes": 157696,
+      "sha256": "9925e0a34547118110479d8fc4e01092a0a73e0a236416e9ff862655b46751f7"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/efi-eepro100.rom",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/efi-eepro100.rom",
+      "bytes": 159232,
+      "sha256": "2b5b55ba8afae7b5ef7116606babf60e6ceaa531c345d54542857cc3fbe3912e"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/efi-pcnet.rom",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/efi-pcnet.rom",
+      "bytes": 157696,
+      "sha256": "71c494fde94efa9871cf43868d7e3c8f4190e406d47a5102a2a21b36ded8a162"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/efi-e1000e.rom",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/efi-e1000e.rom",
+      "bytes": 159232,
+      "sha256": "102c20348be2d0ebe45a77b076b31848182c2f7b4364775b6bc2ece6e97b4024"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/efi-virtio.rom",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/efi-virtio.rom",
+      "bytes": 160768,
+      "sha256": "26be36901db7f8181c306cc62bd74891d8646528965a78e40cceadba5dd7c8e7"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/efi-e1000.rom",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/efi-e1000.rom",
+      "bytes": 159232,
+      "sha256": "f37222fcdf0481bfbaf7a16d9aaf740aeb41d3d24c187801eb6e9a628cec0fc8"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/efi-rtl8139.rom",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/efi-rtl8139.rom",
+      "bytes": 160768,
+      "sha256": "4cdd69a7f5c6ce7aec3a3f20a034dc80e1d22aa37a739c364378952d997a32c7"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/kvmvapic.bin",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/kvmvapic.bin",
+      "bytes": 9216,
+      "sha256": "cdf057a71b07e3b52b19cbe210bdefa59250d01a9810b960f7fe1f98eed95a27"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/linuxboot_dma.bin",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/linuxboot_dma.bin",
+      "bytes": 1536,
+      "sha256": "9c49e255340c78fc12e54ed043462bca02fb7fca29b7cfab62ff88a5344b6950"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/efi-vmxnet3.rom",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/efi-vmxnet3.rom",
+      "bytes": 156672,
+      "sha256": "33e833123ad9831df94b2d623a17f91e4c779e3cb799baa97058f5972676a32a"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/pxe-pcnet.rom",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/pxe-pcnet.rom",
+      "bytes": 61440,
+      "sha256": "92358396c05b3346c6bfd52bbf2a47978d0a8c6ddea932ee091a24faefbd489e"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/pxe-rtl8139.rom",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/pxe-rtl8139.rom",
+      "bytes": 61440,
+      "sha256": "d491351e37a50eb5a40e98a9f6b4d85010ee60fb9e64129d65ea10839287f138"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/pxe-e1000.rom",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/pxe-e1000.rom",
+      "bytes": 67072,
+      "sha256": "981a728f95b7a01645645e9b753cfb764c9eb59266fa888ac58d7008fbb48c10"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/pxe-eepro100.rom",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/pxe-eepro100.rom",
+      "bytes": 61440,
+      "sha256": "07b89a742e0f6d0e92dafe57b0f28c493436d0e1e07b7b77e728490c1f7b45dd"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/pxe-ne2k_pci.rom",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/pxe-ne2k_pci.rom",
+      "bytes": 61440,
+      "sha256": "bb9c0eaad36b9b4ce26c5f348bd05a832c8bf83ef38391db0ce9b51de8523ac7"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/vgabios-ramfb.bin",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/vgabios-ramfb.bin",
+      "bytes": 28672,
+      "sha256": "24f6b98b2c263f3f562b1180df23e949f7dd27f194fa26aeba27f36bbf6265c6"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/vgabios-bochs-display.bin",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/vgabios-bochs-display.bin",
+      "bytes": 28672,
+      "sha256": "da07e26661279edb7935284a99f8ddfa77dbf04ddb939e4a8c7bc7e36e40cdc7"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/vgabios-qxl.bin",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/vgabios-qxl.bin",
+      "bytes": 39424,
+      "sha256": "33f6e0775ff725026e6f7eba21c8a0ad816ecfe238c4923fa26e8eeaa2aa0b04"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/vgabios-ati.bin",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/vgabios-ati.bin",
+      "bytes": 39424,
+      "sha256": "f033484968c31c066c0e9fbc77127e0d41211496c7559f57076c9344885665b0"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/vgabios-cirrus.bin",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/vgabios-cirrus.bin",
+      "bytes": 39424,
+      "sha256": "10ecbac600620eb589f0c6d98f3f32a073d745c8a7f390b1704155d46a6b59d7"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/vgabios-stdvga.bin",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/vgabios-stdvga.bin",
+      "bytes": 39424,
+      "sha256": "e8fc9e55790dbe3cb31f019a3deb57206ba6c54f5e581adb2ab2677a9d391472"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/pxe-virtio.rom",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/pxe-virtio.rom",
+      "bytes": 60416,
+      "sha256": "6994337fe07783a6233072e33771dc4f58260edc3269debe677a5227b264bfdc"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/vgabios-virtio.bin",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/vgabios-virtio.bin",
+      "bytes": 39424,
+      "sha256": "02853140c262001ecb7245b151ffe47a0f0c79767a6fb2a9eb60f5f1938c5cee"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/vgabios-vmware.bin",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/vgabios-vmware.bin",
+      "bytes": 39424,
+      "sha256": "00bfccc4e09b832a98a727c0fa5bceaaad0556e38b7718f5a6579189abbe627b"
+    },
+    {
+      "path": "attachments/challenge/artifacts/pc-bios/vgabios.bin",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/pc-bios/vgabios.bin",
+      "bytes": 38912,
+      "sha256": "a7ea86bb06a58ff969fd0942e73b8eae00cb58e4c90bccbd900f6a3a01f54fbb"
+    },
+    {
+      "path": "attachments/challenge/docker-compose.yml",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/docker-compose.yml",
+      "bytes": 396,
+      "sha256": "ee0da327b351d89cd026a5b9b38d2fa4f34ab60c653b451d4d0ec552532159df"
+    },
+    {
+      "path": "attachments/challenge/flag.txt",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/flag.txt",
+      "bytes": 123,
+      "sha256": "dcb45615c6ab9efcea5c2937d1177c732a0ea839df898bf87963df3e1ea07612"
+    },
+    {
+      "path": "attachments/challenge/patches/qemu_2.patch",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/patches/qemu_2.patch",
+      "bytes": 1621,
+      "sha256": "402d5426a79a13dca2e259881172b5a9508dda087fb1bad6aad12f833ac7f84c"
+    },
+    {
+      "path": "attachments/challenge/patches/qemu_1.patch",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/patches/qemu_1.patch",
+      "bytes": 1335,
+      "sha256": "038950b3e1a59aaf06a61d3484ca62398f6c9ca74e8b69031a90c545c6aacd31"
+    },
+    {
+      "path": "attachments/challenge/readflag.c",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/readflag.c",
+      "bytes": 331,
+      "sha256": "24b3f5c0ee3d3c348e86a6599817f3880a01c31f26eba6341ff72df3a39fc429"
+    },
+    {
+      "path": "attachments/challenge/run.sh",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/run.sh",
+      "bytes": 952,
+      "sha256": "1dbee00d675a5d5db1d6e66260039dc9bfccce6d0a5e8b02f465503986e31d44"
+    },
+    {
+      "path": "attachments/challenge/patches/ladybird_1.patch",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/patches/ladybird_1.patch",
+      "bytes": 7897,
+      "sha256": "1eeb54faf03042c510d996a3233fc352cb8a6fc1372b9fdbd304d640f25717ff"
+    },
+    {
+      "path": "attachments/challenge/run.py",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/run.py",
+      "bytes": 1364,
+      "sha256": "b6ae7aeb1eb61799183945fdf147478a23afcb00e5de4ac36118b95b5a902e24"
+    },
+    {
+      "path": "writeups/solution/send.py",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/solution/send.py",
+      "bytes": 171,
+      "sha256": "a23f29f62098d97b3aac8e330ed2089017550526c9762a66578a2f4d928807d1"
+    },
+    {
+      "path": "attachments/kona.yaml",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/kona.yaml",
+      "bytes": 2476,
+      "sha256": "5eabeaa46802b08be5700b5bd83907c96cbc352c0918cabed03dabb80f729821"
+    },
+    {
+      "path": "writeups/solution/solve.js",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/solution/solve.js",
+      "bytes": 87772,
+      "sha256": "a17ac41492cdde5fd74fad1b6001ab6c25e1a4d1a99c9f402716444d5d941ecc"
+    },
+    {
+      "path": "attachments/challenge/artifacts/initramfs.cpio.gz",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/initramfs.cpio.gz",
+      "bytes": 31684878,
+      "sha256": "6a2c1d4a1872b2706d87b7001cdb9540e64ce394707a3b3087ed614785b74c79"
+    },
+    {
+      "path": "attachments/challenge/artifacts/qemu-system-x86_64",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/3in1/challenge/artifacts/qemu-system-x86_64",
+      "bytes": 76331664,
+      "sha256": "a41fe0fe8fc913138b407a878ea1ecfe213a898980de4e340e32b7edbb86a0e6"
+    },
+    {
+      "path": "licenses/LICENSE",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/LICENSE",
+      "bytes": 34523,
+      "sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef"
+    },
+    {
+      "path": "licenses/LICENSE.content.md",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/LICENSE.content.md",
+      "bytes": 19119,
+      "sha256": "14d2138e3a8bd9448254f171b8e17130bf7104d2fd843ab0b924bd105fd00d5a"
+    },
+    {
+      "path": "writeups/author_writeup.html",
+      "url": "https://qyn.app/blog/sekaictf-2026-3in1",
+      "bytes": 499848,
+      "sha256": "4950c647e96dec340950a140314103e0cd7c2c373f0cfcbd9e1e085342256c5d"
+    },
+    {
+      "path": "writeups/author_writeup_assets/000.png",
+      "url": "https://qyn.app/qyn-avatar.png",
+      "bytes": 1324,
+      "sha256": "ca0dad323eee0d24eb0d75846e3d57fbf76750d8d0f4485a9f68e0fc4498e7d6"
+    },
+    {
+      "path": "writeups/author_writeup_assets/001.webp",
+      "url": "https://qyn.app/_astro/sekaictf-2026-3in1.COhIoiQ4_Z16HAK7.webp",
+      "bytes": 86704,
+      "sha256": "6803854e092b22194fb47568217f10df85c86c90b829c835c3d0b144814c572e"
+    }
+  ],
+  "errors": [],
+  "writeup_kind": "official_solver_source"
+}

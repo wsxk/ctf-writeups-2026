@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Baby_Obfuscated_Flag_Checker · UofTCTF 2026 (reverse) writeup · ctf42</title>
+  
+
+<meta name="description" content="Baby_Obfuscated_Flag_Checker: Reverse challenge from UofTCTF 2026. Techniques: python-obfuscation, xor. All this obfuscation has left Han Shangyan seeing…">
+<link rel="canonical" href="https://ctf42.online/ctfs/uoftctf/2026/baby_obfuscated_flag_checker/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/uoftctf/2026/baby_obfuscated_flag_checker/">
+<meta property="og:title" content="Baby_Obfuscated_Flag_Checker">
+<meta property="og:description" content="Baby_Obfuscated_Flag_Checker: Reverse challenge from UofTCTF 2026. Techniques: python-obfuscation, xor. All this obfuscation has left Han Shangyan seeing…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/uoftctf/">UofTCTF</a> / <a href="/ctfs/uoftctf/2026/">2026</a> / Baby_Obfuscated_Flag_Checker</nav>
+
+
+<div class="challenge-head">
+  <h1>Baby_Obfuscated_Flag_Checker
+    </h1>
+  <div class="badges">
+    <a class="cat cat-rev" href="/category/rev/">Reverse</a>
+    
+    
+    <span class="chip">weight 33.49</span>
+    <a class="tag" href="/techniques/python-obfuscation/">#python-obfuscation</a><a class="tag" href="/techniques/xor/">#xor</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/uoftctf/2026/baby_obfuscated_flag_checker/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/uoftctf/2026/baby_obfuscated_flag_checker/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  <p class="meta">Author: SteakEnthusiast</p>
+  <p class="meta">Flag format: <code class="flag-format">uoftctf{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>All this obfuscation has left Han Shangyan seeing double. Even Grunt refuses to untangle this mess for him, so it's up to you to do the real grunt work (hahaha get it???).</p>
+<p>Hint: This challenge can be solved without fully deobfuscating the script, but writing a deobfuscator might help you with the "ML Connoisseur" challenge...</p>
+<p>Author: SteakEnthusiast</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>Baby_Obfuscated_Flag_Checker — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/UofTCTF2026/tree/main/rev/baby_obfuscated_flag_checker" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/UofTCTF2026/tree/main/rev/baby_obfuscated_flag_checker</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/uoftctf/2026/baby_obfuscated_flag_checker/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/ritsec/2026/obfpyscated/">obfpyscated</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/python-obfuscation/">#python-obfuscation</a><a class="tag tag-sm" href="/techniques/xor/">#xor</a><a class="tag tag-sm" href="/techniques/aes/">#aes</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/ritsec/2026/">RITSEC 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/patriotctf/2023/python_garbage_compiler/">Python_Garbage_Compiler</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/python-obfuscation/">#python-obfuscation</a><a class="tag tag-sm" href="/techniques/seeded-prng/">#seeded-prng</a><a class="tag tag-sm" href="/techniques/xor/">#xor</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/patriotctf/2023/">PatriotCTF 2023</a></td>
+        <td class="num">24.52</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/bearcat/2026/captain_morgan/">Captain_Morgan</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/python-obfuscation/">#python-obfuscation</a><a class="tag tag-sm" href="/techniques/z3/">#z3</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/bearcat/2026/">Bearcat 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/thecyberjawarainternational/2024/python_is_hard/">Python_is_Hard</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/python-obfuscation/">#python-obfuscation</a><a class="tag tag-sm" href="/techniques/js2py/">#js2py</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/thecyberjawarainternational/2024/">TheCyberJawaraInternational 2024</a></td>
+        <td class="num">23.62</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/vuwctf/2026/ilikewords/">ilikewords</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/xor/">#xor</a><a class="tag tag-sm" href="/techniques/kaprekar-constant/">#kaprekar-constant</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/vuwctf/2026/">VuwCTF 2026</a></td>
+        <td class="num">25.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/imaginaryctf/2023/chaos/">chaos</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/python-obfuscation/">#python-obfuscation</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/imaginaryctf/2023/">ImaginaryCTF 2023</a></td>
+        <td class="num">34.52</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        <span title="Source / Docker setup">src</span>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/python-obfuscation/">#python-obfuscation</a> · <a href="/techniques/xor/">#xor</a>
+          · <a href="/category/rev/">all Reverse</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UofTCTF/2026/rev/Baby_Obfuscated_Flag_Checker" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/uoftctf/2026/baby_obfuscated_flag_checker/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from UofTCTF 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/uoftctf/2026/gamblers_fallacy/">Gamblers_Fallacy</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/uoftctf/2026/leaked_d/">Leaked_d</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/uoftctf/2026/mat247/">MAT247</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/uoftctf/2026/mat347/">MAT347</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/uoftctf/2026/orca/">Orca</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/uoftctf/2026/rotor_cipher/">Rotor_Cipher</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/uoftctf/2026/uoft_lfsr_labyrinth/">UofT_LFSR_Labyrinth</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/uoftctf/2026/baby_exfil/">Baby_Exfil</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/uoftctf/2026/my_pokemon_card_is_fake/">My_Pokemon_Card_is_Fake</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/uoftctf/2026/encryption_service/">Encryption_Service</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/uoftctf/2026/file_upload/">File_Upload</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/uoftctf/2026/guess_the_number/">Guess_The_Number</a> <span class="cat cat-misc cat-xs">Misc</span></li>
+      </ul>
+      <a class="small" href="/ctfs/uoftctf/2026/">All UofTCTF 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

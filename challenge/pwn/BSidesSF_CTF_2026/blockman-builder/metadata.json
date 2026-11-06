@@ -1,0 +1,288 @@
+{
+  "event_id": "CTF-3108",
+  "event_title": "BSidesSF CTF 2026",
+  "category": "pwn",
+  "title": "blockman-builder",
+  "source_urls": [
+    "https://github.com/BSidesSF/ctf-2026-release/tree/HEAD/blockman-builder",
+    "https://ctftime.org/event/3108/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/solution/README.md",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/solution/build_exploit_level.py",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/solution/pack_level.py",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/solution/print_flag.asm",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/solution/print_flag.bin",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/solution/unpack_level.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/Dockerfile",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/Dockerfile.build",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/Makefile",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/flag.txt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/src/Makefile",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/src/bmb",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/src/bmb.c",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/src/bmb_tty.sh",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/src/embed_source.sh",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/src/keys-dv.txt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/src/keys-us.txt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/src/level.txt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/src/start.sh",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/distfiles/bmb",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/distfiles/keys-us.txt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/distfiles/level.txt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/metadata.yml"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。",
+    "writeups/README.md 是早期镜像的空模板，不算解答；有效官方解答位于 writeups/solution/。"
+  ],
+  "repository": "BSidesSF/ctf-2026-release",
+  "repository_tree_sha": "68ee0e460eb572aaec17f082071f8ebf1d6f7330",
+  "artifacts": [
+    {
+      "path": "attachments/challenge/Dockerfile",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/Dockerfile",
+      "bytes": 1579,
+      "sha256": "1f6eb2678b0e53382065bd85c99ea8758c628b8216d556cc50aadd00233175a0",
+      "git_blob_sha1": "fe027f056274325d9c89a94c76f27790121a360c",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/Dockerfile.build",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/Dockerfile.build",
+      "bytes": 259,
+      "sha256": "a9e29140a5f300c1152ba6a53423df94afaf0e806b38b08ac0257273276fad27",
+      "git_blob_sha1": "3b5233c57ca8d112d508817aca23a7961a3a873b",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/Makefile",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/Makefile",
+      "bytes": 380,
+      "sha256": "f55e6473de73e58a71b6728f1e70937469d63214021148d307e385cf1d219849",
+      "git_blob_sha1": "df78cc60d4cd5708d89e6a16822b604a330ad09b",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/flag.txt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/flag.txt",
+      "bytes": 25,
+      "sha256": "54f3d96db574806896ec41e887758ece6a01c5131b08be218c79d7086f28019c",
+      "git_blob_sha1": "b91b0e91f8720f2c0e5d4cb002c55ec0d8ff6521",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/Makefile",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/src/Makefile",
+      "bytes": 382,
+      "sha256": "8a7b95bab62de9eb436470b3efe7e03344bdfef8009a89bbbb908d4f02a9b977",
+      "git_blob_sha1": "271f23f51002969d588f8b5a9afd6f239dc58c5e",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/bmb",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/src/bmb",
+      "bytes": 164696,
+      "sha256": "238c37e23efe08e293e2cf0c3d22fe6d289b8f1fa01559456f00adb5cf9b3983",
+      "git_blob_sha1": "34b82d64bd8dd2f9a9c0bd9b4769589dac40f2ec",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/bmb.c",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/src/bmb.c",
+      "bytes": 67923,
+      "sha256": "61635a9fc8c0a541196613668660697fa003793c05446945a3ce2e6393516462",
+      "git_blob_sha1": "d4d6da49ec216426b070ce961f9f02ef073259e9",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/bmb_tty.sh",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/src/bmb_tty.sh",
+      "bytes": 121,
+      "sha256": "981332d64b61ab81ee82881171a129f5b59d44237fa83c5c15a122ac3112794c",
+      "git_blob_sha1": "cc12ae378332f901231a27f27eb51f4f843f2269",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/embed_source.sh",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/src/embed_source.sh",
+      "bytes": 137,
+      "sha256": "3e09f458647f8451d949cc9d0c8b972ae456dc2801f0c6912ba55df6c2b147f3",
+      "git_blob_sha1": "40a7e032944750e486564aa38f2d98f7a99d4b01",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/keys-dv.txt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/src/keys-dv.txt",
+      "bytes": 130,
+      "sha256": "931494e3c77da382db1bb97c4d4d457ac2926d291965289d46fa5bd10b48da1b",
+      "git_blob_sha1": "80ae5feebd39071710394c0d96274caeec7898e5",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/keys-us.txt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/src/keys-us.txt",
+      "bytes": 130,
+      "sha256": "3a17379829d7afc6e7aceae0340f243f8aac9a67a3ad414a1dec30fc18a9949c",
+      "git_blob_sha1": "a0693d62d24a049072b9f868d625c2c2a0dbb4c0",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/level.txt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/src/level.txt",
+      "bytes": 413,
+      "sha256": "7e7a56f11b35e508cefd86cae1f5bbbac106638df972ec2c06580499ebdd71d0",
+      "git_blob_sha1": "2db43daa07e56ea29a09169feda7abf2306345ab",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/start.sh",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/challenge/src/start.sh",
+      "bytes": 119,
+      "sha256": "01fd2a4fd9fbdf15f19cd5da484976013007cf3a45a49c35018e072925678756",
+      "git_blob_sha1": "859e2650f86167c34ce637c7faceb1ed642efb43",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/distfiles/bmb",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/distfiles/bmb",
+      "bytes": 20,
+      "sha256": "97f4db2131e807febd62e43cc1e80e2c490cdd343c2739388d3811f161ee4097",
+      "git_blob_sha1": "e7d0766aa06b14c12083929dbdbb69d35e7d4910",
+      "git_mode": "120000",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/distfiles/keys-us.txt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/distfiles/keys-us.txt",
+      "bytes": 28,
+      "sha256": "bb78b1b2b1503f54d7bbe2953e57df1c7180d3d42690c1cc73568db75c977ec8",
+      "git_blob_sha1": "16800812dd474b3328f551dae6ea30512f48258c",
+      "git_mode": "120000",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/distfiles/level.txt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/distfiles/level.txt",
+      "bytes": 26,
+      "sha256": "93d97e1a052fa17cb755487285c2daabf760025e2b9bf49ad14e82dce5dc6beb",
+      "git_blob_sha1": "797b536abc6bfc727254fcbeff4c55205d7b5e6e",
+      "git_mode": "120000",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/metadata.yml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/metadata.yml",
+      "bytes": 1043,
+      "sha256": "dc06f46aeb9eb34fa631fbe62268767517612e50fad4b58c7c96032ce674b3b4",
+      "git_blob_sha1": "c86aa834232f33aa38daa3d80be61bd80967a09a",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solution/README.md",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/solution/README.md",
+      "bytes": 3570,
+      "sha256": "9991a286c165362886d7499e3e4d580d261ec5b9b7749a64672a7711d2a6c672",
+      "git_blob_sha1": "1c68272a4117f85f40a17f4a18460a8442fe38d4",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solution/build_exploit_level.py",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/solution/build_exploit_level.py",
+      "bytes": 938,
+      "sha256": "3216a9dcf241bd180f01a63509acbb7c3ad154fe605e5ff254103818c1e5c358",
+      "git_blob_sha1": "1087901efd566d35e088ac3bf58d89c7751decb4",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solution/pack_level.py",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/solution/pack_level.py",
+      "bytes": 873,
+      "sha256": "bd26b15b3fe3971c611fbefb66c0b1ed2411d8409d195f8233bc0580eb4c318b",
+      "git_blob_sha1": "f32d4ce45b4ebfac1293c7e72607b6e6d209970e",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solution/print_flag.asm",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/solution/print_flag.asm",
+      "bytes": 856,
+      "sha256": "a7f50f97536b44812cae5e02487e926d2b5c24b3f3adcd11ec5a74b41ece6ca3",
+      "git_blob_sha1": "8f33524d508ded8294c2a96a51722ed147381957",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solution/print_flag.bin",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/solution/print_flag.bin",
+      "bytes": 91,
+      "sha256": "d8b769863bd5429bc6c1bed507eb4b5401565229085a4094d355efac342f0eb6",
+      "git_blob_sha1": "14738bfb411ba5fef671f8e09518360836ba9353",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solution/unpack_level.py",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/blockman-builder/solution/unpack_level.py",
+      "bytes": 851,
+      "sha256": "2709495c2306787a09923512c24261048c316fbdcb47f6f4a11c721978e25687",
+      "git_blob_sha1": "effb1003e2668275298923288a256783567b44e2",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/solution/README.md"
+  ],
+  "attachment_complete": true,
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06"
+}

@@ -1,0 +1,48 @@
+{
+  "event_id": "CTF-3033",
+  "event_title": "ASIS CTF Quals 2026",
+  "title": "Beyond_the_fourth_wall",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "riscv",
+    "whitespace-steganography"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/asis/2026-quals/beyond_the_fourth_wall/",
+    "https://ctf42.online/ctfs/asis/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Beyond_the_fourth_wall"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/beyond-the-fourth-wall"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Beyond_the_fourth_wall",
+    "https://ctf42.online/ctfs/asis/2026-quals/beyond_the_fourth_wall/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/asis_2026-quals/Beyond_the_fourth_wall/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/ASIS-CTF-Quals-2026/main/rev/beyond-the-fourth-wall/README.md",
+      "bytes": 4532,
+      "sha256": "31699b8443f3504b19ed3eaeb577ff43a82710a70500b3b6e363ea9cd76c33ac",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/asis_2026-quals/Beyond_the_fourth_wall/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/asis/2026-quals/beyond_the_fourth_wall/folder.zip?kind=files",
+      "bytes": 362288,
+      "sha256": "c810b96d10f409910a94230a216849d03897188f133be626142e7286ed4c0475",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

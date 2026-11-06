@@ -1,0 +1,50 @@
+{
+  "event_id": "CTF-3033",
+  "event_title": "ASIS CTF Quals 2026",
+  "title": "Silent_Carrier",
+  "category": "iot",
+  "original_category": "Hardware",
+  "tags": [
+    "usb-pcap",
+    "dmr",
+    "radio-codeplug"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/asis/2026-quals/silent_carrier/",
+    "https://ctf42.online/ctfs/asis/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/hw/Silent_Carrier"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/hardware/silent-carrier"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/hw/Silent_Carrier",
+    "https://ctf42.online/ctfs/asis/2026-quals/silent_carrier/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "按嵌入式硬件、无线协议或PCB分析归入IoT相关题；赛事原分类为Hardware。"
+  ],
+  "artifacts": [
+    {
+      "path": "iot/asis_2026-quals/Silent_Carrier/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/ASIS-CTF-Quals-2026/main/hardware/silent-carrier/README.md",
+      "bytes": 5940,
+      "sha256": "067c7d741effdeae7fd17d46087c7c8c8b10b95e6b895c173f8bcadbfb3f0c4a",
+      "kind": "writeup"
+    },
+    {
+      "path": "iot/asis_2026-quals/Silent_Carrier/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/asis/2026-quals/silent_carrier/folder.zip?kind=files",
+      "bytes": 76056164,
+      "sha256": "6bfbc4685eac73c028081c67b5d87226ed81e03583b9be875ed7fd4844d43a6f",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

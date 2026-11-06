@@ -1,0 +1,812 @@
+{
+  "date_beijing": "2026-11-06",
+  "stats": {
+    "input_main_events": 416,
+    "searched_events": 374,
+    "collected_challenges": 324,
+    "collected_events": 53,
+    "with_attachments": 285,
+    "partial_attachments": 6,
+    "missing_attachments": 33,
+    "pending_writeups": 5,
+    "duplicate_copies": 2,
+    "categories": {
+      "逆向": 104,
+      "pwn": 124,
+      "虚拟化": 49,
+      "车联网": 18,
+      "iot": 16,
+      "android": 13
+    },
+    "verified_download_files": 2205,
+    "verified_download_bytes": 2834908682,
+    "integrity_issues": 0
+  },
+  "issues": [],
+  "zip_checks": [
+    {
+      "path": "android/lyknctf_2026/I_HATE_THIS_APP/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 5047325,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "android/SCTF_2026/GuardMaster/attachments/GuardMaster.zip",
+      "members": 2,
+      "expanded_bytes": 131508377,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "android/Securinets CTF Quals 2026/Backdrop/attachments/backdrop.zip",
+      "members": 77,
+      "expanded_bytes": 41712007,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "android/SUCTF_2026/SU_flumel/attachments/attachments/attachment.zip",
+      "members": 2,
+      "expanded_bytes": 78174240,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "android/SUCTF_2026/SU_flumel/attachments/sourcecode/sourcecode.zip",
+      "members": 535,
+      "expanded_bytes": 30556182,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "iot/0xFUN_2026/UART/attachments/0xFunCTF2026_UART.zip",
+      "members": 1,
+      "expanded_bytes": 533,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "iot/asis_2026-quals/OutOfPhase/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 927773,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "iot/asis_2026-quals/Silent_Carrier/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 76072401,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "iot/NDIAS_2026/Suspicious device 1/attachments/dist-suspicious_device.zip",
+      "members": 1,
+      "expanded_bytes": 134217728,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "iot/NDIAS_2026/Suspicious device 2/attachments/dist-suspicious_device.zip",
+      "members": 1,
+      "expanded_bytes": 134217728,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "iot/NDIAS_2026/Suspicious device 3/attachments/dist-suspicious_device.zip",
+      "members": 1,
+      "expanded_bytes": 134217728,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "iot/NDIAS_2026/Tiny crackme/attachments/dist-tiny_crackme.zip",
+      "members": 2,
+      "expanded_bytes": 121282,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "iot/SUCTF_2026/SU_老年固件/attachments/attachments/attachment.zip",
+      "members": 2,
+      "expanded_bytes": 339688,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "iot/umassctf_2026/Brick_by_Brick/attachments/upstream/brick-by-brick.zip",
+      "members": 1,
+      "expanded_bytes": 1256979,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "iot/umassctf_2026/Smart_Brick_v2/attachments/upstream/smart-brick-v2.zip",
+      "members": 1,
+      "expanded_bytes": 3348966,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/0xFUN_CTF_2026/bit_flips/attachments/bitflips_files.zip",
+      "members": 5,
+      "expanded_bytes": 2409021,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/0xFUN_CTF_2026/Warden/attachments/warden-player.zip",
+      "members": 3,
+      "expanded_bytes": 35123,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/asis_2026-quals/Arena_Snapshots/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 7153,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/asis_2026-quals/Dead_Letter/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 9129,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/asis_2026-quals/QFilter/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 701578,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/asis_2026-quals/Signal_Race/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 7183,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/b01lers_CTF_2026/priority-queue/attachments/dist/dist.zip",
+      "members": 6,
+      "expanded_bytes": 2101042,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/b01lers_CTF_2026/spelling-bee/attachments/dist/spelling-bee.zip",
+      "members": 5,
+      "expanded_bytes": 2164622,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/b01lers_CTF_2026/transmutation/attachments/dist/dist.zip",
+      "members": 6,
+      "expanded_bytes": 2150279,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/bdsec_2026/Muktir_Shongket/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 14779,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/BSidesSF_CTF_2026/rugdoctor/attachments/examples.zip",
+      "members": 4,
+      "expanded_bytes": 885,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/BSidesSF_CTF_2026/rugdoctor/attachments/distfiles/examples.zip",
+      "status": "Git symlink target text; actual target file checked separately"
+    },
+    {
+      "path": "pwn/BSidesSF_CTF_2026/rugdoctor/attachments/challenge/examples/examples.zip",
+      "members": 4,
+      "expanded_bytes": 885,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/BYUCTF_2026/bytecoin/attachments/challenge_files/bytecoin.zip",
+      "members": 3,
+      "expanded_bytes": 18182,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/BYUCTF_2026/heap2win/attachments/heap2win.zip",
+      "members": 2,
+      "expanded_bytes": 36748,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/BYUCTF_2026/intro2/attachments/dist.zip",
+      "members": 3,
+      "expanded_bytes": 13625,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/compfest_2026/menfess/attachments/upstream/menfess-public.zip",
+      "members": 10,
+      "expanded_bytes": 61757780,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/css_2026/Maintenance_Log/attachments/upstream/sector01_handout.zip",
+      "members": 4,
+      "expanded_bytes": 14941,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/gpn_2026/Food_Inspector_II/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 12049147,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/gpn_2026/Scanwich_Station/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 26376,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/kbxac_2026/Most_Secure_Bank_Of_Endia/attachments/upstream/handout.zip",
+      "members": 8,
+      "expanded_bytes": 25186,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/l3akctf_2026/Bosh/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 1808,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/lyknctf_2026/H34P_D3V1L/attachments/upstream/H34p_D3v1l.zip",
+      "members": 4,
+      "expanded_bytes": 6246683,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/lyknctf_2026/Return_to_Lose/attachments/handout_1.zip",
+      "members": 4,
+      "expanded_bytes": 17131,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/mntcrlctf_2026/RepusPing/attachments/upstream/RepusPing.zip",
+      "members": 11,
+      "expanded_bytes": 2258948,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/PascalCTF_2026/Malta Nightlife/attachments/attachments/malta.zip",
+      "members": 1,
+      "expanded_bytes": 17128,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/PascalCTF_2026/YetAnotherNoteTaker/attachments/attachments/notetaker.zip",
+      "members": 5,
+      "expanded_bytes": 2044768,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/pwnsec_2026/Freal_World_Manipulation/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 9517,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/pwnsec_2026/JavaScript_After_Core/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 11533,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/pwnsec_2026/PHP_Sandbox_Escape/attachments/upstream/public.zip",
+      "members": 8,
+      "expanded_bytes": 23319,
+      "status": "encrypted; integrity requires password"
+    },
+    {
+      "path": "pwn/SUCTF_2026/SU_Box/attachments/sourcecode/sourcecode.zip",
+      "members": 331,
+      "expanded_bytes": 15312501,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/SUCTF_2026/SU_Chronos_Ring/attachments/sourcecode/sourcecode.zip",
+      "members": 2,
+      "expanded_bytes": 18754,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/SUCTF_2026/SU_evbuffer/attachments/attachments/SU_evbuffer.zip",
+      "members": 3,
+      "expanded_bytes": 2573192,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/SUCTF_2026/SU_evbuffer/attachments/sourcecode/sourcecode.zip",
+      "members": 1,
+      "expanded_bytes": 4045,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/Thryve_CTF_2026/secret-door/attachments/player_files.zip",
+      "members": 1,
+      "expanded_bytes": 27352,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/tracebash_2026/Banned_Bytes/attachments/upstream/banned_bytes.zip",
+      "members": 6,
+      "expanded_bytes": 32831,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/tracebash_2026/Legacy_Ledger/attachments/upstream/legacy_ledger.zip",
+      "members": 4,
+      "expanded_bytes": 16945,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/trx_2026/down_the_line/attachments/upstream/pwn_down_the_line.zip",
+      "members": 7,
+      "expanded_bytes": 6207,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/trx_2026/house_of_fishing/attachments/upstream/pwn_hof.zip",
+      "members": 5,
+      "expanded_bytes": 21001,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/trx_2026/krwd/attachments/upstream/pwn_krwd.zip",
+      "members": 10,
+      "expanded_bytes": 17802034,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/trx_2026/slop_allocator/attachments/upstream/pwn_slop_allocator.zip",
+      "members": 9,
+      "expanded_bytes": 42553,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/trx_2026/triforce/attachments/upstream/pwn_triforce.zip",
+      "members": 17,
+      "expanded_bytes": 85779951,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/uiuctf_2026/Firefly_Complete_Combustion/attachments/upstream/firefly-complete-combustion.zip",
+      "members": 11,
+      "expanded_bytes": 3809005,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/uiuctf_2026/Sparxie_Vanishing_Encore/attachments/upstream/sparxie-vanishing-encore.zip",
+      "members": 25,
+      "expanded_bytes": 438520,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/umassctf_2026/Brick_City_Office_Space/attachments/upstream/brick-city-office-space.zip",
+      "members": 4,
+      "expanded_bytes": 2520644,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/UofTCTF_2026/aes-aead/attachments/dist/aes-aead.zip",
+      "members": 3,
+      "expanded_bytes": 31119,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/UofTCTF_2026/babybof/attachments/dist/babybof.zip",
+      "members": 3,
+      "expanded_bytes": 16566,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/UofTCTF_2026/calculator/attachments/dist/calc.zip",
+      "members": 3,
+      "expanded_bytes": 101582,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/UofTCTF_2026/eebpf/attachments/dist/eebpf.zip",
+      "members": 5,
+      "expanded_bytes": 10147787,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "pwn/UofTCTF_2026/uprobe/attachments/dist/uprobe.zip",
+      "members": 7,
+      "expanded_bytes": 18393172,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/apoorvctf_2026/Draw_Me/attachments/handout_1.zip",
+      "members": 4,
+      "expanded_bytes": 17436,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/asis_2026-quals/ASIS_Arch/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 30531,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/asis_2026-quals/Revenant_buddy/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 347385,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/b01lers_CTF_2026/favorite_potato/attachments/dist/favorite_potato.zip",
+      "members": 4,
+      "expanded_bytes": 269014,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/b01lers_CTF_2026/kyotoprotocol/attachments/dist/kyoto.zip",
+      "members": 2,
+      "expanded_bytes": 702092,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/b01lers_CTF_2026/kyotoprotocol/writeups/solve/dumped_c.zip",
+      "members": 1459,
+      "expanded_bytes": 808633,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/bdsec_2026/Borrowed_Memory/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 14626,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/dicectf_2026-quals/garden/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 1078812,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/dicectf_2026-quals/locked_in/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 376365,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/haruulzangi_2026-quals/Automaton/attachments/upstream/artifact.zip",
+      "members": 5,
+      "expanded_bytes": 21125,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/l3akctf_2026/LattiaVM_2/attachments/upstream/lattia-vm-2.zip",
+      "members": 7,
+      "expanded_bytes": 2263554,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/LA_CTF_2026/helm-hell/attachments/helm-hell.zip",
+      "members": 4,
+      "expanded_bytes": 652453,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/NCTF_2026/VM Encryptor/attachments/vm-encryptor-attachment.zip",
+      "members": 2,
+      "expanded_bytes": 178515,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/pwnsec_2026/ICX_Confusion/attachments/upstream/public.zip",
+      "members": 4,
+      "expanded_bytes": 25171449,
+      "status": "encrypted; integrity requires password"
+    },
+    {
+      "path": "虚拟化/pwnsec_2026/ICX_Regulate/attachments/upstream/public.zip",
+      "members": 4,
+      "expanded_bytes": 25253368,
+      "status": "encrypted; integrity requires password"
+    },
+    {
+      "path": "虚拟化/pwnsec_2026/PwnSec_Support/attachments/upstream/public.zip",
+      "members": 8,
+      "expanded_bytes": 11949901,
+      "status": "encrypted; integrity requires password"
+    },
+    {
+      "path": "虚拟化/pwnsec_2026/Zigerions/attachments/upstream/public.zip",
+      "members": 1,
+      "expanded_bytes": 43434736,
+      "status": "encrypted; integrity requires password"
+    },
+    {
+      "path": "虚拟化/SCTF_2026/BrainfOok/attachments/BrainfOok.zip",
+      "members": 2,
+      "expanded_bytes": 102148493,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/SUCTF_2026/SU_Lock/attachments/attachments/Everything_Setup1.zip",
+      "members": 1,
+      "expanded_bytes": 37597130,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/SUCTF_2026/SU_Lock/attachments/attachments/Everything_Setup2.zip",
+      "members": 1,
+      "expanded_bytes": 37597240,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/SUCTF_2026/SU_MvsicPlayer/attachments/attachments/SU_MusicPlayer.zip",
+      "members": 3,
+      "expanded_bytes": 115640732,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/SUCTF_2026/SU_West/attachments/attachments/SU_West.zip",
+      "members": 2,
+      "expanded_bytes": 309760,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/trx_2026/1+1/attachments/upstream/1+1.zip",
+      "members": 4,
+      "expanded_bytes": 6074125,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/trx_2026/wandering/attachments/upstream/rev_wandering.zip",
+      "members": 6,
+      "expanded_bytes": 17514,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/UofTCTF_2026/Bring Your Own Program/attachments/dist/byop.zip",
+      "members": 8,
+      "expanded_bytes": 11993,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "虚拟化/z0d1ak_2026-quals/stars_below/attachments/upstream/rev_stars-below.zip",
+      "members": 2,
+      "expanded_bytes": 70286,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "车联网/NDIAS_2026/I Saw Our Time Pass/attachments/dist-I_saw_our_time_pass.zip",
+      "members": 1,
+      "expanded_bytes": 1084426,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "车联网/NDIAS_2026/RAMN ECU D/attachments/dist-ramn_ecu_d.zip",
+      "members": 8,
+      "expanded_bytes": 215453,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/asis_2026-quals/Beyond_the_fourth_wall/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 363656,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/asis_2026-quals/LeakMeAk/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 2937,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/asis_2026-quals/Lesh/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 4432,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/asis_2026-quals/Mousa/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 17149934,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/asis_2026-quals/NEON/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 14140615,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/bdsec_2026/Easy_RE_Challenge/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 16866,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/bdsec_2026/Night_Shift/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 14755,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/bearcat_2026/Captain_Morgan/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 26354,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/bhackari_2026/Dont_unpack_me/attachments/upstream/dont_unpack_me.zip",
+      "members": 1,
+      "expanded_bytes": 5632,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/bhackari_2026/Mystery/attachments/upstream/mystery.zip",
+      "members": 2,
+      "expanded_bytes": 23270,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/boroctf_2026/AlphaCode/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 1035,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/BYUCTF_2026/angr_management/attachments/challenge.zip",
+      "members": 2,
+      "expanded_bytes": 70000,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/haruulzangi_2026-quals/Ehlel/attachments/upstream/challenge.zip",
+      "members": 4,
+      "expanded_bytes": 92483,
+      "status": "encrypted; integrity requires password"
+    },
+    {
+      "path": "逆向/kbxac_2026/Patcher_1/attachments/upstream/patcher1.zip",
+      "members": 4,
+      "expanded_bytes": 44712,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/kbxac_2026/Patcher_2/attachments/upstream/patcher2.zip",
+      "members": 4,
+      "expanded_bytes": 2262080,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/kubstu_2026/RISC_V/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 16687,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/NCTF_2026/No My Bank!/attachments/NoMyBank!.zip",
+      "members": 2,
+      "expanded_bytes": 93119320,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/NCTF_2026/Pay For 2048/attachments/pay-for-2048-attachment.zip",
+      "members": 77,
+      "expanded_bytes": 346351027,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/PascalCTF_2026/Albo delle Eccellenze/attachments/attachments/albo.zip",
+      "members": 1,
+      "expanded_bytes": 1331648,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/pwnsec_2026/Operation_Split_Horizon/attachments/handout_1.zip",
+      "members": 2,
+      "expanded_bytes": 243399,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/pwnsec_2026/Two_Worlds_One_Heart/attachments/upstream/public.zip",
+      "members": 1,
+      "expanded_bytes": 91136,
+      "status": "encrypted; integrity requires password"
+    },
+    {
+      "path": "逆向/ritsec_2026/obfpyscated/attachments/upstream/obfpyscated.zip",
+      "members": 3,
+      "expanded_bytes": 5299,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/SCTF_2026/Alice/attachments/Alice.zip",
+      "members": 14,
+      "expanded_bytes": 597572,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/Srdnlen_CTF_2026_Quals/Rev Juice/attachments/attachments/rev_juice.zip",
+      "members": 7,
+      "expanded_bytes": 12018,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/SUCTF_2026/SU_easygal/attachments/attachments/app.zip",
+      "members": 51,
+      "expanded_bytes": 51481145,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/SUCTF_2026/SU_easygal/attachments/sourcecode/sourcecode.zip",
+      "members": 436,
+      "expanded_bytes": 29036329,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/SUCTF_2026/SU_Protocol/attachments/attachments/taskdemo.zip",
+      "members": 6,
+      "expanded_bytes": 9369616,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/SUCTF_2026/SU_Protocol/attachments/sourcecode/sourcecode.zip",
+      "members": 2,
+      "expanded_bytes": 4723,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/SUCTF_2026/SU_revird/attachments/attachments/SU_Revird.zip",
+      "members": 2,
+      "expanded_bytes": 57256,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/trx_2026/faulty_road/attachments/upstream/rev_faulty_road.zip",
+      "members": 7,
+      "expanded_bytes": 17124689,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/uiuctf_2026/vector_cache/attachments/upstream/vector-cache.zip",
+      "members": 2,
+      "expanded_bytes": 39159,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/umassctf_2026/Batcave_Bitflips/attachments/upstream/batcave-bitflips.zip",
+      "members": 1,
+      "expanded_bytes": 17104,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/UofTCTF_2026/ML Connoisseur/attachments/dist/ml-connoisseur.zip",
+      "members": 15,
+      "expanded_bytes": 104712406,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/volgactf_2026-quals/Vision/attachments/upstream/vision.zip",
+      "members": 4,
+      "expanded_bytes": 37556431,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/z0d1ak_2026-quals/Black_Tide_Survey/attachments/upstream/rev_black-tide-survey.zip",
+      "members": 6,
+      "expanded_bytes": 1260447,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/z0d1ak_2026-quals/pekpek_stadium_64/attachments/upstream/rev_pekpek_stadium_64.zip",
+      "members": 1,
+      "expanded_bytes": 440842,
+      "status": "CRC_OK"
+    },
+    {
+      "path": "逆向/z0d1ak_2026-quals/rival_battle/attachments/upstream/rev_rival_battle.zip",
+      "members": 2,
+      "expanded_bytes": 18712,
+      "status": "CRC_OK"
+    }
+  ],
+  "partial_downloads": [
+    {
+      "path": "pwn/SUCTF_2026/SU_fullchian/attachments/attachment.7z.part",
+      "bytes": 65011712
+    }
+  ]
+}

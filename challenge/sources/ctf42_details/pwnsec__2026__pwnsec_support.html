@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PwnSec_Support · PwnSec 2026 (pwn) writeup · ctf42</title>
+  
+
+<meta name="description" content="PwnSec_Support: Pwn challenge from PwnSec 2026. Techniques: custom-vm, lua, web-exploitation. pwnsec-support.md The support portal runs on a random…">
+<link rel="canonical" href="https://ctf42.online/ctfs/pwnsec/2026/pwnsec_support/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/pwnsec/2026/pwnsec_support/">
+<meta property="og:title" content="PwnSec_Support">
+<meta property="og:description" content="PwnSec_Support: Pwn challenge from PwnSec 2026. Techniques: custom-vm, lua, web-exploitation. pwnsec-support.md The support portal runs on a random…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/pwnsec/">PwnSec</a> / <a href="/ctfs/pwnsec/2026/">2026</a> / PwnSec_Support</nav>
+
+
+<div class="challenge-head">
+  <h1>PwnSec_Support
+    </h1>
+  <div class="badges">
+    <a class="cat cat-pwn" href="/category/pwn/">Pwn</a>
+    
+    
+    <span class="chip">weight 33.89</span>
+    <a class="tag" href="/techniques/custom-vm/">#custom-vm</a><a class="tag" href="/techniques/lua/">#lua</a><a class="tag" href="/techniques/web-exploitation/">#web-exploitation</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/pwnsec/2026/pwnsec_support/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/pwnsec/2026/pwnsec_support/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  
+  <p class="meta">Flag format: <code class="flag-format">PWNSEC{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>pwnsec-support.md
+The support portal runs on a random instruction set some random intern made 16 years ago, please hold while your ticket is lost through 128MB of questionable architecture.</p>
+<p>@l3afai</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>PwnSec_Support — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/pwn/pwnsec-support" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/pwn/pwnsec-support</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/pwnsec/2026/pwnsec_support/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/seccon/2022-quals/lslice/">lslice</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/lua/">#lua</a><a class="tag tag-sm" href="/techniques/oob-read/">#oob-read</a><a class="tag tag-sm" href="/techniques/fake-object/">#fake-object</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/seccon/2022-quals/">SECCON 2022 Quals</a></td>
+        <td class="num">97.90</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/z0d1ak/2026-quals/salvage_protocol/">Salvage_Protocol</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/request-smuggling/">#request-smuggling</a><a class="tag tag-sm" href="/techniques/length-mismatch/">#length-mismatch</a><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/z0d1ak/2026-quals/">Z0d1ak 2026 Quals</a></td>
+        <td class="num">25.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/0ctf/2019-quals/baby-sandbox/">Baby Sandbox</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/lua/">#lua</a><a class="tag tag-sm" href="/techniques/bytecode/">#bytecode</a><a class="tag tag-sm" href="/techniques/sandbox-escape/">#sandbox-escape</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/0ctf/2019-quals/">0CTF 2019 Quals</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        <span title="Source / Docker setup">src</span>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/z0d1ak/2026-quals/house_xiii/">House_XIII</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/heap-exploitation/">#heap-exploitation</a><a class="tag tag-sm" href="/techniques/type-confusion/">#type-confusion</a><a class="tag tag-sm" href="/techniques/use-after-free/">#use-after-free (uaf)</a><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/z0d1ak/2026-quals/">Z0d1ak 2026 Quals</a></td>
+        <td class="num">25.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/dicectf/2026-quals/garden/">garden</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a><a class="tag tag-sm" href="/techniques/garbage-collector-bug/">#garbage-collector-bug</a><a class="tag tag-sm" href="/techniques/oob-write/">#oob-write</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/dicectf/2026-quals/">DiceCTF 2026 Quals</a></td>
+        <td class="num">100.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/cryovault/2026-quals/thaw_ladder/">thaw_ladder</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a><a class="tag tag-sm" href="/techniques/signedness-bug/">#signedness-bug</a><a class="tag tag-sm" href="/techniques/oob-write/">#oob-write</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/cryovault/2026-quals/">Cryovault 2026 Quals</a></td>
+        <td class="num">25.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/custom-vm/">#custom-vm</a> · <a href="/techniques/lua/">#lua</a> · <a href="/techniques/web-exploitation/">#web-exploitation</a>
+          · <a href="/category/pwn/">all Pwn</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/pwn/PwnSec_Support" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/pwnsec/2026/pwnsec_support/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from PwnSec 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/pwnsec/2026/cusp_of_no_return/">Cusp_of_No_Return</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/gap_gap/">Gap_Gap</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/hashbrown/">Hashbrown</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/the_one_hit_wonder/">The_One_Hit_Wonder</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/the_odyssey/">The_odyssey</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/skill_issue_aaelmo/">skill_issue_aaelmo</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/tap_tap/">tap_tap</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/meridian/">Meridian</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/pwnsec/2026/jailincpython/">jailincpython</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/pwnsec/2026/ycc/">ycc</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/pwnsec/2026/death_ops/">Death_Ops</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/pwnsec/2026/freal_world_manipulation/">Freal_World_Manipulation</a> <span class="cat cat-pwn cat-xs">Pwn</span></li>
+      </ul>
+      <a class="small" href="/ctfs/pwnsec/2026/">All PwnSec 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

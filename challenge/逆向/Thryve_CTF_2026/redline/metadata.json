@@ -1,0 +1,51 @@
+{
+  "event_id": "CTF-3330",
+  "event_title": "Thryve CTF 2026",
+  "category": "逆向",
+  "title": "redline",
+  "dirname": "Thryve_CTF_2026",
+  "source_urls": [
+    "https://github.com/hax1ng/thryve-ctf-2026-writeups/tree/HEAD/rev/redline"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/redline/README.md",
+      "local": "writeups/README.md",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 9034,
+      "sha256": "d0e039a567a2931fdab2a8ded63ef8fc12c44017a96615ae9b04daff38babc08"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/redline/redline",
+      "local": "attachments/redline",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 733680,
+      "sha256": "9c5d8af636748bbcc4a014b5271921155ee70a4a722c55ccdba29116287b85aa"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/redline/solve.py",
+      "local": "writeups/solve.py",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 1932,
+      "sha256": "3d35ab783c9f614bc6cf87319c9d196348c2556e6ccb9bfe4567409b8a79daf4"
+    }
+  ],
+  "notes": "参赛者hax1ng公开仓库，保留文章、solver及其提供的比赛原始二进制/7z包；解法未运行验证。",
+  "directory": "逆向/Thryve_CTF_2026/redline",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/redline/README.md",
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/redline/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/redline/redline"
+  ],
+  "attachment_status": "downloaded"
+}

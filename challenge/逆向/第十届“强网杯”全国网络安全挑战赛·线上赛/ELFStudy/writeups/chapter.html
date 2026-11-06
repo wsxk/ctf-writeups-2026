@@ -1,0 +1,129 @@
+<!doctype html><meta charset="utf-8"><p>来源：https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/</p><h2 class="wp-block-heading">ELFStudy</h2>
+<h3 class="wp-block-heading">题解</h3>
+<p class="wp-block-paragraph">1. 程序表面是 ELF 查看器，真正逻辑藏在节区之外，通过重叠重定位修改符号表、触发隐藏的 IFUNC resolver。</p>
+<p class="wp-block-paragraph"> 2. 还原 resolver 后，解开倒序滚动 XOR 加密的代码，得到 flag 校验逻辑。</p>
+<p class="wp-block-paragraph"> 3. 校验要求 flag{32位十六进制}，内部使用 30 轮 Feistel 变换；逆向运算得到上述结果。</p>
+<pre class="wp-block-code"><code class="language-Python" lang="Python">"""Recover ELFStudy's flag statically; never execute the supplied ELF."""
+
+import argparse
+import hashlib
+from pathlib import Path
+import struct
+
+
+MASK64 = (1 &lt;&lt; 64) - 1
+DELTA = 0x9E3779B97F4A7C15
+
+
+def rotate_left(value, count):
+    return ((value &lt;&lt; count) | (value &gt;&gt; (64 - count))) &amp; MASK64
+
+
+def restore_payload(original):
+    data = bytearray(original)
+    for offset in range(0x1388, 0x13E8, 24):
+        target, kind, addend = struct.unpack_from("&lt;QQQ", data, offset)
+        if kind != 8:
+            raise ValueError("Unexpected initial relocation")
+        struct.pack_into("&lt;Q", data, target, addend)
+
+    data[0x894:0x8A2] = data[0x1D30:0x1D3E]
+    _, info, _, section, address, size = struct.unpack_from("&lt;IBBHQQ", data, 0x890)
+    if (info, section, address, size) != (0, 1, 0x1988, 0x390):
+        raise ValueError("Unexpected relocation-table COPY source")
+    data[0x15E0:0x1970] = data[address:address + size]
+    decrypted = False
+    for offset in range(0x15E0, 0x1970, 24):
+        target, info, addend = struct.unpack_from("&lt;QQQ", data, offset)
+        kind, symbol = info &amp; 0xFFFFFFFF, info &gt;&gt; 32
+        symbol_address = 0x3F8 + symbol * 24
+        if kind == 0:
+            continue
+        if kind == 33:
+            value = struct.unpack_from("&lt;Q", data, symbol_address + 16)[0]
+        elif kind == 8:
+            value = 0
+        elif kind == 1:
+            if data[symbol_address + 4] &amp; 15 == 10:
+                if (symbol, target) != (55, 0x7386):
+                    raise ValueError("Unexpected IFUNC relocation")
+                accumulator = 0
+                for index in range(0xCB, 0, -1):
+                    address = 0x7396 + 4 * index
+                    word = struct.unpack_from("&lt;I", data, address)[0] ^ accumulator
+                    if word == 0:
+                        raise ValueError("Payload decoder aborted")
+                    struct.pack_into("&lt;I", data, address, word)
+                    accumulator = (accumulator + word) &amp; 0xFFFFFFFF
+                decrypted = True
+                continue
+            value = struct.unpack_from("&lt;Q", data, symbol_address + 8)[0]
+        elif kind == 5 and target == 0x15E0:
+            # The final COPY restores the ordinary PLT relocation table.
+            continue
+        else:
+            raise ValueError(f"Unsupported relocation: {kind}, symbol {symbol}")
+        struct.pack_into("&lt;Q", data, target, (value + addend) &amp; MASK64)
+    if not decrypted or data[0x739A:0x739E] != bytes.fromhex("f3 0f 1e fa"):
+        raise ValueError("Hidden payload was not restored")
+    if data[0x76B6:0x76C4] != b"flag accepted\n":
+        raise ValueError("Unexpected success marker")
+    return data
+
+
+def round_function(value, key):
+    mixed = rotate_left((value + key) &amp; MASK64, 13) ^ rotate_left(value, 29)
+    return (mixed + rotate_left(value, 47)) &amp; MASK64
+
+
+def recover_flag(data):
+    words = struct.unpack_from("&lt;QQQQ", data, 0x7686)
+    whitening = (words[0] ^ words[1], words[2] ^ words[3])
+    keys = [0, 0, *whitening]
+    for index in range(2, 32):
+        next_key = (
+            rotate_left((keys[index + 1] + keys[index]) &amp; MASK64, 13)
+            ^ rotate_left(keys[index], 57)
+            ^ ((index * DELTA) &amp; MASK64)
+        )
+        keys.append(next_key)
+    target = struct.unpack_from("&lt;QQ", data, 0x76A6)
+    left, right = target
+    for key in reversed(keys[4:34]):
+        left, right = right ^ round_function(left, key), left
+    plaintext = struct.pack("&lt;QQ", left ^ whitening[0], right ^ whitening[1])
+    flag = "flag{" + plaintext.hex() + "}"
+
+    # Independently follow the payload's forward checks, including text shape.
+    if len(flag) != 38 or flag[:5] != "flag{" or flag[37] != "}":
+        raise ValueError("Flag shape verification failed")
+    left, right = struct.unpack("&lt;QQ", bytes.fromhex(flag[5:37]))
+    left ^= whitening[0]
+    right ^= whitening[1]
+    for key in keys[4:34]:
+        left, right = right, left ^ round_function(right, key)
+    if (left, right) != target:
+        raise ValueError("Forward flag verification failed")
+    return flag, target, whitening
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("input", type=Path)
+    args = parser.parse_args()
+    original = args.input.read_bytes()
+    if len(original) != 43304 or original[:6] != b"\x7fELF\x02\x01":
+        raise ValueError("Expected the supplied 43304-byte ELF64 little-endian image")
+    data = restore_payload(original)
+    flag, target, whitening = recover_flag(data)
+    print(f"Input: {args.input}")
+    print(f"SHA256: {hashlib.sha256(original).hexdigest()}")
+    print(f"Whitening keys: {whitening[0]:016x} {whitening[1]:016x}")
+    print(f"Target: {target[0]:016x} {target[1]:016x}")
+    print("Verification: flag format and all 30 forward rounds match")
+    print(flag)
+
+
+if __name__ == "__main__":
+    main()</code></pre>
+<p class="wp-block-paragraph"></p>

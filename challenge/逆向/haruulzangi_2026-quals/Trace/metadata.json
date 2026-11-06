@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3379",
+  "event_title": "Haruulzangi CTF 2026 Qualifier",
+  "title": "Trace",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "signal-handler",
+    "self-decrypting-binary",
+    "fnv-1a"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/haruulzangi/2026-quals/trace/",
+    "https://ctf42.online/ctfs/haruulzangi/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/rev/Trace"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/rev/trace"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/rev/Trace",
+    "https://ctf42.online/ctfs/haruulzangi/2026-quals/trace/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/haruulzangi_2026-quals/Trace/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/main/rev/trace/README.md",
+      "bytes": 4789,
+      "sha256": "47b7eb55b939d8c90c81d9d76c4aa145468a3254798a9c20c8b19f5866934e4a",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/haruulzangi_2026-quals/Trace/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Haruulzangi/2026/Quals/rev/Trace/README.md",
+      "bytes": 219,
+      "sha256": "e354ca7d533526f9214b0e4bbcac734440001c7682737b9b418ff7ff2153dc7d",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/haruulzangi_2026-quals/Trace/attachments/upstream/rev_trace.tar.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Haruulzangi/2026/Quals/rev/Trace/rev_trace.tar.gz",
+      "bytes": 311000,
+      "sha256": "2462a79615714d7b9fc2f2193f1e7121869b8d0779acc3c283817f18b202f795",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/trace/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/haruulzangi/2026-quals/trace/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

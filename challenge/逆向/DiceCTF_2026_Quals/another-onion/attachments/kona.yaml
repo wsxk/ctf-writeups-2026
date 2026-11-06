@@ -1,0 +1,75 @@
+challenges:
+  - category: rev
+    name: another-onion
+    hidden: false
+    author: hpmv
+    sort_weight: 69
+    description: |
+      I've peeled an onion before, but this onion would take me years to peel...
+
+      Challenge instructions: you are given an example binary `an_onion` and an example input `a_key`. When you're ready,
+      spin up an instance to download a real binary (without the key). You'll have 30 minutes to solve this real binary.
+      Once you solve it, submit the token to the instance to get the flag.
+
+      You may attempt multiple times, but each instance will generate a different binary and a different solution token.
+      All such generated binaries will be similar to `an_onion`, but rather than a 16 byte key, they will have 512 byte keys.
+    attachments:
+      files:
+        - "an_onion"
+        - "a_key"
+    flags:
+      rctf: dice{5p33d_1s_a1s0_imp0rtant_1n_r3ver5e_3ngineer1ng}
+    instancer_config:
+      challenge_integration_id: "{{ challenge.name }}"
+      timeout_milliseconds: 1800000
+      extendable: false
+      expose:
+        - kind: https
+          host_prefix: "{{ challenge.name }}"
+          container_name: onion
+          container_port: 8000
+        - kind: tcp-ssl
+          host_prefix: "{{ challenge.name }}-submission"
+          container_name: onion
+          container_port: 31337
+      config:
+        pods:
+          - name: onion
+            ports:
+              - protocol: TCP
+                name: tcp-service
+                port: 31337
+              - protocol: TCP
+                name: http-service
+                port: 8000
+            spec:
+              containers:
+                - name: onion
+                  image: "{{ images[challenge.name] }}"
+                  resources:
+                    limits:
+                      cpu: "1"
+                      memory: 2Gi
+                    requests:
+                      cpu: 250m
+                      memory: 1Gi  # so that k8s schedules more conservatively
+                  readinessProbe:
+                    tcpSocket:
+                      port: 8000
+                    initialDelaySeconds: 5
+                    periodSeconds: 3
+                  env:
+                    - name: FLAG
+                      value: "{{ challenge.flags.rctf }}"
+              restartPolicy: Always
+              terminationGracePeriodSeconds: 0
+              automountServiceAccountToken: false
+            egress: false
+
+deployment:
+  images:
+    - path: .
+      name: "{{ challenges[0].name }}"
+      tag: latest
+      registry_name: instancer-challenges
+      platform: linux/amd64

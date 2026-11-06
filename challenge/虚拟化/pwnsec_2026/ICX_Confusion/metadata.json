@@ -1,0 +1,64 @@
+{
+  "event_id": "CTF-3159",
+  "event_title": "PwnSec CTF 2026",
+  "title": "ICX_Confusion",
+  "category": "虚拟化",
+  "original_category": "Reverse",
+  "tags": [
+    "custom-vm",
+    "type-confusion",
+    "stale-reference"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/pwnsec/2026/icx_confusion/",
+    "https://ctf42.online/ctfs/pwnsec/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/ICX_Confusion"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/rev/icx-confusion"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/ICX_Confusion",
+    "https://ctf42.online/ctfs/pwnsec/2026/icx_confusion/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/pwnsec_2026/ICX_Confusion/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/pwnsec-ctf-2026/main/rev/icx-confusion/README.md",
+      "bytes": 6273,
+      "sha256": "19d0f75e8744f513584c9bd768cabf5b370a4b75c5691996b9e98f5cee6492ee",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/pwnsec_2026/ICX_Confusion/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/PwnSec/2026/rev/ICX_Confusion/README.md",
+      "bytes": 167,
+      "sha256": "8d9caef670745fe704269ba888bfceaf8de58285c1cf3f7fe4e6c98c18426821",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/pwnsec_2026/ICX_Confusion/attachments/upstream/public.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/PwnSec/2026/rev/ICX_Confusion/public.zip",
+      "bytes": 16764391,
+      "sha256": "af56fa8c4befd16b760c27195206a65a8d2f357a6118822f1079cd384adea66d",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/pwnsec/2026/icx_confusion/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/pwnsec/2026/icx_confusion/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

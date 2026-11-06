@@ -1,0 +1,68 @@
+# Reference: https://github.com/project-sekai-ctf/konata
+challenges:
+  - category: pwn
+    name: garden
+    author: maxster
+    sort_weight: 89
+    description: |
+      in a walled garden, you can't escape!
+    attachments:
+      files:
+        - build.sh
+        - Dockerfile
+        - garden
+        - garden.c
+        - ld-linux-x86-64.so.2
+        - libc.so.6
+      additional:
+        - path: flag.txt
+          str_content: 'dice{dummy_flag}'
+    flags:
+      rctf:
+        file: flag.txt
+    endpoints:
+      - type: nc
+        endpoint: "{{ challenge.name }}.{{ config.domains['kctf'] }}"
+        port: 1337
+
+deployment:
+  images:
+    - path: .
+      name: "{{ challenges[0].name }}"
+      tag: latest
+      registry_name: challenges
+      platform: linux/amd64
+
+  kubernetes_inline_manifests:
+    - cluster_name: main
+      documents:
+        - apiVersion: kctf.dev/v1
+          kind: Challenge
+          metadata:
+            name: "{{ challenges[0].name }}"
+          spec:
+            deployed: true
+            image: "{{ images[challenges[0].name] }}"
+            network:
+              public: true  # instance will not be exposed until this is set to true (dns update can take a while)
+              ports:
+                - protocol: "TCP"
+                  port: 1337
+                  targetPort: 5000
+            healthcheck:
+              enabled: false
+            # horizontalPodAutoscalerSpec:
+            #   maxReplicas: 4
+            #   minReplicas: 1
+            #   targetCPUUtilizationPercentage: 80
+            podTemplate:
+              template:
+                spec:
+                  containers:
+                    - name: challenge
+                      resources:
+                        requests:
+                          cpu: "100m"
+                          memory: "50Mi"
+                      securityContext:
+                        privileged: true

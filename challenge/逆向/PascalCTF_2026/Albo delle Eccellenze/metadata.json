@@ -1,0 +1,69 @@
+{
+  "event_id": "CTF-2767",
+  "event_title": "PascalCTF 2026",
+  "category": "逆向",
+  "title": "Albo delle Eccellenze",
+  "dirname": "PascalCTF_2026",
+  "source_urls": [
+    "https://github.com/PascalCTF/PascalCTF-2026/tree/HEAD/rev04"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev04/attachments/albo.zip",
+      "local": "attachments/attachments/albo.zip",
+      "size_expected": 451947,
+      "git_blob_sha": "9a3666b568ef58ef754fa0ca5838e1d56a235c5c",
+      "status": "downloaded",
+      "bytes": 451947,
+      "sha256": "d2a921c7367b78bd18635ad085aac21a9197f3a4a11137d080ebb7688a9df705"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev04/description.md",
+      "local": "attachments/description.md",
+      "size_expected": 202,
+      "git_blob_sha": "94cc7c7d340d160eae2d664a93df22a98555d811",
+      "status": "downloaded",
+      "bytes": 202,
+      "sha256": "a58ed7f57a8aa97e4fba72d952d0e91b2c2bbbb2cdfbd13acc575f9590385a2f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev04/endpoint.txt",
+      "local": "attachments/endpoint.txt",
+      "size_expected": 31,
+      "git_blob_sha": "941b17df1fa8eaebf5e327c3b9f92104734f28a0",
+      "status": "downloaded",
+      "bytes": 31,
+      "sha256": "c6f95e312262535407713b80a477a01f4b3ba8b409765e129e87f6448c9dfc18"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev04/title.txt",
+      "local": "attachments/title.txt",
+      "size_expected": 21,
+      "git_blob_sha": "5e15ba24118f30502b41d6efbb58e2d3da05eafd",
+      "status": "downloaded",
+      "bytes": 21,
+      "sha256": "fee5e7cb9c8e181ff73e852d7fb0a5bd4753e414f08972f3e856a5f91b6c713f"
+    },
+    {
+      "url": "https://blog.maksimhayder.com/posts/pascalctf-2026/",
+      "local": "writeups/maksimhayder.html",
+      "status": "downloaded",
+      "bytes": 69859,
+      "sha256": "62b324ee71b64a2a3f9504f055b3f57fe3be19930c93799064287f98e5789014"
+    }
+  ],
+  "notes": "官方writeup为TODO占位，未当作解答；配对Maksim Hayder公开文章中的Albo delle Eccellenze章节。HTML保存全文原始快照。官方分类Reverse，解法涉及溢出。",
+  "directory": "逆向/PascalCTF_2026/Albo delle Eccellenze",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://blog.maksimhayder.com/posts/pascalctf-2026/"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev04/attachments/albo.zip",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev04/description.md",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev04/endpoint.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev04/title.txt"
+  ],
+  "attachment_status": "downloaded"
+}

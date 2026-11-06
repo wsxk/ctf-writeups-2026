@@ -1,0 +1,83 @@
+{
+  "event_id": "CTF-3161",
+  "event_title": "SUCTF 2026",
+  "category": "android",
+  "title": "SU_flumel",
+  "source_urls": [
+    "https://ctftime.org/event/3161/",
+    "https://github.com/team-su/SUCTF-2026/tree/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel/writeup/img/2.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel/writeup/SU_flumel%20Writeup.md",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel/writeup/img/1.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel/writeup/img/3.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel/exp/exp.py",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel/writeup/img/4.png"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel/README.md",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel/attachments/attachment.zip",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel/sourcecode/sourcecode.zip"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": "SUCTF 2026 官方归档。固件题归入 iot；Flutter/Dart/Hermes/Native APK 题归入 android。原题压缩包、源码、官方题解与 exp 一并保留。",
+  "files": [
+    {
+      "path": "attachments/README.md",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel/README.md",
+      "bytes": 592,
+      "sha256": "1a87a06bf3250df1143f714a293464d553acecd54b5f1ca6f5dae55a8585b833"
+    },
+    {
+      "path": "writeups/writeup/img/2.png",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel/writeup/img/2.png",
+      "bytes": 67066,
+      "sha256": "5b677948933336844ea818bbfea99787bc0251fb055b55607011e9c061fa8d58"
+    },
+    {
+      "path": "writeups/writeup/SU_flumel Writeup.md",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel/writeup/SU_flumel%20Writeup.md",
+      "bytes": 12000,
+      "sha256": "9ab479dc9e90e0f81436d7a361b26b545de45ec69e65023c63296dca2dd875a8"
+    },
+    {
+      "path": "writeups/writeup/img/1.png",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel/writeup/img/1.png",
+      "bytes": 220588,
+      "sha256": "a15542fd3c75d14bfcaac996830d03f96becb4068903ded08fc653d84f185e7e"
+    },
+    {
+      "path": "writeups/writeup/img/3.png",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel/writeup/img/3.png",
+      "bytes": 107038,
+      "sha256": "dd2c2569d7ba9d8d666f0efe51d5ab4747a6315e143d50fd251f6836390a61cb"
+    },
+    {
+      "path": "writeups/exp/exp.py",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel/exp/exp.py",
+      "bytes": 3347,
+      "sha256": "b3ffb4866974733ed9420f8081e3ed096ac642c5026d2a7af18319cd01b1e151"
+    },
+    {
+      "path": "writeups/writeup/img/4.png",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel/writeup/img/4.png",
+      "bytes": 39147,
+      "sha256": "572697d50f304d2704c95e56f7a2d3802d489ae1052914b20e345fa96ee62d3c"
+    },
+    {
+      "path": "attachments/attachments/attachment.zip",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel/attachments/attachment.zip",
+      "bytes": 47613301,
+      "sha256": "4a6edecd1d9ea453285237cd0145b7a010f28a14b3e9950f5783fbbf0dc2897f"
+    },
+    {
+      "path": "attachments/sourcecode/sourcecode.zip",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_flumel/sourcecode/sourcecode.zip",
+      "bytes": 25187955,
+      "sha256": "a4008e3eb00b4164d7c2cc38b2409cea5c348435d07a1f1bd1e427774174fa1b"
+    }
+  ],
+  "errors": []
+}

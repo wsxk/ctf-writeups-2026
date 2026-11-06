@@ -1,0 +1,65 @@
+{
+  "event_id": "CTF-3446",
+  "event_title": "KubSTU CTF",
+  "title": "Ouroboros",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "self-referential-key-decryption"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/kubstu/2026/ouroboros/",
+    "https://ctf42.online/ctfs/kubstu/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KubSTU/2026/rev/Ouroboros",
+    "https://ctftime.org/event/3446/tasks/"
+  ],
+  "writeup_urls": [
+    "https://ctftime.org/writeup/41127",
+    "https://raw.githubusercontent.com/hax1ng/KubSTU-CTF-2026/main/rev/ouroboros/README.md"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KubSTU/2026/rev/Ouroboros",
+    "https://ctf42.online/ctfs/kubstu/2026/ouroboros/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。",
+    "已核对CTFtime秋季赛题表；聚合站的春季赛3177关联错误，改为3446（2026-10-10至11）。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/kubstu_2026/Ouroboros/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/KubSTU/2026/rev/Ouroboros/README.md",
+      "bytes": 71,
+      "sha256": "d714ec5d29e950060cecc06a0c9d18198aae5c70f727dd244bcb86f1d8d28ac7",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/kubstu_2026/Ouroboros/attachments/upstream/chronos",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/KubSTU/2026/rev/Ouroboros/chronos",
+      "bytes": 133552,
+      "sha256": "e0b7840721583143b29da1a0650b8229f7c5cce4cc7aef0e97829a969200da75",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/kubstu_2026/Ouroboros/writeups/replacement_source.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/KubSTU-CTF-2026/main/rev/ouroboros/README.md",
+      "bytes": 4480,
+      "sha256": "630ae978df724f7ad1b695119efeaf52d58096b5aa90f9f1a1a1679663a69e9d",
+      "kind": "writeup"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/kubstu/2026/ouroboros/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/kubstu/2026/ouroboros/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files",
+  "writeup_kind": "prose"
+}

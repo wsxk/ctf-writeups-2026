@@ -1,0 +1,230 @@
+{
+  "event_id": "CTF-2767",
+  "event_title": "PascalCTF 2026",
+  "category": "pwn",
+  "title": "AHC - Average Heap Challenge",
+  "source_urls": [
+    "https://github.com/PascalCTF/PascalCTF-2026/tree/HEAD/pwn03",
+    "https://ctftime.org/event/2767/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/checker/__main__.py",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/writeup/README.md",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/writeup/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/attachments/average",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/attachments/ld-linux-x86-64.so.2",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/attachments/libc.so.6",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/authors.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/description.md",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/endpoint.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/flags.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/order.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/points.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/src/Makefile",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/src/docker-compose.yml",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/src/source.c",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/tags.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/timeout.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/title.txt"
+  ],
+  "writeup_status": "已下载官方解题脚本（独立文字writeup未提供）",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "PascalCTF/PascalCTF-2026",
+  "repository_tree_sha": "20b80a2173b1d9459eba553c6576e4eee39f5179",
+  "artifacts": [
+    {
+      "path": "attachments/attachments/average",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/attachments/average",
+      "bytes": 13584,
+      "sha256": "d0dc3a911b5443a7b93465ede583288d00ea2bf9fa01522a2b39ac1864b0ef42",
+      "git_blob_sha1": "f5e9531001360442089153d283550bec61ba3a30",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/attachments/ld-linux-x86-64.so.2",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/attachments/ld-linux-x86-64.so.2",
+      "bytes": 236616,
+      "sha256": "b7695da977e205398b33922d61493cc1e436cd2321bb2e54fbdc39b95fabeff7",
+      "git_blob_sha1": "09d67ac6d6b4f184738312c7131a8479e9ade569",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/attachments/libc.so.6",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/attachments/libc.so.6",
+      "bytes": 2125328,
+      "sha256": "fc4c52f3910ed57a088d19ab86c671358f5e917cd4e95b21fd08e4fd922c0aa2",
+      "git_blob_sha1": "7295806092073e9428713b7c2d1c7aaaa0155afe",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/authors.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/authors.txt",
+      "bytes": 26,
+      "sha256": "4b771741281860a1c30e02c82aba72ba2071913133427cb82290d72c4b1f36c4",
+      "git_blob_sha1": "ef114e0af721f6421e3ffe1471ede1fd2ee715b0",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/checker/__main__.py",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/checker/__main__.py",
+      "bytes": 924,
+      "sha256": "d552149d685525069568ae809e26bd2408309ce85cc6551f9704376bfcfcdace",
+      "git_blob_sha1": "c56c77c85d3fd7ecc0b876cde4ddc26e5d55ed90",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/description.md",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/description.md",
+      "bytes": 52,
+      "sha256": "8d3c4a1a7d32397c36ba6968097b1e44c2a3d0f71320ad7540b0b987e67170fb",
+      "git_blob_sha1": "d8c5ff1e3f8901d538fe439ef918d3e7e53c2103",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/endpoint.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/endpoint.txt",
+      "bytes": 30,
+      "sha256": "f89a1426ce50a1529cbc920b6d937ad64dcab56213fea7ce3375ab8524b75c5b",
+      "git_blob_sha1": "8f32a051b645deff58b02eab027357141e514c8d",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flags.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/flags.txt",
+      "bytes": 39,
+      "sha256": "cf77f876fee08fc750833937f794b5892ed0a37b846193cf7615cd744d03628f",
+      "git_blob_sha1": "649146902c859945e5d97c9e0f2bdbdfc8df8946",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/order.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/order.txt",
+      "bytes": 2,
+      "sha256": "1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2",
+      "git_blob_sha1": "00750edc07d6415dcc07ae0351e9397b0222b7ba",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/points.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/points.txt",
+      "bytes": 4,
+      "sha256": "792376c209f338959be4cf00c54dbf82662b90516082e23106faec4c43c69e49",
+      "git_blob_sha1": "1b79f38e25b24dcac0318f3371793a6ec204a71b",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/Makefile",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/src/Makefile",
+      "bytes": 355,
+      "sha256": "1d4c1031cdde61cb69befbdc480be44fe9478e7bb1b366c685dbad6f4e8c1bf9",
+      "git_blob_sha1": "8bde5d413c2813e7053b421d469dea08c4ad9c92",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/docker-compose.yml",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/src/docker-compose.yml",
+      "bytes": 465,
+      "sha256": "1197ce8964b84026fc59f71a0cf3c95ba2f0030217aa005bed8c63ee98856a8a",
+      "git_blob_sha1": "357d684376e8727ffee7ed13ae63361bfb8d4bc2",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/source.c",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/src/source.c",
+      "bytes": 3621,
+      "sha256": "2dad53e4cd81221fe203a7fd79fdcdc71fbfceb40ceab70a2bdc789dbeb06075",
+      "git_blob_sha1": "866f0541bc1bd172043cb64dc1bbaad9c619b6e1",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/tags.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/tags.txt",
+      "bytes": 4,
+      "sha256": "fa5713fea5d7eef2d07920b972f15234d65df152e0855048f8e8fbf655d67ebb",
+      "git_blob_sha1": "1fddbb0a0ff7e71c6b5a1c988db8cd3926dda8f3",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/timeout.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/timeout.txt",
+      "bytes": 3,
+      "sha256": "917df3320d778ddbaa5c5c7742bc4046bf803c36ed2b050f30844ed206783469",
+      "git_blob_sha1": "f599e28b8ab0d8c9c57a486c89c4a5132dcbd3b2",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/title.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/title.txt",
+      "bytes": 28,
+      "sha256": "b61865c91243a3073ddc42bd19ad87b689c593d0a0509427f3e1187ef2b886f0",
+      "git_blob_sha1": "ba07a52c766868d2bd1f4004c3174b206fac92bd",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/README.md",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/writeup/README.md",
+      "bytes": 5,
+      "sha256": "56ba36249ea8216ad513b13df3de6c0e490ba214897674d30331f1c7e7edbef3",
+      "git_blob_sha1": "1333ed77b7e1ed056329cae96075dc558158ee69",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/solve.py",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn03/writeup/solve.py",
+      "bytes": 1276,
+      "sha256": "4589e27c5fb96a14f72a18d7530c08e2a8d4d7c1e7f386544ea643cf49d20e9f",
+      "git_blob_sha1": "d06fd58de721e8bd16a9915515b4a8e3fd8c15be",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

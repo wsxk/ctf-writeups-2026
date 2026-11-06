@@ -1,0 +1,326 @@
+{
+  "event_id": "CTF-3108",
+  "event_title": "BSidesSF CTF 2026",
+  "category": "pwn",
+  "title": "rugdoctor",
+  "source_urls": [
+    "https://github.com/BSidesSF/ctf-2026-release/tree/HEAD/rugdoctor",
+    "https://ctftime.org/event/3108/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/README.md",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/solution/libronsolve.rb",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/solution/shellcode.asm",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/solution/shellcode.bin",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/solution/solve.rb"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/Dockerfile",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/Dockerfile.build",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/Makefile",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/adds.rd",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/count-to-10.rd",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/count-to-100.rd",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/examples.zip",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/hello-world.rd",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/hello-worlds.rd",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/if.rd",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/maths.rd",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/movs.rd",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/subs.rd",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/flag.txt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/src/Makefile",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/src/rugdoctor",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/src/rugdoctor.c",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/distfiles/examples.zip",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/distfiles/rugdoctor",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/metadata.yml"
+  ],
+  "writeup_status": "已下载官方解题脚本（独立文字writeup未提供）",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。",
+    "writeups/README.md 是早期镜像的空模板，不算解答；有效官方解答位于 writeups/solution/。"
+  ],
+  "repository": "BSidesSF/ctf-2026-release",
+  "repository_tree_sha": "68ee0e460eb572aaec17f082071f8ebf1d6f7330",
+  "artifacts": [
+    {
+      "path": "attachments/challenge/Dockerfile",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/Dockerfile",
+      "bytes": 908,
+      "sha256": "8046a525701aeb9b5e257898bd58bd100296122d053156de91f84cb1b9158678",
+      "git_blob_sha1": "f244fdb5b08b1c9e62e0f2d7a29051f6fc70b223",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/Dockerfile.build",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/Dockerfile.build",
+      "bytes": 234,
+      "sha256": "e71eaf4fe85e78a4f516fed404ab5ba91f81411eaef9b90f92246117f85c60ee",
+      "git_blob_sha1": "98bcc154c5c7856b35e5408dd824afe399285ad7",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/Makefile",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/Makefile",
+      "bytes": 380,
+      "sha256": "f55e6473de73e58a71b6728f1e70937469d63214021148d307e385cf1d219849",
+      "git_blob_sha1": "df78cc60d4cd5708d89e6a16822b604a330ad09b",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/challenge/README.md",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/README.md",
+      "bytes": 1307,
+      "sha256": "eccc936f711509af1e51797178861de41511f1d9680ffe7a3df118efe476ba58",
+      "git_blob_sha1": "13832b4fb44174dff59cc91435e786774e12529c",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/examples/adds.rd",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/adds.rd",
+      "bytes": 224,
+      "sha256": "8ace30b51c1d5b959b8de48b540edc4d27c09e62595bc96a034dd63cfb7639fa",
+      "git_blob_sha1": "cabeb40028bdcf3e86d6f66cf342516c711edff4",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/examples/count-to-10.rd",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/count-to-10.rd",
+      "bytes": 82,
+      "sha256": "5a1cd0df5c98ac6b542f6c7f454d0a9d286951fda52956a0434d2d8cc591f4ad",
+      "git_blob_sha1": "acdf3aade042980e28d1cf9f31528155880d357d",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/examples/count-to-100.rd",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/count-to-100.rd",
+      "bytes": 143,
+      "sha256": "b583e8ae4576818d3cdcfa830352d752b3772f7f295c535f1990a391944a2195",
+      "git_blob_sha1": "5551693fe5e57bc1e6ea5d796c03739293408e26",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/examples/examples.zip",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/examples.zip",
+      "bytes": 976,
+      "sha256": "f322886756bdd24766f618b6055a694663a6ad0d4ed7ccb2e0d91a645b431d9a",
+      "git_blob_sha1": "ce9257e1858e7ba51e17a48785f0bdeb3ef95dd7",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/examples/hello-world.rd",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/hello-world.rd",
+      "bytes": 294,
+      "sha256": "716e49bb5bfab2b4d5cf9526cfd4f20727d19081a8eb7716552b5d9b28afd6c2",
+      "git_blob_sha1": "28f0e420ff407030c5ca133ef08b441f5f80ca65",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/examples/hello-worlds.rd",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/hello-worlds.rd",
+      "bytes": 366,
+      "sha256": "1aae49a1b6c49e68ca02dc7661c7f0b5595884e877c9aad60aec6a305e77d449",
+      "git_blob_sha1": "8604c73f547d0c71235a9df86879838bb1cd5336",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/examples/if.rd",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/if.rd",
+      "bytes": 89,
+      "sha256": "0073cc5937776ef526fda3097608cf3071b1c6bcf277d369a55b8c681539bde3",
+      "git_blob_sha1": "581bf798526dd08c73470783f78390f0ae4b7536",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/examples/maths.rd",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/maths.rd",
+      "bytes": 182,
+      "sha256": "ffb5a092c6747356fb4ad6be5d5d3e38ff6c037685319098417c5598e6e762a3",
+      "git_blob_sha1": "b8c492e09e0b62e6fbce239db03dc9e9bcfb54c1",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/examples/movs.rd",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/movs.rd",
+      "bytes": 224,
+      "sha256": "4603b217d20305ab6c2a6f6adf0d104cb10c7427a5d2fb49fc9834e1bb1721bf",
+      "git_blob_sha1": "a9ef79994d0cae87e6b5c39cd5f8dfb0873c6702",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/examples/subs.rd",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/examples/subs.rd",
+      "bytes": 224,
+      "sha256": "4c3ea66be6ef0dc8c64dd597aeb205927424b04bd09779003f0b42ef2754efd0",
+      "git_blob_sha1": "39e2697b70ac75f836a1e7402724608f1ead3ed1",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/flag.txt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/flag.txt",
+      "bytes": 45,
+      "sha256": "38b69aeb46c0188729b0e130fdb7d093011513b15e3051c76d40982115a0295c",
+      "git_blob_sha1": "06b9acf6e3b3623552b974a7b2a05c04d6cb18b6",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/Makefile",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/src/Makefile",
+      "bytes": 147,
+      "sha256": "72d462140f04a5bac78f93f4e0562d5744b73ea0de050dd1d890913e9c34bdd1",
+      "git_blob_sha1": "e1bf750040e3bb4bcea0b9579600176d79650ff0",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/rugdoctor",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/src/rugdoctor",
+      "bytes": 18704,
+      "sha256": "61c1e688f6108341942a1eabf38badfba91701f572c82962a5961cd60feb3a28",
+      "git_blob_sha1": "1a8b6ffb91b3bd5f629faa181152ece58a11d3f9",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/rugdoctor.c",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/challenge/src/rugdoctor.c",
+      "bytes": 20225,
+      "sha256": "eb0968d782e2c8b52dbe4b23cefa7421a0cd7750cf8b023f071bc79542773b2b",
+      "git_blob_sha1": "fbafa5582d9679e2ca1318d9c5007818cb6b5a87",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/distfiles/examples.zip",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/distfiles/examples.zip",
+      "bytes": 34,
+      "sha256": "0b2e4b65523583be0b4171ed4b6c27ab573db8e7d26063ff770b776d7116f1c6",
+      "git_blob_sha1": "5c781e43312b3de499afdfe82c750ee262d990e3",
+      "git_mode": "120000",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/distfiles/rugdoctor",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/distfiles/rugdoctor",
+      "bytes": 26,
+      "sha256": "2e1b656b6df739b71c0cd27509f2b76654248cec899f37430ff75a419b7a42e6",
+      "git_blob_sha1": "833637964b3698f6b6b2a4097fbd14a8ca68b904",
+      "git_mode": "120000",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/metadata.yml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/metadata.yml",
+      "bytes": 935,
+      "sha256": "92cbcff8567a250f1e855ebf1b9850fd1870f22025006230e00f8da8a6de6950",
+      "git_blob_sha1": "5626ec1ec3672ea7a6de7c0e9db28fd873bcf4c4",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solution/libronsolve.rb",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/solution/libronsolve.rb",
+      "bytes": 2568,
+      "sha256": "f5a2ee1c6b19a86c2766a93d7a095d096a3af29baa0531bbee8681157db807be",
+      "git_blob_sha1": "e093ecbc19ced414ae9af765da5445a217a2583c",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solution/shellcode.asm",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/solution/shellcode.asm",
+      "bytes": 856,
+      "sha256": "a7f50f97536b44812cae5e02487e926d2b5c24b3f3adcd11ec5a74b41ece6ca3",
+      "git_blob_sha1": "8f33524d508ded8294c2a96a51722ed147381957",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solution/shellcode.bin",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/solution/shellcode.bin",
+      "bytes": 91,
+      "sha256": "d8b769863bd5429bc6c1bed507eb4b5401565229085a4094d355efac342f0eb6",
+      "git_blob_sha1": "14738bfb411ba5fef671f8e09518360836ba9353",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solution/solve.rb",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/solution/solve.rb",
+      "bytes": 4019,
+      "sha256": "8783d790a505de41473fc24d3901177a1f00e135ab98394b9b0ec8bba18479da",
+      "git_blob_sha1": "85176029ebaedad87df918b43a2e239ad4b2ee42",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/distfiles/.keep",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/distfiles/.keep",
+      "kind": "attachments",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "git_mode": "100644"
+    },
+    {
+      "path": "writeups/solution/.keep",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/rugdoctor/solution/.keep",
+      "kind": "writeups",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "git_mode": "100644"
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [],
+  "attachment_complete": true,
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06"
+}

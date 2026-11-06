@@ -1,0 +1,78 @@
+{
+  "event_id": "CTF-3399",
+  "event_title": "SunshineCTF 2026",
+  "title": "Code_Breaker",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "use-after-free (uaf)",
+    "refcount-bug",
+    "tcache-poisoning",
+    "cet"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/sunshinectf/2026/code_breaker/",
+    "https://ctf42.online/ctfs/sunshinectf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Code_Breaker"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/SunshineCTF-2026/tree/main/pwn/code-breaker"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Code_Breaker",
+    "https://ctf42.online/ctfs/sunshinectf/2026/code_breaker/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/sunshinectf_2026/Code_Breaker/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/SunshineCTF-2026/main/pwn/code-breaker/README.md",
+      "bytes": 4316,
+      "sha256": "9acf82a8ded6647c64dedfce69446871666688fba1963abf12ad6cace473baa5",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/sunshinectf_2026/Code_Breaker/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SunshineCTF/2026/pwn/Code_Breaker/README.md",
+      "bytes": 158,
+      "sha256": "1c9b6c1d2f77d714808a14b41f0311f6f53ad03ec29a104d381624ea446ae679",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/sunshinectf_2026/Code_Breaker/attachments/upstream/code_breaker",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SunshineCTF/2026/pwn/Code_Breaker/code_breaker",
+      "bytes": 14640,
+      "sha256": "ed7201eba1a5a77159eb3332d5419e80f63a4002e8bf51363a7ffe4a8cd32bd8",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/sunshinectf_2026/Code_Breaker/attachments/upstream/ld-linux-x86-64.so.2",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SunshineCTF/2026/pwn/Code_Breaker/ld-linux-x86-64.so.2",
+      "bytes": 236616,
+      "sha256": "854a9eb45875e00f48e1e89d40251317931d2d82555ab612d6090beba0c9f972",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/sunshinectf_2026/Code_Breaker/attachments/upstream/libc.so.6",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SunshineCTF/2026/pwn/Code_Breaker/libc.so.6",
+      "bytes": 2125328,
+      "sha256": "c1e50a701d3245c8c45a1ba40151efe414ac41d2c9ae604087b4875e0d85c4fb",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/sunshinectf/2026/code_breaker/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/sunshinectf/2026/code_breaker/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

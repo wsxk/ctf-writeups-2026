@@ -1,0 +1,21 @@
+services:
+  average:
+    image: cybersecnatlab/challenge-jail:ubuntu-noble@sha256:2d1e046fa7bb27a6b7d1dba44379b722c0498b40bf9db1a84c47be1ecc09752a
+    restart: unless-stopped
+    container_name: pwn05-PT2
+    privileged: true
+    init: true
+    ports:
+      - "9005:1337"
+    volumes:
+      - "./PT2:/home/user/chall:ro"
+      - "./ld-linux-x86-64.so.2:/home/user/ld-linux-x86-64.so.2:ro"
+      - "./libc.so.6:/home/user/libc.so.6:ro"
+    environment:
+      - "MALLOC_ARENA_MAX=1"
+      - "FLAG=pascalCTF{1_w15h_1t_w4s_4s_e4sy_t0_g3t_4_10_1n_n3tw0rks}"
+      - "FLAG_IN_ENV=true"
+      - "FORWARD_STDERR=true"
+      - "SET_INTERPRETER=/home/user/ld-linux-x86-64.so.2"
+      - "LD_PRELOAD=/home/user/libc.so.6"
+      - "FORWARDED_ENV=MALLOC_ARENA_MAX,LD_PRELOAD"

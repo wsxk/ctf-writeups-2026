@@ -1,0 +1,221 @@
+diff --git a/Utilities/js.cpp b/Utilities/js.cpp
+index dfb7749e09..69bd4751f3 100644
+--- a/Utilities/js.cpp
++++ b/Utilities/js.cpp
+@@ -308,12 +308,6 @@ void ReplObject::initialize(JS::Realm& realm)
+ 
+     define_direct_property("global"_utf16_fly_string, this, JS::Attribute::Enumerable);
+     u8 attr = JS::Attribute::Configurable | JS::Attribute::Writable | JS::Attribute::Enumerable;
+-    define_native_function(realm, "exit"_utf16_fly_string, exit_interpreter, 0, attr);
+-    define_native_function(realm, "help"_utf16_fly_string, repl_help, 0, attr);
+-    define_native_function(realm, "save"_utf16_fly_string, save_to_file, 1, attr);
+-    define_native_function(realm, "loadINI"_utf16_fly_string, load_ini, 1, attr);
+-    define_native_function(realm, "loadJSON"_utf16_fly_string, load_json, 1, attr);
+-    define_native_function(realm, "print"_utf16_fly_string, print, 1, attr);
+     define_native_function(realm, "gc"_utf16_fly_string, gc, 0, attr);
+ 
+     define_native_accessor(
+@@ -400,9 +394,6 @@ void ScriptObject::initialize(JS::Realm& realm)
+ 
+     define_direct_property("global"_utf16_fly_string, this, JS::Attribute::Enumerable);
+     u8 attr = JS::Attribute::Configurable | JS::Attribute::Writable | JS::Attribute::Enumerable;
+-    define_native_function(realm, "loadINI"_utf16_fly_string, load_ini, 1, attr);
+-    define_native_function(realm, "loadJSON"_utf16_fly_string, load_json, 1, attr);
+-    define_native_function(realm, "print"_utf16_fly_string, print, 1, attr);
+     define_native_function(realm, "gc"_utf16_fly_string, gc, 0, attr);
+ }
+ 
+diff --git a/Meta/JSOnly/CMakeLists.txt b/Meta/JSOnly/CMakeLists.txt
+new file mode 100644
+index 0000000000..63f4f6051c
+--- /dev/null
++++ b/Meta/JSOnly/CMakeLists.txt
+@@ -0,0 +1,132 @@
++cmake_minimum_required(VERSION 3.25)
++
++get_filename_component(LADYBIRD_SOURCE_DIR "${CMAKE_CURRENT_LIST_DIR}/../.." ABSOLUTE)
++list(APPEND CMAKE_MODULE_PATH "${LADYBIRD_SOURCE_DIR}/Meta/CMake")
++
++include(use_linker)
++
++if (CMAKE_TOOLCHAIN_FILE MATCHES "vcpkg.cmake$")
++    set(VCPKG_OVERLAY_TRIPLETS "${LADYBIRD_SOURCE_DIR}/Meta/CMake/vcpkg/release-triplets" CACHE STRING "" FORCE)
++    set(VCPKG_INSTALL_OPTIONS "--no-print-usage" CACHE STRING "" FORCE)
++    set(CMAKE_PROJECT_ladybird_js_only_INCLUDE_BEFORE "${LADYBIRD_SOURCE_DIR}/Meta/CMake/vcpkg/generate_vcpkg_toolchain_variables.cmake")
++
++    if (NOT DEFINED CACHE{VCPKG_TARGET_TRIPLET} AND NOT DEFINED CACHE{VCPKG_HOST_TRIPLET})
++        cmake_host_system_information(RESULT host_arch QUERY OS_PLATFORM)
++        cmake_host_system_information(RESULT host_os QUERY OS_NAME)
++
++        if (host_arch MATCHES "^(x86_64|AMD64|amd64)$")
++            set(host_arch x64)
++        elseif (host_arch MATCHES "^(aarch64|arm64|ARM64)$")
++            set(host_arch arm64)
++        elseif (host_arch STREQUAL "riscv64")
++            set(host_arch riscv64)
++        else()
++            message(FATAL_ERROR "Unable to detect vcpkg architecture. Set VCPKG_TARGET_TRIPLET manually.")
++        endif()
++
++        if (host_os STREQUAL "Linux")
++            set(host_os linux)
++        elseif (host_os MATCHES "Darwin|macOS")
++            set(host_os osx)
++        elseif (host_os MATCHES "Windows")
++            set(host_os windows)
++        elseif (host_os MATCHES "FreeBSD")
++            set(host_os freebsd)
++        else()
++            message(FATAL_ERROR "Unable to detect vcpkg OS. Set VCPKG_TARGET_TRIPLET manually.")
++        endif()
++
++        set(vcpkg_triplet "${host_arch}-${host_os}")
++        if (NOT host_os STREQUAL "windows")
++            set(vcpkg_triplet "${vcpkg_triplet}-dynamic")
++        endif()
++
++        message(STATUS "Determined JS-only VCPKG_TARGET_TRIPLET: ${vcpkg_triplet}")
++        set(VCPKG_TARGET_TRIPLET "${vcpkg_triplet}" CACHE STRING "")
++        set(VCPKG_HOST_TRIPLET "${vcpkg_triplet}" CACHE STRING "")
++    endif()
++endif()
++
++project(ladybird_js_only
++    VERSION 0.1.0
++    LANGUAGES C CXX
++    DESCRIPTION "Ladybird LibJS standalone shell"
++)
++
++set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
++set(ENABLE_GUI_TARGETS OFF CACHE BOOL "" FORCE)
++set(ENABLE_INSTALL_HEADERS OFF CACHE BOOL "" FORCE)
++set(ENABLE_INSTALL_FREEDESKTOP_FILES OFF CACHE BOOL "" FORCE)
++set(LADYBIRD_ENABLE_CPPTRACE OFF CACHE BOOL "" FORCE)
++
++include(compile_options)
++include(cmake_options)
++include(lagom_install)
++include(rust_crate)
++include(targets)
++
++find_package(PkgConfig REQUIRED)
++
++find_package(mimalloc CONFIG REQUIRED)
++find_package(Backtrace)
++find_package(FastFloat CONFIG REQUIRED)
++find_package(fmt CONFIG REQUIRED)
++find_package(simdutf REQUIRED)
++find_package(ICU 78.2 EXACT REQUIRED COMPONENTS data i18n uc)
++find_package(OpenSSL REQUIRED)
++find_package(Python3 REQUIRED COMPONENTS Interpreter)
++find_package(simdjson CONFIG REQUIRED)
++find_package(Threads REQUIRED)
++
++pkg_check_modules(libtommath REQUIRED IMPORTED_TARGET libtommath)
++pkg_check_modules(LIBPSL REQUIRED IMPORTED_TARGET libpsl)
++if (NOT WIN32 AND NOT ANDROID)
++    pkg_check_modules(LIBEDIT REQUIRED IMPORTED_TARGET libedit)
++endif()
++
++add_library(JSClangPlugin INTERFACE)
++add_library(GenericClangPlugin INTERFACE)
++add_lagom_library_install_rules(GenericClangPlugin)
++add_lagom_library_install_rules(JSClangPlugin)
++
++include_directories("${LADYBIRD_SOURCE_DIR}")
++include_directories("${LADYBIRD_SOURCE_DIR}/Libraries")
++include_directories("${CMAKE_BINARY_DIR}")
++include_directories("${CMAKE_BINARY_DIR}/Libraries")
++
++function(add_ladybird_source_dir relative_path)
++    add_subdirectory("${LADYBIRD_SOURCE_DIR}/${relative_path}" "${CMAKE_BINARY_DIR}/${relative_path}")
++endfunction()
++
++add_ladybird_source_dir(AK)
++add_ladybird_source_dir(Libraries/LibCore)
++add_ladybird_source_dir(Libraries/LibFileSystem)
++add_ladybird_source_dir(Libraries/LibMain)
++add_ladybird_source_dir(Libraries/LibRegex)
++add_ladybird_source_dir(Libraries/LibSync)
++add_ladybird_source_dir(Libraries/LibTextCodec)
++add_ladybird_source_dir(Libraries/LibUnicode)
++add_ladybird_source_dir(Libraries/LibURL)
++add_ladybird_source_dir(Libraries/LibCrypto)
++add_ladybird_source_dir(Libraries/LibGC)
++add_ladybird_source_dir(Libraries/LibJS)
++add_ladybird_source_dir(Libraries/LibSyntax)
++add_ladybird_source_dir(Libraries/LibThreading)
++
++set(js_libraries
++    LibCrypto
++    LibJS
++    LibMain
++    LibTextCodec
++    LibGC
++    Threads::Threads
++)
++
++if (NOT WIN32)
++    list(APPEND js_libraries PkgConfig::LIBEDIT)
++endif()
++
++ladybird_utility(js
++    SOURCES "${LADYBIRD_SOURCE_DIR}/Utilities/js.cpp"
++    LIBS ${js_libraries}
++)
+diff --git a/Meta/JSOnly/vcpkg.json b/Meta/JSOnly/vcpkg.json
+new file mode 100644
+index 0000000000..7f46fdf355
+--- /dev/null
++++ b/Meta/JSOnly/vcpkg.json
+@@ -0,0 +1,19 @@
++{
++  "builtin-baseline": "48cfe1e0e928341709d97fc3d2eff10ad6262c96",
++  "dependencies": [
++    "fast-float",
++    "fmt",
++    "icu",
++    "libtommath",
++    "mimalloc",
++    "openssl",
++    "simdjson",
++    "simdutf"
++  ],
++  "overrides": [
++    {
++      "name": "mimalloc",
++      "version": "2.2.7#0"
++    }
++  ]
++}
+diff --git a/Meta/JSOnly/build.sh b/Meta/JSOnly/build.sh
+new file mode 100644
+index 0000000000..6ebccedace
+--- /dev/null
++++ b/Meta/JSOnly/build.sh
+@@ -0,0 +1,16 @@
++#!/usr/bin/env bash
++set -euo pipefail
++
++root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
++build_dir="${LADYBIRD_JS_ONLY_BUILD_DIR:-${root}/Build/js-only}"
++
++python3 "${root}/Meta/Utils/build_vcpkg.py"
++
++cmake -S "${root}/Meta/JSOnly" \
++    -B "${build_dir}" \
++    -G Ninja \
++    -DCMAKE_BUILD_TYPE=RelWithDebInfo \
++    -DCMAKE_TOOLCHAIN_FILE="${root}/Build/vcpkg/scripts/buildsystems/vcpkg.cmake" \
++    "$@"
++
++cmake --build "${build_dir}" --target js
+diff --git a/Meta/JSOnly/rust-toolchain.toml b/Meta/JSOnly/rust-toolchain.toml
+new file mode 100644
+index 0000000000..4f0430eac9
+--- /dev/null
++++ b/Meta/JSOnly/rust-toolchain.toml
+@@ -0,0 +1,3 @@
++[toolchain]
++channel = "1.96.0"
++components = ["rustfmt", "clippy"]

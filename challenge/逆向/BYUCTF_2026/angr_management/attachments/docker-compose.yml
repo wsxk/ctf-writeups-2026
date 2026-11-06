@@ -1,0 +1,9 @@
+services:
+  angr_management:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "1374:5000"
+    privileged: true

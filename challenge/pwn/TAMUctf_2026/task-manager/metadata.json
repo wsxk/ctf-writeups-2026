@@ -1,0 +1,131 @@
+{
+  "event_id": "CTF-3095",
+  "event_title": "TAMUctf 2026",
+  "category": "pwn",
+  "title": "task-manager",
+  "source_urls": [
+    "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/pwn/task-manager",
+    "https://ctftime.org/event/3095/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/task-manager/README.md",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/task-manager/solve.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/task-manager/solver-template.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/task-manager/Dockerfile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/task-manager/Makefile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/task-manager/config.toml",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/task-manager/flag.txt",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/task-manager/task-manager.c",
+    "https://media.githubusercontent.com/media/ACM-VIT/z0d1ak-writeups/HEAD/TAMUctf%202026/pwn/Task%20Manager/task-manager.tar.gz"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。",
+    "补充的 original_distribution/*.tar.gz 是参赛队保存的原分发包镜像，LFS SHA-256已校验。"
+  ],
+  "repository": "tamuctf/tamuctf-2026",
+  "repository_tree_sha": "c25f8b673b2a24b5316d164666be8b84d8f02d6b",
+  "artifacts": [
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/task-manager/Dockerfile",
+      "bytes": 544,
+      "sha256": "8deeea63145ca24be0f55a4ebad8f0aea4ca3c72ac2980314fd6e567d6f270b3",
+      "git_blob_sha1": "4785e35f149db7e4e39e1bbcef678e4fb65287f5",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/Makefile",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/task-manager/Makefile",
+      "bytes": 2461,
+      "sha256": "f7e8c5cbb96e424eb5230ae91d6fa06a100bd88721e9edff3ae99c1cb655d30f",
+      "git_blob_sha1": "922e8f999d8c07cbc024da6f317bed6596a4e77c",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/task-manager/README.md",
+      "bytes": 252,
+      "sha256": "dafbc4c87bf2bb9d41e15f85d680d68edf718e9713b9d02b9bf06f690a1c69af",
+      "git_blob_sha1": "8f373e08815ecd97f23c33a9cbd2b212e0571daa",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/config.toml",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/task-manager/config.toml",
+      "bytes": 1102,
+      "sha256": "fff5843730ec72345c06fa6745c54ff8822f3c7e9b4cc9dc62f9b201d094bd3f",
+      "git_blob_sha1": "70e8f97124eae01b92b4bdaf710e19b71e63e4be",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flag.txt",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/task-manager/flag.txt",
+      "bytes": 47,
+      "sha256": "2f7f0883aaede31892ef900734be4d6b2269618d4a641439989d377a927e7e79",
+      "git_blob_sha1": "6b7df6ae3b5bbb8ff7b08b3869f5d63e41b90735",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve.py",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/task-manager/solve.py",
+      "bytes": 2190,
+      "sha256": "caedc4d2a769489717cb0d8a0cc0e0f24a884432d1ba9e33594248c3c8280601",
+      "git_blob_sha1": "ce022394e0966eb2d7378e38a166823a3f9c0542",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solver-template.py",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/task-manager/solver-template.py",
+      "bytes": 143,
+      "sha256": "aee991616db3749fa4404dbc37ed3db335fff09925f61f1cad97ced59fa72676",
+      "git_blob_sha1": "a43a3e53b5ab0d1c485c3722a46a3d31e84428ea",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/task-manager.c",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/task-manager/task-manager.c",
+      "bytes": 4223,
+      "sha256": "a0dd4a7fb56b10cfc949f1d94303c4f7d803bfc22443e5a0a1bf59f2a2628261",
+      "git_blob_sha1": "5fb95861546001fecaa371553ffea46d9aacc195",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/original_distribution/task-manager.tar.gz",
+      "url": "https://media.githubusercontent.com/media/ACM-VIT/z0d1ak-writeups/HEAD/TAMUctf%202026/pwn/Task%20Manager/task-manager.tar.gz",
+      "bytes": 976076,
+      "sha256": "962888663b2c0287c340419333e26c9aee22ce2a2bf615eccf64a00260827938",
+      "kind": "attachments"
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/README.md"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

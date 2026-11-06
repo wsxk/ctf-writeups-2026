@@ -1,0 +1,41 @@
+## Walkthrough 
+
+The flag is in the image resources `sonnet.xml`, `cadence.xml`, `lyra.xml`, `arya.xml` and `tempo.xml`. These have characters in purple and green, but the purple background hides the flag. You have to change the background color to any other color to view the purple text. 
+
+If you look at `FrameActivity.kt`, you'll notice that if `rightPitch` is `true` the background color is set to `#8DC63F`, which will hide the green text and only show the purple text. 
+
+## Using Frida
+
+To set-up Frida on your laptop,
+
+````
+pip3 install frida-tools
+````
+
+To figure out the architecture of the emulator image,
+
+````
+adb shell getprop ro.product.cpu.abi
+````
+
+Then download the corresponding `frida-server` from [Github](https://github.com/frida/frida/release). Then copy the Frida server to the emulator and start it.
+
+````
+adb root
+adb push <path_to_frida_server> /data/local/tmp/frida-server
+adb shell chmod 755 /data/local/tmp/frida-server
+adb shell /data/local/tmp/frida-server &
+frida -U -f com.bsidessf.doremi -l hook.js
+````
+
+I used Pixel 6 Android 13.0 build, with Api 33. In order to use adb root, you need to use a non-production Android build i.e., a Google APIs build vs. a Google Play build.
+
+## Using APKtool 
+
+`java -jar apktool_2.12.1.jar doremi.apk` 
+
+Pull the files `sonnet.xml`, `cadence.xml`, `lyra.xml`, `arya.xml` and `tempo.xml` from `res/drawable`. 
+
+You can use `python3 solution.py` to create `combined.svg` with the flag. 
+
+

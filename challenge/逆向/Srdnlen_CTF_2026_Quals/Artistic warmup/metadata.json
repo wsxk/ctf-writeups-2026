@@ -1,0 +1,71 @@
+{
+  "event_id": "CTF-3043",
+  "event_title": "Srdnlen CTF 2026 Quals",
+  "category": "逆向",
+  "title": "Artistic warmup",
+  "dirname": "Srdnlen_CTF_2026_Quals",
+  "source_urls": [
+    "https://github.com/srdnlen/srdnlenctf-2026_public/tree/HEAD/rev_artistic_warmup"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_artistic_warmup/attachments/rev_artistic_warmup.exe",
+      "local": "attachments/attachments/rev_artistic_warmup.exe",
+      "size_expected": 1085952,
+      "git_blob_sha": "c0605da4e65f0f0a1b08cfdc8be44d6e5b86650d",
+      "status": "downloaded",
+      "bytes": 1085952,
+      "sha256": "99865b14dfddc10860edab425bfcd9f4a1e4ec06188159557593b745cea144e2"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_artistic_warmup/authors.txt",
+      "local": "attachments/authors.txt",
+      "size_expected": 21,
+      "git_blob_sha": "77fa647c5a2eb33585712f8ae7ff477b0f8d5837",
+      "status": "downloaded",
+      "bytes": 21,
+      "sha256": "3f76d0f03f3050b8a6e0ac779a178c5fe600862c089eff1e69f3c01a25395efc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_artistic_warmup/description.md",
+      "local": "attachments/description.md",
+      "size_expected": 19,
+      "git_blob_sha": "45c3465839944a7546084b787ae258a62276c827",
+      "status": "downloaded",
+      "bytes": 19,
+      "sha256": "4b657b1103feb1387dc90915e2215b2b5241e6dd0ff574286a42833b4ecb067e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_artistic_warmup/title.txt",
+      "local": "attachments/title.txt",
+      "size_expected": 16,
+      "git_blob_sha": "c07f468b08216f41d148620dc58f8ef9313ee80e",
+      "status": "downloaded",
+      "bytes": 16,
+      "sha256": "ad303efd558d5d2ca89d04f6dcf46a9a4c04b85c3f3758d8bbdf28d651ae040b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_artistic_warmup/writeup.md",
+      "local": "writeups/writeup.md",
+      "size_expected": 2759,
+      "git_blob_sha": "26d8e1ca2f5590d043270651012b10178dff3016",
+      "status": "downloaded",
+      "bytes": 2759,
+      "sha256": "9b8ab9c3fb4d0fcbdcdc1e6eee06db3436bf71933c8b77d70643435d1404fdfb"
+    }
+  ],
+  "notes": "官方题目附件和完整官方 writeup。",
+  "directory": "逆向/Srdnlen_CTF_2026_Quals/Artistic warmup",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_artistic_warmup/writeup.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_artistic_warmup/attachments/rev_artistic_warmup.exe",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_artistic_warmup/authors.txt",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_artistic_warmup/description.md",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_artistic_warmup/title.txt"
+  ],
+  "attachment_status": "downloaded"
+}

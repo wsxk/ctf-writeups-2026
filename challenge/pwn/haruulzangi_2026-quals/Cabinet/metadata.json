@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3379",
+  "event_title": "Haruulzangi CTF 2026 Qualifier",
+  "title": "Cabinet",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "oob-write",
+    "function-pointer-overwrite",
+    "game-replay"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/haruulzangi/2026-quals/cabinet/",
+    "https://ctf42.online/ctfs/haruulzangi/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/pwn/Cabinet"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/pwn/cabinet"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/pwn/Cabinet",
+    "https://ctf42.online/ctfs/haruulzangi/2026-quals/cabinet/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/haruulzangi_2026-quals/Cabinet/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/main/pwn/cabinet/README.md",
+      "bytes": 4101,
+      "sha256": "03bd7f804b92fae657bec0bc18609b260ae10720d4686987a509c66077428316",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/haruulzangi_2026-quals/Cabinet/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Haruulzangi/2026/Quals/pwn/Cabinet/README.md",
+      "bytes": 677,
+      "sha256": "3978b803dac63bd5b8739ca7e8cb6785649de12303f9a3adf9a3feff0624b122",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/haruulzangi_2026-quals/Cabinet/attachments/upstream/pwn_cabinet.tar.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Haruulzangi/2026/Quals/pwn/Cabinet/pwn_cabinet.tar.gz",
+      "bytes": 889130,
+      "sha256": "5305766cfbde751fe332961e954204132a3d4162da84c49cfbdf33979452e160",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/cabinet/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/haruulzangi/2026-quals/cabinet/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

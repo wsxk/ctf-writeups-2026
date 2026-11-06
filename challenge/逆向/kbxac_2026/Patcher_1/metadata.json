@@ -1,0 +1,61 @@
+{
+  "event_id": "CTF-3456",
+  "event_title": "kBxAc CTF 2026",
+  "title": "Patcher_1",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "binary-patching"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/kbxac/2026/patcher_1/",
+    "https://ctf42.online/ctfs/kbxac/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/Patcher_1"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/rev/patcher-1"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/Patcher_1",
+    "https://ctf42.online/ctfs/kbxac/2026/patcher_1/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/kbxac_2026/Patcher_1/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/kBxAc-CTF-2026/main/rev/patcher-1/README.md",
+      "bytes": 5050,
+      "sha256": "36a633e9b3a0b9737dbd7fe47d869c8f60a0fd1728615066a156143d842f1ccb",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/kbxac_2026/Patcher_1/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/KBxAc/2026/rev/Patcher_1/README.md",
+      "bytes": 545,
+      "sha256": "45d3db4ac739eaed4f1f6a7df70e9aea1fd126abb4701d048d894d2ee22de745",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/kbxac_2026/Patcher_1/attachments/upstream/patcher1.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/KBxAc/2026/rev/Patcher_1/patcher1.zip",
+      "bytes": 8684,
+      "sha256": "73c0fd7567d9b8046c74fea869363f73156d4069ba2eccd26fdc6b2a7927e3e4",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/kbxac/2026/patcher_1/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/kbxac/2026/patcher_1/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

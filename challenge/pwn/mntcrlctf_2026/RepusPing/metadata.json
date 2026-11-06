@@ -1,0 +1,61 @@
+{
+  "event_id": "CTF-3282",
+  "event_title": "MntcrlCTF 2026",
+  "title": "RepusPing",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "ptr-guard-key-recovery"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/mntcrlctf/2026/repusping/",
+    "https://ctf42.online/ctfs/mntcrlctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/MntcrlCTF/2026/pwn/RepusPing"
+  ],
+  "writeup_urls": [
+    "https://blog.davidherm.es/posts/repusping"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/MntcrlCTF/2026/pwn/RepusPing",
+    "https://ctf42.online/ctfs/mntcrlctf/2026/repusping/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/mntcrlctf_2026/RepusPing/writeups/1_writeup.html",
+      "url": "https://blog.davidherm.es/posts/repusping",
+      "bytes": 519823,
+      "sha256": "35f6d262854ac2799a594eda74055a1b85c08dccdf7e6bf7abafab89bf39be9a",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/mntcrlctf_2026/RepusPing/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/MntcrlCTF/2026/pwn/RepusPing/README.md",
+      "bytes": 17,
+      "sha256": "701baa9d864f3c8693cb42bbaa7d179f3f686d6453c1529da5ce8070aad28e3c",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/mntcrlctf_2026/RepusPing/attachments/upstream/RepusPing.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/MntcrlCTF/2026/pwn/RepusPing/RepusPing.zip",
+      "bytes": 1018894,
+      "sha256": "fab12cc6c8ce39a6856b31610a982aa924a96e1aee51b4179262111faff89eed",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/mntcrlctf/2026/repusping/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/mntcrlctf/2026/repusping/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

@@ -1,0 +1,64 @@
+{
+  "event_id": "CTF-2937",
+  "event_title": "UMassCTF 2026",
+  "title": "Brick_by_Brick",
+  "category": "iot",
+  "original_category": "Hardware",
+  "tags": [
+    "uart",
+    "logic-analyzer",
+    "signal-decoding"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/umassctf/2026/brick_by_brick/",
+    "https://ctf42.online/ctfs/umassctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMassCTF/2026/hw/Brick_by_Brick"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/UMASSCTF-2026-writeups/tree/main/UMASSCTF-2026-writeups/hardware/brick-by-brick"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMassCTF/2026/hw/Brick_by_Brick",
+    "https://ctf42.online/ctfs/umassctf/2026/brick_by_brick/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "按嵌入式硬件、无线协议或PCB分析归入IoT相关题；赛事原分类为Hardware。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "iot/umassctf_2026/Brick_by_Brick/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/UMASSCTF-2026-writeups/main/UMASSCTF-2026-writeups/hardware/brick-by-brick/README.md",
+      "bytes": 7706,
+      "sha256": "4b738014761015e08b415d64262478705adfccfa782aed3d61c527d8b177c011",
+      "kind": "writeup"
+    },
+    {
+      "path": "iot/umassctf_2026/Brick_by_Brick/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMassCTF/2026/hw/Brick_by_Brick/README.md",
+      "bytes": 235,
+      "sha256": "bf5caf909f18911dca7850bb159cae166fff20fa7553abc2a24c79db7b70f9e8",
+      "kind": "attachment"
+    },
+    {
+      "path": "iot/umassctf_2026/Brick_by_Brick/attachments/upstream/brick-by-brick.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMassCTF/2026/hw/Brick_by_Brick/brick-by-brick.zip",
+      "bytes": 455021,
+      "sha256": "8d0ed4b8e9eab3e9b8071448bc35a81db2a4231fb008f43e760800cfb44b085b",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/umassctf/2026/brick_by_brick/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/umassctf/2026/brick_by_brick/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

@@ -1,0 +1,61 @@
+{
+  "event_id": "CTF-3280",
+  "event_title": "LYKNCTF",
+  "title": "Ez_Pwn",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "signed-integer-overflow"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/lyknctf/2026/ez_pwn/",
+    "https://ctf42.online/ctfs/lyknctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/pwn/Ez_Pwn"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/lyknctf-2026-pwn-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/pwn/Ez_Pwn",
+    "https://ctf42.online/ctfs/lyknctf/2026/ez_pwn/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/lyknctf_2026/Ez_Pwn/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/lyknctf-2026-pwn-writeup/",
+      "bytes": 138628,
+      "sha256": "9e2f087e1fc8807e98776eb4875cba7875eb46382b738b8e02675bfceec8b663",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/lyknctf_2026/Ez_Pwn/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/LYKNCTF/2026/pwn/Ez_Pwn/README.md",
+      "bytes": 46,
+      "sha256": "eeb560c073486ab79f9f8a9947ba476477b30cbe42bebea2bbe58b7000d9c73d",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/lyknctf_2026/Ez_Pwn/attachments/upstream/chall",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/LYKNCTF/2026/pwn/Ez_Pwn/chall",
+      "bytes": 16208,
+      "sha256": "1ca828baaf9170d25fbbbb8d7414fa0aa360a770056bba05ed36adb6c9723765",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/lyknctf/2026/ez_pwn/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/lyknctf/2026/ez_pwn/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

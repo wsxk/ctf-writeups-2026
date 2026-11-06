@@ -1,0 +1,49 @@
+{
+  "event_id": "CTF-3159",
+  "event_title": "PwnSec CTF 2026",
+  "title": "Operation_Split_Horizon",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "pcap-analysis",
+    "malware-analysis",
+    "exfiltration"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/pwnsec/2026/operation_split_horizon/",
+    "https://ctf42.online/ctfs/pwnsec/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/Operation_Split_Horizon"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/rev/operation-split-horizon"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/Operation_Split_Horizon",
+    "https://ctf42.online/ctfs/pwnsec/2026/operation_split_horizon/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/pwnsec_2026/Operation_Split_Horizon/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/pwnsec-ctf-2026/main/rev/operation-split-horizon/README.md",
+      "bytes": 8127,
+      "sha256": "c6e8f32d5ce305cef8e13d42324cbc107bf765d99162b4d957b240ef34ae3e3f",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/pwnsec_2026/Operation_Split_Horizon/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/pwnsec/2026/operation_split_horizon/folder.zip?kind=files",
+      "bytes": 243470,
+      "sha256": "033e54fd225cd5505c8552d194f2cb8f20315fb385ed1cb05fb530bdb021e122",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

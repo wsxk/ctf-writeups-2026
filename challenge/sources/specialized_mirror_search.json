@@ -1,0 +1,77 @@
+{
+  "records": [
+    {
+      "event_id": "CTF-3276",
+      "category": "iot",
+      "title": "Tiny crackme",
+      "path": "iot\\NDIAS_2026\\Tiny crackme",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "category": "车联网",
+      "title": "I Saw Our Time Pass",
+      "path": "车联网\\NDIAS_2026\\I Saw Our Time Pass",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "category": "车联网",
+      "title": "RAMN ECU D",
+      "path": "车联网\\NDIAS_2026\\RAMN ECU D",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "category": "车联网",
+      "title": "VIN Hunter",
+      "path": "车联网\\NDIAS_2026\\VIN Hunter",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3364",
+      "category": "android",
+      "title": "Backdrop",
+      "path": "android\\Securinets CTF Quals 2026\\Backdrop",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "category": "iot",
+      "title": "Suspicious device 1",
+      "path": "iot\\NDIAS_2026\\Suspicious device 1",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "category": "iot",
+      "title": "Suspicious device 2",
+      "path": "iot\\NDIAS_2026\\Suspicious device 2",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "category": "iot",
+      "title": "Suspicious device 3",
+      "path": "iot\\NDIAS_2026\\Suspicious device 3",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "errors": []
+    }
+  ],
+  "scope": "Public CTF archive mirror; historical endpoint scripts not executed."
+}

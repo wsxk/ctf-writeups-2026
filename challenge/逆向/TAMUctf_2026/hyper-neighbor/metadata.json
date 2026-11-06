@@ -1,0 +1,189 @@
+{
+  "event_id": "CTF-3095",
+  "event_title": "TAMUctf 2026",
+  "category": "逆向",
+  "title": "hyper-neighbor",
+  "dirname": "TAMUctf_2026",
+  "source_urls": [
+    "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/rev/hyper-neighbor",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TAMUctf/2026/rev/hyper_neighbor"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/Cargo.lock",
+      "local": "attachments/Cargo.lock",
+      "size_expected": 1676,
+      "git_blob_sha": "d50619c081a2c8cce0a80342780c33092f1274c4",
+      "status": "downloaded",
+      "bytes": 1676,
+      "sha256": "cfa94138b295c5d2b379064575a17931dc7630567051d11ee4f8bd7da1bc3000"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/Cargo.toml",
+      "local": "attachments/Cargo.toml",
+      "size_expected": 361,
+      "git_blob_sha": "72d5834ffeeb3bd9e0a1670d6c4350b524b83e16",
+      "status": "downloaded",
+      "bytes": 361,
+      "sha256": "31ec01dc932d424f2ba0c9f4669f282ecbbd0af69b34eefd88976fbec3cf8376"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/Dockerfile",
+      "local": "attachments/Dockerfile",
+      "size_expected": 283,
+      "git_blob_sha": "f5e42d3fc33dac698e91c3c1c8be8724416b5c07",
+      "status": "downloaded",
+      "bytes": 283,
+      "sha256": "66a96ccbdb2857180ee4a526c54b63faf1e513763231b284fb8a1ad503459724"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/Dockerfile.adjacent",
+      "local": "attachments/Dockerfile.adjacent",
+      "size_expected": 365,
+      "git_blob_sha": "08a8c4c6cc72f947842bd705b34954753153fafe",
+      "status": "downloaded",
+      "bytes": 365,
+      "sha256": "c73d7889fedb2e252c7201bbe828eaea47daea87925d5b6cf2ebbd42ddc38c40"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/Makefile",
+      "local": "attachments/Makefile",
+      "size_expected": 2452,
+      "git_blob_sha": "e1c0f76f63f65d887b68db0f6cf95ff64476e057",
+      "status": "downloaded",
+      "bytes": 2452,
+      "sha256": "290ab1d8a54b4644092c4c6072a9f03e0d204e3a8b0c8385f2ed598f98a4d947"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/README.md",
+      "local": "attachments/README.md",
+      "size_expected": 2292,
+      "git_blob_sha": "4136e52d43fc7f9e8e83299fc087ee3a85547734",
+      "status": "downloaded",
+      "bytes": 2292,
+      "sha256": "5500ab2ad97e62fd7c5910ce3ad2513a9229c5010f8378f9d4329730e26784b6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/bin/recv.rs",
+      "local": "attachments/bin/recv.rs",
+      "size_expected": 466,
+      "git_blob_sha": "c7b40d39f2931932afe80d896c6a9ffd88e3f409",
+      "status": "downloaded",
+      "bytes": 466,
+      "sha256": "cf0d5a540a93160d9d0d813ac0e58e28e9025773d5e253600d8eb4d6c8945a0c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/bin/send.rs",
+      "local": "attachments/bin/send.rs",
+      "size_expected": 620,
+      "git_blob_sha": "715e5bf60c947510fe607fe95c1f0bd3836ad672",
+      "status": "downloaded",
+      "bytes": 620,
+      "sha256": "e8b9d33af4a278f3d6a1d05dd7738aa21bb6125e231c905d5e27545908d27f4c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/config.toml",
+      "local": "attachments/config.toml",
+      "size_expected": 159,
+      "git_blob_sha": "911b90443c4f1826f40162ee5bc79a128c1b7262",
+      "status": "downloaded",
+      "bytes": 159,
+      "sha256": "18317feca42848fbf0037c43542f4fb0465b263d60634fea0c1165af9eb04747"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/flag.txt",
+      "local": "attachments/flag.txt",
+      "size_expected": 52,
+      "git_blob_sha": "dd8b592a85a7d942d3b38ef506de362b06a214a4",
+      "status": "downloaded",
+      "bytes": 52,
+      "sha256": "00373de625ed49d56d025a25f38f8e1dfbef4223bdb9d0461828923b5b46a0fc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/init.sh",
+      "local": "attachments/init.sh",
+      "size_expected": 26,
+      "git_blob_sha": "fee18b6df3e475ee3797e875bc6981baa07fe7e3",
+      "status": "downloaded",
+      "bytes": 26,
+      "sha256": "528662d867aac6ff0cb1b5ed55be15c8afe73942425d1cf2ba98a6fae812fe09"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/solve.c",
+      "local": "writeups/solve.c",
+      "size_expected": 4944,
+      "git_blob_sha": "2af5ba9a226a96ded030c9dc7f54fe09ffeb2f54",
+      "status": "downloaded",
+      "bytes": 4944,
+      "sha256": "b15fdc562e6360cfa2da5675a4de53b7168b43ba71b5dfbbca6c446895b77074"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/solve.py",
+      "local": "writeups/solve.py",
+      "size_expected": 911,
+      "git_blob_sha": "187b9c6ad6a09a7d27d7dbf1ea560ff21e368cb6",
+      "status": "downloaded",
+      "bytes": 911,
+      "sha256": "00bc3a31451cdeb4df43233cb0177d48fa053d6166a70cbfad9be440d7759393"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/solver-template.py",
+      "local": "attachments/solver-template.py",
+      "size_expected": 145,
+      "git_blob_sha": "9e05fbecf1875074ec1d7fa1e16dbe6c1695791e",
+      "status": "downloaded",
+      "bytes": 145,
+      "sha256": "b5d76e04c08211084b216d8c5fe4a3be448292fa94ad18abc3341827d5a13a49"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/src/lib.rs",
+      "local": "attachments/src/lib.rs",
+      "size_expected": 6041,
+      "git_blob_sha": "dc77b5a910de0c6fdacd20db19b1884a07f0be2d",
+      "status": "downloaded",
+      "bytes": 6041,
+      "sha256": "25ca54ec0c0bd774e557a70f007e650aee04bb87fa3697e197cc4b66ab3b21a7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/hyper_neighbor/README.md",
+      "local": "attachments/archived_handout/README.md",
+      "status": "downloaded",
+      "bytes": 241,
+      "sha256": "1beba92aacc82d46558e37bc73ca38e05703aa8c3f67486515b90497b4c7de7c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/hyper_neighbor/hyper-neighbor.tar.gz",
+      "local": "attachments/archived_handout/hyper-neighbor.tar.gz",
+      "status": "downloaded",
+      "bytes": 220770,
+      "sha256": "29f6432f1fde0f7483b1ef1974242d500a6e776a450395367b669eafd3c53812"
+    }
+  ],
+  "notes": "官方仓库源码/构建材料及求解脚本，另从sajjadium/ctf-archives的2026目录配对下载原始题包（archived_handout）。未构建或执行。",
+  "attachment_kind": "original_package_and_official_source",
+  "directory": "逆向/TAMUctf_2026/hyper-neighbor",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/solve.c",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/Cargo.lock",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/Cargo.toml",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/Dockerfile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/Dockerfile.adjacent",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/Makefile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/README.md",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/bin/recv.rs",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/bin/send.rs",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/config.toml",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/flag.txt",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/init.sh",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/solver-template.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/src/lib.rs",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/hyper_neighbor/README.md",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/hyper_neighbor/hyper-neighbor.tar.gz"
+  ],
+  "attachment_status": "downloaded"
+}

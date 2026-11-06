@@ -1,0 +1,263 @@
+{
+  "event_id": "CTF-2767",
+  "event_title": "PascalCTF 2026",
+  "category": "pwn",
+  "title": "YetAnotherNoteTaker",
+  "source_urls": [
+    "https://github.com/PascalCTF/PascalCTF-2026/tree/HEAD/pwn02",
+    "https://ctftime.org/event/2767/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/checker/__main__.py",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/checker/libs/ld-2.23.so",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/checker/libs/libc.so.6",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/checker/notetaker",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/writeup/README.md"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/attachments/notetaker.zip",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/authors.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/description.md",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/endpoint.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/flags.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/order.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/points.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/src/Makefile",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/src/docker-compose.yml",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/src/libs/ld-2.23.so",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/src/libs/libc.so.6",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/src/main.c",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/src/notetaker",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/tags.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/timeout.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/title.txt"
+  ],
+  "writeup_status": "已下载官方解题脚本（独立文字writeup未提供）",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "PascalCTF/PascalCTF-2026",
+  "repository_tree_sha": "20b80a2173b1d9459eba553c6576e4eee39f5179",
+  "artifacts": [
+    {
+      "path": "attachments/attachments/notetaker.zip",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/attachments/notetaker.zip",
+      "bytes": 878166,
+      "sha256": "27f0cac130da4e529930e3dd5afc399365146e085e29446d38c8dc33cbf213bf",
+      "git_blob_sha1": "21469808cf0026cab42f49bfe35f51b765049e00",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/authors.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/authors.txt",
+      "bytes": 27,
+      "sha256": "2cd3ec9b069701755c61e488cf102c5a60dc5722a0b99502ac4b588b598c9484",
+      "git_blob_sha1": "fee174ba05765ee81d7c963ea158d543a09ce34b",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/checker/__main__.py",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/checker/__main__.py",
+      "bytes": 1080,
+      "sha256": "ac366f69392b3cdc4ba689ecc26860cc424654730393ae05759c95ce287e501d",
+      "git_blob_sha1": "1947bc3b9756ace9209b1b63218e50474da80805",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/checker/libs/ld-2.23.so",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/checker/libs/ld-2.23.so",
+      "bytes": 162632,
+      "sha256": "bda7f01fd4270e84a0f56bb7f4432c5f35793f1bd688d52aa6ac0038506b0875",
+      "git_blob_sha1": "41c845dac79679548c0e3344544503fbb3353990",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/checker/libs/libc.so.6",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/checker/libs/libc.so.6",
+      "bytes": 1868984,
+      "sha256": "926ee3653de7b71c8567061f3a4dfbc2ea91b6df2b49a05f11351fe1addf20cf",
+      "git_blob_sha1": "2da3fb6b0796f37029b9517c7ab88175855fceab",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/checker/notetaker",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/checker/notetaker",
+      "bytes": 13152,
+      "sha256": "31183623aa9a07d3b4dae07c799a7f5e3f708a8d74d21d882722ccd98d0b0318",
+      "git_blob_sha1": "6af232b02a2e6a22953f0cf723c49db3ae46a0f7",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/description.md",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/description.md",
+      "bytes": 62,
+      "sha256": "915a18d33f89092ae1099b971ef5278858476e36b1ced490f3cb1164d238169b",
+      "git_blob_sha1": "03d3b6fc58ae990db2c065cd2f0d5aa81a286954",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/endpoint.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/endpoint.txt",
+      "bytes": 36,
+      "sha256": "190698765b71f6cc816b327fa899f2146190a82eb327aa809de8432486470dc4",
+      "git_blob_sha1": "9caf0209fff54b54e45d60d46576c1a58c1cc028",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flags.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/flags.txt",
+      "bytes": 39,
+      "sha256": "3a1c61c2eac14180d20639150f0fac685835bfeedd97df4dea70722fd3fd9ef2",
+      "git_blob_sha1": "d016c5c4b0fdd1cbdad19f55fb79e6a5a6f409ad",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/order.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/order.txt",
+      "bytes": 2,
+      "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+      "git_blob_sha1": "0cfbf08886fca9a91cb753ec8734c84fcbe52c9f",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/points.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/points.txt",
+      "bytes": 4,
+      "sha256": "792376c209f338959be4cf00c54dbf82662b90516082e23106faec4c43c69e49",
+      "git_blob_sha1": "1b79f38e25b24dcac0318f3371793a6ec204a71b",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/Makefile",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/src/Makefile",
+      "bytes": 642,
+      "sha256": "5d5414b8e6128ea8b86ab8f7da19c47e207060d4ec847d275c3a1ae2411d3402",
+      "git_blob_sha1": "8b434ce563c1089c4a2340ddb44ce010305bacb0",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/docker-compose.yml",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/src/docker-compose.yml",
+      "bytes": 480,
+      "sha256": "1cfcbbf1ad94b784e3a01c2106329b6054e545db6b96831af1ae3524a36ac3ce",
+      "git_blob_sha1": "cfe863bf4e20214ba41be7ccbad17edfdba85d40",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/libs/ld-2.23.so",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/src/libs/ld-2.23.so",
+      "bytes": 162632,
+      "sha256": "bda7f01fd4270e84a0f56bb7f4432c5f35793f1bd688d52aa6ac0038506b0875",
+      "git_blob_sha1": "41c845dac79679548c0e3344544503fbb3353990",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/libs/libc.so.6",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/src/libs/libc.so.6",
+      "bytes": 1868984,
+      "sha256": "926ee3653de7b71c8567061f3a4dfbc2ea91b6df2b49a05f11351fe1addf20cf",
+      "git_blob_sha1": "2da3fb6b0796f37029b9517c7ab88175855fceab",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/main.c",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/src/main.c",
+      "bytes": 1169,
+      "sha256": "f67b64a9884ab418702ee67f9c92cdb69463606c091f3837ca5f5f7b1ee3a2fa",
+      "git_blob_sha1": "f5c00eb5f1312ea1bd897e8aadf1bb379678d93a",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/notetaker",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/src/notetaker",
+      "bytes": 13152,
+      "sha256": "31183623aa9a07d3b4dae07c799a7f5e3f708a8d74d21d882722ccd98d0b0318",
+      "git_blob_sha1": "6af232b02a2e6a22953f0cf723c49db3ae46a0f7",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/tags.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/tags.txt",
+      "bytes": 4,
+      "sha256": "fa5713fea5d7eef2d07920b972f15234d65df152e0855048f8e8fbf655d67ebb",
+      "git_blob_sha1": "1fddbb0a0ff7e71c6b5a1c988db8cd3926dda8f3",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/timeout.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/timeout.txt",
+      "bytes": 3,
+      "sha256": "917df3320d778ddbaa5c5c7742bc4046bf803c36ed2b050f30844ed206783469",
+      "git_blob_sha1": "f599e28b8ab0d8c9c57a486c89c4a5132dcbd3b2",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/title.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/title.txt",
+      "bytes": 20,
+      "sha256": "97430490257cc4917da8be02b68a7a677a279b1336be80382a67dffc0b58d638",
+      "git_blob_sha1": "8a4b6897d71e8581d7261a205d806b07d6e568cb",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/README.md",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn02/writeup/README.md",
+      "bytes": 5,
+      "sha256": "56ba36249ea8216ad513b13df3de6c0e490ba214897674d30331f1c7e7edbef3",
+      "git_blob_sha1": "1333ed77b7e1ed056329cae96075dc558158ee69",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

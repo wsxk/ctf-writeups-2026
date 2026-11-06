@@ -1,0 +1,62 @@
+{
+  "event_id": "CTF-3249",
+  "event_title": "V1T CTF 2026",
+  "title": "Tiny",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "reversing",
+    "run-length-encoding"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/v1t/2026/tiny/",
+    "https://ctf42.online/ctfs/v1t/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/V1T/2026/rev/Tiny"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/v1t-ctf-2026-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/V1T/2026/rev/Tiny",
+    "https://ctf42.online/ctfs/v1t/2026/tiny/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/v1t_2026/Tiny/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/v1t-ctf-2026-writeup/",
+      "bytes": 189106,
+      "sha256": "ca9e1b6a0252bc7e14e81607c9ece4c3942d01c89030cd8601786fe677c11294",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/v1t_2026/Tiny/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/V1T/2026/rev/Tiny/README.md",
+      "bytes": 74,
+      "sha256": "41c37045541335d63a837f2f4f6a1bbafbf8b5bbb8d026caa3f221e921aa0b11",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/v1t_2026/Tiny/attachments/upstream/tini_rev",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/V1T/2026/rev/Tiny/tini_rev",
+      "bytes": 904,
+      "sha256": "1810b95a7823e111b77533bead4c4ee46aba8c4e7a717d3b9ddc5b2eeea996c1",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/v1t/2026/tiny/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/v1t/2026/tiny/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

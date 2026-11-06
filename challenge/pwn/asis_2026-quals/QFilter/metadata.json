@@ -1,0 +1,48 @@
+{
+  "event_id": "CTF-3033",
+  "event_title": "ASIS CTF Quals 2026",
+  "title": "QFilter",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "quickjs",
+    "js-engine-exploitation"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/asis/2026-quals/qfilter/",
+    "https://ctf42.online/ctfs/asis/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/pwn/QFilter"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/pwn/qfilter"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/pwn/QFilter",
+    "https://ctf42.online/ctfs/asis/2026-quals/qfilter/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/asis_2026-quals/QFilter/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/ASIS-CTF-Quals-2026/main/pwn/qfilter/README.md",
+      "bytes": 5965,
+      "sha256": "8162861f2b6977dba7fc51dd5ba4ff4231697f1d9235efc62fbc0f84c54dc8dc",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/asis_2026-quals/QFilter/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/asis/2026-quals/qfilter/folder.zip?kind=files",
+      "bytes": 702091,
+      "sha256": "0f6d57871673ee0c51312b0ea81568c32df1b7e4316abaf1dc7f56b7f588a619",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

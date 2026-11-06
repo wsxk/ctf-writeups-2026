@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>the_fish · LA 2026 (reverse) writeup · ctf42</title>
+  
+
+<meta name="description" content="the_fish: Reverse challenge from LA 2026. Techniques: collatz, number-encoding. pstorm The fish asks you for the flag. Unfortunately, it can only describe…">
+<link rel="canonical" href="https://ctf42.online/ctfs/la/2026/the_fish/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/la/2026/the_fish/">
+<meta property="og:title" content="the_fish">
+<meta property="og:description" content="the_fish: Reverse challenge from LA 2026. Techniques: collatz, number-encoding. pstorm The fish asks you for the flag. Unfortunately, it can only describe…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/la/">LA</a> / <a href="/ctfs/la/2026/">2026</a> / the_fish</nav>
+
+
+<div class="challenge-head">
+  <h1>the_fish
+    </h1>
+  <div class="badges">
+    <a class="cat cat-rev" href="/category/rev/">Reverse</a>
+    
+    
+    
+    <a class="tag" href="/techniques/collatz/">#collatz</a><a class="tag" href="/techniques/number-encoding/">#number-encoding</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/la/2026/the_fish/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/la/2026/the_fish/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  
+  <p class="meta">Flag format: <code class="flag-format">lactf{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>pstorm
+The fish asks you for the flag. Unfortunately, it can only describe it to you in its own words.</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>the_fish — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/LACTF2026/tree/master/rev/the_fish" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/LACTF2026/tree/master/rev/the_fish</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/la/2026/the_fish/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LA/2026/rev/the_fish" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/la/2026/the_fish/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from LA 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/la/2026/lazy_bigrams/">lazy_bigrams</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/la/2026/misdirection/">misdirection</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/la/2026/not_so_lazy_trigrams/">not_so_lazy_trigrams</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/la/2026/sisyphus/">sisyphus</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/la/2026/six_seven/">six_seven</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/la/2026/six_seven_again/">six_seven_again</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/la/2026/slow_gold/">slow_gold</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/la/2026/spreading_secrets/">spreading_secrets</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/la/2026/the_clock/">the_clock</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/la/2026/ttyspin/">ttyspin</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/la/2026/cat_bomb/">cat_bomb</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/la/2026/endians/">endians</a> <span class="cat cat-misc cat-xs">Misc</span></li>
+      </ul>
+      <a class="small" href="/ctfs/la/2026/">All LA 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

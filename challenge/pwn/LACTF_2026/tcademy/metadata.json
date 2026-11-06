@@ -1,0 +1,142 @@
+{
+  "event_id": "CTF-3015",
+  "event_title": "LA CTF 2026",
+  "category": "pwn",
+  "title": "tcademy",
+  "source_urls": [
+    "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/pwn/tcademy",
+    "https://ctftime.org/event/3015/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/Dockerfile",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/Makefile",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/chall",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/chall.c",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/chall_patched",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/challenge.yml",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/flag.txt",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/ld-linux-x86-64.so.2",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/libc.so.6"
+  ],
+  "writeup_status": "已下载官方解题脚本（独立文字writeup未提供）",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "uclaacm/lactf-archive",
+  "repository_tree_sha": "3379d4a7b36680764a34e7dc817cc3c94c244764",
+  "artifacts": [
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/Dockerfile",
+      "bytes": 199,
+      "sha256": "6017041b0bf33cbdb20c3ab549cf0a34ce20c844716eb799fb27afb0a2ee0cc4",
+      "git_blob_sha1": "ff0487623cf4d1f81775d3d0e86594da06656318",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/Makefile",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/Makefile",
+      "bytes": 571,
+      "sha256": "08afab4387931f60a19782e9a84b84fecf62667f1f523fe0be0f647b90761d31",
+      "git_blob_sha1": "a9f23d25ee7638834f4ea369e4bca42a598dbef3",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/chall",
+      "bytes": 16688,
+      "sha256": "d22abc53cf4afa9c7c84b7f34e8d7f55aa0de965d687b2c95757a6f924fe22a0",
+      "git_blob_sha1": "ba7eb5917bd31e92b9c149addb036b176babe733",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall.c",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/chall.c",
+      "bytes": 2450,
+      "sha256": "b8061d40477f29500bc020c3aef1ab55156d3cf16a2afdf0b02b5cff6c154135",
+      "git_blob_sha1": "0dd198d210a87a74e471a5a074b3edc9000b2857",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall_patched",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/chall_patched",
+      "bytes": 21880,
+      "sha256": "e7595f9483c29eb65e78ff16f28716874a1a5803592dc5f5f5721f1ef19871b1",
+      "git_blob_sha1": "c70fc309363a3f4b3dc09d32e22883751ea5ce0c",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge.yml",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/challenge.yml",
+      "bytes": 415,
+      "sha256": "502d107762816208be548385d0ead194c40605d6b20ba1bec535dd839b61b53b",
+      "git_blob_sha1": "8c34abbda47a3c60d54e8944bb9f0319122b502a",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flag.txt",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/flag.txt",
+      "bytes": 39,
+      "sha256": "a515ba8585ca7342c78e1d19376d2d41ce70f7e8390c14c42edaf3bd168aa196",
+      "git_blob_sha1": "f8b03a1ef10c2e00e1936700b0b6229bdb4cd928",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/ld-linux-x86-64.so.2",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/ld-linux-x86-64.so.2",
+      "bytes": 240936,
+      "sha256": "595bcdc306999711a5a9c787e5d01618f94eb92c4c09a178e875a324f1072d89",
+      "git_blob_sha1": "42e435171a8a211b0e0fbb912943c631d5edd10e",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/libc.so.6",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/libc.so.6",
+      "bytes": 6622840,
+      "sha256": "799afb7e84a4cfe473af8c3cf0c1ff75b6e2d40434f5f00a74c2a3e50625829f",
+      "git_blob_sha1": "eb765426ad361338a48286a4f2672e9b670b2895",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve.py",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tcademy/solve.py",
+      "bytes": 4201,
+      "sha256": "262fc0372270ac42cd8bb4499e3d23d61ca054e17a48febea3576d448c1cb205",
+      "git_blob_sha1": "d2b79383ff89d9fe602d02b9d6374f4e8b9a2c85",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

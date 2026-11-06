@@ -1,0 +1,51 @@
+{
+  "event_id": "CTF-3247",
+  "event_title": "BYUCTF 2026",
+  "category": "逆向",
+  "title": "picklerick",
+  "dirname": "BYUCTF_2026",
+  "source_urls": [
+    "https://github.com/BYU-CSA/BYUCTF-2026/tree/HEAD/rev/picklerick"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/picklerick/pickled.txt",
+      "local": "attachments/pickled.txt",
+      "size_expected": 424867,
+      "git_blob_sha": "626765a072bae53dbef0fa2a4b3fa8d643559a29",
+      "status": "downloaded",
+      "bytes": 424867,
+      "sha256": "a11358b4169375b864a1632a4bb978659ca26d33553ed524743aa17d9a954c46"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/picklerick/readme.md",
+      "local": "writeups/readme.md",
+      "size_expected": 185,
+      "git_blob_sha": "f55127fe05179071ea10ff5e0d6ae8f3b00e04ce",
+      "status": "downloaded",
+      "bytes": 185,
+      "sha256": "b74b3b2fa989253305e797ee7e028287a43c331ed00d501d8ebf4b156aebf1d9"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/picklerick/solve.py",
+      "local": "writeups/solve.py",
+      "size_expected": 371,
+      "git_blob_sha": "7448912d7f6c701c700d63ef2da2162bcf33df14",
+      "status": "downloaded",
+      "bytes": 371,
+      "sha256": "b8f7fc2ed58609aac383d9893c745b357aad90c184a24502873ab7821520dd6d"
+    }
+  ],
+  "notes": "官方比赛仓库，README包含Solve章节；保留官方解题脚本及附件。",
+  "directory": "逆向/BYUCTF_2026/picklerick",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/picklerick/readme.md",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/picklerick/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/picklerick/pickled.txt"
+  ],
+  "attachment_status": "downloaded"
+}

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ppp · SekaiCTF 2026 (pwn) writeup · ctf42</title>
+  
+
+<meta name="description" content="ppp: Pwn challenge from SekaiCTF 2026, easy. Binary Exploitation Author: Marc 0day EASY DetailsSolves (163) Description insert your typical &quot;you might…">
+<link rel="canonical" href="https://ctf42.online/ctfs/sekaictf/2026/ppp/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/sekaictf/2026/ppp/">
+<meta property="og:title" content="ppp">
+<meta property="og:description" content="ppp: Pwn challenge from SekaiCTF 2026, easy. Binary Exploitation Author: Marc 0day EASY DetailsSolves (163) Description insert your typical &quot;you might…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/sekaictf/">SekaiCTF</a> / <a href="/ctfs/sekaictf/2026/">2026</a> / ppp</nav>
+
+
+<div class="challenge-head">
+  <h1>ppp
+    </h1>
+  <div class="badges">
+    <a class="cat cat-pwn" href="/category/pwn/">Pwn</a>
+    
+    
+    <span class="chip">weight 79.25</span>
+    
+      <span class="empty">No technique tags yet.</span>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/sekaictf/2026/ppp/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/sekaictf/2026/ppp/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  <p class="meta">Author: Marc</p>
+  <p class="meta">Flag format: <code class="flag-format">SEKAI{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>Binary Exploitation</p>
+<p>Author: Marc</p>
+<p>0day
+EASY</p>
+<p>DetailsSolves (163)
+Description
+insert your typical "you might need a 0day for this" description</p>
+<p>Note
+This is a 0day challenge and we are hoping you keep th{is|ese} 0day{|s} to yourself until the vulnerabilit{y|ies} {is|are} patched.</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>ppp — writeup</b>
+    
+    
+    <span class="muted">by Abdelkader</span>
+  </header>
+  <p><a href="https://ctftime.org/writeup/40955" rel="noopener nofollow ugc" target="_blank">https://ctftime.org/writeup/40955</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/sekaictf/2026/ppp/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/pwn/ppp" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/sekaictf/2026/ppp/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from SekaiCTF 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/sekaictf/2026/open_world/">Open_World</a> <span class="cat cat-blockchain cat-xs">Blockchain</span></li><li>
+<a href="/ctfs/sekaictf/2026/outer_stellar/">Outer_Stellar</a> <span class="cat cat-blockchain cat-xs">Blockchain</span></li><li>
+<a href="/ctfs/sekaictf/2026/pp_farming/">PP_Farming</a> <span class="cat cat-blockchain cat-xs">Blockchain</span></li><li>
+<a href="/ctfs/sekaictf/2026/pp_farming_2/">PP_Farming_2</a> <span class="cat cat-blockchain cat-xs">Blockchain</span></li><li>
+<a href="/ctfs/sekaictf/2026/iihash/">Iihash</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/sekaictf/2026/apbq_rsa_iv/">apbq_rsa_iv</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/sekaictf/2026/needle_in_a_multivariate_sekai/">needLe_in_a_multivariate_sekai</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/sekaictf/2026/oneline6ryp7o/">oneline6ryp7o</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/sekaictf/2026/orbital_strike/">orbital_strike</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/sekaictf/2026/minions_in_16k/">Minions_in_16k</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/sekaictf/2026/sekaiid/">SekaiID</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/sekaictf/2026/deadgame2/">deadgame2</a> <span class="cat cat-misc cat-xs">Misc</span></li>
+      </ul>
+      <a class="small" href="/ctfs/sekaictf/2026/">All SekaiCTF 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

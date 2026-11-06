@@ -1,0 +1,48 @@
+{
+  "event_id": "CTF-3046",
+  "event_title": "BearcatCTF 2026 - Setting Sail",
+  "title": "Captain_Morgan",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "python-obfuscation",
+    "z3"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/bearcat/2026/captain_morgan/",
+    "https://ctf42.online/ctfs/bearcat/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bearcat/2026/rev/Captain_Morgan"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/bearcatctf2026/tree/main/rev/captain-morgan"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bearcat/2026/rev/Captain_Morgan",
+    "https://ctf42.online/ctfs/bearcat/2026/captain_morgan/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/bearcat_2026/Captain_Morgan/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/bearcatctf2026/main/rev/captain-morgan/README.md",
+      "bytes": 2058,
+      "sha256": "477de03fc87d67d8eb83a0297af66222e4a37bc4aed9d3d79db913a08d3978ca",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/bearcat_2026/Captain_Morgan/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/bearcat/2026/captain_morgan/folder.zip?kind=files",
+      "bytes": 13785,
+      "sha256": "c2551f7a67ec89bd8238eb204fd3f5bd153186c381b783cec472280f23a3a27a",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

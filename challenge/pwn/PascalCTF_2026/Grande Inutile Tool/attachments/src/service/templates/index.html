@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyGit - PascalCTF</title>
+    {% if turnstile_site_key %}
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    {% endif %}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: monospace;
+            background: #0d1117;
+            color: #c9d1d9;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #58a6ff;
+            margin-bottom: 8px;
+            font-size: 1.5rem;
+        }
+
+        .sub {
+            color: #8b949e;
+            font-size: 0.85rem;
+            margin-bottom: 24px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            background: #161b22;
+            border: 1px solid #30363d;
+            color: #c9d1d9;
+            font-family: monospace;
+            margin-bottom: 12px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #58a6ff;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #238636;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-family: monospace;
+        }
+
+        button:hover {
+            background: #2ea043;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+        }
+
+        .result {
+            margin-top: 16px;
+            padding: 12px;
+            background: #161b22;
+            border: 1px solid #30363d;
+        }
+
+        .result.error {
+            border-color: #f85149;
+        }
+
+        .cred {
+            color: #7ee787;
+        }
+
+        .cmd {
+            background: #0d1117;
+            padding: 8px;
+            margin-top: 8px;
+            cursor: pointer;
+        }
+
+        .hint {
+            color: #8b949e;
+            font-size: 0.8rem;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>mygit</h1>
+        <p class="sub">PascalCTF 2026</p>
+        <form id="form">
+            {% if turnstile_site_key %}
+            <div class="cf-turnstile" data-sitekey="{{ turnstile_site_key }}" data-callback="onCaptcha"></div>
+            {% endif %}
+            <button type="submit">register</button>
+        </form>
+        <div class="result" id="result" style="display:none"></div>
+    </div>
+    <script>
+        const form = document.getElementById('form');
+        const result = document.getElementById('result');
+
+        let turnstileToken = null;
+        function onCaptcha(token) { turnstileToken = token; }
+        window.onCaptcha = onCaptcha;
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            try {
+                const payload = {};
+                if (typeof turnstile !== 'undefined') {
+                    if (!turnstileToken) {
+                        throw new Error('Please complete the captcha');
+                    }
+                    payload.turnstileToken = turnstileToken;
+                }
+                const res = await fetch('/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                result.style.display = 'block';
+                if (res.ok) {
+                    result.className = 'result';
+                    result.innerHTML = `
+                        <span class="cred">${data.username}:${data.password}</span>
+                        <div class="cmd" onclick="navigator.clipboard.writeText(this.textContent)">${data.ssh_command}</div>
+                        <p class="hint">${data.hint}</p>
+                    `;
+                    if (typeof turnstile !== 'undefined') { turnstileToken = null; }
+                } else {
+                    result.className = 'result error';
+                    result.textContent = data.error;
+                    if (typeof turnstile !== 'undefined') { turnstileToken = null; }
+                }
+            } catch (err) { result.className = 'result error'; result.textContent = err.message || 'error'; }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+{
+  "event_id": "CTF-3441",
+  "event_title": "Cryovault 2026 Quals",
+  "title": "rime_scrub",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "hexagon",
+    "fault-injection",
+    "ecc-side-channel"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/cryovault/2026-quals/rime_scrub/",
+    "https://ctf42.online/ctfs/cryovault/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Cryovault/2026/Quals/rev/rime_scrub"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/Cryovault-2026-Quals/tree/main/rev/rime-scrub"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Cryovault/2026/Quals/rev/rime_scrub",
+    "https://ctf42.online/ctfs/cryovault/2026-quals/rime_scrub/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。",
+    "中断的scrubd文件已重试取得并保存哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/cryovault_2026-quals/rime_scrub/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/Cryovault-2026-Quals/main/rev/rime-scrub/README.md",
+      "bytes": 9013,
+      "sha256": "1c6a82b53a30d1e7aa7a5717f9b9ea12d9723d7f238fe043a88919f6b1ad141c",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/cryovault_2026-quals/rime_scrub/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Cryovault/2026/Quals/rev/rime_scrub/README.md",
+      "bytes": 216,
+      "sha256": "fa5d74a430d16d0e7d4da2732425dea6546e091fc8e305977fb45d72a98a2399",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/cryovault_2026-quals/rime_scrub/attachments/upstream/README.txt.xz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Cryovault/2026/Quals/rev/rime_scrub/README.txt.xz",
+      "bytes": 360,
+      "sha256": "7e635febb5f8e8932a5f510f62433eb51ceb1d6b52c2977cc1b914f9d795514a",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/cryovault_2026-quals/rime_scrub/attachments/upstream/bench.img.xz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Cryovault/2026/Quals/rev/rime_scrub/bench.img.xz",
+      "bytes": 168,
+      "sha256": "3c108e8aaaafd48d237ee1998583bfe51794f8754d273fe0c20c684a307e0bea",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/cryovault_2026-quals/rime_scrub/attachments/upstream/scrubd",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Cryovault/2026/Quals/rev/rime_scrub/scrubd",
+      "bytes": 5008,
+      "sha256": "adce334b1406a105f0a0f7a5b15070eb167c92df7834137ae852a29d038c141c",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/cryovault/2026-quals/rime_scrub/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/cryovault/2026-quals/rime_scrub/folder.zip?kind=files"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Cryovault/2026/Quals/rev/rime_scrub/scrubd",
+      "error": "('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

@@ -1,0 +1,51 @@
+{
+  "event_id": "CTF-3161",
+  "event_title": "SUCTF 2026",
+  "category": "虚拟化",
+  "title": "SU_West",
+  "dirname": "SUCTF_2026",
+  "source_urls": [
+    "https://github.com/team-su/SUCTF-2026/tree/HEAD/re/SU_West"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_West/attachments/SU_West.zip",
+      "local": "attachments/attachments/SU_West.zip",
+      "size_expected": 156854,
+      "git_blob_sha": "f4869f16e3ddb252a76f00c15a16207cd734a54f",
+      "status": "downloaded",
+      "bytes": 156854,
+      "sha256": "a06cbf0815ac2093025dd57541e6c8562bf6cbb186e2f851f37dea0e82389ee8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_West/exp/constants.txt",
+      "local": "writeups/exp/constants.txt",
+      "size_expected": 160014,
+      "git_blob_sha": "92768f22f3cac007ca7e29ec191f9dcbd3fed89a",
+      "status": "downloaded",
+      "bytes": 160014,
+      "sha256": "ae8861936501027ff2d3339be0bfe233f9782a62b258266917555cbf8fa1bffc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_West/writeup/writeup.md",
+      "local": "writeups/writeup/writeup.md",
+      "size_expected": 19426,
+      "git_blob_sha": "3d7add4674d9759cc73122c802651ab2bea9480c",
+      "status": "downloaded",
+      "bytes": 19426,
+      "sha256": "bef439f26ba9f64a7ae77e80b07a0f855c6eb71a433064de81d4c559880af1d2"
+    }
+  ],
+  "notes": "官方原分类Reverse，writeup明确分析自定义VM/虚拟化校验，主分类归虚拟化。附件分片均原样下载，不执行恢复脚本。",
+  "directory": "虚拟化/SUCTF_2026/SU_West",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_West/exp/constants.txt",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_West/writeup/writeup.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_West/attachments/SU_West.zip"
+  ],
+  "attachment_status": "downloaded"
+}

@@ -1,0 +1,73 @@
+{
+  "event_id": "CTF-3141",
+  "event_title": "TRX CTF 2026",
+  "title": "wandering",
+  "category": "虚拟化",
+  "original_category": "Reverse",
+  "tags": [
+    "reversing",
+    "vm"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/trx/2026/wandering/",
+    "https://ctf42.online/ctfs/trx/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/rev/wandering"
+  ],
+  "writeup_urls": [
+    "https://blog.rawpayload.com/blog/trx-ctf-2026-wandering-writeup",
+    "https://raw.githubusercontent.com/TheRomanXpl0it/TRX-CTF-2026/main/rev/wandering/writeup/README.md"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/rev/wandering",
+    "https://ctf42.online/ctfs/trx/2026/wandering/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。",
+    "作者官方简要说明（128×128约束N皇后问题）及完整solve子目录求解脚本，非长篇逐步文章。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/trx_2026/wandering/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TRX/2026/rev/wandering/README.md",
+      "bytes": 82,
+      "sha256": "9a40b28f3d998fe8020bbf96942c391f362b37acf4b2164a82654d7c98b6fbd2",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/trx_2026/wandering/attachments/upstream/rev_wandering.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TRX/2026/rev/wandering/rev_wandering.zip",
+      "bytes": 5547,
+      "sha256": "855b585e559e454ad3d59e71e0e2d6acedc1a03fce3ae8b555178f70d629f43a",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/trx_2026/wandering/writeups/replacement_source.md",
+      "url": "https://raw.githubusercontent.com/TheRomanXpl0it/TRX-CTF-2026/main/rev/wandering/writeup/README.md",
+      "bytes": 416,
+      "sha256": "60ad235396b818ae0ef6a0a897cb8a811b5476dc8e598dbaf244457bc5697230",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/trx_2026/wandering/writeups/official_solve.py",
+      "url": "https://raw.githubusercontent.com/TheRomanXpl0it/TRX-CTF-2026/main/rev/wandering/writeup/solve/solve.py",
+      "bytes": 2840,
+      "sha256": "195086ef044c2c70eeb01ab1deda0dfa3d2c4544d91dc02d19cfde05f7d082b6",
+      "kind": "writeup"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/trx/2026/wandering/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/trx/2026/wandering/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files",
+  "writeup_kind": "solver_with_author_outline"
+}

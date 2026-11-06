@@ -1,0 +1,61 @@
+{
+  "event_id": "CTF-3330",
+  "event_title": "Thryve CTF 2026",
+  "category": "虚拟化",
+  "title": "soul",
+  "dirname": "Thryve_CTF_2026",
+  "source_urls": [
+    "https://github.com/hax1ng/thryve-ctf-2026-writeups/tree/HEAD/rev/soul"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/soul/README.md",
+      "local": "writeups/README.md",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 9242,
+      "sha256": "e6fc20ccaf0bb92ce5539c2764f24d8e78be56840974d0a40b7451033e8a687d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/soul/solve.py",
+      "local": "writeups/solve.py",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 1447,
+      "sha256": "95d53c1f6b78b50265aa6bb00f7ce908cf5dfbee1431b6db66a337afa4c15be3"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/soul/soul_dist.7z",
+      "local": "attachments/soul_dist.7z",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 6104,
+      "sha256": "39b14ba3e003209c16cb37d8ff6aa64628402ed3a5b09c2754af4ee9a3f54bd5"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/soul/vm.asm",
+      "local": "writeups/vm.asm",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 13332,
+      "sha256": "c2676e80e7944f2519171667768113e3e337d926efb587fe0ca005d7ca5c2817"
+    }
+  ],
+  "notes": "参赛者hax1ng公开仓库，保留文章、solver及其提供的比赛原始二进制/7z包；解法未运行验证。",
+  "directory": "虚拟化/Thryve_CTF_2026/soul",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/soul/README.md",
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/soul/solve.py",
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/soul/vm.asm"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/soul/soul_dist.7z"
+  ],
+  "attachment_status": "downloaded"
+}

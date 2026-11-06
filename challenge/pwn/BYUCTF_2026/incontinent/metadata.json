@@ -1,0 +1,100 @@
+{
+  "event_id": "CTF-3247",
+  "event_title": "BYUCTF 2026",
+  "category": "pwn",
+  "title": "incontinent",
+  "source_urls": [
+    "https://github.com/BYU-CSA/BYUCTF-2026/tree/HEAD/pwn/incontinent",
+    "https://ctftime.org/event/3247/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/incontinent/README.md"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/incontinent/Dockerfile",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/incontinent/docker-compose.yml",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/incontinent/incontinent_dist",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/incontinent/src/remote_server",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/incontinent/src/start.sh"
+  ],
+  "writeup_status": "已下载正文",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "BYU-CSA/BYUCTF-2026",
+  "repository_tree_sha": "51a8050d89cc1bc0265d5b5035157edec64286e1",
+  "artifacts": [
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/incontinent/Dockerfile",
+      "bytes": 143,
+      "sha256": "f8ab9ca52aadde1c49fa0d2e9c0b7b6315b4284ac55d9685ae2bc0e480ad30cc",
+      "git_blob_sha1": "90d6f50c2a603bfc926799d3af3634d04b4f1a14",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/incontinent/README.md",
+      "bytes": 290,
+      "sha256": "3ce4f286aed501a6bf6af05ac246bea70af524fa24a90191632c817d2d8cb337",
+      "git_blob_sha1": "e33b2dc2a6c8f3a5de72a0af0862b8b1fdb95b68",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/docker-compose.yml",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/incontinent/docker-compose.yml",
+      "bytes": 162,
+      "sha256": "bbd15c34c8487d6c4f0f72b8bc48f945e50bf79f608d56e44f66a100a89a1016",
+      "git_blob_sha1": "0b736dc337872456702ae99d6e9aeef3d160c581",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/incontinent_dist",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/incontinent/incontinent_dist",
+      "bytes": 12880,
+      "sha256": "3ed8192dc96d5f8da1bcfdbafb5cbbdbbe15b7bb901a339b619671ac87cbfc80",
+      "git_blob_sha1": "09d62a7f3a709e493a6f36378535b82404609a27",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/remote_server",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/incontinent/src/remote_server",
+      "bytes": 12880,
+      "sha256": "a2c2e63dc0131fe33cc014410ae898eedce45edd502bcf1ae1dffe6f8224c7ac",
+      "git_blob_sha1": "2940e61a3346727c4cdf44a7950b35e7d75319ef",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/start.sh",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/incontinent/src/start.sh",
+      "bytes": 23,
+      "sha256": "72ad0054efdde88a8ac100c09f4096777270f11ce794f7bf343f7e3365344ac7",
+      "git_blob_sha1": "3585600385d774ae31020dcec8739b8c586604c6",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/README.md"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

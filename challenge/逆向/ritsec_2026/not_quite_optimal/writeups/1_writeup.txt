@@ -1,0 +1,460 @@
+Source: https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-2-not-quite-optimal/
+
+RITSEC CTF 2026 - Reversing Writeups (Part 2): not quite optimal
+Table of Contents
+Introduction
+Continuing my participation in
+RITSEC CTF 2026
+, this second part of the series focuses on another challenge from the Reversing category titled
+“not quite optimal”
+. As with the previous writeup, the goal here is to document the full thought process behind solving the challenge, from initial inspection of the binary to understanding its underlying logic and ultimately deriving the solution.
+This challenge immediately gave the impression that the solution would not come from following the code literally, but rather from simplifying what the program was actually doing and stripping away unnecessary complexity.
+Challenge Overview
+The following description was provided as part of the challenge, along with a binary file named
+not_quite_optimal
+:
+“whoopsies, maybe i should have used -O3”
+As usual, I started by gathering some basic information about the binary using the
+file
+command:
+$ file not_quite_optimal
+not_quite_optimal: ELF 64-bit LSB pie executable, x86-64, version
+1
+(
+SYSV
+)
+, dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID
+[
+sha1
+]=
+5f69a001550d6c07fbad739be763d40610329f39,
+for
+GNU/Linux 3.2.0, stripped
+From this output, we can extract some useful initial information. The binary is a
+64-bit ELF executable for x86-64 Linux
+and it is
+dynamically linked
+, meaning it relies on shared libraries at runtime.
+One important difference compared to the previous challenge is that this binary is compiled as a
+PIE (Position Independent Executable)
+. This means that its base address is randomized at runtime due to ASLR, which can make certain types of dynamic analysis or exploitation slightly more challenging. However, for static analysis, this does not pose a significant obstacle.
+As before, the binary is also
+stripped
+, so no symbol information is available. This means that functions and variables need to be identified manually during analysis.
+Static Analysis
+I began the
+static analysis
+by loading the binary into Ghidra. As expected from a stripped binary, function names were not available, so the first step was to locate the
+main
+function and start making sense of the program’s overall structure.
+After identifying
+main
+and applying some basic renaming and cleanup, the decompiled output became much easier to follow. Even at a first glance, the code appeared noticeably verbose, which aligns well with the challenge description hinting at the lack of compiler optimizations.
+After cleaning up the decompiled output, I started by examining the
+main
+function:
+The program implements a
+multi-stage input validation flow
+, where each stage must be satisfied to reach the final flag generation logic.
+The first check is slightly unusual. Instead of using a string comparison, the input is compared through multiple integer values:
+user_input_buf == 0x20676e696b6f6f6c
+input_word2 == 0x2065687420726f66
+input_word3_lo == 0x67616c66
+Interpreting these in little-endian reveals the expected input:
+looking for the flag
+.
+If this condition is satisfied, the program proceeds with two additional checks using
+strcmp
+, requiring the inputs
+"please"
+and
+"PLEASE MAY I HAVE THE FLAG"
+respectively.
+Interestingly, there is also a
+trap path
+in the logic. If the second or third input checks fail, the program still prints a string that looks like a valid flag. However, this is a hardcoded value and not the result of the actual flag generation logic, making it a classic CTF decoy intended to mislead solvers who rely only on dynamic execution. Based on the wording of the decoy flag itself, it also appears to be intentionally aimed at participants attempting to shortcut the challenge using AI or automated approaches, reinforcing the idea that proper analysis is required to obtain the real flag.
+Between each stage, the program wipes the input buffer using a loop. The implementation is unnecessarily convoluted, but effectively just zeroes out memory. This is consistent with the challenge theme, where operations are intentionally written in a non-optimal way.
+Once all checks pass, execution reaches the final part:
+do
+{
+next_index
+=
+char_index
++
+1
+;
+uVar1
+=
+compute_flag_char
+(char_index);
+putchar
+(uVar1
+&
+0xff
+);
+fflush
+(stdout);
+char_index
+=
+next_index;
+}
+while
+(next_index
+!=
+84
+);
+Instead of storing the flag, the program computes it
+one character at a time
+using
+compute_flag_char
+.
+With the logic in
+main
+understood, the next step was to look at how each flag character is generated, starting with
+compute_flag_char
+:
+This function generates a single character based on its index. The first thing it does is introduce a delay:
+sleep_requested.tv_nsec
+=
+(
+long
+)(char_index
+*
+300
+)
+*
+1000000
+;
+nanosleep
+(
+&
+sleep_requested,
+&
+sleep_remaining);
+This makes execution progressively slower as the index increases. Running the binary normally would take a significant amount of time just to print the flag. After that, the function initializes a GMP integer and calls
+gmp_power_tower_mod256
+function, which is responsible for the actual computation.
+From there, it was clear that most of the heavy lifting happens deeper in the call chain, which led me to analyze
+gmp_power_tower_mod256
+:
+This function computes a
+power tower
+(tetration) of the form:
+base ^ (base ^ (base ^ ...))
+, with height defined by
+tower_height
+. The implementation is recursive and uses
+GMP (__gmpz_*)
+, a library for arbitrary precision arithmetic, allowing operations on integers larger than native data types. This already makes it expensive, but the implementation goes further by manually handling exponentiation through repeated squaring and bit-level operations.
+After computing the value, the result is reduced
+modulo 256
+:
+result_mod256
+=
+__gmpz_fdiv_ui
+(out_result,
+256
+);
+flag_byte
+=
+result_mod256
++
+1U
+>>
+1
+;
+The final output is a single byte, which corresponds to one character of the flag.
+Getting the flag
+To better understand the runtime behavior, I initially executed the binary and provided the three correct inputs. This resulted in the beginning of the flag being printed:
+$ ./not_quite_optimal
+<       haiiii what r u doin here?
+>       looking
+for
+the flag
+<       whoaaaa i know where to find that... say the magic word and ill get it
+for
+you
+>       please
+<       i couldnt hear u... could u try speaking a bit louder pls 🥺
+>       PLEASE MAY I HAVE THE FLAG
+<       waow i thought ud never ask... lemme go get it
+for
+you...
+...
+...
+RS
+{
+4_littl3_bi7_0f_nu
+However, the program appeared to freeze shortly after. This behavior is explained by the
+nanosleep
+call inside
+compute_flag_char
+, where the delay increases with each character. As the index grows, the sleep duration becomes large enough that the program effectively stalls.
+My first approach was to patch the delay directly in the binary. Using Ghidra’s byte editor, I modified the instruction responsible for computing
+tv_nsec
+so that it would always evaluate to zero. While this worked in isolation, it did not fully solve the issue. Due to
+PIE (Position Independent Executable)
+, addresses change at runtime and more importantly, the program was still terminating early because
+stdin
+closed before all 84 characters were printed.
+To work around this, I implemented a small
+LD_PRELOAD shim
+to intercept and neutralize
+nanosleep
+:
+#define _GNU_SOURCE
+#include
+<time.h>
+#include
+<stdio.h>
+int
+nanosleep
+(
+const
+struct
+timespec
+*
+req,
+struct
+timespec
+*
+rem) {
+fprintf
+(stderr,
+"[nosleep] intercepted: tv_sec=%ld tv_nsec=%ld
+\n
+"
+,
+req
+->
+tv_sec, req
+->
+tv_nsec);
+return
+0
+;
+}
+Compiled and executed as:
+$ gcc -shared -fPIC -o nosleep.so nosleep.c
+$ LD_PRELOAD
+=
+./nosleep.so ./not_quite_optimal
+..........
+This successfully removed the artificial delays and the flag started printing instantly. However, the program still stalled at the same point. After further debugging, the real issue became clear.
+For larger indices, the
+tv_nsec
+value overflows valid POSIX limits (>999,999,999), causing
+nanosleep
+to return
+EINVAL
+. While the shim bypasses this, the actual bottleneck lies elsewhere: the
+GMP computation
+.
+The function
+gmp_power_tower_mod256
+computes
+base ^ (base ^ (base ^ …))
+using full arbitrary-precision arithmetic before applying modulo 256. For larger inputs, the exponent grows extremely fast, resulting in
+massive bignum exponentiation
+. At around character 21, this becomes computationally infeasible, effectively freezing the program due to CPU usage, not sleep delays.
+At this point, it became clear that the intended solution was not to execute the binary, but to replicate the logic efficiently. Python’s built-in
+pow(base, exp, mod)
+performs fast modular exponentiation and avoids constructing large intermediate numbers. Additionally, the power tower stabilizes quickly modulo 256, meaning we do not need to fully evaluate the tower.
+The required data for each character is stored in memory at
+DAT_001022a0
+, as an array of 84 entries, each containing a
+(base, exponent)
+pair. Due to the layout:
+The first base is stored at
+DAT_001022a0
+.
+The rest of the data (base/exp pairs) is interleaved starting at
+DAT_001022a8
+.
+After extracting these values from Ghidra, I constructed the following script:
+import
+struct
+,
+sys
+# DAT_001022a8 — 1336 bytes from Ghidra
+raw
+=
+"02 00 00 00 00 00 00 00 75 2b 19 00 00 00 00 00 02 00 00 00 00 00 00 00 c5 95 32 00 00 00 00 00 02 00 00 00 00 00 00 00 97 0b 38 00 00 00 00 00 02 00 00 00 00 00 00 00 cd 32 4b 00 00 00 00 00 02 00 00 00 00 00 00 00 27 4a 64 00 00 00 00 00 02 00 00 00 00 00 00 00 d1 a6 6e 00 00 00 00 00 02 00 00 00 00 00 00 00 17 2a 7a 00 00 00 00 00 02 00 00 00 00 00 00 00 17 ea 8c 00 00 00 00 00 02 00 00 00 00 00 00 00 27 d5 a7 00 00 00 00 00 02 00 00 00 00 00 00 00 35 a4 b9 00 00 00 00 00 02 00 00 00 00 00 00 00 cd fe c1 00 00 00 00 00 02 00 00 00 00 00 00 00 1b 70 d8 00 00 00 00 00 02 00 00 00 00 00 00 00 d1 bc e7 00 00 00 00 00 02 00 00 00 00 00 00 00 7d 80 f8 00 00 00 00 00 02 00 00 00 00 00 00 00 cd b8 05 01 00 00 00 00 02 00 00 00 00 00 00 00 9f 01 19 01 00 00 00 00 02 00 00 00 00 00 00 00 d3 65 2d 01 00 00 00 00 02 00 00 00 00 00 00 00 cd 7f 37 01 00 00 00 00 02 00 00 00 00 00 00 00 43 d4 4a 01 00 00 00 00 02 00 00 00 00 00 00 00 a9 c5 5d 01 00 00 00 00 02 00 00 00 00 00 00 00 99 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 3b 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 f5 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 1b 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 0d 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 97 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 2f 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 f5 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 9f 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 1b 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 f1 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 0d 02 00 00 00 00 00 00 03 00 00 00 00 00 00 00 e3 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 f5 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 53 02 00 00 00 00 00 00 03 00 00 00 00 00 00 00 f5 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 1b 02 00 00 00 00 00 00 03 00 00 00 00 00 00 00 0d 03 00 00 00 00 00 00 03 00 00 00 00 00 00 00 2f 02 00 00 00 00 00 00 03 00 00 00 00 00 00 00 a9 02 00 00 00 00 00 00 03 00 00 00 00 00 00 00 1b 03 00 00 00 00 00 00 03 00 00 00 00 00 00 00 bd 93 00 00 00 00 00 00 04 00 00 00 00 00 00 00 0d c8 05 00 00 00 00 00 04 00 00 00 00 00 00 00 17 34 08 00 00 00 00 00 04 00 00 00 00 00 00 00 63 fe 0b 00 00 00 00 00 04 00 00 00 00 00 00 00 f1 ce 0e 00 00 00 00 00 04 00 00 00 00 00 00 00 9f e6 0f 00 00 00 00 00 04 00 00 00 00 00 00 00 63 65 13 00 00 00 00 00 04 00 00 00 00 00 00 00 f5 db 17 00 00 00 00 00 04 00 00 00 00 00 00 00 0d ef 18 00 00 00 00 00 04 00 00 00 00 00 00 00 61 46 1d 00 00 00 00 00 04 00 00 00 00 00 00 00 71 10 1f 00 00 00 00 00 04 00 00 00 00 00 00 00 bb 00 23 00 00 00 00 00 04 00 00 00 00 00 00 00 f5 6b 26 00 00 00 00 00 04 00 00 00 00 00 00 00 f5 e4 28 00 00 00 00 00 04 00 00 00 00 00 00 00 53 2d 2c 00 00 00 00 00 04 00 00 00 00 00 00 00 71 4a 2e 00 00 00 00 00 04 00 00 00 00 00 00 00 c1 70 31 00 00 00 00 00 04 00 00 00 00 00 00 00 1b e7 34 00 00 00 00 00 04 00 00 00 00 00 00 00 29 99 39 00 00 00 00 00 04 00 00 00 00 00 00 00 55 a9 3b 00 00 00 00 00 04 00 00 00 00 00 00 00 bd 00 40 00 00 00 00 00 04 00 00 00 00 00 00 00 8f d3 00 00 00 00 00 00 5e 47 02 00 00 00 00 00 9f c1 13 00 00 00 00 00 18 3b 09 00 00 00 00 00 71 09 25 00 00 00 00 00 49 8b 18 00 00 00 00 00 29 5f 3f 00 00 00 00 00 b1 40 21 00 00 00 00 00 53 24 51 00 00 00 00 00 b6 57 22 00 00 00 00 00 8f 7d 59 00 00 00 00 00 21 c8 2c 00 00 00 00 00 71 d2 6d 00 00 00 00 00 c8 03 34 00 00 00 00 00 c1 58 82 00 00 00 00 00 de 93 42 00 00 00 00 00 f5 3c 8a 00 00 00 00 00 76 c1 4b 00 00 00 00 00 8f d7 a5 00 00 00 00 00 88 09 4d 00 00 00 00 00 f3 86 b2 00 00 00 00 00 33 c7 57 00 00 00 00 00 8f 80 c4 00 00 00 00 00 47 86 60 00 00 00 00 00 61 31 d4 00 00 00 00 00 c7 62 6a 00 00 00 00 00 c1 99 e3 00 00 00 00 00 63 82 75 00 00 00 00 00 c1 35 f5 00 00 00 00 00 04 e6 77 00 00 00 00 00 f5 ef 0b 01 00 00 00 00 c0 85 84 00 00 00 00 00 f3 80 16 01 00 00 00 00 67 d1 8e 00 00 00 00 00 29 43 27 01 00 00 00 00 2f 4d 96 00 00 00 00 00 89 fb 3d 01 00 00 00 00 89 b9 9e 00 00 00 00 00 f5 5a 4b 01 00 00 00 00 b6 fe a1 00 00 00 00 00 b9 e4 54 01 00 00 00 00 a9 71 ac 00 00 00 00 00"
+data
+=
+bytes(int(x,
+16
+)
+for
+x
+in
+raw
+.
+split())
+# Entry 0 base from separate 8-byte dump of DAT_001022a0
+base0
+=
+struct
+.
+unpack(
+'<q'
+, bytes([
+0x3b
+,
+0xc8
+,
+0x0a
+,
+0x00
+,
+0x00
+,
+0x00
+,
+0x00
+,
+0x00
+]))[
+0
+]
+entries
+=
+[(base0, struct
+.
+unpack_from(
+'<q'
+, data,
+0
+)[
+0
+])]
+for
+i
+in
+range(
+1
+,
+84
+):
+off
+=
+(i
+-
+1
+)
+*
+16
++
+8
+entries
+.
+append((struct
+.
+unpack_from(
+'<q'
+, data, off)[
+0
+], struct
+.
+unpack_from(
+'<q'
+, data, off
++
+8
+)[
+0
+]))
+# Power tower converges quickly mod 256 — once exp >= ~8 the result stabilises.
+# Use iterative bottom-up computation to avoid deep recursion.
+def
+tower_mod256
+(b, exp):
+b
+=
+b
+&
+0xff
+if
+b
+==
+0
+:
+return
+0
+if
+b
+==
+1
+:
+return
+1
+# Build tower iteratively: t[1]=b, t[2]=b^b, t[3]=b^(b^b), ...
+# Once result stops changing mod 256, we're done.
+val
+=
+b
+for
+_
+in
+range(exp
+-
+1
+):
+new_val
+=
+pow(b, val,
+256
+)
+if
+new_val
+==
+val:
+break
+val
+=
+new_val
+return
+val
+def
+char_of
+(base, exp):
+return
+(tower_mod256(base, exp)
++
+1
+)
+>>
+1
+print(
+''
+.
+join(chr(char_of(b, e))
+for
+b, e
+in
+entries))
+The script reconstructs the flag by first parsing the raw bytes extracted from Ghidra into
+(base, exponent)
+pairs. Due to the interleaved memory layout, this requires careful offset handling to correctly align each pair. Once the data is structured, the core computation is handled by
+tower_mod256
+, which efficiently evaluates the power tower modulo 256. Instead of following the original recursive and expensive GMP-based approach, it reduces the base early, uses Python’s built-in
+pow(base, exp, mod)
+for fast modular exponentiation and iteratively builds the result from the bottom up, stopping as soon as the value stabilizes.
+After computing each value, the script applies the same transformation observed in the binary,
+(value + 1) >> 1
+, to produce the final character. Repeating this process for all 84 entries reconstructs the full flag almost instantly, effectively bypassing both the artificial delays and the heavy arbitrary-precision computations present in the original implementation.
+Running the script reconstructs all 84 characters of the flag in under a second, completely bypassing both the artificial delays and the expensive GMP computations:
+$ python solve.py
+RS
+{
+4_littl3_bi7_0f_numb3r_th30ry_n3v3r_hur7_4ny0n3_19b3369a25c78095689a38f81aa3f5e3
+}
+Interestingly, the flag itself serves as a hint about the nature of the challenge:
+“a little bit of number theory never hurt anyone”
+. This directly reflects the core idea behind the solution, as modular power towers are a well-known concept in number theory. In particular, iterated exponentiation modulo n tends to stabilize due to results like Euler’s theorem, which is exactly what allows the computation to be simplified so effectively.
+Conclusion
+This challenge is a great example of how complexity in reversing does not always come from obfuscation, but from
+inefficiency by design
+. At first glance, the binary appears to require full execution to recover the flag, but both the artificial delays and the heavy GMP-based computations are meant to discourage that approach. Instead, the intended path is to recognize what the program is doing at a higher level and replicate it in a more efficient way.
+A key takeaway here is the importance of identifying when a problem can be reduced mathematically. Once the power tower structure and the modulo 256 behavior were understood, the problem shifted from reverse engineering into a much simpler computation task. Leveraging built-in tools like Python’s modular exponentiation makes a huge difference, turning what would take an impractical amount of time into something that runs almost instantly.
+Overall, this was a very well-designed challenge that reinforces an important lesson: not everything needs to be executed as-is. Sometimes, stepping back and simplifying the logic is the most effective approach.

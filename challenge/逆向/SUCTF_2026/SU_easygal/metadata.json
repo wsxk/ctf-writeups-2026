@@ -1,0 +1,61 @@
+{
+  "event_id": "CTF-3161",
+  "event_title": "SUCTF 2026",
+  "category": "逆向",
+  "title": "SU_easygal",
+  "dirname": "SUCTF_2026",
+  "source_urls": [
+    "https://github.com/team-su/SUCTF-2026/tree/HEAD/re/SU_easygal"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_easygal/attachments/app.zip",
+      "local": "attachments/attachments/app.zip",
+      "size_expected": 18720247,
+      "git_blob_sha": "7b10c436c4ad92bdf06c3d4f35f72d5dc950a58a",
+      "status": "downloaded",
+      "bytes": 18720247,
+      "sha256": "396a7426f86b28cd0868aba251c10ca370b740d047c5b8d4233d800a819f734e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_easygal/exp/exp.py",
+      "local": "writeups/exp/exp.py",
+      "size_expected": 3665,
+      "git_blob_sha": "ef3c069b9355080a06ca2584b2d1f5a30027c56b",
+      "status": "downloaded",
+      "bytes": 3665,
+      "sha256": "9b1dca966070f7017eb05aaf0ed3e24022ab433756cb742795987295e0de1ef7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_easygal/sourcecode/sourcecode.zip",
+      "local": "attachments/sourcecode/sourcecode.zip",
+      "size_expected": 6129938,
+      "git_blob_sha": "a016ab7c20ed66db7038ed9f2eb0dba1b530e53e",
+      "status": "downloaded",
+      "bytes": 6129938,
+      "sha256": "07de32f1db375cd2cc95c09d7c8bd0f7fa4cc0f45637c0b07623c0b85c457e58"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_easygal/writeup/writeup.md",
+      "local": "writeups/writeup/writeup.md",
+      "size_expected": 3920,
+      "git_blob_sha": "ba2806b005526982e8c426968d34192bef991b63",
+      "status": "downloaded",
+      "bytes": 3920,
+      "sha256": "b18a1333c995011065cd6380146c4016ca182fb3c733e11c1feac255ee1e2a6a"
+    }
+  ],
+  "notes": "官方附件、完整writeup（含仓库自带图片）及非空exp。仓库中的0字节占位文件未作为实际内容收录。",
+  "directory": "逆向/SUCTF_2026/SU_easygal",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_easygal/exp/exp.py",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_easygal/writeup/writeup.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_easygal/attachments/app.zip",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_easygal/sourcecode/sourcecode.zip"
+  ],
+  "attachment_status": "downloaded"
+}

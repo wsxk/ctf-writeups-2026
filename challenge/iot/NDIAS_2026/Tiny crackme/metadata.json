@@ -1,0 +1,90 @@
+{
+  "event_id": "CTF-3276",
+  "event_title": "NDIAS Automotive/IoT CTF",
+  "category": "iot",
+  "title": "Tiny crackme",
+  "source_urls": [
+    "https://ctftime.org/event/3276/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/NDIASAutomotiveIoT/2026/rev/Tiny_crackme"
+  ],
+  "writeup_urls": [
+    "https://yusuftas.net/posts/ndias-tiny-crackme-writeup/",
+    "https://yusuftas.net/assets/img/tiny_funcs.png",
+    "https://yusuftas.net/assets/img/tiny_main.png",
+    "https://yusuftas.net/assets/img/tiny_flag_ctf.png",
+    "https://yusuftas.net/assets/img/tiny_sha.png",
+    "https://yusuftas.net/assets/img/tiny_uart.png",
+    "https://yusuftas.net/assets/img/tiny_crc32.png",
+    "https://yusuftas.net/assets/img/tiny_every5.png"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/NDIASAutomotiveIoT/2026/rev/Tiny_crackme/README.md",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/NDIASAutomotiveIoT/2026/rev/Tiny_crackme/dist-tiny_crackme.zip"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": "已保存公开解答与 sajjadium/ctf-archives 原题附件镜像。题目环境及 solver 均未执行。",
+  "files": [
+    {
+      "path": "writeups/writeup.html",
+      "url": "https://yusuftas.net/posts/ndias-tiny-crackme-writeup/",
+      "bytes": 48411,
+      "sha256": "05798599dc90c2557416446150fb4c004c6ba5ebaa36468bc9ee00bea5f817f9"
+    },
+    {
+      "path": "writeups/writeup_assets/000.png",
+      "url": "https://yusuftas.net/assets/img/tiny_funcs.png",
+      "bytes": 43092,
+      "sha256": "f805c63a4510b9f4eeb9c09ac0e22c421a395d17d78fc388b4e59dee9dd99132"
+    },
+    {
+      "path": "writeups/writeup_assets/001.png",
+      "url": "https://yusuftas.net/assets/img/tiny_main.png",
+      "bytes": 32896,
+      "sha256": "1efc7571a82d3ae517393469a83dfb0b28fdcce51782beb0895aa8fb87c01dcb"
+    },
+    {
+      "path": "writeups/writeup_assets/002.png",
+      "url": "https://yusuftas.net/assets/img/tiny_flag_ctf.png",
+      "bytes": 30189,
+      "sha256": "56b0f8c72ee4a3f5bb06a6bf7ab2ad10d02e9d4552c6bf3a2fd33e177e27d428"
+    },
+    {
+      "path": "writeups/writeup_assets/003.png",
+      "url": "https://yusuftas.net/assets/img/tiny_sha.png",
+      "bytes": 117783,
+      "sha256": "be2abf9a1b0a5f14e916e94cd5008d96e6bcf5cb1c8c393b1de63c5da1ebc287"
+    },
+    {
+      "path": "writeups/writeup_assets/004.png",
+      "url": "https://yusuftas.net/assets/img/tiny_uart.png",
+      "bytes": 47440,
+      "sha256": "10536b905e8ee0d0422e4de966d597fe8b0a7ada86454ed6225704dfd369e2cb"
+    },
+    {
+      "path": "writeups/writeup_assets/005.png",
+      "url": "https://yusuftas.net/assets/img/tiny_crc32.png",
+      "bytes": 57769,
+      "sha256": "04f5e6059215bf6a6cce921967cd55410212cf415d2f2077e8678d692575890c"
+    },
+    {
+      "path": "writeups/writeup_assets/006.png",
+      "url": "https://yusuftas.net/assets/img/tiny_every5.png",
+      "bytes": 50380,
+      "sha256": "d74d2e19b0d31f52461134932e7706c6f8ea2f267315b9ad6867ccdf41970462"
+    },
+    {
+      "path": "attachments/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/NDIASAutomotiveIoT/2026/rev/Tiny_crackme/README.md",
+      "bytes": 435,
+      "sha256": "48d1a8dcba813a1f023a59f824100be317b8a19fbdcc1f5221a6868feaeba4ab"
+    },
+    {
+      "path": "attachments/dist-tiny_crackme.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/NDIASAutomotiveIoT/2026/rev/Tiny_crackme/dist-tiny_crackme.zip",
+      "bytes": 27281,
+      "sha256": "85e8e48002503ca8a56c6f02dff1fa1c9bdf9d8ec7283192e0e853737fafe153"
+    }
+  ],
+  "errors": []
+}

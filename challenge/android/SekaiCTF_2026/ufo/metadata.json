@@ -1,0 +1,116 @@
+{
+  "event_id": "CTF-3113",
+  "event_title": "SekaiCTF 2026",
+  "category": "android",
+  "title": "ufo",
+  "source_urls": [
+    "https://ctftime.org/event/3113/",
+    "https://github.com/project-sekai-ctf/sekaictf-2026/tree/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/ufo"
+  ],
+  "writeup_urls": [
+    "https://pentest.bi0s.in/blog/posts/sekai-ctf-2026-ufo/",
+    "https://pentest.bi0s.in/blog/assets/img/posts/sekai-2026-ufo/image-2.png",
+    "https://pentest.bi0s.in/blog/assets/img/posts/sekai-2026-ufo/image-1.png",
+    "https://pentest.bi0s.in/blog/assets/img/posts/sekai-2026-ufo/image-3.png",
+    "https://pentest.bi0s.in/blog/assets/img/posts/sekai-2026-ufo/image-4.png",
+    "https://pentest.bi0s.in/blog/assets/img/posts/sekai-2026-ufo/image-5.png",
+    "https://pentest.bi0s.in/blog/assets/img/posts/sekai-2026-ufo/image-6.png",
+    "https://pentest.bi0s.in/blog/assets/img/posts/sekai-2026-ufo/image-7.png",
+    "https://pentest.bi0s.in/blog/assets/img/posts/sekai-2026-ufo/image-8.png"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/ufo/README.md",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/ufo/kona.yaml",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/ufo/challenge/app-release.apk"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": "官方 APK 与运行材料；第三方实际参赛 writeup 已另存，HTML 提供正文及离线图片副本。",
+  "files": [
+    {
+      "path": "attachments/README.md",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/ufo/README.md",
+      "bytes": 398,
+      "sha256": "482064ad2825b10a89e87b6c35340819c4f8c5178875bbd52c4170f888952f78"
+    },
+    {
+      "path": "attachments/kona.yaml",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/ufo/kona.yaml",
+      "bytes": 421,
+      "sha256": "e6265bfaebd37447aaf60d19464c81449c3e0258a04cb324bc7b389ad7931356"
+    },
+    {
+      "path": "attachments/challenge/app-release.apk",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/ufo/challenge/app-release.apk",
+      "bytes": 5931332,
+      "sha256": "e4d69863db9bc452596c0108da4f11f807e67669d8312821b2250e469fe8094b"
+    },
+    {
+      "path": "licenses/LICENSE",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/LICENSE",
+      "bytes": 34523,
+      "sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef"
+    },
+    {
+      "path": "licenses/LICENSE.content.md",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/LICENSE.content.md",
+      "bytes": 19119,
+      "sha256": "14d2138e3a8bd9448254f171b8e17130bf7104d2fd843ab0b924bd105fd00d5a"
+    },
+    {
+      "path": "writeups/writeup.html",
+      "url": "https://pentest.bi0s.in/blog/posts/sekai-ctf-2026-ufo/",
+      "bytes": 23262,
+      "sha256": "7c02a8b155ad9d86e83de88b9786847a65170e8350cb0ea73d06fdf3520f99dc"
+    },
+    {
+      "path": "writeups/writeup_assets/000.png",
+      "url": "https://pentest.bi0s.in/blog/assets/img/posts/sekai-2026-ufo/image-2.png",
+      "bytes": 319540,
+      "sha256": "1537bc0dc1179029cb1cbc6ca9233f4272db96639022635d3f18687b03b0da1d"
+    },
+    {
+      "path": "writeups/writeup_assets/001.png",
+      "url": "https://pentest.bi0s.in/blog/assets/img/posts/sekai-2026-ufo/image-1.png",
+      "bytes": 794516,
+      "sha256": "e6b998f8581395c9b03ba815db13816ac5efa5ee2b72018e0999f75a4e604012"
+    },
+    {
+      "path": "writeups/writeup_assets/002.png",
+      "url": "https://pentest.bi0s.in/blog/assets/img/posts/sekai-2026-ufo/image-3.png",
+      "bytes": 606916,
+      "sha256": "b0d1f6feb09fb5ac874e83f9103535875a3edcb95c0458d1833fa93a7754a8ec"
+    },
+    {
+      "path": "writeups/writeup_assets/003.png",
+      "url": "https://pentest.bi0s.in/blog/assets/img/posts/sekai-2026-ufo/image-4.png",
+      "bytes": 434600,
+      "sha256": "19aa9a963185b6618606edbaed8528b4977c309d34bde095dec411059092ecfe"
+    },
+    {
+      "path": "writeups/writeup_assets/004.png",
+      "url": "https://pentest.bi0s.in/blog/assets/img/posts/sekai-2026-ufo/image-5.png",
+      "bytes": 112284,
+      "sha256": "6099d5611d7a680b02ae3c6037df14d18b260bb8db90104caa3ae31eb2632837"
+    },
+    {
+      "path": "writeups/writeup_assets/005.png",
+      "url": "https://pentest.bi0s.in/blog/assets/img/posts/sekai-2026-ufo/image-6.png",
+      "bytes": 537639,
+      "sha256": "be71054bd2ad36af99325f30b80036f416f1f453310122e53e8e96422773c6da"
+    },
+    {
+      "path": "writeups/writeup_assets/006.png",
+      "url": "https://pentest.bi0s.in/blog/assets/img/posts/sekai-2026-ufo/image-7.png",
+      "bytes": 1109723,
+      "sha256": "1dfbabde2f73f7bd808b0adf43d5f6fedda36eb96e0dca4ffbb150d81a5f3fd8"
+    },
+    {
+      "path": "writeups/writeup_assets/007.png",
+      "url": "https://pentest.bi0s.in/blog/assets/img/posts/sekai-2026-ufo/image-8.png",
+      "bytes": 8296,
+      "sha256": "c09e788d2205af148cb73862707ae35fd4c8ad0055987e88fd8eb5d226e92736"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,77 @@
+{
+  "event_id": "CTF-3015",
+  "event_title": "LA CTF 2026",
+  "category": "逆向",
+  "title": "flag-finder",
+  "dirname": "LA_CTF_2026",
+  "source_urls": [
+    "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/rev/flag-finder"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/flag-finder/Dockerfile",
+      "local": "attachments/Dockerfile",
+      "size_expected": 50,
+      "git_blob_sha": "4e7d124fe1011f96e614ccc3e0da9867f757221a",
+      "status": "downloaded",
+      "bytes": 50,
+      "sha256": "ae9db65769eca6244fd4bc65fcac35e3144574954cb80a3f78efe84c0211cab6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/flag-finder/challenge.yaml",
+      "local": "attachments/challenge.yaml",
+      "size_expected": 315,
+      "git_blob_sha": "a1956a47717eb4af9a016a98790233d2fc565344",
+      "status": "downloaded",
+      "bytes": 315,
+      "sha256": "ca09f40ae62f66bb6063715668c2aacfb479fad7def875a8f2694e2e20161714"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/flag-finder/src/index.html",
+      "local": "attachments/src/index.html",
+      "size_expected": 2441,
+      "git_blob_sha": "0bc867c564839ed6b5c7edd70fef96601ab587ae",
+      "status": "downloaded",
+      "bytes": 2441,
+      "sha256": "246285a656c0536a7eabc7113efed51c4af30d2da20d08c537a567001b02ca26"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/flag-finder/src/script.js",
+      "local": "attachments/src/script.js",
+      "size_expected": 15459,
+      "git_blob_sha": "9fa7b81604d9fe1ded307be300771fcf94f20f03",
+      "status": "downloaded",
+      "bytes": 15459,
+      "sha256": "6494adb9e328f453a6bb6257a4eb8bc720d250296cced5d22e822276aebb4552"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/flag_finder/README.md",
+      "local": "writeups/community/README.md",
+      "status": "downloaded",
+      "bytes": 4851,
+      "sha256": "feafe11f62bfcb5ca675fcda90d32f9c50652558f674733682bd3fea16018255"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/flag_finder/solve.py",
+      "local": "writeups/community/solve.py",
+      "status": "downloaded",
+      "bytes": 34182,
+      "sha256": "6b9de3586813e72815bb63c700c5492034c19b44eae1605b7249fcdcdf09fda1"
+    }
+  ],
+  "notes": "官方题目附件，配官方 solver（若有）及参赛者 hax1ng 的文章/脚本。社区文章部分标题误写2025，但本题与官方2026目录的描述和flag一致，已逐题核对（ooo使用Unicode NFC比较）；保留原文。reflection另归虚拟化。",
+  "directory": "逆向/LA_CTF_2026/flag-finder",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/flag_finder/README.md",
+    "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/flag_finder/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/flag-finder/Dockerfile",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/flag-finder/challenge.yaml",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/flag-finder/src/index.html",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/flag-finder/src/script.js"
+  ],
+  "attachment_status": "downloaded"
+}

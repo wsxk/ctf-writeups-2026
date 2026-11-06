@@ -1,0 +1,50 @@
+{
+  "event_id": "CTF-3041",
+  "event_title": "GPN CTF 2026",
+  "title": "Food_Inspector_II",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "frida",
+    "dynamic-instrumentation"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/gpn/2026/food_inspector_ii/",
+    "https://ctf42.online/ctfs/gpn/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/GPN/2026/pwn/Food_Inspector_II"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/GPN-CTF-2026/tree/main/Food%20Inspector%20II",
+    "https://raw.githubusercontent.com/hax1ng/GPN-CTF-2026/main/Food%20Inspector%20II/food-inspector-2_writeup.md"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/GPN/2026/pwn/Food_Inspector_II",
+    "https://ctf42.online/ctfs/gpn/2026/food_inspector_ii/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/gpn_2026/Food_Inspector_II/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/gpn/2026/food_inspector_ii/folder.zip?kind=files",
+      "bytes": 11932668,
+      "sha256": "2c1f584d75697b82b47abf1336bec8962a661a3de8d13f3343f219df962a7ff3",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/gpn_2026/Food_Inspector_II/writeups/replacement_source.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/GPN-CTF-2026/main/Food%20Inspector%20II/food-inspector-2_writeup.md",
+      "bytes": 29792,
+      "sha256": "80d106a193c05241d6e52ca99b5d848c84009bb50c2a13796dc6bf7a7401e6dd",
+      "kind": "writeup"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "writeup_kind": "prose"
+}

@@ -1,0 +1,49 @@
+{
+  "event_id": "CTF-3033",
+  "event_title": "ASIS CTF Quals 2026",
+  "title": "Signal_Race",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "generation-counter-wraparound",
+    "use-after-free (uaf)",
+    "murmurhash-inversion"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/asis/2026-quals/signal_race/",
+    "https://ctf42.online/ctfs/asis/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/pwn/Signal_Race"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/pwn/signal-race"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/pwn/Signal_Race",
+    "https://ctf42.online/ctfs/asis/2026-quals/signal_race/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/asis_2026-quals/Signal_Race/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/ASIS-CTF-Quals-2026/main/pwn/signal-race/README.md",
+      "bytes": 4801,
+      "sha256": "e6e59f7f5714709fbdf0a6dce9f87a2a11da6f8237d0a75108bc1ddfccefc36a",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/asis_2026-quals/Signal_Race/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/asis/2026-quals/signal_race/folder.zip?kind=files",
+      "bytes": 7491,
+      "sha256": "244f727b4642d5f23773b91b436559b953da95d52dd703f73e3d2181d69ca55c",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

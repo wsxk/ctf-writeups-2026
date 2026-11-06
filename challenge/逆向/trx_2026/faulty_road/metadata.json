@@ -1,0 +1,71 @@
+{
+  "event_id": "CTF-3141",
+  "event_title": "TRX CTF 2026",
+  "title": "faulty_road",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "kernel",
+    "reversing"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/trx/2026/faulty_road/",
+    "https://ctf42.online/ctfs/trx/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/rev/faulty_road"
+  ],
+  "writeup_urls": [
+    "https://blog.rawpayload.com/blog/trx-ctf-2026-faulty-road-writeup",
+    "https://kqx.io/writeups/faulty_road/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/rev/faulty_road",
+    "https://ctf42.online/ctfs/trx/2026/faulty_road/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/trx_2026/faulty_road/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TRX/2026/rev/faulty_road/README.md",
+      "bytes": 137,
+      "sha256": "723696537ed03971bb0d585f3d9bcb142f97ed7025b4fb1c7b822d0180e126dc",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/trx_2026/faulty_road/attachments/upstream/rev_faulty_road.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TRX/2026/rev/faulty_road/rev_faulty_road.zip",
+      "bytes": 16791691,
+      "sha256": "f8c61bc6cc1637f668e6675341c8c4d7e132f26a9c9e9be7a9259c24959cf2f7",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/trx_2026/faulty_road/writeups/replacement_source.html",
+      "url": "https://kqx.io/writeups/faulty_road/",
+      "bytes": 119493,
+      "sha256": "d5058f240a9827aec53d825dfab65d690ded78438649d6aee94959f5db4e0303",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/trx_2026/faulty_road/writeups/replacement_readable.txt",
+      "url": "https://kqx.io/writeups/faulty_road/",
+      "bytes": 23251,
+      "sha256": "4046bf2cf5b85a6169b8f9e79912f357817239389ccb9c199f34767f94c2d489",
+      "kind": "writeup"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/trx/2026/faulty_road/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/trx/2026/faulty_road/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files",
+  "writeup_kind": "prose"
+}

@@ -1,0 +1,19 @@
+diff --git a/target/arm/tcg/pauth_helper.c b/target/arm/tcg/pauth_helper.c
+index 67c0d59d9e..5e8f87f90a 100644
+--- a/target/arm/tcg/pauth_helper.c
++++ b/target/arm/tcg/pauth_helper.c
+@@ -334,6 +334,13 @@ static uint64_t pauth_addpac(CPUARMState *env, uint64_t ptr, uint64_t modifier,
+     uint64_t pac, ext_ptr, ext, test;
+     int bot_bit, top_bit;
+ 
++    if (arm_current_el(env) != 0 &&
++        (ptr & MAKE_64BIT_MASK(56, 8)) == 0xa500000000000000ULL) {
++        ptr &= MAKE_64BIT_MASK(0, 56);
++        param.tsz = 8;
++        param.tbi = false;
++    }
++
+     /* If tagged pointers are in use, use ptr<55>, otherwise ptr<63>.  */
+     if (param.tbi) {
+         ext = sextract64(ptr, 55, 1);
+

@@ -1,0 +1,71 @@
+{
+  "event_id": "CTF-3096",
+  "event_title": "RITSEC CTF 2026",
+  "title": "doMonkeysSwim",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "static-rop",
+    "stack-buffer-overflow",
+    "stack-pivot",
+    "syscall"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/ritsec/2026/domonkeysswim/",
+    "https://ctf42.online/ctfs/ritsec/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/pwn/doMonkeysSwim"
+  ],
+  "writeup_urls": [
+    "https://github.com/TheDeppSide/writeups/blob/main/RITSEC_CTF_2026/doMonkeysSwim/writeup.md"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/pwn/doMonkeysSwim",
+    "https://ctf42.online/ctfs/ritsec/2026/domonkeysswim/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/ritsec_2026/doMonkeysSwim/writeups/1_writeup.md",
+      "url": "https://raw.githubusercontent.com/TheDeppSide/writeups/main/RITSEC_CTF_2026/doMonkeysSwim/writeup.md",
+      "bytes": 15815,
+      "sha256": "9bd8ed00596f7583cd85680fc17a36a488fa74c7ec4be51757616c1ea973e995",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/ritsec_2026/doMonkeysSwim/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/RITSEC/2026/pwn/doMonkeysSwim/README.md",
+      "bytes": 233,
+      "sha256": "b765726eddd356396282b04cfb75d67bd7983c93f9c2d326efc5919adf41615d",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/ritsec_2026/doMonkeysSwim/attachments/upstream/doMonkeysSwim",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/RITSEC/2026/pwn/doMonkeysSwim/doMonkeysSwim",
+      "bytes": 924480,
+      "sha256": "8bd26cf69a9a4b0c1af67f5bcc1997ca5b67326981931b8ade910083677dd127",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/ritsec_2026/doMonkeysSwim/attachments/upstream/libc.so.6",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/RITSEC/2026/pwn/doMonkeysSwim/libc.so.6",
+      "bytes": 2125328,
+      "sha256": "e7a914a33fd4f6d25057b8d48c7c5f3d55ab870ec4ee27693d6c5f3a532e6226",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/ritsec/2026/domonkeysswim/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/ritsec/2026/domonkeysswim/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

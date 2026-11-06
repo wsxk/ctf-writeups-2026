@@ -1,0 +1,59 @@
+{
+  "event_id": "CTF-3113",
+  "event_title": "SekaiCTF 2026",
+  "title": "ppp",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [],
+  "source_urls": [
+    "https://ctf42.online/ctfs/sekaictf/2026/ppp/",
+    "https://ctf42.online/ctfs/sekaictf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/pwn/ppp"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/sekai-ctf-2026-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/pwn/ppp",
+    "https://ctf42.online/ctfs/sekaictf/2026/ppp/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/sekaictf_2026/ppp/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/sekai-ctf-2026-writeup/",
+      "bytes": 233313,
+      "sha256": "590bfd6c81594e376b15bec9ef57bfe1516654a790bdcf218d1872bc6dfd1230",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/sekaictf_2026/ppp/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SekaiCTF/2026/pwn/ppp/README.md",
+      "bytes": 281,
+      "sha256": "1184a2d07a39145cbaa0f16e441d07da5b4aefb2266e7822016ce785dae3fadc",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/sekaictf_2026/ppp/attachments/upstream/pwn_ppp.tar.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SekaiCTF/2026/pwn/ppp/pwn_ppp.tar.gz",
+      "bytes": 868037,
+      "sha256": "6b1b34827cff01538866cece9100bbbcad4c887127c0460a945ff43a69b9c384",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/sekaictf/2026/ppp/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/sekaictf/2026/ppp/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

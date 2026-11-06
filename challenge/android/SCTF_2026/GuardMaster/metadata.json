@@ -1,0 +1,51 @@
+{
+  "event_id": "CTF-3314",
+  "event_title": "SCTF 2026",
+  "category": "android",
+  "title": "GuardMaster",
+  "dirname": "SCTF_2026",
+  "source_urls": [
+    "https://github.com/SycloverTeam/SCTF-2026/tree/HEAD/Reverse/GuardMaster"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/GuardMaster/GuardMaster.zip",
+      "local": "attachments/GuardMaster.zip",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 80146867,
+      "sha256": "42fa12511f2fd81a64f616808fb4b7cf787cfc5b2837e03440a518f5eee885c7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/GuardMaster/README.md",
+      "local": "attachments/README.md",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 370,
+      "sha256": "382bc7f8dc826ef1fb555acfc1f416c2d89d416a1d6246fd88784b48c6f27694"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/GuardMaster/Writeup/writeup.md",
+      "local": "writeups/Writeup/writeup.md",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 282366,
+      "sha256": "f638793ca6291937cec100307d621dcb7e3d8ff9389b63da746ead02f6b9245b"
+    }
+  ],
+  "notes": "官方2026仓库题目附件和完整writeup。按题目实际内容归类：GuardMaster为APK；BrainfOok及babel_furnace使用自定义VM。",
+  "directory": "android/SCTF_2026/GuardMaster",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/GuardMaster/Writeup/writeup.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/GuardMaster/GuardMaster.zip",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/GuardMaster/README.md"
+  ],
+  "attachment_status": "downloaded"
+}

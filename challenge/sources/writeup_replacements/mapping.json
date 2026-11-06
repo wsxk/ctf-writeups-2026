@@ -1,0 +1,416 @@
+{
+  "records": [
+    {
+      "target": "pwn/trx_2026/down_the_line",
+      "url": "https://kqx.io/writeups/down_the_line/",
+      "files": [
+        {
+          "staged_path": "sources/writeup_replacements/pwn_trx_2026_down_the_line/source.html",
+          "destination": "writeups/replacement_source.html",
+          "url": "https://kqx.io/writeups/down_the_line/",
+          "kind": "writeup",
+          "bytes": 24961,
+          "sha256": "9010255f6363d15d4523b98f02b57b4380035d8f701ccf3b283de8962a867ed1",
+          "derived": false
+        },
+        {
+          "staged_path": "sources/writeup_replacements/pwn_trx_2026_down_the_line/readable.txt",
+          "destination": "writeups/replacement_readable.txt",
+          "url": "https://kqx.io/writeups/down_the_line/",
+          "kind": "writeup",
+          "bytes": 6624,
+          "sha256": "05ca4f03cc0aa4bb72e8ba899ef2150517da0bd21d19a1ae4443ac3bde964327",
+          "derived": true
+        }
+      ],
+      "text_characters": 6545,
+      "status": "downloaded",
+      "preview": "down-the-line - TRX CTF Quals 2026 – kqx\nDescription\nI guess you’ll have to settle for just four ports…\nWhat is “real mode”?\nReal mode, or real address mode, is",
+      "writeup_kind": "prose"
+    },
+    {
+      "target": "pwn/trx_2026/krwd",
+      "url": "https://kqx.io/writeups/krwd/",
+      "files": [
+        {
+          "staged_path": "sources/writeup_replacements/pwn_trx_2026_krwd/source.html",
+          "destination": "writeups/replacement_source.html",
+          "url": "https://kqx.io/writeups/krwd/",
+          "kind": "writeup",
+          "bytes": 71253,
+          "sha256": "41371d41d5468f7e7f6896a5ffd222032341962483f81871bec7155414166e56",
+          "derived": false
+        },
+        {
+          "staged_path": "sources/writeup_replacements/pwn_trx_2026_krwd/readable.txt",
+          "destination": "writeups/replacement_readable.txt",
+          "url": "https://kqx.io/writeups/krwd/",
+          "kind": "writeup",
+          "bytes": 15157,
+          "sha256": "22c0e4d0a78065dbebeedfc476d825257304c7adbbf9d002c6e17f433ff5f048",
+          "derived": true
+        }
+      ],
+      "text_characters": 15087,
+      "status": "downloaded",
+      "preview": "krwd - TRX CTF Quals 2026 – kqx\nDescription\nThe solution to all your problems is right here ->\nhttps://kqx.io\nSource code\n#include\n<linux/init.h>\n#include\n<linu",
+      "writeup_kind": "prose"
+    },
+    {
+      "target": "pwn/trx_2026/triforce",
+      "url": "https://kqx.io/writeups/triforce/",
+      "files": [
+        {
+          "staged_path": "sources/writeup_replacements/pwn_trx_2026_triforce/source.html",
+          "destination": "writeups/replacement_source.html",
+          "url": "https://kqx.io/writeups/triforce/",
+          "kind": "writeup",
+          "bytes": 90734,
+          "sha256": "6f8a327306d790ce8c5569b040d59830be4e79a12f67e413717f197400cb4a15",
+          "derived": false
+        },
+        {
+          "staged_path": "sources/writeup_replacements/pwn_trx_2026_triforce/readable.txt",
+          "destination": "writeups/replacement_readable.txt",
+          "url": "https://kqx.io/writeups/triforce/",
+          "kind": "writeup",
+          "bytes": 19536,
+          "sha256": "7b772d8c93d55465cf237193b54edbac163f13732c4dd1fd06624b7cc1f0fdd8",
+          "derived": true
+        }
+      ],
+      "text_characters": 19438,
+      "status": "downloaded",
+      "preview": "triforce - TRX CTF Quals 2026 – kqx\nDescription\nMaglev (derived from magnetic levitation) is a system of rail transport whose rolling stock is levitated by elec",
+      "writeup_kind": "prose"
+    },
+    {
+      "target": "逆向/trx_2026/faulty_road",
+      "url": "https://kqx.io/writeups/faulty_road/",
+      "files": [
+        {
+          "staged_path": "sources/writeup_replacements/___trx_2026_faulty_road/source.html",
+          "destination": "writeups/replacement_source.html",
+          "url": "https://kqx.io/writeups/faulty_road/",
+          "kind": "writeup",
+          "bytes": 119493,
+          "sha256": "d5058f240a9827aec53d825dfab65d690ded78438649d6aee94959f5db4e0303",
+          "derived": false
+        },
+        {
+          "staged_path": "sources/writeup_replacements/___trx_2026_faulty_road/readable.txt",
+          "destination": "writeups/replacement_readable.txt",
+          "url": "https://kqx.io/writeups/faulty_road/",
+          "kind": "writeup",
+          "bytes": 23251,
+          "sha256": "4046bf2cf5b85a6169b8f9e79912f357817239389ccb9c199f34767f94c2d489",
+          "derived": true
+        }
+      ],
+      "text_characters": 23178,
+      "status": "downloaded",
+      "preview": "faulty-road - TRX CTF Quals 2026 – kqx\nDescription\nplaying games in kernelspace is fun, but I hope faults don’t get in the way\nChallenge Overview\nThe challenge ",
+      "writeup_kind": "prose"
+    },
+    {
+      "target": "逆向/tjctf_2026/rotated",
+      "url": "https://dhtson.github.io/blogs/TJCTF-2026-Rev-Rotated/",
+      "files": [
+        {
+          "staged_path": "sources/writeup_replacements/___tjctf_2026_rotated/source.html",
+          "destination": "writeups/replacement_source.html",
+          "url": "https://dhtson.github.io/blogs/TJCTF-2026-Rev-Rotated/",
+          "kind": "writeup",
+          "bytes": 79204,
+          "sha256": "9def801e5e244d6be9796ab0242e56f02ef443595981d1c15f9d182d584ee051",
+          "derived": false
+        },
+        {
+          "staged_path": "sources/writeup_replacements/___tjctf_2026_rotated/readable.txt",
+          "destination": "writeups/replacement_readable.txt",
+          "url": "https://dhtson.github.io/blogs/TJCTF-2026-Rev-Rotated/",
+          "kind": "writeup",
+          "bytes": 6432,
+          "sha256": "8e01052aef1630579830d4124c6b85c25dac79e32392c25c2f5ffc774288575a",
+          "derived": true
+        }
+      ],
+      "text_characters": 6357,
+      "status": "downloaded",
+      "preview": "The Challenge\nrotated\nDescription\nthis file isn't making any sense to me. can you discover what it means?\nHint 1: look at the title\nHint 2: consider each byte s",
+      "writeup_kind": "prose"
+    },
+    {
+      "target": "逆向/uiuctf_2026/glyphs",
+      "url": "https://cybersecurityelite.com/ctf-writeups/uiuctf-2026-reverse-engineering-writeup/",
+      "files": [
+        {
+          "staged_path": "sources/writeup_replacements/___uiuctf_2026_glyphs/source.html",
+          "destination": "writeups/replacement_source.html",
+          "url": "https://cybersecurityelite.com/ctf-writeups/uiuctf-2026-reverse-engineering-writeup/",
+          "kind": "writeup",
+          "bytes": 167239,
+          "sha256": "724e300ae6d2e6df77ab249ff35e2ffe85a4205f7e1efa126613079cf7b36596",
+          "derived": false
+        },
+        {
+          "staged_path": "sources/writeup_replacements/___uiuctf_2026_glyphs/readable.txt",
+          "destination": "writeups/replacement_readable.txt",
+          "url": "https://cybersecurityelite.com/ctf-writeups/uiuctf-2026-reverse-engineering-writeup/",
+          "kind": "writeup",
+          "bytes": 38617,
+          "sha256": "0bd438f73bdb035b212c030d87c6d292c41e3f9f0020169b19a5d27a36037b6a",
+          "derived": true
+        }
+      ],
+      "text_characters": 38278,
+      "status": "downloaded",
+      "preview": "Table of Contents\nUIUCTF 2026\n’s Reverse Engineering track is four Hard challenges built on one repeated architectural insight:\nthe verifier your disassembler s",
+      "writeup_kind": "prose"
+    },
+    {
+      "target": "pwn/gpn_2026/Food_Inspector_II",
+      "url": "https://raw.githubusercontent.com/hax1ng/GPN-CTF-2026/main/Food%20Inspector%20II/food-inspector-2_writeup.md",
+      "files": [
+        {
+          "staged_path": "sources/writeup_replacements/pwn_gpn_2026_Food_Inspector_II/source.md",
+          "destination": "writeups/replacement_source.md",
+          "url": "https://raw.githubusercontent.com/hax1ng/GPN-CTF-2026/main/Food%20Inspector%20II/food-inspector-2_writeup.md",
+          "kind": "writeup",
+          "bytes": 29792,
+          "sha256": "80d106a193c05241d6e52ca99b5d848c84009bb50c2a13796dc6bf7a7401e6dd",
+          "derived": false
+        }
+      ],
+      "text_characters": 29683,
+      "status": "downloaded",
+      "preview": "# Food Inspector II\n\n<p align=\"center\">\n  <a href=\"https://binary.ninja/\"><img alt=\"Binary Ninja\" src=\"https://img.shields.io/badge/Binary%20Ninja-used%20heavil",
+      "writeup_kind": "prose"
+    },
+    {
+      "target": "pwn/gpn_2026/Scanwich_Station",
+      "url": "https://raw.githubusercontent.com/hax1ng/GPN-CTF-2026/main/Scanwich%20Station/Scanwich_Station_recipe_writeup.md",
+      "files": [
+        {
+          "staged_path": "sources/writeup_replacements/pwn_gpn_2026_Scanwich_Station/source.md",
+          "destination": "writeups/replacement_source.md",
+          "url": "https://raw.githubusercontent.com/hax1ng/GPN-CTF-2026/main/Scanwich%20Station/Scanwich_Station_recipe_writeup.md",
+          "kind": "writeup",
+          "bytes": 28278,
+          "sha256": "f560253431781da812686a500a87eca9ca65b016830f1996996cb973b6ba57b6",
+          "derived": false
+        }
+      ],
+      "text_characters": 28090,
+      "status": "downloaded",
+      "preview": "# Grandma's Famous Sparse-QR Scanwich (The One That Unmaps libc)\n\n<p align=\"center\">\n  <a href=\"https://binary.ninja/\"><img alt=\"Binary Ninja\" src=\"https://img.",
+      "writeup_kind": "prose"
+    },
+    {
+      "target": "逆向/kubstu_2026/Ouroboros",
+      "url": "https://raw.githubusercontent.com/hax1ng/KubSTU-CTF-2026/main/rev/ouroboros/README.md",
+      "files": [
+        {
+          "staged_path": "sources/writeup_replacements/___kubstu_2026_Ouroboros/source.md",
+          "destination": "writeups/replacement_source.md",
+          "url": "https://raw.githubusercontent.com/hax1ng/KubSTU-CTF-2026/main/rev/ouroboros/README.md",
+          "kind": "writeup",
+          "bytes": 4480,
+          "sha256": "630ae978df724f7ad1b695119efeaf52d58096b5aa90f9f1a1a1679663a69e9d",
+          "derived": false
+        }
+      ],
+      "text_characters": 4461,
+      "status": "downloaded",
+      "preview": "# Ouroboros\n\n**Category:** Reverse · **Points:** 130 (dynamic scoring, mid-event snapshot) · **Solves:** 150 · **Flag:** `KubSTU{k3y3d_by_1ts_0wn___t3xt_s3ct10n",
+      "event_id_correction": "CTF-3446",
+      "writeup_kind": "prose"
+    },
+    {
+      "target": "逆向/kubstu_2026/RISC_V",
+      "url": "https://raw.githubusercontent.com/hax1ng/KubSTU-CTF-2026/main/rev/risc-v/README.md",
+      "files": [
+        {
+          "staged_path": "sources/writeup_replacements/___kubstu_2026_RISC_V/source.md",
+          "destination": "writeups/replacement_source.md",
+          "url": "https://raw.githubusercontent.com/hax1ng/KubSTU-CTF-2026/main/rev/risc-v/README.md",
+          "kind": "writeup",
+          "bytes": 4844,
+          "sha256": "05c66e49c7840eb4bd540f22052b23b98afc6702b696f9053c43addbae591ec8",
+          "derived": false
+        }
+      ],
+      "text_characters": 4821,
+      "status": "downloaded",
+      "preview": "# RISC-V.\n\n**Category:** Reverse · **Points:** 127 (dynamic scoring, mid-event snapshot) · **Solves:** 155 · **Flag:** `KubSTU{tr4ps_4r3_th3_r34l_c0ntr0l_fl0w}`",
+      "event_id_correction": "CTF-3446",
+      "writeup_kind": "prose"
+    },
+    {
+      "target": "pwn/umdctf_2026/bookmaker",
+      "url": "https://yhalo.cn/1978/umdctf-2026-pwn-wp-by-yhalo/",
+      "files": [
+        {
+          "staged_path": "sources/writeup_replacements/pwn_umdctf_2026_bookmaker/source.html",
+          "destination": "writeups/replacement_source.html",
+          "url": "https://yhalo.cn/1978/umdctf-2026-pwn-wp-by-yhalo/",
+          "kind": "writeup",
+          "bytes": 196483,
+          "sha256": "ad6770de56fe21e14227db741f9f73ac9ff1b9f122ea7d565757c177f6afbc8a",
+          "derived": false
+        },
+        {
+          "staged_path": "sources/writeup_replacements/pwn_umdctf_2026_bookmaker/readable.txt",
+          "destination": "writeups/replacement_readable.txt",
+          "url": "https://yhalo.cn/1978/umdctf-2026-pwn-wp-by-yhalo/",
+          "kind": "writeup",
+          "bytes": 9815,
+          "sha256": "2da889e4c0cd6d5b4b295c04ab096e842c985558842daec21070905542407d40",
+          "derived": true
+        }
+      ],
+      "text_characters": 7033,
+      "status": "downloaded",
+      "preview": "ipv4\n这道题是有后门的\n调用win()的地方看下\na1不为0.0.0.0，并且要等于100.72.7.67才可以return win\n再看下main函数\n函数原型显示有点问题，改改\n要让程序流执行到check_rine\n输入的Source Host和Dest Host是valid就可以\n一共4个scanf，最后一个",
+      "writeup_kind": "prose"
+    },
+    {
+      "target": "pwn/trx_2026/house_of_fishing",
+      "url": "https://blog.davidherm.es/posts/hof",
+      "files": [
+        {
+          "staged_path": "sources/writeup_replacements/pwn_trx_2026_house_of_fishing/source.html",
+          "destination": "writeups/replacement_source.html",
+          "url": "https://blog.davidherm.es/posts/hof",
+          "kind": "writeup",
+          "bytes": 927184,
+          "sha256": "54ad819e23d28e6da788b2cd7366a6c1595ae4f8870a80aa0fdbdbdffe9844e3",
+          "derived": false
+        },
+        {
+          "staged_path": "sources/writeup_replacements/pwn_trx_2026_house_of_fishing/readable.txt",
+          "destination": "writeups/replacement_readable.txt",
+          "url": "https://blog.davidherm.es/posts/hof",
+          "kind": "writeup",
+          "bytes": 13495,
+          "sha256": "fadad8f57e59d1282f70a4a07feaa495d5ec9578b7e508108a9ce05a3af3fa71",
+          "derived": true
+        }
+      ],
+      "text_characters": 13433,
+      "status": "downloaded",
+      "preview": "# House of Fish: TRX CTF 2026\n2026-04-27\n11 min read\nheap\nblind\nunintended\nTable of Contents\nThis past weekend, my team and I participated in the TRX 2026 CTF. ",
+      "writeup_kind": "prose"
+    },
+    {
+      "target": "pwn/trx_2026/slop_allocator",
+      "url": "https://raw.githubusercontent.com/TheRomanXpl0it/TRX-CTF-2026/main/pwn/slop_allocator/writeup/README.md?download=1",
+      "files": [],
+      "status": "unavailable",
+      "error": "empty response",
+      "notes": [
+        "官方writeup/README.md请求得到空内容；不将空占位或题目源码冒充解答。原rawpayload正文搜索可见，但本机无法访问域名。"
+      ]
+    },
+    {
+      "target": "虚拟化/trx_2026/1+1",
+      "url": "https://github.com/TheRomanXpl0it/TRX-CTF-2026/tree/main/rev/1%2B1/solve",
+      "files": [
+        {
+          "staged_path": "sources/writeup_replacements/trx_2026_1plus1/solve.py",
+          "destination": "writeups/official_solve.py",
+          "url": "https://raw.githubusercontent.com/TheRomanXpl0it/TRX-CTF-2026/main/rev/1%2B1/solve/solve.py",
+          "kind": "writeup",
+          "bytes": 2633,
+          "sha256": "417c405a2057258146d55e9118edc1e7d1cb538cb29e0110fb76bc6145d2677c",
+          "derived": false
+        },
+        {
+          "staged_path": "sources/writeup_replacements/trx_2026_1plus1/brute_fnv.c",
+          "destination": "writeups/official_brute_fnv.c",
+          "url": "https://raw.githubusercontent.com/TheRomanXpl0it/TRX-CTF-2026/main/rev/1%2B1/solve/brute_fnv.c",
+          "kind": "writeup",
+          "bytes": 1115,
+          "sha256": "900e445351b3c408778545facbf10fe54f41f2a12889aaefdd35c88ef201d7d4",
+          "derived": false
+        }
+      ],
+      "status": "downloaded",
+      "notes": [
+        "官方求解代码solve.py及brute_fnv.c；非独立叙述性writeup。"
+      ],
+      "writeup_kind": "solver"
+    },
+    {
+      "target": "虚拟化/trx_2026/wandering",
+      "url": "https://raw.githubusercontent.com/TheRomanXpl0it/TRX-CTF-2026/main/rev/wandering/writeup/README.md",
+      "files": [
+        {
+          "staged_path": "sources/writeup_replacements/____trx_2026_wandering/source.md",
+          "destination": "writeups/replacement_source.md",
+          "url": "https://raw.githubusercontent.com/TheRomanXpl0it/TRX-CTF-2026/main/rev/wandering/writeup/README.md",
+          "kind": "writeup",
+          "bytes": 416,
+          "sha256": "60ad235396b818ae0ef6a0a897cb8a811b5476dc8e598dbaf244457bc5697230",
+          "derived": false
+        },
+        {
+          "staged_path": "sources/writeup_replacements/____trx_2026_wandering/solve.py",
+          "destination": "writeups/official_solve.py",
+          "url": "https://raw.githubusercontent.com/TheRomanXpl0it/TRX-CTF-2026/main/rev/wandering/writeup/solve/solve.py",
+          "kind": "writeup",
+          "bytes": 2840,
+          "sha256": "195086ef044c2c70eeb01ab1deda0dfa3d2c4544d91dc02d19cfde05f7d082b6",
+          "derived": false
+        }
+      ],
+      "text_characters": 416,
+      "status": "downloaded",
+      "preview": "#Wandering\r\n\r\nThis is a reverse engineering challenge written in C implementing a custom VM.\r\n\r\nThe program basically checks the solutions of the NQueen problem",
+      "writeup_kind": "solver_with_author_outline",
+      "notes": [
+        "作者官方简要说明（128×128约束N皇后问题）及完整solve子目录求解脚本，非长篇逐步文章。"
+      ]
+    },
+    {
+      "target": "逆向/umdctf_2026/nuclear_codes",
+      "url": "https://medium.com/@mazenmagdy1598/nuclear-codes-umdctf-135f0fa30c3d",
+      "files": [
+        {
+          "staged_path": "sources/writeup_replacements/___umdctf_2026_nuclear_codes/source.html",
+          "destination": "writeups/replacement_source.html",
+          "url": "https://medium.com/@mazenmagdy1598/nuclear-codes-umdctf-135f0fa30c3d",
+          "kind": "writeup",
+          "bytes": 295713,
+          "sha256": "dec562409b51526dfe0c9d94e4c3bb09faec9f33bbb867d1a7c695d2ea89ea38",
+          "derived": false
+        },
+        {
+          "staged_path": "sources/writeup_replacements/___umdctf_2026_nuclear_codes/readable.txt",
+          "destination": "writeups/replacement_readable.txt",
+          "url": "https://medium.com/@mazenmagdy1598/nuclear-codes-umdctf-135f0fa30c3d",
+          "kind": "writeup",
+          "bytes": 11619,
+          "sha256": "0ab4d9b6917aa9c253616b14608fcdaaf623ea2f840395b569d9f88d0e63ba59",
+          "derived": true
+        }
+      ],
+      "text_characters": 11517,
+      "status": "downloaded",
+      "preview": "Reverse Engineering\nG4mra\nCtf\nCtf Writeup\nCtf Walkthrough\nnuclear_codes | UMDCTF\nZ4faran\n8 min read\n·\nApr 28, 2026\n--\nListen\nShare\nChallenge Info\nName:\nnuclear_",
+      "writeup_kind": "prose"
+    },
+    {
+      "target": "逆向/volgactf_2026-quals/Vision",
+      "url": "https://blog.sdark.me/vision-volgactf-2026",
+      "files": [],
+      "status": "unavailable",
+      "error": "HTTPSConnectionPool(host='blog.sdark.me', port=443): Max retries exceeded with url: /vision-volgactf-2026 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)')))"
+    }
+  ],
+  "notes": [
+    "Staged files only; root must merge metadata and copy files into target/writeups.",
+    "KubSTU two entries belong to autumn event CTF-3446.",
+    "No downloaded challenge code executed."
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "event_id": "CTF-3033",
+  "event_title": "ASIS CTF Quals 2026",
+  "title": "Revenant_buddy",
+  "category": "虚拟化",
+  "original_category": "Pwn",
+  "tags": [
+    "custom-vm",
+    "obfuscation"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/asis/2026-quals/revenant_buddy/",
+    "https://ctf42.online/ctfs/asis/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/pwn/Revenant_buddy"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/pwn/revenant-buddy"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/pwn/Revenant_buddy",
+    "https://ctf42.online/ctfs/asis/2026-quals/revenant_buddy/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/asis_2026-quals/Revenant_buddy/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/ASIS-CTF-Quals-2026/main/pwn/revenant-buddy/README.md",
+      "bytes": 4857,
+      "sha256": "2290cc8f25ced31bd8baa07a050617acdbde8dbaba0c56a3c9ce9d67735e284b",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/asis_2026-quals/Revenant_buddy/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/asis/2026-quals/revenant_buddy/folder.zip?kind=files",
+      "bytes": 347753,
+      "sha256": "ab3a2b0418002a8f7e9ede72b56a3f34673633f9eaad05485760e9a056a12714",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

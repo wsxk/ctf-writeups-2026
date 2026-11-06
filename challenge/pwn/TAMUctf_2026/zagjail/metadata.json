@@ -1,0 +1,131 @@
+{
+  "event_id": "CTF-3095",
+  "event_title": "TAMUctf 2026",
+  "category": "pwn",
+  "title": "zagjail",
+  "source_urls": [
+    "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/pwn/zagjail",
+    "https://ctftime.org/event/3095/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/zagjail/README.md",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/zagjail/solve.zag",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/zagjail/solver-template.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/zagjail/Dockerfile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/zagjail/Makefile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/zagjail/config.toml",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/zagjail/flag.txt",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/zagjail/server.py",
+    "https://media.githubusercontent.com/media/ACM-VIT/z0d1ak-writeups/HEAD/TAMUctf%202026/pwn/zagjail/zagjail.tar.gz"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。",
+    "补充的 original_distribution/*.tar.gz 是参赛队保存的原分发包镜像，LFS SHA-256已校验。"
+  ],
+  "repository": "tamuctf/tamuctf-2026",
+  "repository_tree_sha": "c25f8b673b2a24b5316d164666be8b84d8f02d6b",
+  "artifacts": [
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/zagjail/Dockerfile",
+      "bytes": 746,
+      "sha256": "fdeb861a08a2bb68253c154d45efe340c82fb27cced4aa49f7bea217e4ce9fd3",
+      "git_blob_sha1": "df6d760cf1dfc480f22d1667344f31ec7907184c",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/Makefile",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/zagjail/Makefile",
+      "bytes": 2261,
+      "sha256": "a03c1b8877aecc2cfe25f92134814e94dc06349743ecba575bd3bbaec58193d6",
+      "git_blob_sha1": "5cd3da9e361d9f3f5e9c194dcbd1fbf9ae4b3e2f",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/zagjail/README.md",
+      "bytes": 1088,
+      "sha256": "c1d8e83dd6fe1a1dc448a8df2180a775d2ee52710128546a0ad6accb396ba3b1",
+      "git_blob_sha1": "3affd49ed45594a5b5fd162a2963a22a54d2c67f",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/config.toml",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/zagjail/config.toml",
+      "bytes": 1219,
+      "sha256": "847ed7bbb8a58b6ff6fa1d9ba5f342624bac2db2b6baaf2c025307ac740ff985",
+      "git_blob_sha1": "aea684314046598549cff75564c9e03e8e07f07c",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flag.txt",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/zagjail/flag.txt",
+      "bytes": 89,
+      "sha256": "b76fe8040c56be1111dc4e9e6c389b1cce9dea712c9c85ac1b5ef80f0ba5268c",
+      "git_blob_sha1": "9a652c81c895031f2e34a5e08b657b34e990ff70",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/server.py",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/zagjail/server.py",
+      "bytes": 11357,
+      "sha256": "76e604b8076e0e5f6425be84129f4eee6a51162ffbcc5b7e5d8778bec24ec244",
+      "git_blob_sha1": "9ad5a3d9ed14c97b6d472201d39f136d0df7b902",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve.zag",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/zagjail/solve.zag",
+      "bytes": 297,
+      "sha256": "de589c196ef6502a74999107adc9d33b3fb9ab60ee08d8c10de1968e0f317690",
+      "git_blob_sha1": "a6b4f1cec47194ed133bd78905a80b4972f83bee",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solver-template.py",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/zagjail/solver-template.py",
+      "bytes": 110,
+      "sha256": "54a3a08e0e5ceb0e91fd9acab12074ad3d679ce52cd5216cd6a74a2fa70f85a7",
+      "git_blob_sha1": "9cfa60115b9751fa91c49dee7ece89fcaa2b1cb9",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/original_distribution/zagjail.tar.gz",
+      "url": "https://media.githubusercontent.com/media/ACM-VIT/z0d1ak-writeups/HEAD/TAMUctf%202026/pwn/zagjail/zagjail.tar.gz",
+      "bytes": 1056291,
+      "sha256": "87f8f797665ee31a1b37f5b0b7cfffed2c51d69ae681e941d70943bad1198821",
+      "kind": "attachments"
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/README.md"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

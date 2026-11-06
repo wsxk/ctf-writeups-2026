@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Introduction Continuing my participation in RITSEC CTF 2026, this second part of the series focuses on another challenge from the Reversing category titled “not quite optimal”. As with the previous writeup, the goal here is to document the full thought process behind solving the challenge, from initial inspection of the binary to understanding its underlying logic and ultimately deriving the solution.
+This challenge immediately gave the impression that the solution would not come from following the code literally, but rather from simplifying what the program was actually doing and stripping away unnecessary complexity.
+" />
+<meta name="keywords" content=", Reversing, CTF, Jeopardy, RITSEC CTF 2026, Number Theory" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-2-not-quite-optimal/" />
+
+
+    <title>
+        
+            RITSEC CTF 2026 - Reversing Writeups (Part 2): not quite optimal :: pnasis 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="https://pnasis.gitlab.io/main.min.2729760c629597024c5de34b40ea9f372f2b5a2a192dcdca537b7ddfa483eab8.css" integrity="sha256-Jyl2DGKVlwJMXeNLQOqfNy8rWioZLc3KU3t936SD6rg=" crossorigin="anonymous">
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    <link rel="icon" type="image/x-icon" href="https://pnasis.gitlab.io/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="RITSEC CTF 2026 - Reversing Writeups (Part 2): not quite optimal">
+  <meta itemprop="description" content="Introduction Continuing my participation in RITSEC CTF 2026, this second part of the series focuses on another challenge from the Reversing category titled “not quite optimal”. As with the previous writeup, the goal here is to document the full thought process behind solving the challenge, from initial inspection of the binary to understanding its underlying logic and ultimately deriving the solution.
+This challenge immediately gave the impression that the solution would not come from following the code literally, but rather from simplifying what the program was actually doing and stripping away unnecessary complexity.">
+  <meta itemprop="datePublished" content="2026-04-04T13:35:13+03:00">
+  <meta itemprop="dateModified" content="2026-04-04T13:35:13+03:00">
+  <meta itemprop="wordCount" content="3268">
+  <meta itemprop="image" content="https://pnasis.gitlab.io/">
+  <meta itemprop="keywords" content="Reversing,CTF,Jeopardy,RITSEC CTF 2026,Number Theory">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://pnasis.gitlab.io/">
+  <meta name="twitter:title" content="RITSEC CTF 2026 - Reversing Writeups (Part 2): not quite optimal">
+  <meta name="twitter:description" content="Introduction Continuing my participation in RITSEC CTF 2026, this second part of the series focuses on another challenge from the Reversing category titled “not quite optimal”. As with the previous writeup, the goal here is to document the full thought process behind solving the challenge, from initial inspection of the binary to understanding its underlying logic and ultimately deriving the solution.
+This challenge immediately gave the impression that the solution would not come from following the code literally, but rather from simplifying what the program was actually doing and stripping away unnecessary complexity.">
+
+
+
+    <meta property="og:url" content="https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-2-not-quite-optimal/">
+  <meta property="og:site_name" content="pnasis">
+  <meta property="og:title" content="RITSEC CTF 2026 - Reversing Writeups (Part 2): not quite optimal">
+  <meta property="og:description" content="Introduction Continuing my participation in RITSEC CTF 2026, this second part of the series focuses on another challenge from the Reversing category titled “not quite optimal”. As with the previous writeup, the goal here is to document the full thought process behind solving the challenge, from initial inspection of the binary to understanding its underlying logic and ultimately deriving the solution.
+This challenge immediately gave the impression that the solution would not come from following the code literally, but rather from simplifying what the program was actually doing and stripping away unnecessary complexity.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-04T13:35:13+03:00">
+    <meta property="article:modified_time" content="2026-04-04T13:35:13+03:00">
+    <meta property="article:tag" content="Reversing">
+    <meta property="article:tag" content="CTF">
+    <meta property="article:tag" content="Jeopardy">
+    <meta property="article:tag" content="RITSEC CTF 2026">
+    <meta property="article:tag" content="Number Theory">
+    <meta property="og:image" content="https://pnasis.gitlab.io/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2026-04-04 13:35:13 &#43;0300 &#43;0300" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://pnasis.gitlab.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text ">
+                $ cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://pnasis.gitlab.io/about/">~/about</a></li><li><a href="https://pnasis.gitlab.io/posts/">~/posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        16 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-2-not-quite-optimal/">RITSEC CTF 2026 - Reversing Writeups (Part 2): not quite optimal</a>
+      </h1>
+
+      
+
+      
+        <hr />
+        <aside id="toc">
+          <div class="toc-title">Table of Contents</div>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#challenge-overview">Challenge Overview</a></li>
+    <li><a href="#static-analysis">Static Analysis</a></li>
+    <li><a href="#getting-the-flag">Getting the flag</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+        </aside>
+        <hr />
+
+      
+
+      <div class="post-content">
+        <h2 id="introduction">Introduction</h2>
+<p>    Continuing my participation in <a href="https://ctfd.ritsec.club/">RITSEC CTF 2026</a>, this second part of the series focuses on another challenge from the Reversing category titled <em><strong>“not quite optimal”</strong></em>. As with the previous writeup, the goal here is to document the full thought process behind solving the challenge, from initial inspection of the binary to understanding its underlying logic and ultimately deriving the solution.</p>
+<p>    This challenge immediately gave the impression that the solution would not come from following the code literally, but rather from simplifying what the program was actually doing and stripping away unnecessary complexity.</p>
+<h2 id="challenge-overview">Challenge Overview</h2>
+<p>    The following description was provided as part of the challenge, along with a binary file named <code>not_quite_optimal</code>:</p>
+<blockquote>
+<p><em>“whoopsies, maybe i should have used -O3”</em></p>
+</blockquote>
+<p><img src="https://pnasis.gitlab.io/images/ritsec-2026-reversing-2-notQuiteOptimal-writeup/info.png" 
+alt="challenge Info" 
+style="display: block; margin: 0 auto; width: 90%; height: auto;"></p>
+<p>    As usual, I started by gathering some basic information about the binary using the <code>file</code> command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ file not_quite_optimal
+</span></span><span style="display:flex;"><span>not_quite_optimal: ELF 64-bit LSB pie executable, x86-64, version <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>SYSV<span style="color:#f92672">)</span>, dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID<span style="color:#f92672">[</span>sha1<span style="color:#f92672">]=</span>5f69a001550d6c07fbad739be763d40610329f39, <span style="color:#66d9ef">for</span> GNU/Linux 3.2.0, stripped
+</span></span></code></pre></div><p>    From this output, we can extract some useful initial information. The binary is a <em>64-bit ELF executable for x86-64 Linux</em> and it is <em>dynamically linked</em>, meaning it relies on shared libraries at runtime.</p>
+<p>    One important difference compared to the previous challenge is that this binary is compiled as a <em>PIE (Position Independent Executable)</em>. This means that its base address is randomized at runtime due to ASLR, which can make certain types of dynamic analysis or exploitation slightly more challenging. However, for static analysis, this does not pose a significant obstacle.</p>
+<p>    As before, the binary is also <em>stripped</em>, so no symbol information is available. This means that functions and variables need to be identified manually during analysis.</p>
+<h2 id="static-analysis">Static Analysis</h2>
+<p>    I began the <strong>static analysis</strong> by loading the binary into Ghidra. As expected from a stripped binary, function names were not available, so the first step was to locate the <code>main</code> function and start making sense of the program’s overall structure.</p>
+<p>    After identifying <code>main</code> and applying some basic renaming and cleanup, the decompiled output became much easier to follow. Even at a first glance, the code appeared noticeably verbose, which aligns well with the challenge description hinting at the lack of compiler optimizations.</p>
+<p>    After cleaning up the decompiled output, I started by examining the <code>main</code> function:</p>
+<p><img src="https://pnasis.gitlab.io/images/ritsec-2026-reversing-2-notQuiteOptimal-writeup/main-func-1.png" 
+alt="Main Function part 1" 
+style="display: block; margin: 0 auto; width: 90%; height: auto;"></p>
+<p><img src="https://pnasis.gitlab.io/images/ritsec-2026-reversing-2-notQuiteOptimal-writeup/main-func-2.png" 
+alt="Main Function part 2" 
+style="display: block; margin: 0 auto; width: 90%; height: auto;"></p>
+<p>    The program implements a <strong>multi-stage input validation flow</strong>, where each stage must be satisfied to reach the final flag generation logic.</p>
+<p>    The first check is slightly unusual. Instead of using a string comparison, the input is compared through multiple integer values:</p>
+<ul>
+<li><code>user_input_buf == 0x20676e696b6f6f6c</code></li>
+<li><code>input_word2 == 0x2065687420726f66</code></li>
+<li><code>input_word3_lo == 0x67616c66</code></li>
+</ul>
+<p>    Interpreting these in little-endian reveals the expected input: <code>looking for the flag</code>.</p>
+<p>    If this condition is satisfied, the program proceeds with two additional checks using <code>strcmp</code>, requiring the inputs <code>&quot;please&quot;</code> and <code>&quot;PLEASE MAY I HAVE THE FLAG&quot;</code> respectively.</p>
+<p>    Interestingly, there is also a <strong>trap path</strong> in the logic. If the second or third input checks fail, the program still prints a string that looks like a valid flag. However, this is a hardcoded value and not the result of the actual flag generation logic, making it a classic CTF decoy intended to mislead solvers who rely only on dynamic execution. Based on the wording of the decoy flag itself, it also appears to be intentionally aimed at participants attempting to shortcut the challenge using AI or automated approaches, reinforcing the idea that proper analysis is required to obtain the real flag.</p>
+<p>    Between each stage, the program wipes the input buffer using a loop. The implementation is unnecessarily convoluted, but effectively just zeroes out memory. This is consistent with the challenge theme, where operations are intentionally written in a non-optimal way.</p>
+<p>    Once all checks pass, execution reaches the final part:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">do</span> {
+</span></span><span style="display:flex;"><span>  next_index <span style="color:#f92672">=</span> char_index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  uVar1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">compute_flag_char</span>(char_index);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">putchar</span>(uVar1 <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0xff</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fflush</span>(stdout);
+</span></span><span style="display:flex;"><span>  char_index <span style="color:#f92672">=</span> next_index;
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">while</span> (next_index <span style="color:#f92672">!=</span> <span style="color:#ae81ff">84</span>);
+</span></span></code></pre></div><p>    Instead of storing the flag, the program computes it <strong>one character at a time</strong> using <code>compute_flag_char</code>.</p>
+<p>    With the logic in <code>main</code> understood, the next step was to look at how each flag character is generated, starting with <code>compute_flag_char</code>:</p>
+<p><img src="https://pnasis.gitlab.io/images/ritsec-2026-reversing-2-notQuiteOptimal-writeup/compute_flag_char-func.png" 
+alt="compute_flag_char Function" 
+style="display: block; margin: 0 auto; width: 90%; height: auto;"></p>
+<p>    This function generates a single character based on its index. The first thing it does is introduce a delay:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>sleep_requested.tv_nsec <span style="color:#f92672">=</span> (<span style="color:#66d9ef">long</span>)(char_index <span style="color:#f92672">*</span> <span style="color:#ae81ff">300</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000000</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">nanosleep</span>(<span style="color:#f92672">&amp;</span>sleep_requested,<span style="color:#f92672">&amp;</span>sleep_remaining);
+</span></span></code></pre></div><p>    This makes execution progressively slower as the index increases. Running the binary normally would take a significant amount of time just to print the flag. After that, the function initializes a GMP integer and calls <code>gmp_power_tower_mod256</code> function, which is responsible for the actual computation.</p>
+<p>    From there, it was clear that most of the heavy lifting happens deeper in the call chain, which led me to analyze <code>gmp_power_tower_mod256</code>:</p>
+<p><img src="https://pnasis.gitlab.io/images/ritsec-2026-reversing-2-notQuiteOptimal-writeup/gmp_power_tower_mod256-func.png" 
+alt="gmp_power_tower_mod256 Function" 
+style="display: block; margin: 0 auto; width: 90%; height: auto;"></p>
+<p>    This function computes a <strong>power tower</strong> (tetration) of the form: <code>base ^ (base ^ (base ^ ...))</code>, with height defined by <code>tower_height</code>. The implementation is recursive and uses <code>GMP (__gmpz_*)</code>, a library for arbitrary precision arithmetic, allowing operations on integers larger than native data types. This already makes it expensive, but the implementation goes further by manually handling exponentiation through repeated squaring and bit-level operations.</p>
+<p>    After computing the value, the result is reduced <code>modulo 256</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>result_mod256 <span style="color:#f92672">=</span> <span style="color:#a6e22e">__gmpz_fdiv_ui</span>(out_result,<span style="color:#ae81ff">256</span>);
+</span></span><span style="display:flex;"><span>flag_byte <span style="color:#f92672">=</span> result_mod256 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1U</span> <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span>;
+</span></span></code></pre></div><p>    The final output is a single byte, which corresponds to one character of the flag.</p>
+<h2 id="getting-the-flag">Getting the flag</h2>
+<p>    To better understand the runtime behavior, I initially executed the binary and provided the three correct inputs. This resulted in the beginning of the flag being printed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ./not_quite_optimal
+</span></span><span style="display:flex;"><span>&lt;       haiiii what r u doin here?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt;       looking <span style="color:#66d9ef">for</span> the flag
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;       whoaaaa i know where to find that... say the magic word and ill get it <span style="color:#66d9ef">for</span> you
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt;       please
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;       i couldnt hear u... could u try speaking a bit louder pls 🥺
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt;       PLEASE MAY I HAVE THE FLAG
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;       waow i thought ud never ask... lemme go get it <span style="color:#66d9ef">for</span> you...
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>        RS<span style="color:#f92672">{</span>4_littl3_bi7_0f_nu
+</span></span></code></pre></div><p>    However, the program appeared to freeze shortly after. This behavior is explained by the <code>nanosleep</code> call inside <code>compute_flag_char</code>, where the delay increases with each character. As the index grows, the sleep duration becomes large enough that the program effectively stalls.</p>
+<p>    My first approach was to patch the delay directly in the binary. Using Ghidra’s byte editor, I modified the instruction responsible for computing <code>tv_nsec</code> so that it would always evaluate to zero. While this worked in isolation, it did not fully solve the issue. Due to <code>PIE (Position Independent Executable)</code>, addresses change at runtime and more importantly, the program was still terminating early because <code>stdin</code> closed before all 84 characters were printed.</p>
+<p>    To work around this, I implemented a small <strong>LD_PRELOAD shim</strong> to intercept and neutralize <code>nanosleep</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#define _GNU_SOURCE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;time.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">nanosleep</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> timespec <span style="color:#f92672">*</span>req, <span style="color:#66d9ef">struct</span> timespec <span style="color:#f92672">*</span>rem) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;[nosleep] intercepted: tv_sec=%ld tv_nsec=%ld</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,
+</span></span><span style="display:flex;"><span>            req<span style="color:#f92672">-&gt;</span>tv_sec, req<span style="color:#f92672">-&gt;</span>tv_nsec);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>    Compiled and executed as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ gcc -shared -fPIC -o nosleep.so nosleep.c
+</span></span><span style="display:flex;"><span>$ LD_PRELOAD<span style="color:#f92672">=</span>./nosleep.so ./not_quite_optimal
+</span></span><span style="display:flex;"><span>..........
+</span></span></code></pre></div><p>    This successfully removed the artificial delays and the flag started printing instantly. However, the program still stalled at the same point. After further debugging, the real issue became clear.</p>
+<p>    For larger indices, the <code>tv_nsec</code> value overflows valid POSIX limits (&gt;999,999,999), causing <code>nanosleep</code> to return <code>EINVAL</code>. While the shim bypasses this, the actual bottleneck lies elsewhere: the <strong>GMP computation</strong>.</p>
+<p>    The function <code>gmp_power_tower_mod256</code> computes <em><strong>base ^ (base ^ (base ^ &hellip;))</strong></em> using full arbitrary-precision arithmetic before applying modulo 256. For larger inputs, the exponent grows extremely fast, resulting in <strong>massive bignum exponentiation</strong>. At around character 21, this becomes computationally infeasible, effectively freezing the program due to CPU usage, not sleep delays.</p>
+<p>    At this point, it became clear that the intended solution was not to execute the binary, but to replicate the logic efficiently. Python’s built-in <code>pow(base, exp, mod)</code> performs fast modular exponentiation and avoids constructing large intermediate numbers. Additionally, the power tower stabilizes quickly modulo 256, meaning we do not need to fully evaluate the tower.</p>
+<p>    The required data for each character is stored in memory at <code>DAT_001022a0</code>, as an array of 84 entries, each containing a <code>(base, exponent)</code> pair. Due to the layout:</p>
+<ul>
+<li>The first base is stored at <code>DAT_001022a0</code>.</li>
+<li>The rest of the data (base/exp pairs) is interleaved starting at <code>DAT_001022a8</code>.</li>
+</ul>
+<p>    After extracting these values from Ghidra, I constructed the following script:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> struct<span style="color:#f92672">,</span> sys
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># DAT_001022a8 — 1336 bytes from Ghidra</span>
+</span></span><span style="display:flex;"><span>raw <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;02 00 00 00 00 00 00 00 75 2b 19 00 00 00 00 00 02 00 00 00 00 00 00 00 c5 95 32 00 00 00 00 00 02 00 00 00 00 00 00 00 97 0b 38 00 00 00 00 00 02 00 00 00 00 00 00 00 cd 32 4b 00 00 00 00 00 02 00 00 00 00 00 00 00 27 4a 64 00 00 00 00 00 02 00 00 00 00 00 00 00 d1 a6 6e 00 00 00 00 00 02 00 00 00 00 00 00 00 17 2a 7a 00 00 00 00 00 02 00 00 00 00 00 00 00 17 ea 8c 00 00 00 00 00 02 00 00 00 00 00 00 00 27 d5 a7 00 00 00 00 00 02 00 00 00 00 00 00 00 35 a4 b9 00 00 00 00 00 02 00 00 00 00 00 00 00 cd fe c1 00 00 00 00 00 02 00 00 00 00 00 00 00 1b 70 d8 00 00 00 00 00 02 00 00 00 00 00 00 00 d1 bc e7 00 00 00 00 00 02 00 00 00 00 00 00 00 7d 80 f8 00 00 00 00 00 02 00 00 00 00 00 00 00 cd b8 05 01 00 00 00 00 02 00 00 00 00 00 00 00 9f 01 19 01 00 00 00 00 02 00 00 00 00 00 00 00 d3 65 2d 01 00 00 00 00 02 00 00 00 00 00 00 00 cd 7f 37 01 00 00 00 00 02 00 00 00 00 00 00 00 43 d4 4a 01 00 00 00 00 02 00 00 00 00 00 00 00 a9 c5 5d 01 00 00 00 00 02 00 00 00 00 00 00 00 99 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 3b 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 f5 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 1b 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 0d 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 97 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 2f 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 f5 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 9f 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 1b 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 f1 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 0d 02 00 00 00 00 00 00 03 00 00 00 00 00 00 00 e3 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 f5 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 53 02 00 00 00 00 00 00 03 00 00 00 00 00 00 00 f5 01 00 00 00 00 00 00 03 00 00 00 00 00 00 00 1b 02 00 00 00 00 00 00 03 00 00 00 00 00 00 00 0d 03 00 00 00 00 00 00 03 00 00 00 00 00 00 00 2f 02 00 00 00 00 00 00 03 00 00 00 00 00 00 00 a9 02 00 00 00 00 00 00 03 00 00 00 00 00 00 00 1b 03 00 00 00 00 00 00 03 00 00 00 00 00 00 00 bd 93 00 00 00 00 00 00 04 00 00 00 00 00 00 00 0d c8 05 00 00 00 00 00 04 00 00 00 00 00 00 00 17 34 08 00 00 00 00 00 04 00 00 00 00 00 00 00 63 fe 0b 00 00 00 00 00 04 00 00 00 00 00 00 00 f1 ce 0e 00 00 00 00 00 04 00 00 00 00 00 00 00 9f e6 0f 00 00 00 00 00 04 00 00 00 00 00 00 00 63 65 13 00 00 00 00 00 04 00 00 00 00 00 00 00 f5 db 17 00 00 00 00 00 04 00 00 00 00 00 00 00 0d ef 18 00 00 00 00 00 04 00 00 00 00 00 00 00 61 46 1d 00 00 00 00 00 04 00 00 00 00 00 00 00 71 10 1f 00 00 00 00 00 04 00 00 00 00 00 00 00 bb 00 23 00 00 00 00 00 04 00 00 00 00 00 00 00 f5 6b 26 00 00 00 00 00 04 00 00 00 00 00 00 00 f5 e4 28 00 00 00 00 00 04 00 00 00 00 00 00 00 53 2d 2c 00 00 00 00 00 04 00 00 00 00 00 00 00 71 4a 2e 00 00 00 00 00 04 00 00 00 00 00 00 00 c1 70 31 00 00 00 00 00 04 00 00 00 00 00 00 00 1b e7 34 00 00 00 00 00 04 00 00 00 00 00 00 00 29 99 39 00 00 00 00 00 04 00 00 00 00 00 00 00 55 a9 3b 00 00 00 00 00 04 00 00 00 00 00 00 00 bd 00 40 00 00 00 00 00 04 00 00 00 00 00 00 00 8f d3 00 00 00 00 00 00 5e 47 02 00 00 00 00 00 9f c1 13 00 00 00 00 00 18 3b 09 00 00 00 00 00 71 09 25 00 00 00 00 00 49 8b 18 00 00 00 00 00 29 5f 3f 00 00 00 00 00 b1 40 21 00 00 00 00 00 53 24 51 00 00 00 00 00 b6 57 22 00 00 00 00 00 8f 7d 59 00 00 00 00 00 21 c8 2c 00 00 00 00 00 71 d2 6d 00 00 00 00 00 c8 03 34 00 00 00 00 00 c1 58 82 00 00 00 00 00 de 93 42 00 00 00 00 00 f5 3c 8a 00 00 00 00 00 76 c1 4b 00 00 00 00 00 8f d7 a5 00 00 00 00 00 88 09 4d 00 00 00 00 00 f3 86 b2 00 00 00 00 00 33 c7 57 00 00 00 00 00 8f 80 c4 00 00 00 00 00 47 86 60 00 00 00 00 00 61 31 d4 00 00 00 00 00 c7 62 6a 00 00 00 00 00 c1 99 e3 00 00 00 00 00 63 82 75 00 00 00 00 00 c1 35 f5 00 00 00 00 00 04 e6 77 00 00 00 00 00 f5 ef 0b 01 00 00 00 00 c0 85 84 00 00 00 00 00 f3 80 16 01 00 00 00 00 67 d1 8e 00 00 00 00 00 29 43 27 01 00 00 00 00 2f 4d 96 00 00 00 00 00 89 fb 3d 01 00 00 00 00 89 b9 9e 00 00 00 00 00 f5 5a 4b 01 00 00 00 00 b6 fe a1 00 00 00 00 00 b9 e4 54 01 00 00 00 00 a9 71 ac 00 00 00 00 00&#34;</span>
+</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> bytes(int(x,<span style="color:#ae81ff">16</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> raw<span style="color:#f92672">.</span>split())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Entry 0 base from separate 8-byte dump of DAT_001022a0</span>
+</span></span><span style="display:flex;"><span>base0 <span style="color:#f92672">=</span> struct<span style="color:#f92672">.</span>unpack(<span style="color:#e6db74">&#39;&lt;q&#39;</span>, bytes([<span style="color:#ae81ff">0x3b</span>,<span style="color:#ae81ff">0xc8</span>,<span style="color:#ae81ff">0x0a</span>,<span style="color:#ae81ff">0x00</span>,<span style="color:#ae81ff">0x00</span>,<span style="color:#ae81ff">0x00</span>,<span style="color:#ae81ff">0x00</span>,<span style="color:#ae81ff">0x00</span>]))[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>entries <span style="color:#f92672">=</span> [(base0, struct<span style="color:#f92672">.</span>unpack_from(<span style="color:#e6db74">&#39;&lt;q&#39;</span>, data, <span style="color:#ae81ff">0</span>)[<span style="color:#ae81ff">0</span>])]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">84</span>):
+</span></span><span style="display:flex;"><span>    off <span style="color:#f92672">=</span> (i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span><span style="color:#ae81ff">16</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>    entries<span style="color:#f92672">.</span>append((struct<span style="color:#f92672">.</span>unpack_from(<span style="color:#e6db74">&#39;&lt;q&#39;</span>, data, off)[<span style="color:#ae81ff">0</span>], struct<span style="color:#f92672">.</span>unpack_from(<span style="color:#e6db74">&#39;&lt;q&#39;</span>, data, off<span style="color:#f92672">+</span><span style="color:#ae81ff">8</span>)[<span style="color:#ae81ff">0</span>]))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Power tower converges quickly mod 256 — once exp &gt;= ~8 the result stabilises.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use iterative bottom-up computation to avoid deep recursion.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tower_mod256</span>(b, exp):
+</span></span><span style="display:flex;"><span>    b <span style="color:#f92672">=</span> b <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0xff</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> b <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>: <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> b <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>: <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Build tower iteratively: t[1]=b, t[2]=b^b, t[3]=b^(b^b), ...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Once result stops changing mod 256, we&#39;re done.</span>
+</span></span><span style="display:flex;"><span>    val <span style="color:#f92672">=</span> b
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(exp <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>        new_val <span style="color:#f92672">=</span> pow(b, val, <span style="color:#ae81ff">256</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> new_val <span style="color:#f92672">==</span> val:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>        val <span style="color:#f92672">=</span> new_val
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> val
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">char_of</span>(base, exp):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (tower_mod256(base, exp) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(chr(char_of(b, e)) <span style="color:#66d9ef">for</span> b, e <span style="color:#f92672">in</span> entries))
+</span></span></code></pre></div><p>    The script reconstructs the flag by first parsing the raw bytes extracted from Ghidra into <code>(base, exponent)</code> pairs. Due to the interleaved memory layout, this requires careful offset handling to correctly align each pair. Once the data is structured, the core computation is handled by <code>tower_mod256</code>, which efficiently evaluates the power tower modulo 256. Instead of following the original recursive and expensive GMP-based approach, it reduces the base early, uses Python’s built-in <code>pow(base, exp, mod)</code> for fast modular exponentiation and iteratively builds the result from the bottom up, stopping as soon as the value stabilizes.</p>
+<p>    After computing each value, the script applies the same transformation observed in the binary, <code>(value + 1) &gt;&gt; 1</code>, to produce the final character. Repeating this process for all 84 entries reconstructs the full flag almost instantly, effectively bypassing both the artificial delays and the heavy arbitrary-precision computations present in the original implementation.</p>
+<p>    Running the script reconstructs all 84 characters of the flag in under a second, completely bypassing both the artificial delays and the expensive GMP computations:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ python solve.py
+</span></span><span style="display:flex;"><span>RS<span style="color:#f92672">{</span>4_littl3_bi7_0f_numb3r_th30ry_n3v3r_hur7_4ny0n3_19b3369a25c78095689a38f81aa3f5e3<span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>    Interestingly, the flag itself serves as a hint about the nature of the challenge: <em>“a little bit of number theory never hurt anyone”</em>. This directly reflects the core idea behind the solution, as modular power towers are a well-known concept in number theory. In particular, iterated exponentiation modulo n tends to stabilize due to results like Euler’s theorem, which is exactly what allows the computation to be simplified so effectively.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>    This challenge is a great example of how complexity in reversing does not always come from obfuscation, but from <strong>inefficiency by design</strong>. At first glance, the binary appears to require full execution to recover the flag, but both the artificial delays and the heavy GMP-based computations are meant to discourage that approach. Instead, the intended path is to recognize what the program is doing at a higher level and replicate it in a more efficient way.</p>
+<p>    A key takeaway here is the importance of identifying when a problem can be reduced mathematically. Once the power tower structure and the modulo 256 behavior were understood, the problem shifted from reverse engineering into a much simpler computation task. Leveraging built-in tools like Python’s modular exponentiation makes a huge difference, turning what would take an impractical amount of time into something that runs almost instantly.</p>
+<p>    Overall, this was a very well-designed challenge that reinforces an important lesson: not everything needs to be executed as-is. Sometimes, stepping back and simplifying the logic is the most effective approach.</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://pnasis.gitlab.io/tags/reversing/">Reversing</a></span>
+        <span class="tag"><a href="https://pnasis.gitlab.io/tags/ctf/">CTF</a></span>
+        <span class="tag"><a href="https://pnasis.gitlab.io/tags/jeopardy/">Jeopardy</a></span>
+        <span class="tag"><a href="https://pnasis.gitlab.io/tags/ritsec-ctf-2026/">RITSEC CTF 2026</a></span>
+        <span class="tag"><a href="https://pnasis.gitlab.io/tags/number-theory/">Number Theory</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        3268 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2026-04-04 10:35
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+    <div class="pagination">
+        
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-3-buried-treasure/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">RITSEC CTF 2026 - Reversing Writeups (Part 3): Buried Treasure</span>
+                </a>
+            </span>
+            
+
+            
+            <span class="button next">
+                <a href="https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-1-t-reasure-chest/">
+                    <span class="button__text">RITSEC CTF 2026 - Reversing Writeups (Part 1): T-reasure Chest</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span style="font-size: 0.8rem; opacity: 0.8;">Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/rhazdon/hugo-theme-hello-friend-ng">hello-friend-ng</a> theme.</span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://pnasis.gitlab.io/bundle.min.e89fda0f29b95d33f6f4224dd9e5cf69d84aff3818be2b0d73e731689cc374261b016d17d46f8381962fb4a1577ba3017b1f23509d894f6e66431f988c00889e.js" integrity="sha512-6J/aDym5XTP29CJN2eXPadhK/zgYvisNc&#43;cxaJzDdCYbAW0X1G&#43;DgZYvtKFXe6MBex8jUJ2JT25mQx&#43;YjACIng=="></script>
+
+
+
+
+    </body>
+</html>

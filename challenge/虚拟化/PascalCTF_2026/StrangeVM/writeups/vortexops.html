@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Tags from Jekyll -->
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>StrangeVM | VortexOps CTF Team</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="StrangeVM" />
+<meta name="author" content="VortexOps CTF Team" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Uncovering a hidden flag by reversing a custom Virtual Machine and its bytecode." />
+<meta property="og:description" content="Uncovering a hidden flag by reversing a custom Virtual Machine and its bytecode." />
+<link rel="canonical" href="https://vortexopsctf.github.io/writeups/2026/02/05/pascal-ctf-strange-vm/" />
+<meta property="og:url" content="https://vortexopsctf.github.io/writeups/2026/02/05/pascal-ctf-strange-vm/" />
+<meta property="og:site_name" content="VortexOps CTF Team" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-02-05T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="StrangeVM" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"VortexOps CTF Team"},"dateModified":"2026-02-05T00:00:00-05:00","datePublished":"2026-02-05T00:00:00-05:00","description":"Uncovering a hidden flag by reversing a custom Virtual Machine and its bytecode.","headline":"StrangeVM","mainEntityOfPage":{"@type":"WebPage","@id":"https://vortexopsctf.github.io/writeups/2026/02/05/pascal-ctf-strange-vm/"},"url":"https://vortexopsctf.github.io/writeups/2026/02/05/pascal-ctf-strange-vm/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/assets/images/favicon.svg">
+
+    <!-- RSS Feed -->
+    <link type="application/atom+xml" rel="alternate" href="https://vortexopsctf.github.io/feed.xml" title="VortexOps CTF Team" />
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+    <div class="container">
+        <a href="/" class="nav-brand">
+            <img src="/assets/images/logo.png" alt="VortexOps Logo" class="logo">
+            <h1>VortexOps</h1>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="/" >Home</a></li>
+            <li><a href="/writeups/" class="active" >Writeups</a></li>
+            <li><a href="/blog/" >Blog</a></li>
+            <li><a href="/calendar/" >Calendar</a></li>
+            <li><a href="/team/" >Team</a></li>
+            <li><a href="https://ctftime.org/team/409168" target="_blank">CTFtime</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+        <div class="nav-controls">
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z">
+                    </path>
+                </svg>
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z">
+                    </path>
+                </svg>
+            </button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <style>
+    .writeup-content {
+        background: rgba(14, 16, 24, 0.6);
+        backdrop-filter: blur(10px);
+        padding: 3rem 0;
+        min-height: 70vh;
+    }
+
+    .writeup-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .writeup-header {
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 2px solid rgba(139, 92, 246, 0.3);
+    }
+
+    .writeup-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .writeup-meta {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.95rem;
+    }
+
+    .writeup-meta span {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .category-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: rgba(139, 92, 246, 0.2);
+        border: 1px solid rgba(139, 92, 246, 0.4);
+        border-radius: 20px;
+        color: #8b5cf6;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+
+    .writeup-body {
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.8;
+    }
+
+    .writeup-body h2 {
+        font-size: 1.8rem;
+        margin: 2.5rem 0 1.5rem;
+        color: #fff;
+        border-left: 4px solid #8b5cf6;
+        padding-left: 1rem;
+    }
+
+    .writeup-body h3 {
+        font-size: 1.4rem;
+        margin: 2rem 0 1rem;
+        color: rgba(255, 255, 255, 0.95);
+    }
+
+    .writeup-body p {
+        margin-bottom: 1.5rem;
+    }
+
+    .writeup-body img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    .writeup-body code {
+        background: rgba(139, 92, 246, 0.1);
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-family: 'Monaco', 'Courier New', monospace;
+        font-size: 0.9rem;
+        color: #06b6d4;
+    }
+
+    .writeup-body pre {
+        background: rgba(0, 0, 0, 0.4);
+        padding: 1.5rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+        border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+
+    .writeup-body pre code {
+        background: none;
+        padding: 0;
+        color: inherit;
+    }
+
+    .writeup-body a {
+        color: #06b6d4;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s ease;
+    }
+
+    .writeup-body a:hover {
+        border-bottom-color: #06b6d4;
+    }
+
+    .writeup-body ul,
+    .writeup-body ol {
+        margin-bottom: 1.5rem;
+        padding-left: 2rem;
+    }
+
+    .writeup-body li {
+        margin-bottom: 0.5rem;
+    }
+
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #8b5cf6;
+        text-decoration: none;
+        margin-bottom: 2rem;
+        transition: transform 0.3s ease;
+    }
+
+    .back-link:hover {
+        transform: translateX(-5px);
+    }
+
+    .flag-box {
+        background: rgba(6, 182, 212, 0.1);
+        border-left: 4px solid #06b6d4;
+        padding: 1.5rem;
+        margin: 2rem 0;
+        border-radius: 4px;
+    }
+
+    .flag-box code {
+        color: #06b6d4;
+        word-break: break-all;
+    }
+
+    .writeup-tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+    }
+
+    .tag {
+        padding: 0.25rem 0.75rem;
+        background: rgba(6, 182, 212, 0.15);
+        border: 1px solid rgba(6, 182, 212, 0.3);
+        border-radius: 15px;
+        color: #06b6d4;
+        font-size: 0.8rem;
+        text-transform: capitalize;
+    }
+</style>
+
+<section class="writeup-content">
+    <div class="writeup-container">
+        <a href="/writeups/" class="back-link">← Back to all writeups</a>
+
+        <div class="writeup-header">
+            <h1>StrangeVM</h1>
+            <div class="writeup-meta">
+                <span><span class="category-badge">reversing</span></span>
+                <span>📅 Pascal CTF 2026</span>
+                <span>⭐ Medium</span>
+                <span>🗓️ Feb 5, 2026</span>
+            </div>
+            
+            <div class="writeup-tags">
+                
+                <span class="tag">reversing</span>
+                
+                <span class="tag">vm</span>
+                
+                <span class="tag">disassembly</span>
+                
+                <span class="tag">custom-instruction-set</span>
+                
+            </div>
+            
+        </div>
+
+        <div class="writeup-body">
+            <h1 id="challenge-description">Challenge Description</h1>
+
+<p>A 🧙🏻‍♂️ stranger once built a VM and hid the Forbidden Key🥀, can you uncover it? P.S.: Keep all the files in the same directory for easier debugging and execution.</p>
+
+<h1 id="analysis">Analysis</h1>
+
+<p>The challenge provides a custom Virtual Machine (<code class="language-plaintext highlighter-rouge">vm</code>) that executes bytecode from <code class="language-plaintext highlighter-rouge">code.pascal</code>. The goal is to find the “Forbidden Key” (flag) that the VM accepts.</p>
+
+<h2 id="1-vm-analysis">1. VM Analysis</h2>
+
+<p>We created a disassembler (<code class="language-plaintext highlighter-rouge">disassembler.py</code> ) to parser the <code class="language-plaintext highlighter-rouge">code.pascal</code> file. The VM uses a custom instruction set with opcodes for basic arithmetic (<code class="language-plaintext highlighter-rouge">ADD</code>, <code class="language-plaintext highlighter-rouge">SUB</code>, <code class="language-plaintext highlighter-rouge">MOD</code>), memory movement (<code class="language-plaintext highlighter-rouge">MOV</code>), input (<code class="language-plaintext highlighter-rouge">INP</code>), and conditional jumps (<code class="language-plaintext highlighter-rouge">JZ</code>).</p>
+
+<p>The disassembly revealed a repetitive pattern which processes 40 characters of input.</p>
+
+<h2 id="2-logic-reversed">2. Logic Reversed</h2>
+
+<p>The VM applies a simple transformation to the input string based on the character index:</p>
+
+<ul>
+  <li><strong>Even Index:</strong> <code class="language-plaintext highlighter-rouge">transformed[i] = input[i] + i</code></li>
+  <li><strong>Odd Index:</strong> <code class="language-plaintext highlighter-rouge">transformed[i] = input[i] - 1</code></li>
+</ul>
+
+<p>After transformation, the result is compared effectively against a hardcoded byte sequence in the binary.</p>
+
+<h2 id="3-finding-the-target">3. Finding the Target</h2>
+
+<p>The target byte sequence was not immediately visible as a clear string in the binary because of the transformation. However, looking at the raw hex dump of the <code class="language-plaintext highlighter-rouge">vm</code> binary near the “Congratulations” strings, we found a 40-byte sequence that looked like the target buffer.</p>
+
+<p><strong>Target Hex:</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">56 4C 75 5C 38 6D 39 58 6C 28 3E 57 7B 5F 3F 54 44 5B 71 20 82 1B 8B 50 80 46 7E 15 8A 57 7D 5A 50 54 81 51 8C 0C 94 44</code></p>
+
+<h1 id="solution">Solution</h1>
+
+<p>We wrote a solver script (<code class="language-plaintext highlighter-rouge">solver.py</code>) to reverse the transformation:</p>
+
+<ul>
+  <li><strong>Even Index:</strong> <code class="language-plaintext highlighter-rouge">flag[i] = target[i] - i</code></li>
+  <li><strong>Odd Index:</strong> <code class="language-plaintext highlighter-rouge">flag[i] = target[i] + i</code></li>
+</ul>
+
+<h2 id="solver-script">Solver Script</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solve</span><span class="p">():</span>
+    <span class="n">target_hex</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s">"56 4C 75 5C 38 6D 39 58 6C 28 3E 57 7B 5F 3F 54 44 5B 71 20 "</span>
+        <span class="s">"82 1B 8B 50 80 46 7E 15 8A 57 7D 5A 50 54 81 51 "</span>
+        <span class="s">"8C 0C 94 44"</span>
+    <span class="p">)</span>
+
+    <span class="n">target_bytes</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">target_hex</span><span class="p">.</span><span class="n">split</span><span class="p">()]</span>
+    <span class="n">input_key</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">target_bytes</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">target_bytes</span><span class="p">)):</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="n">target_bytes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">val</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">val</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
+        <span class="n">input_key</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="n">input_key</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">solve</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h1 id="flag">Flag</h1>
+
+<div class="flag-box">
+<strong>Flag:</strong><br />
+<code>pascalCTF{VMs_4r3_d14bol1c4l_3n0ugh_d0nt_y0u_th1nk}</code>
+</div>
+
+        </div>
+    </div>
+</section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 VortexOps CTF Team. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>

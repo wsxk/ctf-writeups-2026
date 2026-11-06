@@ -1,0 +1,45 @@
+{
+  "ctftime_api_year_count": 338,
+  "ctftime_html_year_count": 338,
+  "same_id_set": true,
+  "raw_api_count_including_boundary_window": 359,
+  "requested_api_limit": 1000,
+  "count": 416,
+  "monthly_counts": {
+    "2026-01": 25,
+    "2026-02": 22,
+    "2026-03": 53,
+    "2026-04": 40,
+    "2026-05": 48,
+    "2026-06": 21,
+    "2026-07": 27,
+    "2026-08": 41,
+    "2026-09": 42,
+    "2026-10": 53,
+    "2026-11": 34,
+    "2026-12": 10
+  },
+  "undated_count": 0,
+  "status_counts": {
+    "赛程已过": 364,
+    "见赛期说明": 6,
+    "延期／官网取消公告届次待核": 1,
+    "延期；公开资格赛新日期未核实": 1,
+    "已取消": 1,
+    "延期，日期待定": 1,
+    "赛程内": 4,
+    "待开始": 38
+  },
+  "cross_year_count": 1,
+  "upcoming_count": 42,
+  "merged_duplicates": [
+    {
+      "source_file": "global_supplement.json",
+      "title": "MITRE Embedded Capture the Flag (eCTF) 2026",
+      "ctftime_id": 2916
+    }
+  ],
+  "unique_record_ids": 416,
+  "sources_present_for_all": true,
+  "ordered_dates_valid": true
+}

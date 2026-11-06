@@ -1,0 +1,68 @@
+{
+  "event_id": "CTF-3148",
+  "event_title": "UIUCTF 2026",
+  "title": "glyphs",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [],
+  "source_urls": [
+    "https://ctf42.online/ctfs/uiuctf/2026/glyphs/",
+    "https://ctf42.online/ctfs/uiuctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/rev/glyphs"
+  ],
+  "writeup_urls": [
+    "https://ctftime.org/writeup/41116",
+    "https://cybersecurityelite.com/ctf-writeups/uiuctf-2026-reverse-engineering-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/rev/glyphs",
+    "https://ctf42.online/ctfs/uiuctf/2026/glyphs/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/uiuctf_2026/glyphs/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UIUCTF/2026/rev/glyphs/README.md",
+      "bytes": 134,
+      "sha256": "fe78afd3e8e9eb3706d07b96e292009ba068f99180c5c16de1066f087d7d30ec",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/uiuctf_2026/glyphs/attachments/upstream/glyphs",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UIUCTF/2026/rev/glyphs/glyphs",
+      "bytes": 24121464,
+      "sha256": "7727129104630c5c984a68aae449005c206c14a7bbbdf09636d5074145f7c9a0",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/uiuctf_2026/glyphs/writeups/replacement_source.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/uiuctf-2026-reverse-engineering-writeup/",
+      "bytes": 167239,
+      "sha256": "724e300ae6d2e6df77ab249ff35e2ffe85a4205f7e1efa126613079cf7b36596",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/uiuctf_2026/glyphs/writeups/replacement_readable.txt",
+      "url": "https://cybersecurityelite.com/ctf-writeups/uiuctf-2026-reverse-engineering-writeup/",
+      "bytes": 38617,
+      "sha256": "0bd438f73bdb035b212c030d87c6d292c41e3f9f0020169b19a5d27a36037b6a",
+      "kind": "writeup"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/uiuctf/2026/glyphs/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/uiuctf/2026/glyphs/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files",
+  "writeup_kind": "prose"
+}

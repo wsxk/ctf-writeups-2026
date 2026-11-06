@@ -1,0 +1,17 @@
+{
+  "records": 17,
+  "downloaded": 15,
+  "writeup_kinds": {
+    "prose": 13,
+    "unavailable": 2,
+    "solver": 1,
+    "solver_with_author_outline": 1
+  },
+  "files": 26,
+  "bytes": 2191208,
+  "sha256_errors": [],
+  "unavailable": [
+    "pwn/trx_2026/slop_allocator",
+    "逆向/volgactf_2026-quals/Vision"
+  ]
+}

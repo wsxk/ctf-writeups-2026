@@ -1,0 +1,62 @@
+{
+  "event_id": "CTF-3061",
+  "event_title": "L3akCTF 2026",
+  "title": "LattiaVM_2",
+  "category": "虚拟化",
+  "original_category": "Pwn",
+  "tags": [
+    "vm-stack-pointer-corruption"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/l3akctf/2026/lattiavm_2/",
+    "https://ctf42.online/ctfs/l3akctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/L3akCTF/2026/pwn/LattiaVM_2"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/l3akctf-2026-pwn-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/L3akCTF/2026/pwn/LattiaVM_2",
+    "https://ctf42.online/ctfs/l3akctf/2026/lattiavm_2/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/l3akctf_2026/LattiaVM_2/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/l3akctf-2026-pwn-writeup/",
+      "bytes": 111343,
+      "sha256": "2737b0ed17609971be872fc5d1a6c9f9eb7897b724a512f87b7bfebc0ff5d476",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/l3akctf_2026/LattiaVM_2/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/L3akCTF/2026/pwn/LattiaVM_2/README.md",
+      "bytes": 171,
+      "sha256": "6a1981a455e2a355b67440c3ea63df319092e02c2fce3d23c6d64ccc15733c8d",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/l3akctf_2026/LattiaVM_2/attachments/upstream/lattia-vm-2.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/L3akCTF/2026/pwn/LattiaVM_2/lattia-vm-2.zip",
+      "bytes": 1018443,
+      "sha256": "218b31b361892938d613557f5d35583952e179b11911c74759fb65263d95a11f",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/l3akctf/2026/lattiavm_2/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/l3akctf/2026/lattiavm_2/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>vellum · WRECKCTF 2026 (pwn) writeup · ctf42</title>
+  
+
+<meta name="description" content="vellum: Pwn challenge from WRECKCTF 2026. spyre extra fancy paper">
+<link rel="canonical" href="https://ctf42.online/ctfs/wreckctf/2026/vellum/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/wreckctf/2026/vellum/">
+<meta property="og:title" content="vellum">
+<meta property="og:description" content="vellum: Pwn challenge from WRECKCTF 2026. spyre extra fancy paper">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/wreckctf/">WRECKCTF</a> / <a href="/ctfs/wreckctf/2026/">2026</a> / vellum</nav>
+
+
+<div class="challenge-head">
+  <h1>vellum
+    </h1>
+  <div class="badges">
+    <a class="cat cat-pwn" href="/category/pwn/">Pwn</a>
+    
+    
+    
+    
+      <span class="empty">No technique tags yet.</span>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/wreckctf/2026/vellum/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/wreckctf/2026/vellum/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  
+  
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>spyre
+extra fancy paper</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+<article class="writeup">
+  <header>
+    <b>honest_solver.py</b>
+    <span class="chip">official</span>
+    
+    <span class="muted">by anonymous</span>
+  </header>
+  <p><a href="https://github.com/sajjadium/ctf-archives/blob/main/ctfs/WRECKCTF/2026/pwn/vellum/honest_solver.py" rel="noopener nofollow ugc" target="_blank">https://github.com/sajjadium/ctf-archives/blob/main/ctfs/WRECKCTF/2026/pwn/vellum/honest_solver.py</a></p>
+  
+</article>
+
+
+      <h3>Community</h3>
+      
+        <p class="empty">No community writeups yet. Solved it? Share how.</p>
+      
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/wreckctf/2026/vellum/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/WRECKCTF/2026/pwn/vellum" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/wreckctf/2026/vellum/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from WRECKCTF 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/wreckctf/2026/bounding/">Bounding</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/wreckctf/2026/mr_pollard/">Mr_Pollard</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/wreckctf/2026/no_hash_no_cash/">No_Hash_No_Cash</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/wreckctf/2026/nonce_sense/">Nonce_Sense</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/wreckctf/2026/paper_trail/">Paper_Trail</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/wreckctf/2026/skissue/">skissue</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/wreckctf/2026/bot_battle/">Bot_Battle</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/wreckctf/2026/bot_battle_champion/">Bot_Battle_Champion</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/wreckctf/2026/apple_telemetries/">apple_telemetries</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/wreckctf/2026/baby_kpwn/">baby_kpwn</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/wreckctf/2026/baby_pwn/">baby_pwn</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/wreckctf/2026/gotohell_2/">gotohell_2</a> <span class="cat cat-pwn cat-xs">Pwn</span></li>
+      </ul>
+      <a class="small" href="/ctfs/wreckctf/2026/">All WRECKCTF 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

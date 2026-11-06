@@ -1,0 +1,151 @@
+{
+  "event_id": "CTF-3161",
+  "event_title": "SUCTF 2026",
+  "category": "逆向",
+  "title": "SU_Protocol",
+  "dirname": "SUCTF_2026",
+  "source_urls": [
+    "https://github.com/team-su/SUCTF-2026/tree/HEAD/re/SU_Protocol"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/attachments/taskdemo.zip",
+      "local": "attachments/attachments/taskdemo.zip",
+      "size_expected": 4597512,
+      "git_blob_sha": "9a20161b9a9daf641791b8082a2f324e09ebbcab",
+      "status": "downloaded",
+      "bytes": 4597512,
+      "sha256": "a8ca023487566a64d6ba7e0f19f69e2fe60d368c5292e7768b290f3406dca542"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/sourcecode/sourcecode.zip",
+      "local": "attachments/sourcecode/sourcecode.zip",
+      "size_expected": 1940,
+      "git_blob_sha": "0c267c62d918721581a45d35fa7583d7c68804ca",
+      "status": "downloaded",
+      "bytes": 1940,
+      "sha256": "cdc9fc2e07d573cc1540deb7584af13528eac3452da12b69c13664668a6eaa59"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/SU_Protocol%2031bef3f8bbc880d98410dd9efed3e0d2.md",
+      "local": "writeups/writeup/SU_Protocol 31bef3f8bbc880d98410dd9efed3e0d2.md",
+      "size_expected": 4699,
+      "git_blob_sha": "e50ad68c10628567e32815771e7c95391e935a31",
+      "status": "downloaded",
+      "bytes": 4699,
+      "sha256": "7b38b22bdc47b4494308e58174bf367a3183371cb75272f61b78fef7191ed656"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%201.png",
+      "local": "writeups/writeup/image 1.png",
+      "size_expected": 64159,
+      "git_blob_sha": "ea4203ce20a2a939928a777acc0b6354d3a0efc6",
+      "status": "downloaded",
+      "bytes": 64159,
+      "sha256": "f22097c6325e5257d0e21aef0b66d30e2484917f52f4dafa2744c0d46881cadd"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%202.png",
+      "local": "writeups/writeup/image 2.png",
+      "size_expected": 24002,
+      "git_blob_sha": "a1dc13836340b140d5d08ed269c703e14bd1bc07",
+      "status": "downloaded",
+      "bytes": 24002,
+      "sha256": "6f3e4cf4dfb0828c85389aa191f7bfa52bf4dcefeb176a91c5ba0ee1a147d33a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%203.png",
+      "local": "writeups/writeup/image 3.png",
+      "size_expected": 51829,
+      "git_blob_sha": "61a328760e37027910c5ee2764596c8a12daac67",
+      "status": "downloaded",
+      "bytes": 51829,
+      "sha256": "65864ea187b5d1e39897c480f4227c60c4b13d95e518e6f93e957ab0823a438d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%204.png",
+      "local": "writeups/writeup/image 4.png",
+      "size_expected": 20141,
+      "git_blob_sha": "a447e027337744c328fdc4f523915ab7574228e6",
+      "status": "downloaded",
+      "bytes": 20141,
+      "sha256": "92bc381b8f3648ffe5e4e57a7eb325d9f34ca5bee5347cd09beff8100d0d231a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%205.png",
+      "local": "writeups/writeup/image 5.png",
+      "size_expected": 44084,
+      "git_blob_sha": "c64b5c284f3c08f17102007659760440df4ee84a",
+      "status": "downloaded",
+      "bytes": 44084,
+      "sha256": "d9b11e458f610cd883e4462190df1d1103bb1863831ebdc161ab955e695ab7cb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%206.png",
+      "local": "writeups/writeup/image 6.png",
+      "size_expected": 9641,
+      "git_blob_sha": "ddc4e98147ee8e33affa8440099d836f589a0caf",
+      "status": "downloaded",
+      "bytes": 9641,
+      "sha256": "514f8695aa9c702a24856d3eaa810a828273cff617566b0957518885513c95ca"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%207.png",
+      "local": "writeups/writeup/image 7.png",
+      "size_expected": 56977,
+      "git_blob_sha": "3973cf88211a6aff32171b432aaaef9330f043a7",
+      "status": "downloaded",
+      "bytes": 56977,
+      "sha256": "cc85f634789d768a22cd7df3127553d12f0bec755e176666be42903748bb0460"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%208.png",
+      "local": "writeups/writeup/image 8.png",
+      "size_expected": 55269,
+      "git_blob_sha": "3a4f7d7123217d68914219452a83945721e14da5",
+      "status": "downloaded",
+      "bytes": 55269,
+      "sha256": "363944e23cc068d78362469dbdd74f6ce06d093786a6c0d692124546742d7847"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%209.png",
+      "local": "writeups/writeup/image 9.png",
+      "size_expected": 63162,
+      "git_blob_sha": "015ff35625640097605b5adca6efa03f53c0c359",
+      "status": "downloaded",
+      "bytes": 63162,
+      "sha256": "898c0e4f51997d1443ccd19817df2e28bdee74b2c8f35a38fde25b5b3465b3c7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image.png",
+      "local": "writeups/writeup/image.png",
+      "size_expected": 250423,
+      "git_blob_sha": "4e38687c86dfb9fd266b1a184b98bcacd9e1b245",
+      "status": "downloaded",
+      "bytes": 250423,
+      "sha256": "003b17aebb6f88b1559cf9c18e2e85576223622f9087e9cd2e7cdd274e72a708"
+    }
+  ],
+  "notes": "官方附件、完整writeup（含仓库自带图片）及非空exp。仓库中的0字节占位文件未作为实际内容收录。",
+  "directory": "逆向/SUCTF_2026/SU_Protocol",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/SU_Protocol%2031bef3f8bbc880d98410dd9efed3e0d2.md",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%201.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%202.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%203.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%204.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%205.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%206.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%207.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%208.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%209.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image.png"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/attachments/taskdemo.zip",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/sourcecode/sourcecode.zip"
+  ],
+  "attachment_status": "downloaded"
+}

@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3109",
+  "event_title": "SAS CTF 2026 Quals",
+  "title": "Snaking_Revenge",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "pyjnius",
+    "type-confusion",
+    "jni"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/sas/2026-quals/snaking_revenge/",
+    "https://ctf42.online/ctfs/sas/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SAS/2026/Quals/pwn/Snaking_Revenge"
+  ],
+  "writeup_urls": [
+    "https://www.andsopwn.com/ctf/sas26_snaking/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SAS/2026/Quals/pwn/Snaking_Revenge",
+    "https://ctf42.online/ctfs/sas/2026-quals/snaking_revenge/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/sas_2026-quals/Snaking_Revenge/writeups/1_writeup.html",
+      "url": "https://www.andsopwn.com/ctf/sas26_snaking/",
+      "bytes": 186901,
+      "sha256": "a87641ee0948fe9c03b54ed63a62da0514037a457870c61823c816cc465453bd",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/sas_2026-quals/Snaking_Revenge/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SAS/2026/Quals/pwn/Snaking_Revenge/README.md",
+      "bytes": 122,
+      "sha256": "3db1c2465cd259c5633905306a51151e281d7e619862b5d0371af00c1a6f20ed",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/sas_2026-quals/Snaking_Revenge/attachments/upstream/snaking_revenge_812381381238123812.tar.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SAS/2026/Quals/pwn/Snaking_Revenge/snaking_revenge_812381381238123812.tar.gz",
+      "bytes": 3006,
+      "sha256": "714657472ffeed13928bbb03a6b936d0e2eb44a8b427d6266bd58e1c262ed72e",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/sas/2026-quals/snaking_revenge/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/sas/2026-quals/snaking_revenge/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

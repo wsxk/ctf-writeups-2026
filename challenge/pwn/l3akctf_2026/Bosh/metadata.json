@@ -1,0 +1,47 @@
+{
+  "event_id": "CTF-3061",
+  "event_title": "L3akCTF 2026",
+  "title": "Bosh",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "fault-injection-oracle"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/l3akctf/2026/bosh/",
+    "https://ctf42.online/ctfs/l3akctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/L3akCTF/2026/pwn/Bosh"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/l3akctf-2026-pwn-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/L3akCTF/2026/pwn/Bosh",
+    "https://ctf42.online/ctfs/l3akctf/2026/bosh/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/l3akctf_2026/Bosh/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/l3akctf-2026-pwn-writeup/",
+      "bytes": 111343,
+      "sha256": "065d4ade8aff6b4014f46530a0a894ca9b6c51473c2a92ac9e443feeba6fb964",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/l3akctf_2026/Bosh/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/l3akctf/2026/bosh/folder.zip?kind=files",
+      "bytes": 1978,
+      "sha256": "47dd5de90fdd364820a228c0b128878306cd5f911dff654dec2be955d1b29b09",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3290",
+  "event_title": "COMPFEST CTF 2026",
+  "title": "menfess",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "kernel-exploitation",
+    "function-pointer-overwrite",
+    "heap-overflow"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/compfest/2026/menfess/",
+    "https://ctf42.online/ctfs/compfest/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/COMPFEST/2026/pwn/menfess"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/compfest-ctf-2026/tree/main/pwn/menfess"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/COMPFEST/2026/pwn/menfess",
+    "https://ctf42.online/ctfs/compfest/2026/menfess/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/compfest_2026/menfess/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/compfest-ctf-2026/main/pwn/menfess/README.md",
+      "bytes": 14866,
+      "sha256": "3762a7e29236b446263cea02386adef204cdd435a7a12bf266820035af1bd168",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/compfest_2026/menfess/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/COMPFEST/2026/pwn/menfess/README.md",
+      "bytes": 43,
+      "sha256": "2ee3ade2f49f8d382eb842949e5b582b7d3c48a1e237e318316dafef1a83056c",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/compfest_2026/menfess/attachments/upstream/menfess-public.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/COMPFEST/2026/pwn/menfess/menfess-public.zip",
+      "bytes": 18285440,
+      "sha256": "5bd1f3bb69c19bb1b216ded0147042e733d933525fb5b98648c6c18521423132",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/compfest/2026/menfess/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/compfest/2026/menfess/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

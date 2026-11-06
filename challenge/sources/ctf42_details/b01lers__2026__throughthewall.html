@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>throughthewall · b01lers 2026 (pwn) writeup · ctf42</title>
+  
+
+<meta name="description" content="throughthewall: Pwn challenge from b01lers 2026. Techniques: kernel-exploitation, oob-write, pipe-buffer, kernel-rop. bhcsayx This wall is not very solid…">
+<link rel="canonical" href="https://ctf42.online/ctfs/b01lers/2026/throughthewall/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/b01lers/2026/throughthewall/">
+<meta property="og:title" content="throughthewall">
+<meta property="og:description" content="throughthewall: Pwn challenge from b01lers 2026. Techniques: kernel-exploitation, oob-write, pipe-buffer, kernel-rop. bhcsayx This wall is not very solid…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/b01lers/">b01lers</a> / <a href="/ctfs/b01lers/2026/">2026</a> / throughthewall</nav>
+
+
+<div class="challenge-head">
+  <h1>throughthewall
+    </h1>
+  <div class="badges">
+    <a class="cat cat-pwn" href="/category/pwn/">Pwn</a>
+    
+    
+    <span class="chip">weight 66.00</span>
+    <a class="tag" href="/techniques/kernel-exploitation/">#kernel-exploitation</a><a class="tag" href="/techniques/oob-write/">#oob-write</a><a class="tag" href="/techniques/pipe-buffer/">#pipe-buffer</a><a class="tag" href="/techniques/kernel-rop/">#kernel-rop</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/b01lers/2026/throughthewall/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/b01lers/2026/throughthewall/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  
+  <p class="meta">Flag format: <code class="flag-format">bctf{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>bhcsayx
+This wall is not very solid seemingly, can you get through it?</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>throughthewall — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/b01lers-ctf-2026/tree/main/pwn/through-the-wall" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/b01lers-ctf-2026/tree/main/pwn/through-the-wall</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/b01lers/2026/throughthewall/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/k3rn3lctf/2021/easy_kernel/">easy_kernel</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/kernel-rop/">#kernel-rop</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/k3rn3lctf/2021/">K3RN3LCTF 2021</a></td>
+        <td class="num">24.37</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/haruulzangi/2026-quals/cabinet/">Cabinet</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/oob-write/">#oob-write</a><a class="tag tag-sm" href="/techniques/function-pointer-overwrite/">#function-pointer-overwrite</a><a class="tag tag-sm" href="/techniques/game-replay/">#game-replay</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/haruulzangi/2026-quals/">Haruulzangi 2026 Quals</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/dicectf/2026-quals/garden/">garden</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a><a class="tag tag-sm" href="/techniques/garbage-collector-bug/">#garbage-collector-bug</a><a class="tag tag-sm" href="/techniques/oob-write/">#oob-write</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/dicectf/2026-quals/">DiceCTF 2026 Quals</a></td>
+        <td class="num">100.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/cryovault/2026-quals/thaw_ladder/">thaw_ladder</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a><a class="tag tag-sm" href="/techniques/signedness-bug/">#signedness-bug</a><a class="tag tag-sm" href="/techniques/oob-write/">#oob-write</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/cryovault/2026-quals/">Cryovault 2026 Quals</a></td>
+        <td class="num">25.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/umdctf/2026/vkexchange/">vkexchange</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/vulkan/">#vulkan</a><a class="tag tag-sm" href="/techniques/oob-write/">#oob-write</a><a class="tag tag-sm" href="/techniques/descriptor-sets/">#descriptor-sets</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/umdctf/2026/">UMDCTF 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/corctf/2024/trojan_turtles/">trojan_turtles</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/kvm-hypervisor/">#kvm-hypervisor</a><a class="tag tag-sm" href="/techniques/nested-vmx/">#nested-vmx</a><a class="tag tag-sm" href="/techniques/oob-write/">#oob-write</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/corctf/2024/">corCTF 2024</a></td>
+        <td class="num">55.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/kernel-exploitation/">#kernel-exploitation</a> · <a href="/techniques/oob-write/">#oob-write</a> · <a href="/techniques/pipe-buffer/">#pipe-buffer</a> · <a href="/techniques/kernel-rop/">#kernel-rop</a>
+          · <a href="/category/pwn/">all Pwn</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/b01lers/2026/pwn/throughthewall" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/b01lers/2026/throughthewall/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from b01lers 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/b01lers/2026/ecb_lasagna/">ecb_lasagna</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/b01lers/2026/manytags/">manytags</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/b01lers/2026/qss/">qss</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/b01lers/2026/sporadiclogarithms/">sporadiclogarithms</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/b01lers/2026/badyuri/">badyuri</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/b01lers/2026/bctf_infra/">bctf_infra</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/b01lers/2026/jail/">jail</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/b01lers/2026/reflections/">reflections</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/b01lers/2026/purdosint/">purdosint</a> <span class="cat cat-osint cat-xs">OSINT</span></li><li>
+<a href="/ctfs/b01lers/2026/micromicromicropython/">micromicromicropython</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/b01lers/2026/multifiles/">multifiles</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/b01lers/2026/priority_queue/">priority_queue</a> <span class="cat cat-pwn cat-xs">Pwn</span></li>
+      </ul>
+      <a class="small" href="/ctfs/b01lers/2026/">All b01lers 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

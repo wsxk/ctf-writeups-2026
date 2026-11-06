@@ -1,0 +1,72 @@
+{
+  "event_id": "CTF-3141",
+  "event_title": "TRX CTF 2026",
+  "title": "triforce",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "v8-exploitation",
+    "jit",
+    "type-confusion"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/trx/2026/triforce/",
+    "https://ctf42.online/ctfs/trx/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/pwn/triforce"
+  ],
+  "writeup_urls": [
+    "https://blog.rawpayload.com/blog/trx-ctf-2026-triforce-writeup",
+    "https://kqx.io/writeups/triforce/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/pwn/triforce",
+    "https://ctf42.online/ctfs/trx/2026/triforce/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/trx_2026/triforce/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TRX/2026/pwn/triforce/README.md",
+      "bytes": 243,
+      "sha256": "07c2033f1552ef9479e65b75a8ef45a73e16f446ba19e7e72b38d9db72dcabc5",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/trx_2026/triforce/attachments/upstream/pwn_triforce.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TRX/2026/pwn/triforce/pwn_triforce.zip",
+      "bytes": 22435773,
+      "sha256": "e7dacc1beec1d1b919a38dba06b2bfb224f02accf9174f9394e06ed8cdbf3b03",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/trx_2026/triforce/writeups/replacement_source.html",
+      "url": "https://kqx.io/writeups/triforce/",
+      "bytes": 90734,
+      "sha256": "6f8a327306d790ce8c5569b040d59830be4e79a12f67e413717f197400cb4a15",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/trx_2026/triforce/writeups/replacement_readable.txt",
+      "url": "https://kqx.io/writeups/triforce/",
+      "bytes": 19536,
+      "sha256": "7b772d8c93d55465cf237193b54edbac163f13732c4dd1fd06624b7cc1f0fdd8",
+      "kind": "writeup"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/trx/2026/triforce/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/trx/2026/triforce/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files",
+  "writeup_kind": "prose"
+}

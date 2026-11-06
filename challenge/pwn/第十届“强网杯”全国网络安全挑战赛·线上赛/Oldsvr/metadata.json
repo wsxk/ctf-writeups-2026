@@ -1,0 +1,43 @@
+{
+  "event_id": "CN-001",
+  "event_title": "第十届“强网杯”全国网络安全挑战赛·线上赛",
+  "category": "pwn",
+  "title": "Oldsvr",
+  "source_urls": [
+    "https://www.qiangwangbei.com/"
+  ],
+  "writeup_urls": [
+    "https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/",
+    "https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/",
+    "https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/"
+  ],
+  "attachment_urls": [],
+  "writeup_status": "downloaded",
+  "attachment_status": "missing",
+  "notes": "Lufer 原创第十届强网杯 WP，题解对应全文中的“Oldsvr”章节。完整原始 HTML 与该章节离线正文均保存；图片可能仍引用源站。原文未提供题目附件直链，附件标 missing。解答、脚本及历史远程服务均未执行/访问。",
+  "files": [
+    {
+      "path": "writeups/Lufer_full_writeup.html",
+      "url": "https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/",
+      "bytes": 203193,
+      "sha256": "4b233c0385f26f54ac0a31b54ae01a86766f0a25ea8c253b37dc91281bc9eb7f",
+      "note": "Unmodified downloaded source HTML"
+    },
+    {
+      "path": "writeups/chapter.html",
+      "url": "https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/",
+      "bytes": 16570,
+      "sha256": "5052d5106cd6fdec34b8beb7c25ee5935bc5be9bcfc4d4f26fd6d9ec10d0100b",
+      "note": "Original chapter extracted; attribution prepended"
+    },
+    {
+      "path": "writeups/chapter.txt",
+      "url": "https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/",
+      "bytes": 13197,
+      "sha256": "f55ded407f07fead3be9bc93dd7c06289e0576e5b7d0f7b9147ccd292140f709",
+      "note": "Plain-text extraction of chapter"
+    }
+  ],
+  "errors": [],
+  "writeup_kind": "community_writeup_html_and_section"
+}

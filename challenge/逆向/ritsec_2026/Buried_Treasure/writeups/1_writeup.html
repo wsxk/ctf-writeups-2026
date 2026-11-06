@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Introduction Continuing my participation in RITSEC CTF 2026, this third part of the series focuses on another reversing challenge titled “Buried Treasure”. As with the previous writeups, this post documents the full process of analyzing the binary, understanding its internal logic and extracting the solution.
+The name of the challenge already suggests something intentionally hidden rather than immediately visible, which typically hints at logic that is either obscured, layered, or embedded in an unusual part of the program flow.
+" />
+<meta name="keywords" content=", Reversing, CTF, Jeopardy, RITSEC CTF 2026, Memory unpacking" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-3-buried-treasure/" />
+
+
+    <title>
+        
+            RITSEC CTF 2026 - Reversing Writeups (Part 3): Buried Treasure :: pnasis 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="https://pnasis.gitlab.io/main.min.2729760c629597024c5de34b40ea9f372f2b5a2a192dcdca537b7ddfa483eab8.css" integrity="sha256-Jyl2DGKVlwJMXeNLQOqfNy8rWioZLc3KU3t936SD6rg=" crossorigin="anonymous">
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    <link rel="icon" type="image/x-icon" href="https://pnasis.gitlab.io/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="RITSEC CTF 2026 - Reversing Writeups (Part 3): Buried Treasure">
+  <meta itemprop="description" content="Introduction Continuing my participation in RITSEC CTF 2026, this third part of the series focuses on another reversing challenge titled “Buried Treasure”. As with the previous writeups, this post documents the full process of analyzing the binary, understanding its internal logic and extracting the solution.
+The name of the challenge already suggests something intentionally hidden rather than immediately visible, which typically hints at logic that is either obscured, layered, or embedded in an unusual part of the program flow.">
+  <meta itemprop="datePublished" content="2026-04-05T11:54:26+03:00">
+  <meta itemprop="dateModified" content="2026-04-05T11:54:26+03:00">
+  <meta itemprop="wordCount" content="2957">
+  <meta itemprop="image" content="https://pnasis.gitlab.io/">
+  <meta itemprop="keywords" content="Reversing,CTF,Jeopardy,RITSEC CTF 2026,Memory Unpacking">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://pnasis.gitlab.io/">
+  <meta name="twitter:title" content="RITSEC CTF 2026 - Reversing Writeups (Part 3): Buried Treasure">
+  <meta name="twitter:description" content="Introduction Continuing my participation in RITSEC CTF 2026, this third part of the series focuses on another reversing challenge titled “Buried Treasure”. As with the previous writeups, this post documents the full process of analyzing the binary, understanding its internal logic and extracting the solution.
+The name of the challenge already suggests something intentionally hidden rather than immediately visible, which typically hints at logic that is either obscured, layered, or embedded in an unusual part of the program flow.">
+
+
+
+    <meta property="og:url" content="https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-3-buried-treasure/">
+  <meta property="og:site_name" content="pnasis">
+  <meta property="og:title" content="RITSEC CTF 2026 - Reversing Writeups (Part 3): Buried Treasure">
+  <meta property="og:description" content="Introduction Continuing my participation in RITSEC CTF 2026, this third part of the series focuses on another reversing challenge titled “Buried Treasure”. As with the previous writeups, this post documents the full process of analyzing the binary, understanding its internal logic and extracting the solution.
+The name of the challenge already suggests something intentionally hidden rather than immediately visible, which typically hints at logic that is either obscured, layered, or embedded in an unusual part of the program flow.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-05T11:54:26+03:00">
+    <meta property="article:modified_time" content="2026-04-05T11:54:26+03:00">
+    <meta property="article:tag" content="Reversing">
+    <meta property="article:tag" content="CTF">
+    <meta property="article:tag" content="Jeopardy">
+    <meta property="article:tag" content="RITSEC CTF 2026">
+    <meta property="article:tag" content="Memory Unpacking">
+    <meta property="og:image" content="https://pnasis.gitlab.io/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2026-04-05 11:54:26 &#43;0300 &#43;0300" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://pnasis.gitlab.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text ">
+                $ cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://pnasis.gitlab.io/about/">~/about</a></li><li><a href="https://pnasis.gitlab.io/posts/">~/posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        14 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-3-buried-treasure/">RITSEC CTF 2026 - Reversing Writeups (Part 3): Buried Treasure</a>
+      </h1>
+
+      
+
+      
+        <hr />
+        <aside id="toc">
+          <div class="toc-title">Table of Contents</div>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#challenge-overview">Challenge Overview</a></li>
+    <li><a href="#static-analysis">Static analysis</a></li>
+    <li><a href="#dynamic-analysis">Dynamic Analysis</a></li>
+    <li><a href="#unpacking-the-final-payload">Unpacking the Final Payload</a></li>
+    <li><a href="#getting-the-flag">Getting the flag</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+        </aside>
+        <hr />
+
+      
+
+      <div class="post-content">
+        <h2 id="introduction">Introduction</h2>
+<p>    Continuing my participation in <a href="https://ctfd.ritsec.club/">RITSEC CTF 2026</a>, this third part of the series focuses on another reversing challenge titled <em><strong>“Buried Treasure”</strong></em>. As with the previous writeups, this post documents the full process of analyzing the binary, understanding its internal logic and extracting the solution.</p>
+<p>    The name of the challenge already suggests something intentionally hidden rather than immediately visible, which typically hints at logic that is either obscured, layered, or embedded in an unusual part of the program flow.</p>
+<h2 id="challenge-overview">Challenge Overview</h2>
+<p>    The following description was provided as part of the challenge, along with a binary file named <code>buried_treasure</code>:</p>
+<blockquote>
+<p><em>&ldquo;I buried the flag pretty deep, can you dig it back up?&rdquo;</em></p>
+</blockquote>
+<p><img src="https://pnasis.gitlab.io/images/ritsec-2026-reversing-3-BuriedTreasure-writeup/info.png" 
+alt="Challenge Info"
+style="display: block; margin: 0 auto; width: 90%; height: auto;"></p>
+<p>    As usual, I started by gathering some basic information about the binary using the <code>file</code> command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ file buried_treasure
+</span></span><span style="display:flex;"><span>buried_treasure: ELF 64-bit LSB executable, x86-64, version <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>SYSV<span style="color:#f92672">)</span>, statically linked, stripped
+</span></span></code></pre></div><p>    From this output, a few important characteristics can already be identified. The binary is a <em>64-bit ELF executable</em>, but unlike the previous challenges, it is <em>statically linked</em>. This means all required library code is embedded directly into the binary, making it significantly larger and often more complex to analyze during reverse engineering.</p>
+<p>    Additionally, the binary is <em>stripped</em>, meaning symbol information has been removed. Combined with static linking, this results in a much noisier disassembly, where distinguishing between actual program logic and library code requires more effort and careful navigation during analysis.</p>
+<h2 id="static-analysis">Static analysis</h2>
+<p>    With this in mind, I proceeded to load the binary into Ghidra to begin the static analysis phase. As expected, the binary proved to be quite painful to reverse. Being both statically linked and stripped, the disassembly contained a large number of functions, most of which were part of embedded library code rather than the actual program logic. This significantly increased the noise and made navigation slow and, at times, frustrating. The analysis ended up taking several hours and at some points I even switched to working on the fourth and final challenge in parallel whenever I felt burnt out. Despite this, after some time and a fair amount of manual cleanup and renaming, a few key functions started to stand out and helped clarify the overall direction of the challenge.</p>
+<p>    Starting from <code>main</code>, the program does not follow a typical structure. Instead of directly implementing logic, it first attempts to allocate a large memory region using <code>mmap</code>, progressively reducing the requested size until it succeeds. Once successful, it initializes some global state, sets up signal handlers and transfers execution to another function that I named <code>unpack_and_exec</code>. This already hints that the binary is likely acting as some form of <strong>loader or unpacker</strong>, rather than containing the flag logic directly:</p>
+<p><img src="https://pnasis.gitlab.io/images/ritsec-2026-reversing-3-BuriedTreasure-writeup/main-func.png" 
+alt="Main Function"
+style="display: block; margin: 0 auto; width: 90%; height: auto;"></p>
+<p>    The <code>setup_signal_handlers</code> function registers a custom <code>crash_handler</code> for multiple signals (<code>SIGBUS</code>, <code>SIGILL</code> and <code>SIGSEGV</code>). While this can be used for general fault handling, I believe that in this context it also acts as an anti-debugging mechanism. These signals are commonly triggered during invalid memory accesses or execution faults, which can occur while debugging or modifying execution flow. By intercepting them and redirecting execution to a custom handler, the binary effectively sets up a tripwire that can detect and react to abnormal behavior, making analysis more difficult.</p>
+<p><img src="https://pnasis.gitlab.io/images/ritsec-2026-reversing-3-BuriedTreasure-writeup/setup_signal_handlers-func.png" 
+alt="setup_signal_handlers Function"
+style="display: block; margin: 0 auto; width: 60%; height: auto;"></p>
+<p>    With that in place, the next step was to move deeper into the execution flow and analyze <code>unpack_and_exec</code>, which is where the binary starts doing something more meaningful. Although the function is quite large and initially looks overwhelming, most of it consists of setup code, argument handling and interactions with the runtime environment. After filtering out this noise, it becomes clear that this function is responsible for preparing and reconstructing the actual payload hidden inside the binary.</p>
+<p><img src="https://pnasis.gitlab.io/images/ritsec-2026-reversing-3-BuriedTreasure-writeup/unpack_and_exec-func1.png" 
+alt="unpack_and_exec-func Function part 1"
+style="display: block; margin: 0 auto; width: 90%; height: auto;"></p>
+<p><img src="https://pnasis.gitlab.io/images/ritsec-2026-reversing-3-BuriedTreasure-writeup/unpack_and_exec-func2.png" 
+alt="unpack_and_exec-func Function part 2"
+style="display: block; margin: 0 auto; width: 90%; height: auto;"></p>
+<p><img src="https://pnasis.gitlab.io/images/ritsec-2026-reversing-3-BuriedTreasure-writeup/unpack_and_exec-func3.png" 
+alt="unpack_and_exec-func Function part 3"
+style="display: block; margin: 0 auto; width: 90%; height: auto;"></p>
+<p>    While the function spans several code paths, the most relevant part appears toward the end:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (; lVar10 <span style="color:#f92672">!=</span> <span style="color:#ae81ff">367016</span>; lVar10 <span style="color:#f92672">=</span> lVar10 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">*</span>(undefined1 <span style="color:#f92672">*</span>)(argc_copy <span style="color:#f92672">+</span> lVar10) <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>       (<span style="color:#f92672">&amp;</span>g_xor_key)[(uint)lVar10 <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0xf</span>] <span style="color:#f92672">^</span> (<span style="color:#f92672">&amp;</span>g_encrypted_payload)[lVar10];
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>    Here, a buffer is allocated and filled by <strong>XORing a static encrypted payload with a repeating key</strong> (<code>g_xor_key</code>). This is a classic unpacking technique, where the real program is stored in an encrypted form inside the binary and reconstructed at runtime. Once the decryption is complete, the resulting buffer is passed to <code>exec_next_stage</code>, which strongly suggests that this decrypted data is actually another executable:</p>
+<p><img src="https://pnasis.gitlab.io/images/ritsec-2026-reversing-3-BuriedTreasure-writeup/exec_next_stage-func1.png" 
+alt="exec_next_stage Function part 1"
+style="display: block; margin: 0 auto; width: 90%; height: auto;"></p>
+<p><img src="https://pnasis.gitlab.io/images/ritsec-2026-reversing-3-BuriedTreasure-writeup/exec_next_stage-func2.png" 
+alt="exec_next_stage Function part 2"
+style="display: block; margin: 0 auto; width: 90%; height: auto;"></p>
+<p><img src="https://pnasis.gitlab.io/images/ritsec-2026-reversing-3-BuriedTreasure-writeup/exec_next_stage-func3.png" 
+alt="exec_next_stage Function part 3"
+style="display: block; margin: 0 auto; width: 90%; height: auto;"></p>
+<p>    At this point, the overall structure of the challenge becomes clear: the provided binary is merely a loader, responsible for decrypting and executing a hidden second-stage ELF. The actual flag is not present in the original binary, but rather buried inside this encrypted payload.</p>
+<h2 id="dynamic-analysis">Dynamic Analysis</h2>
+<p>    Due to the nature of the binary, I proceeded with a dynamic analysis in parallel with static reversing in order to validate my understanding of its internal behavior and to uncover functionality that would not be visible from Ghidra alone. This was particularly important in this case, since the binary is stripped, statically linked and heavily relies on runtime reconstruction of its execution flow.</p>
+<p>    To get a first concrete view of what happens at runtime, I used <code>strace</code> while interacting with the program. This immediately revealed an unusual execution pattern that confirmed the presence of a staged loader mechanism:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ strace ./buried_treasure <span style="color:#f92672">&lt;&lt;&lt;</span> <span style="color:#e6db74">&#39;test&#39;</span> 2&gt;&amp;<span style="color:#ae81ff">1</span> | grep -E <span style="color:#e6db74">&#34;memfd_create|write|execve|read&#34;</span> 
+</span></span><span style="display:flex;"><span>execve<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;./buried_treasure&#34;</span>, <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;./buried_treasure&#34;</span><span style="color:#f92672">]</span>, 0x7ffdcc49fdc0 /* <span style="color:#ae81ff">109</span> vars */<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>memfd_create<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span>, MFD_CLOEXEC<span style="color:#f92672">)</span>           <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>write<span style="color:#f92672">(</span>3, <span style="color:#e6db74">&#34;\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\2\0&gt;\0\1\0\0\0\300x%\0\0\0\0\0&#34;</span>..., 367016<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">367016</span>
+</span></span><span style="display:flex;"><span>execve<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/proc/48715/fd/3&#34;</span>, <span style="color:#f92672">[]</span>, 0x7f4d26c5eec0 /* <span style="color:#ae81ff">109</span> vars */<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>memfd_create<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span>, MFD_CLOEXEC<span style="color:#f92672">)</span>           <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>write<span style="color:#f92672">(</span>3, <span style="color:#e6db74">&#34;\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\2\0&gt;\0\1\0\0\00005%\0\0\0\0\0&#34;</span>..., 349888<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">349888</span>
+</span></span><span style="display:flex;"><span>execve<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/proc/48715/fd/3&#34;</span>, <span style="color:#f92672">[]</span>, 0x7fbe4a45ad70 /* <span style="color:#ae81ff">109</span> vars */<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>memfd_create<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span>, MFD_CLOEXEC<span style="color:#f92672">)</span>           <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>write<span style="color:#f92672">(</span>3, <span style="color:#e6db74">&#34;\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\2\0&gt;\0\1\0\0\0\20\362</span>$<span style="color:#e6db74">\0\0\0\0\0&#34;</span>..., 332536<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">332536</span>
+</span></span><span style="display:flex;"><span>execve<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/proc/48715/fd/3&#34;</span>, <span style="color:#f92672">[]</span>, 0x7f9347a56810 /* <span style="color:#ae81ff">109</span> vars */<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>memfd_create<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span>, MFD_CLOEXEC<span style="color:#f92672">)</span>           <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>write<span style="color:#f92672">(</span>3, <span style="color:#e6db74">&#34;\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\2\0&gt;\0\1\0\0\0\200\256</span>$<span style="color:#e6db74">\0\0\0\0\0&#34;</span>..., 315408<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">315408</span>
+</span></span><span style="display:flex;"><span>execve<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/proc/48715/fd/3&#34;</span>, <span style="color:#f92672">[]</span>, 0x7ff4b3a526c0 /* <span style="color:#ae81ff">109</span> vars */<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>memfd_create<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span>, MFD_CLOEXEC<span style="color:#f92672">)</span>           <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>write<span style="color:#f92672">(</span>3, <span style="color:#e6db74">&#34;\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\2\0&gt;\0\1\0\0\0P\&#34; \0\0\0\0\0&#34;</span>..., 298056<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">298056</span>
+</span></span><span style="display:flex;"><span>execve<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/proc/48715/fd/3&#34;</span>, <span style="color:#f92672">[]</span>, 0x7f7e7524e090 /* <span style="color:#ae81ff">109</span> vars */<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>memfd_create<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span>, MFD_CLOEXEC<span style="color:#f92672">)</span>           <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>write<span style="color:#f92672">(</span>3, <span style="color:#e6db74">&#34;\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\2\0&gt;\0\1\0\0\0\330\23#\0\0\0\0\0&#34;</span>..., 210112<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">210112</span>
+</span></span><span style="display:flex;"><span>execve<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/proc/48715/fd/3&#34;</span>, <span style="color:#f92672">[]</span>, 0x7fce1aa7cea0 /* <span style="color:#ae81ff">109</span> vars */<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>memfd_create<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span>, MFD_CLOEXEC<span style="color:#f92672">)</span>           <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>write<span style="color:#f92672">(</span>3, <span style="color:#e6db74">&#34;\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\2\0&gt;\0\1\0\0\0H\320\&#34;\0\0\0\0\0&#34;</span>..., 192984<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">192984</span>
+</span></span><span style="display:flex;"><span>execve<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/proc/48715/fd/3&#34;</span>, <span style="color:#f92672">[]</span>, 0x7fd3c32347c0 /* <span style="color:#ae81ff">109</span> vars */<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>memfd_create<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span>, MFD_CLOEXEC<span style="color:#f92672">)</span>           <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>write<span style="color:#f92672">(</span>3, <span style="color:#e6db74">&#34;\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\2\0&gt;\0\1\0\0\0(\215\&#34;\0\0\0\0\0&#34;</span>..., 175632<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">175632</span>
+</span></span><span style="display:flex;"><span>execve<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/proc/48715/fd/3&#34;</span>, <span style="color:#f92672">[]</span>, 0x7fa0ade304c0 /* <span style="color:#ae81ff">109</span> vars */<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>memfd_create<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span>, MFD_CLOEXEC<span style="color:#f92672">)</span>           <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>write<span style="color:#f92672">(</span>3, <span style="color:#e6db74">&#34;\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\2\0&gt;\0\1\0\0\0P\&#34; \0\0\0\0\0&#34;</span>..., 158504<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">158504</span>
+</span></span><span style="display:flex;"><span>execve<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/proc/48715/fd/3&#34;</span>, <span style="color:#f92672">[]</span>, 0x7f7e4102c040 /* <span style="color:#ae81ff">109</span> vars */<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>memfd_create<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span>, MFD_CLOEXEC<span style="color:#f92672">)</span>           <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>write<span style="color:#f92672">(</span>3, <span style="color:#e6db74">&#34;\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\2\0&gt;\0\1\0\0\0Xz!\0\0\0\0\0&#34;</span>..., 105448<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">105448</span>
+</span></span><span style="display:flex;"><span>execve<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/proc/48715/fd/3&#34;</span>, <span style="color:#f92672">[]</span>, 0x7f60fe841640 /* <span style="color:#ae81ff">109</span> vars */<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>memfd_create<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span>, MFD_CLOEXEC<span style="color:#f92672">)</span>           <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>write<span style="color:#f92672">(</span>3, <span style="color:#e6db74">&#34;\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\2\0&gt;\0\1\0\0\087!\0\0\0\0\0&#34;</span>..., 88096<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">88096</span>
+</span></span><span style="display:flex;"><span>execve<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/proc/48715/fd/3&#34;</span>, <span style="color:#f92672">[]</span>, 0x7fee2281ac60 /* <span style="color:#ae81ff">109</span> vars */<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>memfd_create<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span>, MFD_CLOEXEC<span style="color:#f92672">)</span>           <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>write<span style="color:#f92672">(</span>3, <span style="color:#e6db74">&#34;\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\2\0&gt;\0\1\0\0\0\250\363 \0\0\0\0\0&#34;</span>..., 70968<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">70968</span>
+</span></span><span style="display:flex;"><span>execve<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/proc/48715/fd/3&#34;</span>, <span style="color:#f92672">[]</span>, 0x7f8ef8416980 /* <span style="color:#ae81ff">109</span> vars */<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>memfd_create<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span>, MFD_CLOEXEC<span style="color:#f92672">)</span>           <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>write<span style="color:#f92672">(</span>3, <span style="color:#e6db74">&#34;\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\2\0&gt;\0\1\0\0\0P\&#34; \0\0\0\0\0&#34;</span>..., 53616<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">53616</span>
+</span></span><span style="display:flex;"><span>execve<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/proc/48715/fd/3&#34;</span>, <span style="color:#f92672">[]</span>, 0x7fa40d2128f0 /* <span style="color:#ae81ff">109</span> vars */<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>memfd_create<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span>, MFD_CLOEXEC<span style="color:#f92672">)</span>           <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>write<span style="color:#f92672">(</span>3, <span style="color:#e6db74">&#34;\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\2\0&gt;\0\1\0\0\0\270G \0\0\0\0\0&#34;</span>..., 26784<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">26784</span>
+</span></span><span style="display:flex;"><span>execve<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/proc/48715/fd/3&#34;</span>, <span style="color:#f92672">[]</span>, 0x7fd6cb814ad0 /* <span style="color:#ae81ff">109</span> vars */<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>memfd_create<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span>, MFD_CLOEXEC<span style="color:#f92672">)</span>           <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>write<span style="color:#f92672">(</span>3, <span style="color:#e6db74">&#34;\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\2\0&gt;\0\1\0\0\0\350\33 \0\0\0\0\0&#34;</span>..., 9656<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">9656</span>
+</span></span><span style="display:flex;"><span>execve<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/proc/48715/fd/3&#34;</span>, <span style="color:#f92672">[]</span>, 0x7fc220007c70 /* <span style="color:#ae81ff">109</span> vars */<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>write<span style="color:#f92672">(</span>1, <span style="color:#e6db74">&#34;enter the flag: &#34;</span>, 16enter the flag: <span style="color:#f92672">)</span>        <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>read<span style="color:#f92672">(</span>0, <span style="color:#e6db74">&#34;test\n&#34;</span>, 64<span style="color:#f92672">)</span>                   <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>write<span style="color:#f92672">(</span>1, <span style="color:#e6db74">&#34;no :(\n&#34;</span>, 6no :<span style="color:#f92672">(</span>
+</span></span></code></pre></div><p>    What immediately stands out from the trace is the repeated sequence of <code>memfd_create</code>, <code>write</code> and <code>execve(&quot;/proc/self/fd/3&quot;)</code>. Each iteration creates an in-memory file descriptor, writes a full ELF binary into it and then executes it directly from the <code>/proc</code> filesystem. This confirms that the program never relies on disk-backed files for its intermediate stages, instead reconstructing and executing everything entirely in memory.</p>
+<p>    Another interesting observation is that this pattern repeats multiple times with decreasing <code>write</code> sizes, suggesting that each stage is generating a smaller or more refined version of the next payload. This strongly indicates a chained unpacking or staged decryption process, where each executed ELF is responsible for producing the next one.</p>
+<p>    With this runtime behavior confirmed, the next step was to move beyond system call tracing and analyze how these stages evolve internally during execution, in order to understand how control flows from one in-memory binary to the next.</p>
+<h2 id="unpacking-the-final-payload">Unpacking the Final Payload</h2>
+<p>    After confirming that the binary operates as a multi-stage in-memory loader, the next logical step was to extract the actual payload being executed in the final stage. Since none of these intermediate binaries are ever written to disk, static extraction is not an option, so I turned to dynamic instrumentation using <code>gdb</code> to intercept the moment each stage is materialized in memory.</p>
+<p>    To achieve this, I used the following <code>gdb</code> script:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ gdb --nx --nh -q ./buried_treasure <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set follow-exec-mode same
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set pagination off
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">catch syscall write
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">condition 1 $rdi == 3
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">commands 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  set $magic = *(int*)$rsi
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  if $magic == 0x464c457f
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    append binary memory /tmp/last_stage.elf $rsi $rsi+$rdx
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    printf &#34;Dumped %d bytes\n&#34;, $rdx
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  end
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  continue
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">end
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">run &lt;&lt;&lt; &#34;AAAA&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>....
+</span></span><span style="display:flex;"><span>Catchpoint <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>call to syscall write<span style="color:#f92672">)</span>, 0x0000000000204db0 in ?? <span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>Dumped <span style="color:#ae81ff">26784</span> bytes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Catchpoint <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>returned from syscall write<span style="color:#f92672">)</span>, 0x0000000000204db0 in ?? <span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>Dumped <span style="color:#ae81ff">26784</span> bytes
+</span></span><span style="display:flex;"><span>process <span style="color:#ae81ff">63148</span> is executing new program: /proc/63148/exe
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Catchpoint <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>call to syscall write<span style="color:#f92672">)</span>, 0x000000000020707a in ?? <span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>Dumped <span style="color:#ae81ff">9656</span> bytes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Catchpoint <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>returned from syscall write<span style="color:#f92672">)</span>, 0x000000000020707a in ?? <span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>Dumped <span style="color:#ae81ff">9656</span> bytes
+</span></span><span style="display:flex;"><span>process <span style="color:#ae81ff">63148</span> is executing new program: /proc/63148/exe
+</span></span><span style="display:flex;"><span>enter the flag: no :<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Inferior <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>process 63148<span style="color:#f92672">)</span> exited with code 01<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>gdb<span style="color:#f92672">)</span> %
+</span></span></code></pre></div><p>    The idea here is to hook into the exact moment where the binary writes a new ELF payload into memory, just before it gets executed. This is done using <code>catch syscall write</code>, which instructs <code>gdb</code> to break every time the <code>write</code> system call is invoked. Since earlier observations from <code>strace</code> showed that all payloads are written to a file descriptor returned by <code>memfd_create</code>, I added a condition <code>($rdi == 3)</code> to only trigger when the write is targeting that specific descriptor.</p>
+<p>    Inside the breakpoint commands, the script inspects the buffer being written (<code>$rsi</code>) and checks for the ELF magic value <code>0x464c457f</code> (<code>\x7fELF</code>). This ensures that only actual ELF payloads are captured, avoiding unrelated writes. When a match is found, the corresponding memory region is dumped directly to disk using <code>append binary memory</code>, reconstructing the in-memory executable into <code>/tmp/last_stage.elf</code>.</p>
+<p>    The use of <code>set follow-exec-mode same</code> is also important here, as it ensures that <code>gdb</code> continues tracing execution even after each <code>execve</code> call. Without this, the debugger would lose track of the process as it transitions between stages.</p>
+<p>    In essence, this approach leverages the program’s own behavior against it: instead of trying to reverse every stage manually, it simply captures the reconstructed payload at runtime, allowing us to obtain the final executable that contains the actual flag logic.</p>
+<p>    With the final stage successfully dumped, the next step was to analyze its behavior in isolation. Since this payload is now a standalone ELF, it can be treated like a normal binary, which makes debugging significantly more manageable compared to the multi-stage loader.</p>
+<p>    To begin exploring it, I used the following <code>gdb</code> script:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ gdb --nx --nh -q /tmp/last_stage.elf <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set follow-exec-mode same
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">catch syscall read
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">run &lt;&lt;&lt; &#34;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">finish
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">x/80i $pc
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">x/80gx 0x200168
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><p>    Here, the goal was to observe how the binary processes user input and to quickly reach the code that operates on it. By setting a breakpoint on the <code>read</code> syscall, execution stops as soon as the program attempts to read input from stdin. After providing a controlled input, the <code>finish</code> command allows execution to return from the syscall handler back into the program’s logic, effectively placing us right after input has been read and is about to be processed.</p>
+<p>    From there, <code>x/80i $pc</code> disassembles the next instructions at the current program counter, giving a clear view of how the input is handled. Additionally, examining memory at a specific address (<code>x/80gx 0x200168</code>) helped identify nearby data structures or constants that might be involved in validation or transformation logic.</p>
+<p>    This approach provides a quick way to anchor the analysis at a meaningful execution point, avoiding the need to manually step through initialization code and allowing focus on the parts of the binary that directly interact with user-controlled data.</p>
+<p>    After inspecting the disassembly around the input handling logic, the core validation mechanism becomes much clearer. The relevant instructions are:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">0</span>x203005:    <span style="color:#a6e22e">cmp</span>    <span style="color:#66d9ef">$0x24</span>,%rcx               <span style="color:#75715e">; flag length must be 0x24 = 36
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">0</span>x203009:    <span style="color:#a6e22e">jne</span>    <span style="color:#ae81ff">0x203014</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">0</span>x203025:    <span style="color:#a6e22e">push</span>   <span style="color:#66d9ef">$0xd</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">0</span>x203027:    <span style="color:#a6e22e">pop</span>    %r13
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">0</span>x203029:    <span style="color:#a6e22e">cmp</span>    <span style="color:#66d9ef">$0x4a</span>,%r12
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">0</span>x20302d:    <span style="color:#a6e22e">je</span>     <span style="color:#ae81ff">0x203099</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">0</span>x20302f:    <span style="color:#a6e22e">movzbl</span> -<span style="color:#ae81ff">0x26</span>(%r14,%r12,<span style="color:#ae81ff">1</span>),%eax  <span style="color:#75715e">; load input[r12 - 0x26]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">0</span>x203035:    <span style="color:#a6e22e">imul</span>   %r13,%rax                <span style="color:#75715e">; multiply by r13
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">0</span>x203039:    <span style="color:#a6e22e">add</span>    %r12,%rax                <span style="color:#75715e">; add r12
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">0</span>x20303c:    <span style="color:#a6e22e">cmp</span>    <span style="color:#ae81ff">0x200168</span>(,%r12,<span style="color:#ae81ff">8</span>),%rax   <span style="color:#75715e">; compare with table[r12]
+</span></span></span></code></pre></div><p>    The first important detail is the length check: <code>cmp $0x24, %rcx</code> enforces that the input must be exactly <code>0x24</code> bytes long, which corresponds to <strong>36 characters</strong>! This already gave a strong constraint on the expected flag format.</p>
+<p>    The main validation logic happens in the loop that follows. For each character position, the binary loads a byte from the user input, performs a simple arithmetic transformation and compares the result against a value stored in a table located at <code>0x200168</code>. Breaking this down:</p>
+<ul>
+<li>A character is loaded from the input buffer.</li>
+<li>It is multiplied by the value stored in <code>r13</code> (which is <code>0xD</code>, or <code>13</code>).</li>
+<li>The current index (<code>r12</code>) is added.</li>
+<li>The result is compared against a precomputed value from the table.</li>
+</ul>
+<p>    In simplified form, the validation condition for each character becomes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>input<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> * <span style="color:#ae81ff">13</span> + i <span style="color:#f92672">==</span> table<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>    This is a straightforward linear relation, which is great news from a reversing perspective. Instead of brute forcing or emulating the binary, we can directly invert the equation and recover each character independently:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>input<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>table<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> - i<span style="color:#f92672">)</span> / <span style="color:#ae81ff">13</span>
+</span></span></code></pre></div><p>    At this point, the only missing piece is understanding where exactly these <code>table[i]</code> values reside in memory. Looking back at the comparison instruction (<code>cmp 0x200168(,%r12,8), %rax</code>), we know that the table base is at <code>0x200168</code>, with each entry being <strong>8 bytes</strong> wide. However, as discussed earlier, the indexing does not start from zero. The register <code>r12</code> begins at <code>0x26</code> and increases by one per iteration, while the input is accessed using an offset of <code>-0x26</code>. This effectively aligns the input index <code>i</code> with <code>r12 - 0x26</code>.</p>
+<p>    As a result, the first relevant table entry is not at <code>0x200168</code>, but at:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">0</span><span style="color:#a6e22e">x200168</span> <span style="color:#960050;background-color:#1e0010">+</span> <span style="color:#ae81ff">0x26</span> * <span style="color:#ae81ff">8</span> <span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#ae81ff">0x200298</span>
+</span></span></code></pre></div><p>    This is where the comparison for <code>input[0]</code> takes place, and the following 35 entries correspond to the rest of the flag characters. With this in mind, I used <code>gdb</code> to dump exactly these 36 entries directly from memory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ gdb --nx --nh -q /tmp/last_stage <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set pagination off
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set follow-exec-mode same
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">catch syscall read
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">run &lt;&lt;&lt; &#34;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">finish
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">x/36gx 0x200298
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>....
+</span></span><span style="display:flex;"><span>Catchpoint <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>returned from syscall read<span style="color:#f92672">)</span>, 0x0000000000202fb9 in ?? <span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>gdb<span style="color:#f92672">)</span> 0x200298: 0x0000000000000450      0x0000000000000895
+</span></span><span style="display:flex;"><span>0x2002a8:       0x00000000000012e5      0x00000000000009e9
+</span></span><span style="display:flex;"><span>0x2002b8:       0x0000000000001b55      0x0000000000001003
+</span></span><span style="display:flex;"><span>0x2002c8:       0x0000000000002b2f      0x00000000000026c5
+</span></span><span style="display:flex;"><span>0x2002d8:       0x000000000000302b      0x000000000000306d
+</span></span><span style="display:flex;"><span>0x2002e8:       0x00000000000040fc      0x0000000000003f91
+</span></span><span style="display:flex;"><span>0x2002f8:       0x000000000000208b      0x0000000000004e67
+</span></span><span style="display:flex;"><span>0x200308:       0x00000000000051b5      0x0000000000004d65
+</span></span><span style="display:flex;"><span>0x200318:       0x000000000000645a      0x0000000000005f47
+</span></span><span style="display:flex;"><span>0x200328:       0x0000000000003264      0x0000000000003815
+</span></span><span style="display:flex;"><span>0x200338:       0x0000000000007add      0x0000000000006a5d
+</span></span><span style="display:flex;"><span>0x200348:       0x0000000000003bcd      0x000000000000864d
+</span></span><span style="display:flex;"><span>0x200358:       0x0000000000003d2e      0x0000000000009ab9
+</span></span><span style="display:flex;"><span>0x200368:       0x0000000000008d79      0x0000000000009421
+</span></span><span style="display:flex;"><span>0x200378:       0x0000000000008c29      0x000000000000a4cb
+</span></span><span style="display:flex;"><span>0x200388:       0x0000000000005220      0x000000000000c4e5
+</span></span><span style="display:flex;"><span>0x200398:       0x00000000000055bd      0x000000000000c51b
+</span></span><span style="display:flex;"><span>0x2003a8:       0x000000000000ccad      0x000000000000e4cd
+</span></span><span style="display:flex;"><span>....
+</span></span></code></pre></div><p>    This script breaks on the <code>read</code> syscall, feeds controlled input and then resumes execution until the program returns to its main logic. At that point, the table is already initialized in memory, allowing me to safely dump all required values in one go. Once the table is extracted, applying the formula <code>input[i] = (table[i] - i) / 13</code> for each position directly yields the flag, without needing to further interact with or emulate the binary.</p>
+<h2 id="getting-the-flag">Getting the flag</h2>
+<p>    With the table values successfully extracted and the validation logic fully understood, recovering the flag becomes a straightforward task. Since each character satisfies a simple linear relation, I directly inverted the formula and reconstruct the flag one byte at a time.</p>
+<p>    To automate this process, I used the following Python script:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>table <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x450</span>,  <span style="color:#ae81ff">0x895</span>,  <span style="color:#ae81ff">0x12e5</span>, <span style="color:#ae81ff">0x9e9</span>,  <span style="color:#ae81ff">0x1b55</span>, <span style="color:#ae81ff">0x1003</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x2b2f</span>, <span style="color:#ae81ff">0x26c5</span>, <span style="color:#ae81ff">0x302b</span>, <span style="color:#ae81ff">0x306d</span>, <span style="color:#ae81ff">0x40fc</span>, <span style="color:#ae81ff">0x3f91</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x208b</span>, <span style="color:#ae81ff">0x4e67</span>, <span style="color:#ae81ff">0x51b5</span>, <span style="color:#ae81ff">0x4d65</span>, <span style="color:#ae81ff">0x645a</span>, <span style="color:#ae81ff">0x5f47</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x3264</span>, <span style="color:#ae81ff">0x3815</span>, <span style="color:#ae81ff">0x7add</span>, <span style="color:#ae81ff">0x6a5d</span>, <span style="color:#ae81ff">0x3bcd</span>, <span style="color:#ae81ff">0x864d</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x3d2e</span>, <span style="color:#ae81ff">0x9ab9</span>, <span style="color:#ae81ff">0x8d79</span>, <span style="color:#ae81ff">0x9421</span>, <span style="color:#ae81ff">0x8c29</span>, <span style="color:#ae81ff">0xa4cb</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x5220</span>, <span style="color:#ae81ff">0xc4e5</span>, <span style="color:#ae81ff">0x55bd</span>, <span style="color:#ae81ff">0xc51b</span>, <span style="color:#ae81ff">0xccad</span>, <span style="color:#ae81ff">0xe4cd</span>,
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>flag <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>r12, r13 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x26</span>, <span style="color:#ae81ff">0xd</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> entry <span style="color:#f92672">in</span> table:
+</span></span><span style="display:flex;"><span>    char_val <span style="color:#f92672">=</span> (entry <span style="color:#f92672">-</span> r12) <span style="color:#f92672">//</span> r13
+</span></span><span style="display:flex;"><span>    flag<span style="color:#f92672">.</span>append(chr(char_val))
+</span></span><span style="display:flex;"><span>    r12 <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    r13 <span style="color:#f92672">+=</span> <span style="color:#ae81ff">0xd</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(flag))
+</span></span></code></pre></div><p>    The script mirrors the logic observed in the binary. For each table entry, it applies the inverted formula to recover the original character. The variables <code>r12</code> and <code>r13</code> are initialized to match their runtime values in the assembly and are updated per iteration, ensuring the computation stays aligned with the original validation loop.</p>
+<p>    Once executed, the script reconstructs the full flag instantly, avoiding the need for further debugging or interaction with the binary:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ python solve.py
+</span></span><span style="display:flex;"><span>RS<span style="color:#f92672">{</span>0k4y_i_th1nk_th47s_3n0ugh_l4y3rs<span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
+<p>    This challenge was a great example of how combining static and dynamic analysis is often necessary when dealing with heavily obfuscated binaries. The stripped and statically linked nature of the executable made initial analysis noisy and time-consuming, while the multi-stage in-memory execution model ensured that the real logic was never directly visible in a single place.</p>
+<p>    What made the difference here was shifting perspective early on. Instead of trying to fully reverse every stage statically, leveraging dynamic analysis tools like <code>strace</code> and <code>gdb</code> allowed me to observe how the binary behaved at runtime, extract the final payload and focus only on the relevant logic. This significantly reduced the complexity of the problem.</p>
+<p>    Another interesting takeaway is how simple the core validation actually was. Despite the layers of unpacking and execution indirection, the flag check ultimately boiled down to a basic linear equation. This contrast between heavy obfuscation and simple underlying logic is something that appears quite often in CTF challenges.</p>
+<p>    Overall, this was one of the more time-consuming challenges in the set, but also one of the most rewarding. It reinforced the importance of adapting your approach when static analysis becomes inefficient and it highlighted how powerful runtime instrumentation can be when dealing with staged or self-unpacking binaries.</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://pnasis.gitlab.io/tags/reversing/">Reversing</a></span>
+        <span class="tag"><a href="https://pnasis.gitlab.io/tags/ctf/">CTF</a></span>
+        <span class="tag"><a href="https://pnasis.gitlab.io/tags/jeopardy/">Jeopardy</a></span>
+        <span class="tag"><a href="https://pnasis.gitlab.io/tags/ritsec-ctf-2026/">RITSEC CTF 2026</a></span>
+        <span class="tag"><a href="https://pnasis.gitlab.io/tags/memory-unpacking/">Memory unpacking</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        2957 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2026-04-05 08:54
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+    <div class="pagination">
+        
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-4-obfpyscated/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">RITSEC CTF 2026 - Reversing Writeups (Part 4): obfpyscated</span>
+                </a>
+            </span>
+            
+
+            
+            <span class="button next">
+                <a href="https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-2-not-quite-optimal/">
+                    <span class="button__text">RITSEC CTF 2026 - Reversing Writeups (Part 2): not quite optimal</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span style="font-size: 0.8rem; opacity: 0.8;">Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/rhazdon/hugo-theme-hello-friend-ng">hello-friend-ng</a> theme.</span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://pnasis.gitlab.io/bundle.min.e89fda0f29b95d33f6f4224dd9e5cf69d84aff3818be2b0d73e731689cc374261b016d17d46f8381962fb4a1577ba3017b1f23509d894f6e66431f988c00889e.js" integrity="sha512-6J/aDym5XTP29CJN2eXPadhK/zgYvisNc&#43;cxaJzDdCYbAW0X1G&#43;DgZYvtKFXe6MBex8jUJ2JT25mQx&#43;YjACIng=="></script>
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,59 @@
+{
+  "event_id": "CTF-3081",
+  "event_title": "0xFUN CTF 2026",
+  "category": "pwn",
+  "title": "Fridge",
+  "source_urls": [
+    "https://github.com/marlithor-cyber/0xfun-2026-writeups/tree/main/pwn/fridge",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/Fridge",
+    "https://ctftime.org/event/3081/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/fridge/README.md",
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/fridge/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/Fridge/README.md",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/Fridge/vuln"
+  ],
+  "writeup_status": "已下载参赛者正文及解题脚本",
+  "attachment_status": "已下载题目镜像附件",
+  "notes": [
+    "writeup来自解题者原始仓库；附件来自CTF Archives镜像。只保存文件，未执行。"
+  ],
+  "artifacts": [
+    {
+      "path": "writeups/fridge/README.md",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/fridge/README.md",
+      "bytes": 1588,
+      "sha256": "5b4c0ba91437a3d946eec11a8218281e886e0fcaf7dd9462cda157712bef7536",
+      "kind": "writeups"
+    },
+    {
+      "path": "writeups/fridge/solve.py",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/fridge/solve.py",
+      "bytes": 2175,
+      "sha256": "cd3800b9a9e7cc33df69707db1a97f625203ceda7d0d7e9a1ab4d44a58cad36b",
+      "kind": "writeups"
+    },
+    {
+      "path": "attachments/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/Fridge/README.md",
+      "bytes": 285,
+      "sha256": "3e2702cd321045147365a93b33d2c5ad1f7cf195857a347f790fcb263b422b6c",
+      "kind": "attachments"
+    },
+    {
+      "path": "attachments/vuln",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/Fridge/vuln",
+      "bytes": 15296,
+      "sha256": "40c36e9910bd592a9ca058f56baaa937ef71a71cbff96e8e2d3d4431f07719b3",
+      "kind": "attachments"
+    }
+  ],
+  "download_errors": [],
+  "has_verified_solution": true,
+  "attachment_complete": true,
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06"
+}

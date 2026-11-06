@@ -1,0 +1,101 @@
+{
+  "event_id": "CTF-3153",
+  "event_title": "b01lers CTF 2026",
+  "category": "逆向",
+  "title": "shakespeares-revenge",
+  "dirname": "b01lers_CTF_2026",
+  "source_urls": [
+    "https://github.com/b01lers/b01lers-ctf-2026-public/tree/HEAD/src/rev/shakespeares-revenge"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/chal.json",
+      "local": "attachments/chal.json",
+      "size_expected": 378,
+      "git_blob_sha": "109e75d9580c07cc5f94633c911338db51d02c75",
+      "status": "downloaded",
+      "bytes": 378,
+      "sha256": "138a4e2dd684646714bd579f9cdc6c3ecde103b4f9c28f513c87cba73351d19b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/dist/challenge.spl",
+      "local": "attachments/dist/challenge.spl",
+      "size_expected": 1672,
+      "git_blob_sha": "6308ee97e95e227e0240dbfa8371cd3553967bea",
+      "status": "downloaded",
+      "bytes": 1672,
+      "sha256": "3cfb09a55f772a6d9a7c508ffbf4d5eacfa8b1d7966b29695b7ce5443284c233"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/dist/server.py",
+      "local": "attachments/dist/server.py",
+      "size_expected": 759,
+      "git_blob_sha": "dcc55c20e08c9e6c8487d11e05d4d1fef213d9d2",
+      "status": "downloaded",
+      "bytes": 759,
+      "sha256": "a0613aff6d1dfb9d2aa9c6f405e7e0a2029915f6620701306b9ee809aeea8fa5"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/dist/shakespeare",
+      "local": "attachments/dist/shakespeare",
+      "size_expected": 3446032,
+      "git_blob_sha": "0005a98abb86c094704aa03ef477212ded0bc774",
+      "status": "downloaded",
+      "bytes": 3446032,
+      "sha256": "65a805c2eef3d3245965e2f5720c5f1323bd704aeea2689ee984d18d7f586536"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/solve/README.md",
+      "local": "writeups/solve/README.md",
+      "size_expected": 2340,
+      "git_blob_sha": "63820e12a37191c073b2c81a8a9a4aa94cff420c",
+      "status": "downloaded",
+      "bytes": 2340,
+      "sha256": "88842360f580f8502163080b4e029b813ab243cf824d5683d6dac8f57d32e9ee"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/solve/challenge.spl",
+      "local": "writeups/solve/challenge.spl",
+      "size_expected": 1672,
+      "git_blob_sha": "6308ee97e95e227e0240dbfa8371cd3553967bea",
+      "status": "downloaded",
+      "bytes": 1672,
+      "sha256": "3cfb09a55f772a6d9a7c508ffbf4d5eacfa8b1d7966b29695b7ce5443284c233"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/solve/shakespeare",
+      "local": "writeups/solve/shakespeare",
+      "size_expected": 372096,
+      "git_blob_sha": "86bddfd71734dbce41c8097c57daa9da5663103a",
+      "status": "downloaded",
+      "bytes": 372096,
+      "sha256": "9f8f669b0fea18d24cbf7f0787baa6be6e15361b1e6f9b0cc073079c745ebb16"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/solve/solve.py",
+      "local": "writeups/solve/solve.py",
+      "size_expected": 826,
+      "git_blob_sha": "8b50bfe5d3fa36fd153da920faa2267a0e31cc80",
+      "status": "downloaded",
+      "bytes": 826,
+      "sha256": "2f76b00facfb85c27213bbb848fb0cce3b92c1ed893eb562e5027cdd5c56a00d"
+    }
+  ],
+  "notes": "官方dist题目包及sol/solve解答目录。模板README未作为writeup。",
+  "directory": "逆向/b01lers_CTF_2026/shakespeares-revenge",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/solve/README.md",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/solve/challenge.spl",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/solve/shakespeare",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/solve/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/chal.json",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/dist/challenge.spl",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/dist/server.py",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/dist/shakespeare"
+  ],
+  "attachment_status": "downloaded"
+}

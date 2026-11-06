@@ -1,0 +1,30 @@
+{
+  "event_id": "CAL-004",
+  "event_title": "NepCTF 2026",
+  "category": "pwn",
+  "title": "different_ROP",
+  "source_urls": [
+    "https://github.com/ProbiusOfficial/Hello-CTF/blob/main/docs/Event/json/CN_archive.json",
+    "https://github.com/fjh1997/nepctf2026-writeup"
+  ],
+  "writeup_urls": [
+    "https://github.com/fjh1997/nepctf2026-writeup/blob/main/writeup/WriteUp_%E5%AE%8C%E6%95%B4%E8%87%AA%E5%8C%85%E5%90%AB.md"
+  ],
+  "attachment_urls": [],
+  "writeup_status": "downloaded",
+  "attachment_status": "missing",
+  "notes": "解答摘自 fjh1997/nepctf2026-writeup 的完整自包含 writeup，保留该题原文及其中全部解题代码。原题大附件/固件/镜像未随该仓库发布；ctf-archives/NepCTF/2026 镜像路径核验为404。没有把解题代码当成题目附件，attachment_status 为 missing。本次未执行任何代码或联系文中历史服务。",
+  "files": [
+    {
+      "path": "writeups/writeup.md",
+      "url": "https://github.com/fjh1997/nepctf2026-writeup/blob/main/writeup/WriteUp_%E5%AE%8C%E6%95%B4%E8%87%AA%E5%8C%85%E5%90%AB.md",
+      "bytes": 3423,
+      "sha256": "b6f5ebde21de7a244722d61305a7729d62c0ae1bbb16c00aa9793a053b987af0",
+      "note": "Verbatim section #47 from locally downloaded complete source; attribution prepended"
+    }
+  ],
+  "errors": [],
+  "original_challenge_id": 47,
+  "writeup_kind": "community_writeup_section_with_embedded_solver",
+  "source_document_sha256": "c29a3ddea926e6d8ecd603fe84731fe0cc27827367abdc2555daa48ed0061145"
+}

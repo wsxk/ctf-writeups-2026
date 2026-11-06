@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3456",
+  "event_title": "kBxAc CTF 2026",
+  "title": "Most_Secure_Bank_Of_Endia",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "utf-8-length-mismatch",
+    "buffer-overflow",
+    "checksum"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/kbxac/2026/most_secure_bank_of_endia/",
+    "https://ctf42.online/ctfs/kbxac/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/pwn/Most_Secure_Bank_Of_Endia"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/pwn/most-secure-bank-of-endia"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/pwn/Most_Secure_Bank_Of_Endia",
+    "https://ctf42.online/ctfs/kbxac/2026/most_secure_bank_of_endia/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/kbxac_2026/Most_Secure_Bank_Of_Endia/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/kBxAc-CTF-2026/main/pwn/most-secure-bank-of-endia/README.md",
+      "bytes": 4468,
+      "sha256": "ca12238c77e38fab4e7257e3058ada81805490101f3a6ecee4c65023142c3e91",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/kbxac_2026/Most_Secure_Bank_Of_Endia/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/KBxAc/2026/pwn/Most_Secure_Bank_Of_Endia/README.md",
+      "bytes": 75,
+      "sha256": "796bcc1a7f6eb42a71e4c48ad8f1563aad1779a2d9f3a042e567f6492974f5bf",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/kbxac_2026/Most_Secure_Bank_Of_Endia/attachments/upstream/handout.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/KBxAc/2026/pwn/Most_Secure_Bank_Of_Endia/handout.zip",
+      "bytes": 8218,
+      "sha256": "f25841027984afa95f2f6bdce0256e6351f0d8a341972db1c139cd1e8750ee8f",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/kbxac/2026/most_secure_bank_of_endia/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/kbxac/2026/most_secure_bank_of_endia/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

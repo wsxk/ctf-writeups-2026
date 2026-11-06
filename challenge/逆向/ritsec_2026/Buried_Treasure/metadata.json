@@ -1,0 +1,64 @@
+{
+  "event_id": "CTF-3096",
+  "event_title": "RITSEC CTF 2026",
+  "title": "Buried_Treasure",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "multi-stage-unpacking",
+    "memfd-create",
+    "xor",
+    "strace-dump"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/ritsec/2026/buried_treasure/",
+    "https://ctf42.online/ctfs/ritsec/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/Buried_Treasure"
+  ],
+  "writeup_urls": [
+    "https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-3-buried-treasure/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/Buried_Treasure",
+    "https://ctf42.online/ctfs/ritsec/2026/buried_treasure/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/ritsec_2026/Buried_Treasure/writeups/1_writeup.html",
+      "url": "https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-3-buried-treasure/",
+      "bytes": 64870,
+      "sha256": "21f4762da77b4be3c6b926d8cd767242f1d10ef6010e275f0248e5730b1d8b86",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/ritsec_2026/Buried_Treasure/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/RITSEC/2026/rev/Buried_Treasure/README.md",
+      "bytes": 93,
+      "sha256": "19c90d2e753048533b5c24a4621614316cd83f5d31a41e4397966412f1b8a3e3",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/ritsec_2026/Buried_Treasure/attachments/upstream/buried_treasure",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/RITSEC/2026/rev/Buried_Treasure/buried_treasure",
+      "bytes": 384144,
+      "sha256": "ef66ee6641e2d176411ef3e3247b9ffb78d1fc900e2d175f31cf9f0188129981",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/ritsec/2026/buried_treasure/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/ritsec/2026/buried_treasure/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

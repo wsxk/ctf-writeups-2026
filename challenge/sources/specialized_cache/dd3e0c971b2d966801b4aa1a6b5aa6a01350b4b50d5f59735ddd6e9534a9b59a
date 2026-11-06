@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Vinyl Drop</string>
+    <string name="register_new">Not a user? Register</string>
+    <string name="login_button">Login</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register_button">Register</string>
+    <string name="welcome_text">Welcome to Vinyl Drop.</string>
+    <string name="welcome_instructions">Scan your QR code to gain access to exclusive records.</string>
+    <string name="barcode_button">Scan QR Code</string>
+    <string name="reward_title">If access is unlocked</string>
+    <string name="reward_congrats">Congrats! The flag is,</string>
+    <string name="reward_placeholder">Reward will appear here.</string>
+    <string name="reward_error_title">Scan Rejected</string>
+</resources>

@@ -1,0 +1,16 @@
+name: pwn02
+services:
+  notetaker:
+    image: cybersecnatlab/challenge-jail:ubuntu-noble@sha256:bdb4f33f2c4604c8818b86fc7d52ce50c047a9556b43a8005c3d61ca1622dd43
+    restart: unless-stopped
+    container_name: pwn02-notetaker
+    privileged: true
+    init: true
+    ports:
+      - "9002:1337"
+    volumes:
+      - "./notetaker:/home/user/chall:ro"
+      - "./libs:/home/user/libs:ro"
+    environment:
+      - "FLAG=pascalCTF{d1d_y0u_fr_h00k3d_th3_h3ap?}"
+      - "LOG_STDERR=true"

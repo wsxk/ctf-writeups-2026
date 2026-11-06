@@ -1,0 +1,64 @@
+{
+  "event_id": "CTF-3441",
+  "event_title": "Cryovault 2026 Quals",
+  "title": "thaw_ladder",
+  "category": "虚拟化",
+  "original_category": "Pwn",
+  "tags": [
+    "custom-vm",
+    "signedness-bug",
+    "oob-write"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/cryovault/2026-quals/thaw_ladder/",
+    "https://ctf42.online/ctfs/cryovault/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Cryovault/2026/Quals/pwn/thaw_ladder"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/Cryovault-2026-Quals/tree/main/pwn/thaw-ladder"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Cryovault/2026/Quals/pwn/thaw_ladder",
+    "https://ctf42.online/ctfs/cryovault/2026-quals/thaw_ladder/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/cryovault_2026-quals/thaw_ladder/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/Cryovault-2026-Quals/main/pwn/thaw-ladder/README.md",
+      "bytes": 9402,
+      "sha256": "7c76624167c118892260a6c2924a02be7188545b87f18a1413081d59a9680681",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/cryovault_2026-quals/thaw_ladder/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Cryovault/2026/Quals/pwn/thaw_ladder/README.md",
+      "bytes": 249,
+      "sha256": "97d67565183cc708475a8624e718fa29ea9f91af37e2e1cb856d944bb5fac4b9",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/cryovault_2026-quals/thaw_ladder/attachments/upstream/thaw-ladder.tar",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Cryovault/2026/Quals/pwn/thaw_ladder/thaw-ladder.tar",
+      "bytes": 40960,
+      "sha256": "93e6f7452c16a626d9fb9ae7dec298f9097eca59f072efc3a830ebbd3f0b472f",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/cryovault/2026-quals/thaw_ladder/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/cryovault/2026-quals/thaw_ladder/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

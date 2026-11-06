@@ -1,0 +1,59 @@
+{
+  "event_id": "CTF-3015",
+  "event_title": "LA CTF 2026",
+  "category": "逆向",
+  "title": "ooo",
+  "dirname": "LA_CTF_2026",
+  "source_urls": [
+    "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/rev/ooo"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/ooo/challenge.yaml",
+      "local": "attachments/challenge.yaml",
+      "size_expected": 268,
+      "git_blob_sha": "bc5804a0dd40ab6c248597fa6365c79527f0f0db",
+      "status": "downloaded",
+      "bytes": 268,
+      "sha256": "70b3a85c601e529bf6a6645b8c37efbccec28d20942491b02ee82ccd902a4317"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/ooo/ooo.py",
+      "local": "attachments/ooo.py",
+      "size_expected": 885,
+      "git_blob_sha": "b95622a3990f6e0aad8f4450bfa0da73b48a355e",
+      "status": "downloaded",
+      "bytes": 885,
+      "sha256": "7af73ab29d8346c25799c5b0521c99e7da53a6529a705970c939d33e151b7df5"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/ooo/solve.py",
+      "local": "writeups/official/solve.py",
+      "size_expected": 293,
+      "git_blob_sha": "c0e40d25efaef6bba64d55a3c2db83375dfa6936",
+      "status": "downloaded",
+      "bytes": 293,
+      "sha256": "b1d9900bb41fd7b4c9d65b54908f3856ec977e1e01aee0891177f1ae0e22dd32"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/ooo/README.md",
+      "local": "writeups/community/README.md",
+      "status": "downloaded",
+      "bytes": 8528,
+      "sha256": "77b10aa643e7c21a0270552f8b4ed92b49599167059f1a684bfb22b4ec71ed4c"
+    }
+  ],
+  "notes": "官方题目附件，配官方 solver（若有）及参赛者 hax1ng 的文章/脚本。社区文章部分标题误写2025，但本题与官方2026目录的描述和flag一致，已逐题核对（ooo使用Unicode NFC比较）；保留原文。reflection另归虚拟化。",
+  "directory": "逆向/LA_CTF_2026/ooo",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/ooo/solve.py",
+    "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/ooo/README.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/ooo/challenge.yaml",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/ooo/ooo.py"
+  ],
+  "attachment_status": "downloaded"
+}

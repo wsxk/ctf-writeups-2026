@@ -1,0 +1,51 @@
+{
+  "event_id": "CTF-3349",
+  "event_title": "BDSec CTF 2026",
+  "title": "Borrowed_Memory",
+  "category": "虚拟化",
+  "original_category": "Reverse",
+  "tags": [
+    "bytecode-vm-emulation",
+    "xorshift-table-regeneration",
+    "checksum-guided-debugging",
+    "xor-decryption"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/bdsec/2026/borrowed_memory/",
+    "https://ctf42.online/ctfs/bdsec/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/rev/Borrowed_Memory"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/bdsec-ctf-2026-reverse-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/rev/Borrowed_Memory",
+    "https://ctf42.online/ctfs/bdsec/2026/borrowed_memory/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/bdsec_2026/Borrowed_Memory/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/bdsec-ctf-2026-reverse-writeup/",
+      "bytes": 178018,
+      "sha256": "e5e25eb32ada46c4b712dcb71740f21478b1672de0f136ce1848c20d58df66c4",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/bdsec_2026/Borrowed_Memory/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/bdsec/2026/borrowed_memory/folder.zip?kind=files",
+      "bytes": 4184,
+      "sha256": "c596df189b6f493b20d29ac7e84e42abd8f5b4472e586318b911a285404ba10d",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

@@ -1,0 +1,554 @@
+{
+  "event_id": "CTF-3153",
+  "event_title": "b01lers CTF 2026",
+  "category": "pwn",
+  "title": "multifiles",
+  "source_urls": [
+    "https://github.com/b01lers/b01lers-ctf-2026-public/tree/HEAD/src/pwn/multifiles",
+    "https://ctftime.org/event/3153/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/README.md",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/System.map",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/build.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/bzImage",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/bzImage_debug",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/caches.txt",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/debug_run_solve.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/initrd.cpio.gz",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/initrd_debug.cpio.gz",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/run_solve.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/solve",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/solve.c",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/solve.py",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/solve_head_len.py",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/solve_old.py",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/vmlinux_symbols"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/build_out/System.map",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/build_out/bzImage",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/build_out/initrd.cpio.gz",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/build_out/initrd_dist.cpio.gz",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/build_out/kernel.config",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/build_out/multifiles.ko",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/chal.json",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/deploy/Dockerfile",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/deploy/Dockerfile_build",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/deploy/docker-compose.prod.yml",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/deploy/docker-compose.yml",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/deploy/wrapper.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/dev.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/dist/multifiles.tar.gz",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/flag.txt",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/pwn_build.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/run.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/src/Makefile",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/src/drop_priv.c",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/src/initrd_init",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/src/kernel-cache-usercopy.diff",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/src/kernel.config.fragment",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/src/multifiles.c"
+  ],
+  "writeup_status": "已下载官方解题脚本（独立文字writeup未提供）",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "b01lers/b01lers-ctf-2026-public",
+  "repository_tree_sha": "6890cf1035a9e2c3dd4817d11204619bfd0259b4",
+  "artifacts": [
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/README.md",
+      "bytes": 3052,
+      "sha256": "33e978527b148e16d3535db7cbecb1c4cef7e435f9a9bf457d7bc9e4372bc028",
+      "git_blob_sha1": "b39dfd6033029b2ac0ecdfa5f3803dacf7b405f6",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/build_out/System.map",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/build_out/System.map",
+      "bytes": 5061051,
+      "sha256": "c7cf2b16d61a7a3070fd0f42015d6a938f9b599efa51d52a177c95ea2e03a6ff",
+      "git_blob_sha1": "b0a1f28a3770b81f89db76e875e29848b4e38b53",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/build_out/bzImage",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/build_out/bzImage",
+      "bytes": 8856576,
+      "sha256": "a67886a73abf675987ad5ac70b1fc4b3fd66b65ad778963a522a9bcb5c390fb9",
+      "git_blob_sha1": "5f514ece16e57940ba804cf0e6b433a4bb8a13ab",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/build_out/initrd.cpio.gz",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/build_out/initrd.cpio.gz",
+      "bytes": 1336061,
+      "sha256": "9020c8a2b039fe07f9179fba0251380761b5d673ebd01981b39e8db16c7761bb",
+      "git_blob_sha1": "27a2c3caf285cf42c9c30f53400d46ff0ef2467d",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/build_out/initrd_dist.cpio.gz",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/build_out/initrd_dist.cpio.gz",
+      "bytes": 1336048,
+      "sha256": "1e1d908a289ecd133f1690c25b356b46dfbdb6d8f2fbc05b0446113d6f09a649",
+      "git_blob_sha1": "f8ad8ee7e819906bc38cfb53105cde1736decd10",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/build_out/kernel.config",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/build_out/kernel.config",
+      "bytes": 117333,
+      "sha256": "d646998b37647c91b15f5f4c9ec11acf97c2d11527f9470614b797055901665b",
+      "git_blob_sha1": "76f082ad154ab926d867dc6981fcf9a23b1709b3",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/build_out/multifiles.ko",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/build_out/multifiles.ko",
+      "bytes": 16408,
+      "sha256": "122f42e53dc85058982f86f1c4999d3175b71e3ec0f8e0d0e8a538a4c35e1c7f",
+      "git_blob_sha1": "4fd13067edcb20b7cab270c4d72af2d74a1b48fa",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chal.json",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/chal.json",
+      "bytes": 310,
+      "sha256": "af47d356d4d8b9cdf95fb551eb9dca90b9d34692305ec57fe68958c25bd9a2dd",
+      "git_blob_sha1": "bac3392fde7f9562b42eb52e2e501dc30f9fbfe4",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/Dockerfile",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/deploy/Dockerfile",
+      "bytes": 486,
+      "sha256": "8347cdd71a2dfb696e20df5056820aa83b9e0fccf0bbc48811211bce6d489b33",
+      "git_blob_sha1": "e9c5c950709245fd97815e659ad68c164cba752e",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/Dockerfile_build",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/deploy/Dockerfile_build",
+      "bytes": 3512,
+      "sha256": "ea4032d26ee4a73a0d1fe84d3bd197f82c636678c263ee2e71740d5d51c53fcf",
+      "git_blob_sha1": "00d2e0bea7c56a49e6190dfa13ada4acb3221d76",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/docker-compose.prod.yml",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/deploy/docker-compose.prod.yml",
+      "bytes": 172,
+      "sha256": "554d392be47d5eda7fc6dcf2d024ff95a9a8a824b4bf88fb6c08f4789a77a67b",
+      "git_blob_sha1": "1910fd4ba9bb390c6cf648b71640f1bf85bb8c8d",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/docker-compose.yml",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/deploy/docker-compose.yml",
+      "bytes": 1425,
+      "sha256": "82e33f91482a55ca71d5d7e38d0f1be8cc45e7940b45fe4d91dafd35a6f7cccc",
+      "git_blob_sha1": "d8a84c94708d59440ab027e88c6b5b2ba96386ef",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/wrapper.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/deploy/wrapper.sh",
+      "bytes": 339,
+      "sha256": "5443d0db76ca7bbbc84f17028567869ea32250302496fffa9f83ab0188402f9a",
+      "git_blob_sha1": "5886f61194ca02d3ed4a227d6ec73c2eb34f04ad",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/dev.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/dev.sh",
+      "bytes": 366,
+      "sha256": "2cda460a5b9992d7fc5ece4e376706ef24b74bf274229570625a65d1c86714a2",
+      "git_blob_sha1": "1973c4eb9650de27c7ede2db1f9a1cfac78b6f95",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/dist/multifiles.tar.gz",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/dist/multifiles.tar.gz",
+      "bytes": 10951688,
+      "sha256": "053c596222a5b328a0091fe9d1cd70c9298833048323fc3e0249577a9ba2673d",
+      "git_blob_sha1": "d60360db223165780cf57f5bd10d27e6dd819fe6",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flag.txt",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/flag.txt",
+      "bytes": 51,
+      "sha256": "a27c2848ee4b68bcc37784542ec0ce08de9daac5799923adcf8890e104ceba54",
+      "git_blob_sha1": "737e2eadc6b1329f5d4d3b9af34e24b7640fa623",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/pwn_build.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/pwn_build.sh",
+      "bytes": 499,
+      "sha256": "c2f2c177330887d15a7a368828f0f00fd107db05a930962d0c530e82393055e1",
+      "git_blob_sha1": "9faee206aac57d20af7481f3d7eafe8cc27b43e7",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/run.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/run.sh",
+      "bytes": 516,
+      "sha256": "f3dc6f2f04db833005dd718f9cc6ad4342d12654cbf592e05f9d129daca9df44",
+      "git_blob_sha1": "219440d4ab91c5976ac4df494cb149763f1c5f97",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/System.map",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/System.map",
+      "bytes": 5061051,
+      "sha256": "c7cf2b16d61a7a3070fd0f42015d6a938f9b599efa51d52a177c95ea2e03a6ff",
+      "git_blob_sha1": "b0a1f28a3770b81f89db76e875e29848b4e38b53",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/build.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/build.sh",
+      "bytes": 77,
+      "sha256": "5a7b4357ec803c89eeabac6c688d2c617b90ddf0c82c6e5dd1edc3d6521982c1",
+      "git_blob_sha1": "770cb6c06f6d306fb7e0e6bdb9ec68682671fd15",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/bzImage",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/bzImage",
+      "bytes": 8856576,
+      "sha256": "a67886a73abf675987ad5ac70b1fc4b3fd66b65ad778963a522a9bcb5c390fb9",
+      "git_blob_sha1": "5f514ece16e57940ba804cf0e6b433a4bb8a13ab",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/bzImage_debug",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/bzImage_debug",
+      "bytes": 8877056,
+      "sha256": "2d00cbc7cfdb2f89614b4bc927bc84a24cd5e15f8266afb176acfad188127c05",
+      "git_blob_sha1": "8476419fe005741981bcb6c22c2340389d40ebb5",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/caches.txt",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/caches.txt",
+      "bytes": 15206,
+      "sha256": "0b2ebb3eb732609e6f253170549eeecd715c204650f74a8850d9f8ad20de8c8a",
+      "git_blob_sha1": "3bd495b9f13ff819e683396ffe604eea908eb306",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/debug_run_solve.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/debug_run_solve.sh",
+      "bytes": 744,
+      "sha256": "471b244518e8db2e707c483c36c1baa2d8d95da98f5066676bb918ad923870be",
+      "git_blob_sha1": "cd22e6e459a2d25db23f6bd597a37e0b3008434c",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/initrd.cpio.gz",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/initrd.cpio.gz",
+      "bytes": 1336061,
+      "sha256": "9020c8a2b039fe07f9179fba0251380761b5d673ebd01981b39e8db16c7761bb",
+      "git_blob_sha1": "27a2c3caf285cf42c9c30f53400d46ff0ef2467d",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/initrd_debug.cpio.gz",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/initrd_debug.cpio.gz",
+      "bytes": 1341129,
+      "sha256": "b98f1bcfdce2c4120868690a61dff095c524d86466eb01fc549ef8f7746237a3",
+      "git_blob_sha1": "7a6edaac57c5ca97975d0102fd630716683878a3",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/run_solve.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/run_solve.sh",
+      "bytes": 746,
+      "sha256": "78bf94e531110ca47e57c5aa567d2c29be8b3f804f851e250ce058c81f2705ed",
+      "git_blob_sha1": "da4dadec428476e465674b2e708f3431a9b776b9",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/solve",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/solve",
+      "bytes": 903832,
+      "sha256": "5089ae7c6bb3bb720db81e25c2716883c73c32681dcb059f47de3788122a9a35",
+      "git_blob_sha1": "0df491f5cb13cf7ec81abf0423f7847135df36a9",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/solve.c",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/solve.c",
+      "bytes": 19198,
+      "sha256": "de99d079a983cfc1c5c8c33d5accc658a186d8bb7b88261864959659dc1fe884",
+      "git_blob_sha1": "9ca15aea649598c9879366792b9a492f6e35d5eb",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/solve.py",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/solve.py",
+      "bytes": 2698,
+      "sha256": "d82d18747708b6b7d425c1c61f6fa02c3b01bedd15c7cf0e153715110653833e",
+      "git_blob_sha1": "b32b3a8f719107deef7748f054119fabd0362ce0",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/solve_head_len.py",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/solve_head_len.py",
+      "bytes": 2677,
+      "sha256": "4182273b58d9459b0541d5ba758d27ae01795521d33cec8e60f8c4d7210c4abb",
+      "git_blob_sha1": "0913a0453a4e356188c3ae2d5ddf00c855037e47",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/solve_old.py",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/solve_old.py",
+      "bytes": 2962,
+      "sha256": "bf84fbf7a79f6935c791bfc270cb7ae866b4e27372b4c3f63cfb16ac9b3bc887",
+      "git_blob_sha1": "bef54871ca2791b3bd3b171e31fb66e4182011b4",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/vmlinux_symbols",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/solve/vmlinux_symbols",
+      "bytes": 30985824,
+      "sha256": "0bab687f88ead93bb342af0e6ee1edd366defdbc696243d030b54b8185193ad4",
+      "git_blob_sha1": "810f7b472ab4883ada1657693fce1fcbfd4706b9",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/Makefile",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/src/Makefile",
+      "bytes": 22,
+      "sha256": "58529cc5814ac374746a8344584371bc8c9a2c7f948bb8b82b34a5b2dc7bc704",
+      "git_blob_sha1": "d357c7459968462f000d79700111bb4465f28bc7",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/drop_priv.c",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/src/drop_priv.c",
+      "bytes": 352,
+      "sha256": "d766ec4170583e23e39fcec7f6310924f7306ef6c15f86e4bb37dbc07ed1c147",
+      "git_blob_sha1": "ea25a647d1106a0a663407aa3e90803f33fbf5a2",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/initrd_init",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/src/initrd_init",
+      "bytes": 898,
+      "sha256": "92a33e2bd99823e44f6b564d47506066d78794d8a0a6d7bc398a70139120254d",
+      "git_blob_sha1": "6c2c585fa8421c4811b5bb69811150e234644918",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/kernel-cache-usercopy.diff",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/src/kernel-cache-usercopy.diff",
+      "bytes": 3012,
+      "sha256": "361a56592b33a4b1af2d44798dd496a7edd6144c174e1bbc50ad89a5d94a0fcd",
+      "git_blob_sha1": "6a1e1571c44b531d18e74929ddd2eaa8fd053a03",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/kernel.config.fragment",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/src/kernel.config.fragment",
+      "bytes": 1294,
+      "sha256": "77f41dc7e3d999d900fb1b84aee1440f802ad26b11d7323e5c79120b448d41e3",
+      "git_blob_sha1": "dfa1dbaf9910ed8439a3f7ab9ae0bde77a726075",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/multifiles.c",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/multifiles/src/multifiles.c",
+      "bytes": 9259,
+      "sha256": "d50597b0e29b781ef71404d0276fc075b3a71e5e38d3ca3e5302951cad757faa",
+      "git_blob_sha1": "75a5854365b73614224cf61b949b478e5a5862a1",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/base64",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/busybox",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/cat",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/chmod",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/chown",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/cp",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/dmesg",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/drop_priv",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/echo",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/id",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/insmod",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/ls",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/mkdir",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/mount",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/mv",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/pwd",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/rm",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/sh",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/sleep",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/bin/uname",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/init",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/multifiles.ko",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    },
+    {
+      "path": "src/pwn/multifiles/solve/initrd/root/flag.txt",
+      "reason": "redundant expanded initramfs or oversized build artifact"
+    }
+  ],
+  "has_verified_solution": true,
+  "prose_files": [],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

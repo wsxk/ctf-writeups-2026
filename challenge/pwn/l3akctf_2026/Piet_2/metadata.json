@@ -1,0 +1,61 @@
+{
+  "event_id": "CTF-3061",
+  "event_title": "L3akCTF 2026",
+  "title": "Piet_2",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "saved-rbp-pivot"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/l3akctf/2026/piet_2/",
+    "https://ctf42.online/ctfs/l3akctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/L3akCTF/2026/pwn/Piet_2"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/l3akctf-2026-pwn-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/L3akCTF/2026/pwn/Piet_2",
+    "https://ctf42.online/ctfs/l3akctf/2026/piet_2/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/l3akctf_2026/Piet_2/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/l3akctf-2026-pwn-writeup/",
+      "bytes": 111343,
+      "sha256": "13d26c856ed909567e987df78080c98b9e169cd7dfa172f650ab4a90268600bf",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/l3akctf_2026/Piet_2/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/L3akCTF/2026/pwn/Piet_2/README.md",
+      "bytes": 48,
+      "sha256": "b292cfadfe915f6dacd1a352c95959d4f32a5b7406a6f27efc295641d84f789c",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/l3akctf_2026/Piet_2/attachments/upstream/pwn_piet-2.tar.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/L3akCTF/2026/pwn/Piet_2/pwn_piet-2.tar.gz",
+      "bytes": 11326,
+      "sha256": "edadc76f02646c6ef5ed054f8e6d8a49a26d491c55b62457016765722ccdf926",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/l3akctf/2026/piet_2/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/l3akctf/2026/piet_2/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

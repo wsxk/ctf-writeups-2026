@@ -1,0 +1,62 @@
+{
+  "event_id": "CTF-3434",
+  "event_title": "CSS CTF 2026: Return of Nexus",
+  "title": "FLAPPY_BOARD",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "protocol-reversing",
+    "deterministic-simulation"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/css/2026/flappy_board/",
+    "https://ctf42.online/ctfs/css/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/CSS/2026/rev/FLAPPY_BOARD"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/css-ctf-2026-return-of-nexus/tree/main/rev/flappy-board"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/CSS/2026/rev/FLAPPY_BOARD",
+    "https://ctf42.online/ctfs/css/2026/flappy_board/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/css_2026/FLAPPY_BOARD/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/css-ctf-2026-return-of-nexus/main/rev/flappy-board/README.md",
+      "bytes": 5655,
+      "sha256": "045967e1c6e17088b3496300139b0a52b3b0b4250502aa52ff70be98049c82c4",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/css_2026/FLAPPY_BOARD/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/CSS/2026/rev/FLAPPY_BOARD/README.md",
+      "bytes": 419,
+      "sha256": "c0a72d78313d6368d06429edce1b6bab7780c83ccb299472dfa69f3a0cc4c2b8",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/css_2026/FLAPPY_BOARD/attachments/upstream/flappy_board",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/CSS/2026/rev/FLAPPY_BOARD/flappy_board",
+      "bytes": 43736,
+      "sha256": "c07bd4504d3e1d9c495aa552acbb4c10266f966c9f47a073c4707c66caf74ded",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/css/2026/flappy_board/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/css/2026/flappy_board/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

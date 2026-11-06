@@ -1,0 +1,71 @@
+{
+  "event_id": "CTF-3141",
+  "event_title": "TRX CTF 2026",
+  "title": "down_the_line",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "bootsector-pwn",
+    "heap-overflow"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/trx/2026/down_the_line/",
+    "https://ctf42.online/ctfs/trx/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/pwn/down_the_line"
+  ],
+  "writeup_urls": [
+    "https://blog.rawpayload.com/blog/trx-ctf-2026-down-the-line-writeup",
+    "https://kqx.io/writeups/down_the_line/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/pwn/down_the_line",
+    "https://ctf42.online/ctfs/trx/2026/down_the_line/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/trx_2026/down_the_line/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TRX/2026/pwn/down_the_line/README.md",
+      "bytes": 112,
+      "sha256": "5e73179ea40931ae16103b9a2c32cf7a243cb4b088182877608c58d6a67d2f74",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/trx_2026/down_the_line/attachments/upstream/pwn_down_the_line.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TRX/2026/pwn/down_the_line/pwn_down_the_line.zip",
+      "bytes": 3479,
+      "sha256": "bfc887c9ce3ebbe4319769a69081a38546839bede777858b237e8697b2b3e4c7",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/trx_2026/down_the_line/writeups/replacement_source.html",
+      "url": "https://kqx.io/writeups/down_the_line/",
+      "bytes": 24961,
+      "sha256": "9010255f6363d15d4523b98f02b57b4380035d8f701ccf3b283de8962a867ed1",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/trx_2026/down_the_line/writeups/replacement_readable.txt",
+      "url": "https://kqx.io/writeups/down_the_line/",
+      "bytes": 6624,
+      "sha256": "05ca4f03cc0aa4bb72e8ba899ef2150517da0bd21d19a1ae4443ac3bde964327",
+      "kind": "writeup"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/trx/2026/down_the_line/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/trx/2026/down_the_line/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files",
+  "writeup_kind": "prose"
+}

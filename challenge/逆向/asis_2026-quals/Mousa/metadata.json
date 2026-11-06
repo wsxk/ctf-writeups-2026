@@ -1,0 +1,48 @@
+{
+  "event_id": "CTF-3033",
+  "event_title": "ASIS CTF Quals 2026",
+  "title": "Mousa",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "go-reversing",
+    "sha256-oracle"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/asis/2026-quals/mousa/",
+    "https://ctf42.online/ctfs/asis/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Mousa"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/mousa"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Mousa",
+    "https://ctf42.online/ctfs/asis/2026-quals/mousa/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/asis_2026-quals/Mousa/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/ASIS-CTF-Quals-2026/main/rev/mousa/README.md",
+      "bytes": 4326,
+      "sha256": "337e7a59fc340701288fb6dbb93d91c0fcca192ec21e6e6853f47cf0d2704c43",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/asis_2026-quals/Mousa/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/asis/2026-quals/mousa/folder.zip?kind=files",
+      "bytes": 17155415,
+      "sha256": "5010c6c393786d5c144e20b3bd14b4e305e82c688c5ac70fda41f4ce876fd22a",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

@@ -1,0 +1,69 @@
+{
+  "event_id": "CTF-2767",
+  "event_title": "PascalCTF 2026",
+  "category": "虚拟化",
+  "title": "StrangeVM",
+  "dirname": "PascalCTF_2026",
+  "source_urls": [
+    "https://github.com/PascalCTF/PascalCTF-2026/tree/HEAD/rev03"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev03/attachments/code.pascal",
+      "local": "attachments/attachments/code.pascal",
+      "size_expected": 1652,
+      "git_blob_sha": "763001d1ae59a031841f91101a6a90f49cee1cab",
+      "status": "downloaded",
+      "bytes": 1652,
+      "sha256": "23caa1c65c528b3ccc5301f818087d0913ad212b19921593f3c5537e7e926868"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev03/attachments/vm",
+      "local": "attachments/attachments/vm",
+      "size_expected": 979728,
+      "git_blob_sha": "ba399073721d17151634b113931b1dd5377206a9",
+      "status": "downloaded",
+      "bytes": 979728,
+      "sha256": "7834710c8da3991f4e6720f0541cc1abe765927497e8b1c916ba7ee87ac71393"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev03/description.md",
+      "local": "attachments/description.md",
+      "size_expected": 188,
+      "git_blob_sha": "2c583dba97c5245c97edc5d02cdf1e30d3ebc210",
+      "status": "downloaded",
+      "bytes": 188,
+      "sha256": "0b3672966993d0027734260f51535d528e037a43ed03791944649a86519e8e83"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev03/title.txt",
+      "local": "attachments/title.txt",
+      "size_expected": 10,
+      "git_blob_sha": "c954edd98f5263436d8ecf1b7aa098d7d8fc339c",
+      "status": "downloaded",
+      "bytes": 10,
+      "sha256": "f45d8497130b2bc273cba29b670c31ca168fcd7649f09e5917b8df2e6802a26c"
+    },
+    {
+      "url": "https://vortexopsctf.github.io/writeups/2026/02/05/pascal-ctf-strange-vm/",
+      "local": "writeups/vortexops.html",
+      "status": "downloaded",
+      "bytes": 16214,
+      "sha256": "c5e058e4bc0a24e4c52dbeae074674b047fd316ffedb22644766d6bb17f254df"
+    }
+  ],
+  "notes": "官方writeup为TODO占位，改存VortexOps参赛队公开完整文章及官方题目附件。文章解法未执行验证。",
+  "directory": "虚拟化/PascalCTF_2026/StrangeVM",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://vortexopsctf.github.io/writeups/2026/02/05/pascal-ctf-strange-vm/"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev03/attachments/code.pascal",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev03/attachments/vm",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev03/description.md",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev03/title.txt"
+  ],
+  "attachment_status": "downloaded"
+}

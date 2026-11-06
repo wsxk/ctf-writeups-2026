@@ -1,0 +1,51 @@
+{
+  "event_id": "CTF-3153",
+  "event_title": "b01lers CTF 2026",
+  "category": "虚拟化",
+  "title": "indirect-memory-access",
+  "dirname": "b01lers_CTF_2026",
+  "source_urls": [
+    "https://github.com/b01lers/b01lers-ctf-2026-public/tree/HEAD/src/rev/indirect-memory-access"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/indirect-memory-access/chal.json",
+      "local": "attachments/chal.json",
+      "size_expected": 270,
+      "git_blob_sha": "39a087b903ee6d093b153dc458b2ab337400e7c5",
+      "status": "downloaded",
+      "bytes": 270,
+      "sha256": "c110d906c3c3594e5b81586a96175b46a038ca9634e8a3f39a1f730fd882275d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/indirect-memory-access/dist/chal.gba",
+      "local": "attachments/dist/chal.gba",
+      "size_expected": 59380,
+      "git_blob_sha": "16df5a70ccfeb1af536e4b290e69510b207ced3a",
+      "status": "downloaded",
+      "bytes": 59380,
+      "sha256": "1402e5d9fa36a67ce088152287fad3bdfe1c550ea94f43093ed2e1fc107910f0"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/indirect-memory-access/solve/sol.py",
+      "local": "writeups/solve/sol.py",
+      "size_expected": 18570,
+      "git_blob_sha": "45bcc8a0c36c7975e33e43d330c5223762793332",
+      "status": "downloaded",
+      "bytes": 18570,
+      "sha256": "4143acfdd2a4fce287a9f44b10219955ef5d860f6e0e14b0496dc2cac15be11c"
+    }
+  ],
+  "notes": "官方原分类Reverse，模拟执行/解释器或GBA模拟器相关，归入虚拟化专题。完整官方附件和求解文件。",
+  "directory": "虚拟化/b01lers_CTF_2026/indirect-memory-access",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/indirect-memory-access/solve/sol.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/indirect-memory-access/chal.json",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/indirect-memory-access/dist/chal.gba"
+  ],
+  "attachment_status": "downloaded"
+}

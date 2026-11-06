@@ -1,0 +1,41 @@
+{
+  "event_id": "CTF-3247",
+  "event_title": "BYUCTF 2026",
+  "category": "逆向",
+  "title": "yara",
+  "dirname": "BYUCTF_2026",
+  "source_urls": [
+    "https://github.com/BYU-CSA/BYUCTF-2026/tree/HEAD/rev/yara"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/yara/README.md",
+      "local": "writeups/README.md",
+      "size_expected": 595,
+      "git_blob_sha": "bba863fb634b16aac6def340a4c47f5d4a62a0bb",
+      "status": "downloaded",
+      "bytes": 595,
+      "sha256": "4a8f3cc8a6c8a67dc9afb8704ada8ad6fc47032570344172521b1f1737cfc9e8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/yara/rule.yar",
+      "local": "attachments/rule.yar",
+      "size_expected": 802,
+      "git_blob_sha": "4db95a875a157c0dad8db0e2ba40c26166f1dac6",
+      "status": "downloaded",
+      "bytes": 802,
+      "sha256": "ab509db17ed5202d2fe5d6e019536dd3d9c3864de3fc11abfa73add398b0cf6c"
+    }
+  ],
+  "notes": "官方比赛仓库，README包含Solve章节；保留官方解题脚本及附件。",
+  "directory": "逆向/BYUCTF_2026/yara",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/yara/README.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/yara/rule.yar"
+  ],
+  "attachment_status": "downloaded"
+}

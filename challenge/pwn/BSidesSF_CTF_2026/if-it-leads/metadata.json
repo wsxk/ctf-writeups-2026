@@ -1,0 +1,205 @@
+{
+  "event_id": "CTF-3108",
+  "event_title": "BSidesSF CTF 2026",
+  "category": "pwn",
+  "title": "if-it-leads",
+  "source_urls": [
+    "https://github.com/BSidesSF/ctf-2026-release/tree/HEAD/if-it-leads",
+    "https://ctftime.org/event/3108/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/solution/libronsolve.rb",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/solution/solve.rb"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/challenge/Dockerfile",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/challenge/Dockerfile.build",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/challenge/Makefile",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/challenge/bash_profile",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/challenge/flag.txt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/challenge/password.txt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/challenge/src/Makefile",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/challenge/src/if-it-leads",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/challenge/src/if-it-leads.c",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/distfiles/if-it-leads.c",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/distfiles/password.txt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/metadata.yml"
+  ],
+  "writeup_status": "已下载官方解题脚本（独立文字writeup未提供）",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。",
+    "writeups/README.md 是早期镜像的空模板，不算解答；有效官方解答位于 writeups/solution/。"
+  ],
+  "repository": "BSidesSF/ctf-2026-release",
+  "repository_tree_sha": "68ee0e460eb572aaec17f082071f8ebf1d6f7330",
+  "artifacts": [
+    {
+      "path": "attachments/challenge/Dockerfile",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/challenge/Dockerfile",
+      "bytes": 1382,
+      "sha256": "ffa632dc3149b44a86df0b50d6a75082c45c0b828e7296c00a71b22d43e1d091",
+      "git_blob_sha1": "d506b9e3bebb34a801c74e63a74338708e00bb58",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/Dockerfile.build",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/challenge/Dockerfile.build",
+      "bytes": 234,
+      "sha256": "e71eaf4fe85e78a4f516fed404ab5ba91f81411eaef9b90f92246117f85c60ee",
+      "git_blob_sha1": "98bcc154c5c7856b35e5408dd824afe399285ad7",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/Makefile",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/challenge/Makefile",
+      "bytes": 380,
+      "sha256": "f55e6473de73e58a71b6728f1e70937469d63214021148d307e385cf1d219849",
+      "git_blob_sha1": "df78cc60d4cd5708d89e6a16822b604a330ad09b",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/bash_profile",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/challenge/bash_profile",
+      "bytes": 697,
+      "sha256": "3ffd34fd9be8889b8f1fcc753f7c39b4b394001c249cc820902d7c5c0bacc0a1",
+      "git_blob_sha1": "d1bd248a7d46dcae0828e902797bb7cf3d42a663",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/flag.txt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/challenge/flag.txt",
+      "bytes": 40,
+      "sha256": "051d253c6cded350891f53692735e0b35f102d0218cecbc66246b596335e6406",
+      "git_blob_sha1": "fdfb383fcee624077aeef5b0d6833901cee8a50d",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/password.txt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/challenge/password.txt",
+      "bytes": 8,
+      "sha256": "5fe5d17f58d2e3dc74147d8abe550e78c7e59266a9f9461dd27f67e8686f2671",
+      "git_blob_sha1": "27cd6d82a0317b3e3f6b84fa1c0b3c78b9d8dd39",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/Makefile",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/challenge/src/Makefile",
+      "bytes": 122,
+      "sha256": "43e4d4d0c1b1701aa0dde1ccc541b432bf8ba0f16c213166261279c48cd68aeb",
+      "git_blob_sha1": "def121d5168aa1b83636cbe505a71b7a7782cbb6",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/if-it-leads",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/challenge/src/if-it-leads",
+      "bytes": 17048,
+      "sha256": "49816ade97eb995eb1c184db11195305b95322966700b66e35436859fabf7a06",
+      "git_blob_sha1": "833e899111d51d183b40aa07d5ebeb2aaecb8460",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/if-it-leads.c",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/challenge/src/if-it-leads.c",
+      "bytes": 3530,
+      "sha256": "c905f16ee9bf4b8dcd16405348dd8b46c25b1b2bbd30da29b8ebf5424c9880ef",
+      "git_blob_sha1": "639861def2c97f4f4058781162f9c6ac7360e027",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/distfiles/if-it-leads.c",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/distfiles/if-it-leads.c",
+      "bytes": 30,
+      "sha256": "bcdc9abdd5e2f03e87bc188bcb863d2ffdfe119203fb81aeb1030845ab8cb4e7",
+      "git_blob_sha1": "96b02ba9089b90af7d813d9ff40095c42a4a5e52",
+      "git_mode": "120000",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/distfiles/password.txt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/distfiles/password.txt",
+      "bytes": 22,
+      "sha256": "e0188a36fda672f677351e692f41fc8c98c472de2deead1d9b1d78d519a139ee",
+      "git_blob_sha1": "05af9bd985495221cae8b523abdd47372123f21f",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/metadata.yml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/metadata.yml",
+      "bytes": 1009,
+      "sha256": "e0dced1adc41467d70db29d53292fb9a867ef2c3b7e0dc006d6ae9bc1ac46538",
+      "git_blob_sha1": "1a5d5c7f0acdedc2e39a441c8cd22dff9817bc9d",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solution/libronsolve.rb",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/solution/libronsolve.rb",
+      "bytes": 5727,
+      "sha256": "d02a674d7fa748f0471d60a1af9350982b67f597bf10a2e43283ce3cdbac46c0",
+      "git_blob_sha1": "90a48f394d42d92108d8411053dedc6b934799aa",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solution/solve.rb",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/solution/solve.rb",
+      "bytes": 1269,
+      "sha256": "cf9d4613f3a6a26b56ae1d3a5faca15e950579bd8feea315c43461c98f312c64",
+      "git_blob_sha1": "d49ee61567b2f22a7167cb15874681bf54458686",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/distfiles/.keep",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/distfiles/.keep",
+      "kind": "attachments",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "git_mode": "100644"
+    },
+    {
+      "path": "writeups/solution/.keep",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/if-it-leads/solution/.keep",
+      "kind": "writeups",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "git_mode": "100644"
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [],
+  "attachment_complete": true,
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06"
+}

@@ -1,0 +1,29 @@
+diff --git a/hw/audio/virtio-snd.c b/hw/audio/virtio-snd.c
+index fb5cff3866..b6f9307866 100644
+--- a/hw/audio/virtio-snd.c
++++ b/hw/audio/virtio-snd.c
+@@ -1248,7 +1248,7 @@ static void virtio_snd_pcm_in_cb(void *data, int available)
+ {
+     VirtIOSoundPCMStream *stream = data;
+     VirtIOSoundPCMBuffer *buffer;
+-    size_t size, max_size, to_read;
++    size_t size, max_size;
+ 
+     WITH_QEMU_LOCK_GUARD(&stream->queue_mutex) {
+         while (!QSIMPLEQ_EMPTY(&stream->queue)) {
+@@ -1274,13 +1274,11 @@ static void virtio_snd_pcm_in_cb(void *data, int available)
+                     return_rx_buffer(stream, buffer);
+                     break;
+                 }
+-                to_read = stream->params.period_bytes - buffer->size;
+-                to_read = MIN(to_read, available);
+-                to_read = MIN(to_read, max_size - buffer->size);
+                 size = audio_be_read(stream->s->audio_be,
+                                      stream->voice.in,
+                                      buffer->data + buffer->size,
+-                                     to_read);
++                                     MIN(available, (stream->params.period_bytes -
++                                                     buffer->size)));
+                 if (!size) {
+                     available = 0;
+                     break;

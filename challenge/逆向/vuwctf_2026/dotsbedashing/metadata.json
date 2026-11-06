@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3311",
+  "event_title": "VuwCTF 2026",
+  "title": "dotsbedashing",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "morse-code",
+    "xor",
+    "bit-rotation"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/vuwctf/2026/dotsbedashing/",
+    "https://ctf42.online/ctfs/vuwctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/VuwCTF/2026/rev/dotsbedashing"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/vuwctf-2026-reverse-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/VuwCTF/2026/rev/dotsbedashing",
+    "https://ctf42.online/ctfs/vuwctf/2026/dotsbedashing/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/vuwctf_2026/dotsbedashing/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/vuwctf-2026-reverse-writeup/",
+      "bytes": 98639,
+      "sha256": "52b635de3b3a03ddb50d4c48a4d2c71d3933614f884ced6d3e2fadd27835e8c5",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/vuwctf_2026/dotsbedashing/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/VuwCTF/2026/rev/dotsbedashing/README.md",
+      "bytes": 166,
+      "sha256": "30bc0e0bf5872baad2fb267b76c777ace28c7e2e0473a286b13d9f1e18ca5968",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/vuwctf_2026/dotsbedashing/attachments/upstream/dotsbedashing",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/VuwCTF/2026/rev/dotsbedashing/dotsbedashing",
+      "bytes": 14728,
+      "sha256": "fc105d5bdef1d713cafa59e098e1a873f9797e6d1e9afa20a5ebaa949c23d6f8",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/vuwctf/2026/dotsbedashing/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/vuwctf/2026/dotsbedashing/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

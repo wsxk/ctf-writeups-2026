@@ -1,0 +1,1122 @@
+; minesweeper.les -- 32x32 minesweeper with dual bitsets (100 mines)
+;
+; WRAM layout
+; 0..63    mine bitset (1 = mine)
+; 64..95   scratch bytes for subroutine-local temp state
+;          64: COUNT_ADJ base x
+;          65: COUNT_ADJ base y
+;          66: NEIGHBOR_IS_REV_ZERO x
+;          67: NEIGHBOR_IS_REV_ZERO y
+;          68: FLOOD_RESOLVE changed flag
+;          69: REV_SET saved x
+;          70: REV_SET saved y
+;          71: FLOOD_RESOLVE pass counter (infinite-loop guard)
+;          72: PRINT_CURSOR_TEXT char byte
+;          73: PRINT_CURSOR_TEXT null terminator byte
+;          74: COUNT_ADJ accumulator
+;          75: RESET_GAME candidate mine x
+;          76: RESET_GAME candidate mine y
+;          77: cursor prev x
+;          78: cursor prev y
+;          79: cursor visible flag (0/1)
+;          80..88: status print buffer ("YOU DIED"/"YOU WIN")
+;          89: cursor blink tick counter
+;          90: HANDLE_CURSOR_VISUAL toggle flag
+;          91: HANDLE_CURSOR_VISUAL moved flag
+;          92: cursor temp x
+;          93: cursor temp y
+; 128..255 revealed bitset (1 = revealed)
+;
+; Runtime state in registers:
+; cX2/cY2  cursor position (0..31)
+;
+; Notes:
+; - No WRAM is reserved for text; board state consumes all 256 bytes.
+; - Text output is ephemeral: bytes 72/73 are scratch print buffer.
+; - Press A to reveal current cell.
+; - Revealing a mine reveals all mines and halts.
+; - Win when all non-mine cells are revealed.
+
+; WARNING: This is poorly tested. It pushes LES to its limits.
+
+INIT
+CALL <RESET_GAME>
+CALL <DRAW_FRAME>
+CALL <CURSOR_SYNC_DRAW>
+CALL <PRINT_CURSOR_TEXT>
+
+MAIN:
+INPUT
+CALL <UPDATE_CURSOR>
+CALL <HANDLE_CURSOR_VISUAL>
+CMP iA, 0
+JMPE <MAIN_IDLE>
+CALL <REVEAL_CURSOR>
+CALL <CHECK_WIN>
+CALL <DRAW_FRAME>
+CALL <CURSOR_SYNC_DRAW>
+CALL <PRINT_CURSOR_TEXT>
+JMP <MAIN_SLEEP>
+MAIN_IDLE:
+; no reveal this frame: skip CHECK_WIN/full redraw.
+MAIN_SLEEP:
+SLEEP 50
+JMP <MAIN>
+
+RESET_GAME:
+; clear full WRAM
+SET 0, mW
+SET 0, gA
+RG_CLEAR:
+STORE gA
+INC mW
+CMP mW, 0
+JMPNE <RG_CLEAR>
+
+; center cursor
+SET 15, cX2
+SET 15, cY2
+SET 77, mW
+STORE cX2
+SET 78, mW
+STORE cY2
+SET 1, gA
+SET 79, mW
+STORE gA
+SET 0, gA
+SET 89, mW
+STORE gA
+
+; place exactly 100 unique mines
+; use WRAM scratch byte 254 as placed counter during reset.
+SET 0, gA
+SET 254, mW
+STORE gA
+RG_MINE_LOOP:
+SET 254, mR
+LOAD gC
+CMP gC, 100
+JMPGE <RG_DONE>
+
+RND gA
+SHIFTR gA, 3, gA
+AND gA, 31, gA
+AND gA, 254, gA
+RND gB
+SHIFTR gB, 3, gB
+AND gB, 31, gB
+SET 75, mW
+STORE gA
+SET 76, mW
+STORE gB
+
+CALL <MINE_GET>
+CMP gD, 1
+JMPE <RG_MINE_LOOP>
+SET 75, mR
+LOAD gA
+SET 76, mR
+LOAD gB
+CALL <MINE_SET>
+SET 254, mR
+LOAD gC
+INC gC
+SET 254, mW
+STORE gC
+JMP <RG_MINE_LOOP>
+
+RG_DONE:
+; clear revealed bitset [128..255]
+SET 128, mW
+SET 0, gA
+RG_CLR_REV:
+STORE gA
+INC mW
+CMP mW, 0
+JMPNE <RG_CLR_REV>
+RET
+
+; --- bitset helpers ---
+
+MINE_GET:
+; in: gA=x, gB=y ; out: gD=0/1
+AND gA, 1, pA
+CMP pA, 1
+JMPE <MG_NO>
+
+; map 32x32 mine grid into 64 bytes:
+; mine_x = x>>1 (0..15), bytecol = mine_x>>3 (0..1), bit=mine_x&7
+DUPE gA, pA
+SHIFTR pA, 1, pA
+AND pA, 7, pA
+SHIFTL gB, 1, gC
+SHIFTR gA, 4, gA
+ADD gC, gA, gC
+SET 0, mR
+ADD mR, gC, mR
+LOAD gA
+SET 1, gB
+SHIFTL gB, pA, gB
+AND gA, gB, gA
+CMP gA, 0
+JMPE <MG_NO>
+SET 1, gD
+RET
+MG_NO:
+SET 0, gD
+RET
+
+MINE_SET:
+; in: gA=x, gB=y
+AND gA, 1, pA
+CMP pA, 1
+JMPE <MS_DONE>
+
+DUPE gA, pA
+SHIFTR pA, 1, pA
+AND pA, 7, pA
+SHIFTL gB, 1, gC
+SHIFTR gA, 4, gA
+ADD gC, gA, gC
+SET 0, mR
+ADD mR, gC, mR
+LOAD gA
+SET 1, gB
+SHIFTL gB, pA, gB
+OR gA, gB, gA
+SET 0, mW
+ADD mW, gC, mW
+STORE gA
+MS_DONE:
+RET
+
+REV_GET:
+; in: gA=x, gB=y ; out: gD=0/1
+DUPE gA, pA
+AND pA, 7, pA
+SHIFTR gA, 3, gA
+SHIFTL gB, 2, gC
+ADD gC, gA, gC
+SET 128, mR
+ADD mR, gC, mR
+LOAD gA
+SET 1, gB
+SHIFTL gB, pA, gB
+AND gA, gB, gA
+CMP gA, 0
+JMPE <RG_NO>
+SET 1, gD
+RET
+RG_NO:
+SET 0, gD
+RET
+
+REV_SET:
+; in: gA=x, gB=y ; safe set (no-op for mine cells)
+; scratch:
+; 69 = x
+; 70 = y
+SET 69, mW
+STORE gA
+SET 70, mW
+STORE gB
+CALL <MINE_GET>
+CMP gD, 1
+JMPE <RS_DONE>
+SET 69, mR
+LOAD gA
+SET 70, mR
+LOAD gB
+CALL <REV_SET_FORCE>
+RS_DONE:
+RET
+
+REV_SET_FORCE:
+; in: gA=x, gB=y
+DUPE gA, pA
+AND pA, 7, pA
+SHIFTR gA, 3, gA
+SHIFTL gB, 2, gC
+ADD gC, gA, gC
+SET 128, mR
+ADD mR, gC, mR
+LOAD gA
+SET 1, gB
+SHIFTL gB, pA, gB
+OR gA, gB, gA
+SET 128, mW
+ADD mW, gC, mW
+STORE gA
+RET
+
+; --- gameplay helpers ---
+
+CELL_BASE_PIXEL:
+; in: gA=x gB=y ; out: gC base board pixel (without cursor blink):
+; hidden=1, revealed mine=1, revealed safe=0
+SET 92, mW
+STORE gA
+SET 93, mW
+STORE gB
+CALL <REV_GET>
+CMP gD, 1
+JMPE <CBP_REV>
+SET 1, gC
+RET
+CBP_REV:
+SET 92, mR
+LOAD gA
+SET 93, mR
+LOAD gB
+CALL <MINE_GET>
+CMP gD, 1
+JMPE <CBP_MINE>
+SET 0, gC
+RET
+CBP_MINE:
+SET 1, gC
+RET
+
+CURSOR_HIDE_AT:
+; in: gA=x gB=y ; restore base board pixel
+SET 92, mW
+STORE gA
+SET 93, mW
+STORE gB
+SET 92, mR
+LOAD gA
+SET 93, mR
+LOAD gB
+CALL <CELL_BASE_PIXEL>
+SET 92, mR
+LOAD cX1
+SET 93, mR
+LOAD cY1
+SET pA, gC
+SETP 1, pA
+RET
+
+CURSOR_SHOW_AT:
+; in: gA=x gB=y ; draw inverted cursor pixel
+SET 92, mW
+STORE gA
+SET 93, mW
+STORE gB
+SET 92, mR
+LOAD gA
+SET 93, mR
+LOAD gB
+CALL <CELL_BASE_PIXEL>
+XOR gC, 1, gC
+SET 92, mR
+LOAD cX1
+SET 93, mR
+LOAD cY1
+SET pA, gC
+SETP 1, pA
+RET
+
+CURSOR_SYNC_DRAW:
+; full redraw clears cursor overlay; re-apply it from state if visible.
+SET 79, mR
+LOAD gA
+CMP gA, 1
+JMPNE <CSFD_DONE>
+SET 77, mR
+LOAD gA
+SET 78, mR
+LOAD gB
+CALL <CURSOR_SHOW_AT>
+DRAW
+CSFD_DONE:
+RET
+
+HANDLE_CURSOR_VISUAL:
+; Lightweight cursor update path:
+; - restore old pixel/draw new pixel on movement
+; - blink toggle at 2Hz (500ms): with SLEEP 50 this is every 10 loops
+SET 0, gA
+SET 90, mW
+STORE gA
+SET 91, mW
+STORE gA
+
+; moved flag
+SET 77, mR
+LOAD gA
+CMP cX2, gA
+JMPNE <HCV_MOVED>
+SET 78, mR
+LOAD gA
+CMP cY2, gA
+JMPNE <HCV_MOVED>
+JMP <HCV_MOVE_DONE>
+HCV_MOVED:
+SET 1, gA
+SET 91, mW
+STORE gA
+HCV_MOVE_DONE:
+
+; blink tick counter / toggle flag
+SET 89, mR
+LOAD gA
+INC gA
+CMP gA, 10
+JMPLT <HCV_SAVE_TICK>
+SET 0, gA
+SET 1, gB
+SET 90, mW
+STORE gB
+HCV_SAVE_TICK:
+SET 89, mW
+STORE gA
+
+; no change -> no draw
+SET 91, mR
+LOAD gA
+CMP gA, 1
+JMPE <HCV_WORK>
+SET 90, mR
+LOAD gA
+CMP gA, 1
+JMPE <HCV_WORK>
+RET
+
+HCV_WORK:
+; if cursor currently visible, hide old location first
+SET 79, mR
+LOAD gA
+CMP gA, 1
+JMPNE <HCV_AFTER_HIDE>
+SET 77, mR
+LOAD gA
+SET 78, mR
+LOAD gB
+CALL <CURSOR_HIDE_AT>
+HCV_AFTER_HIDE:
+
+; on movement, update prev cursor and refresh hover text
+SET 91, mR
+LOAD gA
+CMP gA, 1
+JMPNE <HCV_AFTER_MOVE>
+SET 77, mW
+STORE cX2
+SET 78, mW
+STORE cY2
+CALL <PRINT_CURSOR_TEXT>
+HCV_AFTER_MOVE:
+
+; on blink edge, toggle visible flag
+SET 90, mR
+LOAD gA
+CMP gA, 1
+JMPNE <HCV_AFTER_TOGGLE>
+SET 79, mR
+LOAD gA
+XOR gA, 1, gA
+SET 79, mW
+STORE gA
+HCV_AFTER_TOGGLE:
+
+; if now visible, draw at new/current location
+SET 79, mR
+LOAD gA
+CMP gA, 1
+JMPNE <HCV_DRAW>
+SET 77, mR
+LOAD gA
+SET 78, mR
+LOAD gB
+CALL <CURSOR_SHOW_AT>
+HCV_DRAW:
+DRAW
+RET
+
+UPDATE_CURSOR:
+CMP iU, 0
+JMPE <UC_DN>
+CMP cY2, 0
+JMPE <UC_DN>
+DEC cY2
+UC_DN:
+CMP iD, 0
+JMPE <UC_LT>
+CMP cY2, 31
+JMPGE <UC_LT>
+INC cY2
+UC_LT:
+CMP iL, 0
+JMPE <UC_RT>
+CMP cX2, 0
+JMPE <UC_RT>
+DEC cX2
+UC_RT:
+CMP iR, 0
+JMPE <UC_DONE>
+CMP cX2, 31
+JMPGE <UC_DONE>
+INC cX2
+UC_DONE:
+RET
+
+COUNT_ADJ:
+; in: gA=x gB=y ; out: gC=0..8
+; scratch:
+; 64 = base x
+; 65 = base y
+; 74 = accumulator
+SET 64, mW
+STORE gA
+SET 65, mW
+STORE gB
+SET 0, gA
+SET 74, mW
+STORE gA
+
+; y-1 row
+SET 65, mR
+LOAD gB
+CMP gB, 0
+JMPE <CA_MID>
+SET 64, mR
+LOAD gA
+CMP gA, 0
+JMPE <CA_UP>
+SET 64, mR
+LOAD gA
+DEC gA
+SET 65, mR
+LOAD gB
+DEC gB
+CALL <MINE_GET>
+SET 74, mR
+LOAD gA
+ADD gA, gD, gA
+SET 74, mW
+STORE gA
+CA_UP:
+SET 64, mR
+LOAD gA
+SET 65, mR
+LOAD gB
+DEC gB
+CALL <MINE_GET>
+SET 74, mR
+LOAD gA
+ADD gA, gD, gA
+SET 74, mW
+STORE gA
+SET 64, mR
+LOAD gA
+CMP gA, 31
+JMPGE <CA_MID>
+SET 64, mR
+LOAD gA
+INC gA
+SET 65, mR
+LOAD gB
+DEC gB
+CALL <MINE_GET>
+SET 74, mR
+LOAD gA
+ADD gA, gD, gA
+SET 74, mW
+STORE gA
+
+CA_MID:
+SET 64, mR
+LOAD gA
+CMP gA, 0
+JMPE <CA_MID_R>
+SET 64, mR
+LOAD gA
+DEC gA
+SET 65, mR
+LOAD gB
+CALL <MINE_GET>
+SET 74, mR
+LOAD gA
+ADD gA, gD, gA
+SET 74, mW
+STORE gA
+CA_MID_R:
+SET 64, mR
+LOAD gA
+CMP gA, 31
+JMPGE <CA_DN>
+SET 64, mR
+LOAD gA
+INC gA
+SET 65, mR
+LOAD gB
+CALL <MINE_GET>
+SET 74, mR
+LOAD gA
+ADD gA, gD, gA
+SET 74, mW
+STORE gA
+
+CA_DN:
+SET 65, mR
+LOAD gB
+CMP gB, 31
+JMPGE <CA_DONE>
+SET 64, mR
+LOAD gA
+CMP gA, 0
+JMPE <CA_DN_C>
+SET 64, mR
+LOAD gA
+DEC gA
+SET 65, mR
+LOAD gB
+INC gB
+CALL <MINE_GET>
+SET 74, mR
+LOAD gA
+ADD gA, gD, gA
+SET 74, mW
+STORE gA
+CA_DN_C:
+SET 64, mR
+LOAD gA
+SET 65, mR
+LOAD gB
+INC gB
+CALL <MINE_GET>
+SET 74, mR
+LOAD gA
+ADD gA, gD, gA
+SET 74, mW
+STORE gA
+SET 64, mR
+LOAD gA
+CMP gA, 31
+JMPGE <CA_DONE>
+SET 64, mR
+LOAD gA
+INC gA
+SET 65, mR
+LOAD gB
+INC gB
+CALL <MINE_GET>
+SET 74, mR
+LOAD gA
+ADD gA, gD, gA
+SET 74, mW
+STORE gA
+CA_DONE:
+SET 74, mR
+LOAD gC
+RET
+
+NEIGHBOR_IS_REV_ZERO:
+; in: gA=x gB=y ; out: gD=1 iff revealed non-mine zero-cell
+; scratch:
+; 66 = x
+; 67 = y
+SET 66, mW
+STORE gA
+SET 67, mW
+STORE gB
+SET 66, mR
+LOAD gA
+SET 67, mR
+LOAD gB
+CALL <REV_GET>
+CMP gD, 1
+JMPNE <NIRZ_NO>
+SET 66, mR
+LOAD gA
+SET 67, mR
+LOAD gB
+CALL <MINE_GET>
+CMP gD, 1
+JMPE <NIRZ_NO>
+
+; zero-cell test without calling COUNT_ADJ (keeps CALL depth <= 4)
+; if any adjacent mine exists, this is not a zero-cell.
+SET 67, mR
+LOAD gB
+CMP gB, 0
+JMPE <NIRZ_MID>
+SET 66, mR
+LOAD gA
+CMP gA, 0
+JMPE <NIRZ_UP>
+SET 66, mR
+LOAD gA
+DEC gA
+SET 67, mR
+LOAD gB
+DEC gB
+CALL <MINE_GET>
+CMP gD, 1
+JMPE <NIRZ_NO>
+NIRZ_UP:
+SET 66, mR
+LOAD gA
+SET 67, mR
+LOAD gB
+DEC gB
+CALL <MINE_GET>
+CMP gD, 1
+JMPE <NIRZ_NO>
+SET 66, mR
+LOAD gA
+CMP gA, 31
+JMPGE <NIRZ_MID>
+SET 66, mR
+LOAD gA
+INC gA
+SET 67, mR
+LOAD gB
+DEC gB
+CALL <MINE_GET>
+CMP gD, 1
+JMPE <NIRZ_NO>
+
+NIRZ_MID:
+SET 66, mR
+LOAD gA
+CMP gA, 0
+JMPE <NIRZ_MID_R>
+SET 66, mR
+LOAD gA
+DEC gA
+SET 67, mR
+LOAD gB
+CALL <MINE_GET>
+CMP gD, 1
+JMPE <NIRZ_NO>
+NIRZ_MID_R:
+SET 66, mR
+LOAD gA
+CMP gA, 31
+JMPGE <NIRZ_DN>
+SET 66, mR
+LOAD gA
+INC gA
+SET 67, mR
+LOAD gB
+CALL <MINE_GET>
+CMP gD, 1
+JMPE <NIRZ_NO>
+
+NIRZ_DN:
+SET 67, mR
+LOAD gB
+CMP gB, 31
+JMPGE <NIRZ_YES>
+SET 66, mR
+LOAD gA
+CMP gA, 0
+JMPE <NIRZ_DN_C>
+SET 66, mR
+LOAD gA
+DEC gA
+SET 67, mR
+LOAD gB
+INC gB
+CALL <MINE_GET>
+CMP gD, 1
+JMPE <NIRZ_NO>
+NIRZ_DN_C:
+SET 66, mR
+LOAD gA
+SET 67, mR
+LOAD gB
+INC gB
+CALL <MINE_GET>
+CMP gD, 1
+JMPE <NIRZ_NO>
+SET 66, mR
+LOAD gA
+CMP gA, 31
+JMPGE <NIRZ_YES>
+SET 66, mR
+LOAD gA
+INC gA
+SET 67, mR
+LOAD gB
+INC gB
+CALL <MINE_GET>
+CMP gD, 1
+JMPE <NIRZ_NO>
+
+NIRZ_YES:
+SET 1, gD
+RET
+NIRZ_NO:
+SET 0, gD
+RET
+
+FLOOD_RESOLVE:
+; iterative flood fill from currently revealed zero regions
+; safety guard: bound pass count so bad logic cannot hard-loop forever.
+SET 0, gA
+SET 71, mW
+STORE gA
+FR_PASS:
+; scratch:
+; 68 = changed flag
+; 71 = pass counter
+SET 71, mR
+LOAD gA
+CMP gA, 96
+JMPGE <FR_DONE>
+INC gA
+SET 71, mW
+STORE gA
+SET 0, gA
+SET 68, mW
+STORE gA
+SLEEP 5
+SET 0, cY1
+FR_Y:
+SET 0, cX1
+FR_X:
+; skip revealed cells
+DUPE cX1, gA
+DUPE cY1, gB
+CALL <REV_GET>
+CMP gD, 1
+JMPE <FR_NEXT>
+
+; skip mines
+DUPE cX1, gA
+DUPE cY1, gB
+CALL <MINE_GET>
+CMP gD, 1
+JMPE <FR_NEXT>
+
+; reveal if adjacent to revealed zero
+CMP cY1, 0
+JMPE <FR_MID>
+CMP cX1, 0
+JMPE <FR_UP>
+DUPE cX1, gA
+DEC gA
+DUPE cY1, gB
+DEC gB
+CALL <NEIGHBOR_IS_REV_ZERO>
+CMP gD, 1
+JMPE <FR_REVEAL>
+FR_UP:
+DUPE cX1, gA
+DUPE cY1, gB
+DEC gB
+CALL <NEIGHBOR_IS_REV_ZERO>
+CMP gD, 1
+JMPE <FR_REVEAL>
+CMP cX1, 31
+JMPGE <FR_MID>
+DUPE cX1, gA
+INC gA
+DUPE cY1, gB
+DEC gB
+CALL <NEIGHBOR_IS_REV_ZERO>
+CMP gD, 1
+JMPE <FR_REVEAL>
+
+FR_MID:
+CMP cX1, 0
+JMPE <FR_MID_R>
+DUPE cX1, gA
+DEC gA
+DUPE cY1, gB
+CALL <NEIGHBOR_IS_REV_ZERO>
+CMP gD, 1
+JMPE <FR_REVEAL>
+FR_MID_R:
+CMP cX1, 31
+JMPGE <FR_DN>
+DUPE cX1, gA
+INC gA
+DUPE cY1, gB
+CALL <NEIGHBOR_IS_REV_ZERO>
+CMP gD, 1
+JMPE <FR_REVEAL>
+
+FR_DN:
+CMP cY1, 31
+JMPGE <FR_NEXT>
+CMP cX1, 0
+JMPE <FR_DNC>
+DUPE cX1, gA
+DEC gA
+DUPE cY1, gB
+INC gB
+CALL <NEIGHBOR_IS_REV_ZERO>
+CMP gD, 1
+JMPE <FR_REVEAL>
+FR_DNC:
+DUPE cX1, gA
+DUPE cY1, gB
+INC gB
+CALL <NEIGHBOR_IS_REV_ZERO>
+CMP gD, 1
+JMPE <FR_REVEAL>
+CMP cX1, 31
+JMPGE <FR_NEXT>
+DUPE cX1, gA
+INC gA
+DUPE cY1, gB
+INC gB
+CALL <NEIGHBOR_IS_REV_ZERO>
+CMP gD, 1
+JMPE <FR_REVEAL>
+JMP <FR_NEXT>
+
+FR_REVEAL:
+DUPE cX1, gA
+DUPE cY1, gB
+CALL <MINE_GET>
+CMP gD, 1
+JMPE <FR_NEXT>
+DUPE cX1, gA
+DUPE cY1, gB
+CALL <REV_SET>
+SET 1, gA
+SET 68, mW
+STORE gA
+
+FR_NEXT:
+INC cX1
+CMP cX1, 0
+JMPNE <FR_X>
+INC cY1
+CMP cY1, 0
+JMPNE <FR_Y>
+
+SET 68, mR
+LOAD gA
+CMP gA, 1
+JMPE <FR_PASS>
+FR_DONE:
+RET
+
+REVEAL_ALL_MINES:
+SET 0, cY1
+RAM_Y:
+SET 0, cX1
+RAM_X:
+DUPE cX1, gA
+DUPE cY1, gB
+CALL <MINE_GET>
+CMP gD, 1
+JMPNE <RAM_NEXT>
+DUPE cX1, gA
+DUPE cY1, gB
+CALL <REV_SET_FORCE>
+RAM_NEXT:
+INC cX1
+CMP cX1, 0
+JMPNE <RAM_X>
+INC cY1
+CMP cY1, 0
+JMPNE <RAM_Y>
+RET
+
+PRINT_YOU_DIED:
+SET 80, mW
+SET 89, gA
+STORE gA
+INC mW
+SET 79, gA
+STORE gA
+INC mW
+SET 85, gA
+STORE gA
+INC mW
+SET 32, gA
+STORE gA
+INC mW
+SET 68, gA
+STORE gA
+INC mW
+SET 73, gA
+STORE gA
+INC mW
+SET 69, gA
+STORE gA
+INC mW
+SET 68, gA
+STORE gA
+INC mW
+SET 0, gA
+STORE gA
+SET 80, mR
+PRINT
+RET
+
+PRINT_YOU_WIN:
+SET 80, mW
+SET 89, gA
+STORE gA
+INC mW
+SET 79, gA
+STORE gA
+INC mW
+SET 85, gA
+STORE gA
+INC mW
+SET 32, gA
+STORE gA
+INC mW
+SET 87, gA
+STORE gA
+INC mW
+SET 73, gA
+STORE gA
+INC mW
+SET 78, gA
+STORE gA
+INC mW
+SET 0, gA
+STORE gA
+SET 80, mR
+PRINT
+RET
+
+REVEAL_CURSOR:
+DUPE cX2, gA
+DUPE cY2, gB
+CALL <REV_GET>
+CMP gD, 1
+JMPE <RC_DONE>
+
+DUPE cX2, gA
+DUPE cY2, gB
+CALL <MINE_GET>
+CMP gD, 1
+JMPNE <RC_SAFE>
+
+; hit mine: reveal mines, draw once, halt
+CALL <REVEAL_ALL_MINES>
+CALL <DRAW_FRAME>
+CALL <PRINT_YOU_DIED>
+HALT
+RET
+
+RC_SAFE:
+DUPE cX2, gA
+DUPE cY2, gB
+CALL <REV_SET>
+DUPE cX2, gA
+DUPE cY2, gB
+CALL <COUNT_ADJ>
+CMP gC, 0
+JMPNE <RC_DONE>
+CALL <FLOOD_RESOLVE>
+RC_DONE:
+RET
+
+CHECK_WIN:
+; win when no hidden safe cell remains
+SET 0, cY1
+CW_Y:
+SET 0, cX1
+CW_X:
+DUPE cX1, gA
+DUPE cY1, gB
+CALL <REV_GET>
+CMP gD, 1
+JMPE <CW_NEXT>
+DUPE cX1, gA
+DUPE cY1, gB
+CALL <MINE_GET>
+CMP gD, 0
+JMPE <CW_DONE>
+CW_NEXT:
+INC cX1
+CMP cX1, 0
+JMPNE <CW_X>
+INC cY1
+CMP cY1, 0
+JMPNE <CW_Y>
+
+; won: reveal all mines and halt
+CALL <REVEAL_ALL_MINES>
+CALL <DRAW_FRAME>
+CALL <PRINT_YOU_WIN>
+HALT
+CW_DONE:
+RET
+
+PRINT_CURSOR_TEXT:
+; choose display char for cursor cell:
+; hidden='?' revealed mine='*' revealed safe='0'..'8'
+DUPE cX2, gA
+DUPE cY2, gB
+CALL <REV_GET>
+CMP gD, 1
+JMPE <PT_REV>
+SET 63, gD
+JMP <PT_WRITE>
+
+PT_REV:
+DUPE cX2, gA
+DUPE cY2, gB
+CALL <MINE_GET>
+CMP gD, 1
+JMPE <PT_MINE>
+DUPE cX2, gA
+DUPE cY2, gB
+CALL <COUNT_ADJ>
+ADD gC, 48, gD
+JMP <PT_WRITE>
+
+PT_MINE:
+SET 42, gD
+
+PT_WRITE:
+; write 1-byte text buffer in scratch, null terminated
+SET 72, mW
+STORE gD
+SET 73, mW
+SET 0, gC
+STORE gC
+SET 72, mR
+PRINT
+RET
+
+DRAW_FRAME:
+CLEAR
+SET 0, cY1
+DF_Y:
+SET 0, cX1
+DF_X:
+DUPE cX1, gA
+DUPE cY1, gB
+CALL <REV_GET>
+CMP gD, 1
+JMPE <DF_REV>
+SET 1, gC
+JMP <DF_PLOT>
+
+DF_REV:
+DUPE cX1, gA
+DUPE cY1, gB
+CALL <MINE_GET>
+CMP gD, 1
+JMPE <DF_MINE>
+SET 0, gC
+JMP <DF_PLOT>
+DF_MINE:
+SET 1, gC
+
+DF_PLOT:
+SET pA, gC
+SETP 1, pA
+
+INC cX1
+CMP cX1, 0
+JMPNE <DF_X>
+INC cY1
+CMP cY1, 0
+JMPNE <DF_Y>
+
+DRAW
+RET

@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3370",
+  "event_title": "z0d1ak CTF Qualifiers",
+  "title": "rapture",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "use-after-free (uaf)",
+    "shallow-copy",
+    "heap-exploitation"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/rapture/",
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/pwn/rapture"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/pwn/rapture"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/pwn/rapture",
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/rapture/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/z0d1ak_2026-quals/rapture/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/z0d1ak-ctf-qualifiers-2026/main/pwn/rapture/README.md",
+      "bytes": 7410,
+      "sha256": "ba0492f772b62af072fa688a6f8d92831c1777ecce3433878a5049fafb01a9cd",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/z0d1ak_2026-quals/rapture/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Z0d1ak/2026/Quals/pwn/rapture/README.md",
+      "bytes": 120,
+      "sha256": "01998208039f044c6adcd2b873104f8d13eef779dc215d75d45773d77fc520ff",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/z0d1ak_2026-quals/rapture/attachments/upstream/pwn_rapture.tar.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Z0d1ak/2026/Quals/pwn/rapture/pwn_rapture.tar.gz",
+      "bytes": 1068409,
+      "sha256": "6665a5ca1ff1d907810b4a8abbe06d4fc2b9ce19505fa748dfcacef40bcf3c6c",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/rapture/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/z0d1ak/2026-quals/rapture/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

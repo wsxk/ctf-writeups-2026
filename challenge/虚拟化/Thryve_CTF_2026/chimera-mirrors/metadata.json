@@ -1,0 +1,51 @@
+{
+  "event_id": "CTF-3330",
+  "event_title": "Thryve CTF 2026",
+  "category": "虚拟化",
+  "title": "chimera-mirrors",
+  "dirname": "Thryve_CTF_2026",
+  "source_urls": [
+    "https://github.com/hax1ng/thryve-ctf-2026-writeups/tree/HEAD/rev/chimera-mirrors"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/chimera-mirrors/README.md",
+      "local": "writeups/README.md",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 11310,
+      "sha256": "344810d80114c06a69935bda109e0bf2d1770b8baf518cdc359f2d4b0cbcd666"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/chimera-mirrors/chimera_mirror",
+      "local": "attachments/chimera_mirror",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 26800,
+      "sha256": "e47fe9daa456cb26c2ec5fac4e4bcd33d13c69b8f7a6f68e194bc0180d20daca"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/chimera-mirrors/solve.py",
+      "local": "writeups/solve.py",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 3839,
+      "sha256": "c102929aca26b6b6fa20f52da84d61b806e7a4b6643651c0862e88de91e44a86"
+    }
+  ],
+  "notes": "参赛者hax1ng公开仓库，保留文章、solver及其提供的比赛原始二进制/7z包；解法未运行验证。",
+  "directory": "虚拟化/Thryve_CTF_2026/chimera-mirrors",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/chimera-mirrors/README.md",
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/chimera-mirrors/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/chimera-mirrors/chimera_mirror"
+  ],
+  "attachment_status": "downloaded"
+}

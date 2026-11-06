@@ -1,0 +1,59 @@
+{
+  "event_id": "CTF-3148",
+  "event_title": "UIUCTF 2026",
+  "title": "Veil_of_Evernight",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [],
+  "source_urls": [
+    "https://ctf42.online/ctfs/uiuctf/2026/veil_of_evernight/",
+    "https://ctf42.online/ctfs/uiuctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/rev/Veil_of_Evernight"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/uiuctf-2026-reverse-engineering-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/rev/Veil_of_Evernight",
+    "https://ctf42.online/ctfs/uiuctf/2026/veil_of_evernight/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/uiuctf_2026/Veil_of_Evernight/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/uiuctf-2026-reverse-engineering-writeup/",
+      "bytes": 167239,
+      "sha256": "206e8aef87e65c820dd5a67461ebc76f1c59538da6efa3f2412705a63870f8de",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/uiuctf_2026/Veil_of_Evernight/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UIUCTF/2026/rev/Veil_of_Evernight/README.md",
+      "bytes": 357,
+      "sha256": "ff23c672870f05fcc1c4509916385b66eccb1f1e0a7b03a73186ac13de6523b0",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/uiuctf_2026/Veil_of_Evernight/attachments/upstream/evernight",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UIUCTF/2026/rev/Veil_of_Evernight/evernight",
+      "bytes": 1470512,
+      "sha256": "23c305462514ee82ea844d3276ed669abdbaa2a3b6769ddbaa1ca426f6d751fb",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/uiuctf/2026/veil_of_evernight/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/uiuctf/2026/veil_of_evernight/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

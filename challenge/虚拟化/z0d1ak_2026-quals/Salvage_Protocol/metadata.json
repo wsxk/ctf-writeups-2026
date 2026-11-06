@@ -1,0 +1,64 @@
+{
+  "event_id": "CTF-3370",
+  "event_title": "z0d1ak CTF Qualifiers",
+  "title": "Salvage_Protocol",
+  "category": "虚拟化",
+  "original_category": "Pwn",
+  "tags": [
+    "request-smuggling",
+    "length-mismatch",
+    "custom-vm"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/salvage_protocol/",
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/pwn/Salvage_Protocol"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/pwn/salvage-protocol"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/pwn/Salvage_Protocol",
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/salvage_protocol/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/z0d1ak_2026-quals/Salvage_Protocol/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/z0d1ak-ctf-qualifiers-2026/main/pwn/salvage-protocol/README.md",
+      "bytes": 5575,
+      "sha256": "6a0082ec489d3cb95d78107c4a48a9e950155e63851e245505d5ad49def0135e",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/z0d1ak_2026-quals/Salvage_Protocol/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Z0d1ak/2026/Quals/pwn/Salvage_Protocol/README.md",
+      "bytes": 68,
+      "sha256": "4c0989706aad730e2387e4b94dcb5ca8a6a186db340a65c865513dfb8f28559b",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/z0d1ak_2026-quals/Salvage_Protocol/attachments/upstream/pwn_salvage-protocol.tar.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Z0d1ak/2026/Quals/pwn/Salvage_Protocol/pwn_salvage-protocol.tar.gz",
+      "bytes": 628537,
+      "sha256": "849a151eb5211149030d2f1683b9f1a3440ad4b7d8c85003ba8629216bf64dd7",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/salvage_protocol/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/z0d1ak/2026-quals/salvage_protocol/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

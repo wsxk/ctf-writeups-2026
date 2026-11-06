@@ -1,0 +1,125 @@
+{
+  "event_id": "CTF-3015",
+  "event_title": "LA CTF 2026",
+  "category": "逆向",
+  "title": "the-three-sat-problem",
+  "dirname": "LA_CTF_2026",
+  "source_urls": [
+    "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/rev/the-three-sat-problem"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/Makefile",
+      "local": "attachments/Makefile",
+      "size_expected": 331,
+      "git_blob_sha": "61cc2220d2fb6655306040665c68ebe6426d7fae",
+      "status": "downloaded",
+      "bytes": 331,
+      "sha256": "0ff719242b7200f0c5f9687b82eaa56517af93494e64f650713168cbb81f026f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/challenge.yaml",
+      "local": "attachments/challenge.yaml",
+      "size_expected": 366,
+      "git_blob_sha": "cecab94cdeb0553a973a6a20838b94cadadfbfc3",
+      "status": "downloaded",
+      "bytes": 366,
+      "sha256": "1079eef107f67f373155ff43f0ff46f7132dd1e95f07ffb85b7298d26f11f891"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/consts.h",
+      "local": "attachments/consts.h",
+      "size_expected": 1435,
+      "git_blob_sha": "54ffe05624b3ad034d98db2024838e9d20629c90",
+      "status": "downloaded",
+      "bytes": 1435,
+      "sha256": "db8445332faaf59b5c381fcfdbf9624aba4252ddcaf0e530e31fdd6a893cac89"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/gen.py",
+      "local": "attachments/gen.py",
+      "size_expected": 4446,
+      "git_blob_sha": "a49f694a5964561e4e1042c883d4cb50ea88ba46",
+      "status": "downloaded",
+      "bytes": 4446,
+      "sha256": "bcf7152e14042600b58f2c81143c62141c13070ecd16908dd514eb3e7b0b92e9"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/logic.h",
+      "local": "attachments/logic.h",
+      "size_expected": 57518,
+      "git_blob_sha": "0b7017d5ce81370191667ead56b2da7c44c1ca77",
+      "status": "downloaded",
+      "bytes": 57518,
+      "sha256": "ecb6d2ccd980bd66c5b10828423571f0cf4a329b1c5718117787dd5f82055750"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/solve.txt",
+      "local": "writeups/official/solve.txt",
+      "size_expected": 1280,
+      "git_blob_sha": "9ef7a654f1578919a4eb6d00dae31ecdc28d65ff",
+      "status": "downloaded",
+      "bytes": 1280,
+      "sha256": "d6801964cdf5643f2cfc9b9e3d60ceca222479caaf62b7f48b40934103099df4"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/three_sat_problem",
+      "local": "attachments/three_sat_problem",
+      "size_expected": 84144,
+      "git_blob_sha": "393e68ce6d98c06ce0e4f5a40b5ceb9d189a4049",
+      "status": "downloaded",
+      "bytes": 84144,
+      "sha256": "8617b16a760e73b48061b5868b7a8852c3b60dbfa0771bb58d9b2f60e3f92e5a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/three_sat_problem.c",
+      "local": "attachments/three_sat_problem.c",
+      "size_expected": 896,
+      "git_blob_sha": "7d6ffb91b2702aaa19e91d68d7678e6beabf7dee",
+      "status": "downloaded",
+      "bytes": 896,
+      "sha256": "0bb4f58f8908eae5d8a1db0c97fb00233001b396fbc56ff0962a4a15ceddafcc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/three_sat_problem/README.md",
+      "local": "writeups/community/README.md",
+      "status": "downloaded",
+      "bytes": 5091,
+      "sha256": "6e67c281b6bd8b6e70346296d4391f00dee565d17f45b3507f9bfdaf95aa3d21"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/three_sat_problem/solve.py",
+      "local": "writeups/community/solve.py",
+      "status": "downloaded",
+      "bytes": 2828,
+      "sha256": "1090135ba2fc5dc46c21955fdf40a93f4788dd45aea40ffecc1a0d31ad5e4994"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/three_sat_problem/solve_sat.py",
+      "local": "writeups/community/solve_sat.py",
+      "status": "downloaded",
+      "bytes": 4642,
+      "sha256": "44821e7e00d6f6ce4374af44fad0d2ab622f83891b9d331f578f16310a9ab47f"
+    }
+  ],
+  "notes": "官方题目附件，配官方 solver（若有）及参赛者 hax1ng 的文章/脚本。社区文章部分标题误写2025，但本题与官方2026目录的描述和flag一致，已逐题核对（ooo使用Unicode NFC比较）；保留原文。reflection另归虚拟化。",
+  "directory": "逆向/LA_CTF_2026/the-three-sat-problem",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/solve.txt",
+    "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/three_sat_problem/README.md",
+    "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/three_sat_problem/solve.py",
+    "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/three_sat_problem/solve_sat.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/Makefile",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/challenge.yaml",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/consts.h",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/gen.py",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/logic.h",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/three_sat_problem",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/three_sat_problem.c"
+  ],
+  "attachment_status": "downloaded"
+}

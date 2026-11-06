@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Two_Worlds_One_Heart · PwnSec 2026 (reverse) writeup · ctf42</title>
+  
+
+<meta name="description" content="Two_Worlds_One_Heart: Reverse challenge from PwnSec 2026. Techniques: heavens-gate, wow64, polyglot-code. CategoryReverse Engineering…">
+<link rel="canonical" href="https://ctf42.online/ctfs/pwnsec/2026/two_worlds_one_heart/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/pwnsec/2026/two_worlds_one_heart/">
+<meta property="og:title" content="Two_Worlds_One_Heart">
+<meta property="og:description" content="Two_Worlds_One_Heart: Reverse challenge from PwnSec 2026. Techniques: heavens-gate, wow64, polyglot-code. CategoryReverse Engineering…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/pwnsec/">PwnSec</a> / <a href="/ctfs/pwnsec/2026/">2026</a> / Two_Worlds_One_Heart</nav>
+
+
+<div class="challenge-head">
+  <h1>Two_Worlds_One_Heart
+    </h1>
+  <div class="badges">
+    <a class="cat cat-rev" href="/category/rev/">Reverse</a>
+    
+    
+    <span class="chip">weight 33.89</span>
+    <a class="tag" href="/techniques/heavens-gate/">#heavens-gate</a><a class="tag" href="/techniques/wow64/">#wow64</a><a class="tag" href="/techniques/polyglot-code/">#polyglot-code</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/pwnsec/2026/two_worlds_one_heart/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/pwnsec/2026/two_worlds_one_heart/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  
+  <p class="meta">Flag format: <code class="flag-format">PWNSEC{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>CategoryReverse Engineering</p>
+<p>two-worlds--one-heart.md
+They say love is about speaking the same language.</p>
+<p>But what happens when the exact same words mean one thing to him, and something completely different to her?</p>
+<p>@Nyx</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>Two_Worlds_One_Heart — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/rev/two-worlds-one-heart" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/rev/two-worlds-one-heart</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/pwnsec/2026/two_worlds_one_heart/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/hitcon/2022/meow_way/">meow_way</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/heavens-gate/">#heavens-gate</a><a class="tag tag-sm" href="/techniques/z3/">#z3</a><a class="tag tag-sm" href="/techniques/windows-reversing/">#windows-reversing</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/hitcon/2022/">HITCON 2022</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/heavens-gate/">#heavens-gate</a> · <a href="/techniques/wow64/">#wow64</a> · <a href="/techniques/polyglot-code/">#polyglot-code</a>
+          · <a href="/category/rev/">all Reverse</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/Two_Worlds_One_Heart" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/pwnsec/2026/two_worlds_one_heart/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from PwnSec 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/pwnsec/2026/cusp_of_no_return/">Cusp_of_No_Return</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/gap_gap/">Gap_Gap</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/hashbrown/">Hashbrown</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/the_one_hit_wonder/">The_One_Hit_Wonder</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/the_odyssey/">The_odyssey</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/skill_issue_aaelmo/">skill_issue_aaelmo</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/tap_tap/">tap_tap</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/meridian/">Meridian</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/pwnsec/2026/jailincpython/">jailincpython</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/pwnsec/2026/ycc/">ycc</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/pwnsec/2026/death_ops/">Death_Ops</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/pwnsec/2026/freal_world_manipulation/">Freal_World_Manipulation</a> <span class="cat cat-pwn cat-xs">Pwn</span></li>
+      </ul>
+      <a class="small" href="/ctfs/pwnsec/2026/">All PwnSec 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

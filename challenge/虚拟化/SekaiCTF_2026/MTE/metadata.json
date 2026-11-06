@@ -1,0 +1,145 @@
+{
+  "event_id": "CTF-3113",
+  "event_title": "SekaiCTF 2026",
+  "category": "虚拟化",
+  "title": "MTE",
+  "source_urls": [
+    "https://ctftime.org/event/3113/",
+    "https://github.com/project-sekai-ctf/sekaictf-2026/tree/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/solution/solver",
+    "https://raw.githubusercontent.com/hax1ng/Sekai-CTF-2026/main/pwn/mte/README.md"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/artifacts/qemu-system-aarch64-x86_64.ldd",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/README.md",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/artifacts/initramfs.cpio.gz",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/Dockerfile.run.aarch64",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/Dockerfile.run",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/artifacts/qemu-system-aarch64-aarch64.dynamic",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/flag.txt",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/patches/qemu_1.patch",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/run.sh",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/artifacts/Image",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/docker-compose.yml",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/run.py",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/kona.yaml",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/artifacts/qemu-system-aarch64.tar.gz"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": "QEMU ARM MTE/PAC 仿真实现相关问题与 guest 内核提权；不是 guest-to-host 逃逸。保留官方运行环境/二进制 solver，以及参赛者文字题解。题解未经过本次执行验证。",
+  "files": [
+    {
+      "path": "attachments/challenge/artifacts/qemu-system-aarch64-x86_64.ldd",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/artifacts/qemu-system-aarch64-x86_64.ldd",
+      "bytes": 710,
+      "sha256": "8cf2cda41b1f9050e80e9bd8654b1169ca13370f3d9930fe9dce43333f5d23b3"
+    },
+    {
+      "path": "attachments/README.md",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/README.md",
+      "bytes": 677,
+      "sha256": "60d3c02226f47ff7855edf1e8fa9551e5b8875436bf990b6290cbb887307202f"
+    },
+    {
+      "path": "attachments/challenge/artifacts/initramfs.cpio.gz",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/artifacts/initramfs.cpio.gz",
+      "bytes": 231327,
+      "sha256": "25cf01924e55abea24ac2386738db6a449c3e25bc2442938349201361d5e1f99"
+    },
+    {
+      "path": "attachments/challenge/Dockerfile.run.aarch64",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/Dockerfile.run.aarch64",
+      "bytes": 1638,
+      "sha256": "778135e7bc9f75fe1cba6d64f280b108bedcd8b9ad288cce4cb5bd26d216ab35"
+    },
+    {
+      "path": "attachments/challenge/Dockerfile.run",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/Dockerfile.run",
+      "bytes": 1637,
+      "sha256": "49d35dfde9919830bcd9c426d99a7917d9b893978917d8b86220adbee16272ca"
+    },
+    {
+      "path": "attachments/challenge/artifacts/qemu-system-aarch64-aarch64.dynamic",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/artifacts/qemu-system-aarch64-aarch64.dynamic",
+      "bytes": 1919,
+      "sha256": "b6d65d14aa1bd48452eb92918cbad214ecbe5f97422ac6c47815bf70b8a374da"
+    },
+    {
+      "path": "attachments/challenge/flag.txt",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/flag.txt",
+      "bytes": 71,
+      "sha256": "4678d631bbb6fadbfacf8e2d412acbd7f35fb14ba164c9f477ead1d75b562ddf"
+    },
+    {
+      "path": "attachments/challenge/patches/qemu_1.patch",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/patches/qemu_1.patch",
+      "bytes": 695,
+      "sha256": "23ff57a05a167dc4fbd2bc2eddde2f6736baaadc951f34fc67c096d20a41f1d7"
+    },
+    {
+      "path": "attachments/challenge/run.sh",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/run.sh",
+      "bytes": 1182,
+      "sha256": "1ef855b993d138953e16d6d2597f4ea3f9d225b45da4d1526030a902f878975d"
+    },
+    {
+      "path": "attachments/challenge/artifacts/Image",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/artifacts/Image",
+      "bytes": 5922824,
+      "sha256": "8a40b36687a4b169f5c27ae1a94b2b3bf4a6734db288b4d71c9dd6058f02c911"
+    },
+    {
+      "path": "attachments/challenge/docker-compose.yml",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/docker-compose.yml",
+      "bytes": 276,
+      "sha256": "34cc4fcd323afbeb557ae927235fa7f0e26e7b26f0881dbb305c611fa6a286c2"
+    },
+    {
+      "path": "attachments/challenge/run.py",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/run.py",
+      "bytes": 1347,
+      "sha256": "d7c550be84e4dd42552910687a205c50f9f9ac6fab06ca92a7376e95e8ffa461"
+    },
+    {
+      "path": "writeups/solution/solver",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/solution/solver",
+      "bytes": 224301,
+      "sha256": "3ca0dd36626793a6a5f74320705a31e2c4b97a79b8fe7e0f6932e683176cf2c6"
+    },
+    {
+      "path": "attachments/kona.yaml",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/kona.yaml",
+      "bytes": 2528,
+      "sha256": "30d2c4531c9de7fae1064456c6b178deb676d1cec9ed0eddb9ca337a150b4c23"
+    },
+    {
+      "path": "attachments/challenge/artifacts/qemu-system-aarch64.tar.gz",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/pwn/MTE/challenge/artifacts/qemu-system-aarch64.tar.gz",
+      "bytes": 73740619,
+      "sha256": "03555a2c568f2b5bb061eca9c9f03958e97b0d3be1c9971f5e7a4a9b124fb8de"
+    },
+    {
+      "path": "licenses/LICENSE",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/LICENSE",
+      "bytes": 34523,
+      "sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef"
+    },
+    {
+      "path": "licenses/LICENSE.content.md",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/LICENSE.content.md",
+      "bytes": 19119,
+      "sha256": "14d2138e3a8bd9448254f171b8e17130bf7104d2fd843ab0b924bd105fd00d5a"
+    },
+    {
+      "path": "writeups/community_writeup.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/Sekai-CTF-2026/main/pwn/mte/README.md",
+      "bytes": 7147,
+      "sha256": "c8ed69195be8748f140266e5dbb7b149020271278112f2765c4402ba91da0f87"
+    }
+  ],
+  "errors": [],
+  "writeup_kind": "official_solver_binary_and_community_writeup"
+}

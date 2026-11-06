@@ -1,0 +1,23 @@
+{
+  "sha": "37165e0f9dee0cbe70cce275aa37a16f0eaf9aeb",
+  "url": "https://api.github.com/repos/sajjadium/ctf-archives/git/trees/37165e0f9dee0cbe70cce275aa37a16f0eaf9aeb",
+  "tree": [
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2623b2d5e57e01d7d23259dbe8da7f8280f86ca",
+      "size": 82,
+      "url": "https://api.github.com/repos/sajjadium/ctf-archives/git/blobs/d2623b2d5e57e01d7d23259dbe8da7f8280f86ca"
+    },
+    {
+      "path": "warden-player.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "702f377670dbde3239082a649ca973f11b7977c6",
+      "size": 10332,
+      "url": "https://api.github.com/repos/sajjadium/ctf-archives/git/blobs/702f377670dbde3239082a649ca973f11b7977c6"
+    }
+  ],
+  "truncated": false
+}

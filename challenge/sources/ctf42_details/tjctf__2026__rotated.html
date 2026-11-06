@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>rotated · TJCTF 2026 (reverse) writeup · ctf42</title>
+  
+
+<meta name="description" content="rotated: Reverse challenge from TJCTF 2026. Techniques: reversing, byte-rotation. samuel this file isn&#x27;t making any sense to me. can you discover what it…">
+<link rel="canonical" href="https://ctf42.online/ctfs/tjctf/2026/rotated/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/tjctf/2026/rotated/">
+<meta property="og:title" content="rotated">
+<meta property="og:description" content="rotated: Reverse challenge from TJCTF 2026. Techniques: reversing, byte-rotation. samuel this file isn&#x27;t making any sense to me. can you discover what it…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/tjctf/">TJCTF</a> / <a href="/ctfs/tjctf/2026/">2026</a> / rotated</nav>
+
+
+<div class="challenge-head">
+  <h1>rotated
+    </h1>
+  <div class="badges">
+    <a class="cat cat-rev" href="/category/rev/">Reverse</a>
+    
+    
+    
+    <a class="tag" href="/techniques/reversing/">#reversing</a><a class="tag" href="/techniques/byte-rotation/">#byte-rotation</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/tjctf/2026/rotated/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/tjctf/2026/rotated/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  
+  <p class="meta">Flag format: <code class="flag-format">tjctf{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>samuel
+this file isn't making any sense to me. can you discover what it means? hint: look at the title hint 2: consider each byte separately</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>rotated — writeup</b>
+    
+    
+    <span class="muted">by rawpayload</span>
+  </header>
+  <p><a href="https://ctftime.org/writeup/40785" rel="noopener nofollow ugc" target="_blank">https://ctftime.org/writeup/40785</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/tjctf/2026/rotated/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/v1t/2026/tiny/">Tiny</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/reversing/">#reversing</a><a class="tag tag-sm" href="/techniques/run-length-encoding/">#run-length-encoding</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/v1t/2026/">V1T 2026</a></td>
+        <td class="num">22.14</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/trx/2026/wandering/">wandering</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/reversing/">#reversing</a><a class="tag tag-sm" href="/techniques/vm/">#vm</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/trx/2026/">TRX 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/trx/2026/faulty_road/">faulty_road</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/kernel/">#kernel</a><a class="tag tag-sm" href="/techniques/reversing/">#reversing</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/trx/2026/">TRX 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/trx/2026/11/">1+1</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/reversing/">#reversing</a><a class="tag tag-sm" href="/techniques/vm/">#vm</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/trx/2026/">TRX 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/sekaictf/2026/untitled_encore/">Untitled_Encore</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/reversing/">#reversing</a><a class="tag tag-sm" href="/techniques/constraint-solving/">#constraint-solving</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/sekaictf/2026/">SekaiCTF 2026</a></td>
+        <td class="num">79.25</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/uiuctf/2025/weirdcaml/">weirdcaml</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/reversing/">#reversing</a><a class="tag tag-sm" href="/techniques/ocaml/">#ocaml</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/uiuctf/2025/">UIUCTF 2025</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/reversing/">#reversing</a> · <a href="/techniques/byte-rotation/">#byte-rotation</a>
+          · <a href="/category/rev/">all Reverse</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TJCTF/2026/rev/rotated" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/tjctf/2026/rotated/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from TJCTF 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/tjctf/2026/tautology/">TAUtology</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/tjctf/2026/bit_leak/">bit_leak</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/tjctf/2026/celestial_vault/">celestial_vault</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/tjctf/2026/crashout/">crashout</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/tjctf/2026/minervas_stopwatch/">minervas_stopwatch</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/tjctf/2026/multiplication_as_a_service/">multiplication_as_a_service</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/tjctf/2026/squares/">squares</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/tjctf/2026/stained_glass/">stained_glass</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/tjctf/2026/trust_issues/">trust_issues</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/tjctf/2026/wavy/">wavy</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/tjctf/2026/check_the_fine_print/">check_the_fine_print</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/tjctf/2026/invisible_ink/">invisible_ink</a> <span class="cat cat-forensics cat-xs">Forensics</span></li>
+      </ul>
+      <a class="small" href="/ctfs/tjctf/2026/">All TJCTF 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

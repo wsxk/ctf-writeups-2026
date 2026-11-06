@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mystery · Bhackari 2026 (reverse) writeup · ctf42</title>
+  
+
+<meta name="description" content="Mystery: Reverse challenge from Bhackari 2026. Techniques: aes-ctr. rev Vego Before vanishing without a trace, an unknown individual left behind a strange…">
+<link rel="canonical" href="https://ctf42.online/ctfs/bhackari/2026/mystery/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/bhackari/2026/mystery/">
+<meta property="og:title" content="Mystery">
+<meta property="og:description" content="Mystery: Reverse challenge from Bhackari 2026. Techniques: aes-ctr. rev Vego Before vanishing without a trace, an unknown individual left behind a strange…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/bhackari/">Bhackari</a> / <a href="/ctfs/bhackari/2026/">2026</a> / Mystery</nav>
+
+
+<div class="challenge-head">
+  <h1>Mystery
+    </h1>
+  <div class="badges">
+    <a class="cat cat-rev" href="/category/rev/">Reverse</a>
+    
+    
+    
+    <a class="tag" href="/techniques/aes-ctr/">#aes-ctr</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/bhackari/2026/mystery/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/bhackari/2026/mystery/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  
+  <p class="meta">Flag format: <code class="flag-format">bhackariCTF{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>rev
+ Vego
+Before vanishing without a trace, an unknown individual left behind a strange library, along with an encrypted secret.</p>
+<p>There were no notes, no signature... nothing but a single information: "Four trials, four successes, a single secret of immense value".</p>
+<p>Many have tried to unravel the mystery, but none have succeeded. Will you?</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>Mystery — writeup</b>
+    
+    
+    <span class="muted">by Abdelkader</span>
+  </header>
+  <p><a href="https://ctftime.org/writeup/40851" rel="noopener nofollow ugc" target="_blank">https://ctftime.org/writeup/40851</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/bhackari/2026/mystery/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/csaw/2021-quals/ransomware/">ransomwaRE</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/malware-reversing/">#malware-reversing</a><a class="tag tag-sm" href="/techniques/date-seeded-key/">#date-seeded-key</a><a class="tag tag-sm" href="/techniques/aes-ctr/">#aes-ctr</a><a class="tag tag-sm" href="/techniques/keystream-reuse/">#keystream-reuse</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/csaw/2021-quals/">CSAW 2021 Quals</a></td>
+        <td class="num">20.54</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;2</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/downunderctf/2024/adorable_encrypted_animal/">adorable_encrypted_animal</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/apple-encrypted-archive/">#apple-encrypted-archive</a><a class="tag tag-sm" href="/techniques/hkdf/">#hkdf</a><a class="tag tag-sm" href="/techniques/aes-ctr/">#aes-ctr</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/downunderctf/2024/">DownUnderCTF 2024</a></td>
+        <td class="num">68.04</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        <span title="Source / Docker setup">src</span>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/aes-ctr/">#aes-ctr</a>
+          · <a href="/category/rev/">all Reverse</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bhackari/2026/rev/Mystery" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/bhackari/2026/mystery/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from Bhackari 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/bhackari/2026/interview/">Interview</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/bhackari/2026/universal_collider/">Universal_Collider</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/bhackari/2026/gianbrunos_clicker_1/">Gianbrunos_Clicker_1</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/bhackari/2026/last_standing_bacaro/">Last_Standing_Bacaro</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/bhackari/2026/cake/">cake</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/bhackari/2026/horses/">horses</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/bhackari/2026/simplesmart/">SimpleSmart</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/bhackari/2026/ultimate_parallel_runner/">Ultimate_Parallel_Runner</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/bhackari/2026/washing_machine_as_a_service/">Washing_Machine_as_a_Service</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/bhackari/2026/wav_editor/">Wav_Editor</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/bhackari/2026/dont_unpack_me/">Dont_unpack_me</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/bhackari/2026/proxyproxy/">Proxyproxy</a> <span class="cat cat-web cat-xs">Web</span></li>
+      </ul>
+      <a class="small" href="/ctfs/bhackari/2026/">All Bhackari 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

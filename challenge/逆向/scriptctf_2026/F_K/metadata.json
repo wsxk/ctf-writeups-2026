@@ -1,0 +1,62 @@
+{
+  "event_id": "CTF-3052",
+  "event_title": "scriptCTF 2026",
+  "title": "F_K",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "brainfuck",
+    "timing-side-channel"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/scriptctf/2026/f_k/",
+    "https://ctf42.online/ctfs/scriptctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ScriptCTF/2026/rev/F_K"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/scriptctf-2026-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ScriptCTF/2026/rev/F_K",
+    "https://ctf42.online/ctfs/scriptctf/2026/f_k/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/scriptctf_2026/F_K/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/scriptctf-2026-writeup/",
+      "bytes": 103628,
+      "sha256": "1837a07ca487cb6d59bdf11f6cea8bcea396f48378f0c584395607a825d825ea",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/scriptctf_2026/F_K/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/ScriptCTF/2026/rev/F_K/README.md",
+      "bytes": 50,
+      "sha256": "e460f05e2ce0dfe8b3a1157eb13165c8c648da608cb797b961f490f6e84d9631",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/scriptctf_2026/F_K/attachments/upstream/funk",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/ScriptCTF/2026/rev/F_K/funk",
+      "bytes": 28786,
+      "sha256": "c9aec8dacfeba0aa825b70fac870799ef22ef8190d5e9a4a7f2fc081e68f979c",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/scriptctf/2026/f_k/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/scriptctf/2026/f_k/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

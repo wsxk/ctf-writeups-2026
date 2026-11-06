@@ -1,0 +1,71 @@
+{
+  "event_id": "CTF-3056",
+  "event_title": "UMDCTF 2026",
+  "title": "bookmaker",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "use-after-free (uaf)",
+    "arraybuffer"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/umdctf/2026/bookmaker/",
+    "https://ctf42.online/ctfs/umdctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/pwn/bookmaker"
+  ],
+  "writeup_urls": [
+    "https://blog.rawpayload.com/blog/umd-ctf-2026-bookmaker-writeup",
+    "https://yhalo.cn/1978/umdctf-2026-pwn-wp-by-yhalo/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/pwn/bookmaker",
+    "https://ctf42.online/ctfs/umdctf/2026/bookmaker/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/umdctf_2026/bookmaker/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMDCTF/2026/pwn/bookmaker/README.md",
+      "bytes": 87,
+      "sha256": "a6cbaebe2b51341ea14e6429b825ae2dd5d83e7300dd07f08cd52c214f36b2df",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/umdctf_2026/bookmaker/attachments/upstream/bookmaker",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMDCTF/2026/pwn/bookmaker/bookmaker",
+      "bytes": 833800,
+      "sha256": "46fc4e52b3e04d6b3b885e68b122f83f903ce31e2b6fe17dfa81bc079aff49df",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/umdctf_2026/bookmaker/writeups/replacement_source.html",
+      "url": "https://yhalo.cn/1978/umdctf-2026-pwn-wp-by-yhalo/",
+      "bytes": 196483,
+      "sha256": "ad6770de56fe21e14227db741f9f73ac9ff1b9f122ea7d565757c177f6afbc8a",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/umdctf_2026/bookmaker/writeups/replacement_readable.txt",
+      "url": "https://yhalo.cn/1978/umdctf-2026-pwn-wp-by-yhalo/",
+      "bytes": 9815,
+      "sha256": "2da889e4c0cd6d5b4b295c04ab096e842c985558842daec21070905542407d40",
+      "kind": "writeup"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/umdctf/2026/bookmaker/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/umdctf/2026/bookmaker/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files",
+  "writeup_kind": "prose"
+}

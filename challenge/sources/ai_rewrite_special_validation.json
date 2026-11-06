@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-06",
+  "scope": {
+    "车联网": 18,
+    "iot": 16,
+    "android": 13
+  },
+  "documents": 47,
+  "local_links_valid": true,
+  "runtime_exploits_executed": false,
+  "checks": [
+    "47题覆盖与路径存在性",
+    "逐文档相对链接存在性",
+    "NDIAS PDF相关页面渲染阅读",
+    "doremi solved.png视觉核查",
+    "Godox HEX大小写MD5独立常量核算",
+    "Boring APK长度与模逆独立常量核算"
+  ],
+  "limitations": "资料及solver静态改写；不代表附件运行、服务复现或提交验证。"
+}

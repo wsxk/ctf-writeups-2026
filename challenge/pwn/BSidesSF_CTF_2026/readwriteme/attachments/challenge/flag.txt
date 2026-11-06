@@ -1,0 +1,1 @@
+CTF{no-more-secret-functions-alloweed}

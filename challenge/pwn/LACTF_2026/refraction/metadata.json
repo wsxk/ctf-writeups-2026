@@ -1,0 +1,98 @@
+{
+  "event_id": "CTF-3015",
+  "event_title": "LA CTF 2026",
+  "category": "pwn",
+  "title": "refraction",
+  "source_urls": [
+    "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/pwn/refraction",
+    "https://ctftime.org/event/3015/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/refraction/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/refraction/Dockerfile",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/refraction/chall",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/refraction/chall.cpp",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/refraction/challenge.yml",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/refraction/flag.txt"
+  ],
+  "writeup_status": "已下载官方解题脚本（独立文字writeup未提供）",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "uclaacm/lactf-archive",
+  "repository_tree_sha": "3379d4a7b36680764a34e7dc817cc3c94c244764",
+  "artifacts": [
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/refraction/Dockerfile",
+      "bytes": 218,
+      "sha256": "b67b2805755511ecfdbd0232c1c4569ec796e7d79a698d5ac6b97125ca8094b8",
+      "git_blob_sha1": "1cdcb88e6aa26022cade4415196caf4fafcedbcf",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/refraction/chall",
+      "bytes": 16584,
+      "sha256": "09b2c2d37ce900251a58446e7655d1edaeed95634a4063677f37818db7ba4d75",
+      "git_blob_sha1": "e321826f5e3da314018c3398f4f4e4d363002bc1",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall.cpp",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/refraction/chall.cpp",
+      "bytes": 314,
+      "sha256": "bddf00bde5ed3544ca1914ee3a4851174cff5f35e4e7744181ed17dac05ba0ca",
+      "git_blob_sha1": "9e0cb5c312e5bb5842750bf9b320285765641820",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge.yml",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/refraction/challenge.yml",
+      "bytes": 314,
+      "sha256": "1e277e8716ec264bbff0831adf494c47c5d7e91243a3bd1a81b09fd011d9d297",
+      "git_blob_sha1": "40a869f98c7594a4e2627d38633ee8b52445c6c8",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flag.txt",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/refraction/flag.txt",
+      "bytes": 53,
+      "sha256": "cc58c3d86fa6cd5e53d22c33d7ef1d6bfb1a7b768f7ca9cbd5c385a2b65e2d2d",
+      "git_blob_sha1": "c70bf424a1ac7e3cee085041592a9b9184900620",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve.py",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/refraction/solve.py",
+      "bytes": 1976,
+      "sha256": "b3a92c772f18975828f3199989f8c005fa9dca138825619e9865a556cba730e7",
+      "git_blob_sha1": "2c3c82f279053756fed1b4dde407b28899dca234",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

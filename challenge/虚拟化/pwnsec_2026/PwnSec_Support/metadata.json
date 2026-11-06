@@ -1,0 +1,64 @@
+{
+  "event_id": "CTF-3159",
+  "event_title": "PwnSec CTF 2026",
+  "title": "PwnSec_Support",
+  "category": "虚拟化",
+  "original_category": "Pwn",
+  "tags": [
+    "custom-vm",
+    "lua",
+    "web-exploitation"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/pwnsec/2026/pwnsec_support/",
+    "https://ctf42.online/ctfs/pwnsec/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/pwn/PwnSec_Support"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/pwn/pwnsec-support"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/pwn/PwnSec_Support",
+    "https://ctf42.online/ctfs/pwnsec/2026/pwnsec_support/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/pwnsec_2026/PwnSec_Support/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/pwnsec-ctf-2026/main/pwn/pwnsec-support/README.md",
+      "bytes": 11961,
+      "sha256": "54924fcf7d976354188c5244219d42c1dc451e2f9c0a08189a1796f487ec7186",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/pwnsec_2026/PwnSec_Support/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/PwnSec/2026/pwn/PwnSec_Support/README.md",
+      "bytes": 199,
+      "sha256": "4c61aa889081a6902aba06f24caa930eb6e7d64e93fce70cf17d69d31485527f",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/pwnsec_2026/PwnSec_Support/attachments/upstream/public.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/PwnSec/2026/pwn/PwnSec_Support/public.zip",
+      "bytes": 4797829,
+      "sha256": "5bc18048f33f8b9df6f8cf246c7526fdd9f34fa411ba055b84b781ff3e1bbd49",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/pwnsec/2026/pwnsec_support/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/pwnsec/2026/pwnsec_support/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

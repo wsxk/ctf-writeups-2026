@@ -1,0 +1,48 @@
+{
+  "event_id": "CTF-3309",
+  "event_title": "boroCTF 2026",
+  "title": "AlphaCode",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "custom-dsl-reversing",
+    "opcode-fuzzing"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/boroctf/2026/alphacode/",
+    "https://ctf42.online/ctfs/boroctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BoroCTF/2026/rev/AlphaCode"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/boroctf-2026-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BoroCTF/2026/rev/AlphaCode",
+    "https://ctf42.online/ctfs/boroctf/2026/alphacode/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/boroctf_2026/AlphaCode/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/boroctf-2026-writeup/",
+      "bytes": 153023,
+      "sha256": "e0fde9dcfd3cb5372139871027d3ed454dde0d6e54580b590c5f311334f55397",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/boroctf_2026/AlphaCode/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/boroctf/2026/alphacode/folder.zip?kind=files",
+      "bytes": 844,
+      "sha256": "491781aca362c6d6c37704196ecc63fff38720f5541077bf3fd729eda29365c4",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

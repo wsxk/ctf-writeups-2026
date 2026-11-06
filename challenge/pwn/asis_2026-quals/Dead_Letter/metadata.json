@@ -1,0 +1,49 @@
+{
+  "event_id": "CTF-3033",
+  "event_title": "ASIS CTF Quals 2026",
+  "title": "Dead_Letter",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "custom-protocol",
+    "use-after-free (uaf)",
+    "crc32"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/asis/2026-quals/dead_letter/",
+    "https://ctf42.online/ctfs/asis/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/pwn/Dead_Letter"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/pwn/dead-letter"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/pwn/Dead_Letter",
+    "https://ctf42.online/ctfs/asis/2026-quals/dead_letter/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/asis_2026-quals/Dead_Letter/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/ASIS-CTF-Quals-2026/main/pwn/dead-letter/README.md",
+      "bytes": 6550,
+      "sha256": "c391d29c176fc171c8d0625bf2d411a368af5d1215ac92efb1c28c5724821e91",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/asis_2026-quals/Dead_Letter/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/asis/2026-quals/dead_letter/folder.zip?kind=files",
+      "bytes": 9451,
+      "sha256": "c5581c692d3e52d8c50bf7d4f136ac920766723bc3d9358fa6f36ef12321e949",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

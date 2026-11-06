@@ -1,0 +1,111 @@
+{
+  "event_id": "CTF-2969",
+  "event_title": "UofTCTF 2026",
+  "category": "逆向",
+  "title": "Will u Accept Some Magic?",
+  "dirname": "UofTCTF_2026",
+  "source_urls": [
+    "https://github.com/UofTCTF/uoftctf-2026-chals-public/tree/HEAD/rev-wasm-kotlin"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/README",
+      "local": "attachments/README",
+      "size_expected": 426,
+      "git_blob_sha": "fa68ce82ed160e86e3224ef53534e58ec0ba2873",
+      "status": "downloaded",
+      "bytes": 426,
+      "sha256": "cac27750bf7f32d37de36552112af45fe92f53d8ce5e1009df2d7a191437516c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/challenge.yml",
+      "local": "attachments/challenge.yml",
+      "size_expected": 524,
+      "git_blob_sha": "18249a1c7108a05deff540ad3d2b55cd7beb84f6",
+      "status": "downloaded",
+      "bytes": 524,
+      "sha256": "00f21fe54f21a219c947a1656ff608426da56d4b8f5dd9891b415ba797493f56"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/dist/program.wasm",
+      "local": "attachments/dist/program.wasm",
+      "size_expected": 38752,
+      "git_blob_sha": "2b31a04fe63017eae3d4f079437c2d8b769382e1",
+      "status": "downloaded",
+      "bytes": 38752,
+      "sha256": "5657fb59161579024efde509cc63926d847035bc8c242195f5c323f2297b1aee"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/dist/runner.mjs",
+      "local": "attachments/dist/runner.mjs",
+      "size_expected": 650,
+      "git_blob_sha": "71a06463e6917c5a3c9a02748b32de837f51870a",
+      "status": "downloaded",
+      "bytes": 650,
+      "sha256": "5f8a34f30e36a62aded091c893a0a57aa7f880f9510995bd415e687beabbc6fc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/solve/README",
+      "local": "writeups/solve/README",
+      "size_expected": 1642,
+      "git_blob_sha": "505633ad9cb44fc969ccfcb526a3cb24f569136f",
+      "status": "downloaded",
+      "bytes": 1642,
+      "sha256": "758cf988a006fae9839b70e4d1d11564064f1380980d69f14c8ffbd3486462a7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/solve/hook.js",
+      "local": "writeups/solve/hook.js",
+      "size_expected": 1881,
+      "git_blob_sha": "6ff83d0545e5485e56286ab30bc2b1a26d4d250f",
+      "status": "downloaded",
+      "bytes": 1881,
+      "sha256": "c91ab70b1daa39d755a134717159e80eef5f09305ecc5c9317a1339bbb40fc90"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/solve/index.js",
+      "local": "writeups/solve/index.js",
+      "size_expected": 874,
+      "git_blob_sha": "95a195d01e3e6219817346185ee8cfc3b50b246a",
+      "status": "downloaded",
+      "bytes": 874,
+      "sha256": "17a09faea023a23010ae82cd781023ebcd2930ed78009b0c7a6b6a743c24439e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/solve/package.json",
+      "local": "writeups/solve/package.json",
+      "size_expected": 151,
+      "git_blob_sha": "520e5ee72ccb8cc20a1e42655492c4e9ef197d1f",
+      "status": "downloaded",
+      "bytes": 151,
+      "sha256": "321f211b0df931998ec7f464d9decc0b6670f62aa0dc29d8a6164a877924127d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/solve/pnpm-lock.yaml",
+      "local": "writeups/solve/pnpm-lock.yaml",
+      "size_expected": 408,
+      "git_blob_sha": "728f0dd764c68f9c195ed3616137243adf8bbe7a",
+      "status": "downloaded",
+      "bytes": 408,
+      "sha256": "34b02496377329f2616e0f90eecd128d57f9bf05ebd94c414b9921c2e97e34b6"
+    }
+  ],
+  "notes": "官方赛后仓库。writeups 中保留官方求解脚本；不保证每题都有叙述型解题文章。",
+  "directory": "逆向/UofTCTF_2026/Will u Accept Some Magic_",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/solve/README",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/solve/hook.js",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/solve/index.js",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/solve/package.json",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/solve/pnpm-lock.yaml"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/README",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/challenge.yml",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/dist/program.wasm",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/dist/runner.mjs"
+  ],
+  "attachment_status": "downloaded"
+}

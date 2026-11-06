@@ -1,0 +1,2 @@
+tcp,git.ctf.pascalctf.it,2222
+http,git-service.ctf.pascalctf.it,80

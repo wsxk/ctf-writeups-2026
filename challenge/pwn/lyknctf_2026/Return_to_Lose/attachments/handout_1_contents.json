@@ -1,0 +1,22 @@
+[
+  {
+    "name": "README.md",
+    "bytes": 212,
+    "crc32": "0x831aca31"
+  },
+  {
+    "name": "flag.txt.xz",
+    "bytes": 84,
+    "crc32": "0x49ae1c3a"
+  },
+  {
+    "name": "vuln",
+    "bytes": 16208,
+    "crc32": "0xd7cfd1a5"
+  },
+  {
+    "name": "vuln.c",
+    "bytes": 627,
+    "crc32": "0x99675806"
+  }
+]

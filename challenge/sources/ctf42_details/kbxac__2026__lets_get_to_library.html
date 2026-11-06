@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>lets_get_to_library · KBxAc 2026 (pwn) writeup · ctf42</title>
+  
+
+<meta name="description" content="lets_get_to_library: Pwn challenge from KBxAc 2026. Techniques: gets, stack-buffer-overflow, ret2libc. Lets Get to Library 🤓 Author : k3rn3lbr3ach3r">
+<link rel="canonical" href="https://ctf42.online/ctfs/kbxac/2026/lets_get_to_library/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/kbxac/2026/lets_get_to_library/">
+<meta property="og:title" content="lets_get_to_library">
+<meta property="og:description" content="lets_get_to_library: Pwn challenge from KBxAc 2026. Techniques: gets, stack-buffer-overflow, ret2libc. Lets Get to Library 🤓 Author : k3rn3lbr3ach3r">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/kbxac/">KBxAc</a> / <a href="/ctfs/kbxac/2026/">2026</a> / lets_get_to_library</nav>
+
+
+<div class="challenge-head">
+  <h1>lets_get_to_library
+    </h1>
+  <div class="badges">
+    <a class="cat cat-pwn" href="/category/pwn/">Pwn</a>
+    
+    
+    
+    <a class="tag" href="/techniques/gets/">#gets</a><a class="tag" href="/techniques/stack-buffer-overflow/">#stack-buffer-overflow</a><a class="tag" href="/techniques/ret2libc/">#ret2libc</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/kbxac/2026/lets_get_to_library/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/kbxac/2026/lets_get_to_library/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  <p class="meta">Author: k3rn3lbr3ach3r</p>
+  
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>Lets Get to Library 🤓  Author : k3rn3lbr3ach3r</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>lets_get_to_library — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/pwn/lets-get-to-library" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/pwn/lets-get-to-library</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/kbxac/2026/lets_get_to_library/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/defcamp/2023-quals/bistro_v2/">bistro_v2</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/stack-buffer-overflow/">#stack-buffer-overflow</a><a class="tag tag-sm" href="/techniques/gets/">#gets</a><a class="tag tag-sm" href="/techniques/rop/">#rop</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/defcamp/2023-quals/">Defcamp 2023 Quals</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/defcamp/2023-quals/bistro/">bistro</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/stack-buffer-overflow/">#stack-buffer-overflow</a><a class="tag tag-sm" href="/techniques/gets/">#gets</a><a class="tag tag-sm" href="/techniques/rop/">#rop</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/defcamp/2023-quals/">Defcamp 2023 Quals</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/defcamp/2023-quals/baby_bof/">baby_bof</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/stack-buffer-overflow/">#stack-buffer-overflow</a><a class="tag tag-sm" href="/techniques/gets/">#gets</a><a class="tag tag-sm" href="/techniques/ret2win/">#ret2win</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/defcamp/2023-quals/">Defcamp 2023 Quals</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/patriotctf/2023/guessinggame/">guessinggame</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/stack-buffer-overflow/">#stack-buffer-overflow</a><a class="tag tag-sm" href="/techniques/variable-overwrite/">#variable-overwrite</a><a class="tag tag-sm" href="/techniques/gets/">#gets</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/patriotctf/2023/">PatriotCTF 2023</a></td>
+        <td class="num">24.52</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        <span title="Source / Docker setup">src</span>
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/dicectf/2023/bop/">bop</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/stack-buffer-overflow/">#stack-buffer-overflow</a><a class="tag tag-sm" href="/techniques/gets/">#gets</a><a class="tag tag-sm" href="/techniques/seccomp/">#seccomp</a><a class="tag tag-sm" href="/techniques/orw/">#orw</a><a class="tag tag-sm" href="/techniques/rop/">#rop</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/dicectf/2023/">DiceCTF 2023</a></td>
+        <td class="num">36.70</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;3</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/b01lers/2022/gambler_overflow/">gambler_overflow</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/stack-buffer-overflow/">#stack-buffer-overflow</a><a class="tag tag-sm" href="/techniques/gets/">#gets</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/b01lers/2022/">b01lers 2022</a></td>
+        <td class="num">33.05</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;2</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/gets/">#gets</a> · <a href="/techniques/stack-buffer-overflow/">#stack-buffer-overflow</a> · <a href="/techniques/ret2libc/">#ret2libc</a>
+          · <a href="/category/pwn/">all Pwn</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/pwn/lets_get_to_library" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/kbxac/2026/lets_get_to_library/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from KBxAc 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/kbxac/2026/crossword_1/">Crossword_1</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/crossword_2/">Crossword_2</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/dead_validator/">Dead_Validator</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/ghost_in_the_group/">Ghost_in_the_Group</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/icarus_enclave/">Icarus_Enclave</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/ten_symbols/">Ten_Symbols</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/the_last_protocol/">The_Last_Protocol</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/weiner/">Weiner</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/c_laude/">C_Laude</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/kbxac/2026/ghost_frame/">Ghost_Frame</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/kbxac/2026/hidden_patronus/">Hidden_Patronus</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/kbxac/2026/who_let_the_dog_out/">Who_Let_the_Dog_Out</a> <span class="cat cat-forensics cat-xs">Forensics</span></li>
+      </ul>
+      <a class="small" href="/ctfs/kbxac/2026/">All KBxAc 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

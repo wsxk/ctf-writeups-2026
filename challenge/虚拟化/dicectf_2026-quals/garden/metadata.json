@@ -1,0 +1,51 @@
+{
+  "event_id": "CTF-3110",
+  "event_title": "DiceCTF 2026 Quals",
+  "title": "garden",
+  "category": "虚拟化",
+  "original_category": "Pwn",
+  "tags": [
+    "custom-vm",
+    "garbage-collector-bug",
+    "oob-write"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/dicectf/2026-quals/garden/",
+    "https://ctf42.online/ctfs/dicectf/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/DiceCTF/2026/Quals/pwn/garden"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/dicectf2026-writeups/tree/main/pwn/garden"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/DiceCTF/2026/Quals/pwn/garden",
+    "https://ctf42.online/ctfs/dicectf/2026-quals/garden/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/dicectf_2026-quals/garden/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/dicectf2026-writeups/main/pwn/garden/README.md",
+      "bytes": 2705,
+      "sha256": "0295d47f1f553bc2a5df7b236d67f0e238ccf7866b7e7b488de1612774868cf4",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/dicectf_2026-quals/garden/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/dicectf/2026-quals/garden/folder.zip?kind=files",
+      "bytes": 1076871,
+      "sha256": "90efcbc083354bd4ed2f3a0e7f9f6a11f99efc73280697afb69f33540b572cea",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "duplicate_of": "虚拟化/DiceCTF_Quals_2026/garden"
+}

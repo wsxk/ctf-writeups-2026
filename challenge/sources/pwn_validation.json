@@ -1,0 +1,121 @@
+{
+  "records": 65,
+  "valid_challenges": 62,
+  "valid_events": 12,
+  "complete_attachments": 61,
+  "files_verified": 880,
+  "bytes_verified": 330236455,
+  "failures": [],
+  "zip_checks": [
+    {
+      "file": "pwn\\0xFUN_CTF_2026\\bit_flips\\attachments\\bitflips_files.zip",
+      "members": 5,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\0xFUN_CTF_2026\\Warden\\attachments\\warden-player.zip",
+      "members": 3,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\BSidesSF_CTF_2026\\rugdoctor\\attachments\\challenge\\examples\\examples.zip",
+      "members": 4,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\BYUCTF_2026\\bytecoin\\attachments\\challenge_files\\bytecoin.zip",
+      "members": 3,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\BYUCTF_2026\\heap2win\\attachments\\heap2win.zip",
+      "members": 2,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\BYUCTF_2026\\intro2\\attachments\\dist.zip",
+      "members": 3,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\PascalCTF_2026\\Malta Nightlife\\attachments\\attachments\\malta.zip",
+      "members": 1,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\PascalCTF_2026\\YetAnotherNoteTaker\\attachments\\attachments\\notetaker.zip",
+      "members": 5,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\SUCTF_2026\\SU_Box\\attachments\\sourcecode\\sourcecode.zip",
+      "members": 331,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\SUCTF_2026\\SU_Chronos_Ring\\attachments\\sourcecode\\sourcecode.zip",
+      "members": 2,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\SUCTF_2026\\SU_evbuffer\\attachments\\attachments\\SU_evbuffer.zip",
+      "members": 3,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\SUCTF_2026\\SU_evbuffer\\attachments\\sourcecode\\sourcecode.zip",
+      "members": 1,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\Thryve_CTF_2026\\secret-door\\attachments\\player_files.zip",
+      "members": 1,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\UofTCTF_2026\\aes-aead\\attachments\\dist\\aes-aead.zip",
+      "members": 3,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\UofTCTF_2026\\babybof\\attachments\\dist\\babybof.zip",
+      "members": 3,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\UofTCTF_2026\\calculator\\attachments\\dist\\calc.zip",
+      "members": 3,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\UofTCTF_2026\\eebpf\\attachments\\dist\\eebpf.zip",
+      "members": 5,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\UofTCTF_2026\\uprobe\\attachments\\dist\\uprobe.zip",
+      "members": 7,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\b01lers_CTF_2026\\priority-queue\\attachments\\dist\\dist.zip",
+      "members": 6,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\b01lers_CTF_2026\\spelling-bee\\attachments\\dist\\spelling-bee.zip",
+      "members": 5,
+      "crc_ok": true
+    },
+    {
+      "file": "pwn\\b01lers_CTF_2026\\transmutation\\attachments\\dist\\dist.zip",
+      "members": 6,
+      "crc_ok": true
+    }
+  ],
+  "pending": [
+    "pwn/SUCTF_2026/SU_fullchian",
+    "pwn/Undutmaning_2026/Flytväst",
+    "pwn/Undutmaning_2026/GIF Splitter"
+  ]
+}

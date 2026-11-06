@@ -1,0 +1,1237 @@
+[
+  {
+    "directory": "pwn/0xFUN_CTF_2026/67_revenge",
+    "mechanism": "尾部NUL越界清除下一块size低字节，形成Einherjar堆重叠。",
+    "evidence": [
+      "writeups/67_revenge/output.txt",
+      "writeups/67_revenge/README.md",
+      "writeups/67_revenge/solve.py"
+    ],
+    "limitations": "依赖glibc 2.42及UNSORTED_BK_OFF、RET_FROM_ENVIRON等构建相关偏移。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/0xFUN_CTF_2026/bit_flips",
+    "mechanism": "三次任意位翻转可先修改有符号循环计数器，扩展为大量翻转。",
+    "evidence": [
+      "writeups/bit_flips/output.txt",
+      "writeups/bit_flips/README.md",
+      "writeups/bit_flips/solve.py"
+    ],
+    "limitations": "f=sbrk-0x20cf0、全局f=PIE+0x4050依赖原构建；cmd+1用于跳过push rbp。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/0xFUN_CTF_2026/Fridge",
+    "mechanism": "32位gets栈溢出，固定PLT地址组成ret2libc。",
+    "evidence": [
+      "writeups/fridge/README.md",
+      "writeups/fridge/solve.py"
+    ],
+    "limitations": "仅适用于原32位非PIE二进制；NX使栈shellcode方案不适用。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/0xFUN_CTF_2026/phantom",
+    "mechanism": "驱动释放物理页却保留用户mmap，形成页级UAF；多份来源还记录了不同本地flag包装。",
+    "evidence": [
+      "writeups/mito753/exp01.c",
+      "writeups/mito753/README.md",
+      "writeups/mito753/writeup01.txt",
+      "writeups/phantom/output.txt",
+      "writeups/phantom/README.md",
+      "writeups/phantom/solve.py",
+      "writeups/phantom_pwn/exploit.c",
+      "writeups/phantom_pwn/README.md",
+      "writeups/phantom_pwn/solve.py"
+    ],
+    "limitations": "来源对initramfs是否含真实flag有冲突，静态解包路径不能替代远端利用证明；页复用和cred喷射存在不稳定性，日志含成功后内核崩溃。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/0xFUN_CTF_2026/Warden",
+    "mechanism": "Python AST黑名单与openat路径前缀检查同时存在语义缺口。",
+    "evidence": [
+      "writeups/Warden/output.txt",
+      "writeups/Warden/README.md",
+      "writeups/Warden/send.py",
+      "writeups/Warden/solve.py"
+    ],
+    "limitations": "原作者只验证jail.py逃逸，未完整验证原生warden；不得写成已完成全部沙箱逃逸。",
+    "status": "source_limited"
+  },
+  {
+    "directory": "pwn/0xFUN_CTF_2026/What you have",
+    "mechanism": "一次任意地址写覆盖可写GOT，随后必经puts触发win。",
+    "evidence": [
+      "writeups/what/output.txt",
+      "writeups/what/README.md",
+      "writeups/what/solve.py"
+    ],
+    "limitations": "地址对应原附件；原本地验证使用虚拟flag。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/apoorvctf_2026/House_of_Wade",
+    "mechanism": "cancel_order未清指针造成UAF读写，投毒0x30 tcache取得计数对象。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "glibc 2.35；目标和订单必须同为malloc(0x28)。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/asis_2026-quals/Arena_Snapshots",
+    "mechanism": "ROLLBACK恢复类型元数据却不恢复payload，造成跨快照类型混淆。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "旧句柄epoch失效；必须同时重算作业校验与新句柄，不能直接RUN旧handle。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/asis_2026-quals/Dead_Letter",
+    "mechanism": "取消队列只扫描环形数组尾段，回绕后遗留指向已释放槽的有效队列项。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "全部步骤须在同一连接；CRC32帧校验、票据generation与worker队列槽号是不同概念。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/asis_2026-quals/QFilter",
+    "mechanism": "QuickJS customFilter跨回调保存失效数组指针，且以首元素类型决定全部引用计数。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "JSValue为16字节，tag和引用计数必须匹配；block:true避免辅助程序输出前GC破坏伪造对象。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/asis_2026-quals/Signal_Race",
+    "mechanism": "bookmark只核对generation低8位，结合可逆seal及SIGALRM检查点实现受保护frame篡改。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "512命令配额及信号时间窗口是硬约束；必须先形成checkpoint。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/b01lers_CTF_2026/micromicromicropython",
+    "mechanism": "MicroPython __build_class__把恶意__new__返回的小整数误作cell，构造任意写。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solve/solve.py",
+      "writeups/solve/win.py"
+    ],
+    "limitations": "偶数地址写入通过addr-1和值左移8实现；SYSTEM+2、type布局均为题目版本专用。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/b01lers_CTF_2026/multifiles",
+    "mechanism": "内核multifiles解法通过对象越界与slab布局操纵取得页表重叠，再修改core_pattern。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solve/build.sh",
+      "writeups/solve/caches.txt",
+      "writeups/solve/debug_run_solve.sh",
+      "writeups/solve/run_solve.sh",
+      "writeups/solve/solve.c",
+      "writeups/solve/solve.py",
+      "writeups/solve/solve_head_len.py",
+      "writeups/solve/solve_old.py"
+    ],
+    "limitations": "这是基于官方C solver的静态重建，需同版内核；上传脚本不是漏洞本体，NUM_TRIES/喷射次数影响稳定性。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/b01lers_CTF_2026/priority-queue",
+    "mechanism": "edit固定写32字节而最短字符串分配块仅32字节，覆盖邻块size后制造堆重叠。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solve/README.md",
+      "writeups/solve/solve.py"
+    ],
+    "limitations": "该libc 2.31未启用safe-linking；原文称2.31首次引入tcache不准确，不作为推理前提。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/b01lers_CTF_2026/spelling-bee",
+    "mechanism": "Forth forget释放word但其他已编译word仍保存指针，形成UAF函数指针调用。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solve/README.md",
+      "writeups/solve/solve.py"
+    ],
+    "limitations": "要跟踪名称、word、param、dict四类分配，不能仅把forget当独立删除。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/b01lers_CTF_2026/throughthewall",
+    "mechanism": "fw_del_rule存在UAF，可重占为pipe_buffer并改变合并标志。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solve/exp.c",
+      "writeups/solve/README.md",
+      "writeups/solve/xp.py"
+    ],
+    "limitations": "Dirty Pipe式路径依赖文件页缓存和精确pipe_buffer布局；仅适用于题目内核环境。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/b01lers_CTF_2026/transmutation",
+    "mechanism": "代码段可写的一次字节修改先改ret为nop，转为可重复自修改。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solve/README.md",
+      "writeups/solve/shellcode.s",
+      "writeups/solve/solve.py"
+    ],
+    "limitations": "索引仍为unsigned byte，只能覆盖向前256字节；写入阶段不能破坏每轮必经指令。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/bdsec_2026/Muktir_Shongket",
+    "mechanism": "ROUTE的验证和JIT执行语义不一致，可跳入SIGNAL的8字节立即数执行原生指令。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "12字节payload及0x401bb0针对本题非PIE构建；应分别验证字节码边界与机器码跳转落点，原作者报告BDSEC{mukt1r_5h0ngk3t_r34ch3d_th3_f13ld}。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/bdsec_2026/Phantom_Device",
+    "mechanism": "duplicate新增设备句柄却未增加引用计数，release使另一句柄悬空。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "这是用户态设备模拟器，不是Linux内核驱动；必须保持session结构及校验一致。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/BSidesSF_CTF_2026/blockman-builder",
+    "mechanism": "关卡负坐标导致栈上world数组下溢，可覆盖load_level返回地址。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solution/build_exploit_level.py",
+      "writeups/solution/pack_level.py",
+      "writeups/solution/print_flag.asm",
+      "writeups/solution/README.md",
+      "writeups/solution/unpack_level.py"
+    ],
+    "limitations": "clear会清空关卡，patch用于选择性写；地址随会话变化，需重新读开发者泄漏。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/BSidesSF_CTF_2026/if-it-leads",
+    "mechanism": "官方Ruby solver利用输出文件中的单字节泄漏逐位恢复程序口令。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solution/libronsolve.rb",
+      "writeups/solution/solve.rb"
+    ],
+    "limitations": "来自solve.rb静态行为；长度/整数变化如何越界仍需结合附件源码确认，不能把猜测当已证根因。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/BSidesSF_CTF_2026/inheritance",
+    "mechanism": "memfd未设置CLOEXEC，system子进程继承含flag的文件描述符。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solution/README.md",
+      "writeups/solution/solve.py"
+    ],
+    "limitations": "不需要内存破坏；必须使用实际继承FD，不能固定假设4。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/BSidesSF_CTF_2026/nameme",
+    "mechanism": "DNS服务题，具体利用链以官方Ruby solver为证据。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solution/libronsolve.rb",
+      "writeups/solution/solve.rb"
+    ],
+    "limitations": "暂不凭题名猜漏洞；需要阅读完整Ruby实现后补齐精确原语。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/BSidesSF_CTF_2026/readme",
+    "mechanism": "只读原语题，官方solver通过读取进程内存恢复目标数据。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solution/libronsolve.rb",
+      "writeups/solution/solve.rb"
+    ],
+    "limitations": "根README只有模板，技术依据必须来自Ruby代码；具体地址依赖附件libc。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/BSidesSF_CTF_2026/readwritecallme",
+    "mechanism": "读写和调用原语题，目标是调用程序内的隐藏函数。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solution/libronsolve.rb",
+      "writeups/solution/solve.rb"
+    ],
+    "limitations": "根README为模板，不能视作完整writeup；精确参数见官方solver。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/BSidesSF_CTF_2026/readwriteme",
+    "mechanism": "移除win后的任意读写题，需要通过运行时内存恢复flag。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solution/libronsolve.rb",
+      "writeups/solution/solve.rb"
+    ],
+    "limitations": "不能沿用readwritecallme的隐藏函数；后续需精读Ruby目标选择。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/BSidesSF_CTF_2026/rugdoctor",
+    "mechanism": "RugDoctor JIT的分支距离溢出让控制流落入ADD立即数字节，实现JIT喷射。",
+    "evidence": [
+      "writeups/challenge/README.md",
+      "writeups/README.md",
+      "writeups/solution/libronsolve.rb",
+      "writeups/solution/shellcode.asm",
+      "writeups/solution/solve.rb"
+    ],
+    "limitations": "立即数每段只有4字节可控；写入循环用inc al依赖页对齐且shellcode小于256字节。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/BSidesSF_CTF_2026/wromwarp",
+    "mechanism": "切换ROM不重置寄存器和PC，复用Life计数器例程越界读取WRAM。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solution/README.md"
+    ],
+    "limitations": "reset/INIT会重建内存；部分游戏初始化会覆盖flag，切换顺序须按原文。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/BYUCTF_2026/bytecoin",
+    "mechanism": "错误hex长度计数泄漏复用栈缓冲区内HMAC密钥；AEAD认证失败返回值又被忽略。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solve/bytecoin.md",
+      "writeups/solve/challenge.c",
+      "writeups/solve/solve.py"
+    ],
+    "limitations": "不是破解ChaCha或HMAC；依赖本题WolfSSL错误时仍产生明文及程序忽略返回码。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/BYUCTF_2026/heap2win",
+    "mechanism": "无限长scanf堆覆盖C++对象vptr，换成WinnerButton虚表。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solve.py"
+    ],
+    "limitations": "对象布局、vector临时分配和虚表地址均需原二进制；不是覆盖普通函数返回地址。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/BYUCTF_2026/hextoint",
+    "mechanism": "转换表负索引写越过数组起点，覆盖exit GOT为win。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solve.py"
+    ],
+    "limitations": "依赖可写GOT及固定目标布局，索引按元素而非字节计算。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/BYUCTF_2026/incontinent",
+    "mechanism": "非终止字符串输出泄漏相邻保存的flag。",
+    "evidence": [
+      "writeups/README.md"
+    ],
+    "limitations": "原解答仅一句操作说明，具体终止符/缓冲区布局未给出；不扩写为未经证实的任意读。",
+    "status": "source_limited"
+  },
+  {
+    "directory": "pwn/BYUCTF_2026/intro2",
+    "mechanism": "输入直接作为格式串，通过泄漏main/栈地址和三次半字写改保存返回地址至win。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solve/solve.py"
+    ],
+    "limitations": "这是保存RIP覆盖，不是GOT覆盖；参数序号和-288偏移依赖目标环境，脚本含旧的-40注释，不能混用。来源末尾给出byuctf{%p_yourself}，本次未运行。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/compfest_2026/menfess",
+    "mechanism": "AArch64设备CREATE按对象总长校验却写入64字节content，72字节输入覆盖send_func；VIEW缺索引边界。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "内核与模块分别随机化；/flag.txt指向/dev/vda，不能按普通可读文件假设处理。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/compfest_2026/redis_cli_0_day",
+    "mechanism": "CLUSTER NODES未限制slot索引，形成从node+0x54起向前写固定字节1；两次伪大块重叠最终伪造hiredis析构回调。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "远端MALLOC=libc且glibc2.43，偏移不同；stdout/stderr重定向使本地日志泄漏链不可直接远用，远端改从DBSIZE获得数据并频率投票找arena。不可把Partial/Full RELRO混淆，本题Full RELRO下不覆盖GOT。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/css_2026/Dockside_Ticket_Office",
+    "mechanism": "cancel不清active_ticket，edit可覆盖票据+0x20处回调。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "scanf与read混用会提前缓存流水输入；必须等待菜单提示；目标是函数入口不是0x401271。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/css_2026/Maintenance_Log",
+    "mechanism": "operator的0x21字节读仅改保存RBP低字节，结合report栈泄漏迁移到可控缓冲区。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "不触碰canary；若目标不在相同256字节窗口需重选落点；附件flag为诱饵。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/DiceCTF_Quals_2026/bytecrusher",
+    "mechanism": "crush_string按步长跨越NUL导致栈字节泄漏，gets反馈溢出负责控制流。",
+    "evidence": [
+      "writeups/community/README.md",
+      "writeups/community/solve.py"
+    ],
+    "limitations": "CET标志是否实际启用须运行环境确认；泄漏次数受16轮限制。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/DiceCTF_Quals_2026/message-store",
+    "mechanism": "颜色索引越界把函数表调用转为memcpy，复制0x1000字节到栈。",
+    "evidence": [
+      "writeups/community/README.md",
+      "writeups/community/solve.py",
+      "writeups/solve.py"
+    ],
+    "limitations": "任何非法UTF-8会进入Cow::Owned转换并破坏payload；必须检查整块而非仅ROP区域。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/gpn_2026/Food_Inspector_II",
+    "mechanism": "Frida inline hook安装/卸载成为可控代码写，LIFO trampoline复用决定rel32中的目标字节。",
+    "evidence": [
+      "writeups/replacement_source.md"
+    ],
+    "limitations": "相邻NOP残留限制连续补丁；原文14次字节写及池分配公式须保持同版Frida。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/gpn_2026/Scanwich_Station",
+    "mechanism": "Python大图长度与quirc 32位像素索引不一致，越界标记破坏mmap chunk size，使free连带解除libc元数据映射。",
+    "evidence": [
+      "writeups/replacement_source.md"
+    ],
+    "limitations": "触发像素必须0x01，0xff被当已标记区域跳过；必须Partial RELRO、puts尚未解析且使用精确libc/映射布局。原文缺独立solve.py，不能仅从图像尺寸保证利用可重现。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/haruulzangi_2026-quals/Cabinet",
+    "mechanism": "踩怪一次删1加2，边界判断使第6次生成第12号越界实体覆盖帧hook。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "每次踩踏后需零输入帧产生新上升沿；本地stub只证明函数到达。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/haruulzangi_2026-quals/Formality",
+    "mechanism": "WRITE只检查临时输入缓冲长度，堆越界可伪造top；REQUEST信任新malloc的未初始化字节。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "glibc 2.31日志分配会插入0x20 chunk；换系统libc会改变布局。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/haruulzangi_2026-quals/Made_In_Mongolia",
+    "mechanism": "SFEX JIT参数数目不一致泄漏ABI残留值，符号碰撞保留旧IR使下次编译接受伪对象指针。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "重复定义报错是预期步骤；输入需低于12KiB，符号/IR生命周期与Rust布局都依赖指定版本。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/haruulzangi_2026-quals/Payphone",
+    "mechanism": "录音路径穿越读取临时拨号进程环境和映射，配合无canary消息栈溢出。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "首连接发送ACK后关闭，必须监听第二连接；不能把旧socket用作输出。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/haruulzangi_2026-quals/Tenure",
+    "mechanism": "FREE不清present/data形成Rust封装下的glibc UAF，目标是启动时分配的回调表。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "glibc 2.31无safe-linking；本地/托管堆距离0x4070/0x42e0不同，先验证[noop,0,noop,noop]。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/kbxac_2026/lets_get_to_library",
+    "mechanism": "缺少pop rdi时复用main的rbp-0x80读入片段，实现指定地址写和多次栈迁移。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "调用栈需留足可写空间，不能直接贴近GOT向下耗栈；精确libc可能未下载。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/kbxac_2026/Most_Secure_Bank_Of_Endia",
+    "mechanism": "Flask限制Unicode字符数，C端按UTF-8字节处理，导致校验字段被可控超长字节覆盖。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "目标frame是80字节，Python字符数和UTF-8字节数必须分别验证；不是SQL注入。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/kbxac_2026/Original_Unlimited_Codex_100_Free",
+    "mechanism": "bind别名UAF读、额外32字节越界读与amend尾NUL组合成Einherjar和tcache投毒。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "依赖glibc 2.43；execve不在允许列表，不能以system替代ORW。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/l3akctf_2026/Bosh",
+    "mechanism": "一次RWX模块字节写会自禁用；修改自禁用行为及store指令可把它扩展为重复dword写。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "原附件缺部分私有模块，须保留oracle依赖；分字节写正在使用的回调可能提前崩溃。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/l3akctf_2026/Piet",
+    "mechanism": "Piet的up/down可使数据栈别名到stack_depth，把合法运算转为原生栈寻址。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "32位有符号运算回绕参与地址合成；终止形状需保证八个出口均失败，避免继续执行垃圾。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/l3akctf_2026/Piet_2",
+    "mechanism": "Piet 2的roll未要求d<=stack_depth，可轮转未初始化原生栈数据并破坏保存RBP。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "该版本已修补Piet 1的up/down直接写，不能复用旧set_depth路径；数据来自未初始化栈。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/l3akctf_2026/Rudimentary_Calculator",
+    "mechanism": "scanf溢出先修改product_bignum_len，让大整数打印器泄漏栈。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "buf大小0x1000；字符串终止、scanf空白终止和大整数实际长度需分别处理。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/l3akctf_2026/Supervisor",
+    "mechanism": "seccomp通知监督器模拟I/O的offset+count无符号回绕，令沙箱子进程读写父进程内存。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "攻击目标是监督器而非子进程；需要精确模拟协议和Partial RELRO。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/LACTF_2026/adventure",
+    "mechanism": "地图物品位置编码main指针；密码溢出结合history数组实现BSS栈迁移。",
+    "evidence": [
+      "writeups/solve.py"
+    ],
+    "limitations": "移动预算300，地址每项仅发送低6字节；libc偏移与one_gadget约束依赖原包。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/LACTF_2026/ourukla",
+    "mechanism": "不初始化sinfo指针使重分配student引用旧数据，结合伪chunk形成重叠与tcache投毒。",
+    "evidence": [
+      "writeups/solve.py",
+      "writeups/solve_attempt_hob.py"
+    ],
+    "limitations": "伪FILE须保留有效lock及字段约束；使用solve.py主路径，attempt_hob为尝试稿。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/LACTF_2026/refraction",
+    "mechanism": "构造异常展开的EH_FRAME/CIE/FDE与LSDA，利用DWARF表达式改恢复寄存器。",
+    "evidence": [
+      "writeups/solve.py"
+    ],
+    "limitations": "只有solver，无独立文字解释；偏移0x6a/0xdaa与编码字节是该ELF特定，需原始异常路径核验。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/LACTF_2026/scrabasm",
+    "mechanism": "时间种子的rand决定字节手牌，可通过可预测换牌拼成14字节read shellcode。",
+    "evidence": [
+      "writeups/solve.py"
+    ],
+    "limitations": "需同libc PRNG；第一阶段恰好14字节，第二阶段不能被前一轮读取提前吞掉。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/LACTF_2026/tcademy",
+    "mechanism": "超量note数据覆盖邻块size，伪大块释放泄漏libc，再投毒libc内部strlen槽。",
+    "evidence": [
+      "writeups/solve.py"
+    ],
+    "limitations": "必须保留top size及下块PREV_INUSE；libc内部GOT地址并非主程序GOT。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/LACTF_2026/this-is-how-you-pwn-the-time-war",
+    "mechanism": "官方solver通过半字写重入和随机输出恢复运行时指针，再写one_gadget。",
+    "evidence": [
+      "writeups/solve.py"
+    ],
+    "limitations": "依赖外部bf程序，solver自述未精确确定栈偏移；不能宣称无重试或完整解释PRNG算法。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/LACTF_2026/tic-tac-no",
+    "mechanism": "官方解答只给两行坐标，第一行含负索引。",
+    "evidence": [
+      "writeups/solve.txt"
+    ],
+    "limitations": "仅10字节solve.txt，缺根因及内存布局证明；不凭两行输入推断具体返回地址劫持。",
+    "status": "source_limited"
+  },
+  {
+    "directory": "pwn/lyknctf_2026/Ez_Pwn",
+    "mechanism": "signed长度-1通过<=0x50校验，截断为byte后变255，导致栈溢出。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "原缓冲区0xa0；需要匹配libc和栈对齐，附件flag是诱饵。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/lyknctf_2026/H34P_D3V1L",
+    "mechanism": "note管理off-by-one/UAF与safe-linking组合取得全局表任意读写。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "glibc2.39；fgets遇编码指针中的换行会截断，原文使用新布局重试。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/lyknctf_2026/Return_to_Lose",
+    "mechanism": "64字节栈缓冲接受256字节，无canary且无PIE，可直接ret2win。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "本地flag为诱饵；固定地址仅对应原ELF。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/mntcrlctf_2026/RepusPing",
+    "mechanism": "3次任意读和1次任意写配合ld泄漏，覆盖经过指针加密的exit handler。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "Full RELRO不可改GOT；exit_funcs偏移0x1e8fe0及_dl_fini偏移23552须匹配原加载器。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/NepCTF 2026/47_different_ROP",
+    "mechanism": "Hexagon静态ELF使用BSS分阶段ROP，避免不稳定的栈上syscall帧。",
+    "evidence": [
+      "writeups/writeup.md"
+    ],
+    "limitations": "少见Hexagon架构不能套amd64寄存器；源码主路径为BSS方案，早期G_SYSCALL栈帧不稳定。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/NepCTF 2026/48_onlyone",
+    "mechanism": "freelist与FSOP组合控制stdout/文件描述符，通过父进程管道取flag。",
+    "evidence": [
+      "writeups/writeup.md"
+    ],
+    "limitations": "seccomp无open，不能直接用常规ORW打开flag；原脚本分本地/SSL远端环境。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/NepCTF 2026/51_shadow_signal",
+    "mechanism": "SIGSEGV handler的大读覆盖ucontext，以rt_sigreturn恢复攻击者寄存器。",
+    "evidence": [
+      "writeups/writeup.md"
+    ],
+    "limitations": "信号帧布局及__restore_rt来自同版libc；仅覆盖RIP而不构造ucontext不足以完成链。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/PascalCTF_2026/AHC - Average Heap Challenge",
+    "mechanism": "官方solver通过相邻对象溢出伪造0x71大小并重分配，写入胜利魔数。",
+    "evidence": [
+      "writeups/checker/__main__.py",
+      "writeups/writeup/README.md",
+      "writeups/writeup/solve.py"
+    ],
+    "limitations": "README仅TODO，依据checker与solve.py；精确对象边界需原程序验证。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/PascalCTF_2026/Grande Inutile Tool",
+    "mechanism": "自制git checkout信任分支/提交中的路径，允许多级目录穿越复制/flag。",
+    "evidence": [
+      "writeups/checker/__main__.py",
+      "writeups/writeup/README.md"
+    ],
+    "limitations": "checker使用已知admin SSH凭据，仅证明该认证前提下的路径遍历，不代表得到凭据的方法。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/PascalCTF_2026/Malta Nightlife",
+    "mechanism": "quantity*price的32位有符号计算回绕，绕过余额检查并增加余额。",
+    "evidence": [
+      "writeups/checker/__main__.py",
+      "writeups/community/vaylobat.txt",
+      "writeups/writeup/README.md"
+    ],
+    "limitations": "索引9对应菜单第10项；按二进制32位行为解释，不能概括为所有C有符号溢出都保证回绕。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/PascalCTF_2026/Packet Tracer 2",
+    "mechanism": "32字节无终止名称泄漏win_host；日志把1024字节消息strcpy到512字节字段。",
+    "evidence": [
+      "writeups/checker/__main__.py",
+      "writeups/checker/solve.py",
+      "writeups/community/ksaweryr.md",
+      "writeups/writeup/README.md"
+    ],
+    "limitations": "跨线程分配与同步是关键；heap overflow不允许内嵌NUL，须保持字符串复制约束。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/PascalCTF_2026/YetAnotherNoteTaker",
+    "mechanism": "note输出格式串先泄漏printf，再以%hn覆盖__malloc_hook为one_gadget。",
+    "evidence": [
+      "writeups/checker/__main__.py",
+      "writeups/writeup/README.md"
+    ],
+    "limitations": "旧libc需存在__malloc_hook；one_gadget执行条件需同环境检查。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/pwnsec_2026/Freal_World_Manipulation",
+    "mechanism": "浮点乘法溢出到infinity扩大索引上界，指针数组越界形成任意读写。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "两输入有限不保证结果有限；总量是虚拟分配而非必须写满物理内存，flag文件随机命名。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/pwnsec_2026/JavaScript_After_Core",
+    "mechanism": "JSC bailout重建数组时对象类型和Butterfly布局不一致，破坏相邻数组length。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "win保存同一JSString，不能简单换传参变量；固定WebKit revision及GC布局影响成功。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/pwnsec_2026/PHP_Sandbox_Escape",
+    "mechanism": "disable_functions不覆盖Pdo\\Sqlite方法，允许上传后加载原生SQLite扩展。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "无需PHP内存破坏；要求该PDO驱动和loadExtension可用，上传文件须在请求结束清理前加载。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/ritsec_2026/doMonkeysSwim",
+    "mechanism": "最终版本是无PIE静态程序，可用游戏输入溢出搭直接syscall ROP。",
+    "evidence": [
+      "writeups/1_writeup.md"
+    ],
+    "limitations": "早期动态libc利用不适用于更新后的二进制；静态版本中没有现成/bin/sh字符串。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/sas_2026-quals/Snaking_Revenge",
+    "mechanism": "pyjnius对PythonJavaClass转Java参数缺类型核验，攻击者JAR可用FakeProxy访问真实Proxy内部字段。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "Revenge需更宽堆扫描和额外buffer标签；原文同时有snaking初版，不能混用旧sandbox接口。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/sekaictf_2026/echo_chamber",
+    "mechanism": "Content-Length=-1转size_t后+1回绕，malloc(0)却继续大长度读取，造成跨线程堆溢出。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "初始tcache关闭且guard_region随机PROT_NONE；此链依赖时序并需要重试，不应报告确定一次成功。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/sekaictf_2026/ppp",
+    "mechanism": "afc_receive_data的this_length超过entire_length造成堆溢出，复用释放list vector并覆盖可写puts GOT。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "AFC头40字节且长度截到32位；此来源方案依赖固定libc，无须假设safe-linking泄漏。后续第二项执行或free可能崩溃，应以此前完整flag输出验证；作者报告SEKAI{du_bist_gut_genuggggggggggggg}。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/squ1rrel_2026/gaem",
+    "mechanism": "rename溢出宠物回调到printf，再用格式串字节写改返回地址实现两级栈迁移。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "间接调用目标需endbr64满足IBT；返回链与真正SHSTK启用状态需区分。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/Srdnlen_CTF_2026/Common offset",
+    "mechanism": "uint16累加offset影响邻近文件索引，第二次写把索引越界到栈指针。",
+    "evidence": [
+      "writeups/src/solve.py",
+      "writeups/writeup.md"
+    ],
+    "limitations": "只能第二写触发进位且栈链仅约16字节；不能假设ret2main或leave gadget存在。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/Srdnlen_CTF_2026/Echo",
+    "mechanism": "输入off-by-one先改相邻8位长度，再用扩展写泄漏canary和libc。",
+    "evidence": [
+      "writeups/src/solve.py",
+      "writeups/src/solve_echo.py",
+      "writeups/writeup.md"
+    ],
+    "limitations": "原文libc候选最终为Ubuntu2.39；仅低12位返回地址不足以唯一确认版本。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/Srdnlen_CTF_2026/Linx",
+    "mechanism": "正则无限长捕获复制到固定0x40大小类chunk，形成堆越界；两轮safe-linking tcache投毒泄漏environ并覆盖栈返回地址。",
+    "evidence": [
+      "writeups/src/exploit_linx_wu.py",
+      "writeups/writeup.md"
+    ],
+    "limitations": "glibc2.42；必须保留精确链接/删除次序，目标16字节对齐且输入不能含NUL，solver裁去高零字节。源码展示的是栈返回路线，不是作者提及但未展开的printf表/FSOP分支。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/Srdnlen_CTF_2026/Registered Stack",
+    "mechanism": "仅允许寄存器push/pop的汇编检查仍允许把代码当数据，借RSP变化构造自修改。",
+    "evidence": [
+      "writeups/src/solve.py",
+      "writeups/writeup.md"
+    ],
+    "limitations": "初始普通寄存器清零，RSP指向RWX起点；不能把FS/GS可作为字节材料等同于随意执行pop段寄存器。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/SUCTF_2026/SU_Box",
+    "mechanism": "J2V8捆绑V8 9.3.345.11且未指针压缩，旧hole leak漏洞可造成Map混淆。",
+    "evidence": [
+      "writeups/exp/exploit.py",
+      "writeups/exp/poc.js",
+      "writeups/writeup/images/README.md",
+      "writeups/writeup/README.md"
+    ],
+    "limitations": "V8 sandbox尚未引入，不能套新版本间接指针布局；poc.js是本地关键证据。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/SUCTF_2026/SU_Chronos_Ring",
+    "mechanism": "DETACH_FILE切换为LOCAL但不清sync_view，COMMIT_SYNC仍写原只读文件page cache。",
+    "evidence": [
+      "writeups/writeup/writeup.md"
+    ],
+    "limitations": "cookie=rol64((kfree>>21) XOR 0x9e3779b97f4a7c15,17) XOR session_idx；时序候选不是直接_text地址。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/SUCTF_2026/SU_Chronos_Ring1",
+    "mechanism": "同Chronos Ring生命周期错配，Ring1目录另提供可审阅的exp.c。",
+    "evidence": [
+      "writeups/exp/exp.c",
+      "writeups/exp/upload.py",
+      "writeups/writeup/writeup.md"
+    ],
+    "limitations": "两目录正文相同但本目录有C利用与上传器，实际环境偏移仍需对照各自附件。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/SUCTF_2026/SU_evbuffer",
+    "mechanism": "gethostname未初始化栈泄漏与inet_pton遇NUL截断组合，溢出user_buf覆盖bev。",
+    "evidence": [
+      "writeups/exp/exp.py",
+      "writeups/writeup/writeup.md"
+    ],
+    "limitations": "inet_pton接受的字符串长度与后续拷贝长度不同；伪造对象需通过各层check。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/SUCTF_2026/SU_minivfs",
+    "mechanism": "未初始化VFS块泄漏地址，off-by-null合并重叠后largebin修改tcache配置，再FSOP。",
+    "evidence": [
+      "writeups/env/README.md",
+      "writeups/exp/exp.py",
+      "writeups/README.md",
+      "writeups/writeup/writeup.md"
+    ],
+    "limitations": "写命令需文件名hash；不是固定/flag，libc偏移0x210f50等依赖原版本。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/sunshinectf_2026/Cache_Money",
+    "mechanism": "Transfer释放源ledger后把悬空指针交给目标，Withdraw/Deposit提供UAF读写。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "A/B需同页才能共用key；calloc struct与ledger分配分开跟踪。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/sunshinectf_2026/Code_Breaker",
+    "mechanism": "协议密钥由公开R和自选C派生，LINK/DELETE错误引用计数造成UAF。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "两字节大端帧长与加密计数必须同步；回调跳转需考虑IBT目标。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/sunshinectf_2026/Homemaker",
+    "mechanism": "命令2复制count+1字节，把CRC写入capacity低字节，升级为栈泄漏和大溢出。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "255个A加0x49对应原CRC多项式0x2f；二进制包不能当行文本发送。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/sunshinectf_2026/Print_Print_Revolution",
+    "mechanism": "自制printf的%w不是%n，而是将下一参数qword直接写到本参数指针。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "格式串首16字节与arg位置相关；普通fmtstr工具不理解自定义%w。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/sunshinectf_2026/Safe_House",
+    "mechanism": "父进程SUBMIT栈控制与子记录服务负句柄组合，跨socketpair读取受保护system记录。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "目标句柄-4；空格/换行受NOTE限制，须从已有字符串取字节，子stdout被丢弃。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/sunshinectf_2026/Total_Recall",
+    "mechanism": "静态小程序栈溢出配read返回值15触发sigreturn，无需libc或可执行栈。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "664字节主payload与15字节必须分开读；合包会破坏rax。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/TAMUctf_2026/goodbye-libc",
+    "mechanism": "数字数组接受负索引，读取栈/PIE并写返回控制，复用自制libc函数片段构造任意写。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solve.py",
+      "writeups/solver-template.py"
+    ],
+    "limitations": "不是系统glibc；solver含交互input暂停，自动复现前应处理。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/TAMUctf_2026/meep",
+    "mechanism": "MIPS大端先格式串泄漏，再命令栈溢出控制s0/ra调用libc gadget。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solve/solve.py",
+      "writeups/solver-template.py"
+    ],
+    "limitations": "大端p32；生产版fork与本地版不同，gadget为原MIPS libc专用。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/TAMUctf_2026/military-system",
+    "mechanism": "ARM64 channel关闭后draft指针悬空，编辑截断使tcache链可投毒至auth块。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solve.py",
+      "writeups/solver-template.py"
+    ],
+    "limitations": "本机非ARM时QEMU路径与原生seccomp不同；需对应ARM64对象布局。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/TAMUctf_2026/task-manager",
+    "mechanism": "任务链表指针覆盖结合释放复用，逐步泄漏堆/栈/canary/libc并将分配导向栈。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solve.py",
+      "writeups/solver-template.py"
+    ],
+    "limitations": "原solver含input暂停；不是仅double-free即可绕过全部检查，须按顺序保持布局。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/TAMUctf_2026/zagjail",
+    "mechanism": "Zag指针偏移检查不完整，且数组栈空间按初始化项数而非声明长度分配。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solver-template.py"
+    ],
+    "limitations": "必须用题目Zag编译器和server.py；现代语言语法不提供额外内存安全。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/Thryve_CTF_2026/abyss-oracle",
+    "mechanism": "别名保活、retire状态升级和merge权限组合绕过能力系统，oracle帮助解码指针后可任意内核读写。",
+    "evidence": [
+      "writeups/exploit.c",
+      "writeups/module.asm",
+      "writeups/patch-local.py",
+      "writeups/probe.c",
+      "writeups/README.md",
+      "writeups/solve.md",
+      "writeups/struct_module.txt"
+    ],
+    "limitations": "本地bzImage与模块ABI不匹配，patch-local.py只是测试适配；不能把补丁算漏洞利用步骤。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/Thryve_CTF_2026/secret-door",
+    "mechanism": "vector<void*>混放raw config和AnimeStream，URL更新与play缺类型核验。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solve.py"
+    ],
+    "limitations": "不需libc基址；vtable+0x18关系须该构建，raw对象大小需容纳URL字段。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/tracebash_2026/Banned_Bytes",
+    "mechanism": "栈溢出受坏字符过滤且服务使用PTY，需同时编码文件名与转义传输控制字节。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "禁字节x/g/a/点作用于整payload；终端转义与程序过滤是两层不同约束。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/tracebash_2026/Legacy_Ledger",
+    "mechanism": "启动泄漏buf与balance，deposit/withdraw格式串可%hn写saved RIP，栈可执行。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "NX关闭由-z execstack决定；ASLR地址必须每连接重新解析。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/trx_2026/down_the_line",
+    "mechanism": "实模式分配器把size表放到不可写硬件映射区，使尺寸记录错误并导致越界。",
+    "evidence": [
+      "writeups/replacement_readable.txt",
+      "writeups/replacement_source.html"
+    ],
+    "limitations": "段地址乘0x10；该路径依赖x86实模式/A20和只读硬件区，不能用常规用户态堆模型解释。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/trx_2026/house_of_fishing",
+    "mechanism": "无输出的UAF/copy堆题用smallbin stashing unlink避开safe-linking泄漏要求。",
+    "evidence": [
+      "writeups/replacement_readable.txt",
+      "writeups/replacement_source.html"
+    ],
+    "limitations": "copy至少16字节会连带改key；空admin没有有效bk，不能省略原文构造可解引用指针的准备步骤。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/trx_2026/krwd",
+    "mechanism": "workqueue延迟copy_to_user未绑定请求者地址空间，可能借用特权进程mm写入其内存。",
+    "evidence": [
+      "writeups/replacement_readable.txt",
+      "writeups/replacement_source.html"
+    ],
+    "limitations": "这是地址空间/时序混淆，非无锁竞态；静态busybox的vtable检查特性和调度决定成功率。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/trx_2026/triforce",
+    "mechanism": "修改后的Maglev类型检查缺陷用于建立V8沙箱内读写，再改变同一String通过三轮比较。",
+    "evidence": [
+      "writeups/replacement_readable.txt",
+      "writeups/replacement_source.html"
+    ],
+    "limitations": "本题目标只到V8 sandbox内部；外部代理对象不能冒充真实String，不要混入第二部分sbx逃逸。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/uiuctf_2026/Firefly_Complete_Combustion",
+    "mechanism": "Lua FORLOOP未检验tag，仅改payload的chgivalue造成字符串/表/C函数类型混淆。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "必须Lua5.5.0二进制字节码；不是Lua源码层可直接执行loadfile。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/uiuctf_2026/Sparxie_Vanishing_Encore",
+    "mechanism": "Spotlight Pass的BLAKE2s未覆盖route，结合重复clip迁移留下的旧studio页引用取得draft池视图。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "输入为SPX2包中的Lua源码，目标是WASM宿主接口，不能套原生Lua GOT链。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/umassctf_2026/Brick_City_Office_Space",
+    "mechanism": "32位printf(user_input)结合可写GOT，可先读libc再把printf改system。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "按32位参数栈布局处理；No RELRO是写GOT前提，输出长度需计入地址前缀。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/umdctf_2026/bookmaker",
+    "mechanism": "Ledger.view暴露native buf，recycle释放后旧ArrayBuffer仍可访问，复用为Wire。",
+    "evidence": [
+      "writeups/replacement_readable.txt",
+      "writeups/replacement_source.html"
+    ],
+    "limitations": "来源含ipv4等其他题，本文只采用bookmaker段；CET显示不等于所有路径运行时都受保护。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/umdctf_2026/vkexchange",
+    "mechanism": "Vulkan descriptor索引未校验，在mesa22.3固定host_arena布局下越界覆盖clearing SSBO描述符。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "依赖Mesa22.3.6及关闭validation layer；不是跨GPU通用偏移。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/UofTCTF_2026/aes-aead",
+    "mechanism": "自制AEAD标签更新可伪造加长密文，引发长度越界与堆重叠，再走FSOP。",
+    "evidence": [
+      "writeups/solve/aes_aead.py",
+      "writeups/solve/solve.py"
+    ],
+    "limitations": "算法是题目自制GHASH流程，不能泛称标准AES-GCM可如此伪造；需匹配libc与密文约束。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/UofTCTF_2026/babybof",
+    "mechanism": "最短solver以24字节前缀覆盖保存返回地址至0x4011fb。",
+    "evidence": [
+      "writeups/solve/solve.py"
+    ],
+    "limitations": "仅114字节solver，未记录架构保护与函数名；不能未经附件证明将目标命名为win。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/UofTCTF_2026/calculator",
+    "mechanism": "计算表达式和reset序列造成堆元数据重用泄漏，投毒stdin后扩大输入范围覆盖stdout。",
+    "evidence": [
+      "writeups/solve/solve.py"
+    ],
+    "limitations": "只有solver；包含人工input暂停，表达式具体根因需原解析器核验，不能直接称任意整数溢出。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/UofTCTF_2026/eebpf",
+    "mechanism": "eBPF ARSH范围分析与实际执行不一致，验证器认为偏移0而运行得到1。",
+    "evidence": [
+      "writeups/solve/bpf_insn.h",
+      "writeups/solve/exp.c",
+      "writeups/solve/solve.py"
+    ],
+    "limitations": "exp.c明确验证器/运行时差异；内核静态地址需由泄漏重定位，原型函数调用约束不能省略。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/UofTCTF_2026/uprobe",
+    "mechanism": "uprobe允许在指令中间插入0xcc，修改libc读取passwd的lea位移。",
+    "evidence": [
+      "writeups/solve/writeup.txt"
+    ],
+    "limitations": "0xcc是被利用的指令字节变化，不是正常插桩边界；偏移只适用于题目libc。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/wreckctf_2026/vellum",
+    "mechanism": "已下载文件是未完成starter skeleton，只接收动态ELF和显示符号，尚无完整利用。",
+    "evidence": [
+      "writeups/1_honest_solver.py"
+    ],
+    "limitations": "资料不足：无payload、格式参数偏移、sigil提取实现或成功记录；不把catalog的has_writeup等同于可复现解答。",
+    "status": "source_limited"
+  },
+  {
+    "directory": "pwn/z0d1ak_2026-quals/paperweight",
+    "mechanism": "Poppler tile位图按目标几何分配、按源图尺寸写入，CTM失配产生大幅堆越界。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "ASCIIHexDecode允许NUL；每dive一次覆盖一次读，必须保留各轮目标偏移与原文第三阶段细节。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/z0d1ak_2026-quals/rapture",
+    "mechanism": "snapshot浅复制data及读写票据，释放一份后另一份继续UAF并刷新操作次数。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "tcache计数与fd链分开维护，单节点投毒不足；malloc取伪块清key会临时清零RIP。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/第十届“强网杯”全国网络安全挑战赛·线上赛/Easytl",
+    "mechanism": "OpenSSL三个回调共用指针/长度，PSK数据指针与SNI长度混搭导致日志栈溢出。",
+    "evidence": [
+      "writeups/chapter.txt",
+      "writeups/Lufer_full_writeup.html"
+    ],
+    "limitations": "SNI最大255且不能含NUL；PSK strlen只约束前33字节，不等于identity_len；fork父进程重启会改变canary。",
+    "status": "static_analysis"
+  },
+  {
+    "directory": "pwn/第十届“强网杯”全国网络安全挑战赛·线上赛/Oldsvr",
+    "mechanism": "MIPS64大端MQTT的长度截断、news UAF和16位广播分配溢出组合，劫持entry表取得任意写。",
+    "evidence": [
+      "writeups/chapter.txt",
+      "writeups/Lufer_full_writeup.html"
+    ],
+    "limitations": "大端与uClibc1.0.32 dlmalloc，不使用glibc safe-linking；远程堆较模拟器偏0x70，栈大read路径受分段限制被弃用。",
+    "status": "static_analysis"
+  }
+]

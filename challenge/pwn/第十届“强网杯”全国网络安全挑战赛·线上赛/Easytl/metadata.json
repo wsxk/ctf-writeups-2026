@@ -1,0 +1,43 @@
+{
+  "event_id": "CN-001",
+  "event_title": "第十届“强网杯”全国网络安全挑战赛·线上赛",
+  "category": "pwn",
+  "title": "Easytl",
+  "source_urls": [
+    "https://www.qiangwangbei.com/"
+  ],
+  "writeup_urls": [
+    "https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/",
+    "https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/",
+    "https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/"
+  ],
+  "attachment_urls": [],
+  "writeup_status": "downloaded",
+  "attachment_status": "missing",
+  "notes": "Lufer 原创第十届强网杯 WP，题解对应全文中的“Easytl”章节。完整原始 HTML 与该章节离线正文均保存；图片可能仍引用源站。原文未提供题目附件直链，附件标 missing。解答、脚本及历史远程服务均未执行/访问。",
+  "files": [
+    {
+      "path": "writeups/Lufer_full_writeup.html",
+      "url": "https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/",
+      "bytes": 203193,
+      "sha256": "4b233c0385f26f54ac0a31b54ae01a86766f0a25ea8c253b37dc91281bc9eb7f",
+      "note": "Unmodified downloaded source HTML"
+    },
+    {
+      "path": "writeups/chapter.html",
+      "url": "https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/",
+      "bytes": 23349,
+      "sha256": "22abbd15f37a0a759fb8419d99af8e4c4b52701f5bd60e80c2d9b37be18425fd",
+      "note": "Original chapter extracted; attribution prepended"
+    },
+    {
+      "path": "writeups/chapter.txt",
+      "url": "https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/",
+      "bytes": 18785,
+      "sha256": "e01b78d5ec390c87856ad1324937e6e6be4ebb6237f34f35bcb936240ce6308d",
+      "note": "Plain-text extraction of chapter"
+    }
+  ],
+  "errors": [],
+  "writeup_kind": "community_writeup_html_and_section"
+}

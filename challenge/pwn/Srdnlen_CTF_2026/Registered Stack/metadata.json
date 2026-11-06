@@ -1,0 +1,221 @@
+{
+  "event_id": "CTF-3043",
+  "event_title": "Srdnlen CTF 2026 Quals",
+  "category": "pwn",
+  "title": "Registered Stack",
+  "source_urls": [
+    "https://github.com/srdnlen/srdnlenctf-2026_public/tree/HEAD/pwn_registered_stack",
+    "https://ctftime.org/event/3043/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/solve.py",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/writeup.md"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/attachments/dockerfile",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/attachments/registered_stack",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/authors.txt",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/description.md",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/flags.txt",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/binary",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/docker-compose.yml",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/dockerfile",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/dockerfile.compile",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/dump_inst",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/flag.txt",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/inst.py",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/main.c",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/makefile",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/title.txt"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "srdnlen/srdnlenctf-2026_public",
+  "repository_tree_sha": "bbb6ae789775d2429ae2bdaae3d120d44ad758b8",
+  "artifacts": [
+    {
+      "path": "attachments/attachments/dockerfile",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/attachments/dockerfile",
+      "bytes": 638,
+      "sha256": "73278935fdf8d9fb94ac2e721b7b1dec18c7c2d7caee7fc0bfa64f5e65c17a05",
+      "git_blob_sha1": "ba0ccac000b511b0697b842f114df9dfcd49dfe8",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/attachments/registered_stack",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/attachments/registered_stack",
+      "bytes": 16864,
+      "sha256": "8053f5008f90b18697946297164d6f71d5b56d58ec69606fd5f9289a93ef2d48",
+      "git_blob_sha1": "f22da6d4ae70f4645890214448644c457ad4cda9",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/authors.txt",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/authors.txt",
+      "bytes": 23,
+      "sha256": "6a8700f6250cd21ba58c72b9377029337aa186c13f1508cc2a698a2654929b0f",
+      "git_blob_sha1": "61a9d61b1305662e7200dce4810c3cbacd9d4f07",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/description.md",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/description.md",
+      "bytes": 318,
+      "sha256": "a2742efd44b480ba94a33e8594707e1a571713cfac579fe0f89416c2044557d9",
+      "git_blob_sha1": "12018d820f98d5ebe9c13848d56ecdf127a85ff3",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flags.txt",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/flags.txt",
+      "bytes": 48,
+      "sha256": "63e9b1b27ff352f0d74b021e5262b8f98aab324917782616545dbaab557aeabe",
+      "git_blob_sha1": "b09e79130c3fb034d67cc3c6e5cfbc49fda576c3",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/binary",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/binary",
+      "bytes": 16864,
+      "sha256": "8053f5008f90b18697946297164d6f71d5b56d58ec69606fd5f9289a93ef2d48",
+      "git_blob_sha1": "f22da6d4ae70f4645890214448644c457ad4cda9",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/docker-compose.yml",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/docker-compose.yml",
+      "bytes": 102,
+      "sha256": "f608ecd6322745a2b45c8a368e73a19821ea0f22a608bf6d8eec60c7b26aa3c8",
+      "git_blob_sha1": "06bd116df135bca14aaa46ab9cb4135365d1e9d4",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/dockerfile",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/dockerfile",
+      "bytes": 618,
+      "sha256": "09a8814a39c4db6ced863938de1447fc8ed1a5306d0f16aa4ae429aec2f47674",
+      "git_blob_sha1": "f740d025fb70b5abb1f7ef705a3f381d11bd5407",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/dockerfile.compile",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/dockerfile.compile",
+      "bytes": 223,
+      "sha256": "fff15d4ef44a0a9581d635cff468413c27e7aa41a54dee47bd94ca0f68915ebf",
+      "git_blob_sha1": "ea0ac7159b662e299852f8c48e1c0fdb4645c181",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/dump_inst",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/dump_inst",
+      "bytes": 802,
+      "sha256": "a936784ec5e0d19fa4f28c48553f0fc02d882fc8228d98bb6a0134d5de017383",
+      "git_blob_sha1": "faa0e6f6fa624ece3a38fdb0e8ed76effc7cb161",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/flag.txt",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/flag.txt",
+      "bytes": 48,
+      "sha256": "63e9b1b27ff352f0d74b021e5262b8f98aab324917782616545dbaab557aeabe",
+      "git_blob_sha1": "b09e79130c3fb034d67cc3c6e5cfbc49fda576c3",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/inst.py",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/inst.py",
+      "bytes": 650,
+      "sha256": "08dd9cab9b843ed667bf474a469d18b40d81a347ad1cc76cebf04367002f0ab0",
+      "git_blob_sha1": "4e45aeb1e626d8f0bec0c059e805735d0934b922",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/main.c",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/main.c",
+      "bytes": 4076,
+      "sha256": "04c8bdca8d34538644a7a0706814238ca853e273fcabaaf3b0bd35d34bbc7ecc",
+      "git_blob_sha1": "532bdcc0e3b8777b10f48fc676e05095807561f7",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/makefile",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/makefile",
+      "bytes": 1178,
+      "sha256": "b8e2863655728aba5ac0427a6fcb19d19b79ef0386c8f3e921c514d77c0b68bc",
+      "git_blob_sha1": "666a6024adbe9ce602cfe52ad2be7c6a88c231ca",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/src/solve.py",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/src/solve.py",
+      "bytes": 7371,
+      "sha256": "e1e1bf826188262c4e23108337d496f6a69c00ec3f92075bf5a9f718aa0a3441",
+      "git_blob_sha1": "7dc8b4f2b1d4a494af4a808cd4dc277454a429eb",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/title.txt",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/title.txt",
+      "bytes": 17,
+      "sha256": "fd7edd8a1267e8e4a42135493f82620ce1c1152a08349add906d8ee5f467b8f7",
+      "git_blob_sha1": "58ece8e9522c80479d0d4e37e4c2392e8a902662",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup.md",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_registered_stack/writeup.md",
+      "bytes": 9025,
+      "sha256": "06d7cfbf5fe5df04a87175a3a1a80c1e354acab90951f198629172158e717c97",
+      "git_blob_sha1": "9e4e057127fd06ab31928c70225c241ec0207130",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/writeup.md"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

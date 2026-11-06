@@ -1,0 +1,62 @@
+{
+  "event_id": "CTF-3456",
+  "event_title": "kBxAc CTF 2026",
+  "title": "simphell",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "haskell-reversing",
+    "xor"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/kbxac/2026/simphell/",
+    "https://ctf42.online/ctfs/kbxac/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/simphell"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/rev/simphell"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/simphell",
+    "https://ctf42.online/ctfs/kbxac/2026/simphell/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/kbxac_2026/simphell/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/kBxAc-CTF-2026/main/rev/simphell/README.md",
+      "bytes": 5643,
+      "sha256": "01e438dc7e2544a82846e91fff5d0c5d2fbfbe40664d7bc611bd9bed7a672206",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/kbxac_2026/simphell/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/KBxAc/2026/rev/simphell/README.md",
+      "bytes": 29,
+      "sha256": "d2dbea2a11f5fd7085ec623e03becc4ec81f889065225683ec08fc3367a37742",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/kbxac_2026/simphell/attachments/upstream/chall",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/KBxAc/2026/rev/simphell/chall",
+      "bytes": 1012400,
+      "sha256": "0c1f44233e1dde1c7c28718a12040559375c05a060c11b15dcb4583e2c5f97e4",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/kbxac/2026/simphell/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/kbxac/2026/simphell/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

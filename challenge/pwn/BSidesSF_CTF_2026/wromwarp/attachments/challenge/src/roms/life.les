@@ -1,0 +1,157 @@
+; life.les - Conway's Game of Life for LES
+; VRAM-only update model:
+; - GETP reads from drawn framebuffer (front buffer).
+; - SETP/CLEAR write next generation into VRAM (back buffer).
+; - DRAW presents back buffer.
+
+INIT
+
+; Counter string
+SET 71, gA ; "G"
+STORE gA
+INC mW
+SET 101, gA; "e"
+STORE gA
+INC mW
+SET 110, gA; "n"
+STORE gA
+INC mW
+SET 58, gA; ":"
+STORE gA
+INC mW
+SET 32, gA; " "
+STORE gA
+INC mW
+SET 48, gA; "0"
+STORE gA
+INC mW
+STORE gA
+INC mW
+STORE gA
+INC mW
+STORE gA
+INC mW
+STORE gA
+
+; Seed: glider
+SET 1, pA
+SET 15, cX1
+SET 15, cY1
+SETP 1, pA
+INC cX1
+INC cX1
+SETP 1, pA
+INC cY1
+SETP 1, pA
+DEC cX1
+SETP 1, pA
+INC cY1
+SETP 1, pA
+DRAW
+
+MAIN:
+SET 0, mR
+PRINT
+SET 0, cY1
+Y_LOOP:
+SET 0, cX1
+X_LOOP:
+SET 0, gB
+
+; n0: up-left
+DUPE cX1, cX2
+DUPE cY1, cY2
+DEC cX2
+DEC cY2
+GETP 2, pB
+ADD gB, pB, gB
+
+; n1: left
+INC cY2
+GETP 2, pB
+ADD gB, pB, gB
+
+; n2: down-left
+INC cY2
+GETP 2, pB
+ADD gB, pB, gB
+
+; n3: down
+INC cX2
+GETP 2, pB
+ADD gB, pB, gB
+
+; n4: down-right
+INC cX2
+GETP 2, pB
+ADD gB, pB, gB
+
+; n5: right
+DEC cY2
+GETP 2, pB
+ADD gB, pB, gB
+
+; n6: up-right
+DEC cY2
+GETP 2, pB
+ADD gB, pB, gB
+
+; n7: up
+DEC cX2
+GETP 2, pB
+ADD gB, pB, gB
+
+; current cell from front buffer
+GETP 1, pA
+
+; default next state = 0
+SET 0, gC
+CMP pA, 0
+JMPE <DEAD_RULE>
+
+; alive survives with 2 or 3
+CMP gB, 2
+JMPLT <STORE>
+CMP gB, 3
+JMPGT <STORE>
+SET 1, gC
+JMP <STORE>
+
+DEAD_RULE:
+; dead cell is born with exactly 3
+CMP gB, 3
+JMPNE <STORE>
+SET 1, gC
+
+STORE:
+SETP 1, gC
+
+INC cX1
+CMP cX1, 0
+JMPNE <X_LOOP>
+INC cY1
+CMP cY1, 0
+JMPNE <Y_LOOP>
+
+DRAW
+SLEEP 100
+
+UGEN:
+SET 9, mR
+SET 57, gB
+
+UGENINC:
+DUPE mR, mW
+LOAD gA
+INC gA
+CMP gA, gB; if digit > 9
+JMPGT <UGENZERO>
+STORE gA
+JMP <MAIN>
+
+UGENZERO:
+SET 48, gA
+STORE gA
+DEC mR
+JMP <UGENINC>
+

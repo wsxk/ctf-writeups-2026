@@ -1,0 +1,68 @@
+{
+  "event_id": "CTF-3280",
+  "event_title": "LYKNCTF",
+  "title": "Control_Freak_1",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "custom-cipher-reversing"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/lyknctf/2026/control_freak_1/",
+    "https://ctf42.online/ctfs/lyknctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/rev/Control_Freak_1"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/lyknctf-2026-crack-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/rev/Control_Freak_1",
+    "https://ctf42.online/ctfs/lyknctf/2026/control_freak_1/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/lyknctf_2026/Control_Freak_1/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/lyknctf-2026-crack-writeup/",
+      "bytes": 191749,
+      "sha256": "bb279dc2df601ad47fbf6d5cc88a3a517db0666697c9b2f75028617543891b40",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/lyknctf_2026/Control_Freak_1/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/LYKNCTF/2026/rev/Control_Freak_1/README.md",
+      "bytes": 115,
+      "sha256": "28cbb78d8863a6ae037b9f28f266ff5bd3e32ddd5bf701b4c4aee7744830781b",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/lyknctf_2026/Control_Freak_1/attachments/upstream/chall-2",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/LYKNCTF/2026/rev/Control_Freak_1/chall-2",
+      "bytes": 14520,
+      "sha256": "a65daf26da87ac7dd804f113b47a848f60f577222ebabc0942c14ca4c50c3a9c",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/lyknctf_2026/Control_Freak_1/attachments/upstream/chall-2.exe.xz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/LYKNCTF/2026/rev/Control_Freak_1/chall-2.exe.xz",
+      "bytes": 18836,
+      "sha256": "39b9cef51529e26cfa5b97c2c21ce5aaf24aa8b06a09736f5279416f519688ac",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/lyknctf/2026/control_freak_1/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/lyknctf/2026/control_freak_1/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

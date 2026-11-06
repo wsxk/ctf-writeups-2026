@@ -1,0 +1,17 @@
+ARG name
+FROM rustlang/rust:nightly-alpine AS build
+
+RUN mkdir -p /opt/src
+COPY Cargo.toml Cargo.lock /opt/src/
+COPY bin /opt/src/bin
+COPY src /opt/src/src
+
+WORKDIR /opt/src
+RUN cargo build --release --bin send
+
+FROM ${name}
+
+COPY --from=build /opt/src/target/release/send /send
+COPY flag.txt /flag.txt
+
+CMD ["/send", "/flag.txt", "/srv/lib/libc.musl-x86_64.so.1"]

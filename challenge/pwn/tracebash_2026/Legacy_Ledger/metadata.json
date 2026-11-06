@@ -1,0 +1,59 @@
+{
+  "event_id": "CTF-3323",
+  "event_title": "TraceBash CTF 2026",
+  "title": "Legacy_Ledger",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [],
+  "source_urls": [
+    "https://ctf42.online/ctfs/tracebash/2026/legacy_ledger/",
+    "https://ctf42.online/ctfs/tracebash/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TraceBash/2026/pwn/Legacy_Ledger"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/tracebash-ctf-2026-pwn-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TraceBash/2026/pwn/Legacy_Ledger",
+    "https://ctf42.online/ctfs/tracebash/2026/legacy_ledger/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/tracebash_2026/Legacy_Ledger/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/tracebash-ctf-2026-pwn-writeup/",
+      "bytes": 127359,
+      "sha256": "607e20fee177a1898499f9d298e44d6875a6d44d83cb80d4e6e7dc15fa53d449",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/tracebash_2026/Legacy_Ledger/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TraceBash/2026/pwn/Legacy_Ledger/README.md",
+      "bytes": 167,
+      "sha256": "5746ccb88882721de6b4af4016b1a470a367314509d0aafad3aaa72ba9a4f355",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/tracebash_2026/Legacy_Ledger/attachments/upstream/legacy_ledger.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TraceBash/2026/pwn/Legacy_Ledger/legacy_ledger.zip",
+      "bytes": 4213,
+      "sha256": "651867dce590506a282ffa2b50504ea6a85363a7ed00882eef15a91b3fd1b22c",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/tracebash/2026/legacy_ledger/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/tracebash/2026/legacy_ledger/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

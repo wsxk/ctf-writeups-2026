@@ -1,0 +1,49 @@
+{
+  "event_id": "CTF-3349",
+  "event_title": "BDSec CTF 2026",
+  "title": "Muktir_Shongket",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "jit-bytecode-verifier-executor-mismatch",
+    "jmp-into-literal",
+    "shellcode"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/bdsec/2026/muktir_shongket/",
+    "https://ctf42.online/ctfs/bdsec/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/pwn/Muktir_Shongket"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/bdsec-ctf-2026-pwn-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/pwn/Muktir_Shongket",
+    "https://ctf42.online/ctfs/bdsec/2026/muktir_shongket/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/bdsec_2026/Muktir_Shongket/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/bdsec-ctf-2026-pwn-writeup/",
+      "bytes": 140479,
+      "sha256": "f361c2ef15445da69fd976c461f944efcdf8df454d76b545f7193124dc02f52a",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/bdsec_2026/Muktir_Shongket/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/bdsec/2026/muktir_shongket/folder.zip?kind=files",
+      "bytes": 5427,
+      "sha256": "97da58d5935949d5beb6ed92a57f9243d8682336d5731a7813f897bf8ba1e5dd",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

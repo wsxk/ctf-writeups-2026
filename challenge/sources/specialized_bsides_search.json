@@ -1,0 +1,23 @@
+{
+  "records": [
+    {
+      "event_id": "CTF-3108",
+      "category": "android",
+      "title": "doremi",
+      "path": "android\\BSidesSF CTF 2026\\doremi",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3108",
+      "category": "android",
+      "title": "vinyl-drop",
+      "path": "android\\BSidesSF CTF 2026\\vinyl-drop",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "errors": []
+    }
+  ],
+  "source": "https://github.com/BSidesSF/ctf-2026-release"
+}

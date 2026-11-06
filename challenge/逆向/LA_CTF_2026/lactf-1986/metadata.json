@@ -1,0 +1,59 @@
+{
+  "event_id": "CTF-3015",
+  "event_title": "LA CTF 2026",
+  "category": "逆向",
+  "title": "lactf-1986",
+  "dirname": "LA_CTF_2026",
+  "source_urls": [
+    "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/rev/lactf-1986"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/lactf-1986/CHALL.IMG",
+      "local": "attachments/CHALL.IMG",
+      "size_expected": 1474560,
+      "git_blob_sha": "143dbe1cbc6b84104a2d5e68d9f9752c6aba398c",
+      "status": "downloaded",
+      "bytes": 1474560,
+      "sha256": "7a18102c889c09eb2633d7edbc97e61806d03fbef80494715d2a9d84d4dca638"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/lactf-1986/challenge.yaml",
+      "local": "attachments/challenge.yaml",
+      "size_expected": 305,
+      "git_blob_sha": "874ac7de443952d3163f399d503560b22fbdaeb1",
+      "status": "downloaded",
+      "bytes": 305,
+      "sha256": "3871c4d576682c8a4cd8ce2d5fb1f9d123c114f51b37e259ee0afd9b24ebb0fd"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/lactf-1986/src.py",
+      "local": "attachments/src.py",
+      "size_expected": 604,
+      "git_blob_sha": "8607b2df612675bbafc2e104df624e20ace2bf03",
+      "status": "downloaded",
+      "bytes": 604,
+      "sha256": "e88245196aa900b7d1bddfefe1f6c2c00c8d9153151ce05c334b7922f7aeb3ed"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/lactf_1986/README.md",
+      "local": "writeups/community/README.md",
+      "status": "downloaded",
+      "bytes": 5118,
+      "sha256": "694db0e4536ddf359095fa97c394cebaa499a273d8f8ad6326002300b8e19d5e"
+    }
+  ],
+  "notes": "官方题目附件，配官方 solver（若有）及参赛者 hax1ng 的文章/脚本。社区文章部分标题误写2025，但本题与官方2026目录的描述和flag一致，已逐题核对（ooo使用Unicode NFC比较）；保留原文。reflection另归虚拟化。",
+  "directory": "逆向/LA_CTF_2026/lactf-1986",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/lactf_1986/README.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/lactf-1986/CHALL.IMG",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/lactf-1986/challenge.yaml",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/lactf-1986/src.py"
+  ],
+  "attachment_status": "downloaded"
+}

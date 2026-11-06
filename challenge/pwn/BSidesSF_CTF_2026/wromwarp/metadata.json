@@ -1,0 +1,299 @@
+{
+  "event_id": "CTF-3108",
+  "event_title": "BSidesSF CTF 2026",
+  "category": "pwn",
+  "title": "wromwarp",
+  "source_urls": [
+    "https://github.com/BSidesSF/ctf-2026-release/tree/HEAD/wromwarp",
+    "https://ctftime.org/event/3108/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/solution/README.md"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/Dockerfile",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/Dockerfile.build",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/Makefile",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/Makefile",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/WRAM.bin",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/WRAM.bin.dist",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/build_dist.sh",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/les_dist.tar.gz",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/les_logo.txt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/roms/flappy.les",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/roms/life.les",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/roms/lunar.les",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/roms/minesweeper.les",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/roms/pixtest.les",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/roms/pong.les",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/roms/printflag.les",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/roms/snake.les",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/start.sh",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/wromwarp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/wromwarp.c",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/wromwarp_tty.sh",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/distfiles/les_dist.tar.gz",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/metadata.yml"
+  ],
+  "writeup_status": "已下载正文",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。",
+    "writeups/README.md 是早期镜像的空模板，不算解答；有效官方解答位于 writeups/solution/。"
+  ],
+  "repository": "BSidesSF/ctf-2026-release",
+  "repository_tree_sha": "68ee0e460eb572aaec17f082071f8ebf1d6f7330",
+  "artifacts": [
+    {
+      "path": "attachments/challenge/Dockerfile",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/Dockerfile",
+      "bytes": 1685,
+      "sha256": "9568466241a5daf134a9ee0b9d8659c6bdeff5dc58e98f867aaff72525290330",
+      "git_blob_sha1": "342569809df5352858cf90f9042e9d7d48f96e89",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/Dockerfile.build",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/Dockerfile.build",
+      "bytes": 250,
+      "sha256": "abac62a8c88c69041206f11b68d9b0ddd37ba508ab48d84f005643ff7bfc3a38",
+      "git_blob_sha1": "9eec5dec3902da27511cfe8626140061f826cfcd",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/Makefile",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/Makefile",
+      "bytes": 394,
+      "sha256": "083167b0d47cd760063e4078fbd3b639c2f27ba1fb819a32111dbaf7c7e7bc78",
+      "git_blob_sha1": "e3967bf681f420f44cf0ffacb6b27231104bddc7",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/Makefile",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/Makefile",
+      "bytes": 137,
+      "sha256": "4475b7f642357392c5408b102b0f8b506560815b2696067c41f7f16df32af593",
+      "git_blob_sha1": "1b46105df5298388429042b9157b0beffd58c4c0",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/WRAM.bin",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/WRAM.bin",
+      "bytes": 256,
+      "sha256": "16e6eab034bf71ddd2bcf40108070677203f1c8002fff2e61365749ac02632e4",
+      "git_blob_sha1": "b76560f9530ac2bea7cb66421f2e30a230926c7c",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/WRAM.bin.dist",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/WRAM.bin.dist",
+      "bytes": 256,
+      "sha256": "ad5c227e5f2fb48fb8e7e30cbc30966aa3ec02b2b54c0f96aaec4405400a3809",
+      "git_blob_sha1": "3d7f4a880b004b04c50687ef790c23e177b0f941",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/build_dist.sh",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/build_dist.sh",
+      "bytes": 276,
+      "sha256": "de469b4a6d1beb0161fec2f1028b133f55938589c526606ccbeab610341696f3",
+      "git_blob_sha1": "fe58468b45663a387f55a86cded115bedaa868d4",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/les_dist.tar.gz",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/les_dist.tar.gz",
+      "bytes": 39393,
+      "sha256": "f15ef4212eb57ce25deaf3439a2eed55d2efaee4637dd821a87178d634c0e5f3",
+      "git_blob_sha1": "6fcb2158c368b262bd5f06d2814dac0d87d455ee",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/les_logo.txt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/les_logo.txt",
+      "bytes": 2757,
+      "sha256": "7dd0f0ba7b3600e01d704958df59c989e9f5ceb3d790104bf47e25f8ab1b4df0",
+      "git_blob_sha1": "b82e81f720d812565c79df51df4f8688f7c5ebc7",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/roms/flappy.les",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/roms/flappy.les",
+      "bytes": 4301,
+      "sha256": "3ba0cdbfa470ebc1daa57a618c7660171c7080d8fe3bf4bb2ee2793ce1701497",
+      "git_blob_sha1": "ab22c3e52797e1c910b8eea4887c95d891aadb57",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/roms/life.les",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/roms/life.les",
+      "bytes": 1707,
+      "sha256": "6045bd913d1d7320147cf59b2476dea7cccc2b6533566f3868d21237ab2ecba3",
+      "git_blob_sha1": "6a4d68e5d8f7590a0d881c82f604e4f770dd5d99",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/roms/lunar.les",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/roms/lunar.les",
+      "bytes": 7473,
+      "sha256": "d4bce38be8ce0bc1df92f077ba6877e98a0a60807945e7b0a9b0d8f508b0c855",
+      "git_blob_sha1": "948d017e8aa6ac0ec6e507799466655f67da982a",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/roms/minesweeper.les",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/roms/minesweeper.les",
+      "bytes": 14530,
+      "sha256": "4a121132f174818d6caa375dd59bad2a84e19de737838e73d587fff73dc4f42f",
+      "git_blob_sha1": "7ef7bb954d54e799787c82482cd495eebf0609f9",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/roms/pixtest.les",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/roms/pixtest.les",
+      "bytes": 630,
+      "sha256": "cac0197130400382a24b10182fef764a13b24f69c6b3711d38078eb7809777ae",
+      "git_blob_sha1": "ab759d5232de23c2d2c771d2f514f27d54712009",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/roms/pong.les",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/roms/pong.les",
+      "bytes": 4374,
+      "sha256": "2357be329e3c9012546cb6c7096d5b0304c5b92a0f8f426354fd8f80240497ea",
+      "git_blob_sha1": "a23f99c54ea8f89a93af6ce97af259373a93c37a",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/roms/printflag.les",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/roms/printflag.les",
+      "bytes": 24,
+      "sha256": "7ac1a9edc6fc6ad8178dc75e9882dca67d05b5ca78208f49ffa671ccba7ced7a",
+      "git_blob_sha1": "cefb6c850fc09e4fd52917d97a9ac4fb3deaab79",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/roms/snake.les",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/roms/snake.les",
+      "bytes": 3765,
+      "sha256": "9d88c2f099e914dde1e8d6b1f05eb215c83e401581356e788d5d671f4cdfa948",
+      "git_blob_sha1": "b3ffa8d20de73c96605177fc1971ed1747ccbed5",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/start.sh",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/start.sh",
+      "bytes": 124,
+      "sha256": "34dc15ecfb4b370a8f8486c8c78733a4b1377722c7522f7120dec39c370a637e",
+      "git_blob_sha1": "ed0dfafaf70df5f7523a6f937882ac915aa922fa",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/wromwarp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/wromwarp",
+      "bytes": 53208,
+      "sha256": "233de6885f92b32be63cd0474e36c9a03ba0b31b08988c9e207880c940862212",
+      "git_blob_sha1": "916c242c9c34557ab5413bf80fba71cdeef45620",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/wromwarp.c",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/wromwarp.c",
+      "bytes": 53862,
+      "sha256": "4db0d7e6e37503b04a3939141102f82d0366f41afc843c3ca4ebce1017786a52",
+      "git_blob_sha1": "1b6f84812d80d950492fc1b19aabd531dccf7e5b",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge/src/wromwarp_tty.sh",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/challenge/src/wromwarp_tty.sh",
+      "bytes": 125,
+      "sha256": "cff31e1ea0cb39a9700eb0fdef537388ec5780a77a437157c01a76d0d682af82",
+      "git_blob_sha1": "37440ee40f6d42d8f38cba4ce568efba5d22ea8d",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/distfiles/les_dist.tar.gz",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/distfiles/les_dist.tar.gz",
+      "bytes": 32,
+      "sha256": "3924760ddf1736413c5c9e8f39de40f74b40f5ec63392b8a087900203d443c8a",
+      "git_blob_sha1": "fc2b7d96229b3956bf952dae99aef16cdafc2710",
+      "git_mode": "120000",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/metadata.yml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/metadata.yml",
+      "bytes": 1072,
+      "sha256": "feeeb200470d30ed910ccf2d97c7ac3f0e8c52d57b1eeb2def4e2b37ca01dccf",
+      "git_blob_sha1": "9c6b96d1e5ab9f16cead1a19f40da2a2f2ff7a9f",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solution/README.md",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/HEAD/wromwarp/solution/README.md",
+      "bytes": 6174,
+      "sha256": "5f1a57872263bafa8b2b33998704faf152f095bf1fadda111fbda0d8f4ea75dd",
+      "git_blob_sha1": "7b17adecc659bc21acb2ef8576b540bdd4111f4a",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/solution/README.md"
+  ],
+  "attachment_complete": true,
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06"
+}

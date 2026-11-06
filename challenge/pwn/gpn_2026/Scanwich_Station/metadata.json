@@ -1,0 +1,51 @@
+{
+  "event_id": "CTF-3041",
+  "event_title": "GPN CTF 2026",
+  "title": "Scanwich_Station",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "integer-overflow",
+    "qr-code",
+    "image-dimensions"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/gpn/2026/scanwich_station/",
+    "https://ctf42.online/ctfs/gpn/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/GPN/2026/pwn/Scanwich_Station"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/GPN-CTF-2026/tree/main/Scanwich%20Station",
+    "https://raw.githubusercontent.com/hax1ng/GPN-CTF-2026/main/Scanwich%20Station/Scanwich_Station_recipe_writeup.md"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/GPN/2026/pwn/Scanwich_Station",
+    "https://ctf42.online/ctfs/gpn/2026/scanwich_station/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/gpn_2026/Scanwich_Station/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/gpn/2026/scanwich_station/folder.zip?kind=files",
+      "bytes": 26520,
+      "sha256": "e0f4d53e8a9279b42eca53e7ba3806e3428f80eb665ae2ea9e0f100d38bd0e11",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/gpn_2026/Scanwich_Station/writeups/replacement_source.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/GPN-CTF-2026/main/Scanwich%20Station/Scanwich_Station_recipe_writeup.md",
+      "bytes": 28278,
+      "sha256": "f560253431781da812686a500a87eca9ca65b016830f1996996cb973b6ba57b6",
+      "kind": "writeup"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "writeup_kind": "prose"
+}

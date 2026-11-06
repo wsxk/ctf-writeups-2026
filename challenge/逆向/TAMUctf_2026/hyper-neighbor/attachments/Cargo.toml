@@ -1,0 +1,25 @@
+[package]
+name = "hyper-neighbor"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+recv = []
+
+[dependencies]
+cache-size = "0.7.0"
+nix = { version = "0.30", features = ["mman", "user"] }
+
+[profile.release]
+opt-level = "z"
+lto = true
+debug = false
+
+[[bin]]
+name = "send"
+path = "bin/send.rs"
+
+[[bin]]
+name = "recv"
+path = "bin/recv.rs"
+required-features = ["recv"]

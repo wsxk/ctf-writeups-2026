@@ -1,0 +1,51 @@
+{
+  "event_id": "CTF-3330",
+  "event_title": "Thryve CTF 2026",
+  "category": "逆向",
+  "title": "hell",
+  "dirname": "Thryve_CTF_2026",
+  "source_urls": [
+    "https://github.com/hax1ng/thryve-ctf-2026-writeups/tree/HEAD/rev/hell"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/hell/README.md",
+      "local": "writeups/README.md",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 6195,
+      "sha256": "8e9110f2ea449ba23ddf1c533cc9edc0e800f66c3d9749bb8d2a28407d038aec"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/hell/rev_hell",
+      "local": "attachments/rev_hell",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 14512,
+      "sha256": "c6bbbc68d0b7921815b77033a936dddb862d1bf75e3a764b1ca0b828cee0d92e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/hell/solve.py",
+      "local": "writeups/solve.py",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 477,
+      "sha256": "b8adb3b00dc92eb71171e2195797bd4315d40a06043006d3b361ac967757ab1d"
+    }
+  ],
+  "notes": "参赛者hax1ng公开仓库，保留文章、solver及其提供的比赛原始二进制/7z包；解法未运行验证。",
+  "directory": "逆向/Thryve_CTF_2026/hell",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/hell/README.md",
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/hell/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/hell/rev_hell"
+  ],
+  "attachment_status": "downloaded"
+}

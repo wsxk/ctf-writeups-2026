@@ -1,0 +1,16 @@
+name: pwn03
+services:
+  average:
+    image: cybersecnatlab/challenge-jail:ubuntu-noble@sha256:bdb4f33f2c4604c8818b86fc7d52ce50c047a9556b43a8005c3d61ca1622dd43
+    restart: unless-stopped
+    container_name: pwn03-average
+    privileged: true
+    init: true
+    ports:
+      - "9003:1337"
+    volumes:
+      - "./average:/home/user/chall:ro"
+    environment:
+      - "FLAG=pascalCTF{1m4g1n3_N0t_Kn0w1n9_H34P...}"
+      - "FLAG_IN_ENV=true"
+      - "LOG_STDERR=true"

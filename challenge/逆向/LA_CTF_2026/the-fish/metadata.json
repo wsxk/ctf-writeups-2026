@@ -1,0 +1,59 @@
+{
+  "event_id": "CTF-3015",
+  "event_title": "LA CTF 2026",
+  "category": "逆向",
+  "title": "the-fish",
+  "dirname": "LA_CTF_2026",
+  "source_urls": [
+    "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/rev/the-fish"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-fish/challenge.yaml",
+      "local": "attachments/challenge.yaml",
+      "size_expected": 259,
+      "git_blob_sha": "1378d865f43ac4eb4534acd781e162d58583fc2b",
+      "status": "downloaded",
+      "bytes": 259,
+      "sha256": "c343f2049cf2023999644a14dc8500106d2c51fa536eb366707aa6793617a4f1"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-fish/fish.py",
+      "local": "attachments/fish.py",
+      "size_expected": 14148,
+      "git_blob_sha": "74fa634b0573292ba42269d78260792f4a8cdccb",
+      "status": "downloaded",
+      "bytes": 14148,
+      "sha256": "79fbdcc0153d17c734cd8f95cf8cd4f82e7d1a656f08f89faa5580f23fb0a937"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-fish/solve.py",
+      "local": "writeups/official/solve.py",
+      "size_expected": 1655,
+      "git_blob_sha": "639cbcc42ef76ed493307127df0f4c5c419e8a47",
+      "status": "downloaded",
+      "bytes": 1655,
+      "sha256": "aea83825233e56ff7cf940999a9c6a2132fbedb249a57f337b29981ef98e549b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/the_fish/README.md",
+      "local": "writeups/community/README.md",
+      "status": "downloaded",
+      "bytes": 6245,
+      "sha256": "b6497ff9b22195d16bbb662b6252e816c1e06e117c9593fe21fa17c1263798f7"
+    }
+  ],
+  "notes": "官方题目附件，配官方 solver（若有）及参赛者 hax1ng 的文章/脚本。社区文章部分标题误写2025，但本题与官方2026目录的描述和flag一致，已逐题核对（ooo使用Unicode NFC比较）；保留原文。reflection另归虚拟化。",
+  "directory": "逆向/LA_CTF_2026/the-fish",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-fish/solve.py",
+    "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/the_fish/README.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-fish/challenge.yaml",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-fish/fish.py"
+  ],
+  "attachment_status": "downloaded"
+}

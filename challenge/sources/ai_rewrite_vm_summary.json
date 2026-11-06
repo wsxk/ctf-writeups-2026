@@ -1,0 +1,464 @@
+[
+  {
+    "directory": "虚拟化/apoorvctf_2026/Draw_Me",
+    "mechanism": "关键是重建顺序执行的 VM：GPU 每帧只保留最后一次写入，导致自修改代码及显存输出丢失；空画面不能说明字节码没有有效结果。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "本地原文引用 solve.py，但 writeups 目录未随文附该脚本；不能把示意注释当作可运行实现。需要从实际着色器补齐十类指令精确定义。像素字体中的 O/0 需结合题目格式确认。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/asis_2026-quals/ASIS_Arch",
+    "mechanism": "PC 相关指令混淆还原后，校验等价于 22 个 16 位字的十轮可逆变换；可选取每个输出字等于目标的充分条件，逐轮逆运算。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "原文提及 solve.py/recover.py，但本地 writeups 仅有 README。需补齐完整 ISA 与扩散逆函数；不能凭十轮描述直接宣称脚本齐全。地址和校验常量只对应收录构建。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/asis_2026-quals/Revenant_buddy",
+    "mechanism": "0xD9 的执行器可复制受保护值，但 verifier 将结果标为 ordinary，造成抽象类型与运行时值不一致。两次类型洗白即可同时提供 capability 和 mix(capability)。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "混淆表偏移和编码串依赖 worker 构建；新进程的随机秘密无须猜测，因为程序直接引用它。原文 solve.py 未作为单独文件收录，网络结果仅为作者报告。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/b01lers_2026/piano",
+    "mechanism": "36 条链表的长度表示输入字节；INSERT/DELETE 表示加减，93 种 BULK 函数是仿射变换。完整建模后可用线性方程求解，避免逐节点执行大量信号。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "本地只有README，parse.py、emulate_bulk.py、bulk_coeffs.json等未随文收录。原文明确未用最终候选跑原二进制；需要重新提取全体约束并做正向验证。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/b01lers_CTF_2026/favorite_potato",
+    "mechanism": "程序将10000轮可逆ARX完全展开；识别PHP/PLP包围的栈原语后，可提取常量并从尾到头求逆，无须枚举24位状态。",
+    "evidence": [
+      "writeups/sol/check.py",
+      "writeups/sol/README.txt",
+      "writeups/sol/sol+check.py",
+      "writeups/sol/sol.py",
+      "writeups/sol/sol2.py"
+    ],
+    "limitations": "作者称 Motorola 6502，但架构名称本身不影响指令语义；必须以实际6502实现为准。code.bin.gz 位于解答目录且仅18字节，不能未经检查就把它当5820001字节真题程序。环境与完整输入文件须按附件核对。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/b01lers_CTF_2026/indirect-memory-access",
+    "mechanism": "官方sol.py把DMA源地址对应的重叠数据窗口还原为13种二输入逻辑门，再将整段检查转为Z3布尔约束。",
+    "evidence": [
+      "writeups/solve/sol.py"
+    ],
+    "limitations": "仅有solver说明，布尔位与游戏事件的完整映射背景需要结合附件。代码以str(m[dat[i]])判True，未赋值变量会落到F；复现时应检查模型完整性，并确认每段长度小于10。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/b01lers_CTF_2026/kyotoprotocol",
+    "mechanism": "二进制不断改写运行中的Bash脚本形成VM；JUMP/NEXT/EXPORT传递参数和环境变量。去虚拟化后是9×9扫雷与每行、列、宫各3颗雷的组合约束。",
+    "evidence": [
+      "writeups/solve/dump.py",
+      "writeups/solve/parse.py",
+      "writeups/solve/solve.md",
+      "writeups/solve/vm.py"
+    ],
+    "limitations": "原文说明初始化变量中有一处模7恰为3的题目错误；应以实际VM行为为准。图像clues.png/solved.png仅作辅助，约束应从代码提取。Bash会修改脚本，复现需使用副本。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/bdsec_2026/Borrowed_Memory",
+    "mechanism": "输入实际是0x4000加表内偏移。2048字节伪随机表经过补丁成为指令带；逐步校验和可作为模拟器正确性的检查点。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "原文没有完整列出所有表补丁及4个opcode公式，必须从附件补齐；solve.py引用未单独收录。地址是所述构建的静态定位信息，PIE运行时地址另加加载基址。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/BYUCTF_2026/mixed_signals",
+    "mechanism": "mixed_signals保存输入状态，program发送信号作为VM操作码；两个进程共同完成恒定时间校验，单独启动其中一个不足以验证。",
+    "evidence": [
+      "writeups/README.md"
+    ],
+    "limitations": "原始README很短，并明确没有solve脚本；因此本文只能确定整体机制和验证入口，不能补造具体算法或宣称独立推导出flag。恒定时间不支持直接套用逐字节时序猜测。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/cryovault_2026-quals/Kelpie",
+    "mechanism": "两层可逆VM之间由HMAC-SHA256派生AES-256-GCM密钥；有效解法依赖官方hint提供派生密钥。没有hint时，第一层可逆性本身无法约束输入。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "README引用的独立solve.py未收录；完整hint应从原文读取而非猜测。文件偏移=VA-0x400000只是作者针对该ELF布局的结论，通用实现应查PT_LOAD映射，non-PIE并不普遍保证该公式。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/cryovault_2026-quals/thaw_ladder",
+    "mechanism": "SEAL有int16有符号边界缺陷；工作量计数可经余数对齐变成前缀匹配oracle；比较地址又经过洗牌，必须分别恢复字节与地址。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "本地7.2参考模型与原文7.3远端不同；新连接会重置随机状态，不能复用旧profile。三份引用solver未单独收录，文中片段不足以无修改运行；远程可用性本次未验证。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/css_2026/prince_walk",
+    "mechanism": "目标坐标999999,999999为16寄存器VM的密钥种子，8320条加密指令重建128字节输出；最终长度和FNV-1a给出独立校验。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "本地只有README，未收录引用的solve.py；种子初始化和8类opcode完整公式仍需从附件/原文代码补全。目的地坐标是计算参数，不应仅patch坐标后忽略事件状态。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/dicectf_2026-quals/locked_in",
+    "mechanism": "并发逻辑可归约为逐字符变换及有限状态搜索；关键在逆序字节、EPERM返回值和障碍判定方向，不能按表面汇编常量直接建模。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "solve11.py未收录；原文bitmangle为经验公式，需用全部256输入或相应字节码核实。给出的flag为30字节，与长度条件一致。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/DiceCTF_Quals_2026/garden",
+    "mechanism": "GC将空引用误当作4字节对象参与压缩，破坏只向低地址移动的假设；逐对象memmove覆盖相邻对象头，可在普通数组和off-heap数组之间制造类型混淆。",
+    "evidence": [
+      "writeups/community/README.md",
+      "writeups/community/solve.py",
+      "writeups/README.md"
+    ],
+    "limitations": "官方README部分措辞是条件性描述“if mark_reachable is changed”，需核对实际源码而非直接认定所有构建可用。libc和栈偏移是环境相关值。目录的另一garden副本应链接到本条，不重复算题。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/haruulzangi_2026-quals/Automaton",
+    "mechanism": "211字节数据段包括42字节目标、9字节密钥生成程序、160字节加密主程序；RC4仅用于KSA生成S-box，主变换可逐步求逆。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "本地README引用solve.py但未收录该脚本，需补全14类opcode的操作数宽度与语义。给出的候选为42字节，与目标长度一致。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/NCTF_2026/VM Encryptor",
+    "mechanism": "官方PDF第76–79页给出VM结构、指令枚举和逆算法；校验是24位循环移位/XOR后的Base64，再逐字节异或0x63。",
+    "evidence": [
+      "writeups/NCTF_2026_Official_Writeup.pdf",
+      "../../../sources/NCTF_2026_Official_Writeup_text.txt"
+    ],
+    "limitations": "PDF提取文本有分页行号、控制字符和断行，不能整段直接复制运行。题目目标数据和官方脚本在PDF中完整给出，本次仅静态转写；不要把邻题的Java脚本误关联本题。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/LA_CTF_2026/helm-hell",
+    "mechanism": "652KB辅助模板把Brainfuck的纸带、指针与递归循环映射为Go模板操作；字符期望值隐藏在计数与循环中。",
+    "evidence": [
+      "writeups/community/README.md",
+      "writeups/community/solve.py"
+    ],
+    "limitations": "这是社区材料的年份/长度疑点，须优先按附件模板和solver实际常量校正。不要部署Kubernetes，题目验证仅需模板渲染。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/LA_CTF_2026/reflection",
+    "mechanism": "主程序只panic，真正的检查在.eh_frame的DW_CFA_val_expression中；115字节预检查决定是否进入12888字节表达式VM。",
+    "evidence": [],
+    "limitations": "只有HTML，脚本内嵌于页面且有语法高亮/行号；需从pre/code提取后复核。libgcc内部符号和结构布局依赖运行库，原文关于全部表达式执行两次是该观察路径而非所有unwind的普遍保证。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/l3akctf_2026/LattiaVM",
+    "mechanism": "push无上界，DUP在sp=256时第二次push写到别名sp字段，使可控值变成原生栈索引；SWAP可据此读写保存返回地址。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "第一版解码输入限128字节，执行限512条。 合集包含7题，需只读本题章节。libc/loader及栈布局依赖附件；独立solver未随该博客单独收录。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/l3akctf_2026/LattiaVM_2",
+    "mechanism": "push无上界，DUP在sp=256时第二次push写到别名sp字段，使可控值变成原生栈索引；SWAP可据此读写保存返回地址。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "第二版程序缓冲移到malloc且输入增至256字节，但VM状态仍在宿主栈；sp未显式初始化，作者报告本环境起始为0，应先核验。 合集包含7题，需只读本题章节。libc/loader及栈布局依赖附件；独立solver未随该博客单独收录。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/NepCTF 2026/36_ColorfulArray",
+    "mechanism": "原文短叙述称图游走/PRNG，实际附带脚本是带掩码的16位状态约束DFS：必须以代码数据流解释，而不是照抄模糊叙述。",
+    "evidence": [
+      "writeups/writeup.md"
+    ],
+    "limitations": "脚本中的work/36路径不是本地现有目录，需替换为本题附件；部分已知字符被直接写入脚本而原文没解释推导，需把它们列为作者提供的先验。本次未运行。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/NepCTF 2026/42_T.A.S P.W.N",
+    "mechanism": "原文复用bluescreen影片的guest链及XOR keystream，将184字节HIMITSU宿主body的调用目标改为WinExec(calc)，flag由主办验收签发。",
+    "evidence": [
+      "writeups/writeup.md"
+    ],
+    "limitations": "强依赖原影片、ROM版本、模拟器和keystream；不保证换版本可复现。原文完整代码含历史蓝屏payload作为恢复keystream的数据，应明确其用途而非运行它。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/PascalCTF_2026/StrangeVM",
+    "mechanism": "可确认的思路是按奇偶索引撤销加减，但原文本身存在多处矛盾：奇数位正向文字写input-1，逆代码却写target+i，且展示flag长度并非40。",
+    "evidence": [
+      "writeups/vortexops.html"
+    ],
+    "limitations": "仅HTML短文，无独立反汇编器和solver文件；原文脚本可以抽取但不是已验证可用解法。不要擅自修正一处文字后宣称所有矛盾解决。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/pwnsec_2026/ICX_Confusion",
+    "mechanism": "pack将Note变为Job但保留旧View，导致类型混淆；认证值是可重算的23位算法，攻击者可修改token和manifest并重新封装。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "本地仅README，引用的job_auth、完整能力token及工具需从原文代码块/附件恢复，不能替换为24位算术。对象地址0x110461/0x110481等属于特定guest布局。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/pwnsec_2026/ICX_Regulate",
+    "mechanism": "GMI检查器跳过低字节为ff/00的某些分支目标，可将禁用OCTPACK藏在LDI立即数再跳入执行；该指令能传播来源mark而不改变请求数值。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "README提到exploit.gmi、/tmp/sandbox_text.u32及多份工具，但本地writeups仅README，不能假定已具备最终镜像。ABI、guest例程地址与标记传播均须对应同一构建。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/pwnsec_2026/PwnSec_Support",
+    "mechanism": "工单ID拼接SQL允许堆叠语句创建管理员session，admin Lua的note_save提供guest任意32位写；修补ticks返回类型将写原语转为字符串读。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "本地只有README，独立solve.py未收录；完整SQL语法与指令布局以原文代码块和附件为准。改变本地监听8081是作者环境调整，不是利用必需条件。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/pwnsec_2026/Zigerions",
+    "mechanism": "ELF→PyInstaller PE→VMProtect PE→落地文件；GameBoy ROM中的巨型VM是不可达诱饵，真实结果来自畸形ELF中的AES密钥与48字节密文。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "没有IV只能提示ECB，不能普遍证明ECB；应以解密代码和完整明文确认。引用extract_layers.py/watch.c/solve.py未单独收录，且所需中间落地文件须先核对附件。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/SCTF_2026/babel_furnace",
+    "mechanism": "Host、Python code object、bridge.pyd、Rust engine各持有部分share；单独分析engine会得到不完整opcode/立即数。组合后640条micro-op归约为6个uint64的14轮可逆变换。",
+    "evidence": [
+      "writeups/exp/solve.py",
+      "writeups/WP.md"
+    ],
+    "limitations": "不能遗漏Host share或把最多192次resume当192个VM块。脚本依赖的文件路径与模块提取必须先核对；原WP未直接写出最终flag，本次不从其他文本猜测。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/SCTF_2026/BrainfOok",
+    "mechanism": "Python负索引、独立跳转栈、原地修改和数十亿次低层操作使直接迁移/全量trace容易失真；应保存状态分段推进，保留跳转覆盖区后去冗余。",
+    "evidence": [
+      "writeups/Writeup/Writeup.md"
+    ],
+    "limitations": "本地提供完整长文与代码，但非单一开箱即用自动恢复脚本。原文称无法一步恢复是针对其分析路径，不是数学上的不可能性证明；本次仅静态重构其方法。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/SekaiCTF_2026/3in1",
+    "mechanism": "可读JS利用Set.intersection回调中clear/GC引发悬空元素，再伪造对象和ArrayBuffer数据指针获得进程读写；后续两个QEMU阶段以Base64 ELF嵌入，原作者文章缓存仅有简介。",
+    "evidence": [
+      "writeups/author_writeup.txt",
+      "writeups/author_writeup_offline.html",
+      "writeups/solution/send.py",
+      "writeups/solution/solve.js"
+    ],
+    "limitations": "作者writeup.txt仅620字节，HTML离线副本未含完整三个组件说明；代码含编译后ELF但无对应C源码。所有LibJS/libc偏移和对象布局针对题目构建，随机堆布局可能使重试失败。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/SekaiCTF_2026/MTE",
+    "mechanism": "核心原语不是任意写，而是在保留24字节canary的kmalloc-96对象+0x40写固定值2；以unix_vertex.scc_index为目标诱发AF_UNIX GC和悬空oob_skb，升级为任意地址单字节读取。",
+    "evidence": [
+      "writeups/community_writeup.md"
+    ],
+    "limitations": "原文引用solve.c/qemu_pauth.patch，但本题writeups仅社区说明和二进制solver，完整源码需从附件核对。QEMU补丁、内核布局、slab回收策略和kmsg泄露可用性都是必要前提，不能推广到默认MTE/PAC环境。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/squ1rrel_2026/squ1rrel_o_tron_2",
+    "mechanism": "PDF JavaScript的VM又运行组合子解释器，逐层模拟太慢；抽取等价16位轮函数可将大量解释步骤化简为每输入12轮。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "原文一处写每次5.7ms，后又写5700ms，速度倍数矛盾，本文不沿用。独立mix_fast.c/solve.py未收录，README有核心函数但网络端需核对server.py实际计时方式。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/srdnlen_2026-quals/Dantes_Trial",
+    "mechanism": "169字节字节码封装读字符和散列循环，真正难点是正确模拟ARM移位加法链后再穷举短输入。",
+    "evidence": [
+      "writeups/1_dantes-trial.md"
+    ],
+    "limitations": "原文引用brute2.c、solve_correct.py和vm_emu2.py但本地仅README。缺失S-box/具体混合公式需从ROM补齐；不要对错误hash实现进行无界暴力。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/Srdnlen_CTF_2026_Quals/Cornflake v3.5",
+    "mechanism": "RC4用户名门槛只是第一层；第二层栈VM以CMP结果自修改下一条失败opcode，所有成功路径可表达为输入算式约束。",
+    "evidence": [
+      "writeups/writeup.md"
+    ],
+    "limitations": "本地短文未列全量字节码或求解器；正文个别伪码的寄存器注释与opcode表不同，精确语义需以DLL为准。原站载荷是否仍可下载不在本次验证范围。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/SUCTF_2026/SU_Lock",
+    "mechanism": "Rust安装载荷用RC4(SUCTF2026)解出用户态PE与驱动；IOCTL0x222004返回XXTEA变体参数，0x222008检查密文，驱动VM仅包装常量写出和相等判断。",
+    "evidence": [
+      "writeups/exp/exp.py",
+      "writeups/writeup/writeup.md"
+    ],
+    "limitations": "源码提取常量完整，但原文截图里的地址仍需匹配具体构建。不能仅看到解密字节可打印便认定成功；禁止把模拟VM读取常量的脚本描述为已完整模拟驱动。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/SUCTF_2026/SU_MvsicPlayer",
+    "mechanism": "真正路径在Electron native vm_encryptor.node；SVM4头后是64字节块的四轮Feistel/Speck混合，每块密钥由前一密文两半异或派生，非CBC。",
+    "evidence": [
+      "writeups/exp/exp.py",
+      "writeups/writeup/writeup.md"
+    ],
+    "limitations": "exp以当前目录读取ddd.su_mv_enc并写ddd.wav，使用前需明确目录。播放器关闭会归档并删原文件，文档分析无需启动它。本文未计算MD5，也未声称已恢复音频。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/SUCTF_2026/SU_West",
+    "mechanism": "NOR VM是模板化的ARX约束载体，每轮64位输入经Feistel和组合器映射到该层target；层间s0和flag解密状态相连，不能把81层独立乱序求解。",
+    "evidence": [
+      "writeups/writeup/writeup.md"
+    ],
+    "limitations": "原文exp内EMBEDDED_TABLES等常量需要与constants.txt配套，不要把省略/外部表当默认空值。s0、seed flag buffer和输入范围均为题目参数，本次未运行Z3。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/sunshinectf_2026/IntMod",
+    "mechanism": "SIGTRAP/SIGILL/SIGFPE通过ucontext改真实寄存器；90条可逆混合后用40个模65521的多项式约束检查40字节状态。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "本地仅README，hook*.c/analyze.py/solve.py等未收录。原文称GDB无用属于作者经验，不能当一般限制；可用受控信号调试但需避免改变程序语义。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/Thryve_CTF_2026/chimera-mirrors",
+    "mechanism": "外层228条指令调度88个真检查器，前48个分别只依赖一个输入字节，所以每个检查尝试256值即可；其余40个联合检查用于验证。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solve.py"
+    ],
+    "limitations": "本地有solve.py，但在导入时就读取当前目录chimera_mirror，需调整附件路径。原作者说每字节有解并不自动保证唯一，复现时应记录候选数。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/Thryve_CTF_2026/parallax",
+    "mechanism": "phase在每条指令后随状态变化，错误占位符会使后续字节被错误解码；逐条满足三字符断言并从头重放比一次性反汇编可靠。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solve.py"
+    ],
+    "limitations": "本地完整solve.py读取当前目录parallax；修改路径即可定位附件，但本次未运行。若某三元组多解应回溯，不能无条件取第一个后仍声称唯一。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/Thryve_CTF_2026/soul",
+    "mechanism": "复杂八轮key检查最终仅压缩为一个字节，ACCESS GRANTED不保证解密正确。真正可利用的信息是51字节密文的16字节重复密钥XOR及已知格式。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/solve.py",
+      "writeups/vm.asm"
+    ],
+    "limitations": "已收录solve.py实际上主要解密并反汇编字节码，并非自动恢复key的完整solver；原文通过语义选择剩余候选，不能宣称字符集约束保证唯一。固定soul_dist路径需调整。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/trx_2026/1+1",
+    "mechanism": "官方C程序对相邻哈希状态枚举4字节原像，Python脚本以固定seed重建S/P盒并逆SPN，再用可打印性筛选候选。",
+    "evidence": [
+      "writeups/official_brute_fnv.c",
+      "writeups/official_solve.py"
+    ],
+    "limitations": "原文无完整文字WP；枚举2^32每块代价很高。Python按可打印性选择首个候选是启发式，需全局回代确认；C存在数组越界，不能原样当可靠验证器运行。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/trx_2026/wandering",
+    "mechanism": "收录的官方替代solver采用随机最小冲突交换搜索，保证行列唯一，只迭代修复对角线；它没有解释题目为何归为VM，因此不补造虚拟机漏洞。",
+    "evidence": [
+      "writeups/official_solve.py",
+      "writeups/replacement_source.md"
+    ],
+    "limitations": "原文件HOST = 127.0.0.1缺引号，是Python语法错误；还存在无上限网络重试和未使用args。需先改为字符串并配置授权靶场，不能把当前文件宣称可直接运行；缺少VM机制说明。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/UofTCTF_2026/Bring Your Own Program",
+    "mechanism": "GETMETH缓存对象槽位，OPTIMIZE按keyId重排存储却未更新缓存版本；第二次经过同一取方法位置，旧槽位被解释为另一方法，形成能力检查绕过。",
+    "evidence": [
+      "writeups/solve/solve.py"
+    ],
+    "limitations": "“重排未bump”依据solver注释及利用路径静态推断；需与题目VM源码核对后才能确定完整根因。HOST/PORT为本地默认，运行期服务并未验证。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/umdctf_2026/gnalekcip",
+    "mechanism": "BINPERSID递归解析嵌套pickle且共享memo，形成寄存器文件和子程序；原文最终答案依赖题名/部分转录猜测，未提供可独立重做的完整hash逆解。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "原文从“无法逆hash”跳到语义拼接答案，缺少关键求解证据；不能把猜谜叙述改写成已证明算法。共享memo大小也应按具体opcode核对，Python pickle并非天然只支持256槽。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/umdctf_2026/roulette",
+    "mechanism": "CRT与VM输出只依赖已知索引、查表和前轮状态，每轮input_word=VM_output XOR target，因此无需逆散列。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "本地仅README，完整四表和循环公式需从代码块/附件提取；原文把某些常量笼统叫MurmurHash，应保留实际VM而非替换为标准库hash。106/108字节边界也不能凭假设补零。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/z0d1ak_2026-quals/House_XIII",
+    "mechanism": "两类对象同为0x180大小，转换释放重分配却保留旧槽；VM可向后读头部，旧类型写入口可修改新类型callback字段。随机secret又被<比较暴露。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "完整credential算式见原文代码，独立solve.py未收录。fd13依赖launcher预打开；对象偏移与glibc同尺寸复用须匹配本构建，secret跨进程不可复用。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/z0d1ak_2026-quals/Salvage_Protocol",
+    "mechanism": "reclaimd分离保存真实body长度与声明长度，vaultd按声明长度解析多个请求；AUTH在校验token前更新connection_clearance且失败不回滚。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "0x20单次替换body限255字节，完整0x400 AUTH不能简单塞一个指令，原代码采用逐字节构造。独立solve.py未收录；二进制硬化弱不是本题利用根因。",
+    "status": "静态分析改写，未运行复现"
+  },
+  {
+    "directory": "虚拟化/z0d1ak_2026-quals/stars_below",
+    "mechanism": "导入重定位被洗牌并配合LD_BIND_NOT使PLT标签误导；真实算法为8!路线搜索、BLAKE2s派生、两个可逆ARX VM及短MAC。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "本地只有README，引用solve_invariant.py/vm.py及分析blob未单独收录；需核对附件可提取情况。末字节Base32填充位和domain NUL容易出错，所有盐和调度常量必须从同一版本提取。",
+    "status": "静态分析改写，未运行复现"
+  }
+]

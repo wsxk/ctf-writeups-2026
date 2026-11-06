@@ -1,0 +1,92 @@
+{
+  "event_id": "CTF-3290",
+  "event_title": "COMPFEST CTF 2026",
+  "title": "redis_cli_0_day",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "redis-cli",
+    "one-byte-write",
+    "malicious-server",
+    "heap-exploitation"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/compfest/2026/redis_cli_0_day/",
+    "https://ctf42.online/ctfs/compfest/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/COMPFEST/2026/pwn/redis_cli_0_day"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/compfest-ctf-2026/tree/main/pwn/redis-cli-0-day"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/COMPFEST/2026/pwn/redis_cli_0_day",
+    "https://ctf42.online/ctfs/compfest/2026/redis_cli_0_day/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/compfest_2026/redis_cli_0_day/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/compfest-ctf-2026/main/pwn/redis-cli-0-day/README.md",
+      "bytes": 13696,
+      "sha256": "496e7428c928d20fa04a1d7a5a62e5bb5c1efc892c4a80149c644dcf897bbafd",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/compfest_2026/redis_cli_0_day/attachments/upstream/Dockerfile",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/COMPFEST/2026/pwn/redis_cli_0_day/Dockerfile",
+      "bytes": 626,
+      "sha256": "97ea2d90bfd1ef60fb516924e438be14538750700b33e9a85bb5436cad57183d",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/compfest_2026/redis_cli_0_day/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/COMPFEST/2026/pwn/redis_cli_0_day/README.md",
+      "bytes": 211,
+      "sha256": "c0ef8032b80c781e1824c36584e86953adeae592bf68e775a00c42a88059cd07",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/compfest_2026/redis_cli_0_day/attachments/upstream/README.txt.xz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/COMPFEST/2026/pwn/redis_cli_0_day/README.txt.xz",
+      "bytes": 360,
+      "sha256": "792294bd8ea1dd8e9954ee045ec3186b7c413aeb952321e58cbee90c9ec5f8b7",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/compfest_2026/redis_cli_0_day/attachments/upstream/entrypoint.sh",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/COMPFEST/2026/pwn/redis_cli_0_day/entrypoint.sh",
+      "bytes": 222,
+      "sha256": "ad627aedd1dd8d69af347f390ebda50aa27a1adab87ac7c64aea3b0ea8cbc30e",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/compfest_2026/redis_cli_0_day/attachments/upstream/redis-cli",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/COMPFEST/2026/pwn/redis_cli_0_day/redis-cli",
+      "bytes": 2156648,
+      "sha256": "af3f4fc786853724115375d369649c088a15f3d48fac4a92e422a38ce0f7c067",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/compfest_2026/redis_cli_0_day/attachments/upstream/run.sh",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/COMPFEST/2026/pwn/redis_cli_0_day/run.sh",
+      "bytes": 229,
+      "sha256": "98751fd6805a5ae40f3527e14c060901e5cfb0a7cf2c18788608a4abb3b5b217",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/compfest/2026/redis_cli_0_day/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/compfest/2026/redis_cli_0_day/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

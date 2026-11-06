@@ -1,0 +1,22 @@
+[
+  {
+    "name": "README.md",
+    "bytes": 304,
+    "crc32": "0xd24c3c4f"
+  },
+  {
+    "name": "challenge.glsl",
+    "bytes": 4739,
+    "crc32": "0xe9898e97"
+  },
+  {
+    "name": "program.png",
+    "bytes": 1908,
+    "crc32": "0x8ffa0998"
+  },
+  {
+    "name": "runner.html",
+    "bytes": 10485,
+    "crc32": "0xa630929e"
+  }
+]

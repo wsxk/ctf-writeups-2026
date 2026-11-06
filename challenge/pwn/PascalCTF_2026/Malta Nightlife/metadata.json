@@ -1,0 +1,215 @@
+{
+  "event_id": "CTF-2767",
+  "event_title": "PascalCTF 2026",
+  "category": "pwn",
+  "title": "Malta Nightlife",
+  "source_urls": [
+    "https://github.com/PascalCTF/PascalCTF-2026/tree/HEAD/pwn01",
+    "https://ctftime.org/event/2767/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/checker/__main__.py",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/writeup/README.md",
+    "https://vaylobat.github.io/posts/pascalctf2026-malta-nightlife/"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/attachments/malta.zip",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/authors.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/description.md",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/endpoint.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/flags.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/order.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/points.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/src/Makefile",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/src/docker-compose.yml",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/src/malta.c",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/tags.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/timeout.txt",
+    "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/title.txt"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "PascalCTF/PascalCTF-2026",
+  "repository_tree_sha": "20b80a2173b1d9459eba553c6576e4eee39f5179",
+  "artifacts": [
+    {
+      "path": "attachments/attachments/malta.zip",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/attachments/malta.zip",
+      "bytes": 4786,
+      "sha256": "8b13c56a9538e710ae711b3119c982ecdff11478f7cee31aaccef07ad4745a57",
+      "git_blob_sha1": "dc12194158b106dcebdbf72558cc38bf632fd89f",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/authors.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/authors.txt",
+      "bytes": 53,
+      "sha256": "b523f8494c4673231bbec3e443ff053ceca1ea224038f38ac0c1ccd756d7b61d",
+      "git_blob_sha1": "510df82ce85ff322e806149819858b4274b608a6",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/checker/__main__.py",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/checker/__main__.py",
+      "bytes": 757,
+      "sha256": "fdd6f25c357893ab7d64db85865eb4350e7d92f5a3461a05f4a2ddf8b50aae53",
+      "git_blob_sha1": "41ec65dc0840f13b13b304dcb93884a071dca560",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/description.md",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/description.md",
+      "bytes": 71,
+      "sha256": "eb7b25d8ad96be502321b0998cf0f7dc2c1c4d75671f491a9339a818a19f52c9",
+      "git_blob_sha1": "430db2fe001181ce6bad763cefa6c5bc82eadd73",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/endpoint.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/endpoint.txt",
+      "bytes": 32,
+      "sha256": "976ff9889f290518e61e2c77eb35c0b11b27df38d97f1d9ffe9f061f9877a49d",
+      "git_blob_sha1": "38af9ea7958ea624645044b64bf375fc4f5c2388",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flags.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/flags.txt",
+      "bytes": 43,
+      "sha256": "1e8f88195ec043e93fae36bcdde7a6e8c50eb113de16dc4cb27cf2da22c7a6b9",
+      "git_blob_sha1": "a949e05432dee6b817ed3dd2d7fc9a92fdc78243",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/order.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/order.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "git_blob_sha1": "d00491fd7e5bb6fa28c517a0bb32b8b506539d4d",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/points.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/points.txt",
+      "bytes": 4,
+      "sha256": "792376c209f338959be4cf00c54dbf82662b90516082e23106faec4c43c69e49",
+      "git_blob_sha1": "1b79f38e25b24dcac0318f3371793a6ec204a71b",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/Makefile",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/src/Makefile",
+      "bytes": 283,
+      "sha256": "c953391b435c7229f224d71ed30708b8af03fd71abb6f40f7f3084090cba9dd7",
+      "git_blob_sha1": "d73eb0ab698bdb08172eec874285eb0d4635f1e1",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/docker-compose.yml",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/src/docker-compose.yml",
+      "bytes": 463,
+      "sha256": "35936639c457b93076de92aa191407437d5b0dc8c134b2e92de5141f30836132",
+      "git_blob_sha1": "aff2a12a8098c51814642d2f34bc75aa687fbdc7",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/malta.c",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/src/malta.c",
+      "bytes": 7887,
+      "sha256": "6390a893a3a89a5e2682a3df264f0e5cd5644ec2fafada05790b299d0abb0df9",
+      "git_blob_sha1": "5ccd3aa5f6880191ec3ad798b8278b56a4026b2d",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/tags.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/tags.txt",
+      "bytes": 4,
+      "sha256": "fa5713fea5d7eef2d07920b972f15234d65df152e0855048f8e8fbf655d67ebb",
+      "git_blob_sha1": "1fddbb0a0ff7e71c6b5a1c988db8cd3926dda8f3",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/timeout.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/timeout.txt",
+      "bytes": 3,
+      "sha256": "917df3320d778ddbaa5c5c7742bc4046bf803c36ed2b050f30844ed206783469",
+      "git_blob_sha1": "f599e28b8ab0d8c9c57a486c89c4a5132dcbd3b2",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/title.txt",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/title.txt",
+      "bytes": 15,
+      "sha256": "b609f6628104c3b74420f899fd862f37c379b54a92ad79e872c8361442120dcd",
+      "git_blob_sha1": "ffa002acf51d246afdcd01ac9dc6e978ce61e33a",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/README.md",
+      "url": "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/pwn01/writeup/README.md",
+      "bytes": 5,
+      "sha256": "56ba36249ea8216ad513b13df3de6c0e490ba214897674d30331f1c7e7edbef3",
+      "git_blob_sha1": "1333ed77b7e1ed056329cae96075dc558158ee69",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/community/vaylobat.html",
+      "url": "https://vaylobat.github.io/posts/pascalctf2026-malta-nightlife/",
+      "kind": "writeups",
+      "bytes": 22199,
+      "sha256": "fe968aff981045a19e21b9528231028262b210733e6e287b80d73c0f334a91ac"
+    },
+    {
+      "path": "writeups/community/vaylobat.txt",
+      "url": "https://vaylobat.github.io/posts/pascalctf2026-malta-nightlife/",
+      "kind": "writeups",
+      "bytes": 2027,
+      "sha256": "fda43d6d22cb486efed26edcb6503b26cdadcdaa12b439b63584c1cfbb0165a1",
+      "derived_from": "vaylobat.html"
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/community/vaylobat.txt"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

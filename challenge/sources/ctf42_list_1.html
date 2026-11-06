@@ -1,0 +1,957 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CTF challenges & writeups · ctf42</title>
+  
+
+<meta name="description" content="Browse and filter thousands of past CTF challenges by category, difficulty, technique, year and CTF weight, with writeups and handout files.">
+<meta name="robots" content="noindex, follow">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/challenges/">
+<meta property="og:title" content="CTF challenges & writeups">
+<meta property="og:description" content="Browse and filter thousands of past CTF challenges by category, difficulty, technique, year and CTF weight, with writeups and handout files.">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+<h1>Challenges</h1>
+<div class="browse">
+  <form class="filters" method="get">
+    <div class="field">
+      <label for="q">Search</label>
+      <input id="q" type="search" name="q" value="" placeholder="name, tag, author…">
+    </div>
+
+    <fieldset>
+      <legend>Category</legend>
+      
+        <label class="check"><input type="checkbox" name="category" value="web" > <span class="cat cat-web">Web</span></label>
+      
+        <label class="check"><input type="checkbox" name="category" value="pwn" checked> <span class="cat cat-pwn">Pwn</span></label>
+      
+        <label class="check"><input type="checkbox" name="category" value="rev" checked> <span class="cat cat-rev">Reverse</span></label>
+      
+        <label class="check"><input type="checkbox" name="category" value="crypto" > <span class="cat cat-crypto">Crypto</span></label>
+      
+        <label class="check"><input type="checkbox" name="category" value="forensics" > <span class="cat cat-forensics">Forensics</span></label>
+      
+        <label class="check"><input type="checkbox" name="category" value="misc" > <span class="cat cat-misc">Misc</span></label>
+      
+        <label class="check"><input type="checkbox" name="category" value="osint" > <span class="cat cat-osint">OSINT</span></label>
+      
+        <label class="check"><input type="checkbox" name="category" value="stego" > <span class="cat cat-stego">Stego</span></label>
+      
+        <label class="check"><input type="checkbox" name="category" value="blockchain" > <span class="cat cat-blockchain">Blockchain</span></label>
+      
+        <label class="check"><input type="checkbox" name="category" value="hardware" checked> <span class="cat cat-hardware">Hardware</span></label>
+      
+        <label class="check"><input type="checkbox" name="category" value="mobile" checked> <span class="cat cat-mobile">Mobile</span></label>
+      
+    </fieldset>
+
+    <fieldset>
+      <legend>Difficulty</legend>
+      
+        <label class="check"><input type="checkbox" name="difficulty" value="1" > Beginner</label>
+      
+        <label class="check"><input type="checkbox" name="difficulty" value="2" > Easy</label>
+      
+        <label class="check"><input type="checkbox" name="difficulty" value="3" > Medium</label>
+      
+        <label class="check"><input type="checkbox" name="difficulty" value="4" > Hard</label>
+      
+        <label class="check"><input type="checkbox" name="difficulty" value="5" > Insane</label>
+      
+    </fieldset>
+
+    <fieldset>
+      <legend>CTFtime weight</legend>
+      <div class="range">
+        <input type="number" name="weight_min" value="" min="0" max="100" step="0.01" placeholder="min" aria-label="Minimum weight">
+        <span>–</span>
+        <input type="number" name="weight_max" value="" min="0" max="100" step="0.01" placeholder="max" aria-label="Maximum weight">
+      </div>
+      <small class="help">Higher weight ≈ harder, more prestigious event.</small>
+    </fieldset>
+
+    <fieldset>
+      <legend>Year</legend>
+      <div class="range">
+        <input type="number" name="year_min" value="2026" min="1996" max="2100" placeholder="from" aria-label="From year">
+        <span>–</span>
+        <input type="number" name="year_max" value="2026" min="1996" max="2100" placeholder="to" aria-label="To year">
+      </div>
+    </fieldset>
+
+    <div class="field">
+      <label for="ctf">CTF</label>
+      <select id="ctf" name="ctf">
+        <option value="">Any</option>
+        <option value="07ctf" >07CTF</option><option value="0ctf" >0CTF</option><option value="0x41414141" >0x41414141</option><option value="0xfun" >0xFUN</option><option value="0xl4ugh" >0xL4ugh</option><option value="0xv01d" >0xV01D</option><option value="1337up" >1337UP</option><option value="1753ctf" >1753CTF</option><option value="24hctf" >24hCTF</option><option value="29c3-ctf" >29C3 CTF</option><option value="3kctf" >3kCTF</option><option value="47con" >47CON</option><option value="4n0nym0us3" >4N0NYM0US3</option><option value="4ts" >4TS</option><option value="accessdenied" >AccessDenied</option><option value="adda" >ADDA</option><option value="aero" >Aero</option><option value="africabattlectf" >AfricabattleCTF</option><option value="ai" >AI</option><option value="airoverflow" >AirOverflow</option><option value="aitu" >AITU</option><option value="akasec" >Akasec</option><option value="alles" >ALLES</option><option value="alpacahack" >AlpacaHack</option><option value="amateursctf" >AmateursCTF</option><option value="angstromctf" >angstromCTF</option><option value="apoorvctf" >ApoorvCTF</option><option value="appsecvillage" >AppSecVillage</option><option value="aptoscodecollision" >AptosCodeCollision</option><option value="ara" >ARA</option><option value="arabsecuritycyberwargames" >ArabSecurityCyberWargames</option><option value="asis" >ASIS</option><option value="atcwintervibescommunity" >ATCWinterVibesCommunity</option><option value="auctf" >AUCTF</option><option value="auvergnhack" >Auvergnhack</option><option value="axiom" >Axiom</option><option value="azureassassinalliance" >AzureAssassinAlliance</option><option value="b01lers" >b01lers</option><option value="backdoorctf" >BackdoorCTF</option><option value="balccon" >BalCCon</option><option value="balsn" >Balsn</option><option value="bamboofox" >BambooFox</option><option value="bauhinia" >Bauhinia</option><option value="bcactf" >BCACTF</option><option value="bctf" >BCTF</option><option value="bdsec" >BDSec</option><option value="bearcat" >Bearcat</option><option value="bhackari" >Bhackari</option><option value="bi0sctf" >bi0sCTF</option><option value="bitsctf" >BITSCTF</option><option value="bkctf" >BKCTF</option><option value="bkisc" >BKISC</option><option value="blackhatmea" >BlackhatMEA</option><option value="blazctf" >BlazCTF</option><option value="blaze" >Blaze</option><option value="blitzctf" >BlitzCTF</option><option value="block" >Block</option><option value="blockharbor" >BlockHarbor</option><option value="bluearena" >BlueArena</option><option value="bluehens" >BlueHens</option><option value="bluewater" >BlueWater</option><option value="boot2root" >boot2root</option><option value="boroctf" >BoroCTF</option><option value="braekerctf" >BraekerCTF</option><option value="breachctf" >BreachCTF</option><option value="breakthesyntax" >BreakTheSyntax</option><option value="brics" >BRICS+</option><option value="broncoctf" >BroncoCTF</option><option value="brunnerctf" >BrunnerCTF</option><option value="bsidesahmedabad" >BSidesAhmedabad</option><option value="bsidesalgiers" >BSidesAlgiers</option><option value="bsidesbos" >BSidesBOS</option><option value="bsidescanberra" >BSidesCanberra</option><option value="bsidesdelhi" >BSidesDelhi</option><option value="bsidesindore" >BSidesIndore</option><option value="bsidesmumbai" >BSidesMumbai</option><option value="bsidesnoida" >BSidesNoida</option><option value="bsidessf" >BSidesSF</option><option value="bsidestlv" >BSidesTLV</option><option value="btctf" >BTCTF</option><option value="bucket" >Bucket</option><option value="buckeyectf" >BuckeyeCTF</option><option value="bushbash" >BushBash</option><option value="bxmctf" >BxMCTF</option><option value="bytebandits" >ByteBandits</option><option value="bytectf" >ByteCTF</option><option value="byuctf" >BYUCTF</option><option value="c3ctf" >C3CTF</option><option value="cactuscon-ctf" >CactusCon CTF</option><option value="cakectf" >CakeCTF</option><option value="castorsctf" >castorsCTF</option><option value="catthequest" >CatTheQuest</option><option value="cccamp" >CCCamp</option><option value="ccsc-ctf" >CCSC CTF</option><option value="chaff" >Chaff</option><option value="chujowy" >Chujowy</option><option value="circlecitycon" >CircleCityCon</option><option value="codeblue" >CodeBlue</option><option value="codefest" >Codefest</option><option value="codegate" >Codegate</option><option value="codevinci" >CodeVinci</option><option value="compfest" >COMPFEST</option><option value="confidence" >CONFidence</option><option value="corctf" >corCTF</option><option value="cornctf" >cornCTF</option><option value="cpctf" >CPCTF</option><option value="cr3" >cr3</option><option value="crackmesonereverseengineering" >Crackmes.oneReverseEngineering</option><option value="cratectf" >CrateCTF</option><option value="crewctf" >CrewCTF</option><option value="crhc" >CRHC</option><option value="cruxipher" >cruXipher</option><option value="cryovault" >Cryovault</option><option value="crypto" >Crypto</option><option value="cryptonite" >CryptoNite</option><option value="cryptoverse" >Cryptoverse</option><option value="csaw" >CSAW</option><option value="cscg" >CSCG</option><option value="cscml" >CSCML</option><option value="csictf" >csictf</option><option value="css" >CSS</option><option value="ctfac" >CTF@AC</option><option value="ctfcit" >CTF@CIT</option><option value="ctfzone" >CTFZone</option><option value="ctrlspace" >Ctrl+Space</option><option value="cubectf" >CubeCTF</option><option value="cursedctf" >CursedCTF</option><option value="cyberapocalypse" >CyberApocalypse</option><option value="cybercoliseum" >Cybercoliseum</option><option value="cybergame" >CyberGame</option><option value="cybergon" >CYBERGON</option><option value="cybergrabs" >CyberGrabs</option><option value="cyberheroines" >CyberHeroines</option><option value="cyberleague" >CyberLeague</option><option value="cyberodyssey-akasec" >CyberOdyssey Akasec</option><option value="cybersecurityrumble" >CyberSecurityRumble</option><option value="cyberspace" >CyberSpace</option><option value="cyberyoddha" >CyberYoddha</option><option value="cybhackctf" >CybHackCTF</option><option value="cybrics" >CyBRICS</option><option value="cygenix" >Cygenix</option><option value="cykor" >CyKor</option><option value="cyshock" >Cyshock</option><option value="d3ctf" >D3CTF</option><option value="dalctf" >DalCTF</option><option value="damctf" >DamCTF</option><option value="damncon" >Damncon</option><option value="dantectf" >DanteCTF</option><option value="darkcon" >darkCON</option><option value="darkctf" >DarkCTF</option><option value="davincictf" >DaVinciCTF</option><option value="dawgctf" >DawgCTF</option><option value="dctf" >DCTF</option><option value="de1ctf" >De1CTF</option><option value="deadface" >DEADFACE</option><option value="deadsec" >DeadSec</option><option value="deconstructf" >DeconstruCT.F</option><option value="defcamp" >Defcamp</option><option value="defcon" >DEFCON</option><option value="defenit" >Defenit</option><option value="dicectf" >DiceCTF</option><option value="digitaloverdose" >DigitalOverdose</option><option value="diverosint" >DIVEROSINT</option><option value="downunderctf" >DownUnderCTF</option><option value="dragon" >Dragon</option><option value="dreamhack" >Dreamhack</option><option value="dreamhackinvitational" >DreamhackInvitational</option><option value="duckerz" >DUCKERZ</option><option value="e0f" >E0F</option><option value="ebctf" >EBCTF</option><option value="ectf" >ECTF</option><option value="ecw" >ECW</option><option value="ehacon" >eHaCON</option><option value="ehax" >EHAX</option><option value="ekoparty" >EKOPARTY</option><option value="engineer" >Engineer</option><option value="enigmaxplore" >EnigmaXplore</option><option value="escape" >ESCAPE</option><option value="evlzctf" >EvlzCTF</option><option value="facebookctf" >FacebookCTF</option><option value="fe-ctf" >FE-CTF</option><option value="fireshell" >FireShell</option><option value="foobarctf" >FooBarCTF</option><option value="fortid" >FortID</option><option value="freedom" >Freedom</option><option value="fromdusktilldawn" >FromDuskTillDawn</option><option value="fullweakengineer" >FullWeakEngineer</option><option value="fwordctf" >FwordCTF</option><option value="gactf" >GACTF</option><option value="gaslightctf" >GaslightCTF</option><option value="gcc" >GCC</option><option value="gdgalgiers" >GDGAlgiers</option><option value="ghost-in-the-shellcode" >Ghost in the Shellcode</option><option value="glacier" >Glacier</option><option value="glsc" >GLSC</option><option value="googlectf" >GoogleCTF</option><option value="gpn" >GPN</option><option value="grehack-ctf" >GreHack CTF</option><option value="grep" >GREP</option><option value="greycattheflag" >GreyCatTheFlag</option><option value="h4ckc0n" >h4ckc0n</option><option value="h7ctf" >H7CTF</option><option value="hacklu" >Hack.lu</option><option value="hackappatoi" >Hackappatoi</option><option value="hackasat" >HackASat</option><option value="hackastra" >HackAstra</option><option value="hackcon" >HackCon</option><option value="hackersplayground" >HackersPlayground</option><option value="hackforachange" >HackForAChange</option><option value="hackhavoc" >HackHavoc</option><option value="hackorn" >Hackorn</option><option value="hackover" >Hackover</option><option value="hackpack" >HackPack</option><option value="hackthevote" >HackTheVote</option><option value="hacktivitycon" >HacktivityCon</option><option value="hacktm" >HackTM</option><option value="hackzonetunisia" >HackZoneTunisia</option><option value="haixlachapelle" >HaixlaChapelle</option><option value="hardware" >Hardware</option><option value="harekaze" >Harekaze</option><option value="haruulzangi" >Haruulzangi</option><option value="hasblctf" >HASBLCTF</option><option value="hauntedpumpkin" >HauntedPumpkin</option><option value="hayyim" >Hayyim</option><option value="hcmus" >HCMUS</option><option value="heroctf" >HeroCTF</option><option value="hexionctf" >HexionCTF</option><option value="hi-cyber-con-ctf" >HI Cyber Con CTF</option><option value="hitcon" >HITCON</option><option value="hivectf" >HiveCTF</option><option value="hkcert" >HKCERT</option><option value="hkustfirebird" >HKUSTFirebird</option><option value="hsctf" >HSCTF</option><option value="hxp" >hxp</option><option value="ichsa" >ICHSA</option><option value="idekctf" >idekCTF</option><option value="ierae" >IERAE</option><option value="ijctf" >IJCTF</option><option value="imaginaryctf" >ImaginaryCTF</option><option value="imf" >IMF</option><option value="incognito" >INCOGNITO</option><option value="inctf" >InCTF</option><option value="infobahn" >Infobahn</option><option value="infosec" >InfoSec</option><option value="ingonyamazk" >IngonyamaZK</option><option value="inshack" >INShAck</option><option value="insomnihack" >insomnihack</option><option value="intent" >Intent</option><option value="interlogicactfs" >InterlogicaCTFs</option><option value="internetfestival" >InternetFestival</option><option value="involuntaryctf" >involuntaryCTF</option><option value="irisctf" >IrisCTF</option><option value="iron" >IRON</option><option value="isitdtu" >ISITDTU</option><option value="jade" >Jade</option><option value="jailctf" >JailCTF</option><option value="jerseyctf" >JerseyCTF</option><option value="juniorcrypt" >Junior.Crypt</option><option value="justctf" >justCTF</option><option value="k17" >K17</option><option value="k3rn3lctf" >K3RN3LCTF</option><option value="kalmarctf" >KalmarCTF</option><option value="kashi" >Kashi</option><option value="kbxac" >KBxAc</option><option value="killerqueen" >KillerQueen</option><option value="kind4sus" >Kind4SUS</option><option value="kipodafterfree" >KipodAfterFree</option><option value="kitctfctf" >KITCTFCTF</option><option value="kksctf" >kksctf</option><option value="knightctf" >KnightCTF</option><option value="kubanctf" >KubanCTF</option><option value="kubstu" >KubSTU</option><option value="l3akctf" >L3akCTF</option><option value="l3hctf" >L3HCTF</option><option value="la" >LA</option><option value="lagncrash" >LagNCrash</option><option value="lakectf" >LakeCTF</option><option value="layer7" >Layer7</option><option value="ledgerdonjon" >LedgerDonjon</option><option value="lexingtoninformaticstournament" >LexingtonInformaticsTournament</option><option value="lilacctf" >LilacCTF</option><option value="line" >LINE</option><option value="lyknctf" >LYKNCTF</option><option value="m0lecon" >m0leCon</option><option value="maltactf" >MaltaCTF</option><option value="maplectf" >MapleCTF</option><option value="mapna" >Mapna</option><option value="mctf" >MCTF</option><option value="meepwn" >MeePwn</option><option value="metactf" >MetaCTF</option><option value="metared" >MetaRed</option><option value="midnightflag" >MidnightFlag</option><option value="midnightsun" >MidnightSun</option><option value="mipt" >MIPT</option><option value="mntcrlctf" >MntcrlCTF</option><option value="must" >MUST</option><option value="n00bzctf" >n00bzCTF</option><option value="n0psctf" >N0PSctf</option><option value="n1ctf" >N1CTF</option><option value="nactf" >NACTF</option><option value="nahamcon" >NahamCon</option><option value="nctf" >NCTF</option><option value="ndiasautomotiveiot" >NDIASAutomotiveIoT</option><option value="neverlan-ctf" >NeverLAN CTF</option><option value="newportblakectf" >NewportBlakeCTF</option><option value="newyear" >NewYear</option><option value="nexhunt" >NexHunt</option><option value="nexus" >Nexus</option><option value="nitectf" >niteCTF</option><option value="nns" >NNS</option><option value="noescape" >NOESCAPE</option><option value="nohacknoctf" >NoHackNoCTF</option><option value="norzh" >Norzh</option><option value="novruzctf" >NovruzCTF</option><option value="nowruz" >Nowruz</option><option value="ntua_h4ck" >NTUA_H4CK</option><option value="nuitduhack" >NuitduHack</option><option value="null" >Null</option><option value="nullconhackim" >nullconHackIM</option><option value="ofppt" >OFPPT</option><option value="omh" >OMH</option><option value="openecsc" >openECSC</option><option value="osctf" >OSCTF</option><option value="osuigaming" >osuigaming</option><option value="overthewireadventbonanza" >OverTheWireAdventBonanza</option><option value="pwn" >P.W.N</option><option value="p3rf3ctr00t" >P3rf3ctr00t</option><option value="p4ctf" >p4ctf</option><option value="paradigm" >Paradigm</option><option value="pascalctf" >PascalCTF</option><option value="patriotctf" >PatriotCTF</option><option value="pbjar" >PBjar</option><option value="pearl" >Pearl</option><option value="perfectblue" >perfectblue</option><option value="picoctf" >picoCTF</option><option value="pingctf" >pingCTF</option><option value="plaidctf" >PlaidCTF</option><option value="platypwn" >Platypwn</option><option value="plfanzen" >plfanzen</option><option value="pointeroverflow" >PointerOverflow</option><option value="poseidonctf" >PoseidonCTF</option><option value="potluck" >Potluck</option><option value="pragyan" >Pragyan</option><option value="psychctf" >PsychCTF</option><option value="pwn2win" >Pwn2Win</option><option value="pwnme" >PwnMe</option><option value="pwnsec" >PwnSec</option><option value="pwnthybytes" >PwnThyBytes</option><option value="qnqsec" >QnQSec</option><option value="questcon" >QUESTCON</option><option value="r3ctf" >R3CTF</option><option value="ractf" >RACTF</option><option value="ramunchers" >RAMunchers</option><option value="rarctf" >RaRCTF</option><option value="razictf" >RaziCTF</option><option value="rctf" >RCTF</option><option value="realworld" >RealWorld</option><option value="redpwn" >redpwn</option><option value="redshifteclipse2" >RedShift.Eclipse2</option><option value="remedy" >Remedy</option><option value="rgbctf" >rgbCTF</option><option value="ricerca" >Ricerca</option><option value="ritsec" >RITSEC</option><option value="rooters" >Rooters</option><option value="rtl" >RTL</option><option value="rush" >Rush</option><option value="rvcexiitbxycf" >RVCExIITBxYCF</option><option value="s4ctf" >S4CTF</option><option value="sandiego" >SanDiego</option><option value="sas" >SAS</option><option value="scarlet" >Scarlet</option><option value="scriptctf" >ScriptCTF</option><option value="sctf" >SCTF</option><option value="sec-t" >SEC-T</option><option value="seccon" >SECCON</option><option value="secleaf" >SecLeaf</option><option value="securinets" >Securinets</option><option value="securinets-ctf" >Securinets CTF</option><option value="securityfest" >SecurityFest</option><option value="seetf" >SEETF</option><option value="sekaictf" >SekaiCTF</option><option value="shaastra" >Shaastra</option><option value="shakti" >Shakti</option><option value="sharkyctf" >SharkyCTF</option><option value="shell" >SHELL</option><option value="shunyactf" >ShunyaCTF</option><option value="sillyctf" >SillyCTF</option><option value="sknbctf" >sknbCTF</option><option value="smileyctf" >smileyCTF</option><option value="snakectf" >snakeCTF</option><option value="spaceheroes" >SpaceHeroes</option><option value="spamandflags" >SpamAndFlags</option><option value="spartanctf" >SpartanCTF</option><option value="spbctf" >SPbCTF</option><option value="spookyctf" >SpookyCTF</option><option value="springforwardctf" >SpringForwardCTF</option><option value="squ1rrel" >squ1rrel</option><option value="srdnlen" >Srdnlen</option><option value="stacksmash" >StackSmash</option><option value="starctf" >StarCTF</option><option value="starpwn" >Starpwn</option><option value="summit" >Summit</option><option value="sunshinectf" >SunshineCTF</option><option value="susctf" >SUSCTF</option><option value="susec" >SuSeC</option><option value="swampctf" >SwampCTF</option><option value="syskronsecurity" >SyskronSecurity</option><option value="t3n4ci0us" >T3N4CI0US</option><option value="taipanbyte" >TaipanByte</option><option value="talldwarfhostinghostingtakeover" >TallDwarfHostingHostingTakeover</option><option value="tamil" >Tamil</option><option value="tamuctf" >TAMUctf</option><option value="tasteless" >Tasteless</option><option value="tcp1p" >TCP1P</option><option value="teamitaly" >TeamItaly</option><option value="techcomfest" >TECHCOMFEST</option><option value="tenable" >Tenable</option><option value="tetctf" >TetCTF</option><option value="texsaw" >TexSAW</option><option value="tfc" >TFC</option><option value="tghack" >TGHACK</option><option value="thcon" >THCon</option><option value="thecyberjawarainternational" >TheCyberJawaraInternational</option><option value="thehackerconclave" >TheHackerConclave</option><option value="themctf" >THEMCTF</option><option value="theodyssey" >TheOdyssey</option><option value="thjcc" >THJCC</option><option value="tjctf" >TJCTF</option><option value="tkbctf" >tkbctf</option><option value="tmuctf" >TMUCTF</option><option value="toh" >ToH</option><option value="tokyowesterns" >TokyoWesterns</option><option value="tpctf" >TPCTF</option><option value="traceathenaosint" >TraceAthenaOSINT</option><option value="tracebash" >TraceBash</option><option value="trellixhax" >TrellixHAX</option><option value="trollcat" >TrollCAT</option><option value="trx" >TRX</option><option value="tscctf" >TSCCTF</option><option value="tsg" >TSG</option><option value="tsukuctf" >TsukuCTF</option><option value="tu" >TU</option><option value="typhooncon" >TyphoonCon</option><option value="uactf" >UACTF</option><option value="uacws" >UACWS</option><option value="uctf" >UCTF</option><option value="ugra" >Ugra</option><option value="uiuctf" >UIUCTF</option><option value="ulisse" >Ulisse</option><option value="umassctf" >UMassCTF</option><option value="umdctf" >UMDCTF</option><option value="unbreakableinternational" >UNbreakableInternational</option><option value="undutmaning" >Undutmaning</option><option value="uni6ctf" >UNI6ctf</option><option value="union" >Union</option><option value="universal" >Universal</option><option value="univsthreats" >UniVsThreats</option><option value="unsdg" >UNSDG</option><option value="uoftctf" >UofTCTF</option><option value="upctf" >upCTF</option><option value="urchinsecaware" >UrchinSecAware</option><option value="urchinsectanzanianational" >UrchinSecTanzaniaNational</option><option value="usc" >USC</option><option value="utctf" >UTCTF</option><option value="uutctf" >UUTCTF</option><option value="v1t" >V1T</option><option value="viettelmates" >ViettelMates</option><option value="vikectf" >vikeCTF</option><option value="virseccon" >VirSecCon</option><option value="vishwactf" >VishwaCTF</option><option value="volgactf" >VolgaCTF</option><option value="vsctf" >vsCTF</option><option value="vulncon" >VULNCON</option><option value="vulnx" >VulnX</option><option value="vuwctf" >VuwCTF</option><option value="wacon" >WACON</option><option value="wanictf" >WaniCTF</option><option value="wannagamechampionship" >WannaGameChampionship</option><option value="wargamesmy" >Wargames.MY</option><option value="watctf" >WATCTF</option><option value="watevrctf" >watevrCTF</option><option value="webarena" >WebArena</option><option value="wectf" >WeCTF</option><option value="whitehat" >WhiteHat</option><option value="why" >WHY</option><option value="winja" >Winja</option><option value="wmctf" >WMCTF</option><option value="wolvctf" >WolvCTF</option><option value="worldwide" >WorldWide</option><option value="wormcon" >WORMCON</option><option value="wpictf" >WPICTF</option><option value="wreckctf" >WRECKCTF</option><option value="wtf" >wtf</option><option value="wxmctf" >WxMCTF</option><option value="x-mas" >X-MAS</option><option value="x3ctf" >x3ctf</option><option value="xctf-dubhectf" >XCTF-DubheCTF</option><option value="z0d1ak" >Z0d1ak</option><option value="zer0pts" >zer0pts</option><option value="zh3r0" >Zh3r0</option><option value="n1phrs-ctf" >$N1PH€RS CTF</option><option value="ctf" >*ctf</option><option value="0bytectf" >0ByteCTF</option><option value="0x00ctf" >0x00ctf</option><option value="3dsctf" >3DSCTF</option><option value="404-ctf" >404 CTF</option><option value="44con-ctf" >44CON CTF</option><option value="8bit" >8bit</option><option value="9447-security-society-ctf" >9447 Security Society CTF</option><option value="hack" >@Hack</option><option value="hackctf" >@HackCTF</option><option value="a-renewal-agent" >A Renewal Agent</option><option value="abctf" >ABCTF</option><option value="acebear-security-contest" >AceBear Security Contest</option><option value="acectf" >ACECTF</option><option value="acsasean-cyber-shield-ctf" >ACS(ASEAN Cyber Shield) CTF</option><option value="affinity-ctf" >Affinity CTF</option><option value="ai-vs-human-ctf" >AI vs Human CTF</option><option value="airgapctf2020" >airgapctf2020</option><option value="ajman-university-ctf" >Ajman University CTF</option><option value="alexctf" >AlexCTF</option><option value="alfa-ctf" >Alfa CTF</option><option value="alictf" >ALICTF</option><option value="allmn-ctf" >ALL.MN CTF</option><option value="altayctf" >AltayCTF</option><option value="amsi-ctf" >AMSI CTF</option><option value="anti-slop-ctf" >Anti-Slop CTF</option><option value="apaiut-cert-quals" >APAIUT-CERT Quals</option><option value="aperictf" >Aperi&#x27;CTF</option><option value="aport-vault-ctf" >APort Vault CTF</option><option value="april-fools-gtf" >April Fools&#x27; GTF</option><option value="ascf-ctf" >ASCF CTF</option><option value="atast-ctf" >ATAST CTF</option><option value="athena-ctf" >Athena CTF</option><option value="atla-opening-date-ctf" >ATLA Opening Date CTF</option><option value="automotive-ctf-japan" >Automotive CTF Japan</option><option value="avitotech-ctf" >AvitoTech CTF</option><option value="avss-adversarial-vulnerability-scoring-system-contest" >AVSS (Adversarial Vulnerability Scoring System) Contest</option><option value="b-sides" >B-Sides</option><option value="baccc-regionals" >BACCC Regionals</option><option value="baltctf" >BaltCTF</option><option value="baltctf-quals" >BaltCTF Quals</option><option value="bambi-ctf" >Bambi CTF</option><option value="bank-security-challenge" >Bank Security Challenge</option><option value="battleware" >BATTLEWARE</option><option value="bauctf" >BauCTF</option><option value="bcs-ctf" >BCS CTF</option><option value="belkactf" >BelkaCTF</option><option value="belluminar" >Belluminar</option><option value="biterra-ctfs" >Biterra CTFs</option><option value="blackalps" >BlackAlps</option><option value="bloom-clues-ctf" >Bloom Clues CTF</option><option value="boot-2-rootctf" >BOOT 2 ROOT(CTF)</option><option value="boston-key-party-ctf" >Boston Key Party CTF</option><option value="brainhack" >BrainHack</option><option value="breach-bytes-20" >Breach Bytes 2.0</option><option value="breach-point-ctf" >Breach Point CTF</option><option value="breachpoint" >BreachPoint</option><option value="break-in" >Break In</option><option value="bsides-ahmedabad-ctf" >BSides Ahmedabad CTF</option><option value="bsides-jeddah" >Bsides Jeddah</option><option value="bsides-odisha-web3-ctf" >BSides Odisha WEB3 CTF</option><option value="bsides-peoria-ctf" >BSides Peoria CTF</option><option value="bth_ctf" >BTH_CTF</option><option value="buet-ctf" >BUET CTF</option><option value="buff3r-ctf" >BUFF3R CTF</option><option value="bugs-bunny-ctf" >Bugs Bunny CTF</option><option value="byteme-ctf" >ByteMe CTF</option><option value="c4ctf" >C4CTF</option><option value="can-cwic-ctf" >Can-CWIC CTF</option><option value="capture-point" >Capture Point</option><option value="capture-the-flag-incredia" >Capture the Flag - Incredia</option><option value="capture-the-signal-ctf" >Capture the Signal CTF</option><option value="capture-the-ti_erx" >Capture The TI_eRx</option><option value="capturethefic" >CaptureTheFIC</option><option value="capturethewu" >CaptureTheWU</option><option value="carthage-cyber-arena" >Carthage Cyber Arena</option><option value="cat-reloaded-ctf" >CAT Reloaded CTF</option><option value="cbit-headstart-ctf" >CBIT Headstart CTF</option><option value="cbm-ctf" >CBM CTF</option><option value="cctf" >CCTF</option><option value="cdctf" >CDCTF</option><option value="challenge-the-cyber" >Challenge the Cyber</option><option value="cic_ctf" >CIC_CTF</option><option value="cinsects-ctf" >CInsects CTF</option><option value="cipherhunt" >CipherHunt</option><option value="cipherhunt-20" >CipherHunt 2.0</option><option value="cisa-ics-ctf" >CISA ICS CTF</option><option value="citeflag" >CITEFLAG</option><option value="cityf-atbash" >CityF atBash</option><option value="clash-of-cybers" >Clash of Cybers</option><option value="code-x-sport-jung23-ctf" >Code X Sport Jung&#x27;23 CTF</option><option value="codean-ctf" >Codean CTF</option><option value="cohesion" >Cohesion</option><option value="collegiate-sectf" >Collegiate SECTF</option><option value="conquer-the-world-by-ieee-vit" >Conquer the World by IEEE-VIT</option><option value="content-creators-club-ctf" >Content Creators Club CTF</option><option value="covid-19-ctf" >Covid-19 CTF</option><option value="crac-ctfs" >CRAC CTFs</option><option value="crack-in-20" >CRACK-IN 2.0</option><option value="crest-ctf" >CREST CTF</option><option value="crma-mini-ctf" >CRMA mini CTF</option><option value="crypt_find" >CrypT_Find</option><option value="cryptixctf" >CryptixCTF</option><option value="cryptoburst-ctf" >CryptoBurst CTF</option><option value="cs166-x-fsab-ctf" >CS166 x FSAB CTF</option><option value="csa-ctf" >CSA CTF</option><option value="csaw-embedded-security-challenge-quals" >CSAW Embedded Security Challenge Quals</option><option value="cscamp-ctf-finals" >CSCAMP CTF Finals</option><option value="cscamp-ctf-quals" >CSCAMP CTF Quals</option><option value="csctf" >CSCTF</option><option value="ctf-313" >CTF 313</option><option value="ctf-after-dark" >CTF After Dark</option><option value="ctf-cybercamp-umu" >CTF Cybercamp UMU</option><option value="ctf-interiut" >CTF InterIUT</option><option value="ctf-internacional-metared" >CTF Internacional MetaRed</option><option value="ctf-russian-cup" >CTF Russian Cup</option><option value="ctfx" >CTF(x)</option><option value="ctfmoscow" >ctf.moscow</option><option value="cu-school-ctf" >CU school CTF</option><option value="cuctf" >CUCTF</option><option value="cyber" >CYBER</option><option value="cyber-community-club" >Cyber Community Club</option><option value="cyber-conclave-ki-ctf" >Cyber conclave | KI CTF</option><option value="cyber-jawara" >Cyber Jawara</option><option value="cyber-lumen-ctf" >Cyber Lumen #CTF</option><option value="cyberhack" >Cyber@Hack</option><option value="cyberbytes" >CyberBytes</option><option value="cybercup-indian-ocean" >CyberCup Indian Ocean</option><option value="cyberhackctf" >CyberHackCTF</option><option value="cyberhavoc" >CyberHavoc</option><option value="cyberkumbez" >CyberKumbez</option><option value="cybernsk" >CyberNSK</option><option value="cyberquest" >CyberQuest</option><option value="cybersci" >CyberSci</option><option value="cybersecurity-day" >Cybersecurity Day</option><option value="cybersphere-ctf" >CyberSphere CTF</option><option value="cybertalents-ctf" >CyberTalents CTF</option><option value="cybertalents-ctfs" >CyberTalents CTFs</option><option value="cyberthreatforce-ctf" >CyberThreatForce-CTF</option><option value="cypher-ctf" >CypHer CTF</option><option value="dasctf" >DASCTF</option><option value="datacon" >DataCon</option><option value="dc509-ctf" >DC509 CTF</option><option value="decipher-ctf" >DECIPHER CTF</option><option value="decompetition" >Decompetition</option><option value="defcon-cloud-village-ctf" >Defcon Cloud Village CTF</option><option value="defkthon-ctf" >DEFKTHON CTF</option><option value="deloitte-ctf" >Deloitte CTF</option><option value="derbycon" >DerbyCon</option><option value="dhm" >DHM</option><option value="dialed-up-ctf" >Dialed Up CTF</option><option value="die-abenteuer-von-kim-tim" >Die Abenteuer von KIM &amp; TIM</option><option value="digital-forensics-challenge-by-dfir-labs" >Digital Forensics Challenge by DFIR Labs</option><option value="dimva-ctf" >DIMVA CTF</option><option value="domectf" >DomeCTF</option><option value="doubles1405-ctf" >DoubleS1405 CTF</option><option value="dz-hack-event" >Dz-Hack-Event</option><option value="e-jornadas" >e-Jornadas</option><option value="easterpwn" >easterpwn</option><option value="easyctf" >EasyCTF</option><option value="ecrimectf" >eCrimeCTF</option><option value="emc-defenders-league-quals" >EMC Defenders League Quals</option><option value="encipherx-ctf" >EncipherX CTF</option><option value="encrypt-ctf" >ENCRYPT CTF</option><option value="enigmaxplore-20" >EnigmaXplore 2.0</option><option value="enowars" >ENOWARS</option><option value="epihack-ctf" >EPIHACK CTF</option><option value="equinor-ctf" >Equinor CTF</option><option value="esaip-ctf" >Esaip CTF</option><option value="eschaton-ctf" >Eschaton CTF</option><option value="espilon-ctf" >Espilon CTF</option><option value="ethernaut-ctf" >Ethernaut CTF</option><option value="eycc-ctf" >EYCC CTF</option><option value="eyesopenctf" >EyesOpenCTF</option><option value="facebook-security-hacker-competition" >Facebook security hacker competition</option><option value="fareastctf" >FarEastCTF</option><option value="fartfire" >Fartfire</option><option value="faust-ctf" >FAUST CTF</option><option value="fit-hack-ctf" >FIT-HACK CTF</option><option value="flagyard-hitb-secconf-bangkok" >Flagyard - HITB SecConf Bangkok</option><option value="flightpath" >FlightPath</option><option value="fluid-attacks-ctf" >Fluid Attacks CTF</option><option value="fmctf" >FMCTF</option><option value="forbiddenbits-ctf" >ForbiddenBITS CTF</option><option value="fweefwop-ctf" >Fweefwop CTF</option><option value="g0s-ctf" >g0s CTF</option><option value="gaianspace-ctf" >GaianSpace CTF</option><option value="game-of-pwners" >Game of Pwners</option><option value="geek-ctf" >GEEK CTF</option><option value="geekpwn-x-tencent-ydlab-cloud-range-challenge" >Geekpwn x Tencent YDLAB Cloud Range Challenge</option><option value="girlsgocyberstart" >GirlsGoCyberStart</option><option value="gitex-global-ctf" >GITEX GLOBAL CTF</option><option value="gitxiitb-tl-ctf" >GITxIITB TL CTF</option><option value="global-cyberpeace-challenge" >Global CyberPeace Challenge</option><option value="goida-ctf" >GoIda CTF</option><option value="goldrush-gauntlet" >Goldrush Gauntlet</option><option value="goosectf" >GooseCTF</option><option value="grep-ctf-20" >GREP CTF 2.0</option><option value="ground-zero-hackathon-ctf-siliguri" >Ground Zero- Hackathon- CTF, Siliguri</option><option value="gryphctf" >gryphCTF</option><option value="guardians-of-the-ti" >Guardians of the TI</option><option value="guinean-cyber-security-challenge" >Guinean Cyber Security Challenge</option><option value="gunnhacks" >GunnHacks</option><option value="h1702ctf" >h1702ctf</option><option value="h34dctf" >h34dCTF</option><option value="h4ckit-ctf" >H4ckIT CTF</option><option value="hack-a-bit" >Hack a Bit</option><option value="hack-for-troops" >Hack For Troops</option><option value="hack-kap-ctf" >HACK KAP CTF</option><option value="hack-the-nexus-blizzard-ctf" >Hack The Nexus - Blizzard CTF</option><option value="hack-zeugma" >Hack Zeugma</option><option value="hackin" >Hack&#x27;In</option><option value="hackosintctf" >HACK&#x27;OSINTCTF</option><option value="hack2dawn-ctf" >Hack2Dawn CTF</option><option value="hack4krak" >Hack4Krak</option><option value="hackday-ctf" >HackDay CTF</option><option value="hackdayctf" >HackDayCTF</option><option value="hackers-gambit" >Hacker&#x27;s Gambit</option><option value="hackfest" >Hackfest</option><option value="hackfest-ctf" >Hackfest CTF</option><option value="hackhowl" >HackHowl</option><option value="hackit-ctf" >HackIT CTF</option><option value="hackrocks-cyber-summer-camp" >hackrocks Cyber Summer Camp</option><option value="hackthedrone-ctf" >HackTheDrone CTF</option><option value="hacktheon-sejong" >HACKTHEON SEJONG</option><option value="hacktorx-ctf" >HacktorX CTF</option><option value="hacktrick-ctf" >Hacktrick CTF</option><option value="hackvens" >Hackvens</option><option value="hacky-holidays" >Hacky Holidays</option><option value="hack-ctf-qualifiers" >Hackअस्त्र CTF Qualifiers</option><option value="hacon_ctf" >HACON_CTF</option><option value="hardware-ctf-at-hardweario-netherlands" >Hardware CTF at hardwear.io Netherlands</option><option value="hardweario-ctf" >hardwear.io CTF</option><option value="hctf" >HCTF</option><option value="hicathon-10" >HICAThon 1.0</option><option value="hitb-amsterdam-pro-ctf" >HITB Amsterdam Pro CTF</option><option value="hitb-ctf-amsterdam" >HITB CTF Amsterdam</option><option value="hitb-lockdown-ctf" >HITB LOCKDOWN CTF</option><option value="hitb-pro-ctf" >HITB PRO CTF</option><option value="hitb-secconf-ctf" >HITB SECCONF CTF</option><option value="hitb-xctf" >HITB-XCTF</option><option value="hitbsecconf-ctf-kuala-lumpur" >HitbSecConf CTF (Kuala Lumpur)</option><option value="hitcon-cyber-range" >HITCON Cyber Range</option><option value="hkctf-open-semi-final" >HKCTF Open Semi-Final</option><option value="hospital-under-siege-ctf" >Hospital Under Siege CTF</option><option value="hscsec" >HSCSEC</option><option value="hse-ctf" >HSE CTF</option><option value="htbluva-villach-ctf" >HTBLuVA Villach CTF</option><option value="humanctf" >HumanCTF</option><option value="hunting-season-group-ib-20th-anniversary-ctf" >HUNTING SEASON: GROUP-IB 20TH ANNIVERSARY CTF</option><option value="hust-hacking-festival" >HUST Hacking Festival</option><option value="ibstpsu-ctf" >IBST.PSU CTF</option><option value="iccsdfai-ctf" >ICCSDFAI CTF</option><option value="icectf" >IceCTF</option><option value="icg-ctf" >ICG CTF</option><option value="icon-ctf" >ICON CTF</option><option value="ictf" >iCTF</option><option value="ideh" >IDEH</option><option value="ifis-ctf" >if(is) - CTF</option><option value="ifip-sec-capture-the-flag" >IFIP SEC Capture-the-Flag</option><option value="ihs-ctf" >IHS CTF</option><option value="imperial-ctf" >Imperial CTF</option><option value="inc0gnito-ctf" >Inc0gnito CTF</option><option value="inferno-ctf" >Inferno CTF</option><option value="infinitectf" >InfiniteCTF</option><option value="init-ctf" >InIt CTF</option><option value="innoctf" >InnoCTF</option><option value="innoctf-international" >InnoCTF International</option><option value="innogames-ctf" >InnoGames CTF</option><option value="insigne-ctf" >Insigne CTF</option><option value="intechfest" >INTECHFEST</option><option value="internetwache-ctf" >Internetwache CTF</option><option value="intigriti-monthly-challenges" >Intigriti Monthly Challenges</option><option value="iran-tech-olympics-ctf" >Iran Tech Olympics CTF</option><option value="isfcr-ctf" >ISFCR CTF</option><option value="issessions-espionage-ctf" >ISSessions Espionage CTF</option><option value="iwcon-ctf" >IWCON CTF</option><option value="iguctf" >İGÜCTF</option><option value="jeanne-dhack-ctf" >Jeanne d&#x27;Hack CTF</option><option value="jisctf" >JISCTF</option><option value="juctf" >JUCTF</option><option value="jule-ctf" >Jule CTF</option><option value="juniors-ctf" >Juniors CTF</option><option value="knd4sus-ctf" >K!nd4SUS CTF</option><option value="kaalchakra-ctf" >KAALCHAKRA CTF</option><option value="kaizen-arabia-ctf" >Kaizen arabia CTF</option><option value="kali-team-ctf" >Kali Team - CTF</option><option value="kaspersky-industrial-ctf-finals" >Kaspersky Industrial CTF Finals</option><option value="kasperskyctf" >KasperskyCTF</option><option value="kernel-kombat" >Kernel Kombat</option><option value="kettle-ctf" >Kettle CTF</option><option value="kiwi-ctf" >Kiwi CTF</option><option value="krasctf" >KrasCTF</option><option value="l3m0n-ctf" >L3m0n CTF</option><option value="labyrenth" >LabyREnth</option><option value="laokoon-security-ctf" >Laokoon Security CTF</option><option value="lasactf" >LASACTF</option><option value="lbc2" >LBC2</option><option value="linuxmeetup" >LinuxMeetup</option><option value="liu-ctf" >LiU CTF</option><option value="lklctf" >LKLCTF</option><option value="lockett-vesp-range" >Lockett Vesp Range</option><option value="lowlandminks-ctf" >LowLandMink&#x27;s CTF</option><option value="lun4r-ctf" >Lun4R CTF</option><option value="lyonctf" >LyonCTF</option><option value="magic" >MAGIC</option><option value="malcon-ctf" >MalCon CTF</option><option value="maltego-community-osint-ctf" >Maltego Community OSINT CTF</option><option value="marshack" >Mars@hack</option><option value="metared-argentina" >Metared Argentina</option><option value="metasploit-community-ctf" >Metasploit community CTF</option><option value="metatrust-web3-security-ctf-competition" >MetaTrust Web3 Security CTF Competition</option><option value="mhackectf" >mHackeCTF</option><option value="mhsctf" >MHSCTF</option><option value="mimic" >Mimic</option><option value="mindbreak" >MindBreak</option><option value="mireactf" >MireaCTF</option><option value="mitll-ctf" >MIT/LL CTF</option><option value="mitctf" >MITCTF</option><option value="mitre-ectf" >MITRE eCTF</option><option value="mlsc-capture-the-flag" >MLSC Capture The Flag</option><option value="moca-metro-olografix-ctf" >MOCA - Metro Olografix - CTF</option><option value="moroccan-cyber-security-camp" >Moroccan Cyber Security Camp</option><option value="moscow-ctf-school" >Moscow CTF School</option><option value="mozilla-ctf" >Mozilla CTF</option><option value="mythx-an-endgame-protocol-ctf" >MythX: An Endgame Protocol CTF</option><option value="narxoz-ctf" >Narxoz CTF</option><option value="nascon-ctf" >NaSCon CTF</option><option value="newark-academy-ctf" >Newark Academy CTF</option><option value="newbie-ctfn-ctf" >Newbie CTF(N-CTF)</option><option value="nilectf-2026" >NileCTF 2026</option><option value="no-con-name-ctf-finals" >No cON Name CTF Finals</option><option value="no-con-name-ctf-quals" >No cON Name CTF Quals</option><option value="no-hat-ctf" >No Hat CTF</option><option value="nonamecon-ctf" >NoNameCon CTF</option><option value="nordic-it-security-hackathon" >Nordic IT Security Hackathon</option><option value="northsec-ctf" >NorthSec CTF</option><option value="notsosecure-ctf" >NotSoSecure CTF</option><option value="noxctf" >noxCTF</option><option value="nsk-ctf" >NSK CTF</option><option value="nssctf" >NSSCTF</option><option value="null-origin" >Null Origin</option><option value="olympic-ctf" >Olympic CTF</option><option value="omctf" >OmCTF</option><option value="omnictf" >OmniCTF</option><option value="omwars-ctf" >OmWars CTF</option><option value="openctf" >OpenCTF</option><option value="operation-cipher-shadows" >Operation Cipher Shadows</option><option value="ostctf" >ostctf</option><option value="osugaming-ctf" >osu!gaming CTF</option><option value="otterctf" >OtterCTF</option><option value="outback-overflow" >Outback Overflow</option><option value="owasl-il-ctf" >OWASL-IL CTF</option><option value="owasp-ctf" >OWASP CTF</option><option value="pacific-hackers-ctf" >Pacific Hackers CTF</option><option value="pactf" >PACTF</option><option value="paseca-ctf" >PASECA CTF</option><option value="peactf" >peaCTF</option><option value="pecan-ctf" >PECAN+ CTF</option><option value="peng-cheng-macau-federation-cybersecurity-range-competition" >Peng Cheng – Macau Federation Cybersecurity Range Competition</option><option value="permctf" >PermCTF</option><option value="ph03n1x-v1p3r-n0v4-ctf" >PH03N1X V1P3R N0V4 CTF</option><option value="ph0wn" >ph0wn</option><option value="phantom-ctf" >Phantom CTF</option><option value="phd-ctf-finals" >PHD CTF Finals</option><option value="phd-ctf-quals" >PHD CTF Quals</option><option value="pink-ctf" >PINK+ CTF</option><option value="playcyber" >PlayCyber</option><option value="polictf" >PoliCTF</option><option value="polypwnctf" >PolyPwnCTF</option><option value="potsdam-cyber-games" >Potsdam Cyber Games</option><option value="power-of-community-poc-ctf" >Power Of Community - POC CTF</option><option value="power-of-xx" >Power of XX</option><option value="procom-ctf" >Procom CTF</option><option value="psut" >PSUT</option><option value="punk-security-devsecops-birthday-ctf" >Punk Security DevSecOps birthday CTF</option><option value="putcyberdays-ctf" >PUTCyberDays CTF</option><option value="pwn2play-open-ctf" >Pwn2Play Open CTF</option><option value="pwnium-ctf" >Pwnium CTF</option><option value="pwntilldawn-ctf" >PwnTillDawn CTF</option><option value="pwnversectf" >PwnverseCTF</option><option value="palcam-cybergames" >Pàlcam CyberGames</option><option value="qiangwang-challenge-on-cyber-mimic-defense" >Qiangwang Challenge on Cyber Mimic Defense</option><option value="qiwi-ctf" >QIWI CTF</option><option value="r2con-ctf" >r2con CTF</option><option value="radarctf" >RADARCTF</option><option value="radio-activity-ctf" >Radio Activity CTF</option><option value="ramadanctf" >RamadanCTF</option><option value="rams-ctf" >Rams CTF</option><option value="ratctf" >RatCTF</option><option value="razer-ctf" >Razer CTF</option><option value="really-awesome-ctf" >Really Awesome CTF</option><option value="red-ctf" >RED CTF</option><option value="red-team-lounge-ctf" >Red Team Lounge CTF</option><option value="redfox-ctf" >Redfox CTF</option><option value="redhack" >REDHACK</option><option value="redteam" >RedTeam</option><option value="reply-ctf-challenge" >Reply CTF Challenge</option><option value="republic-of-cyber-sentinals" >Republic of Cyber Sentinals</option><option value="restcon-ctf" >RESTCON CTF</option><option value="riceteacatpanda" >riceteacatpanda</option><option value="riftctf" >riftCTF</option><option value="riscure-hack-me-ctf" >Riscure Hack me CTF</option><option value="robohack-ai-ctf" >RoboHack AI CTF</option><option value="romhackctf" >RomHackCTF</option><option value="rootedcon" >RootedCON</option><option value="rpca-ctf" >RPCA CTF</option><option value="rstcon-ctf" >RSTCON CTF</option><option value="ructf" >RuCTF</option><option value="ructf-finals" >RuCTF Finals</option><option value="ructf-quals" >RuCTF Quals</option><option value="rundergroundctf" >RundergroundCTF</option><option value="rusecure-ctf" >RUSecure-CTF</option><option value="russian-ctf-cup" >Russian CTF Cup</option><option value="ruxcon-ctf" >Ruxcon CTF</option><option value="rwthctf" >rwthCTF</option><option value="saarctf" >saarCTF</option><option value="sacramentum" >Sacramentum</option><option value="saiborg" >SAIBORG</option><option value="samaractf" >SamaraCTF</option><option value="santhacklausctf" >SanthacklausCTF</option><option value="sarctf" >SarCTF</option><option value="saudi-ctf" >Saudi CTF</option><option value="sawah-cyber-security-ctf" >Sawah Cyber Security CTF</option><option value="scan" >SCAN</option><option value="scan-digital-asset-tracing-challenge" >SCAN Digital Asset Tracing Challenge</option><option value="school-ctf" >School CTF</option><option value="scp-ctf" >SCP CTF</option><option value="scythectf" >ScytheCTF</option><option value="secops24-blue-teaming-ctf" >SecOps&#x27;24 - Blue Teaming CTF</option><option value="secplayground-ctf" >SECPlayground CTF</option><option value="secret-of-the-epa-ti" >Secret of the ePA-TI</option><option value="secuinside-ctf-finals" >SECUINSIDE CTF Finals</option><option value="secuinside-ctf-quals" >SECUINSIDE CTF Quals</option><option value="secura-grand-slam" >Secura Grand Slam</option><option value="securebugse-ctf" >Securebug.se CTF</option><option value="security-case-study" >Security Case Study</option><option value="security-challenge-vianuctf" >SecurITy Challenge - VianuCTF</option><option value="seize-da-flaq" >Seize da Flaq</option><option value="sha-ctf" >SHA CTF</option><option value="shadow-ctf" >shadow CTF</option><option value="sharif-university-ctf" >Sharif University CTF</option><option value="sharif-university-ctf-finals" >Sharif University CTF Finals</option><option value="shellter-hacking-express" >Shellter Hacking Express</option><option value="sibctf-finals" >SibCTF Finals</option><option value="sibirctf" >SibirCTF</option><option value="sieberrsec-ctf" >Sieberrsec CTF</option><option value="sigsegv" >SIGSEGv</option><option value="singapore-ai-ctf" >Singapore AI CTF</option><option value="skillbit-formerly-metactf" >SkillBit (formerly MetaCTF)</option><option value="slay-ctf" >SLAY CTF</option><option value="smolathon" >smolathon</option><option value="snowfort" >Snowfort</option><option value="soc-battle" >SOC Battle</option><option value="sogeti-cyber-e-scape" >Sogeti Cyber e-Scape</option><option value="solar-ctf" >SOLAR CTF</option><option value="space-grand-challenge" >Space Grand Challenge</option><option value="spbctfs-student-ctf" >SPbCTF&#x27;s Student CTF</option><option value="spoilersctf" >spoilersCTF</option><option value="sprush-ctf" >SPRUSH CTF</option><option value="ssctf" >SSCTF</option><option value="ssmctf" >SSMCTF</option><option value="stack-the-flags" >Stack The Flags</option><option value="standcon-ctf" >STANDCON CTF</option><option value="standoff-cyberbattle" >Standoff Cyberbattle</option><option value="stay-ctf" >STAY ~/ CTF</option><option value="stealth-cup" >Stealth-Cup</option><option value="stem-ctf" >STEM CTF</option><option value="sthack" >Sthack</option><option value="stmctf" >STMCTF</option><option value="strangers-ctf" >Stranger&#x27;s CTF</option><option value="sudocrypt" >Sudocrypt</option><option value="sun-ctf" >SUN CTF</option><option value="synchrony-infosec-university-hackathon" >Synchrony Infosec University Hackathon</option><option value="sakerhets-sm" >Säkerhets-SM</option><option value="securt" >Sécu&#x27;RT</option><option value="t-ctf" >T-CTF</option><option value="t3-phoenix-ctf" >T3 Phoenix CTF</option><option value="takoma-park-ctf" >Takoma Park CTF</option><option value="tangerang-kota-capture-the-flag" >Tangerang Kota Capture The Flag</option><option value="tcm-invitational-ctf" >TCM Invitational CTF</option><option value="tcs-hackquest" >TCS Hackquest</option><option value="team-matrix-ctf" >Team Matrix CTF</option><option value="teamh4c-ctf" >TeamH4C CTF</option><option value="technex-ctf" >Technex CTF</option><option value="th3jackers-wctf" >th3jackers WCTF</option><option value="the-cyber-cooperative-ctf" >The Cyber Cooperative CTF</option><option value="the-haunted-brewery" >The Haunted Brewery</option><option value="the-heart-of-sysola" >The heart of sysola</option><option value="the-threat-interceptors-challenge" >The Threat Interceptors Challenge</option><option value="thedeccanctf" >TheDeccanCTF</option><option value="thryve-ctf" >Thryve CTF</option><option value="thundercipher-ctf" >ThunderCipher CTF</option><option value="tiger-king-ctf" >Tiger King CTF</option><option value="timisoara-ctf" >Timisoara CTF</option><option value="ton-ctf" >TON CTF</option><option value="trace-labs-global-osint-search-party-ctf" >Trace Labs Global OSINT Search Party CTF</option><option value="trend-micro-ctf-raimund-genes-cup" >Trend Micro CTF - Raimund Genes Cup</option><option value="triada-ctf" >Triada CTF</option><option value="tribe-ctf" >TRIBE CTF</option><option value="trojanctf" >TrojanCTF</option><option value="tsj-ctf" >TSJ CTF</option><option value="tu-delft-ctf" >TU Delft CTF</option><option value="tuxctf" >TuxCTF</option><option value="tyumenctf" >TyumenCTF</option><option value="uconn-cyberseed" >UConn CyberSEED</option><option value="ufo-ctf" >UFO CTF</option><option value="ukrainian-national-ctf" >Ukrainian National CTF</option><option value="und-cyberhawks-national-capture-the-flag-competition" >UND CyberHawks National Capture The Flag Competition</option><option value="unicorn-ctf" >UNICORN CTF</option><option value="unit-7300-ctf" >UNIT 7300 CTF</option><option value="unlock-the-technoverse" >UNLOCK THE TECHNOVERSE</option><option value="uralcup" >UralCUP</option><option value="usd-hacking-night" >usd Hacking Night</option><option value="utc-ctf" >UTC-CTF</option><option value="venividivici" >VeniVidiVici</option><option value="vidyut-ctf" >Vidyut CTF</option><option value="vsl-ctf" >VSL CTF</option><option value="vu-cyberthon" >VU Cyberthon</option><option value="vulnfreak" >vulnfreak</option><option value="watchlist-ctf" >WatchList CTF</option><option value="waynestate-capture-the-flag" >WayneState - Capture-The-Flag</option><option value="wctf" >WCTF</option><option value="web-vkl-ctf" >Web-vkl CTF</option><option value="wec-ctf" >WEC CTF</option><option value="whitehat-challenge" >WhiteHat Challenge</option><option value="whitehat-contest" >WhiteHat Contest</option><option value="whitehat-grand-prix" >WhiteHat Grand Prix</option><option value="wicsme-ctf" >WiCSME CTF</option><option value="wocshack" >WOCS&#x27;hAck</option><option value="world-hacker-games-testsavant" >World Hacker Games - TestSavant</option><option value="wp-ctf" >WP CTF</option><option value="wsuctf" >WSUCTF</option><option value="wtftime-ctf" >wtftime CTF</option><option value="x-mas-gtf" >X-MAS GTF</option><option value="xctf-suctf" >XCTF-SUCTF</option><option value="xeroctf" >XeroCTF</option><option value="xiomaractf" >XiomaraCTF</option><option value="yascon-ctf" >YASCON CTF</option><option value="yauzactf" >YauzaCTF</option><option value="yctf" >YCTF</option><option value="yetictf" >YetiCTF</option><option value="ypsictf" >YPSICTF</option><option value="yubitsec-ctf" >YUBITSEC CTF</option><option value="z3r0d4y-ctf" >Z3R0D4Y CTF</option><option value="zdtm-ctf" >ZDTM CTF</option><option value="zenityctf" >ZenityCTF</option><option value="zerobreach-ctf" >ZEROBREACH CTF</option><option value="zerodayheist" >ZerodayHeist</option><option value="zerodays-ctf" >ZeroDays CTF</option><option value="zerosecure-ctf" >ZeroSecure CTF</option><option value="zia-ctf" >Zia CTF</option>
+      </select>
+    </div>
+
+    
+    <div class="field">
+      <label for="country">Country</label>
+      <select id="country" name="country">
+        <option value="">Any</option>
+        <option value="AE" >🇦🇪 United Arab Emirates</option><option value="AL" >🇦🇱 Albania</option><option value="AR" >🇦🇷 Argentina</option><option value="AT" >🇦🇹 Austria</option><option value="AU" >🇦🇺 Australia</option><option value="BD" >🇧🇩 Bangladesh</option><option value="BE" >🇧🇪 Belgium</option><option value="BJ" >🇧🇯 Benin</option><option value="BR" >🇧🇷 Brazil</option><option value="BY" >🇧🇾 Belarus</option><option value="CA" >🇨🇦 Canada</option><option value="CH" >🇨🇭 Switzerland</option><option value="CL" >🇨🇱 Chile</option><option value="CN" >🇨🇳 China</option><option value="CO" >🇨🇴 Colombia</option><option value="DE" >🇩🇪 Germany</option><option value="DK" >🇩🇰 Denmark</option><option value="DZ" >🇩🇿 Algeria</option><option value="EG" >🇪🇬 Egypt</option><option value="ES" >🇪🇸 Spain</option><option value="FR" >🇫🇷 France</option><option value="GB" >🇬🇧 United Kingdom</option><option value="HK" >🇭🇰 Hong Kong</option><option value="HR" >🇭🇷 Croatia</option><option value="HU" >🇭🇺 Hungary</option><option value="ID" >🇮🇩 Indonesia</option><option value="IE" >🇮🇪 Ireland</option><option value="IL" >🇮🇱 Israel</option><option value="IN" >🇮🇳 India</option><option value="IR" >🇮🇷 Iran</option><option value="IS" >🇮🇸 Iceland</option><option value="IT" >🇮🇹 Italy</option><option value="JO" >🇯🇴 Jordan</option><option value="JP" >🇯🇵 Japan</option><option value="KE" >🇰🇪 Kenya</option><option value="KG" >🇰🇬 Kyrgyzstan</option><option value="KR" >🇰🇷 South Korea</option><option value="KW" >🇰🇼 Kuwait</option><option value="KZ" >🇰🇿 Kazakhstan</option><option value="LK" >🇱🇰 Sri Lanka</option><option value="LT" >🇱🇹 Lithuania</option><option value="MA" >🇲🇦 Morocco</option><option value="MM" >🇲🇲 Myanmar</option><option value="MN" >🇲🇳 Mongolia</option><option value="MO" >🇲🇴 Macau</option><option value="MT" >🇲🇹 Malta</option><option value="MX" >🇲🇽 Mexico</option><option value="MY" >🇲🇾 Malaysia</option><option value="NL" >🇳🇱 Netherlands</option><option value="NO" >🇳🇴 Norway</option><option value="NP" >🇳🇵 Nepal</option><option value="NZ" >🇳🇿 New Zealand</option><option value="OM" >🇴🇲 Oman</option><option value="PK" >🇵🇰 Pakistan</option><option value="PL" >🇵🇱 Poland</option><option value="PT" >🇵🇹 Portugal</option><option value="RO" >🇷🇴 Romania</option><option value="RU" >🇷🇺 Russia</option><option value="SA" >🇸🇦 Saudi Arabia</option><option value="SE" >🇸🇪 Sweden</option><option value="SG" >🇸🇬 Singapore</option><option value="SI" >🇸🇮 Slovenia</option><option value="SK" >🇸🇰 Slovakia</option><option value="TH" >🇹🇭 Thailand</option><option value="TN" >🇹🇳 Tunisia</option><option value="TR" >🇹🇷 Türkiye</option><option value="TW" >🇹🇼 Taiwan</option><option value="TZ" >🇹🇿 Tanzania</option><option value="UA" >🇺🇦 Ukraine</option><option value="US" >🇺🇸 United States</option><option value="VN" >🇻🇳 Vietnam</option>
+      </select>
+    </div>
+    
+
+    <fieldset>
+      <legend>Must have</legend>
+      <label class="check"><input type="checkbox" name="has_source" value="1" > Source / Docker</label>
+      <label class="check"><input type="checkbox" name="has_writeup" value="1" checked> Writeup</label>
+    </fieldset>
+
+    <div class="field">
+      <label for="sort">Sort</label>
+      <select id="sort" name="sort">
+        
+        <option value="complete" selected>Complete</option><option value="newest" >Newest</option><option value="oldest" >Oldest</option><option value="weight" >Weight</option><option value="easiest" >Easiest</option><option value="hardest" >Hardest</option><option value="solves" >Solves</option>
+      </select>
+    </div>
+
+    <button class="btn btn-block">Apply filters</button>
+    <a class="btn btn-ghost btn-block" href="/challenges/">Reset</a>
+  </form>
+
+  <div class="results">
+    <p class="muted">178 challenges
+      
+      
+      
+      · <a href="/techniques/">browse all techniques</a></p>
+    <div class="table-scroll">
+      <table class="table">
+  <thead>
+    <tr>
+      <th><a class="sort-link" href="?year_min=2026&amp;year_max=2026&amp;category=pwn&amp;category=rev&amp;category=hardware&amp;category=mobile&amp;has_writeup=1&amp;sort=name">Challenge</a></th>
+
+      
+        <th><a class="sort-link" href="?year_min=2026&amp;year_max=2026&amp;category=pwn&amp;category=rev&amp;category=hardware&amp;category=mobile&amp;has_writeup=1&amp;sort=ctf">CTF</a></th>
+
+        <th class="num"><a class="sort-link" href="?year_min=2026&amp;year_max=2026&amp;category=pwn&amp;category=rev&amp;category=hardware&amp;category=mobile&amp;has_writeup=1&amp;sort=-weight">Weight</a></th>
+
+      
+      <th><a class="sort-link" href="?year_min=2026&amp;year_max=2026&amp;category=pwn&amp;category=rev&amp;category=hardware&amp;category=mobile&amp;has_writeup=1&amp;sort=category">Category</a></th>
+
+      <th><a class="sort-link" href="?year_min=2026&amp;year_max=2026&amp;category=pwn&amp;category=rev&amp;category=hardware&amp;category=mobile&amp;has_writeup=1&amp;sort=-has">Has</a></th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/asis/2026-quals/asis_arch/">ASIS_Arch</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a><a class="tag tag-sm" href="/techniques/emulator-reversing/">#emulator-reversing</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/asis/2026-quals/">ASIS 2026 Quals</a></td>
+        <td class="num">90.53</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/asis/2026-quals/arena_snapshots/">Arena_Snapshots</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/handle-forgery/">#handle-forgery</a><a class="tag tag-sm" href="/techniques/generation-confusion/">#generation-confusion</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/asis/2026-quals/">ASIS 2026 Quals</a></td>
+        <td class="num">90.53</td>
+      
+      <td><span class="cat cat-pwn">Pwn</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/asis/2026-quals/beyond_the_fourth_wall/">Beyond_the_fourth_wall</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/riscv/">#riscv</a><a class="tag tag-sm" href="/techniques/whitespace-steganography/">#whitespace-steganography</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/asis/2026-quals/">ASIS 2026 Quals</a></td>
+        <td class="num">90.53</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/asis/2026-quals/dead_letter/">Dead_Letter</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/custom-protocol/">#custom-protocol</a><a class="tag tag-sm" href="/techniques/use-after-free/">#use-after-free (uaf)</a><a class="tag tag-sm" href="/techniques/crc32/">#crc32</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/asis/2026-quals/">ASIS 2026 Quals</a></td>
+        <td class="num">90.53</td>
+      
+      <td><span class="cat cat-pwn">Pwn</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/asis/2026-quals/leakmeak/">LeakMeAk</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/chunked-flag-check/">#chunked-flag-check</a><a class="tag tag-sm" href="/techniques/bruteforce/">#bruteforce</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/asis/2026-quals/">ASIS 2026 Quals</a></td>
+        <td class="num">90.53</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/asis/2026-quals/lesh/">Lesh</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/shellcode/">#shellcode</a><a class="tag tag-sm" href="/techniques/anti-sleep/">#anti-sleep</a><a class="tag tag-sm" href="/techniques/api-hooking/">#api-hooking</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/asis/2026-quals/">ASIS 2026 Quals</a></td>
+        <td class="num">90.53</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/asis/2026-quals/mousa/">Mousa</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/go-reversing/">#go-reversing</a><a class="tag tag-sm" href="/techniques/sha256-oracle/">#sha256-oracle</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/asis/2026-quals/">ASIS 2026 Quals</a></td>
+        <td class="num">90.53</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/asis/2026-quals/neon/">NEON</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/aarch64/">#aarch64</a><a class="tag tag-sm" href="/techniques/custom-package-format/">#custom-package-format</a><a class="tag tag-sm" href="/techniques/vulkan/">#vulkan</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/asis/2026-quals/">ASIS 2026 Quals</a></td>
+        <td class="num">90.53</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/asis/2026-quals/outofphase/">OutOfPhase</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/ofdm/">#ofdm</a><a class="tag tag-sm" href="/techniques/signal-processing/">#signal-processing</a><a class="tag tag-sm" href="/techniques/phase-encoding/">#phase-encoding</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/asis/2026-quals/">ASIS 2026 Quals</a></td>
+        <td class="num">90.53</td>
+      
+      <td><span class="cat cat-hardware">Hardware</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/asis/2026-quals/qfilter/">QFilter</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/quickjs/">#quickjs</a><a class="tag tag-sm" href="/techniques/js-engine-exploitation/">#js-engine-exploitation</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/asis/2026-quals/">ASIS 2026 Quals</a></td>
+        <td class="num">90.53</td>
+      
+      <td><span class="cat cat-pwn">Pwn</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/asis/2026-quals/revenant_buddy/">Revenant_buddy</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a><a class="tag tag-sm" href="/techniques/obfuscation/">#obfuscation</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/asis/2026-quals/">ASIS 2026 Quals</a></td>
+        <td class="num">90.53</td>
+      
+      <td><span class="cat cat-pwn">Pwn</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/asis/2026-quals/signal_race/">Signal_Race</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/generation-counter-wraparound/">#generation-counter-wraparound</a><a class="tag tag-sm" href="/techniques/use-after-free/">#use-after-free (uaf)</a><a class="tag tag-sm" href="/techniques/murmurhash-inversion/">#murmurhash-inversion</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/asis/2026-quals/">ASIS 2026 Quals</a></td>
+        <td class="num">90.53</td>
+      
+      <td><span class="cat cat-pwn">Pwn</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/asis/2026-quals/silent_carrier/">Silent_Carrier</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/usb-pcap/">#usb-pcap</a><a class="tag tag-sm" href="/techniques/dmr/">#dmr</a><a class="tag tag-sm" href="/techniques/radio-codeplug/">#radio-codeplug</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/asis/2026-quals/">ASIS 2026 Quals</a></td>
+        <td class="num">90.53</td>
+      
+      <td><span class="cat cat-hardware">Hardware</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/apoorvctf/2026/draw_me/">Draw_Me</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/webgl/">#webgl</a><a class="tag tag-sm" href="/techniques/shader-vm/">#shader-vm</a><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/apoorvctf/2026/">ApoorvCTF 2026</a></td>
+        <td class="num">24.10</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/apoorvctf/2026/house_of_wade/">House_of_Wade</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/use-after-free/">#use-after-free (uaf)</a><a class="tag tag-sm" href="/techniques/tcache-poisoning/">#tcache-poisoning</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/apoorvctf/2026/">ApoorvCTF 2026</a></td>
+        <td class="num">24.10</td>
+      
+      <td><span class="cat cat-pwn">Pwn</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/bdsec/2026/borrowed_memory/">Borrowed_Memory</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/bytecode-vm-emulation/">#bytecode-vm-emulation</a><a class="tag tag-sm" href="/techniques/xorshift-table-regeneration/">#xorshift-table-regeneration</a><a class="tag tag-sm" href="/techniques/checksum-guided-debugging/">#checksum-guided-debugging</a><a class="tag tag-sm" href="/techniques/xor-decryption/">#xor-decryption</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/bdsec/2026/">BDSec 2026</a></td>
+        <td class="num">15.62</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/bdsec/2026/easy_re_challenge/">Easy_RE_Challenge</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/symbol-guided-static-analysis/">#symbol-guided-static-analysis</a><a class="tag tag-sm" href="/techniques/xor-rol-inversion/">#xor-rol-inversion</a><a class="tag tag-sm" href="/techniques/decoy-path-elimination/">#decoy-path-elimination</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/bdsec/2026/">BDSec 2026</a></td>
+        <td class="num">15.62</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/bdsec/2026/muktir_shongket/">Muktir_Shongket</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/jit-bytecode-verifier-executor-mismatch/">#jit-bytecode-verifier-executor-mismatch</a><a class="tag tag-sm" href="/techniques/jmp-into-literal/">#jmp-into-literal</a><a class="tag tag-sm" href="/techniques/shellcode/">#shellcode</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/bdsec/2026/">BDSec 2026</a></td>
+        <td class="num">15.62</td>
+      
+      <td><span class="cat cat-pwn">Pwn</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/bdsec/2026/night_shift/">Night_Shift</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/pthread-scheduling-analysis/">#pthread-scheduling-analysis</a><a class="tag tag-sm" href="/techniques/exhaustive-brute-force/">#exhaustive-brute-force</a><a class="tag tag-sm" href="/techniques/fnv-1a-hash/">#fnv-1a-hash</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/bdsec/2026/">BDSec 2026</a></td>
+        <td class="num">15.62</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/bdsec/2026/phantom_device/">Phantom_Device</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/use-after-free/">#use-after-free (uaf)</a><a class="tag tag-sm" href="/techniques/refcount-mismatch/">#refcount-mismatch</a><a class="tag tag-sm" href="/techniques/tcache-grooming/">#tcache-grooming</a><a class="tag tag-sm" href="/techniques/role-forgery/">#role-forgery</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/bdsec/2026/">BDSec 2026</a></td>
+        <td class="num">15.62</td>
+      
+      <td><span class="cat cat-pwn">Pwn</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/bearcat/2026/captain_morgan/">Captain_Morgan</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/python-obfuscation/">#python-obfuscation</a><a class="tag tag-sm" href="/techniques/z3/">#z3</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/bearcat/2026/">Bearcat 2026</a></td>
+        <td class="num">–</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/bearcat/2026/missing_one_piece/">Missing_One_Piece</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/environment-checks/">#environment-checks</a><a class="tag tag-sm" href="/techniques/argv0/">#argv0</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/bearcat/2026/">Bearcat 2026</a></td>
+        <td class="num">–</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/bearcat/2026/pollys_key/">Pollys_Key</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/primitive-roots/">#primitive-roots</a><a class="tag tag-sm" href="/techniques/permutation-recovery/">#permutation-recovery</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/bearcat/2026/">Bearcat 2026</a></td>
+        <td class="num">–</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/bhackari/2026/dont_unpack_me/">Dont_unpack_me</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/rc4/">#rc4</a><a class="tag tag-sm" href="/techniques/pe-unpacking/">#pe-unpacking</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/bhackari/2026/">Bhackari 2026</a></td>
+        <td class="num">–</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/bhackari/2026/mystery/">Mystery</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/aes-ctr/">#aes-ctr</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/bhackari/2026/">Bhackari 2026</a></td>
+        <td class="num">–</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/boroctf/2026/alphacode/">AlphaCode</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/custom-dsl-reversing/">#custom-dsl-reversing</a><a class="tag tag-sm" href="/techniques/opcode-fuzzing/">#opcode-fuzzing</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/boroctf/2026/">BoroCTF 2026</a></td>
+        <td class="num">–</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/dicectf/2026-quals/another_onion/">another_onion</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/self-decrypting-binary/">#self-decrypting-binary</a><a class="tag tag-sm" href="/techniques/layered-decryption/">#layered-decryption</a><a class="tag tag-sm" href="/techniques/automation/">#automation</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/dicectf/2026-quals/">DiceCTF 2026 Quals</a></td>
+        <td class="num">100.00</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/dicectf/2026-quals/bedtime/">bedtime</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/rust-reversing/">#rust-reversing</a><a class="tag tag-sm" href="/techniques/nim-game/">#nim-game</a><a class="tag tag-sm" href="/techniques/prng/">#prng</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/dicectf/2026-quals/">DiceCTF 2026 Quals</a></td>
+        <td class="num">100.00</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/dicectf/2026-quals/bytecrusher/">bytecrusher</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/oob-read/">#oob-read</a><a class="tag tag-sm" href="/techniques/canary-leak/">#canary-leak</a><a class="tag tag-sm" href="/techniques/stack-buffer-overflow/">#stack-buffer-overflow</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/dicectf/2026-quals/">DiceCTF 2026 Quals</a></td>
+        <td class="num">100.00</td>
+      
+      <td><span class="cat cat-pwn">Pwn</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/dicectf/2026-quals/explorer/">explorer</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/rust/">#rust</a><a class="tag tag-sm" href="/techniques/kernel-module/">#kernel-module</a><a class="tag tag-sm" href="/techniques/ioctl/">#ioctl</a><a class="tag tag-sm" href="/techniques/maze/">#maze</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/dicectf/2026-quals/">DiceCTF 2026 Quals</a></td>
+        <td class="num">100.00</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/dicectf/2026-quals/garden/">garden</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a><a class="tag tag-sm" href="/techniques/garbage-collector-bug/">#garbage-collector-bug</a><a class="tag tag-sm" href="/techniques/oob-write/">#oob-write</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/dicectf/2026-quals/">DiceCTF 2026 Quals</a></td>
+        <td class="num">100.00</td>
+      
+      <td><span class="cat cat-pwn">Pwn</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/dicectf/2026-quals/locked_in/">locked_in</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a><a class="tag tag-sm" href="/techniques/multithreading/">#multithreading</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/dicectf/2026-quals/">DiceCTF 2026 Quals</a></td>
+        <td class="num">100.00</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/dicectf/2026-quals/message_store/">message_store</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/rust/">#rust</a><a class="tag tag-sm" href="/techniques/oob-index/">#oob-index</a><a class="tag tag-sm" href="/techniques/function-pointer-hijack/">#function-pointer-hijack</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/dicectf/2026-quals/">DiceCTF 2026 Quals</a></td>
+        <td class="num">100.00</td>
+      
+      <td><span class="cat cat-pwn">Pwn</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/gpn/2026/food_inspector_ii/">Food_Inspector_II</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/frida/">#frida</a><a class="tag tag-sm" href="/techniques/dynamic-instrumentation/">#dynamic-instrumentation</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/gpn/2026/">GPN 2026</a></td>
+        <td class="num">–</td>
+      
+      <td><span class="cat cat-pwn">Pwn</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/gpn/2026/scanwich_station/">Scanwich_Station</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/integer-overflow/">#integer-overflow</a><a class="tag tag-sm" href="/techniques/qr-code/">#qr-code</a><a class="tag tag-sm" href="/techniques/image-dimensions/">#image-dimensions</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/gpn/2026/">GPN 2026</a></td>
+        <td class="num">–</td>
+      
+      <td><span class="cat cat-pwn">Pwn</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/kubstu/2026/ouroboros/">Ouroboros</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/self-referential-key-decryption/">#self-referential-key-decryption</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/kubstu/2026/">KubSTU 2026</a></td>
+        <td class="num">24.83</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/kubstu/2026/risc_v/">RISC_V.</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/feistel-key-inversion/">#feistel-key-inversion</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/kubstu/2026/">KubSTU 2026</a></td>
+        <td class="num">24.83</td>
+      
+      <td><span class="cat cat-rev">Reverse</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/kubstu/2026/stego_subway_2/">STEGO_Subway_2</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/ascii-value-stego/">#ascii-value-stego</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/kubstu/2026/">KubSTU 2026</a></td>
+        <td class="num">24.83</td>
+      
+      <td><span class="cat cat-hardware">Hardware</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/l3akctf/2026/bosh/">Bosh</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/fault-injection-oracle/">#fault-injection-oracle</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/l3akctf/2026/">L3akCTF 2026</a></td>
+        <td class="num">34.47</td>
+      
+      <td><span class="cat cat-pwn">Pwn</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/l3akctf/2026/lattiavm/">LattiaVM</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/vm-stack-pointer-corruption/">#vm-stack-pointer-corruption</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/l3akctf/2026/">L3akCTF 2026</a></td>
+        <td class="num">34.47</td>
+      
+      <td><span class="cat cat-pwn">Pwn</span></td>
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+    </div>
+    
+      <nav class="pager">
+        
+        <span>Page 1 of 5</span>
+        <a href="?year_min=2026&amp;year_max=2026&amp;category=pwn&amp;category=rev&amp;category=hardware&amp;category=mobile&amp;has_writeup=1&page=2">Next →</a>
+      </nav>
+    
+  </div>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

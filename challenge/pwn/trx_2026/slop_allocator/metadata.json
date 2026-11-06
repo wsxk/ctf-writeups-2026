@@ -1,0 +1,55 @@
+{
+  "event_id": "CTF-3141",
+  "event_title": "TRX CTF 2026",
+  "title": "slop_allocator",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "custom-allocator",
+    "heap"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/trx/2026/slop_allocator/",
+    "https://ctf42.online/ctfs/trx/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/pwn/slop_allocator"
+  ],
+  "writeup_urls": [
+    "https://blog.rawpayload.com/blog/trx-ctf-2026-slop-allocator-writeup"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/pwn/slop_allocator",
+    "https://ctf42.online/ctfs/trx/2026/slop_allocator/folder.zip?kind=files"
+  ],
+  "writeup_status": "unavailable",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/trx_2026/slop_allocator/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TRX/2026/pwn/slop_allocator/README.md",
+      "bytes": 131,
+      "sha256": "605eaf1ba630bc59ad3b815ffa4f480434b70d17a22be450c6f776248135a281",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/trx_2026/slop_allocator/attachments/upstream/pwn_slop_allocator.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TRX/2026/pwn/slop_allocator/pwn_slop_allocator.zip",
+      "bytes": 13143,
+      "sha256": "3c65f1eb1c6ad3db03b7a380f64ceed9664913c3c79c15fbf0bacf1ac5936934",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/trx/2026/slop_allocator/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/trx/2026/slop_allocator/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

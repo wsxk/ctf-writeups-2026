@@ -1,0 +1,38 @@
+[
+  {
+    "path": "ctfs/NDIASAutomotiveIoT/2026/misc/I_Saw_Our_Time_Pass",
+    "status": 200,
+    "links": [
+      "/sajjadium/ctf-archives/blob/main/ctfs/NDIASAutomotiveIoT/2026/misc/I_Saw_Our_Time_Pass/README.md",
+      "/sajjadium/ctf-archives/blob/main/ctfs/NDIASAutomotiveIoT/2026/misc/I_Saw_Our_Time_Pass/dist-I_saw_our_time_pass.zip"
+    ]
+  },
+  {
+    "path": "ctfs/NDIASAutomotiveIoT/2026/misc/Seed_Key_Leak",
+    "error": "HTTPSConnectionPool(host='github.com', port=443): Read timed out. (read timeout=30)"
+  },
+  {
+    "path": "ctfs/NDIASAutomotiveIoT/2026/misc/Suspicious_device_1",
+    "status": 200,
+    "links": [
+      "/sajjadium/ctf-archives/blob/main/ctfs/NDIASAutomotiveIoT/2026/misc/Suspicious_device_1/README.md",
+      "/sajjadium/ctf-archives/blob/main/ctfs/NDIASAutomotiveIoT/2026/misc/Suspicious_device_1/dist-suspicious_device.zip"
+    ]
+  },
+  {
+    "path": "ctfs/NDIASAutomotiveIoT/2026/misc/VIN_Hunter",
+    "status": 200,
+    "links": [
+      "/sajjadium/ctf-archives/blob/main/ctfs/NDIASAutomotiveIoT/2026/misc/VIN_Hunter/README.md",
+      "/sajjadium/ctf-archives/blob/main/ctfs/NDIASAutomotiveIoT/2026/misc/VIN_Hunter/connect.sh"
+    ]
+  },
+  {
+    "path": "ctfs/NDIASAutomotiveIoT/2026/crypto/RAMN_ECU_D",
+    "status": 200,
+    "links": [
+      "/sajjadium/ctf-archives/blob/main/ctfs/NDIASAutomotiveIoT/2026/crypto/RAMN_ECU_D/README.md",
+      "/sajjadium/ctf-archives/blob/main/ctfs/NDIASAutomotiveIoT/2026/crypto/RAMN_ECU_D/dist-ramn_ecu_d.zip"
+    ]
+  }
+]

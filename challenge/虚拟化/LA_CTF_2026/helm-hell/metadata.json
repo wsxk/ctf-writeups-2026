@@ -1,0 +1,87 @@
+{
+  "event_id": "CTF-3015",
+  "event_title": "LA CTF 2026",
+  "category": "虚拟化",
+  "title": "helm-hell",
+  "dirname": "LA_CTF_2026",
+  "source_urls": [
+    "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/rev/helm-hell"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/helm-hell/challenge.yaml",
+      "local": "attachments/challenge.yaml",
+      "size_expected": 450,
+      "git_blob_sha": "3ac5bebd7b64b95370194fdd930e90fd434f50d0",
+      "status": "downloaded",
+      "bytes": 450,
+      "sha256": "40e75121aaa82b2f2dabb31b9af1d65beeb7f3c4115655c1f47d3040dc40c5d6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/helm-hell/compiler.py",
+      "local": "attachments/compiler.py",
+      "size_expected": 22027,
+      "git_blob_sha": "44df7d40a9899bbf76aacf72a40c6fbd7508184a",
+      "status": "downloaded",
+      "bytes": 22027,
+      "sha256": "fb6bbd39bc9abb0a9b4711e9a3e0510d3b5c5298d10c76eae73933f49a0d5cd0"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/helm-hell/gen_checker.py",
+      "local": "attachments/gen_checker.py",
+      "size_expected": 3811,
+      "git_blob_sha": "966b63a1b555ade0ccca360281178a166ecd6ec3",
+      "status": "downloaded",
+      "bytes": 3811,
+      "sha256": "0ced6b38ea9b9b35037439d1bd34be984015929ee9ceab936eb63cb9a0192618"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/helm-hell/helm-hell.zip",
+      "local": "attachments/helm-hell.zip",
+      "size_expected": 105995,
+      "git_blob_sha": "4d2e6abd0416b45fe810353d472e1575a2dc6ccd",
+      "status": "downloaded",
+      "bytes": 105995,
+      "sha256": "a097b9dab8de0fda97cb12755c40c7dee390af2d01c0449322663509da272ab1"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/helm-hell/test.bf",
+      "local": "attachments/test.bf",
+      "size_expected": 2287,
+      "git_blob_sha": "0cc8034e39f6fff9f3536530f088bcde041bd571",
+      "status": "downloaded",
+      "bytes": 2287,
+      "sha256": "f248ba6c0095f7d00ec1b9fbd3099570aaadf0177c4ae70d2b9dddcc98cb7731"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/helm_hell/README.md",
+      "local": "writeups/community/README.md",
+      "status": "downloaded",
+      "bytes": 6389,
+      "sha256": "59197cf9448ed74d0d8042a439ea297b2b4e6407f80c9c25c0777ea12360ee8f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/helm_hell/solve.py",
+      "local": "writeups/community/solve.py",
+      "status": "downloaded",
+      "bytes": 1821,
+      "sha256": "a5fd53e2deb02bccbdc5ce09f9b0f41a6e03285ba20225b9c437fdc7b7dab9a4"
+    }
+  ],
+  "notes": "官方题目附件，配官方 solver（若有）及参赛者 hax1ng 的文章/脚本。社区文章部分标题误写2025，但本题与官方2026目录的描述和flag一致，已逐题核对（ooo使用Unicode NFC比较）；保留原文。reflection另归虚拟化。 Helm模板实现Brainfuck解释器，归虚拟化专题。",
+  "directory": "虚拟化/LA_CTF_2026/helm-hell",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/helm_hell/README.md",
+    "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/helm_hell/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/helm-hell/challenge.yaml",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/helm-hell/compiler.py",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/helm-hell/gen_checker.py",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/helm-hell/helm-hell.zip",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/helm-hell/test.bf"
+  ],
+  "attachment_status": "downloaded"
+}

@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.git/
+
+dist.zip
+dump_*.asm
+encryption_log_*.txt
+generated_code_*.c
+generated_code_*.py
+packed_*
+recovered
+secret_input_*
+unpacked_*

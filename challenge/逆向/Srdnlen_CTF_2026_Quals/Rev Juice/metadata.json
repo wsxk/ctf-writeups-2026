@@ -1,0 +1,71 @@
+{
+  "event_id": "CTF-3043",
+  "event_title": "Srdnlen CTF 2026 Quals",
+  "category": "逆向",
+  "title": "Rev Juice",
+  "dirname": "Srdnlen_CTF_2026_Quals",
+  "source_urls": [
+    "https://github.com/srdnlen/srdnlenctf-2026_public/tree/HEAD/rev_juice"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_juice/attachments/rev_juice.zip",
+      "local": "attachments/attachments/rev_juice.zip",
+      "size_expected": 4623,
+      "git_blob_sha": "248ae0c112cee508b6e02f0f9c314cbf496f5e45",
+      "status": "downloaded",
+      "bytes": 4623,
+      "sha256": "2d86a80b92ea8f42f369abc1f38e5e94274ffd6438030e02edc6e918bd73883b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_juice/authors.txt",
+      "local": "attachments/authors.txt",
+      "size_expected": 23,
+      "git_blob_sha": "a87a83fbe05daf41edd80a3ee50048ddc332b324",
+      "status": "downloaded",
+      "bytes": 23,
+      "sha256": "53a74d1e192007387b4b7a509798eec5594fd70da93a83cf76817f42a612ec36"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_juice/description.md",
+      "local": "attachments/description.md",
+      "size_expected": 50,
+      "git_blob_sha": "af7d0295ba1dd4634357d65a0e645db418c3e216",
+      "status": "downloaded",
+      "bytes": 50,
+      "sha256": "b90cd5d1b3891ab356ab65faaebf1626a852b134d601907eec02831713e4e5f2"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_juice/title.txt",
+      "local": "attachments/title.txt",
+      "size_expected": 10,
+      "git_blob_sha": "6c816b40a4755fe44bb60e97922400019ca65c5a",
+      "status": "downloaded",
+      "bytes": 10,
+      "sha256": "87512b88bd36630ecf364f2d2e18172eaa0d01dfc9010c8cc82fe6dda14e61bb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_juice/writeup.md",
+      "local": "writeups/writeup.md",
+      "size_expected": 11873,
+      "git_blob_sha": "f28126961f0bf60fa7dab57b4f6fec166f9fcc93",
+      "status": "downloaded",
+      "bytes": 11873,
+      "sha256": "ac644b6b3f1d259a905ebbba832bd06295cdc0d24ec50ba1cb167bc396c89289"
+    }
+  ],
+  "notes": "官方题目附件和完整官方 writeup。",
+  "directory": "逆向/Srdnlen_CTF_2026_Quals/Rev Juice",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_juice/writeup.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_juice/attachments/rev_juice.zip",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_juice/authors.txt",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_juice/description.md",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_juice/title.txt"
+  ],
+  "attachment_status": "downloaded"
+}

@@ -1,0 +1,86 @@
+{
+  "date": "2026-11-06",
+  "complete": true,
+  "scope": "Reviewed 2026 catalog events, all selected attachments and public solutions downloaded; sources retained per file",
+  "entries": [
+    {
+      "event_id": "CTF-3206",
+      "event_title": "NCTF 2026",
+      "category": "虚拟化",
+      "title": "VM Encryptor",
+      "dirname": "NCTF_2026",
+      "source_urls": [
+        "https://github.com/X1cT34m/NCTF2026",
+        "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/NCTF/2026/rev/VM_Encryptor"
+      ],
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/NCTF/2026/rev/VM_Encryptor/vm-encryptor-attachment.zip",
+          "local": "attachments/vm-encryptor-attachment.zip",
+          "status": "downloaded",
+          "bytes": 81928,
+          "sha256": "2ecaf9a01f948cb608bcdf88cfbe3f5503efedb81c97c77b9bbc687b0dba39f0"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/X1cT34m/NCTF2026/main/NCTF%202026%20Official%20Writeup.pdf",
+          "local": "writeups/NCTF_2026_Official_Writeup.pdf",
+          "size_expected": 3769458,
+          "status": "downloaded",
+          "bytes": 3769458,
+          "sha256": "ce86aa9f1e908adea309519cf73e58f2fc7e0463a73a238b7153b6bc3de48726"
+        }
+      ],
+      "notes": "解答为官方91页PDF：Pay For 2048从第70页开始，VM Encryptor从第75页开始。官方附件仓库没有这两题，分别由CTF Archives镜像和该镜像README链接的公开Google Drive下载补齐。仅下载，未运行。",
+      "directory": "虚拟化/NCTF_2026/VM Encryptor",
+      "retrieved_date_beijing": "2026-11-06",
+      "writeup_urls": [
+        "https://raw.githubusercontent.com/X1cT34m/NCTF2026/main/NCTF%202026%20Official%20Writeup.pdf"
+      ],
+      "writeup_status": "downloaded",
+      "attachment_urls": [
+        "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/NCTF/2026/rev/VM_Encryptor/vm-encryptor-attachment.zip"
+      ],
+      "attachment_status": "downloaded"
+    },
+    {
+      "event_id": "CTF-3206",
+      "event_title": "NCTF 2026",
+      "category": "逆向",
+      "title": "Pay For 2048",
+      "dirname": "NCTF_2026",
+      "source_urls": [
+        "https://github.com/X1cT34m/NCTF2026",
+        "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/NCTF/2026/rev/Pay_For_2048"
+      ],
+      "files": [
+        {
+          "url": "https://drive.usercontent.google.com/download?id=1tNrpgo4SzocbQCowDM3nIrVEMX4Lfypc&export=download&confirm=t",
+          "local": "attachments/pay-for-2048-attachment.zip",
+          "size_expected": 138125965,
+          "status": "downloaded",
+          "bytes": 138125965,
+          "sha256": "812fe49b1e9217171d2fdeac616d519755161c2b80d135b30ff23abd029f6986"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/X1cT34m/NCTF2026/main/NCTF%202026%20Official%20Writeup.pdf",
+          "local": "writeups/NCTF_2026_Official_Writeup.pdf",
+          "size_expected": 3769458,
+          "status": "downloaded",
+          "bytes": 3769458,
+          "sha256": "ce86aa9f1e908adea309519cf73e58f2fc7e0463a73a238b7153b6bc3de48726"
+        }
+      ],
+      "notes": "解答为官方91页PDF：Pay For 2048从第70页开始，VM Encryptor从第75页开始。官方附件仓库没有这两题，分别由CTF Archives镜像和该镜像README链接的公开Google Drive下载补齐。仅下载，未运行。",
+      "directory": "逆向/NCTF_2026/Pay For 2048",
+      "retrieved_date_beijing": "2026-11-06",
+      "writeup_urls": [
+        "https://raw.githubusercontent.com/X1cT34m/NCTF2026/main/NCTF%202026%20Official%20Writeup.pdf"
+      ],
+      "writeup_status": "downloaded",
+      "attachment_urls": [
+        "https://drive.usercontent.google.com/download?id=1tNrpgo4SzocbQCowDM3nIrVEMX4Lfypc&export=download&confirm=t"
+      ],
+      "attachment_status": "downloaded"
+    }
+  ]
+}

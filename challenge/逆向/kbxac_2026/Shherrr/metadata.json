@@ -1,0 +1,62 @@
+{
+  "event_id": "CTF-3456",
+  "event_title": "kBxAc CTF 2026",
+  "title": "Shherrr",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "raku",
+    "xor"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/kbxac/2026/shherrr/",
+    "https://ctf42.online/ctfs/kbxac/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/Shherrr"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/rev/shherrr"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/Shherrr",
+    "https://ctf42.online/ctfs/kbxac/2026/shherrr/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/kbxac_2026/Shherrr/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/kBxAc-CTF-2026/main/rev/shherrr/README.md",
+      "bytes": 5189,
+      "sha256": "7b34997fae07cd9718b30a9e91ed36aaaaa38f72f89a211120546bb0ddc9fc6d",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/kbxac_2026/Shherrr/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/KBxAc/2026/rev/Shherrr/README.md",
+      "bytes": 18,
+      "sha256": "7ce0c859daca4364f7b26dc4119c8ab0a2787d6cd75809b84b114d24e09cad6f",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/kbxac_2026/Shherrr/attachments/upstream/chall",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/KBxAc/2026/rev/Shherrr/chall",
+      "bytes": 19522240,
+      "sha256": "0a286540f3a855606a66c7ef1d137694be9422f48efa4d23b024b12c7bb4fc2f",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/kbxac/2026/shherrr/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/kbxac/2026/shherrr/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

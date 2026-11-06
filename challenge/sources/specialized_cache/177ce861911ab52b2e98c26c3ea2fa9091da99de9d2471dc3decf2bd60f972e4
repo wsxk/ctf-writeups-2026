@@ -1,0 +1,89 @@
+# Reference: https://github.com/project-sekai-ctf/konata
+challenges:
+  - category: misc
+    name: SekaiID
+    author: Marc
+    description: |
+      Planning to attend the SEKAI Conference? Download the official SEKAI ID apps to receive and manage your digital conference credential.
+
+      > [!NOTE]
+      > - This is an Android exploitation challenge.
+      > - Your goal is to create a working exploit application (`.apk`).
+      > - Once you have a working exploit, you can spawn an instance that provides ADB access.
+      > - Use ADB to install and run your exploit on the provided device.
+      > - Using `scrcpy` is recommended for interacting with the device.
+      > - It can take up to 5 minutes for the instance to become available, please be patient
+      
+      > [!TIP]
+      > Our instancer serves connections with SSL TCP, use tls_proxy.py to start a local non-ssl tcp server 
+
+    tags:
+      - ⭐⭐⭐
+
+    attachments:
+      files:
+        - "challenge/challenge/SekaiID.apk"
+        - "challenge/challenge/Verifier.apk"
+        - "challenge/tls_proxy.py"
+      stripComponents: 2
+
+    flags:
+      rctf:
+        file: 'challenge/challenge/flag.txt'
+    
+    instancerConfig:
+      instancer: k8s
+      challengeIntegrationId: "{{ challenge.name | lower }}"
+      timeoutMilliseconds: 1800000
+      expose:
+        - kind: tcp-ssl
+          hostPrefix: "{{ challenge.name | lower }}"
+          containerName: app
+          containerPort: 5555
+      config:
+        pods:
+          - name: app
+            ports:
+              - protocol: TCP
+                port: 5555
+            spec:
+              containers:
+                - name: app
+                  image: "{{ images[challenge.name | lower] }}"
+                  resources:
+                    limits:
+                      'devic.es/kvm': 1
+                      cpu: 3500m
+                      memory: 6Gi
+                    requests:
+                      'devic.es/kvm': 1
+                      cpu: 500m
+                      memory: 2Gi
+                  securityContext:
+                    allowPrivilegeEscalation: false
+                    capabilities:
+                      drop: ["ALL"]
+                  env:
+                    - name: EMULATOR_EXTRA_ARGS
+                      value: "-memory 3072 -cores 4"
+                  readinessProbe:
+                    tcpSocket:
+                      port: 5555
+                    initialDelaySeconds: 5
+                    periodSeconds: 3
+              restartPolicy: Always
+              terminationGracePeriodSeconds: 0
+              automountServiceAccountToken: false
+              enableServiceLinks: false
+              securityContext:
+                seccompProfile:
+                  type: RuntimeDefault
+            egress: false
+
+deployment:
+  images:
+    - path: challenge
+      name: "{{ challenges[0].name | lower }}"
+      tag: latest
+      registry_name: instancer-challenges
+      platform: linux/amd64

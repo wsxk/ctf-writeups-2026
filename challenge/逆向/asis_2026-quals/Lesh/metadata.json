@@ -1,0 +1,49 @@
+{
+  "event_id": "CTF-3033",
+  "event_title": "ASIS CTF Quals 2026",
+  "title": "Lesh",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "shellcode",
+    "anti-sleep",
+    "api-hooking"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/asis/2026-quals/lesh/",
+    "https://ctf42.online/ctfs/asis/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Lesh"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/lesh"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Lesh",
+    "https://ctf42.online/ctfs/asis/2026-quals/lesh/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/asis_2026-quals/Lesh/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/ASIS-CTF-Quals-2026/main/rev/lesh/README.md",
+      "bytes": 4078,
+      "sha256": "c8a00848814e29b4e774f3e8a8b863affbb0ff7175996c6c671b9f9f1986bc10",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/asis_2026-quals/Lesh/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/asis/2026-quals/lesh/folder.zip?kind=files",
+      "bytes": 4724,
+      "sha256": "3d7d35f52a4f1007487e05a3284c66f18e4d3e84def53143b052fda296f779fb",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

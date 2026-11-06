@@ -1,0 +1,59 @@
+{
+  "event_id": "CTF-3033",
+  "event_title": "ASIS CTF Quals 2026",
+  "title": "Atarude",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [],
+  "source_urls": [
+    "https://ctf42.online/ctfs/asis/2026-quals/atarude/",
+    "https://ctf42.online/ctfs/asis/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Atarude"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/atarude"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Atarude",
+    "https://ctf42.online/ctfs/asis/2026-quals/atarude/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/asis_2026-quals/Atarude/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/ASIS-CTF-Quals-2026/main/rev/atarude/README.md",
+      "bytes": 4162,
+      "sha256": "d3783fd180eceea43b378b27954b67f33649b2551c172fec6dcd7805c46fa4d8",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/asis_2026-quals/Atarude/attachments/upstream/Atarude_e39d6ecbf3f6d04dee16fc4a9046770fa3bdd9f3.txz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/ASIS/2026/Quals/rev/Atarude/Atarude_e39d6ecbf3f6d04dee16fc4a9046770fa3bdd9f3.txz",
+      "bytes": 12829824,
+      "sha256": "416d7ea8165eba3e5d9a0b2f47337ddeeef552fecc7f57eeae5eac541f65e4e2",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/asis_2026-quals/Atarude/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/ASIS/2026/Quals/rev/Atarude/README.md",
+      "bytes": 304,
+      "sha256": "50e7a149328b0fe5ed15c99864837b9820d09d55aafe1e321141789b7458345a",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/asis/2026-quals/atarude/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/asis/2026-quals/atarude/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

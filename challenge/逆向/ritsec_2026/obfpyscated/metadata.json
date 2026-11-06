@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3096",
+  "event_title": "RITSEC CTF 2026",
+  "title": "obfpyscated",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "python-obfuscation",
+    "xor",
+    "aes"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/ritsec/2026/obfpyscated/",
+    "https://ctf42.online/ctfs/ritsec/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/obfpyscated"
+  ],
+  "writeup_urls": [
+    "https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-4-obfpyscated/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/obfpyscated",
+    "https://ctf42.online/ctfs/ritsec/2026/obfpyscated/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/ritsec_2026/obfpyscated/writeups/1_writeup.html",
+      "url": "https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-4-obfpyscated/",
+      "bytes": 330440,
+      "sha256": "6aef0d74a2e0b4f51ecfa20cf4b70a547d8d0da6db980dd9a478119b16e31821",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/ritsec_2026/obfpyscated/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/RITSEC/2026/rev/obfpyscated/README.md",
+      "bytes": 159,
+      "sha256": "b42d24cf001e3952278009f3d8ba6d9061ebfd31644ae733a26be418ba6e942f",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/ritsec_2026/obfpyscated/attachments/upstream/obfpyscated.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/RITSEC/2026/rev/obfpyscated/obfpyscated.zip",
+      "bytes": 1967,
+      "sha256": "9160eb9d889048d19a67439e2266bad7839107bce9f0ce3516f7a298841e3acd",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/ritsec/2026/obfpyscated/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/ritsec/2026/obfpyscated/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

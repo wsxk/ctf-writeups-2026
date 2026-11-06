@@ -1,0 +1,596 @@
+; lunar.les -- simple wrapped lunar lander with subpixel physics
+;
+; Lander shape (centered at ship_x, ship_y):
+;   #
+;  # #
+;
+; WRAM layout:
+; 0 ship_x_sub
+; 1 ship_y_sub
+; 2 vel_x_signed
+; 3 vel_y_signed
+; 4 pad_start_x
+; 5 pad_end_x
+; 6 status (0=playing,1=win,2=dead)
+; 7 physics_tick (0..3)
+; 32..63 terrain surface y per x
+; 80..91 text buffer ("H:000 V2:000\0")
+
+INIT
+CALL <RESET_GAME>
+
+MAIN:
+CMP 6, 6 ; no-op to keep labels aligned
+SET 6, mR
+LOAD gA
+CMP gA, 0
+JMPNE <GAME_DONE>
+
+INPUT
+CALL <UPDATE_PHYSICS>
+CALL <CHECK_COLLISION>
+CALL <UPDATE_TEXT>
+CALL <DRAW_FRAME>
+SET 80, mR
+PRINT
+SLEEP 70
+JMP <MAIN>
+
+GAME_DONE:
+CALL <UPDATE_TEXT>
+CALL <DRAW_FRAME>
+SET 80, mR
+PRINT
+SLEEP 5000
+CALL <RESET_GAME>
+JMP <MAIN>
+
+; --- setup ---
+
+RESET_GAME:
+; ship starts near top-center
+SET 128, gA
+SET 0, mW
+STORE gA
+SET 16, gA
+SET 1, mW
+STORE gA
+
+; random initial horizontal velocity (-4..+3), avoid 0
+RND gA
+AND gA, 7, gA
+SUB gA, 4, gA
+CMP gA, 0
+JMPNE <RG_VX_SET>
+SET 1, gA
+RG_VX_SET:
+SET 2, mW
+STORE gA
+SET 0, gA
+SET 3, mW
+STORE gA
+
+; status playing
+SET 0, gA
+SET 6, mW
+STORE gA
+SET 7, mW
+STORE gA
+
+; choose flat landing pad start 6..21, width 5
+RND gA
+AND gA, 15, gA
+ADD gA, 6, gA
+SET 4, mW
+STORE gA
+ADD gA, 5, gA
+SET 5, mW
+STORE gA
+
+; build bumpy terrain with flat pad
+SET 27, gD      ; current terrain y
+SET 32, mW      ; terrain write pointer
+SET 0, gB       ; x
+TG_LOOP:
+SET 4, mR
+LOAD gA
+CMP gB, gA
+JMPLT <TG_BUMP>
+SET 5, mR
+LOAD gC
+CMP gB, gC
+JMPGT <TG_BUMP>
+SET 29, gD
+JMP <TG_STORE>
+
+TG_BUMP:
+RND gA
+AND gA, 3, gA
+CMP gA, 0
+JMPNE <TG_STEP_UP>
+DEC gD
+JMP <TG_CLAMP>
+TG_STEP_UP:
+CMP gA, 1
+JMPNE <TG_CLAMP>
+INC gD
+TG_CLAMP:
+CMP gD, 24
+JMPGE <TG_CLAMP_HI>
+SET 24, gD
+TG_CLAMP_HI:
+CMP gD, 30
+JMPLE <TG_STORE>
+SET 30, gD
+
+TG_STORE:
+STORE gD
+INC mW
+INC gB
+CMP gB, 32
+JMPLT <TG_LOOP>
+
+; initialize HUD text "H:000 V2:000"
+SET 80, mW
+SET 72, gA  ; H
+STORE gA
+INC mW
+SET 58, gA  ; :
+STORE gA
+INC mW
+SET 48, gA  ; 0
+STORE gA
+INC mW
+STORE gA
+INC mW
+STORE gA
+INC mW
+SET 32, gA  ; space
+STORE gA
+INC mW
+SET 86, gA  ; V
+STORE gA
+INC mW
+SET 50, gA  ; 2
+STORE gA
+INC mW
+SET 58, gA  ; :
+STORE gA
+INC mW
+SET 48, gA
+STORE gA
+INC mW
+STORE gA
+INC mW
+STORE gA
+INC mW
+SET 0, gA
+STORE gA
+RET
+
+; --- physics ---
+
+UPDATE_PHYSICS:
+; load velocities
+SET 2, mR
+LOAD gA       ; vx
+SET 3, mR
+LOAD gB       ; vy
+
+; floatier physics tick (0..3)
+SET 7, mR
+LOAD gD
+INC gD
+AND gD, 3, gD
+SET 7, mW
+STORE gD
+
+; gravity (downward) applies once per 4 frames
+CMP gD, 0
+JMPNE <UPH_THRUST>
+INC gB
+
+; main thruster (up): strong and responsive
+UPH_THRUST:
+CMP iU, 0
+JMPE <UPH_HORIZ>
+SUB gB, 2, gB
+
+UPH_HORIZ:
+; horizontal thrusters: apply every other frame
+AND gD, 1, gC
+CMP gC, 0
+JMPNE <UPH_CLAMPX_DONE>
+CMP iL, 0
+JMPE <UPH_RIGHT>
+DEC gA
+UPH_RIGHT:
+CMP iR, 0
+JMPE <UPH_CLAMPX_DONE>
+INC gA
+
+UPH_CLAMPX_DONE:
+; clamp vx to [-11, +11]
+CALL <CLAMP_GA_11>
+DUPE gA, pA   ; save clamped vx (CLAMP_GA_11 clobbers gC)
+
+; clamp vy to [-11, +11]
+DUPE gB, gA
+CALL <CLAMP_GA_11>
+DUPE gA, gB
+DUPE pA, gA
+
+; store velocities
+SET 2, mW
+STORE gA
+SET 3, mW
+STORE gB
+
+; update x subpixel (wraps)
+SET 0, mR
+LOAD gC
+ADD gC, gA, gC
+SET 0, mW
+STORE gC
+
+; update y subpixel
+SET 1, mR
+LOAD gD       ; old y
+ADD gD, gB, gC
+SET 1, mW
+STORE gC
+
+; going off top (negative vy and underflow) = death
+CMP gB, 128
+JMPLT <UPH_DONE>
+CMP gC, gD
+JMPLE <UPH_DONE>
+CALL <SET_DEAD>
+UPH_DONE:
+RET
+
+CLAMP_GA_11:
+; input signed byte in gA, output clamped signed byte in gA
+CMP gA, 128
+JMPLT <CG_POS>
+SUB 0, gA, gC
+CMP gC, 11
+JMPLE <CG_DONE>
+SET 245, gA   ; -11
+RET
+CG_POS:
+CMP gA, 11
+JMPLE <CG_DONE>
+SET 11, gA
+CG_DONE:
+RET
+
+ABS_GA:
+CMP gA, 128
+JMPLT <ABS_DONE>
+SUB 0, gA, gA
+ABS_DONE:
+RET
+
+SQUARE_GA:
+; input gA (0..255 small), output gB = gA*gA mod 256
+SET 0, gB
+DUPE gA, gC
+SQ_LOOP:
+CMP gC, 0
+JMPE <SQ_DONE>
+ADD gB, gA, gB
+DEC gC
+JMP <SQ_LOOP>
+SQ_DONE:
+RET
+
+; --- collision / landing ---
+
+CHECK_COLLISION:
+SET 6, mR
+LOAD gA
+CMP gA, 0
+JMPNE <CC_DONE>
+
+CALL <GET_SHIP_PIXELS>
+
+; center pixel
+DUPE gA, pA
+DUPE gB, pB
+CALL <PIXEL_HIT>
+CMP gC, 1
+JMPE <CC_IMPACT>
+
+; left foot (x-1, y+1)
+DUPE gA, pA
+DEC pA
+DUPE gB, pB
+INC pB
+DUPE pA, gA
+DUPE pB, gB
+CALL <PIXEL_HIT>
+CMP gC, 1
+JMPE <CC_IMPACT>
+
+; right foot (x+1, y+1)
+DUPE gA, pA
+INC pA
+DUPE gB, pB
+INC pB
+DUPE pA, gA
+DUPE pB, gB
+CALL <PIXEL_HIT>
+CMP gC, 1
+JMPE <CC_IMPACT>
+JMP <CC_DONE>
+
+CC_IMPACT:
+CALL <EVAL_LANDING>
+CC_DONE:
+RET
+
+GET_SHIP_PIXELS:
+; returns ship center coarse in gA (x), gB (y)
+SET 0, mR
+LOAD gA
+SHIFTR gA, 3, gA
+SET 1, mR
+LOAD gB
+SHIFTR gB, 3, gB
+RET
+
+PIXEL_HIT:
+; input gA=x, gB=y ; output gC=1 if y >= terrain[x]
+AND gA, 31, gA
+ADD gA, 32, mR
+LOAD gD
+CMP gB, gD
+JMPLT <PH_NO>
+SET 1, gC
+RET
+PH_NO:
+SET 0, gC
+RET
+
+EVAL_LANDING:
+; default dead
+CALL <SET_DEAD>
+
+; require a fully flat 3-cell footprint under the lander:
+; terrain[x-1] == terrain[x] == terrain[x+1]
+CALL <GET_SHIP_PIXELS>
+DUPE gA, gD      ; save x
+
+DUPE gD, gA
+DEC gA
+AND gA, 31, gA
+ADD gA, 32, mR
+LOAD gC          ; hL
+
+DUPE gD, gA
+AND gA, 31, gA
+ADD gA, 32, mR
+LOAD pA          ; hC
+CMP gC, pA
+JMPNE <EL_DONE>
+
+DUPE gD, gA
+INC gA
+AND gA, 31, gA
+ADD gA, 32, mR
+LOAD gC          ; hR
+CMP gC, pA
+JMPNE <EL_DONE>
+
+; safe landing speed by components (avoid v^2 byte overflow false positives):
+; |vx| <= 4 and |vy| <= 8
+SET 2, mR
+LOAD gA
+CALL <ABS_GA>
+CMP gA, 4
+JMPGT <EL_DONE>
+
+SET 3, mR
+LOAD gA
+CALL <ABS_GA>
+CMP gA, 8
+JMPGT <EL_DONE>
+
+CALL <SET_WIN>
+
+EL_DONE:
+RET
+
+SET_WIN:
+SET 1, gA
+SET 6, mW
+STORE gA
+RET
+
+SET_DEAD:
+SET 2, gA
+SET 6, mW
+STORE gA
+RET
+
+; --- HUD text ---
+
+GET_VSQUARED:
+; output gA = vx^2 + vy^2 (mod 256)
+SET 2, mR
+LOAD gA
+CALL <ABS_GA>
+CALL <SQUARE_GA>
+DUPE gB, gD
+
+SET 3, mR
+LOAD gA
+CALL <ABS_GA>
+CALL <SQUARE_GA>
+ADD gB, gD, gA
+RET
+
+TO3_ASCII:
+; input gA 0..255, output gB/gC/gD = ascii hundreds/tens/ones
+SET 48, gB
+T3_HUND:
+CMP gA, 100
+JMPLT <T3_TENS_INIT>
+SUB gA, 100, gA
+INC gB
+JMP <T3_HUND>
+
+T3_TENS_INIT:
+SET 48, gC
+T3_TENS:
+CMP gA, 10
+JMPLT <T3_ONES>
+SUB gA, 10, gA
+INC gC
+JMP <T3_TENS>
+
+T3_ONES:
+ADD gA, 48, gD
+RET
+
+UPDATE_TEXT:
+SET 6, mR
+LOAD gA
+CMP gA, 1
+JMPE <TXT_WIN>
+CMP gA, 2
+JMPE <TXT_DEAD>
+
+; playing: H and V2 values
+CALL <GET_SHIP_PIXELS>     ; gA=x gB=y
+DUPE gA, gC
+ADD gC, 32, mR
+LOAD gD                    ; surface y
+SUB gD, gB, gA             ; height approx in pixels
+CMP gD, gB
+JMPGE <TXT_H_OK>
+SET 0, gA
+TXT_H_OK:
+CALL <TO3_ASCII>
+SET 82, mW
+STORE gB
+INC mW
+STORE gC
+INC mW
+STORE gD
+
+CALL <GET_VSQUARED>
+CALL <TO3_ASCII>
+SET 88, mW
+SET 58, gA
+STORE gA
+INC mW
+STORE gB
+INC mW
+STORE gC
+INC mW
+STORE gD
+RET
+
+TXT_WIN:
+SET 80, mW
+SET 89, gA  ; Y
+STORE gA
+INC mW
+SET 111, gA ; o
+STORE gA
+INC mW
+SET 117, gA ; u
+STORE gA
+INC mW
+SET 32, gA
+STORE gA
+INC mW
+SET 87, gA  ; W
+STORE gA
+INC mW
+SET 105, gA ; i
+STORE gA
+INC mW
+SET 110, gA ; n
+STORE gA
+INC mW
+SET 0, gA
+STORE gA
+RET
+
+TXT_DEAD:
+SET 80, mW
+SET 89, gA  ; Y
+STORE gA
+INC mW
+SET 111, gA ; o
+STORE gA
+INC mW
+SET 117, gA ; u
+STORE gA
+INC mW
+SET 32, gA
+STORE gA
+INC mW
+SET 68, gA  ; D
+STORE gA
+INC mW
+SET 105, gA ; i
+STORE gA
+INC mW
+SET 101, gA ; e
+STORE gA
+INC mW
+SET 100, gA ; d
+STORE gA
+INC mW
+SET 0, gA
+STORE gA
+RET
+
+; --- drawing ---
+
+DRAW_FRAME:
+CLEAR
+SET 1, pA
+
+; draw terrain columns from y to bottom
+SET 0, gB       ; x
+SET 32, mR
+DF_COL_LOOP:
+LOAD gA         ; terrain y
+DUPE gB, cX1
+DUPE gA, cY1
+DF_Y_LOOP:
+SETP 1, pA
+INC cY1
+CMP cY1, 0
+JMPNE <DF_Y_LOOP>
+INC mR
+INC gB
+CMP gB, 32
+JMPLT <DF_COL_LOOP>
+
+; draw lander
+CALL <GET_SHIP_PIXELS>
+; center
+DUPE gA, cX1
+DUPE gB, cY1
+SETP 1, pA
+; left foot
+DUPE gA, cX1
+DEC cX1
+DUPE gB, cY1
+INC cY1
+SETP 1, pA
+; right foot
+DUPE gA, cX1
+INC cX1
+DUPE gB, cY1
+INC cY1
+SETP 1, pA
+
+DRAW
+RET

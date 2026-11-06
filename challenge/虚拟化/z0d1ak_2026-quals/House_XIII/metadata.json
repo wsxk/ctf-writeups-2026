@@ -1,0 +1,65 @@
+{
+  "event_id": "CTF-3370",
+  "event_title": "z0d1ak CTF Qualifiers",
+  "title": "House_XIII",
+  "category": "虚拟化",
+  "original_category": "Pwn",
+  "tags": [
+    "heap-exploitation",
+    "type-confusion",
+    "use-after-free (uaf)",
+    "custom-vm"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/house_xiii/",
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/pwn/House_XIII"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/pwn/house-xiii"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/pwn/House_XIII",
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/house_xiii/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/z0d1ak_2026-quals/House_XIII/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/z0d1ak-ctf-qualifiers-2026/main/pwn/house-xiii/README.md",
+      "bytes": 8654,
+      "sha256": "56ad971f014c36ee222a7d78d5f47ad1010ae957f656d8f0b23923b92311a768",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/z0d1ak_2026-quals/House_XIII/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Z0d1ak/2026/Quals/pwn/House_XIII/README.md",
+      "bytes": 124,
+      "sha256": "0bdc1d05b16cd6dbd6efb7357db335677558b1abac89b5a71dca25c3b0324dec",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/z0d1ak_2026-quals/House_XIII/attachments/upstream/pwn_house-xiii.tar.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Z0d1ak/2026/Quals/pwn/House_XIII/pwn_house-xiii.tar.gz",
+      "bytes": 1107163,
+      "sha256": "2ea557444b06160088e6d5e483dfb65a1a918d167a1700b9607396eaed70c586",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/house_xiii/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/z0d1ak/2026-quals/house_xiii/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

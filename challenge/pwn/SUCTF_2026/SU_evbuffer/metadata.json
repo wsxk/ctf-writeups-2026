@@ -1,0 +1,144 @@
+{
+  "event_id": "CTF-3161",
+  "event_title": "SUCTF 2026",
+  "category": "pwn",
+  "title": "SU_evbuffer",
+  "source_urls": [
+    "https://github.com/team-su/SUCTF-2026/tree/HEAD/pwn/SU_evbuffer",
+    "https://ctftime.org/event/3161/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/exp/exp.py",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/writeup/writeup.md"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/attachments/SU_evbuffer.zip",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/env/Dockerfile",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/env/bin/flag",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/env/bin/pwn",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/env/deploy.md",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/env/pwn.c",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/env/start.sh",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/sourcecode/sourcecode.zip"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "team-su/SUCTF-2026",
+  "repository_tree_sha": "f52d0aec9aa6c7575795edeb317dcfd130d04d99",
+  "artifacts": [
+    {
+      "path": "attachments/attachments/SU_evbuffer.zip",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/attachments/SU_evbuffer.zip",
+      "bytes": 1104797,
+      "sha256": "1767ef0905d2756ec6d569f7287a484f8e093ae819a55e00a98e07fdf92f31bb",
+      "git_blob_sha1": "b9638f582fe55cd44e76542996469c166d9e340d",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/Dockerfile",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/env/Dockerfile",
+      "bytes": 1230,
+      "sha256": "681e429236ce42f63436963039ab02806d6ae96d0ded40311559a07a03448bc8",
+      "git_blob_sha1": "bfc4eef3a2a8125c80d22f90acd6f385361c1596",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/bin/flag",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/env/bin/flag",
+      "bytes": 43,
+      "sha256": "0c1a07b88421e3ce05149f3e4300d7d6d082348e992bd74f7c21d10e0ee74c33",
+      "git_blob_sha1": "ee38d73784c9be15abbc1cdf3ebdf17af8e9979a",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/bin/pwn",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/env/bin/pwn",
+      "bytes": 17920,
+      "sha256": "f346cbe3bdadc841013b01b7f67e678ef05aee2ebf39dcaff57c8f19bdb46c6d",
+      "git_blob_sha1": "7ebcb8794441e8b06f9fd17a71995e77113b2264",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/deploy.md",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/env/deploy.md",
+      "bytes": 129,
+      "sha256": "d87cba2be9f9e0bb769ebfb0bb062b6952564cca4c97285694b6a04ce704c839",
+      "git_blob_sha1": "fba4193467ccffdb3c899d5f3bdcbe4fbf8e960f",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/pwn.c",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/env/pwn.c",
+      "bytes": 4604,
+      "sha256": "b70c694c6c3b974c56c03ba894815c00c3c76943bb29f79b173cad08c082ef8d",
+      "git_blob_sha1": "eb981cd4c2f2dfcad60bf0c705b79c8a4fbf9473",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/start.sh",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/env/start.sh",
+      "bytes": 53,
+      "sha256": "1e188a2e10ba839a19318e47303915931a5ad5256ce6e899b7b4fdff62e85d2d",
+      "git_blob_sha1": "09e78a874851c8a3e639358730e98c6ffdca689b",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/exp/exp.py",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/exp/exp.py",
+      "bytes": 3686,
+      "sha256": "1acb052a32fd52da0772469f09200f048b4b2370873660251794b917375f14f5",
+      "git_blob_sha1": "0eeeb95e04be17705ee45205a11feaf3891c4fd3",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/sourcecode/sourcecode.zip",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/sourcecode/sourcecode.zip",
+      "bytes": 1466,
+      "sha256": "0d80e1f84432244d8bca89cf20893f86dbde438c2253697c3f7dae3c0ce393ee",
+      "git_blob_sha1": "aec3047720779c18fd8707077c307b2ba392ae98",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/writeup.md",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_evbuffer/writeup/writeup.md",
+      "bytes": 4315,
+      "sha256": "48a152f85f56895e8be1441f9f2d58c86bf0a6d2677263d53617a3db8c87d76e",
+      "git_blob_sha1": "31ef9f7a6cc29c33657749ffe7c8d8a399d1b927",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/writeup/writeup.md"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

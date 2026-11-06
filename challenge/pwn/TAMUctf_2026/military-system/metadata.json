@@ -1,0 +1,186 @@
+{
+  "event_id": "CTF-3095",
+  "event_title": "TAMUctf 2026",
+  "category": "pwn",
+  "title": "military-system",
+  "source_urls": [
+    "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/pwn/military-system",
+    "https://ctftime.org/event/3095/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/README.md",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/solve.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/solver-template.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/Dockerfile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/Dockerfile.builder",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/Makefile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/Makefile.debug",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/config.toml",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/entrypoint.sh",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/fake-flag.txt",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/flag.txt",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/military-system",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/vuln.c",
+    "https://media.githubusercontent.com/media/ACM-VIT/z0d1ak-writeups/HEAD/TAMUctf%202026/pwn/military-system/military-system.tar.gz"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。",
+    "补充的 original_distribution/*.tar.gz 是参赛队保存的原分发包镜像，LFS SHA-256已校验。"
+  ],
+  "repository": "tamuctf/tamuctf-2026",
+  "repository_tree_sha": "c25f8b673b2a24b5316d164666be8b84d8f02d6b",
+  "artifacts": [
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/Dockerfile",
+      "bytes": 1188,
+      "sha256": "3f84cd4b55879e5b5a409a068a457ce61594f256130bc9fbfd69ee844a7e15e9",
+      "git_blob_sha1": "f0b9f3a349846c03dc9b2d043c22fcc887ef5517",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/Dockerfile.builder",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/Dockerfile.builder",
+      "bytes": 501,
+      "sha256": "d37ad8ed1f9a68bb9b4d124f0371e8f6628db8ae5ae0ecb3de60a34e5f558cd9",
+      "git_blob_sha1": "040bd6294b62253150e2436fabe58f00dd06de1c",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/Makefile",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/Makefile",
+      "bytes": 2121,
+      "sha256": "b2ed570c0938884bde14b9556fc9d48a3887b3bb5a9fa315d93e4515544fb096",
+      "git_blob_sha1": "076fb3fe18733196a6e8999080ebab23c0aeacd6",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/Makefile.debug",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/Makefile.debug",
+      "bytes": 563,
+      "sha256": "535ec03bcf4ed6aa6ca0125e4315139e4030c093e91f2027dae368a4e8c2d723",
+      "git_blob_sha1": "8c9987c8be4e56357e39e1e5e9b6ab8682a9cd62",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/README.md",
+      "bytes": 1104,
+      "sha256": "f335385dee6d328ce12fd4e6d91f4c84886ee2f09a91d13113dffcc7dc7040c8",
+      "git_blob_sha1": "d20e345245a9e57444f282f303776734b3b72cab",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/config.toml",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/config.toml",
+      "bytes": 172,
+      "sha256": "d13f6c43703dad08655beadd7f80e72213bbc846bab3b2cf77dacd907e596a05",
+      "git_blob_sha1": "cfa8fdd15256b04272d97fbd7f159da71a2cafe6",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/entrypoint.sh",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/entrypoint.sh",
+      "bytes": 793,
+      "sha256": "8c78b1da78f2e65d82f0c4e8c23fce511f872dd3d5d07081a20cd7bd7beec044",
+      "git_blob_sha1": "ab5a2ee5d6c9d270008c6fa96c06f3a7791c61c7",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/fake-flag.txt",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/fake-flag.txt",
+      "bytes": 24,
+      "sha256": "221a1461f0e05995c4f0cd17c4eb432dcaecd65674e408e492f678d8fa37f10a",
+      "git_blob_sha1": "7ce02f4ef0245ad2f0c0c53108c2154b4a71c733",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flag.txt",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/flag.txt",
+      "bytes": 38,
+      "sha256": "bfb3b6d1ee4c1fe24307c329ed676eb77ae123f688bd0a5affa62e838fd08f62",
+      "git_blob_sha1": "1c05d96aa01c75946d642c8b45e56fa61a9160b2",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/military-system",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/military-system",
+      "bytes": 87160,
+      "sha256": "11af530f181c2aac1992af1ba0e77b493809e760ea8ad35d891619611206dec8",
+      "git_blob_sha1": "b33dd5081b8c1a9ee85ddff20475d1fd41925c4a",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve.py",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/solve.py",
+      "bytes": 5296,
+      "sha256": "ff8258212a29678ceabaa414b5283b5b35582e4eb84c79472940e90b573209c8",
+      "git_blob_sha1": "3994993a07fedade4fe1b5fbb134be2f4ea48009",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solver-template.py",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/solver-template.py",
+      "bytes": 146,
+      "sha256": "2bfd086ba34f562284ab972302e5ec42b36fd55c871f8d823ec8e10b5b6f663f",
+      "git_blob_sha1": "958d35e1eed0c912e357c8e6a5a7c2b5b82f0748",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/vuln.c",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/military-system/vuln.c",
+      "bytes": 12534,
+      "sha256": "81dcd8e4eaed37393c3cf9333cbf0b7e7d13a74070c7387d8aabf707ba0832d8",
+      "git_blob_sha1": "66c0995c936003475851e21cfbdc3ddf158ab259",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/original_distribution/military-system.tar.gz",
+      "url": "https://media.githubusercontent.com/media/ACM-VIT/z0d1ak-writeups/HEAD/TAMUctf%202026/pwn/military-system/military-system.tar.gz",
+      "bytes": 15667,
+      "sha256": "64e804677a0f204a3b42748bbfc8501b51b7409efac7123ca52a5bdaa79b8690",
+      "kind": "attachments"
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/README.md"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

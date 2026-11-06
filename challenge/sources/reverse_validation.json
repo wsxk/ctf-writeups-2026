@@ -1,0 +1,749 @@
+{
+  "date_beijing": "2026-11-06",
+  "challenge_count": 62,
+  "categories": {
+    "逆向": 42,
+    "虚拟化": 18,
+    "android": 2
+  },
+  "event_count": 12,
+  "file_count": 451,
+  "bytes": 780979072,
+  "error_count": 0,
+  "results": [
+    {
+      "event_id": "CTF-2969",
+      "title": "Baby (Obfuscated) Flag Checker",
+      "category": "逆向",
+      "directory": "逆向/UofTCTF_2026/Baby (Obfuscated) Flag Checker",
+      "file_count": 5,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-2969",
+      "title": "Symbol of Hope",
+      "category": "逆向",
+      "directory": "逆向/UofTCTF_2026/Symbol of Hope",
+      "file_count": 3,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-2969",
+      "title": "ML Connoisseur",
+      "category": "逆向",
+      "directory": "逆向/UofTCTF_2026/ML Connoisseur",
+      "file_count": 8,
+      "archives": [
+        {
+          "file": "attachments/dist/ml-connoisseur.zip",
+          "members": 15,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-2969",
+      "title": "Bring Your Own Program",
+      "category": "虚拟化",
+      "directory": "虚拟化/UofTCTF_2026/Bring Your Own Program",
+      "file_count": 3,
+      "archives": [
+        {
+          "file": "attachments/dist/byop.zip",
+          "members": 8,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-2969",
+      "title": "Will u Accept Some Magic?",
+      "category": "逆向",
+      "directory": "逆向/UofTCTF_2026/Will u Accept Some Magic_",
+      "file_count": 9,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3015",
+      "title": "flag-finder",
+      "category": "逆向",
+      "directory": "逆向/LA_CTF_2026/flag-finder",
+      "file_count": 6,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3015",
+      "title": "helm-hell",
+      "category": "虚拟化",
+      "directory": "虚拟化/LA_CTF_2026/helm-hell",
+      "file_count": 7,
+      "archives": [
+        {
+          "file": "attachments/helm-hell.zip",
+          "members": 4,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3015",
+      "title": "lactf-1986",
+      "category": "逆向",
+      "directory": "逆向/LA_CTF_2026/lactf-1986",
+      "file_count": 4,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3015",
+      "title": "ooo",
+      "category": "逆向",
+      "directory": "逆向/LA_CTF_2026/ooo",
+      "file_count": 4,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3015",
+      "title": "starless-c",
+      "category": "逆向",
+      "directory": "逆向/LA_CTF_2026/starless-c",
+      "file_count": 9,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3015",
+      "title": "the-fish",
+      "category": "逆向",
+      "directory": "逆向/LA_CTF_2026/the-fish",
+      "file_count": 4,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3015",
+      "title": "the-three-sat-problem",
+      "category": "逆向",
+      "directory": "逆向/LA_CTF_2026/the-three-sat-problem",
+      "file_count": 11,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3043",
+      "title": "Artistic warmup",
+      "category": "逆向",
+      "directory": "逆向/Srdnlen_CTF_2026_Quals/Artistic warmup",
+      "file_count": 5,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3043",
+      "title": "Rev Juice",
+      "category": "逆向",
+      "directory": "逆向/Srdnlen_CTF_2026_Quals/Rev Juice",
+      "file_count": 5,
+      "archives": [
+        {
+          "file": "attachments/attachments/rev_juice.zip",
+          "members": 7,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3110",
+      "title": "another-onion",
+      "category": "逆向",
+      "directory": "逆向/DiceCTF_2026_Quals/another-onion",
+      "file_count": 19,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3110",
+      "title": "bedtime",
+      "category": "逆向",
+      "directory": "逆向/DiceCTF_2026_Quals/bedtime",
+      "file_count": 3,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3110",
+      "title": "explorer",
+      "category": "逆向",
+      "directory": "逆向/DiceCTF_2026_Quals/explorer",
+      "file_count": 13,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3247",
+      "title": "angr_management",
+      "category": "逆向",
+      "directory": "逆向/BYUCTF_2026/angr_management",
+      "file_count": 9,
+      "archives": [
+        {
+          "file": "attachments/challenge.zip",
+          "members": 2,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3247",
+      "title": "picklerick",
+      "category": "逆向",
+      "directory": "逆向/BYUCTF_2026/picklerick",
+      "file_count": 3,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3247",
+      "title": "rcaas",
+      "category": "逆向",
+      "directory": "逆向/BYUCTF_2026/rcaas",
+      "file_count": 3,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3247",
+      "title": "yara",
+      "category": "逆向",
+      "directory": "逆向/BYUCTF_2026/yara",
+      "file_count": 2,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3095",
+      "title": "acidity",
+      "category": "逆向",
+      "directory": "逆向/TAMUctf_2026/acidity",
+      "file_count": 13,
+      "archives": [
+        {
+          "file": "attachments/archived_handout/acidity.tar.gz",
+          "members": 3,
+          "readable": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3095",
+      "title": "challenge7",
+      "category": "逆向",
+      "directory": "逆向/TAMUctf_2026/challenge7",
+      "file_count": 18,
+      "archives": [
+        {
+          "file": "attachments/archived_handout/challenge7.tar.gz",
+          "members": 2,
+          "readable": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3095",
+      "title": "hyper-neighbor",
+      "category": "逆向",
+      "directory": "逆向/TAMUctf_2026/hyper-neighbor",
+      "file_count": 17,
+      "archives": [
+        {
+          "file": "attachments/archived_handout/hyper-neighbor.tar.gz",
+          "members": 4,
+          "readable": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3095",
+      "title": "kitchen-sink",
+      "category": "逆向",
+      "directory": "逆向/TAMUctf_2026/kitchen-sink",
+      "file_count": 8,
+      "archives": [
+        {
+          "file": "attachments/archived_handout/kitchen-sink.tar.gz",
+          "members": 2,
+          "readable": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3095",
+      "title": "nucleus",
+      "category": "逆向",
+      "directory": "逆向/TAMUctf_2026/nucleus",
+      "file_count": 9,
+      "archives": [
+        {
+          "file": "attachments/archived_handout/nucleus.tar.gz",
+          "members": 1,
+          "readable": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3095",
+      "title": "skretch",
+      "category": "逆向",
+      "directory": "逆向/TAMUctf_2026/skretch",
+      "file_count": 18,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3095",
+      "title": "sun-temple",
+      "category": "逆向",
+      "directory": "逆向/TAMUctf_2026/sun-temple",
+      "file_count": 13,
+      "archives": [
+        {
+          "file": "attachments/archived_handout/sun-temple.tar.gz",
+          "members": 3,
+          "readable": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3095",
+      "title": "war-hymn",
+      "category": "逆向",
+      "directory": "逆向/TAMUctf_2026/war-hymn",
+      "file_count": 18,
+      "archives": [
+        {
+          "file": "attachments/archived_handout/war-hymn.tar.gz",
+          "members": 1,
+          "readable": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3153",
+      "title": "favorite_potato",
+      "category": "虚拟化",
+      "directory": "虚拟化/b01lers_CTF_2026/favorite_potato",
+      "file_count": 8,
+      "archives": [
+        {
+          "file": "attachments/dist/favorite_potato.zip",
+          "members": 4,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3153",
+      "title": "tiles--ai",
+      "category": "逆向",
+      "directory": "逆向/b01lers_CTF_2026/tiles--ai",
+      "file_count": 4,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3153",
+      "title": "shakespeares-revenge",
+      "category": "逆向",
+      "directory": "逆向/b01lers_CTF_2026/shakespeares-revenge",
+      "file_count": 8,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-2767",
+      "title": "Albo delle Eccellenze",
+      "category": "逆向",
+      "directory": "逆向/PascalCTF_2026/Albo delle Eccellenze",
+      "file_count": 5,
+      "archives": [
+        {
+          "file": "attachments/attachments/albo.zip",
+          "members": 1,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3161",
+      "title": "SU_Protocol",
+      "category": "逆向",
+      "directory": "逆向/SUCTF_2026/SU_Protocol",
+      "file_count": 13,
+      "archives": [
+        {
+          "file": "attachments/attachments/taskdemo.zip",
+          "members": 6,
+          "crc_error": null
+        },
+        {
+          "file": "attachments/sourcecode/sourcecode.zip",
+          "members": 2,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3161",
+      "title": "SU_easygal",
+      "category": "逆向",
+      "directory": "逆向/SUCTF_2026/SU_easygal",
+      "file_count": 4,
+      "archives": [
+        {
+          "file": "attachments/attachments/app.zip",
+          "members": 51,
+          "crc_error": null
+        },
+        {
+          "file": "attachments/sourcecode/sourcecode.zip",
+          "members": 436,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3161",
+      "title": "SU_revird",
+      "category": "逆向",
+      "directory": "逆向/SUCTF_2026/SU_revird",
+      "file_count": 20,
+      "archives": [
+        {
+          "file": "attachments/attachments/SU_Revird.zip",
+          "members": 2,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3161",
+      "title": "SU_Lock",
+      "category": "虚拟化",
+      "directory": "虚拟化/SUCTF_2026/SU_Lock",
+      "file_count": 17,
+      "archives": [
+        {
+          "file": "attachments/attachments/Everything_Setup1.zip",
+          "members": 1,
+          "crc_error": null
+        },
+        {
+          "file": "attachments/attachments/Everything_Setup2.zip",
+          "members": 1,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3161",
+      "title": "SU_MvsicPlayer",
+      "category": "虚拟化",
+      "directory": "虚拟化/SUCTF_2026/SU_MvsicPlayer",
+      "file_count": 12,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3161",
+      "title": "SU_West",
+      "category": "虚拟化",
+      "directory": "虚拟化/SUCTF_2026/SU_West",
+      "file_count": 3,
+      "archives": [
+        {
+          "file": "attachments/attachments/SU_West.zip",
+          "members": 2,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3247",
+      "title": "mixed_signals",
+      "category": "虚拟化",
+      "directory": "虚拟化/BYUCTF_2026/mixed_signals",
+      "file_count": 3,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3153",
+      "title": "kyotoprotocol",
+      "category": "虚拟化",
+      "directory": "虚拟化/b01lers_CTF_2026/kyotoprotocol",
+      "file_count": 11,
+      "archives": [
+        {
+          "file": "attachments/dist/kyoto.zip",
+          "members": 2,
+          "crc_error": null
+        },
+        {
+          "file": "writeups/solve/dumped_c.zip",
+          "members": 1459,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3153",
+      "title": "indirect-memory-access",
+      "category": "虚拟化",
+      "directory": "虚拟化/b01lers_CTF_2026/indirect-memory-access",
+      "file_count": 3,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3043",
+      "title": "Cornflake v3.5",
+      "category": "虚拟化",
+      "directory": "虚拟化/Srdnlen_CTF_2026_Quals/Cornflake v3.5",
+      "file_count": 16,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3015",
+      "title": "reflection",
+      "category": "虚拟化",
+      "directory": "虚拟化/LA_CTF_2026/reflection",
+      "file_count": 3,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-2767",
+      "title": "StrangeVM",
+      "category": "虚拟化",
+      "directory": "虚拟化/PascalCTF_2026/StrangeVM",
+      "file_count": 5,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3314",
+      "title": "Alice",
+      "category": "逆向",
+      "directory": "逆向/SCTF_2026/Alice",
+      "file_count": 3,
+      "archives": [
+        {
+          "file": "attachments/Alice.zip",
+          "members": 14,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3314",
+      "title": "BrainfOok",
+      "category": "虚拟化",
+      "directory": "虚拟化/SCTF_2026/BrainfOok",
+      "file_count": 3,
+      "archives": [
+        {
+          "file": "attachments/BrainfOok.zip",
+          "members": 2,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3314",
+      "title": "GuardMaster",
+      "category": "android",
+      "directory": "android/SCTF_2026/GuardMaster",
+      "file_count": 3,
+      "archives": [
+        {
+          "file": "attachments/GuardMaster.zip",
+          "members": 2,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3314",
+      "title": "Zombie_progression",
+      "category": "逆向",
+      "directory": "逆向/SCTF_2026/Zombie_progression",
+      "file_count": 3,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3314",
+      "title": "babel_furnace",
+      "category": "虚拟化",
+      "directory": "虚拟化/SCTF_2026/babel_furnace",
+      "file_count": 6,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3314",
+      "title": "ghost_projection",
+      "category": "逆向",
+      "directory": "逆向/SCTF_2026/ghost_projection",
+      "file_count": 15,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3330",
+      "title": "black-blood",
+      "category": "逆向",
+      "directory": "逆向/Thryve_CTF_2026/black-blood",
+      "file_count": 7,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3330",
+      "title": "chimera-mirrors",
+      "category": "虚拟化",
+      "directory": "虚拟化/Thryve_CTF_2026/chimera-mirrors",
+      "file_count": 3,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3330",
+      "title": "hell",
+      "category": "逆向",
+      "directory": "逆向/Thryve_CTF_2026/hell",
+      "file_count": 3,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3330",
+      "title": "parallax",
+      "category": "虚拟化",
+      "directory": "虚拟化/Thryve_CTF_2026/parallax",
+      "file_count": 3,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3330",
+      "title": "redline",
+      "category": "逆向",
+      "directory": "逆向/Thryve_CTF_2026/redline",
+      "file_count": 3,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3330",
+      "title": "soul",
+      "category": "虚拟化",
+      "directory": "虚拟化/Thryve_CTF_2026/soul",
+      "file_count": 4,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3206",
+      "title": "鸡爪流高手",
+      "category": "逆向",
+      "directory": "逆向/NCTF_2026/鸡爪流高手",
+      "file_count": 2,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3206",
+      "title": "Hook My Secret",
+      "category": "android",
+      "directory": "android/NCTF_2026/Hook My Secret",
+      "file_count": 2,
+      "archives": [],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3206",
+      "title": "No My Bank!",
+      "category": "逆向",
+      "directory": "逆向/NCTF_2026/No My Bank!",
+      "file_count": 3,
+      "archives": [
+        {
+          "file": "attachments/NoMyBank!.zip",
+          "members": 2,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3206",
+      "title": "VM Encryptor",
+      "category": "虚拟化",
+      "directory": "虚拟化/NCTF_2026/VM Encryptor",
+      "file_count": 2,
+      "archives": [
+        {
+          "file": "attachments/vm-encryptor-attachment.zip",
+          "members": 2,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3206",
+      "title": "Pay For 2048",
+      "category": "逆向",
+      "directory": "逆向/NCTF_2026/Pay For 2048",
+      "file_count": 2,
+      "archives": [
+        {
+          "file": "attachments/pay-for-2048-attachment.zip",
+          "members": 77,
+          "crc_error": null
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

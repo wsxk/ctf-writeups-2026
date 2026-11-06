@@ -1,0 +1,62 @@
+{
+  "event_id": "CTF-3046",
+  "event_title": "BearcatCTF 2026 - Setting Sail",
+  "title": "Pollys_Key",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "primitive-roots",
+    "permutation-recovery"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/bearcat/2026/pollys_key/",
+    "https://ctf42.online/ctfs/bearcat/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bearcat/2026/rev/Pollys_Key"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/bearcatctf2026/tree/main/rev/pollys-key"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bearcat/2026/rev/Pollys_Key",
+    "https://ctf42.online/ctfs/bearcat/2026/pollys_key/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/bearcat_2026/Pollys_Key/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/bearcatctf2026/main/rev/pollys-key/README.md",
+      "bytes": 3022,
+      "sha256": "0d781dddd412566c557822d52ef88e857400f07e94022f96199903dd24424528",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/bearcat_2026/Pollys_Key/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Bearcat/2026/rev/Pollys_Key/README.md",
+      "bytes": 382,
+      "sha256": "4292f42a04c96cfb8cd1f948e828a8c8d911a7b79a608068a2f469642e15c1eb",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/bearcat_2026/Pollys_Key/attachments/upstream/pollys_key",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Bearcat/2026/rev/Pollys_Key/pollys_key",
+      "bytes": 4760,
+      "sha256": "d1ee151822bf796a70bdc14f8929cd2cac13d2b9cf7b33656d8878031c12f69d",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/bearcat/2026/pollys_key/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/bearcat/2026/pollys_key/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

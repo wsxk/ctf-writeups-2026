@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Introduction Participating in RITSEC CTF 2026, a Jeopardy-style CTF of intermediate difficulty, was a great opportunity to sharpen my skills across different areas of cybersecurity. I took part in the competition with the team Echelon Obscura, where I served as the team captain and we ultimately placed 147th out of 663 teams. The event was both challenging and highly enjoyable, offering a well-balanced mix of problems that required both technical depth and creative thinking under time pressure.
+" />
+<meta name="keywords" content=", Reversing, CTF, Jeopardy, RITSEC CTF 2026, XTEA" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-1-t-reasure-chest/" />
+
+
+    <title>
+        
+            RITSEC CTF 2026 - Reversing Writeups (Part 1): T-reasure Chest :: pnasis 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="https://pnasis.gitlab.io/main.min.2729760c629597024c5de34b40ea9f372f2b5a2a192dcdca537b7ddfa483eab8.css" integrity="sha256-Jyl2DGKVlwJMXeNLQOqfNy8rWioZLc3KU3t936SD6rg=" crossorigin="anonymous">
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    <link rel="icon" type="image/x-icon" href="https://pnasis.gitlab.io/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="RITSEC CTF 2026 - Reversing Writeups (Part 1): T-reasure Chest">
+  <meta itemprop="description" content="Introduction Participating in RITSEC CTF 2026, a Jeopardy-style CTF of intermediate difficulty, was a great opportunity to sharpen my skills across different areas of cybersecurity. I took part in the competition with the team Echelon Obscura, where I served as the team captain and we ultimately placed 147th out of 663 teams. The event was both challenging and highly enjoyable, offering a well-balanced mix of problems that required both technical depth and creative thinking under time pressure.">
+  <meta itemprop="datePublished" content="2026-04-04T03:04:29+03:00">
+  <meta itemprop="dateModified" content="2026-04-04T03:04:29+03:00">
+  <meta itemprop="wordCount" content="1437">
+  <meta itemprop="image" content="https://pnasis.gitlab.io/">
+  <meta itemprop="keywords" content="Reversing,CTF,Jeopardy,RITSEC CTF 2026,XTEA">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://pnasis.gitlab.io/">
+  <meta name="twitter:title" content="RITSEC CTF 2026 - Reversing Writeups (Part 1): T-reasure Chest">
+  <meta name="twitter:description" content="Introduction Participating in RITSEC CTF 2026, a Jeopardy-style CTF of intermediate difficulty, was a great opportunity to sharpen my skills across different areas of cybersecurity. I took part in the competition with the team Echelon Obscura, where I served as the team captain and we ultimately placed 147th out of 663 teams. The event was both challenging and highly enjoyable, offering a well-balanced mix of problems that required both technical depth and creative thinking under time pressure.">
+
+
+
+    <meta property="og:url" content="https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-1-t-reasure-chest/">
+  <meta property="og:site_name" content="pnasis">
+  <meta property="og:title" content="RITSEC CTF 2026 - Reversing Writeups (Part 1): T-reasure Chest">
+  <meta property="og:description" content="Introduction Participating in RITSEC CTF 2026, a Jeopardy-style CTF of intermediate difficulty, was a great opportunity to sharpen my skills across different areas of cybersecurity. I took part in the competition with the team Echelon Obscura, where I served as the team captain and we ultimately placed 147th out of 663 teams. The event was both challenging and highly enjoyable, offering a well-balanced mix of problems that required both technical depth and creative thinking under time pressure.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-04T03:04:29+03:00">
+    <meta property="article:modified_time" content="2026-04-04T03:04:29+03:00">
+    <meta property="article:tag" content="Reversing">
+    <meta property="article:tag" content="CTF">
+    <meta property="article:tag" content="Jeopardy">
+    <meta property="article:tag" content="RITSEC CTF 2026">
+    <meta property="article:tag" content="XTEA">
+    <meta property="og:image" content="https://pnasis.gitlab.io/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2026-04-04 03:04:29 &#43;0300 &#43;0300" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://pnasis.gitlab.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text ">
+                $ cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://pnasis.gitlab.io/about/">~/about</a></li><li><a href="https://pnasis.gitlab.io/posts/">~/posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        7 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-1-t-reasure-chest/">RITSEC CTF 2026 - Reversing Writeups (Part 1): T-reasure Chest</a>
+      </h1>
+
+      
+
+      
+        <hr />
+        <aside id="toc">
+          <div class="toc-title">Table of Contents</div>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#challenge-overview">Challenge Overview</a></li>
+    <li><a href="#static-analysis">Static Analysis</a></li>
+    <li><a href="#getting-the-flag">Getting the flag</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+        </aside>
+        <hr />
+
+      
+
+      <div class="post-content">
+        <h2 id="introduction">Introduction</h2>
+<p>    Participating in <a href="https://ctfd.ritsec.club/">RITSEC CTF 2026</a>, a <strong>Jeopardy-style</strong> CTF of <strong>intermediate difficulty</strong>, was a great opportunity to sharpen my skills across different areas of cybersecurity. I took part in the competition with the team <a href="https://ctftime.org/team/431287">Echelon Obscura</a>, where I served as the team captain and we ultimately placed <strong>147th out of 663 teams</strong>. The event was both challenging and highly enjoyable, offering a well-balanced mix of problems that required both technical depth and creative thinking under time pressure.</p>
+<p>    For this competition, I focused exclusively on the <em><strong>Reversing</strong></em> category, tackling challenges that required analyzing compiled binaries and uncovering hidden logic. In this series of posts, I’ll document the challenges I solved, walking through both my reasoning process and the technical steps involved. The aim is not just to present solutions, but to highlight practical reversing techniques and the kind of analytical mindset that proves valuable during CTFs.</p>
+<p>    With that in mind, I’ll start with one of the first reversing challenges I tackled during the competition, titled <em><strong>“T-reasure Chest”</strong></em>. This challenge serves as a good introduction to the category, as it combines straightforward analysis with just enough ambiguity to require careful inspection of the binary.</p>
+<h2 id="challenge-overview">Challenge Overview</h2>
+<p>    The following description was provided as part of the challenge, along with a binary file named <code>treasure</code>:</p>
+<blockquote>
+<p><em>“Score! You found a treasure chest! Now if only you could figure out how to unlock it&hellip; maybe there&rsquo;s a magic word?”</em></p>
+</blockquote>
+<p><img src="https://pnasis.gitlab.io/images/ritsec-2026-reversing-1-treasure-writeup/info.png" 
+alt="challenge Info" 
+style="display: block; margin: 0 auto; width: 90%; height: auto;"></p>
+<p>    The first thing I did was to use the <code>file</code> command to gather basic information about the binary:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ file treasure
+</span></span><span style="display:flex;"><span>treasure: ELF 64-bit LSB executable, x86-64, version <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>SYSV<span style="color:#f92672">)</span>, dynamically linked, interpreter /nix/store/8p33is69mjdw3bi1wmi8v2zpsxir8nwd-glibc-2.40-66/lib/ld-linux-x86-64.so.2, <span style="color:#66d9ef">for</span> GNU/Linux 3.10.0, stripped
+</span></span></code></pre></div><p>    From this, we can immediately see that the binary is a <em>64-bit ELF executable for x86-64 Linux</em> and is <em>dynamically linked</em>, meaning it depends on external shared libraries at runtime.</p>
+<p>    Another important detail is that it is <em>stripped</em>, so symbol names are removed. This makes the analysis slightly harder since we lose function names and have to rely more on control flow and disassembly.</p>
+<p>    The interpreter path also suggests it was built in a <em>Nix-based environment</em>, as indicated by the <code>/nix/store/...</code> glibc loader path. Nix is a declarative package manager and build system that stores dependencies in isolated paths under <code>/nix/store</code>, ensuring reproducible builds. While not directly relevant to exploitation, it gives some context about the build environment.</p>
+<h2 id="static-analysis">Static Analysis</h2>
+<p>    At this point, I began the <strong>static analysis</strong> by opening the binary in Ghidra. After locating the <code>main</code> function and applying some basic renaming and cleanup, the decompiled logic became much easier to follow.</p>
+<p>    The function looked like this:</p>
+<p><img src="https://pnasis.gitlab.io/images/ritsec-2026-reversing-1-treasure-writeup/main-func.png" 
+alt="Main Function" 
+style="display: block; margin: 0 auto; width: 90%; height: auto;"></p>
+<p>    From a high-level perspective, this function implements a <strong>classic input validation and transformation routine</strong>.</p>
+<p>    The program first prompts the user for a “magic word” and stores it in a buffer. It then removes the trailing newline and computes the input length. The input is then <strong>padded to an 8-byte boundary</strong>, with any remaining space filled with zeroes, suggesting block-aligned processing.</p>
+<p>    After preparation, the buffer is passed into a function I named <code>tiny_encrypt</code>, along with a key constructed from two hardcoded 64-bit values (<code>enc_key1</code> and <code>enc_key2</code>). These values form the encryption key used in the transformation step.</p>
+<p>    Once encrypted, the program prints the resulting buffer in hexadecimal form, allowing observation of the transformation output. Finally, it performs a critical check using <code>memcmp</code> against a hardcoded buffer (<code>ctx</code>) and verifies that the total length is exactly <strong>34 bytes</strong>. If both conditions are satisfied, the program prints the success message and reveals the “treasure”. Otherwise, it prints a failure message and exits.</p>
+<p>    At this point, the objective becomes clear: determine the correct input that, after processing through <code>tiny_encrypt</code>, produces the expected <strong>34-byte ciphertext</strong> stored in <code>ctx</code>.</p>
+<p>    Next, I analyzed the encryption routine itself, starting with <code>tiny_encrypt</code>:</p>
+<p><img src="https://pnasis.gitlab.io/images/ritsec-2026-reversing-1-treasure-writeup/tiny_encrypt-func.png" 
+alt="tiny_encrypt Function" 
+style="display: block; margin: 0 auto; width: 90%; height: auto;"></p>
+<p>    This function is essentially a wrapper over a block cipher operation. It iterates over the input buffer in 8-byte (64-bit) blocks, extracts each block, encrypts it using <code>xtea_encrypt_block</code> and writes it back into memory. The function name <code>xtea_encrypt_block</code> was assigned by me after analyzing the underlying logic and recognizing the structure of the algorithm in the later decompiled function (spoiler alert!). The use of 64-bit blocks immediately suggests a block cipher operating on two 32-bit words per iteration, which is characteristic of TEA-family designs and provides a strong initial hint toward XTEA.</p>
+<p>    The core logic is implemented in <code>xtea_encrypt_block</code>:</p>
+<p><img src="https://pnasis.gitlab.io/images/ritsec-2026-reversing-1-treasure-writeup/xtea_encrypt_block-func.png" 
+alt="xtea_encrypt_block Function" 
+style="display: block; margin: 0 auto; width: 90%; height: auto;"></p>
+<p>    At this point, it becomes clear that the challenge is using <strong>XTEA (eXtended Tiny Encryption Algorithm)</strong>, a lightweight block cipher designed as an improvement over TEA (Tiny Encryption Algorithm). <a href="https://grokipedia.com/page/XTEA">XTEA</a> operates on <strong>64-bit blocks split into two 32-bit halves (v0 and v1)</strong> and uses a <strong>128-bit key divided into four 32-bit subkeys</strong>.</p>
+<p>    One of the most important details in this implementation is the constant <code>-0x61c88647</code>. This value is the <strong>two’s complement representation of</strong> <code>0x9E3779B9</code>, which is a well-known constant in cryptography. In signed 32-bit arithmetic, <code>-0x61c88647</code> and <code>0x9E3779B9</code> represent the same underlying bit pattern.</p>
+<p>    The constant <code>0x9E3779B9</code> is derived from the <strong>golden ratio</strong> and is commonly used as the <strong>delta value in XTEA</strong>. The role of this constant is to ensure good diffusion by preventing patterns in the round key schedule. In XTEA, this value is repeatedly added to a running sum in each round, which drives the key mixing process.</p>
+<p>    Seeing this exact constant confirms that the implementation is <strong>standard, unmodified XTEA</strong>, rather than a custom or weakened variant. This is an important observation, because it means the encryption behavior is well-defined and can be reliably reversed using known cryptographic properties of XTEA.</p>
+<p>    <strong>XTEA</strong> itself is a symmetric block cipher, meaning the same key is used for both encryption and decryption. It was designed to be simple and efficient, making it suitable for environments with limited resources. Historically, it has been used in <strong>embedded systems</strong>, <strong>firmware</strong> and <strong>lightweight encryption scenarios</strong>, although it is not considered secure by modern cryptographic standards due to weaknesses discovered over time.</p>
+<p>    In the context of this challenge, however, its importance lies in the fact that it is fully reversible, which becomes the key to recovering the original “magic word” once the correct ciphertext target is identified.</p>
+<h2 id="getting-the-flag">Getting the flag</h2>
+<p>    With this understanding in place, the final step was to reverse the encryption process and recover the original input that produces the expected ciphertext.</p>
+<p>    Since the encryption used is <strong>XTEA</strong> and the implementation follows the standard 32-round structure with a fixed delta (<code>0x9E3779B9</code>), decryption can be performed by reversing the round operations. The only required inputs were the extracted ciphertext (<code>ctx</code>) from Ghidra and the static key reconstructed from the binary.</p>
+<p>    The following Python script implements the decryption logic:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> struct
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ctx <span style="color:#f92672">=</span> bytes([
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x38</span>,<span style="color:#ae81ff">0x75</span>,<span style="color:#ae81ff">0x5b</span>,<span style="color:#ae81ff">0xcb</span>, <span style="color:#ae81ff">0x44</span>,<span style="color:#ae81ff">0xd2</span>,<span style="color:#ae81ff">0xbe</span>,<span style="color:#ae81ff">0x5d</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x96</span>,<span style="color:#ae81ff">0x9c</span>,<span style="color:#ae81ff">0x56</span>,<span style="color:#ae81ff">0x43</span>, <span style="color:#ae81ff">0xea</span>,<span style="color:#ae81ff">0x98</span>,<span style="color:#ae81ff">0x06</span>,<span style="color:#ae81ff">0x75</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x4a</span>,<span style="color:#ae81ff">0x48</span>,<span style="color:#ae81ff">0x13</span>,<span style="color:#ae81ff">0xe6</span>, <span style="color:#ae81ff">0xd4</span>,<span style="color:#ae81ff">0xe8</span>,<span style="color:#ae81ff">0x8e</span>,<span style="color:#ae81ff">0x4f</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x72</span>,<span style="color:#ae81ff">0x70</span>,<span style="color:#ae81ff">0x8b</span>,<span style="color:#ae81ff">0xff</span>, <span style="color:#ae81ff">0xdc</span>,<span style="color:#ae81ff">0x99</span>,<span style="color:#ae81ff">0xf8</span>,<span style="color:#ae81ff">0x76</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0xc5</span>,<span style="color:#ae81ff">0xc9</span>,
+</span></span><span style="display:flex;"><span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>key <span style="color:#f92672">=</span> struct<span style="color:#f92672">.</span>unpack(<span style="color:#e6db74">&#39;&lt;4I&#39;</span>, <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;tiny_encrypt_key&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (0x796e6974, 0x636e655f, 0x74707972, 0x79656b5f)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">u32</span>(x): <span style="color:#66d9ef">return</span> x <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0xFFFFFFFF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">xtea_decrypt</span>(v0, v1):
+</span></span><span style="display:flex;"><span>    delta <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x9E3779B9</span>
+</span></span><span style="display:flex;"><span>    s <span style="color:#f92672">=</span> u32(delta <span style="color:#f92672">*</span> <span style="color:#ae81ff">32</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">32</span>):
+</span></span><span style="display:flex;"><span>        v1 <span style="color:#f92672">=</span> u32(v1 <span style="color:#f92672">-</span> ((u32(v0<span style="color:#f92672">*</span><span style="color:#ae81ff">16</span>)<span style="color:#f92672">+</span>key[<span style="color:#ae81ff">2</span>]) <span style="color:#f92672">^</span> u32(s<span style="color:#f92672">+</span>v0) <span style="color:#f92672">^</span> (u32(v0<span style="color:#f92672">&gt;&gt;</span><span style="color:#ae81ff">5</span>)<span style="color:#f92672">+</span>key[<span style="color:#ae81ff">3</span>])))
+</span></span><span style="display:flex;"><span>        v0 <span style="color:#f92672">=</span> u32(v0 <span style="color:#f92672">-</span> ((u32(v1<span style="color:#f92672">*</span><span style="color:#ae81ff">16</span>)<span style="color:#f92672">+</span>key[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">^</span> u32(s<span style="color:#f92672">+</span>v1) <span style="color:#f92672">^</span> (u32(v1<span style="color:#f92672">&gt;&gt;</span><span style="color:#ae81ff">5</span>)<span style="color:#f92672">+</span>key[<span style="color:#ae81ff">1</span>])))
+</span></span><span style="display:flex;"><span>        s  <span style="color:#f92672">=</span> u32(s <span style="color:#f92672">-</span> delta)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> v0, v1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>out <span style="color:#f92672">=</span> bytearray()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(ctx) <span style="color:#f92672">//</span> <span style="color:#ae81ff">8</span>):
+</span></span><span style="display:flex;"><span>    v0, v1 <span style="color:#f92672">=</span> struct<span style="color:#f92672">.</span>unpack_from(<span style="color:#e6db74">&#39;&lt;2I&#39;</span>, ctx, i<span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>)
+</span></span><span style="display:flex;"><span>    d0, d1 <span style="color:#f92672">=</span> xtea_decrypt(v0, v1)
+</span></span><span style="display:flex;"><span>    out <span style="color:#f92672">+=</span> struct<span style="color:#f92672">.</span>pack(<span style="color:#e6db74">&#39;&lt;2I&#39;</span>, d0, d1)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(out[:<span style="color:#ae81ff">33</span>]<span style="color:#f92672">.</span>rstrip(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\x00</span><span style="color:#e6db74">&#39;</span>)<span style="color:#f92672">.</span>decode())
+</span></span></code></pre></div><p>    Running the script processes the ciphertext block by block, applies the inverse XTEA rounds, and reconstructs the original plaintext. After stripping padding bytes, the recovered string is printed, which corresponds directly to the flag for the challenge:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ python solve.py
+</span></span><span style="display:flex;"><span>RS<span style="color:#f92672">{</span>oh_its_a_TEAreasure_chest<span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>    This completes the reversing process: starting from a stripped binary, identifying the use of XTEA encryption and finally leveraging its reversibility to recover the flag from the encrypted data.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>    This challenge was a solid introduction to reversing in the context of CTF cryptography-based binaries. Even though the initial entry point looked like a simple “magic word” check, the underlying logic quickly escalated into a full block cipher implementation.</p>
+<p>    One of the key takeaways from this challenge was how important it is to recognize common cryptographic patterns early during static analysis. The structure of the code, especially the 64-bit block handling and the round-based mixing function, strongly hinted toward a known algorithm family. Identifying XTEA significantly reduced the complexity of the problem, since it is a well-documented and fully reversible cipher.</p>
+<p>    Another useful aspect was working with stripped binaries. Without function names or symbols, most of the analysis relied on understanding behavior rather than relying on metadata. Renaming functions like <code>tiny_encrypt</code> during analysis also helped make the decompiled code much easier to reason about.</p>
+<p>    Overall, the challenge reinforced a common CTF reversing workflow: start from high-level behavior, identify known primitives and reduce the problem until it becomes a direct implementation task.</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://pnasis.gitlab.io/tags/reversing/">Reversing</a></span>
+        <span class="tag"><a href="https://pnasis.gitlab.io/tags/ctf/">CTF</a></span>
+        <span class="tag"><a href="https://pnasis.gitlab.io/tags/jeopardy/">Jeopardy</a></span>
+        <span class="tag"><a href="https://pnasis.gitlab.io/tags/ritsec-ctf-2026/">RITSEC CTF 2026</a></span>
+        <span class="tag"><a href="https://pnasis.gitlab.io/tags/xtea/">XTEA</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        1437 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2026-04-04 00:04
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+    <div class="pagination">
+        
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-2-not-quite-optimal/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">RITSEC CTF 2026 - Reversing Writeups (Part 2): not quite optimal</span>
+                </a>
+            </span>
+            
+
+            
+            <span class="button next">
+                <a href="https://pnasis.gitlab.io/posts/aoc2025-scheme-catcher-writeup/">
+                    <span class="button__text">AoC2025 - Scheme Catcher Writeup</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span style="font-size: 0.8rem; opacity: 0.8;">Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/rhazdon/hugo-theme-hello-friend-ng">hello-friend-ng</a> theme.</span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://pnasis.gitlab.io/bundle.min.e89fda0f29b95d33f6f4224dd9e5cf69d84aff3818be2b0d73e731689cc374261b016d17d46f8381962fb4a1577ba3017b1f23509d894f6e66431f988c00889e.js" integrity="sha512-6J/aDym5XTP29CJN2eXPadhK/zgYvisNc&#43;cxaJzDdCYbAW0X1G&#43;DgZYvtKFXe6MBex8jUJ2JT25mQx&#43;YjACIng=="></script>
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,69 @@
+{
+  "event_id": "CTF-3056",
+  "event_title": "UMDCTF 2026",
+  "title": "rainbet",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "wasm",
+    "prng-prediction"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/umdctf/2026/rainbet/",
+    "https://ctf42.online/ctfs/umdctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/rainbet"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/UMDCTF-2026/tree/main/UMDCTF-2026/rev/rainbet"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/rainbet",
+    "https://ctf42.online/ctfs/umdctf/2026/rainbet/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/umdctf_2026/rainbet/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/UMDCTF-2026/main/UMDCTF-2026/rev/rainbet/README.md",
+      "bytes": 8950,
+      "sha256": "1d4efb4e5e68e13ed027b98b90bb2ffc8ed97ec6aa73dd7c66ad3257e7f69f6e",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/umdctf_2026/rainbet/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMDCTF/2026/rev/rainbet/README.md",
+      "bytes": 166,
+      "sha256": "7a4a513ffd4844df7ba2567bb492812578286cca550363d16e25ca6d365907d0",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/umdctf_2026/rainbet/attachments/upstream/rainbet.py",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMDCTF/2026/rev/rainbet/rainbet.py",
+      "bytes": 3694,
+      "sha256": "10c22b2535ec931582f0279a99f27f526d5409ae64593297a86e20377feb3f7a",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/umdctf_2026/rainbet/attachments/upstream/rainbet_gen.wasm",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMDCTF/2026/rev/rainbet/rainbet_gen.wasm",
+      "bytes": 2688,
+      "sha256": "be37436d28d990a8e41f91588a47eeced51433112a9ae60a0ed6b937a803de21",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/umdctf/2026/rainbet/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/umdctf/2026/rainbet/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

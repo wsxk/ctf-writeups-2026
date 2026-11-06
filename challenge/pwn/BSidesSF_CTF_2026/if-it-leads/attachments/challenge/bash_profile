@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Define colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+MAGENTA='\033[0;35m'
+CYAN='\033[0;36m'
+WHITE='\033[0;37m'
+RESET='\033[0m'
+
+echo -e "This terminal is for ${RED}CREATING ID3 TAGS ONLY${RESET}!"
+echo -e ""
+echo -e "Any use for other purposes, including EXIF tags, will be responded to"
+echo -e "harshly!"
+echo
+echo -e "${GREEN}CTF note 1${RESET}: The if-it-leads program can access ${CYAN}flag.txt${RESET} and ${CYAN}password.txt${RESET},"
+echo -e "but YOU cannot! You must get the program to read the flag for you!"
+echo
+echo -e "${GREEN}CTF note 2${RESET}: There's no need to build a .c file, so I didn't include a compiler in this container"

@@ -1,0 +1,102 @@
+{
+  "event_id": "CTF-3201",
+  "event_title": "D^3CTF 2026",
+  "category": "android",
+  "title": "d3llvm",
+  "source_urls": [
+    "https://ctftime.org/event/3201/",
+    "https://github.com/hax1ng/d3ctf-2026-writeups/tree/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm/emulate_payload.py",
+    "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm/solve_angr.py",
+    "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm/parse_mnn.py",
+    "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm/solve_decrypt.py",
+    "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm/reveal_flag.py",
+    "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm/solve_z3.py",
+    "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm/decrypt_model_emu.py",
+    "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm/README.md",
+    "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm/reveal_remote.py",
+    "https://raw.githubusercontent.com/D-3CTF/D3CTF-2026-Official-Writeup/main/D3CTF-2026-Official-Writeup-CN.pdf",
+    "https://raw.githubusercontent.com/D-3CTF/D3CTF-2026-Official-Writeup/main/D3CTF-2026-Official-Writeup-EN.pdf"
+  ],
+  "attachment_urls": [],
+  "writeup_status": "downloaded",
+  "attachment_status": "missing",
+  "notes": "D^3CTF 2026 OLLVM 混淆 Android native 逆向。官方中英文完整 writeup PDF 及参赛者 README/solver 已下载。参赛者仓库明确未上传原 APK / MNN 模型，未找到公开原题附件地址；请勿将解题脚本视为题目附件。",
+  "files": [
+    {
+      "path": "writeups/emulate_payload.py",
+      "url": "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm/emulate_payload.py",
+      "bytes": 7833,
+      "sha256": "3994e5a3ea848507fe0a32059fb0ebac661f60b2d6ee7978ce456b5930775341"
+    },
+    {
+      "path": "writeups/solve_angr.py",
+      "url": "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm/solve_angr.py",
+      "bytes": 1006,
+      "sha256": "c158d9ee9d8f9db712f9027202c159e28c68172e9e441ec8d73686afc8b793b8"
+    },
+    {
+      "path": "writeups/parse_mnn.py",
+      "url": "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm/parse_mnn.py",
+      "bytes": 836,
+      "sha256": "47f3ec758ff69e2c0c0b4511221cf6ed593f39eeff728d8c3da9cf2ec8db7d1d"
+    },
+    {
+      "path": "writeups/solve_decrypt.py",
+      "url": "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm/solve_decrypt.py",
+      "bytes": 991,
+      "sha256": "337cb557536c3d7e7f8d231185e6fbfd784b9d7d181499846bbd2fbd9ebe34d6"
+    },
+    {
+      "path": "writeups/reveal_flag.py",
+      "url": "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm/reveal_flag.py",
+      "bytes": 601,
+      "sha256": "e949630175c8f9442b1d161fd6a12e4bdf50826f2f6d6f9ae98e741bcffe5aca"
+    },
+    {
+      "path": "writeups/solve_z3.py",
+      "url": "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm/solve_z3.py",
+      "bytes": 1608,
+      "sha256": "ab939b8896e955ff988cb359509d728f389017d06b094623331eb34bbca09e0e"
+    },
+    {
+      "path": "writeups/decrypt_model_emu.py",
+      "url": "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm/decrypt_model_emu.py",
+      "bytes": 699,
+      "sha256": "7bed1bd96d142da46e976c98be14dca8ee1f7cc5be384584237fa8d94c883815"
+    },
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm/README.md",
+      "bytes": 9843,
+      "sha256": "dcc6000b6e114e61c41a6dbd6e9c050e4d69f3d1451e7bc6e34a7f749595bf74"
+    },
+    {
+      "path": "writeups/reveal_remote.py",
+      "url": "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/rev/d3llvm/reveal_remote.py",
+      "bytes": 536,
+      "sha256": "4cfd02aee383de7e0d0ce08660b695bb916ba3f95897a4a402e8f6c4ad23085f"
+    },
+    {
+      "path": "licenses/LICENSE",
+      "url": "https://raw.githubusercontent.com/hax1ng/d3ctf-2026-writeups/efb26f1dff528f0fb3da56ddc9a40a805e7aa47a/LICENSE",
+      "bytes": 1063,
+      "sha256": "a08aad427df2794eac1b76d1659092ec445bcc3a2b0bbdd3ae07f83fccbcc6e2"
+    },
+    {
+      "path": "writeups/D3CTF-2026-Official-Writeup-CN.pdf",
+      "url": "https://raw.githubusercontent.com/D-3CTF/D3CTF-2026-Official-Writeup/main/D3CTF-2026-Official-Writeup-CN.pdf",
+      "bytes": 3393637,
+      "sha256": "a807d256427c99412f85529a455a05fd6c139ce49ad7f32fbaabd14fbbeb287f"
+    },
+    {
+      "path": "writeups/D3CTF-2026-Official-Writeup-EN.pdf",
+      "url": "https://raw.githubusercontent.com/D-3CTF/D3CTF-2026-Official-Writeup/main/D3CTF-2026-Official-Writeup-EN.pdf",
+      "bytes": 2949531,
+      "sha256": "bb808d0958f2d1cc18585e35db8c506ff934489029e81bbbc15d4e954edca92d"
+    }
+  ],
+  "errors": []
+}

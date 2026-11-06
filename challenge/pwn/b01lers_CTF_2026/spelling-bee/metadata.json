@@ -1,0 +1,265 @@
+{
+  "event_id": "CTF-3153",
+  "event_title": "b01lers CTF 2026",
+  "category": "pwn",
+  "title": "spelling-bee",
+  "source_urls": [
+    "https://github.com/b01lers/b01lers-ctf-2026-public/tree/HEAD/src/pwn/spelling-bee",
+    "https://ctftime.org/event/3153/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/README.md",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/solve/README.md",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/solve/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/build_out/chall",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/build_out/ld-linux-x86-64.so.2",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/build_out/libc.so.6",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/chal.json",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/deploy/Dockerfile",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/deploy/Dockerfile_build",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/deploy/docker-compose.prod.yml",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/deploy/docker-compose.yml",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/deploy/wrapper.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/dev.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/dist/spelling-bee.zip",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/flag.txt",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/pwn_build.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/run.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/setup-dist.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/src/build.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/src/chall",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/src/forth.c"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "b01lers/b01lers-ctf-2026-public",
+  "repository_tree_sha": "6890cf1035a9e2c3dd4817d11204619bfd0259b4",
+  "artifacts": [
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/README.md",
+      "bytes": 3094,
+      "sha256": "a953616423f74b8c3ffd759e8e5db22596f52438e59dfdad46c7943f8c3731c2",
+      "git_blob_sha1": "6ed90bbaea92e3b9f3a74884531a90094d8f5b54",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/build_out/chall",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/build_out/chall",
+      "bytes": 22368,
+      "sha256": "e628cdeb8b1efc2b74e162af0c8215dbc7f186be490894c01cb3c66c864db127",
+      "git_blob_sha1": "92961ce6365cabfbdd73720f02ec724cc4f07ec6",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/build_out/ld-linux-x86-64.so.2",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/build_out/ld-linux-x86-64.so.2",
+      "bytes": 210904,
+      "sha256": "7288c75488697bad29619f7ad123b8e467744f500369689d97de13197d282e87",
+      "git_blob_sha1": "4eb54c85cdf69fdc92288febd66ae8b053554e4e",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/build_out/libc.so.6",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/build_out/libc.so.6",
+      "bytes": 1922136,
+      "sha256": "666bb96697d92290e2172a8403040f9e3ebdd06aa4d4769080649c92201a9aad",
+      "git_blob_sha1": "198098e793836c459958693004e13b8597b987db",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chal.json",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/chal.json",
+      "bytes": 306,
+      "sha256": "1321e20c43aa875d672da3e1d987cb7da085f498765720d433ead09528e27f31",
+      "git_blob_sha1": "8bbb55f81f20e736125f4ba537bba9284a1e2189",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/Dockerfile",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/deploy/Dockerfile",
+      "bytes": 1335,
+      "sha256": "42d678153a48f9575f0a291ca164cf895dce7661d8543319d289bb959eb23c2a",
+      "git_blob_sha1": "af52f72500f75b508d3be60faa4efe69ec6144c8",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/Dockerfile_build",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/deploy/Dockerfile_build",
+      "bytes": 832,
+      "sha256": "3f2cbb1079523450bd7de936e158049fe8dfb3537d118428ceba0f9c7ba4f8e5",
+      "git_blob_sha1": "24cefe197f07a25cb15e94bb9836399fab874641",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/docker-compose.prod.yml",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/deploy/docker-compose.prod.yml",
+      "bytes": 172,
+      "sha256": "554d392be47d5eda7fc6dcf2d024ff95a9a8a824b4bf88fb6c08f4789a77a67b",
+      "git_blob_sha1": "1910fd4ba9bb390c6cf648b71640f1bf85bb8c8d",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/docker-compose.yml",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/deploy/docker-compose.yml",
+      "bytes": 1971,
+      "sha256": "269ad3466c3076788cda15440f1cca56dccc8f892bf837fad9ed8a1befa8b5cd",
+      "git_blob_sha1": "d2182a589b1e19084d842befe153f00231e18482",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/wrapper.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/deploy/wrapper.sh",
+      "bytes": 19,
+      "sha256": "f8594a4ef9f6d0b871aaf03109711c5569afa8c957427d20571c9e4d2479bd91",
+      "git_blob_sha1": "44ac15d8acdbe530147221378cb516f63a6c2e8f",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/dev.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/dev.sh",
+      "bytes": 336,
+      "sha256": "20e8a526908102050201f9e35192fc959dc7b94d86fe446fb296bfba64ee567a",
+      "git_blob_sha1": "bf86bf9b7605a193c792f498d905153763008112",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/dist/spelling-bee.zip",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/dist/spelling-bee.zip",
+      "bytes": 979975,
+      "sha256": "72807867a8b85dea93a4848d38a554a24a71c8cdd4ad0535f0ea247bf12470dc",
+      "git_blob_sha1": "ba38efd749332915388e18fe4358ab9dd87359ef",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flag.txt",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/flag.txt",
+      "bytes": 43,
+      "sha256": "bfad0f247c8e3e30b53659edda753010cc5be59939a1022892b0de404194f78a",
+      "git_blob_sha1": "0ccf5266f765bd7bb1bf1d74e39d9ab2073ab6d8",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/pwn_build.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/pwn_build.sh",
+      "bytes": 894,
+      "sha256": "dc78329f9490b374d0c205cf11ff68b42ffbd667e76f2e12aab45dcd3330d839",
+      "git_blob_sha1": "49c336eadf05c5ea4b548d5dfca0598f178eedee",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/run.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/run.sh",
+      "bytes": 519,
+      "sha256": "173c7bd4db4ed43c6f344e48d83dae3fb30444e3957100ae79038c446fa43a21",
+      "git_blob_sha1": "dd80f83ca28b3529a7adfe6dee02c1d30ccc86ea",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/setup-dist.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/setup-dist.sh",
+      "bytes": 204,
+      "sha256": "b70d706f5c5ece315fe2ebbe59b91c6b626031a9b3777946c60dba3cc7643121",
+      "git_blob_sha1": "5e7d10bc34f495266ad7cb77c4c71103be561bf1",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/README.md",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/solve/README.md",
+      "bytes": 4968,
+      "sha256": "b52b0176a631a55844a01f249e5c53af02448046944c252d36875eac93ea615b",
+      "git_blob_sha1": "7d647a64207eaf55dd042993535817da8cdb2389",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/solve.py",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/solve/solve.py",
+      "bytes": 1140,
+      "sha256": "6679688efb12ab6aa05da38eec76d91f4cdb935c6893933cfc91c49df619fa2c",
+      "git_blob_sha1": "f3a289f1d1804f2fa3ddbaed2cd1d4b101acc51b",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/build.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/src/build.sh",
+      "bytes": 260,
+      "sha256": "61fe59a548fed723b0513b3577d91bf2803969cc4fd93669e3f400eebb97fffe",
+      "git_blob_sha1": "e6fe10761778306cf5ffdc584973ab00506d49b6",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/chall",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/src/chall",
+      "bytes": 22096,
+      "sha256": "1492a13c1456e2d7ca0f69dc5bff978db9188f02e2c64c3ff2bd535e4d15fc82",
+      "git_blob_sha1": "b1c014c69b161a90a9e44b56472ba8576c09922c",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/forth.c",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/spelling-bee/src/forth.c",
+      "bytes": 9214,
+      "sha256": "e6113def7e5b3ea148f02f9f74792eb1b56b8e39a589e87424962a2ef808056c",
+      "git_blob_sha1": "3fabaa2fac796f0b703fcf56c68bb33ff446f5cc",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/solve/README.md"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

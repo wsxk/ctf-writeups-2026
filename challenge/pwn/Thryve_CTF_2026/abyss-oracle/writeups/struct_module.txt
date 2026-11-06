@@ -1,0 +1,132 @@
+struct module {
+	enum module_state          state;                /*     0     4 */
+
+	/* XXX 4 bytes hole, try to pack */
+
+	struct list_head           list;                 /*     8    16 */
+	char                       name[56];             /*    24    56 */
+	/* --- cacheline 1 boundary (64 bytes) was 16 bytes ago --- */
+	struct module_kobject      mkobj;                /*    80    96 */
+	/* --- cacheline 2 boundary (128 bytes) was 48 bytes ago --- */
+	struct module_attribute *  modinfo_attrs;        /*   176     8 */
+	const char  *              version;              /*   184     8 */
+	/* --- cacheline 3 boundary (192 bytes) --- */
+	const char  *              srcversion;           /*   192     8 */
+	struct kobject *           holders_dir;          /*   200     8 */
+	const struct kernel_symbol  * syms;              /*   208     8 */
+	const u32  *               crcs;                 /*   216     8 */
+	unsigned int               num_syms;             /*   224     4 */
+
+	/* XXX 4 bytes hole, try to pack */
+
+	struct mutex               param_lock;           /*   232    32 */
+	/* --- cacheline 4 boundary (256 bytes) was 8 bytes ago --- */
+	struct kernel_param *      kp;                   /*   264     8 */
+	unsigned int               num_kp;               /*   272     4 */
+	unsigned int               num_gpl_syms;         /*   276     4 */
+	const struct kernel_symbol  * gpl_syms;          /*   280     8 */
+	const u32  *               gpl_crcs;             /*   288     8 */
+	bool                       using_gplonly_symbols; /*   296     1 */
+	bool                       sig_ok;               /*   297     1 */
+	bool                       async_probe_requested; /*   298     1 */
+
+	/* XXX 1 byte hole, try to pack */
+
+	unsigned int               num_exentries;        /*   300     4 */
+	struct exception_table_entry * extable;          /*   304     8 */
+	int                        (*init)(void);        /*   312     8 */
+	/* --- cacheline 5 boundary (320 bytes) --- */
+	struct module_memory       mem[7];               /*   320   504 */
+	/* --- cacheline 12 boundary (768 bytes) was 56 bytes ago --- */
+	struct mod_arch_specific   arch;                 /*   824    40 */
+
+	/* XXX last struct has 1 hole */
+
+	/* --- cacheline 13 boundary (832 bytes) was 32 bytes ago --- */
+	long unsigned int          taints;               /*   864     8 */
+	unsigned int               num_bugs;             /*   872     4 */
+
+	/* XXX 4 bytes hole, try to pack */
+
+	struct list_head           bug_list;             /*   880    16 */
+	/* --- cacheline 14 boundary (896 bytes) --- */
+	struct bug_entry *         bug_table;            /*   896     8 */
+	struct mod_kallsyms *      kallsyms;             /*   904     8 */
+	struct mod_kallsyms        core_kallsyms;        /*   912    32 */
+
+	/* XXX last struct has 1 hole */
+
+	struct module_sect_attrs * sect_attrs;           /*   944     8 */
+	struct module_notes_attrs * notes_attrs;         /*   952     8 */
+	/* --- cacheline 15 boundary (960 bytes) --- */
+	char *                     args;                 /*   960     8 */
+	void *                     percpu;               /*   968     8 */
+	unsigned int               percpu_size;          /*   976     4 */
+
+	/* XXX 4 bytes hole, try to pack */
+
+	void *                     noinstr_text_start;   /*   984     8 */
+	unsigned int               noinstr_text_size;    /*   992     4 */
+	unsigned int               num_tracepoints;      /*   996     4 */
+	tracepoint_ptr_t *         tracepoints_ptrs;     /*  1000     8 */
+	unsigned int               num_srcu_structs;     /*  1008     4 */
+
+	/* XXX 4 bytes hole, try to pack */
+
+	struct srcu_struct * *     srcu_struct_ptrs;     /*  1016     8 */
+	/* --- cacheline 16 boundary (1024 bytes) --- */
+	unsigned int               num_bpf_raw_events;   /*  1024     4 */
+
+	/* XXX 4 bytes hole, try to pack */
+
+	struct bpf_raw_event_map * bpf_raw_events;       /*  1032     8 */
+	unsigned int               btf_data_size;        /*  1040     4 */
+	unsigned int               btf_base_data_size;   /*  1044     4 */
+	void *                     btf_data;             /*  1048     8 */
+	void *                     btf_base_data;        /*  1056     8 */
+	struct jump_entry *        jump_entries;         /*  1064     8 */
+	unsigned int               num_jump_entries;     /*  1072     4 */
+	unsigned int               num_trace_bprintk_fmt; /*  1076     4 */
+	const char  * *            trace_bprintk_fmt_start; /*  1080     8 */
+	/* --- cacheline 17 boundary (1088 bytes) --- */
+	struct trace_event_call * * trace_events;        /*  1088     8 */
+	unsigned int               num_trace_events;     /*  1096     4 */
+
+	/* XXX 4 bytes hole, try to pack */
+
+	struct trace_eval_map * *  trace_evals;          /*  1104     8 */
+	unsigned int               num_trace_evals;      /*  1112     4 */
+	unsigned int               num_ftrace_callsites; /*  1116     4 */
+	long unsigned int *        ftrace_callsites;     /*  1120     8 */
+	void *                     kprobes_text_start;   /*  1128     8 */
+	unsigned int               kprobes_text_size;    /*  1136     4 */
+
+	/* XXX 4 bytes hole, try to pack */
+
+	long unsigned int *        kprobe_blacklist;     /*  1144     8 */
+	/* --- cacheline 18 boundary (1152 bytes) --- */
+	unsigned int               num_kprobe_blacklist; /*  1152     4 */
+	int                        num_static_call_sites; /*  1156     4 */
+	struct static_call_site *  static_call_sites;    /*  1160     8 */
+	bool                       klp;                  /*  1168     1 */
+	bool                       klp_alive;            /*  1169     1 */
+
+	/* XXX 6 bytes hole, try to pack */
+
+	struct klp_modinfo *       klp_info;             /*  1176     8 */
+	struct list_head           source_list;          /*  1184    16 */
+	struct list_head           target_list;          /*  1200    16 */
+	/* --- cacheline 19 boundary (1216 bytes) --- */
+	void                       (*exit)(void);        /*  1216     8 */
+	atomic_t                   refcnt;               /*  1224     4 */
+
+	/* XXX 4 bytes hole, try to pack */
+
+	struct _ddebug_info        dyndbg_info;          /*  1232    24 */
+
+	/* size: 1280, cachelines: 20, members: 72 */
+	/* sum members: 1213, holes: 11, sum holes: 43 */
+	/* padding: 24 */
+	/* member types with holes: 2, total: 2 */
+} __attribute__((__aligned__(64)));
+

@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>simphell · KBxAc 2026 (reverse) writeup · ctf42</title>
+  
+
+<meta name="description" content="simphell: Reverse challenge from KBxAc 2026. Techniques: haskell-reversing, xor. Yet another simple challenge">
+<link rel="canonical" href="https://ctf42.online/ctfs/kbxac/2026/simphell/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/kbxac/2026/simphell/">
+<meta property="og:title" content="simphell">
+<meta property="og:description" content="simphell: Reverse challenge from KBxAc 2026. Techniques: haskell-reversing, xor. Yet another simple challenge">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/kbxac/">KBxAc</a> / <a href="/ctfs/kbxac/2026/">2026</a> / simphell</nav>
+
+
+<div class="challenge-head">
+  <h1>simphell
+    </h1>
+  <div class="badges">
+    <a class="cat cat-rev" href="/category/rev/">Reverse</a>
+    
+    
+    
+    <a class="tag" href="/techniques/haskell-reversing/">#haskell-reversing</a><a class="tag" href="/techniques/xor/">#xor</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/kbxac/2026/simphell/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/kbxac/2026/simphell/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  
+  
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>Yet another simple challenge</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>simphell — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/rev/simphell" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/rev/simphell</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/kbxac/2026/simphell/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/greycattheflag/2022/runtimeenvironment2/">RuntimeEnvironment2</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/haskell-reversing/">#haskell-reversing</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/greycattheflag/2022/">GreyCatTheFlag 2022</a></td>
+        <td class="num">24.50</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/vuwctf/2026/ilikewords/">ilikewords</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/xor/">#xor</a><a class="tag tag-sm" href="/techniques/kaprekar-constant/">#kaprekar-constant</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/vuwctf/2026/">VuwCTF 2026</a></td>
+        <td class="num">25.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/vuwctf/2026/dotsbedashing/">dotsbedashing</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/morse-code/">#morse-code</a><a class="tag tag-sm" href="/techniques/xor/">#xor</a><a class="tag tag-sm" href="/techniques/bit-rotation/">#bit-rotation</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/vuwctf/2026/">VuwCTF 2026</a></td>
+        <td class="num">25.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/uoftctf/2026/baby_obfuscated_flag_checker/">Baby_Obfuscated_Flag_Checker</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/python-obfuscation/">#python-obfuscation</a><a class="tag tag-sm" href="/techniques/xor/">#xor</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/uoftctf/2026/">UofTCTF 2026</a></td>
+        <td class="num">33.49</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/umassctf/2026/batcave_bitflips/">Batcave_Bitflips</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/bitflip-repair/">#bitflip-repair</a><a class="tag tag-sm" href="/techniques/xor/">#xor</a><a class="tag tag-sm" href="/techniques/sbox/">#sbox</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/umassctf/2026/">UMassCTF 2026</a></td>
+        <td class="num">65.95</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/ritsec/2026/obfpyscated/">obfpyscated</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/python-obfuscation/">#python-obfuscation</a><a class="tag tag-sm" href="/techniques/xor/">#xor</a><a class="tag tag-sm" href="/techniques/aes/">#aes</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/ritsec/2026/">RITSEC 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/haskell-reversing/">#haskell-reversing</a> · <a href="/techniques/xor/">#xor</a>
+          · <a href="/category/rev/">all Reverse</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/simphell" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/kbxac/2026/simphell/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from KBxAc 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/kbxac/2026/crossword_1/">Crossword_1</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/crossword_2/">Crossword_2</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/dead_validator/">Dead_Validator</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/ghost_in_the_group/">Ghost_in_the_Group</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/icarus_enclave/">Icarus_Enclave</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/ten_symbols/">Ten_Symbols</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/the_last_protocol/">The_Last_Protocol</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/weiner/">Weiner</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/c_laude/">C_Laude</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/kbxac/2026/ghost_frame/">Ghost_Frame</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/kbxac/2026/hidden_patronus/">Hidden_Patronus</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/kbxac/2026/who_let_the_dog_out/">Who_Let_the_Dog_Out</a> <span class="cat cat-forensics cat-xs">Forensics</span></li>
+      </ul>
+      <a class="small" href="/ctfs/kbxac/2026/">All KBxAc 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

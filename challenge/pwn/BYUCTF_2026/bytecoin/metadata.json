@@ -1,0 +1,166 @@
+{
+  "event_id": "CTF-3247",
+  "event_title": "BYUCTF 2026",
+  "category": "pwn",
+  "title": "bytecoin",
+  "source_urls": [
+    "https://github.com/BYU-CSA/BYUCTF-2026/tree/HEAD/pwn/bytecoin",
+    "https://ctftime.org/event/3247/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/README.md",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/solve/bytecoin.md",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/solve/challenge.c",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/solve/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/challenge_files/Dockerfile",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/challenge_files/bytecoin.zip",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/challenge_files/challenge",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/challenge_files/docker-compose.yml",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/source_files/Dockerfile",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/source_files/challenge",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/source_files/docker-compose.yml",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/source_files/flag.txt"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "BYU-CSA/BYUCTF-2026",
+  "repository_tree_sha": "51a8050d89cc1bc0265d5b5035157edec64286e1",
+  "artifacts": [
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/README.md",
+      "bytes": 57,
+      "sha256": "612a6e4adaf2d519f29e8babf4f6cae77a2fec42732028a224762185c423b66b",
+      "git_blob_sha1": "a889546af276da0091a3bd1e49c62206eb2403ab",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge_files/Dockerfile",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/challenge_files/Dockerfile",
+      "bytes": 584,
+      "sha256": "a061ca6eb80910842ca19208f5cabd3362ff704ab7314598884d67dc1b8a4982",
+      "git_blob_sha1": "6b1d6427d4598b4ab51f7f6bb41de48831bc08f3",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge_files/bytecoin.zip",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/challenge_files/bytecoin.zip",
+      "bytes": 5997,
+      "sha256": "f0ee348b629e74f81b4e90eb8ca98b192b9cab6e3e3c6938654c9492b96dd7d6",
+      "git_blob_sha1": "5a4bac44a2b38a7bf2d7dffcc48b833db2cb9c5a",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge_files/challenge",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/challenge_files/challenge",
+      "bytes": 17440,
+      "sha256": "90b06c4d0a21e130a3cbbeec0ce93fb82a9d73e214bdcb25f3cef94428a9fd65",
+      "git_blob_sha1": "83dddb6e364b7a8f476a16d5c58ffc2ea25f3fb2",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge_files/docker-compose.yml",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/challenge_files/docker-compose.yml",
+      "bytes": 158,
+      "sha256": "00353490eb11969bae5083f0a7ef8d2eaf92d69a266068229448433c9b2bf8aa",
+      "git_blob_sha1": "c8c5eceb6a3ff789308c67b6c24f8602dac32a61",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/bytecoin.md",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/solve/bytecoin.md",
+      "bytes": 5307,
+      "sha256": "5a13d8d32da1e64f88f0d29701069439ba2b69a90328e1c8f06df17b4aa7a541",
+      "git_blob_sha1": "5007df212c2da7b7b41a552f9c1f035fc6bab156",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/challenge.c",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/solve/challenge.c",
+      "bytes": 6516,
+      "sha256": "75a47c2be3f8df276adecffc250d987ef73b5fbeef50b5b35d8234edaeb6f619",
+      "git_blob_sha1": "00549ae5e499bcf108ea54db4b749b8b0b6a8d92",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/solve.py",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/solve/solve.py",
+      "bytes": 3142,
+      "sha256": "152062ca1b8dc9091fc93a1a38a1adfbbf4c27a26cbac8f0cd396021cf601b56",
+      "git_blob_sha1": "d00bd60aa32e40d1b27ce66dce36aa8c6600f27a",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/source_files/Dockerfile",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/source_files/Dockerfile",
+      "bytes": 584,
+      "sha256": "a061ca6eb80910842ca19208f5cabd3362ff704ab7314598884d67dc1b8a4982",
+      "git_blob_sha1": "6b1d6427d4598b4ab51f7f6bb41de48831bc08f3",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/source_files/challenge",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/source_files/challenge",
+      "bytes": 17440,
+      "sha256": "90b06c4d0a21e130a3cbbeec0ce93fb82a9d73e214bdcb25f3cef94428a9fd65",
+      "git_blob_sha1": "83dddb6e364b7a8f476a16d5c58ffc2ea25f3fb2",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/source_files/docker-compose.yml",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/source_files/docker-compose.yml",
+      "bytes": 158,
+      "sha256": "57407e173c0aba112ac594f670438599b1b188c18f1c35073ef3c8fdf6c29b85",
+      "git_blob_sha1": "5aa045297144beb09de5161d6e27b75f18968394",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/source_files/flag.txt",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/bytecoin/source_files/flag.txt",
+      "bytes": 31,
+      "sha256": "337c657fdff9d97724d67e7c0f7b9c05cf7f986b074000d65919118b87046889",
+      "git_blob_sha1": "f96507646f821a6f8e25ed03294444dcbf865a1b",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/solve/bytecoin.md"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ehlel · Haruulzangi 2026 Quals (reverse) writeup · ctf42</title>
+  
+
+<meta name="description" content="Ehlel: Reverse challenge from Haruulzangi 2026 Quals. Techniques: protocol-reversing, utp, dht, big-endian. by flame Reverse Engineering A dormant peer…">
+<link rel="canonical" href="https://ctf42.online/ctfs/haruulzangi/2026-quals/ehlel/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/haruulzangi/2026-quals/ehlel/">
+<meta property="og:title" content="Ehlel">
+<meta property="og:description" content="Ehlel: Reverse challenge from Haruulzangi 2026 Quals. Techniques: protocol-reversing, utp, dht, big-endian. by flame Reverse Engineering A dormant peer…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/haruulzangi/">Haruulzangi</a> / <a href="/ctfs/haruulzangi/2026-quals/">2026 Quals</a> / Ehlel</nav>
+
+
+<div class="challenge-head">
+  <h1>Ehlel
+    </h1>
+  <div class="badges">
+    <a class="cat cat-rev" href="/category/rev/">Reverse</a>
+    
+    
+    
+    <a class="tag" href="/techniques/protocol-reversing/">#protocol-reversing</a><a class="tag" href="/techniques/utp/">#utp</a><a class="tag" href="/techniques/dht/">#dht</a><a class="tag" href="/techniques/big-endian/">#big-endian</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/haruulzangi/2026-quals/ehlel/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/haruulzangi/2026-quals/ehlel/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  <p class="meta">Author: flame</p>
+  
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>by flame
+Reverse Engineering
+A dormant peer has appeared on the public mesh. Its operator is gone, its protocol is undocumented, and the only artifact it leaves behind is a MIPS binary that knows how to find its way home.</p>
+<p>Download the artifact, keep it isolated, and recover what the peer is holding for your team.</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>Ehlel — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/rev/ehlel" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/rev/ehlel</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/haruulzangi/2026-quals/ehlel/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/sekaictf/2026/chibile/">Chibile</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/anti-cheat/">#anti-cheat</a><a class="tag tag-sm" href="/techniques/unpacking/">#unpacking</a><a class="tag tag-sm" href="/techniques/protocol-reversing/">#protocol-reversing</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/sekaictf/2026/">SekaiCTF 2026</a></td>
+        <td class="num">79.25</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/css/2026/flappy_board/">FLAPPY_BOARD</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/protocol-reversing/">#protocol-reversing</a><a class="tag tag-sm" href="/techniques/deterministic-simulation/">#deterministic-simulation</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/css/2026/">CSS 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/aero/2022/arctic/">arctic</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/threefish/">#threefish</a><a class="tag tag-sm" href="/techniques/protocol-reversing/">#protocol-reversing</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/aero/2022/">Aero 2022</a></td>
+        <td class="num">51.22</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/googlectf/2021/adspam/">AdSpam</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/android/">#android</a><a class="tag tag-sm" href="/techniques/jni/">#jni</a><a class="tag tag-sm" href="/techniques/protocol-reversing/">#protocol-reversing</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/googlectf/2021/">GoogleCTF 2021</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/protocol-reversing/">#protocol-reversing</a> · <a href="/techniques/utp/">#utp</a> · <a href="/techniques/dht/">#dht</a> · <a href="/techniques/big-endian/">#big-endian</a>
+          · <a href="/category/rev/">all Reverse</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/rev/Ehlel" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/haruulzangi/2026-quals/ehlel/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from Haruulzangi 2026 Quals</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/haruulzangi/2026-quals/gerege/">Gerege</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/haruulzangi/2026-quals/passkey_nightmare/">Passkey_Nightmare</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/haruulzangi/2026-quals/vivarium/">Vivarium</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/haruulzangi/2026-quals/chronofault/">Chronofault</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/haruulzangi/2026-quals/enablement/">Enablement</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/haruulzangi/2026-quals/handprint/">Handprint</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/haruulzangi/2026-quals/interval/">Interval</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/haruulzangi/2026-quals/countersign/">Countersign</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/haruulzangi/2026-quals/sur_kharvaa/">Sur_Kharvaa</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/haruulzangi/2026-quals/cabinet/">Cabinet</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/haruulzangi/2026-quals/formality/">Formality</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/haruulzangi/2026-quals/made_in_mongolia/">Made_In_Mongolia</a> <span class="cat cat-pwn cat-xs">Pwn</span></li>
+      </ul>
+      <a class="small" href="/ctfs/haruulzangi/2026-quals/">All Haruulzangi 2026 Quals challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

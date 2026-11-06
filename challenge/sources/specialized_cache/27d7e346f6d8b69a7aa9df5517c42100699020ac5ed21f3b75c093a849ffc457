@@ -1,0 +1,64 @@
+ARG UBUNTU_REF=ubuntu:26.04@sha256:53958ec7b67c2c9355df922dd08dbf0360611f8c3cdb656875e81873db9ffdba
+FROM --platform=linux/amd64 alpine:3.20 AS readflag
+
+RUN apk add --no-cache gcc musl-dev python3
+WORKDIR /src
+COPY readflag.c /src/readflag.c
+COPY flag.txt /src/flag.txt
+RUN python3 -c 'from pathlib import Path; src = Path("/src/readflag.c").read_text(); flag = Path("/src/flag.txt").read_text().rstrip("\n"); Path("/src/readflag_patched.c").write_text(src.replace("SEKAI{REPLACE_ME}", flag))' \
+    && gcc /src/readflag_patched.c -static -O2 -s -o /readflag \
+    && chmod 4511 /readflag
+
+FROM ${UBUNTU_REF} AS runtime
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    bash \
+    ca-certificates \
+    coreutils \
+    passwd \
+    python3 \
+    libfdt1 \
+    libglib2.0-0 \
+    libpcre2-8-0 \
+    libpixman-1-0 \
+    zlib1g \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN if ! getent passwd 1000 >/dev/null; then \
+        useradd -m -u 1000 -s /bin/bash ubuntu; \
+    fi
+
+WORKDIR /challenge
+COPY artifacts/bzImage /challenge/bzImage
+COPY artifacts/initramfs.cpio.gz /challenge/initramfs.cpio
+COPY artifacts/qemu-system-x86_64 /challenge/qemu-system-x86_64
+COPY artifacts/pc-bios /challenge/pc-bios
+COPY run.sh /challenge/run.sh
+COPY run.py /challenge/run.py
+COPY --from=readflag /readflag /readflag
+RUN chmod 0755 /challenge/qemu-system-x86_64 /challenge/run.sh /challenge/run.py \
+    && chown root:root /readflag \
+    && chmod 4511 /readflag \
+    && mkdir -p /tmp \
+    && chmod 1777 /tmp \
+    && mkdir -p /app \
+    && printf '%s\n' '#!/bin/sh' 'exec /challenge/run.py' > /app/run \
+    && chmod 0755 /app/run \
+    && chown 1000:1000 /app/run
+
+FROM ghcr.io/es3n1n/jail
+COPY --from=runtime / /srv
+RUN mkdir -p /srv/tmp /srv/var/tmp \
+    && chmod 1777 /srv/tmp /srv/var/tmp \
+    && chown root:root /srv/readflag \
+    && chmod 4511 /srv/readflag
+
+ENV JAIL_PORT=5000
+ENV JAIL_TIME=180
+ENV JAIL_CPU=1000
+ENV JAIL_MEM=1G
+ENV JAIL_PIDS=128
+ENV JAIL_TMP_SIZE=16M
+ENV JAIL_SYSCALLS=personality

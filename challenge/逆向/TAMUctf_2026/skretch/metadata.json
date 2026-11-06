@@ -1,0 +1,199 @@
+{
+  "event_id": "CTF-3095",
+  "event_title": "TAMUctf 2026",
+  "category": "逆向",
+  "title": "skretch",
+  "dirname": "TAMUctf_2026",
+  "source_urls": [
+    "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/rev/skretch",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TAMUctf/2026/rev/skretch"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/README.md",
+      "local": "attachments/README.md",
+      "size_expected": 823,
+      "git_blob_sha": "c4ec2b9738157975610b2516c4c06060112324cd",
+      "status": "downloaded",
+      "bytes": 823,
+      "sha256": "b2b3be52b1c50897b5f5e089c8efa69cf3dd0eb8409f4c56c9ccc7221e38d65c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/config.toml",
+      "local": "attachments/config.toml",
+      "size_expected": 439,
+      "git_blob_sha": "c2d22b04082130425de55499558016336a574c98",
+      "status": "downloaded",
+      "bytes": 439,
+      "sha256": "09f25fce67df8c9e591cd42fe878a7460b3d5e833e1e8e1910adfea20e8929f2"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/flag.png",
+      "local": "attachments/flag.png",
+      "size_expected": 38566,
+      "git_blob_sha": "c12e72ef80e97704abd14b680f1a78758649f07e",
+      "status": "downloaded",
+      "bytes": 38566,
+      "sha256": "11a795b61438c6add4bd83d0177d23a43e8df729b697405de49f39ed2bb562ed"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/flag.png.header",
+      "local": "attachments/flag.png.header",
+      "size_expected": 1024,
+      "git_blob_sha": "33f7b8741d988bfaaa3a77f9f5c63e5bc4d3bae1",
+      "status": "downloaded",
+      "bytes": 1024,
+      "sha256": "b90c1b7115efe36ed6f2223e4eb86a85f356e212c10c8cebf5bbc8e675101aac"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/flag.txt",
+      "local": "attachments/flag.txt",
+      "size_expected": 32,
+      "git_blob_sha": "a7197004203849cc4f9dd0d47aa4248d95f4cb17",
+      "status": "downloaded",
+      "bytes": 32,
+      "sha256": "fee7dba296493fc83ea02030386cfe33338e084951268c7fc010d2b9b87e378a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/poc/fast.py",
+      "local": "writeups/poc/fast.py",
+      "size_expected": 876,
+      "git_blob_sha": "e82062058d2af4cd2427d4a76559be20a2bad3e2",
+      "status": "downloaded",
+      "bytes": 876,
+      "sha256": "af2caa1a31839c4cc1b967aa4f6d3847fb1472a6a7f850de3fe38b441478983b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/poc/make_eqs.py",
+      "local": "writeups/poc/make_eqs.py",
+      "size_expected": 547,
+      "git_blob_sha": "81ae59becaf6e5211e1f10386c5fb146f4f98efa",
+      "status": "downloaded",
+      "bytes": 547,
+      "sha256": "6daa9703b30eb70964d3f5f9c6ec128933838e6b05a6c79cbf5313cb17632a36"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/poc/slow.py",
+      "local": "writeups/poc/slow.py",
+      "size_expected": 958,
+      "git_blob_sha": "ae68e2b915ce8da1bf5f10919d10ff67196165c1",
+      "status": "downloaded",
+      "bytes": 958,
+      "sha256": "a31209ebb8e48c1ee99a51eb5469e742fd3378f23b71fa674a131f412a14265e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/cleaned.json",
+      "local": "attachments/src/cleaned.json",
+      "size_expected": 88854,
+      "git_blob_sha": "968e646acd8fe4c58d3ba896a54b3d4de6064252",
+      "status": "downloaded",
+      "bytes": 88854,
+      "sha256": "6bb8deffc26314218cadcd2c36a9f3149dd4d83bb37bb3d9b1a4fd32c07f5cfa"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/eqs.txt",
+      "local": "attachments/src/eqs.txt",
+      "size_expected": 645569,
+      "git_blob_sha": "d401c4a4bdf3518949e3d604167876df6754e1d8",
+      "status": "downloaded",
+      "bytes": 645569,
+      "sha256": "43bc6bb2f4226073ea71150179f05a2fd7fc23fd20cc77017de8a0fd45cac4ae"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/populate.py",
+      "local": "attachments/src/populate.py",
+      "size_expected": 14895,
+      "git_blob_sha": "ff8fc7afd4f38cd8b1f4cf097a75a07228b1419b",
+      "status": "downloaded",
+      "bytes": 14895,
+      "sha256": "04f8e52b78eceef3c88a11d1692c62d8b625b9b65218b6fe43653eeae5a63852"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/skretch.sb3.zstd",
+      "local": "attachments/src/skretch.sb3.zstd",
+      "size_expected": 1146173,
+      "git_blob_sha": "f1f24904151a75ffef2a4a7757a4569130da6932",
+      "status": "downloaded",
+      "bytes": 1146173,
+      "sha256": "24600ad7ff6365dde7eb79560106ca6bb3c77afa4bd3f233f31a3e9999090a8a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/skretch/927d672925e7b99f7813735c484c6922.svg",
+      "local": "attachments/src/skretch/927d672925e7b99f7813735c484c6922.svg",
+      "size_expected": 2954,
+      "git_blob_sha": "33f7f5c3c7ba7819a61e471dade15448040efd03",
+      "status": "downloaded",
+      "bytes": 2954,
+      "sha256": "5f20efb9a87313a84609457752229c29132d95f934889be21b0ce6927875f362"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/skretch/beaf987d503696840f625e7fedf704eb.svg",
+      "local": "attachments/src/skretch/beaf987d503696840f625e7fedf704eb.svg",
+      "size_expected": 10451,
+      "git_blob_sha": "19c92f5eddb8c2de084b9429e9d1beffd9015d38",
+      "status": "downloaded",
+      "bytes": 10451,
+      "sha256": "6a4bff5a0b0e99cc858430bd675744f71cf19ee615748bab0141358b541c6999"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/skretch/cd21514d0531fdffb22204e0ec5ed84a.svg",
+      "local": "attachments/src/skretch/cd21514d0531fdffb22204e0ec5ed84a.svg",
+      "size_expected": 202,
+      "git_blob_sha": "15f73119b9c3271c6c411fc4233090e37f42ec37",
+      "status": "downloaded",
+      "bytes": 202,
+      "sha256": "c3b723d028900d9768878653c3a65c377871fe3ecfce5c7b66ef795505e85e1a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/wrong.png.header",
+      "local": "attachments/wrong.png.header",
+      "size_expected": 1024,
+      "git_blob_sha": "10d63502c7248488f34002893066e26062a4edc3",
+      "status": "downloaded",
+      "bytes": 1024,
+      "sha256": "2fbd795dbc1d5401d654bf7ef6857ed18775c8431d7cbed586cc379acf398df2"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/skretch/README.md",
+      "local": "attachments/archived_handout/README.md",
+      "status": "downloaded",
+      "bytes": 94,
+      "sha256": "714cde24725132748b73d26414cc99b3a3ab4095b406c0d829281bac4b1f3de8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/skretch/skretch_FULL.sb3.zstd",
+      "local": "attachments/archived_handout/skretch_FULL.sb3.zstd",
+      "status": "downloaded",
+      "bytes": 40920948,
+      "sha256": "b73211c48427248e6ca47645d321f2b211fc627af798f6f0b42059246d95cfcc"
+    }
+  ],
+  "notes": "官方仓库源码/构建材料及求解脚本，另从sajjadium/ctf-archives的2026目录配对下载原始题包（archived_handout）。未构建或执行。",
+  "attachment_kind": "original_package_and_official_source",
+  "directory": "逆向/TAMUctf_2026/skretch",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/poc/fast.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/poc/make_eqs.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/poc/slow.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/README.md",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/config.toml",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/flag.png",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/flag.png.header",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/flag.txt",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/cleaned.json",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/eqs.txt",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/populate.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/skretch.sb3.zstd",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/skretch/927d672925e7b99f7813735c484c6922.svg",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/skretch/beaf987d503696840f625e7fedf704eb.svg",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/skretch/cd21514d0531fdffb22204e0ec5ed84a.svg",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/wrong.png.header",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/skretch/README.md",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/skretch/skretch_FULL.sb3.zstd"
+  ],
+  "attachment_status": "downloaded"
+}

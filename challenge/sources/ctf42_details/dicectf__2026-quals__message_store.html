@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>message_store · DiceCTF 2026 Quals (pwn) writeup · ctf42</title>
+  
+
+<meta name="description" content="message_store: Pwn challenge from DiceCTF 2026 Quals. Techniques: rust, oob-index, function-pointer-hijack. by clubby Binary Exploitation DetailsSolves…">
+<link rel="canonical" href="https://ctf42.online/ctfs/dicectf/2026-quals/message_store/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/dicectf/2026-quals/message_store/">
+<meta property="og:title" content="message_store">
+<meta property="og:description" content="message_store: Pwn challenge from DiceCTF 2026 Quals. Techniques: rust, oob-index, function-pointer-hijack. by clubby Binary Exploitation DetailsSolves…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/dicectf/">DiceCTF</a> / <a href="/ctfs/dicectf/2026-quals/">2026 Quals</a> / message_store</nav>
+
+
+<div class="challenge-head">
+  <h1>message_store
+    </h1>
+  <div class="badges">
+    <a class="cat cat-pwn" href="/category/pwn/">Pwn</a>
+    
+    
+    <span class="chip">weight 100.00</span>
+    <a class="tag" href="/techniques/rust/">#rust</a><a class="tag" href="/techniques/oob-index/">#oob-index</a><a class="tag" href="/techniques/function-pointer-hijack/">#function-pointer-hijack</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/dicectf/2026-quals/message_store/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/dicectf/2026-quals/message_store/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  <p class="meta">Author: clubby</p>
+  <p class="meta">Flag format: <code class="flag-format">dice{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>by clubby
+Binary Exploitation</p>
+<p>DetailsSolves (14)
+i have written a 100% safe store for all your safety-critical messages. come say hello.</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>message_store — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/dicectf2026-writeups/tree/main/pwn/message-store" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/dicectf2026-writeups/tree/main/pwn/message-store</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/dicectf/2026-quals/message_store/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/1337up/2024/uap/">UAP</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/use-after-free/">#use-after-free (uaf)</a><a class="tag tag-sm" href="/techniques/function-pointer-hijack/">#function-pointer-hijack</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/1337up/2024/">1337UP 2024</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/pwnsec/2026/freal_world_manipulation/">Freal_World_Manipulation</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/oob-index/">#oob-index</a><a class="tag tag-sm" href="/techniques/float-overflow/">#float-overflow</a><a class="tag tag-sm" href="/techniques/arbitrary-read-write/">#arbitrary-read-write</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/pwnsec/2026/">PwnSec 2026</a></td>
+        <td class="num">33.89</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/defcamp/2023-quals/book/">book</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/oob-index/">#oob-index</a><a class="tag tag-sm" href="/techniques/arbitrary-read-write/">#arbitrary-read-write</a><a class="tag tag-sm" href="/techniques/got-overwrite/">#got-overwrite</a><a class="tag tag-sm" href="/techniques/ret2libc/">#ret2libc</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/defcamp/2023-quals/">Defcamp 2023 Quals</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/pingctf/2022/pcg/">pcg</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/oob-index/">#oob-index</a><a class="tag tag-sm" href="/techniques/stack-buffer-overflow/">#stack-buffer-overflow</a><a class="tag tag-sm" href="/techniques/ret2libc/">#ret2libc</a><a class="tag tag-sm" href="/techniques/custom-image-parser/">#custom-image-parser</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/pingctf/2022/">pingCTF 2022</a></td>
+        <td class="num">24.29</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/n1ctf/2022/note/">note</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/oob-index/">#oob-index</a><a class="tag tag-sm" href="/techniques/std-string/">#std-string</a><a class="tag tag-sm" href="/techniques/arbitrary-read-write/">#arbitrary-read-write</a><a class="tag tag-sm" href="/techniques/rop/">#rop</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/n1ctf/2022/">N1CTF 2022</a></td>
+        <td class="num">77.68</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/nahamcon/2021/sortit/">SortIt</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/write-what-where/">#write-what-where</a><a class="tag tag-sm" href="/techniques/oob-index/">#oob-index</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/nahamcon/2021/">NahamCon 2021</a></td>
+        <td class="num">24.98</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/rust/">#rust</a> · <a href="/techniques/oob-index/">#oob-index</a> · <a href="/techniques/function-pointer-hijack/">#function-pointer-hijack</a>
+          · <a href="/category/pwn/">all Pwn</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/DiceCTF/2026/Quals/pwn/message_store" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/dicectf/2026-quals/message_store/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from DiceCTF 2026 Quals</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/dicectf/2026-quals/carry_the_flame/">carry_the_flame</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/dicectf/2026-quals/dot/">dot</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/dicectf/2026-quals/plane_or_exchange/">plane_or_exchange</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/dicectf/2026-quals/the_2000s_american_housing_crisis/">the_2000s_american_housing_crisis</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/dicectf/2026-quals/good_vibes/">good_vibes</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/dicectf/2026-quals/pytecoding/">pytecoding</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/dicectf/2026-quals/yaps/">yaps</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/dicectf/2026-quals/bytecrusher/">bytecrusher</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/dicectf/2026-quals/cornelslop/">cornelslop</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/dicectf/2026-quals/garden/">garden</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/dicectf/2026-quals/another_onion/">another_onion</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/dicectf/2026-quals/bedtime/">bedtime</a> <span class="cat cat-rev cat-xs">Reverse</span></li>
+      </ul>
+      <a class="small" href="/ctfs/dicectf/2026-quals/">All DiceCTF 2026 Quals challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

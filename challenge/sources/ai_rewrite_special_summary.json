@@ -1,0 +1,444 @@
+[
+  {
+    "directory": "车联网/NDIAS_2026/AGL 1",
+    "mechanism": "目标是从 Automotive Grade Linux 镜像找出第一个 flag。线索来自串口登录画面的 5900/tcp 提示；启动脚本的 `-vnc :0` 表明 GUI 已通过 VNC 导出。flag 位于仪表盘图标本身，不需要破解系统口令。",
+    "evidence": [
+      "writeups/NDIAS_official_explanations.pdf"
+    ],
+    "limitations": "原文提到镜像允许 root 空密码登录，这是本题镜像的配置，不能推广到任意 AGL。挂载分析宜使用只读副本。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "车联网/NDIAS_2026/AGL 2",
+    "mechanism": "目标是恢复同一AGL镜像里的第二个flag。Camera页面只是线索展示，实际信息在JPEG的EXIF User Comment字段中，以Base64编码。",
+    "evidence": [
+      "writeups/NDIAS_official_explanations.pdf"
+    ],
+    "limitations": "磁盘偏移属于该附件版本；不要对所有raw镜像硬套1048576。EXIF比像素内容更关键。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "车联网/NDIAS_2026/AGL 3",
+    "mechanism": "目标是从AGL媒体资源恢复第三个flag。播放器中有音频，但QEMU默认启动未转发声音；提示藏在MP3末尾的人声及NATO字母拼读中。",
+    "evidence": [
+      "writeups/NDIAS_official_explanations.pdf"
+    ],
+    "limitations": "本次未播放附件音频，结果来自官方逐字转录。无需把整段音乐进行频谱隐写分析。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "车联网/NDIAS_2026/AGL 4",
+    "mechanism": "目标是拼接分散在三个非主分区的flag片段。`/root/.hint.txt`提示可疑分区；各分区文件系统不同，单次strings或只看根分区会遗漏。",
+    "evidence": [
+      "writeups/NDIAS_official_explanations.pdf"
+    ],
+    "limitations": "片段来自PDF截图，应以原始GIF/文本复核易混淆的0/O与1/l；本次没有实际挂载镜像。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "车联网/NDIAS_2026/AGL 5",
+    "mechanism": "目标是读取KUKSA Data Broker中的41个字符。VSS JSON仅定义信号名称，值由启动服务动态写入，因此grep配置文件无法直接拿到完整flag。",
+    "evidence": [
+      "writeups/NDIAS_official_explanations.pdf"
+    ],
+    "limitations": "运行中的值与schema定义分离；截图显示的flag字符可能与槽位总数不同，需保留完整值和服务返回作核对，不自行补字符。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "车联网/NDIAS_2026/VIN Hunter",
+    "mechanism": "目标是通过CAN上的UDS读取VIN数据标识符F190，题目把flag放在该DID中。关键是先发现请求/响应CAN ID，再通过ISO-TP承载UDS。",
+    "evidence": [
+      "writeups/NDIAS_official_explanations.pdf"
+    ],
+    "limitations": "静态资料改写；未运行复现。",
+    "status": "rewritten_static"
+  },
+  {
+    "directory": "车联网/NDIAS_2026/Seed-Key Leak",
+    "mechanism": "目标是逆向dealer_unlock.pyc中的UDS SecurityAccess算法，通过0x27解锁后读取DID1337。核心是32位旋转、加法与异或；这不是暴力猜测seed。",
+    "evidence": [
+      "writeups/NDIAS_official_explanations.pdf"
+    ],
+    "limitations": "原文PDF复制出的代码含缩进/反斜线排版问题，复现时应重建语法。种子来自当前会话，不应硬编码历史seed。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "车联网/NDIAS_2026/Gateway Gremlins",
+    "mechanism": "目标是串联遗留Web漏洞和CAN鉴权。Web链泄露算法，CAN nonce使密钥具有时效；仅拿到配置不等于完成解锁。",
+    "evidence": [
+      "writeups/NDIAS_official_explanations.pdf"
+    ],
+    "limitations": "端点及常量仅适用于比赛环境。必须保持nonce与提交时刻一致；原文省略了通用UDS收发函数，可参考相邻Seed-Key Leak的结构。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "车联网/NDIAS_2026/I Saw Our Time Pass",
+    "mechanism": "目标是从CAN日志中重组ISO-TP ZIP，并从协议控制字段提取四层压缩包密码。负载中有大量假flag，真正内容在0x702的四重ZIP里。",
+    "evidence": [
+      "writeups/NDIAS_official_explanations.pdf"
+    ],
+    "limitations": "CAN ID在幻灯片中按十六进制书写；Block Size示例输出则是十进制。不能混用打印进制。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "车联网/NDIAS_2026/RAMN ECU D",
+    "mechanism": "目标是通过UDS 0x29证书认证读取DID4E44。给定证书过期但验证逻辑正确；漏洞在嵌入的两个RSA根证书模数共用素因子，可以恢复根CA私钥并重签有效证书。",
+    "evidence": [
+      "writeups/NDIAS_official_explanations.pdf"
+    ],
+    "limitations": "完整认证报文实现仅以外部gist链接给出，本文没有下载或执行它；本地PDF提供算法与成功日志，不能据此宣称已完成服务复现。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "车联网/NDIAS_2026/Parking Lot Whisper",
+    "mechanism": "目标是识别Falcon X1遥控器的中心频率、调制方式和最短符号周期。采样为433.92MHz中心、2Msps、复数float32小端，文件交替存I/Q。",
+    "evidence": [
+      "writeups/kn1cht_full_writeup.md"
+    ],
+    "limitations": "静态资料改写；未运行复现。",
+    "status": "rewritten_static"
+  },
+  {
+    "directory": "车联网/NDIAS_2026/Read the simple fob",
+    "mechanism": "目标是恢复Manchester帧中同步字D5后的3字节Device ID，输入与Parking Lot Whisper相同。",
+    "evidence": [
+      "writeups/kn1cht_full_writeup.md"
+    ],
+    "limitations": "静态资料改写；未运行复现。",
+    "status": "rewritten_static"
+  },
+  {
+    "directory": "车联网/NDIAS_2026/Next Counter",
+    "mechanism": "目标是预测另一Falcon X1设备下一次Unlock帧。重复发射不代表计数器每帧递增，计数器按按钮操作递增。",
+    "evidence": [
+      "writeups/kn1cht_full_writeup.md"
+    ],
+    "limitations": "静态资料改写；未运行复现。",
+    "status": "rewritten_static"
+  },
+  {
+    "directory": "车联网/NDIAS_2026/Predict Next UNLOCK",
+    "mechanism": "目标是同时预测16位计数器和附加滚动字段。后者是可观察的模2^16等差序列，并非需要破解的强密码。",
+    "evidence": [
+      "writeups/kn1cht_full_writeup.md"
+    ],
+    "limitations": "静态资料改写；未运行复现。",
+    "status": "rewritten_static"
+  },
+  {
+    "directory": "车联网/NDIAS_2026/Classic KeeLoq Garage - Find the Key",
+    "mechanism": "目标是由RF固定字段和安装备注恢复64位DeviceKey。备注直接给出Legacy派生式，不能将此题描述成攻击完整64位KeeLoq密钥空间。",
+    "evidence": [
+      "writeups/kn1cht_full_writeup.md"
+    ],
+    "limitations": "静态资料改写；未运行复现。",
+    "status": "rewritten_static"
+  },
+  {
+    "directory": "车联网/NDIAS_2026/Classic KeeLoq Garage - Next HOP",
+    "mechanism": "目标是用已恢复的DeviceKey解密并递增Hop计数器，再重新加密生成下一OPEN帧。",
+    "evidence": [
+      "writeups/kn1cht_full_writeup.md"
+    ],
+    "limitations": "静态资料改写；未运行复现。",
+    "status": "rewritten_static"
+  },
+  {
+    "directory": "车联网/NDIAS_2026/Real KeeLoq Garage - Normal Learn",
+    "mechanism": "目标是从HCS301兼容固定字段及制造商代码派生DeviceKey。与Classic题不同，本题是Normal Learn，且34位固定部不可简单按整字节截断。",
+    "evidence": [
+      "writeups/kn1cht_full_writeup.md"
+    ],
+    "limitations": "静态资料改写；未运行复现。",
+    "status": "rewritten_static"
+  },
+  {
+    "directory": "车联网/NDIAS_2026/Real KeeLoq Garage - Next HOP",
+    "mechanism": "目标是生成下次OPEN的逻辑帧。需要区分射频34bit固定字段和判题期待的32bit button+serial表示。",
+    "evidence": [
+      "writeups/kn1cht_full_writeup.md"
+    ],
+    "limitations": "静态资料改写；未运行复现。",
+    "status": "rewritten_static"
+  },
+  {
+    "directory": "iot/0xFUN_2026/UART",
+    "mechanism": "目标是从Sigrok逻辑采样还原UART字节并解出flag。`.sr`本来就是ZIP容器，不应将ZIP结构本身误判为题目伪装。",
+    "evidence": [
+      "writeups/RobinVA.md"
+    ],
+    "limitations": "原文用截图展示采样细节，正文已给关键参数；本次未运行Sigrok，不将其输出当现场验证。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "iot/asis_2026-quals/OutOfPhase",
+    "mechanism": "目标是从相位编码的OFDM类WAV中恢复消息。编码器oopenc定义了载波置换、QPSK旋转、分块顺序及差分相位；呼号是所有伪随机变换的种子。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "本地writeup仅存README，文中decode_data.py等辅助脚本是否包含在附件需另核；不能把原文列出的脚本名视为本地已存在。不可混入EP2DES等其他呼号分片。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "iot/asis_2026-quals/Silent_Carrier",
+    "mechanism": "目标是联合USB配置抓包与DMR IQ信号恢复隐藏莫尔斯音频。关键是TYT Enhanced Privacy对49bit AMBE数据施加固定异或掩码，而非直接对PCM做AES解密。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "本地README引用的direct_best.py及codec工具未在writeups目录中提供；复现还需相应实现。固定掩码不意味着真实DMR所有隐私模式都相同。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "iot/NDIAS_2026/D's Signpost",
+    "mechanism": "目标是从五路混合RF信号恢复加密ZIP与密码。输入SigMF为cf32_le、500ksps、中心915MHz，关键信息分属+115kHz的APRS和+170kHz的DQPSK。",
+    "evidence": [
+      "writeups/kn1cht_full_writeup.md"
+    ],
+    "limitations": "最终solver依赖aprs_decode、clean_extract等未在本题writeups目录提供的模块，不能直接复制末尾代码就宣称可运行；正文给出算法片段，但仍需补齐辅助函数。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "iot/NDIAS_2026/Suspicious device 1",
+    "mechanism": "目标是从SD卡中的ARM iot-agent恢复通信协议，发现残留DEBUG_EXEC命令。入口不是题面给出的云地址，而是固件中的连接逻辑与provision.bin配置。",
+    "evidence": [
+      "writeups/NDIAS_official_explanations.pdf"
+    ],
+    "limitations": "整数大小端须从build_packet汇编确认，幻灯片表格未完整规定；单靠该表不能声称完整可运行。远程地址为历史赛事端点，本次未连接。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "iot/NDIAS_2026/Suspicious device 2",
+    "mechanism": "目标是利用上一题已有的命令执行能力，找到内部数据库中的第二阶段flag。需要先读拓扑与现成查询工具，不能假设公网可以直接访问DB。",
+    "evidence": [
+      "writeups/NDIAS_official_explanations.pdf"
+    ],
+    "limitations": "依赖stage1环境和服务状态；凭据、库名及工具路径均属于题目镜像。本次没有执行远程命令或数据库查询。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "iot/NDIAS_2026/Suspicious device 3",
+    "mechanism": "目标是在内部DB主机读取受flagreader组保护的stage3文件。链路为数据库泄露维护账户→内部SSH→SGID工具的TOCTOU，权限提升目标是组读取能力。",
+    "evidence": [
+      "writeups/NDIAS_official_explanations.pdf"
+    ],
+    "limitations": "官方第101页提供反编译逻辑，本地不含独立完整竞争脚本；本文仅静态整理，没有进行跨主机连接。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "iot/NDIAS_2026/Tiny crackme",
+    "mechanism": "目标是恢复FLAG{30字符}输入。CTF任务的ECC相关哈希看似很强，但UART任务在每5字符处检查CRC32，泄露6个短块的约束，提供更小的搜索空间。",
+    "evidence": [
+      "writeups/writeup.txt"
+    ],
+    "limitations": "原文dict只保留每个CRC状态的一个4字节候选，可能覆盖碰撞；若复现失败需保留候选列表。63^4约1575万条Python记录，内存不可忽略。本次未执行穷举或QEMU。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "iot/NepCTF 2026/23_虚验室制取稀硫酸",
+    "mechanism": "目标仅限题目软PLC仿真：让真实模拟反应釜温度>90、液位>100，同时SIEM不报警，flag出现在TUI公告板。直接篡改过程显示值不能满足物理过程判定。",
+    "evidence": [
+      "writeups/writeup.md"
+    ],
+    "limitations": "这是仿真题流程；原文脚本硬编码历史HOST、PORT及本地目录，需要替换为受控实例配置。本文未操作PLC或执行脚本。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "iot/NepCTF 2026/24_赛博心情电梯",
+    "mechanism": "目标仅限CEIBA软PLC电梯仿真：在门实际开启时完成跨层运动并满足题目判定。关键是形成真实行程后再影响门联锁，单独伪造关门位不会让READY状态的轿厢移动。",
+    "evidence": [
+      "writeups/writeup.md"
+    ],
+    "limitations": "原文含多版测试/race脚本，主线是live_travel_then_spoof，不能把早期失败试验当最终流程。本次未执行仿真控制。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "iot/NepCTF 2026/37_UnknownFirmware",
+    "mechanism": "目标是把Telink/KNLT固件中的显示缓冲恢复为二维码。已有solver是启发式位图扫描，而非完整Telink指令集反编译。",
+    "evidence": [
+      "writeups/writeup.md"
+    ],
+    "limitations": "代码存在筛选风险：先按整个blob计算h并要求h<=400，较大固件可能在尝试局部hh之前就全部跳过。复现需按明确窗口切片并检查边界；原文仅给启发式而非保证解。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "iot/NepCTF 2026/46_谁引闪了我的灯",
+    "mechanism": "目标是根据ESP32/Godox引闪协议信息组16字节帧，再对指定十六进制文本做MD5。必须区分原始字节与HEX字符串、以及大小写。",
+    "evidence": [
+      "writeups/writeup.md"
+    ],
+    "limitations": "channel→group的推导在正文略写；需要原题协议定义支持。该文有“去空格”与大小写不一致问题，本次未运行solver，仅做已知常量的MD5核算。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "iot/SUCTF_2026/SU_EzRouter",
+    "mechanism": "现有材料只有exp.py。它的静态行为是先借auth参数取得session，再安排WiFi/黑名单状态，最后提交含amd64 shellcode的VPN配置；漏洞根因需要结合CGI二进制进一步确认。",
+    "evidence": [
+      "writeups/exp/exp.py"
+    ],
+    "limitations": "不应臆造具体堆漏洞名、覆盖偏移或已取得shell。当前缺口：CGI根因、最终触发条件、输出读取与成功验证。依赖requests和pwntools，且context.arch=amd64。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "iot/SUCTF_2026/SU_老年固件",
+    "mechanism": "现有writeup是分层固件提取分析记录，不是完整flag解答。可确认old.bin经单字节XOR7F后包含U-Boot风格头、XZ流与SMALLFW容器。",
+    "evidence": [
+      "writeups/exp/old_firmware_extract.py",
+      "writeups/writeup/writeup.md"
+    ],
+    "limitations": "提取脚本默认attachment路径相对writeups层级可能不匹配，应显式传--attachment。ZIP成员写盘前还须规范化路径并限制在输出目录。本文没有运行原提取脚本。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "iot/umassctf_2026/Brick_by_Brick",
+    "mechanism": "目标是把时间戳/逻辑电平CSV解为UART，再从伪Linux启动日志取HEX编码flag。核心参数约30us/bit、33333baud、8N1、LSB-first。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "原文run持续时间实现用timestamps[j-1]-timestamps[i]，会少一个采样间隔；不要原样照抄。按半开区间边界计算，或直接使用时间轴中心采样。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "iot/umassctf_2026/Smart_Brick_v2",
+    "mechanism": "目标是从KiCad PCB网表模拟组合逻辑。7个输入位、19个LED，每个LED仅对一个ASCII值亮起，按D1—D19的触发字符拼flag。",
+    "evidence": [
+      "writeups/1_README.md"
+    ],
+    "limitations": "原文把NAND(NAND(G7,x),NAND(G7,NOT x))称为XOR并不准确，该式化简为G7。依据真值表模拟即可避免此误导；本地README引用的完整模拟脚本未在writeups中提供。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "android/bkisc_2026/Boring_APK",
+    "mechanism": "目标是解开APK资源后反演native的27步图路径状态机，得到27字符输入。Java层主要负责AES-GCM资产解密，实际校验位于arm64 libnative.so。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "README未列资产key全部字节或完整solver，需从APK补取。NDK basic_string ABI、Linux加载器patch属于可选执行方案，不能当作对任意Android so通用的方法。原文“21个free positions”亦有计数疑点：27-6-1=20，须以实际索引边界为准。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "android/BSidesSF CTF 2026/doremi",
+    "mechanism": "目标是读取藏在VectorDrawable中的紫色文字。默认紫色背景让flag与背景重合，绿色文字是干扰；正确音高仅改变背景颜色，不产生解密密钥。",
+    "evidence": [
+      "writeups/solution/hook.js",
+      "writeups/solution/solution.py"
+    ],
+    "limitations": "README写arya.xml而solution.py实际使用aria；复现以APK资源名核实。solution.py会删除指定workdir/decoded并调用npx安装转换工具，先检查路径与依赖再执行。本次未运行该脚本。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "android/BSidesSF CTF 2026/vinyl-drop",
+    "mechanism": "目标是构造被Firebase Cloud Function接受的收据QR。校验字段只有当前UID、购买金额和时间，客户端输入缺少不可伪造的购买凭据绑定。",
+    "evidence": [
+      "writeups/solution/frida-validate.js",
+      "writeups/solution/README.md"
+    ],
+    "limitations": "现成Test QRs是历史时刻样本，过期后不能作为当前成功测试。仅改变客户端显示不代表后端接受；应保留实际Cloud Function响应。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "android/BYUCTF 2026/back_and_forth",
+    "mechanism": "目标是拼合Java、SQLite、JNI和Rust/Wasm各层的局部校验。不同check约束不同输入片段，应先建立索引表，再按容易的局部约束求解。",
+    "evidence": [
+      "writeups/brute.py",
+      "writeups/README.md"
+    ],
+    "limitations": "作者明确承认尾部JNI比较长度及strcmp方向有设计错误，28f6属于预期值，不应宣称当前程序唯一强制该后缀。本地只提供brute.py，文中提到的gen_bytes.cpp和Main.java未在writeups目录中。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "android/D^3CTF 2026/d3llvm",
+    "mechanism": "目标是恢复64个十六进制字符组成的token，并重建手写模型生成的隐藏secret来解flag。通过nativeVerifyInput或把游戏分数改为100本身不足以得到正确AES密钥。",
+    "evidence": [
+      "writeups/D3CTF-2026-Official-Writeup-CN.pdf",
+      "writeups/D3CTF-2026-Official-Writeup-EN.pdf",
+      "writeups/decrypt_model_emu.py",
+      "writeups/emulate_payload.py",
+      "writeups/parse_mnn.py",
+      "writeups/README.md",
+      "writeups/reveal_flag.py",
+      "writeups/reveal_remote.py",
+      "writeups/solve_angr.py",
+      "writeups/solve_decrypt.py",
+      "writeups/solve_z3.py"
+    ],
+    "limitations": "模型优化节点名可能随MNN版本/后端改变，不能用未优化图的名字直接代入。token长度是64个字符即32字节，不是64bit整数。原脚本简略unpad只截最后字节，复现应补完整填充验证。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "android/lyknctf_2026/I_HATE_THIS_APP",
+    "mechanism": "目录归类为Android，但本地writeup明确描述Windows x64 Tauri/Rust PE。本题目标是识别防截图所调用的Windows API名称，非Android FLAG_SECURE。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "本题材料中同时包含另8道crack题，只有第6节相关。保留原目录但明确平台纠偏；本次未执行PE。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "android/lyknctf_2026/I_HATE_THIS_APP_REVENGE",
+    "mechanism": "实际平台是Windows Tauri/Rust PE。目标是恢复AES-256-CTR加密图片中的角色名；关键是嵌入默认key与非连续的IV布局。",
+    "evidence": [
+      "writeups/1_writeup.txt"
+    ],
+    "limitations": "该题并非Android APK；普通nonce12+counter4构造不适用。若比赛实例设置了环境变量则默认key可能不适用；本文依据原文样本。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "android/NCTF_2026/Hook My Secret",
+    "mechanism": "目标是从NativeBridge的前缀相关输出恢复16字符stage2 key，再用数据库IV解stage3 AES。stage1图案解锁只影响界面流程，不参与最终密钥推导。",
+    "evidence": [
+      "writeups/NCTF_2026_Official_Writeup.pdf"
+    ],
+    "limitations": "本地官方PDF第72—75页含Frida脚本；复制PDF文本会夹杂页码、行号及控制字符，需清理。应核实密钥长度确为16字节和IV长度16。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "android/SCTF_2026/GuardMaster",
+    "mechanism": "目标是从GMX容器恢复hidden DEX，再逆native终态编码和Java的77次64字节状态变换，恢复规范化后的输入。代码混淆不改变每层可逆数据流，但漏一层会产生自洽假解。",
+    "evidence": [
+      "writeups/Writeup/writeup.md"
+    ],
+    "limitations": "原文建立的是分析别名而非原始符号。native helper调用、状态路径与调度是否输入无关须按原文证据核实；本次仅阅读静态资料，未运行Unicorn/DEX解释器或APK。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "android/Securinets CTF Quals 2026/Backdrop",
+    "mechanism": "目标是让Flutter flag页面正常显示，或离线解密签名绑定的资产。题目诱导文件声称6位PIN和strings可解，但真实障碍是计时器及故意选择的Impeller GLES崩溃路径。",
+    "evidence": [
+      "writeups/bi0s.txt",
+      "writeups/KhalilAmmar.txt"
+    ],
+    "limitations": "不能把“An error happened”一律叫反调试，需区分捕获到的GCM异常和引擎SIGABRT。计时与渲染参数hook需要在相应初始化前生效；本文未运行APK。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "android/SekaiCTF_2026/SekaiID",
+    "mechanism": "目标是读取Verifier管理界面使用的/system/flag.txt。原文实际成功路径利用android:debuggable=true通过ADB run-as获得Verifier UID，无需完成文中猜测的复杂IPC链。",
+    "evidence": [
+      "writeups/README.md",
+      "writeups/artifacts/flag.txt",
+      "writeups/exploit/run.sh",
+      "writeups/handout/tls_proxy.py"
+    ],
+    "limitations": "原文关于intent劫持、provider和claimsTag的预期利用包含推测与缺失步骤，不应写为已证明链。run-as仍受设备策略/SELinux影响，不能保证任意debuggable包都可读任意/system文件；本题依赖特定owner与权限。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "android/SekaiCTF_2026/ufo",
+    "mechanism": "目标是激活五种功能留下的ambient_trace bitmask，显露隐藏二维码并恢复缺失的QR结构。修改会员状态与本题数据流无关。",
+    "evidence": [
+      "writeups/writeup.txt"
+    ],
+    "limitations": "原文使用AI清理图像可能引入像素变化，复现建议以原截图逐模块校验；代码与类名仅针对题目APK版本。本次没有修改用户DataStore。",
+    "status": "rewritten_with_limitations"
+  },
+  {
+    "directory": "android/SUCTF_2026/SU_flumel",
+    "mechanism": "目标是逆Dart RC4 Warp→native AES-CBC校验链。Hermes bundle虽然执行了大量代码，但作者明确说明其自定义16字节算法未接入最终验证；bundle字节仍参与AES key/IV派生。",
+    "evidence": [
+      "writeups/exp/exp.py",
+      "writeups/writeup/SU_flumel Writeup.md"
+    ],
+    "limitations": "早期文章伪代码的t1/t2索引与最终exp.py的idx公式不同，应以对应附件真实逻辑核对，不混合两个版本；作者更换过附件。不要浪费上下文逐行分析44万行无关Hermes噪声。",
+    "status": "rewritten_with_limitations"
+  }
+]

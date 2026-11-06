@@ -1,0 +1,41 @@
+{
+  "event_id": "CTF-3015",
+  "note": "保留原作者正文，第三方多个标题年份写2025；比赛归属依据官方2026仓库，题目描述及flag相互匹配；ooo同形字符按Unicode NFC规范比较。",
+  "results": [
+    {
+      "title": "flag-finder",
+      "official_2026_flag_matches_community_after_unicode_NFC": true,
+      "third_party_heading_mentions_2025": true
+    },
+    {
+      "title": "helm-hell",
+      "official_2026_flag_matches_community_after_unicode_NFC": true,
+      "third_party_heading_mentions_2025": true
+    },
+    {
+      "title": "lactf-1986",
+      "official_2026_flag_matches_community_after_unicode_NFC": true,
+      "third_party_heading_mentions_2025": false
+    },
+    {
+      "title": "ooo",
+      "official_2026_flag_matches_community_after_unicode_NFC": true,
+      "third_party_heading_mentions_2025": true
+    },
+    {
+      "title": "starless-c",
+      "official_2026_flag_matches_community_after_unicode_NFC": true,
+      "third_party_heading_mentions_2025": true
+    },
+    {
+      "title": "the-fish",
+      "official_2026_flag_matches_community_after_unicode_NFC": true,
+      "third_party_heading_mentions_2025": true
+    },
+    {
+      "title": "the-three-sat-problem",
+      "official_2026_flag_matches_community_after_unicode_NFC": true,
+      "third_party_heading_mentions_2025": true
+    }
+  ]
+}

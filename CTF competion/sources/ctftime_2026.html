@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CTFtime.org / All about CTF (Capture The Flag)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Capture The Flag, CTF teams, CTF ratings, CTF archive, CTF writeups">
+    
+    <meta name="author" content="ctftime team">
+
+    <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/static/css/typeahead.bootstrap.css" rel="stylesheet"/>
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"/>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/static/images/ctftime-logo-avatar.png">
+    <meta name="apple-mobile-web-app-title" content="CTFtime">
+    <meta name="application-name" content="CTFtime">
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.formset.js"></script>
+    
+    <script src='https://www.google.com/recaptcha/api.js?render=6Lfl-uUUAAAAAFgA71MPRAPNGt8xQjV2C30BsoXT'></script>
+
+    
+    
+    <link href="/static/css/ctftime6.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/cookieconsent.min.css" />
+    <script src="/static/js/cookieconsent.min.js"></script>
+    <script>
+        if (document.domain != "ctftime.org" && document.domain != "translate.googleusercontent.com"
+            && document.domain != "translate.baiducontent.com" && document.domain != "z5h64q92x9.net") {
+            window.location.replace("https://ctftime.org");
+        }
+    </script>
+    <!--<script data-ad-client="ca-pub-5718474707752821" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
+  </head>
+
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="//ctftime.org/"><img src="/static/images/ct/logo.svg" alt="CTFtime.org" border="0" width="191px" /></a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="/ctfs">CTFs</a></li>
+              <li><a href="/event/list/upcoming">Upcoming</a></li>
+              <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Archive  <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                  <li><a href="/event/list/past">Past events</a></li>
+                  <li><a href="/tasks/">Tasks</a></li>
+                  <li><a href="/writeups">Writeups</a></li>
+                  </ul>
+              </li>
+              <li><a href="/calendar/">Calendar</a></li>
+              <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Teams  <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                  <li><a href="/stats/">Rating</a></li>
+                  <li><a href="/team/compare">Compare</a></li>
+                  <li><a href="/team/new/">Create new team</a></li>
+                  <li><a href="/dating">Get team members</a></li>
+                  </ul>
+              </li>
+              <li><a href="/faq/">FAQ</a></li>
+              <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact us  <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                  <li><a href="/event/mail">For organizers</a></li>
+                  <li><a href="/feedback">Feedback</a></li>
+                  </ul>
+              </li>
+              <li><a href="/about/">About</a></li>
+            </ul>
+            <ul class="nav pull-right">
+            
+            <li class="divider-vertical"></li>
+                
+                <li><a href="#loginModal" data-toggle="modal">Sign in</a></li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+
+<ul class="breadcrumb">
+    <li><a href="/">Home</a> <span class="divider">/</span></li>
+    <li><a href="/ctfs">CTFs</a> <span class="divider">/</span></li>
+
+    <li class="active">Events</li>
+
+
+</ul>
+
+
+    <div class="container">
+
+    
+
+    
+
+<div class="page-header">
+<h2>CTF Events</h2>
+</div>
+
+<ul class="nav nav-pills">
+    <li class="active"><a href="/event/list/?year=2026&online=-1&format=0&restrictions=-1">All</a></li>
+    <li><a href="/event/list/?online=-1&format=0&restrictions=-1&now=true">Now running</a></li>
+    <li><a href="/event/list/?online=-1&format=0&restrictions=-1&upcoming=true">Upcoming</a></li>
+    <li><a href="/event/list/?year=2026&online=-1&format=0&restrictions=-1&archive=true">Archive</a></li>
+
+    <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        Format
+        
+        
+        <b class="caret"></b></a>
+    <ul class="dropdown-menu">
+    <li><a href="/event/list/?year=2026&online=-1&format=1&restrictions=-1">Jeopardy</a></li>
+    <li><a href="/event/list/?year=2026&online=-1&format=2&restrictions=-1">Attack-Defence</a></li>
+    <li><a href="/event/list/?year=2026&online=-1&format=3&restrictions=-1">Hack-quest</a></li>
+    </ul>
+    </li>
+
+    <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        Location
+        
+        
+<b class="caret"></b></a>
+    <ul class="dropdown-menu">
+    <li  class="active"><a href="/event/list/?year=2026&online=-1&format=0&restrictions=-1">All</a></li>
+    <li ><a href="/event/list/?year=2026&online=1&format=0&restrictions=-1">On-line</a></li>
+    <li ><a href="/event/list/?year=2026&online=0&format=0&restrictions=-1">On-site</a></li>
+    </ul>
+    </li>
+
+    <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> 
+        Restrictions
+        
+        
+        
+        
+        
+        
+        
+        <b class="caret"></b></a>
+    <ul class="dropdown-menu">
+    <li><a href="/event/list/upcoming?year=2026&online=-1&format=0&restrictions=0">Open</a></li>
+    <li><a href="/event/list/upcoming?year=2026&online=-1&format=0&restrictions=1">Prequalified</a></li>
+    <li><a href="/event/list/upcoming?year=2026&online=-1&format=0&restrictions=2">Academic</a></li>
+    <li><a href="/event/list/upcoming?year=2026&online=-1&format=0&restrictions=3">High-school</a></li>
+    <li><a href="/event/list/upcoming?year=2026&online=-1&format=0&restrictions=4">Invited only</a></li>
+    <li><a href="/event/list/upcoming?year=2026&online=-1&format=0&restrictions=5">Individual</a></li>
+    <li><a href="/event/list/upcoming?year=2026&online=-1&format=0&restrictions=6">Casual</a></li>
+    </ul>
+    </li>
+
+    <li class="dropdown active">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">2026<b class="caret"></b></a>
+    <ul class="dropdown-menu">
+    
+    <li  class="active"><a href="/event/list/?year=2026&online=-1&format=0&restrictions=-1">2026</a></li>
+    
+    <li ><a href="/event/list/?year=2025&online=-1&format=0&restrictions=-1">2025</a></li>
+    
+    <li ><a href="/event/list/?year=2024&online=-1&format=0&restrictions=-1">2024</a></li>
+    
+    <li ><a href="/event/list/?year=2023&online=-1&format=0&restrictions=-1">2023</a></li>
+    
+    <li ><a href="/event/list/?year=2022&online=-1&format=0&restrictions=-1">2022</a></li>
+    
+    <li ><a href="/event/list/?year=2021&online=-1&format=0&restrictions=-1">2021</a></li>
+    
+    <li ><a href="/event/list/?year=2020&online=-1&format=0&restrictions=-1">2020</a></li>
+    
+    <li ><a href="/event/list/?year=2019&online=-1&format=0&restrictions=-1">2019</a></li>
+    
+    <li ><a href="/event/list/?year=2018&online=-1&format=0&restrictions=-1">2018</a></li>
+    
+    <li ><a href="/event/list/?year=2017&online=-1&format=0&restrictions=-1">2017</a></li>
+    
+    <li ><a href="/event/list/?year=2016&online=-1&format=0&restrictions=-1">2016</a></li>
+    
+    <li ><a href="/event/list/?year=2015&online=-1&format=0&restrictions=-1">2015</a></li>
+    
+    <li ><a href="/event/list/?year=2014&online=-1&format=0&restrictions=-1">2014</a></li>
+    
+    <li ><a href="/event/list/?year=2013&online=-1&format=0&restrictions=-1">2013</a></li>
+    
+    <li ><a href="/event/list/?year=2012&online=-1&format=0&restrictions=-1">2012</a></li>
+    
+    <li ><a href="/event/list/?year=2011&online=-1&format=0&restrictions=-1">2011</a></li>
+    
+    </ul>
+    </li>
+
+    <div class="pull-right"><a href="/calendar/"><img src="/static/images/icon_cal.svg" class="svg_icon" /></a><a href="/event/list/all/rss/"><img src="/static/images/icon_rss.svg" class="svg_icon" /></a></div>
+</ul>
+
+<table class="table table-striped"><tr><th>Name</th><th>Date</th><th>Format</th><th>Location</th><th>Weight</th><th colspan="2">Notes</th></tr><tr><td><a href="/event/3062">ASIS CTF Finals 2026</a></td><td>27 Dec., 14:00 UTC &mdash; 28 Dec. 2026, 14:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>99.38</td><td></td><td><tr><td><a href="/event/3472">BackdoorCTF 2026</a></td><td>19 Dec., 12:00 UTC &mdash; 20 Dec. 2026, 12:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>77.38</td><td></td><td><b>20</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3475">BSides Algiers 2026</a></td><td>17 Dec., 19:00 UTC &mdash; 19 Dec. 2026, 07:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>22.90</td><td></td><td><b>8</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3367">niteCTF 2026</a></td><td>11 Dec., 12:00 UTC &mdash; 13 Dec. 2026, 12:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>59.00</td><td></td><td><b>61</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3493">OTERIA Cyber Cup #4</a></td><td>05 Dec., 09:00 UTC &mdash; 05 Dec. 2026, 17:00 UTC</td><td>Jeopardy</td><td>
+
+    France, Gennevilliers
+
+</td><td>0</td><td><b>Academic teams only</b></td><td><b>0</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3480">bi0sCTF 2026</a></td><td>05 Dec., 05:00 UTC &mdash; 06 Dec. 2026, 17:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>79.51</td><td></td><td><b>20</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3450">x3CTF 2026</a></td><td>04 Dec., 18:00 UTC &mdash; 06 Dec. 2026, 18:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><b>11</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3386">BlackHat MEA CTF Final 2026</a></td><td>01 Dec., 15:14 UTC &mdash; 03 Dec. 2026, 15:14 UTC</td><td>Jeopardy</td><td>
+
+    Riyadh, Saudi Arabia
+
+</td><td>0.00</td><td><b>Prequalified teams only</b></td><td><tr><td><a href="/event/3489">CyberNSK2027-Qualifier</a></td><td>28 Nov., 09:00 UTC &mdash; 28 Nov. 2026, 21:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Academic teams only</b></td><td><b>9</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3485">L3m0n CTF 2026 (Quals)</a></td><td>28 Nov., 04:30 UTC &mdash; 28 Nov. 2026, 16:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><b>22</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3474">LakeCTF Quals 26-27</a></td><td>27 Nov., 18:00 UTC &mdash; 28 Nov. 2026, 18:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>45.76</td><td></td><td><b>29</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3436">CyberSci Regional Qualifiers 2026-27</a></td><td>21 Nov., 15:00 UTC &mdash; 21 Nov. 2026, 22:00 UTC</td><td>Jeopardy</td><td>
+
+    Onsite at 6 locations in Canada
+
+</td><td>0</td><td><b>Academic teams only</b></td><td><b>6</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3336">Crate-CTF 2026</a></td><td>21 Nov., 13:00 UTC &mdash; 21 Nov. 2026, 21:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>37.00</td><td></td><td><b>30</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3408">Seize da Flaq</a></td><td>21 Nov., 06:30 UTC &mdash; 22 Nov. 2026, 02:30 UTC</td><td>Jeopardy</td><td>
+
+    Mathura, Uttar Pradesh, India
+
+</td><td>0</td><td><b>Casual</b></td><td><b>17</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3425">Outback Overflow</a></td><td>20 Nov., 23:00 UTC &mdash; 21 Nov. 2026, 23:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><b>7</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3337">GlacierCTF 2026</a></td><td>20 Nov., 18:00 UTC &mdash; 21 Nov. 2026, 18:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>73.17</td><td></td><td><b>68</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3419">EyesOpenCTF 7th edition</a></td><td>20 Nov., 10:00 UTC &mdash; 22 Nov. 2026, 10:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><b>18</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3464">h4ckc0n 2026</a></td><td>14 Nov., 15:30 UTC &mdash; 15 Nov. 2026, 15:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.23</td><td></td><td><b>12</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3467">InIt CTF</a></td><td>14 Nov., 15:30 UTC &mdash; 14 Nov. 2026, 23:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Casual</b></td><td><b>15</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3049">WolvCTF 2026</a></td><td>13 Nov., 23:00 UTC &mdash; 15 Nov. 2026, 23:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><b>97</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3082">Platypwn 2026</a></td><td>13 Nov., 17:00 UTC &mdash; 14 Nov. 2026, 11:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>37.00</td><td></td><td><b>50</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3486">TVX CTF 2026</a></td><td>13 Nov., 10:00 UTC &mdash; 13 Nov. 2026, 20:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Casual</b></td><td><b>18</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3410">CSAW CTF Final Round 2026</a></td><td>12 Nov., 17:00 UTC &mdash; 14 Nov. 2026, 05:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>1.00</td><td></td><td><b>21</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3455">Mimic</a></td><td>07 Nov., 12:00 UTC &mdash; 08 Nov. 2026, 12:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Casual</b></td><td><b>24</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3242">BlackAlps CTF 2026</a></td><td>06 Nov., 18:15 UTC &mdash; 06 Nov. 2026, 22:30 UTC</td><td>Jeopardy</td><td>
+
+    Switzerland, Yverdon-les-Bains
+
+</td><td>0.00</td><td></td><td><b>25</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3339">SpookyCTF 2026</a></td><td>06 Nov., 17:00 UTC &mdash; 07 Nov. 2026, 17:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><b>124</b> teams will participate
+    
+    
+
+
+<tr><td><a href="/event/3333">CSCTF 2026</a></td><td>06 Nov., 13:00 UTC &mdash; 08 Nov. 2026, 13:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0<a href="/event/3333/weight"><i rel="weight_voting" id="weight_voting">*</i></a></td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3331">PINK+ CTF 2026</a></td><td>06 Nov., 12:00 UTC &mdash; 09 Nov. 2026, 12:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0<a href="/event/3331/weight"><i rel="weight_voting" id="weight_voting">*</i></a></td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3418">HKCERT CTF 2026 (Qualifying Round)</a></td><td>06 Nov., 10:00 UTC &mdash; 07 Nov. 2026, 10:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>10.31<a href="/event/3418/weight"><i rel="weight_voting" id="weight_voting">*</i></a></td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3482">StealthCup 2026</a></td><td>31 Oct., 13:00 UTC &mdash; 31 Oct. 2026, 21:00 UTC</td><td>Hack quest</td><td>
+
+    On-site, Quebec City, Canada (Hackfest, Quebec City Convention Centre). Remote participation only on request.
+
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3469">Russian CTF Cup X Qualifier</a></td><td>31 Oct., 09:00 UTC &mdash; 01 Nov. 2026, 09:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3491">HAM-DEFCON</a></td><td>31 Oct., 03:30 UTC &mdash; 31 Oct. 2026, 07:30 UTC</td><td>Attack-Defense</td><td>
+
+    National Institute Of Technology Warangal, Hanamkonda, Telangana, India, 505004
+
+</td><td>0</td><td><b>Casual</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3459">2026 Qiangwang Challenge on Cyber Mimic Defense Qualification</a></td><td>31 Oct., 02:00 UTC &mdash; 01 Nov. 2026, 02:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0<a href="/event/3459/weight"><i rel="weight_voting" id="weight_voting">*</i></a></td><td></td><td><tr><td><a href="/event/3460">HI Cyber Con 2026 CTF</a></td><td>30 Oct., 14:00 UTC &mdash; 01 Nov. 2026, 14:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0<a href="/event/3460/weight"><i rel="weight_voting" id="weight_voting">*</i></a></td><td></td><td><tr><td><a href="/event/3463">CTF@AC26 - Finals</a></td><td>30 Oct., 10:00 UTC &mdash; 01 Nov. 2026, 10:00 UTC</td><td>Jeopardy</td><td>
+
+    Faculty of Automation &amp; Computer Science, Timisoara, Romania
+
+</td><td>25.00<a href="/event/3463/weight"><i rel="weight_voting" id="weight_voting">*</i></a></td><td></td><td><tr><td><a href="/event/3381">Hacker&#39;s Gambit 2026 (Round 2 – Grand Finale)</a></td><td>30 Oct., 06:30 UTC &mdash; 31 Oct. 2026, 06:30 UTC</td><td>Jeopardy</td><td>
+
+    Jaihind College of Engineering,At Post Kuran, Taluka Junnar, Pune - 410511, Maharashtra, India  (19°09&#39;47.2&quot;N 73°54&#39;52.2&quot;E)
+
+</td><td>0.00</td><td><b>Prequalified teams only</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3444">Srdnlen CTF 2026 Finals (Sardinia Cyber Camp)</a></td><td>29 Oct., 09:00 UTC &mdash; 29 Oct. 2026, 17:00 UTC</td><td>Jeopardy</td><td>
+
+    Italy, Cagliari
+
+</td><td>25.00</td><td><b>Prequalified teams only</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3443">Sudocrypt v16.0</a></td><td>27 Oct., 03:30 UTC &mdash; 28 Oct. 2026, 15:30 UTC</td><td>Hack quest</td><td>
+On-line
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3473">BSides Peoria CTF 2026</a></td><td>24 Oct., 14:45 UTC &mdash; 24 Oct. 2026, 20:45 UTC</td><td>Jeopardy</td><td>
+
+    Peoria, Illinois, USA
+
+</td><td>0</td><td><b>Casual</b></td><td><tr><td><a href="/event/3094">H7CTF 2026 Finals</a></td><td>24 Oct., 06:30 UTC &mdash; 25 Oct. 2026, 06:30 UTC</td><td>Attack-Defense</td><td>
+
+    Chennai, Tamil Nadu
+
+</td><td>23.43</td><td><b>Prequalified teams only</b></td><td><tr><td><a href="/event/3442">Cryovault 2026 Finals</a></td><td>24 Oct., 03:30 UTC &mdash; 25 Oct. 2026, 06:30 UTC</td><td>Jeopardy</td><td>
+
+    Bengaluru, India
+
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3207">Hack.lu CTF 2026</a></td><td>23 Oct., 18:00 UTC &mdash; 25 Oct. 2026, 18:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>94.74</td><td></td><td><tr><td><a href="/event/3377">RSTCON 2026 CTF</a></td><td>23 Oct., 17:00 UTC &mdash; 25 Oct. 2026, 17:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3340">HITCON CTF 2026</a></td><td>23 Oct., 14:00 UTC &mdash; 25 Oct. 2026, 14:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>91.16</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3477">CREST CTF 2.0</a></td><td>23 Oct., 05:30 UTC &mdash; 23 Oct. 2026, 11:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/3369">cruXipher 2026 - ATMoS &#39;26, BITS Hyderabad</a></td><td>23 Oct., 00:30 UTC &mdash; 25 Oct. 2026, 00:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.83</td><td></td><td><tr><td><a href="/event/3409">SAS CTF 2026 Finals</a></td><td>20 Oct., 03:00 UTC &mdash; 20 Oct. 2026, 14:00 UTC</td><td>Attack-Defense</td><td>
+
+    Indonesia, Bali
+
+</td><td>49.50</td><td><b>Prequalified teams only</b></td><td><tr><td><a href="/event/3279">DEADFACE CTF 2026</a></td><td>17 Oct., 14:00 UTC &mdash; 19 Oct. 2026, 00:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>35.39</td><td></td><td><tr><td><a href="/event/3364">Securinets CTF Quals 2026</a></td><td>17 Oct., 09:00 UTC &mdash; 18 Oct. 2026, 21:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>85.12</td><td></td><td><tr><td><a href="/event/3471">SOLAR CTF 2026</a></td><td>17 Oct., 09:00 UTC &mdash; 18 Oct. 2026, 09:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Academic teams only</b></td><td><tr><td><a href="/event/3354">GaianSpace CTF 2026</a></td><td>10 Oct., 21:00 UTC &mdash; 14 Oct. 2026, 21:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3437">Narxoz CTF</a></td><td>10 Oct., 10:00 UTC &mdash; 10 Oct. 2026, 18:00 UTC</td><td>Hack quest</td><td>
+
+    Almaty, Kazakhstan
+
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3446">KubSTU CTF</a></td><td>10 Oct., 07:00 UTC &mdash; 11 Oct. 2026, 13:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3445">FooBar CTF 2026</a></td><td>10 Oct., 06:30 UTC &mdash; 11 Oct. 2026, 06:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3441">Cryovault 2026 Quals</a></td><td>10 Oct., 04:30 UTC &mdash; 11 Oct. 2026, 04:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3456">kBxAc CTF 2026</a></td><td>09 Oct., 18:30 UTC &mdash; 10 Oct. 2026, 18:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.75</td><td></td><td><tr><td><a href="/event/3440">FortID CTF 2026</a></td><td>09 Oct., 18:00 UTC &mdash; 11 Oct. 2026, 18:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>45.00</td><td></td><td><tr><td><a href="/event/3438">ByteMe CTF 26</a></td><td>09 Oct., 04:30 UTC &mdash; 09 Oct. 2026, 12:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/3462">Africa battleCTF 2026 Qualifier</a></td><td>04 Oct., 23:00 UTC &mdash; 04 Nov. 2026, 23:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/3432">AltayCTF 2026</a></td><td>04 Oct., 03:00 UTC &mdash; 04 Oct. 2026, 12:00 UTC</td><td>Attack-Defense</td><td>
+
+    Russia, Barnaul
+
+</td><td>0</td><td><b>Academic teams only</b></td><td><tr><td><a href="/event/3293">CDCTF 2026</a></td><td>03 Oct., 15:00 UTC &mdash; 04 Oct. 2026, 03:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3352">CubeCTF 2026</a></td><td>03 Oct., 14:00 UTC &mdash; 03 Oct. 2026, 22:00 UTC</td><td>Attack-Defense</td><td>
+On-line
+</td><td>24.71</td><td></td><td><tr><td><a href="/event/3465">Lun4R CTF Final</a></td><td>03 Oct., 05:30 UTC &mdash; 04 Oct. 2026, 05:30 UTC</td><td>Jeopardy</td><td>
+
+    Thiruvananthapuram, India
+
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3380">Hacker&#39;s Gambit 2026 (Round 1 – Online Qualifier)</a></td><td>02 Oct., 06:30 UTC &mdash; 04 Oct. 2026, 06:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3434">CSS CTF 2026: Return of Nexus</a></td><td>30 Sept., 06:00 UTC &mdash; 01 Oct. 2026, 22:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.26</td><td></td><td><tr><td><a href="/event/3417">SCAN 2026 Final</a></td><td>28 Sept., 01:00 UTC &mdash; 28 Sept. 2026, 08:00 UTC</td><td>Jeopardy</td><td>
+
+    Seoul, Korea
+
+</td><td>0.00</td><td><b>Prequalified teams only</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3020">Pointer Overflow CTF - 2026</a></td><td>27 Sept., 14:00 UTC &mdash; 06 Dec. 2026, 14:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3399">SunshineCTF 2026</a></td><td>26 Sept., 14:00 UTC &mdash; 28 Sept. 2026, 14:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>51.63</td><td></td><td><tr><td><a href="/event/3312">FAUST CTF 2026</a></td><td>26 Sept., 12:00 UTC &mdash; 26 Sept. 2026, 21:00 UTC</td><td>Attack-Defense</td><td>
+On-line
+</td><td>72.29</td><td></td><td><tr><td><a href="/event/3093">H7CTF 2026 Quals</a></td><td>26 Sept., 03:30 UTC &mdash; 27 Sept. 2026, 15:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>27.49</td><td></td><td><tr><td><a href="/event/3374">BCS CTF 2026</a></td><td>25 Sept., 14:00 UTC &mdash; 27 Sept. 2026, 14:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>23.33</td><td></td><td><tr><td><a href="/event/3422">FlightPath2026</a></td><td>25 Sept., 13:30 UTC &mdash; 27 Sept. 2026, 21:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>School teams only</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3449">NileCTF</a></td><td>25 Sept., 12:00 UTC &mdash; 27 Sept. 2026, 12:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>School teams only</b></td><td><tr><td><a href="/event/3454">Null Origin CTF 2026: Grand finale </a></td><td>25 Sept., 04:30 UTC &mdash; 25 Sept. 2026, 16:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3451">BreachPoint 2026</a></td><td>25 Sept., 04:00 UTC &mdash; 26 Sept. 2026, 08:30 UTC</td><td>Jeopardy</td><td>
+
+    PSG College of Technology, Coimbatore, Tamil Nadu
+
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3435">LUN4R CTF Quals</a></td><td>20 Sept., 04:30 UTC &mdash; 20 Sept. 2026, 16:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.38</td><td></td><td><tr><td><a href="/event/3365">07CTF 2026</a></td><td>19 Sept., 12:00 UTC &mdash; 20 Sept. 2026, 12:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>23.71</td><td></td><td><tr><td><a href="/event/3401">OmniCTF 2026 Finals</a></td><td>19 Sept., 06:00 UTC &mdash; 19 Sept. 2026, 16:00 UTC</td><td>Jeopardy</td><td>
+
+    Romania, Constanța
+
+</td><td>0.00</td><td><b>Prequalified teams only</b></td><td><tr><td><a href="/event/3326">WATCHLIST</a></td><td>19 Sept., 03:30 UTC &mdash; 20 Sept. 2026, 03:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>23.42</td><td></td><td><tr><td><a href="/event/3428">z0d1ak CTF Finals</a></td><td>19 Sept., 03:30 UTC &mdash; 19 Sept. 2026, 12:30 UTC</td><td>Jeopardy</td><td>
+
+    VIT Vellore, India
+
+</td><td>0.00</td><td><b>Prequalified teams only</b></td><td><tr><td><a href="/event/3412">Cyber League 2026 - Major</a></td><td>19 Sept., 02:00 UTC &mdash; 20 Sept. 2026, 02:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3431">Haruulzangi CTF 2026 Semi-Final</a></td><td>19 Sept., 02:00 UTC &mdash; 19 Sept. 2026, 08:00 UTC</td><td>Jeopardy</td><td>
+
+    Mongolia, Ulaanbaatar
+
+</td><td>0.00</td><td><b>Prequalified teams only</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3355">CSAW CTF Qualification Round 2026</a></td><td>18 Sept., 16:00 UTC &mdash; 20 Sept. 2026, 16:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>10.93</td><td></td><td><tr><td><a href="/event/3392">DefCamp Capture the Flag (D-CTF) 2026 Quals</a></td><td>18 Sept., 10:00 UTC &mdash; 20 Sept. 2026, 10:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>69.75</td><td></td><td><tr><td><a href="/event/3346">NullOrigin CTF Qualifiers</a></td><td>18 Sept., 04:30 UTC &mdash; 18 Sept. 2026, 16:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3265">VolgaCTF 2026 Final</a></td><td>17 Sept., 05:00 UTC &mdash; 17 Sept. 2026, 15:00 UTC</td><td>Attack-Defense</td><td>
+
+    Russia, Samara
+
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3159">PwnSec CTF 2026</a></td><td>12 Sept., 14:00 UTC &mdash; 13 Sept. 2026, 14:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>33.89</td><td></td><td><tr><td><a href="/event/3360">CAT CTF 26</a></td><td>11 Sept., 12:00 UTC &mdash; 12 Sept. 2026, 12:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3145">K17 CTF 2026</a></td><td>11 Sept., 10:00 UTC &mdash; 13 Sept. 2026, 10:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.83</td><td></td><td><tr><td><a href="/event/3389">SUNCTF 2026</a></td><td>06 Sept., 00:00 UTC &mdash; 06 Sept. 2026, 09:00 UTC</td><td>Jeopardy</td><td>
+
+    Malaysia, Subang Jaya
+
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3344">TFC CTF 2026</a></td><td>05 Sept., 10:00 UTC &mdash; 06 Sept. 2026, 10:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>77.08</td><td></td><td><tr><td><a href="/event/3097">NNS CTF 2026</a></td><td>04 Sept., 16:00 UTC &mdash; 06 Sept. 2026, 16:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3416">DiceCTF 2026 Finals</a></td><td>29 Aug., 16:00 UTC &mdash; 30 Aug. 2026, 22:00 UTC</td><td>Hack quest</td><td>
+
+    New York City, USA
+
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3033">ASIS CTF Quals 2026</a></td><td>29 Aug., 14:00 UTC &mdash; 30 Aug. 2026, 14:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>90.53</td><td></td><td><tr><td><a href="/event/3347">UND CyberHawks National CTF Competition 2026 Qualifiers</a></td><td>29 Aug., 14:00 UTC &mdash; 30 Aug. 2026, 05:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Casual</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3385">BlackHat MEA CTF Qualification 2026</a></td><td>29 Aug., 07:00 UTC &mdash; 30 Aug. 2026, 07:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>8.10</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3290">COMPFEST CTF 2026</a></td><td>29 Aug., 00:00 UTC &mdash; 30 Aug. 2026, 00:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>96.00</td><td></td><td><tr><td><a href="/event/3411">PECAN+ CTF 2026</a></td><td>23 Aug., 01:00 UTC &mdash; 23 Aug. 2026, 05:00 UTC</td><td>Jeopardy</td><td>
+
+    Australia
+
+</td><td>0</td><td><b>School teams only</b></td><td><tr><td><a href="/event/3394">TallDwarf Hosting: Hosting Takeover</a></td><td>22 Aug., 08:00 UTC &mdash; 23 Aug. 2026, 20:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3400">E0F CTF</a></td><td>22 Aug., 07:00 UTC &mdash; 23 Aug. 2026, 07:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3397">$N1PH€RS 3.0 CTF</a></td><td>22 Aug., 03:15 UTC &mdash; 22 Aug. 2026, 11:15 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3379">Haruulzangi CTF 2026 Qualifier</a></td><td>22 Aug., 01:00 UTC &mdash; 23 Aug. 2026, 01:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3370">z0d1ak CTF Qualifiers</a></td><td>21 Aug., 16:00 UTC &mdash; 23 Aug. 2026, 04:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3065">BrunnerCTF 2026</a></td><td>21 Aug., 12:00 UTC &mdash; 23 Aug. 2026, 12:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.66</td><td></td><td><tr><td><a href="/event/3402">CTFZone 2026</a></td><td>19 Aug., 08:00 UTC &mdash; 19 Aug. 2026, 16:00 UTC</td><td>Jeopardy</td><td>
+
+    Russia, Moscow
+
+</td><td>0</td><td><b>Casual</b></td><td><tr><td><a href="/event/3387">0xV01D CTF 2026 V2</a></td><td>15 Aug., 07:30 UTC &mdash; 16 Aug. 2026, 07:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3391">Trace Athena OSINT CTF </a></td><td>15 Aug., 03:30 UTC &mdash; 15 Aug. 2026, 18:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/3343">THJCC CTF 2026 summer</a></td><td>15 Aug., 00:00 UTC &mdash; 16 Aug. 2026, 12:00 UTC</td><td>Jeopardy</td><td></td><td>0.00</td><td></td><td><tr><td><a href="/event/3318">HackHowl 2026</a></td><td>15 Aug., 00:00 UTC &mdash; 17 Aug. 2026, 05:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3181">gaslightCTF 2026</a></td><td>14 Aug., 12:00 UTC &mdash; 17 Aug. 2026, 12:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.75</td><td></td><td><tr><td><a href="/event/3330">Thryve CTF 2026</a></td><td>14 Aug., 11:00 UTC &mdash; 14 Aug. 2026, 20:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.50</td><td></td><td><tr><td><a href="/event/3405">EYCC CTF 2026 Finals</a></td><td>13 Aug., 06:00 UTC &mdash; 13 Aug. 2026, 16:00 UTC</td><td>Jeopardy</td><td>
+
+    Egypt
+
+</td><td>0</td><td><b>Casual</b></td><td><tr><td><a href="/event/3382">The heart of Sysola</a></td><td>08 Aug., 13:00 UTC &mdash; 09 Aug. 2026, 01:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3052">scriptCTF 2026</a></td><td>08 Aug., 00:00 UTC &mdash; 10 Aug. 2026, 00:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.70</td><td></td><td><tr><td><a href="/event/3148">UIUCTF 2026</a></td><td>08 Aug., 00:00 UTC &mdash; 10 Aug. 2026, 00:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>69.35</td><td></td><td><tr><td><a href="/event/3322">DEF CON CTF 2026</a></td><td>07 Aug., 16:00 UTC &mdash; 09 Aug. 2026, 19:00 UTC</td><td>Attack-Defense</td><td>
+
+    Las Vegas, Nevada, USA
+
+</td><td>0.00</td><td><b>Prequalified teams only</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3305">RoboHack AI CTF (Robotic Hacking Community at DEFCON 34)</a></td><td>07 Aug., 00:00 UTC &mdash; 09 Aug. 2026, 00:00 UTC</td><td>Hack quest</td><td>
+On-line
+</td><td>0</td><td><b>Casual</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3342">AEROSPACE VILLAGE STARPWN CTF</a></td><td>06 Aug., 17:00 UTC &mdash; 09 Aug. 2026, 18:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.65</td><td></td><td><tr><td><a href="/event/3328">Kali Team - CTF 26</a></td><td>05 Aug., 07:00 UTC &mdash; 05 Aug. 2026, 19:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3383">SCAN 2026 Online Qualifier</a></td><td>02 Aug., 00:00 UTC &mdash; 03 Aug. 2026, 00:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3373">Lexington Informatics Tournament CTF 2026</a></td><td>01 Aug., 15:00 UTC &mdash; 03 Aug. 2026, 15:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>84.79</td><td></td><td><tr><td><a href="/event/3237">Universal CTF</a></td><td>01 Aug., 07:00 UTC &mdash; 02 Aug. 2026, 15:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3311">VuwCTF 2026</a></td><td>31 July, 22:00 UTC &mdash; 02 Aug. 2026, 05:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3061">L3akCTF 2026</a></td><td>31 July, 18:00 UTC &mdash; 02 Aug. 2026, 18:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>34.47</td><td></td><td><tr><td><a href="/event/3303">DeadSec CTF 2026 - POSTPONED</a></td><td>31 July, 12:00 UTC &mdash; 01 Aug. 2026, 12:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>39.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3372">BushBash CTF</a></td><td>31 July, 07:00 UTC &mdash; 02 Aug. 2026, 07:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3201">D^3CTF 2026</a></td><td>25 July, 12:00 UTC &mdash; 26 July 2026, 12:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>69.22</td><td></td><td><tr><td><a href="/event/3268">DIVER OSINT CTF 2026</a></td><td>25 July, 03:10 UTC &mdash; 26 July 2026, 03:10 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3286">jailCTF 2026</a></td><td>24 July, 20:00 UTC &mdash; 27 July 2026, 20:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Casual</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3292">Codegate CTF 2026 Finals</a></td><td>23 July, 01:00 UTC &mdash; 24 July 2026, 01:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3349">BDSec CTF 2026</a></td><td>20 July, 15:00 UTC &mdash; 21 July 2026, 15:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>15.62</td><td></td><td><tr><td><a href="/event/3324">ENOWARS 10</a></td><td>18 July, 12:00 UTC &mdash; 18 July 2026, 21:00 UTC</td><td>Attack-Defense</td><td>
+On-line
+</td><td>83.50</td><td></td><td><tr><td><a href="/event/3362">HoneyBadger CTF AvitoTech</a></td><td>18 July, 09:00 UTC &mdash; 19 July 2026, 15:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.00</td><td></td><td><tr><td><a href="/event/3357">AxiomCTF 2026 Finals</a></td><td>18 July, 07:00 UTC &mdash; 18 July 2026, 15:00 UTC</td><td>Attack-Defense</td><td>
+
+    Russia, Moscow
+
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3366">ATHENA CTF</a></td><td>18 July, 05:30 UTC &mdash; 19 July 2026, 05:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.38</td><td></td><td><tr><td><a href="/event/3112">DownUnderCTF 2026 - CANCELLED</a></td><td>17 July, 19:30 UTC &mdash; 19 July 2026, 19:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>94.99</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3104">OmniCTF 2026 Quals</a></td><td>17 July, 15:00 UTC &mdash; 19 July 2026, 15:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>23.96</td><td></td><td><tr><td><a href="/event/3353">EYCC CTF 2026 Qualifiers</a></td><td>17 July, 11:00 UTC &mdash; 19 July 2026, 11:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>School teams only</b></td><td><tr><td><a href="/event/3368">Clash of Cybers I</a></td><td>13 July, 08:00 UTC &mdash; 14 July 2026, 08:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.90</td><td></td><td><tr><td><a href="/event/3144">BroncoCTF 2026</a></td><td>11 July, 16:00 UTC &mdash; 12 July 2026, 16:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>17.41</td><td></td><td><tr><td><a href="/event/3335">Junior.Crypt.2026 CTF</a></td><td>11 July, 09:00 UTC &mdash; 12 July 2026, 09:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>23.42</td><td></td><td><tr><td><a href="/event/3280">LYKNCTF</a></td><td>06 July, 00:00 UTC &mdash; 08 July 2026, 00:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.42</td><td></td><td><tr><td><a href="/event/3325">Fluid Attacks&#39; CTF 2026-2</a></td><td>04 July, 13:00 UTC &mdash; 05 July 2026, 01:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/3149">R3CTF 2026</a></td><td>04 July, 02:00 UTC &mdash; 06 July 2026, 02:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>35.95</td><td></td><td><tr><td><a href="/event/3180">No Hack No CTF 2026</a></td><td>04 July, 00:00 UTC &mdash; 06 July 2026, 00:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>23.47</td><td></td><td><tr><td><a href="/event/3315">MindBreak 2026 by ESGI</a></td><td>03 July, 21:00 UTC &mdash; 04 July 2026, 06:00 UTC</td><td>Jeopardy</td><td>
+
+    Paris, France
+
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3282">MntcrlCTF 2026</a></td><td>27 June, 16:00 UTC &mdash; 28 June 2026, 16:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3113">SekaiCTF 2026</a></td><td>27 June, 08:00 UTC &mdash; 29 June 2026, 08:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>79.25</td><td></td><td><tr><td><a href="/event/3173">Grey Cat The Flag 2026 Finals</a></td><td>27 June, 02:00 UTC &mdash; 28 June 2026, 02:00 UTC</td><td>Jeopardy</td><td>
+
+    Singapore
+
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3249">V1T CTF 2026</a></td><td>27 June, 02:00 UTC &mdash; 28 June 2026, 14:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>22.14</td><td></td><td><tr><td><a href="/event/3323">TraceBash CTF 2026</a></td><td>26 June, 09:30 UTC &mdash; 27 June 2026, 09:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3222">Google Capture The Flag 2026</a></td><td>19 June, 18:00 UTC &mdash; 21 June 2026, 18:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>88.82</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3297">RIFFHACK: Black Market Break-In</a></td><td>19 June, 12:00 UTC &mdash; 22 June 2026, 00:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Casual</b></td><td><tr><td><a href="/event/3246">BCACTF 7.0 [postponed]</a></td><td>19 June, 10:00 UTC &mdash; 22 June 2026, 10:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>65.05</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3299">Sieberrsec CTF 7.0</a></td><td>17 June, 01:00 UTC &mdash; 17 June 2026, 13:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.97</td><td></td><td><tr><td><a href="/event/3314">SCTF 2026</a></td><td>14 June, 01:00 UTC &mdash; 15 June 2026, 01:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>29.12</td><td></td><td><tr><td><a href="/event/3327">Operation Heist CTF 2026</a></td><td>13 June, 14:00 UTC &mdash; 14 June 2026, 14:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Casual</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3125">CyberSci Nationals 2025-2026</a></td><td>13 June, 13:00 UTC &mdash; 14 June 2026, 23:00 UTC</td><td>Jeopardy</td><td>
+
+    Ottawa, Canada
+
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3272">Anti-Slop CTF 2026</a></td><td>13 June, 01:00 UTC &mdash; 15 June 2026, 01:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.69</td><td></td><td><tr><td><a href="/event/3309">boroCTF 2026</a></td><td>12 June, 20:00 UTC &mdash; 16 June 2026, 03:59 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3332">CyberSibir2026</a></td><td>09 June, 03:30 UTC &mdash; 09 June 2026, 12:30 UTC</td><td>Attack-Defense</td><td>
+
+    Russia, Tomsk
+
+</td><td>0</td><td><b>Academic teams only</b></td><td><tr><td><a href="/event/3320">DalCTF 2026</a></td><td>06 June, 13:00 UTC &mdash; 07 June 2026, 15:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.90</td><td></td><td><tr><td><a href="/event/3109">SAS CTF 2026 Quals</a></td><td>06 June, 12:00 UTC &mdash; 07 June 2026, 12:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>31.00</td><td></td><td><tr><td><a href="/event/3308">ZeroDay Heist 2026</a></td><td>06 June, 06:30 UTC &mdash; 06 June 2026, 12:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.00</td><td></td><td><tr><td><a href="/event/3278">RPCA CTF 2026</a></td><td>05 June, 17:00 UTC &mdash; 08 June 2026, 17:00 UTC</td><td>Jeopardy</td><td>
+
+    Nakhon Pathom, Thailand
+
+</td><td>0</td><td></td><td><tr><td><a href="/event/3041">GPN CTF 2026</a></td><td>05 June, 10:00 UTC &mdash; 06 June 2026, 22:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>69.00</td><td></td><td><tr><td><a href="/event/3302">bhackari CTF 2026</a></td><td>30 May, 10:00 UTC &mdash; 31 May 2026, 10:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.75</td><td></td><td><tr><td><a href="/event/3220">Pwn2Play Open CTF</a></td><td>30 May, 09:00 UTC &mdash; 30 May 2026, 18:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Casual</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3243">WhiteHats TrojanCTF 2026</a></td><td>30 May, 09:00 UTC &mdash; 30 May 2026, 19:00 UTC</td><td>Jeopardy</td><td>
+
+    Netherlands, Eindhoven
+
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3313">HSE CTF 2026</a></td><td>30 May, 07:00 UTC &mdash; 30 May 2026, 13:00 UTC</td><td>Jeopardy</td><td>
+
+    Moscow, Russia
+
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3178">Grey Cat The Flag 2026 Qualifiers</a></td><td>30 May, 02:00 UTC &mdash; 31 May 2026, 02:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>47.50</td><td></td><td><tr><td><a href="/event/3247">BYUCTF 2026</a></td><td>30 May, 00:00 UTC &mdash; 31 May 2026, 00:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>53.29</td><td></td><td><tr><td><a href="/event/3209">THEM?!CTF 2026</a></td><td>29 May, 18:00 UTC &mdash; 31 May 2026, 18:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3174">Hardwear.io USA 2026 Hardware CTF</a></td><td>29 May, 17:00 UTC &mdash; 30 May 2026, 20:50 UTC</td><td>Jeopardy</td><td>
+
+    US, Santa Clara
+
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3301">HASBLCTF26</a></td><td>29 May, 17:00 UTC &mdash; 31 May 2026, 17:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3270">Hackअस्त्र</a></td><td>29 May, 10:15 UTC &mdash; 30 May 2026, 17:15 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3271">ZEROBREACH CTF</a></td><td>24 May, 04:30 UTC &mdash; 24 May 2026, 16:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3136">SecLeaf Q2 CTF 2026</a></td><td>23 May, 14:00 UTC &mdash; 24 May 2026, 14:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3264">Panther CTF 2026</a></td><td>23 May, 08:30 UTC &mdash; 24 May 2026, 08:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Academic teams only</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3284">Hack4Krak CTF 2026 - High School Edition</a></td><td>23 May, 08:00 UTC &mdash; 24 May 2026, 14:00 UTC</td><td>Jeopardy</td><td>
+
+    Poland, Cracow
+
+</td><td>0</td><td><b>School teams only</b></td><td><tr><td><a href="/event/3298">ZeroDayTM CTF</a></td><td>23 May, 07:00 UTC &mdash; 23 May 2026, 15:00 UTC</td><td>Jeopardy</td><td>
+
+    ICAM UVT, Timisoara, Romania
+
+</td><td>0</td><td><b>School teams only</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3205">DEF CON CTF Qualifier 2026</a></td><td>22 May, 21:00 UTC &mdash; 24 May 2026, 21:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>63.22</td><td></td><td><tr><td><a href="/event/3277">Hack for a Change 2026 May: UN SDG 1</a></td><td>19 May, 00:00 UTC &mdash; 21 May 2026, 23:59 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.53</td><td></td><td><tr><td><a href="/event/3269">0xV01D CTF 2026</a></td><td>18 May, 04:00 UTC &mdash; 20 May 2026, 04:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>19.48</td><td></td><td><tr><td><a href="/event/3214">UralCUP 2026 // Quals</a></td><td>17 May, 05:00 UTC &mdash; 17 May 2026, 13:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Academic teams only</b></td><td><tr><td><a href="/event/3132">DaVinciCTF 2026</a></td><td>16 May, 08:00 UTC &mdash; 16 May 2026, 17:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>32.59</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3195">TJCTF 2026</a></td><td>15 May, 16:00 UTC &mdash; 17 May 2026, 16:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>65.05</td><td></td><td><tr><td><a href="/event/3306">SamaraCTF 2026</a></td><td>15 May, 15:00 UTC &mdash; 17 May 2026, 15:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3276">NDIAS Automotive/IoT CTF</a></td><td>15 May, 09:00 UTC &mdash; 17 May 2026, 09:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3258">NorthSec 2026</a></td><td>15 May, 00:00 UTC &mdash; 17 May 2026, 23:00 UTC</td><td>Hack quest</td><td>
+
+    Canada, Montreal
+
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/2773">Midnight Sun CTF 2026 Quals</a></td><td>10 May, 13:00 UTC &mdash; 11 May 2026, 13:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>48.17</td><td></td><td><tr><td><a href="/event/3283">RAMunchers CTF</a></td><td>10 May, 08:00 UTC &mdash; 13 May 2026, 15:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>23.30</td><td></td><td><tr><td><a href="/event/3266">Azure Assassin Alliance CTF 2026</a></td><td>10 May, 01:00 UTC &mdash; 11 May 2026, 01:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>45.60</td><td></td><td><tr><td><a href="/event/3256">Hack2Dawn 2026</a></td><td>09 May, 19:00 UTC &mdash; 10 May 2026, 02:00 UTC</td><td>Hack quest</td><td>
+
+    México, Guadalajara
+
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3267">Maltego Community OSINT CTF</a></td><td>09 May, 14:00 UTC &mdash; 09 May 2026, 15:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3111">From Dusk Till Dawn Quals</a></td><td>09 May, 09:00 UTC &mdash; 10 May 2026, 09:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>20.14</td><td></td><td><tr><td><a href="/event/2927">BKISC CTF 2026</a></td><td>09 May, 01:00 UTC &mdash; 10 May 2026, 01:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3090">plfanzen CFT 2026</a></td><td>08 May, 16:00 UTC &mdash; 10 May 2026, 12:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3137">Break The Syntax CTF 2026</a></td><td>08 May, 16:00 UTC &mdash; 10 May 2026, 10:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>56.25</td><td></td><td><tr><td><a href="/event/3018">PHONIX VIPER NOVA CTF#2</a></td><td>08 May, 10:00 UTC &mdash; 10 May 2026, 17:00 UTC</td><td>Jeopardy</td><td>
+
+    Romania, Bucharest
+
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3186">THCon 2K26 CTF</a></td><td>07 May, 11:00 UTC &mdash; 08 May 2026, 11:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>34.67</td><td></td><td><tr><td><a href="/event/3241">RAZER CTF 2026</a></td><td>05 May, 06:30 UTC &mdash; 06 May 2026, 06:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3244">UniVsThreats 26 Finals CTF</a></td><td>02 May, 08:00 UTC &mdash; 03 May 2026, 15:00 UTC</td><td>Jeopardy</td><td>
+
+    Timisoara, Romania
+
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3177">KubSTU CTF</a></td><td>01 May, 07:00 UTC &mdash; 02 May 2026, 19:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.83</td><td></td><td><tr><td><a href="/event/3295">LakeCTF Finals 25-26</a></td><td>01 May, 07:00 UTC &mdash; 01 May 2026, 15:00 UTC</td><td>Jeopardy</td><td>
+
+    Switzerland, Lausanne
+
+</td><td>54.00</td><td></td><td><tr><td><a href="/event/3168">MCTF 5.0</a></td><td>30 April, 19:00 UTC &mdash; 02 May 2026, 07:00 UTC</td><td>Jeopardy</td><td>
+
+    Algeria, Algiers
+
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3192">CTF@AC26 - Quals</a></td><td>25 April, 07:00 UTC &mdash; 26 April 2026, 07:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.53</td><td></td><td><tr><td><a href="/event/3250">Alfa CTF 2026</a></td><td>25 April, 06:00 UTC &mdash; 25 April 2026, 18:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>21.67</td><td></td><td><tr><td><a href="/event/3199">HACKTHEON SEJONG 2026 Qualifier</a></td><td>25 April, 01:00 UTC &mdash; 25 April 2026, 08:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Academic teams only</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3056">UMDCTF 2026</a></td><td>24 April, 22:00 UTC &mdash; 26 April 2026, 22:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>85.48</td><td></td><td><tr><td><a href="/event/3141">TRX CTF 2026</a></td><td>24 April, 19:00 UTC &mdash; 26 April 2026, 19:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.16</td><td></td><td><tr><td><a href="/event/3213">CyberNSK-Finals</a></td><td>19 April, 12:00 UTC &mdash; 26 April 2026, 12:00 UTC</td><td>Attack-Defense</td><td>
+
+    Russian, Novosibirsk, Novosibirsk State Technical University
+
+</td><td>0</td><td><b>Casual</b></td><td><tr><td><a href="/event/3117">JerseyCTF VI</a></td><td>18 April, 19:00 UTC &mdash; 19 April 2026, 19:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>37.00</td><td></td><td><tr><td><a href="/event/3233">HiveCTF</a></td><td>18 April, 15:00 UTC &mdash; 18 April 2026, 23:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3143">K!nd4SUS CTF 2026</a></td><td>18 April, 12:00 UTC &mdash; 19 April 2026, 12:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>18.70</td><td></td><td><tr><td><a href="/event/3147">pingCTF 2026</a></td><td>18 April, 10:00 UTC &mdash; 19 April 2026, 10:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>46.20</td><td></td><td><tr><td><a href="/event/3153">b01lers CTF 2026</a></td><td>18 April, 00:00 UTC &mdash; 20 April 2026, 00:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>66.00</td><td></td><td><tr><td><a href="/event/3234">squ1rrel CTF 2026</a></td><td>17 April, 23:00 UTC &mdash; 19 April 2026, 06:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>32.47</td><td></td><td><tr><td><a href="/event/3235">BlueHens CTF 2026</a></td><td>17 April, 17:00 UTC &mdash; 19 April 2026, 05:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>44.77</td><td></td><td><tr><td><a href="/event/3156">CTF@CIT 2026</a></td><td>17 April, 16:00 UTC &mdash; 19 April 2026, 19:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>23.93</td><td></td><td><tr><td><a href="/event/3077">CPCTF 2026</a></td><td>17 April, 11:00 UTC &mdash; 19 April 2026, 11:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/3253">47CON CTF 2026</a></td><td>17 April, 08:00 UTC &mdash; 18 April 2026, 08:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Casual</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3252">ZeroSecure CTF 2026</a></td><td>17 April, 05:30 UTC &mdash; 18 April 2026, 05:30 UTC</td><td>Jeopardy</td><td></td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3240">WRECKCTF 2026</a></td><td>17 April, 04:00 UTC &mdash; 18 April 2026, 04:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3225">Incognito 7.0</a></td><td>14 April, 00:00 UTC &mdash; 15 April 2026, 00:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>16.56</td><td></td><td><tr><td><a href="/event/3202">PUTCyberDays CTF 2026</a></td><td>11 April, 10:00 UTC &mdash; 12 April 2026, 10:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.94</td><td></td><td><tr><td><a href="/event/3230">KAALCHAKRA CTF Finals</a></td><td>11 April, 04:30 UTC &mdash; 11 April 2026, 11:30 UTC</td><td>Jeopardy</td><td>
+
+    National Forensic Sciences University, Goa Campus
+
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3190">Cybersplash 2026</a></td><td>11 April, 02:00 UTC &mdash; 12 April 2026, 02:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/2937">UMassCTF 2026</a></td><td>10 April, 22:00 UTC &mdash; 12 April 2026, 22:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>65.95</td><td></td><td><tr><td><a href="/event/3102">DawgCTF 2026</a></td><td>10 April, 16:00 UTC &mdash; 12 April 2026, 16:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>66.64</td><td></td><td><tr><td><a href="/event/3211">Pàlcam Cybergames 2026</a></td><td>10 April, 10:00 UTC &mdash; 11 April 2026, 23:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Academic teams only</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3026">Dreamhack Invitational 2026</a></td><td>07 April, 00:00 UTC &mdash; 07 April 2026, 15:00 UTC</td><td>Jeopardy</td><td>
+
+    COEX, Seoul, South Korea
+
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/3187">Triada CTF &#39;26</a></td><td>06 April, 04:30 UTC &mdash; 07 April 2026, 04:30 UTC</td><td>Jeopardy</td><td>
+
+    Yenepoya (Deemed to be University), Bangalore Campus
+
+</td><td>0</td><td><b>Academic teams only</b></td><td><tr><td><a href="/event/3257">MIPT CTF Finals 2026</a></td><td>05 April, 07:00 UTC &mdash; 05 April 2026, 14:00 UTC</td><td>Attack-Defense</td><td>
+
+    Russia, Dolgoprudny, MIPT
+
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3042">SillyCTF 2</a></td><td>04 April, 12:00 UTC &mdash; 05 April 2026, 04:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3212">CRACK-IN 2.0</a></td><td>04 April, 04:30 UTC &mdash; 04 April 2026, 10:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/3226">THE UNI6CTF 1.0</a></td><td>04 April, 03:30 UTC &mdash; 04 April 2026, 09:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>23.00</td><td></td><td><tr><td><a href="/event/3206">NCTF 2026</a></td><td>04 April, 01:00 UTC &mdash; 05 April 2026, 13:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3175">CITEFLAG QUALS 2026</a></td><td>03 April, 22:00 UTC &mdash; 04 April 2026, 22:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3096">RITSEC CTF 2026</a></td><td>03 April, 21:00 UTC &mdash; 05 April 2026, 21:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>48.64</td><td></td><td><tr><td><a href="/event/3150">Kashi CTF 2026</a></td><td>03 April, 12:00 UTC &mdash; 04 April 2026, 12:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>21.78</td><td></td><td><tr><td><a href="/event/3197">VishwaCTF&#39;2026</a></td><td>03 April, 09:30 UTC &mdash; 05 April 2026, 09:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>36.00</td><td></td><td><tr><td><a href="/event/3227">gryphCTF</a></td><td>02 April, 18:30 UTC &mdash; 03 April 2026, 00:30 UTC</td><td>Jeopardy</td><td>
+
+    University of Guelph – Reynolds Building (REYN 0002), Guelph, ON, Canada
+
+</td><td>0</td><td><b>Casual</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3184">Hack for a Change 2026 March: UN SDG 3</a></td><td>31 March, 00:00 UTC &mdash; 01 April 2026, 23:59 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.24</td><td></td><td><tr><td><a href="/event/3057">GLOBAL CYBER GAMES: Women&#39;s Attack and Defense Edition @Wicked6</a></td><td>29 March, 12:00 UTC &mdash; 29 March 2026, 21:00 UTC</td><td>Attack-Defense</td><td>
+On-line
+</td><td>0</td><td><b>Casual</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3155">CU school CTF 2026</a></td><td>29 March, 07:00 UTC &mdash; 29 March 2026, 15:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>School teams only</b></td><td><tr><td><a href="/event/3223">MythX: An Endgame Protocol CTF</a></td><td>28 March, 16:30 UTC &mdash; 29 March 2026, 16:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Academic teams only</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3045">VolgaCTF 2026 Qualifier</a></td><td>28 March, 13:00 UTC &mdash; 29 March 2026, 13:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>38.67</td><td></td><td><tr><td><a href="/event/3084">Flag Wars</a></td><td>28 March, 09:00 UTC &mdash; 28 March 2026, 19:00 UTC</td><td>Jeopardy</td><td>
+
+    Godesberger Allee 125, Bonn - Germany
+
+</td><td>0</td><td></td><td><tr><td><a href="/event/3183">KAALCHAKRA CTF Qualifiers</a></td><td>28 March, 09:00 UTC &mdash; 29 March 2026, 09:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3200">NovruzCTF 2026</a></td><td>28 March, 05:00 UTC &mdash; 29 March 2026, 05:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Casual</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3131">Codegate CTF 2026 Preliminary</a></td><td>28 March, 00:00 UTC &mdash; 28 March 2026, 15:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>62.00</td><td></td><td><tr><td><a href="/event/3039">HackDay 2026 - Finals</a></td><td>27 March, 18:00 UTC &mdash; 28 March 2026, 18:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Academic teams only</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/2983">KalmarCTF 2026</a></td><td>27 March, 17:00 UTC &mdash; 29 March 2026, 17:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>49.97</td><td></td><td><tr><td><a href="/event/3130">TexSAW 2026</a></td><td>27 March, 12:00 UTC &mdash; 29 March 2026, 12:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>41.59</td><td></td><td><tr><td><a href="/event/3188">Stranger&#39;s CTF - Techtrix &#39;26</a></td><td>26 March, 07:30 UTC &mdash; 27 March 2026, 07:30 UTC</td><td>Jeopardy</td><td></td><td>0.00</td><td></td><td><tr><td><a href="/event/3204">AITU CTF 2026 Quals</a></td><td>23 March, 07:00 UTC &mdash; 23 March 2026, 19:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.59</td><td></td><td><tr><td><a href="/event/3163">Redfox CTF 2026</a></td><td>21 March, 12:30 UTC &mdash; 22 March 2026, 12:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/2987">Undutmaning 2026</a></td><td>21 March, 11:00 UTC &mdash; 21 March 2026, 19:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>33.00</td><td></td><td><tr><td><a href="/event/3063">ZeroDays CTF 2026</a></td><td>21 March, 10:00 UTC &mdash; 21 March 2026, 17:00 UTC</td><td>Jeopardy</td><td>
+
+    Dublin, Ireland
+
+</td><td>0</td><td></td><td><tr><td><a href="/event/3203">PolyPwnCTF 2026</a></td><td>21 March, 10:00 UTC &mdash; 21 March 2026, 21:00 UTC</td><td>Jeopardy</td><td>
+
+    Polytechnique Montréal
+
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3108">BSidesSF CTF 2026</a></td><td>20 March, 23:00 UTC &mdash; 22 March 2026, 23:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3095">TAMUctf 2026</a></td><td>20 March, 22:00 UTC &mdash; 22 March 2026, 22:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>76.22</td><td></td><td><tr><td><a href="/event/3146">Insomni&#39;hack 2026</a></td><td>20 March, 17:00 UTC &mdash; 21 March 2026, 04:00 UTC</td><td>Jeopardy</td><td>
+
+    SwissTech Convention Center / Lausanne / Switzerland
+
+</td><td>24.14</td><td></td><td><tr><td><a href="/event/3196">m0leCon CTF 2026</a></td><td>19 March, 16:00 UTC &mdash; 20 March 2026, 16:00 UTC</td><td>Jeopardy</td><td>
+
+    Italy, Torino
+
+</td><td>75.00</td><td></td><td><tr><td><a href="/event/3189">CyberCup Indian Ocean 2026 – Team Edition | Step2</a></td><td>18 March, 05:00 UTC &mdash; 18 March 2026, 14:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Academic teams only</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3165">Lag N Crash 6.0</a></td><td>16 March, 04:00 UTC &mdash; 17 March 2026, 10:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3162">MIPT CTF Quals 2026</a></td><td>14 March, 09:00 UTC &mdash; 15 March 2026, 09:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.58</td><td></td><td><tr><td><a href="/event/3182">Dark ctf</a></td><td>14 March, 06:30 UTC &mdash; 15 March 2026, 06:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Casual</b></td><td><tr><td><a href="/event/3091">tkbctf5</a></td><td>14 March, 05:00 UTC &mdash; 15 March 2026, 05:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3161">SUCTF 2026</a></td><td>14 March, 01:00 UTC &mdash; 16 March 2026, 01:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.82</td><td></td><td><tr><td><a href="/event/3134">Goldrush Gauntlet 2026</a></td><td>13 March, 22:00 UTC &mdash; 14 March 2026, 22:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/3105">Midnight Flag CTF - EXECUTION</a></td><td>13 March, 20:00 UTC &mdash; 15 March 2026, 20:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.50</td><td></td><td><tr><td><a href="/event/3166">PsychCTF 2026</a></td><td>13 March, 18:30 UTC &mdash; 15 March 2026, 18:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.50</td><td></td><td><tr><td><a href="/event/3191">RedShift.ZeroPlusCTF-3</a></td><td>13 March, 12:00 UTC &mdash; 15 March 2026, 12:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3133">UTCTF 2026</a></td><td>13 March, 00:23 UTC &mdash; 15 March 2026, 00:23 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>35.20</td><td></td><td><tr><td><a href="/event/3179">Espilon CTF 2026</a></td><td>11 March, 12:00 UTC &mdash; 26 March 2026, 00:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/3170">ShellCTF</a></td><td>08 March, 06:30 UTC &mdash; 08 March 2026, 10:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3110">DiceCTF 2026 Quals</a></td><td>07 March, 17:00 UTC &mdash; 08 March 2026, 17:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>100.00</td><td></td><td><tr><td><a href="/event/3027">@Hack 2026</a></td><td>07 March, 14:00 UTC &mdash; 08 March 2026, 19:00 UTC</td><td>Jeopardy</td><td>
+
+    Montreal, Canada
+
+</td><td>0</td><td><b>Academic teams only</b></td><td><tr><td><a href="/event/3101">CodeVinci CTF 2026</a></td><td>07 March, 14:00 UTC &mdash; 07 March 2026, 19:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>18.57</td><td></td><td><tr><td><a href="/event/3073">upCTF 2026</a></td><td>07 March, 09:00 UTC &mdash; 09 March 2026, 09:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.42</td><td></td><td><tr><td><a href="/event/3129">AxiomCTF 2026 Quals</a></td><td>07 March, 07:00 UTC &mdash; 08 March 2026, 19:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>23.74</td><td></td><td><tr><td><a href="/event/3171">ApoorvCTF 2026</a></td><td>06 March, 21:00 UTC &mdash; 08 March 2026, 21:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.10</td><td></td><td><tr><td><a href="/event/3176">APort Vault CTF - Can You Move the Money?</a></td><td>06 March, 12:00 UTC &mdash; 11 March 2026, 12:00 UTC</td><td>Hack quest</td><td>
+On-line
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3172">UNbreakable International 2026 - Team Phase</a></td><td>06 March, 09:00 UTC &mdash; 08 March 2026, 09:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3185">CryptoNite CTF 2026</a></td><td>06 March, 05:30 UTC &mdash; 07 March 2026, 11:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>22.11</td><td></td><td><tr><td><a href="/event/3152">ARA 7.0 CTF</a></td><td>05 March, 09:00 UTC &mdash; 06 March 2026, 09:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Academic teams only</b></td><td><tr><td><a href="/event/3167">KI CTF 2026</a></td><td>03 March, 03:30 UTC &mdash; 03 March 2026, 11:30 UTC</td><td>Jeopardy</td><td>
+
+    Kumaraguru College of Technology, Coimbatore
+
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/2907">CSCG 2026</a></td><td>01 March, 17:00 UTC &mdash; 01 May 2026, 16:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/3160">Winja CTF | Nullcon Goa 2026</a></td><td>01 March, 04:30 UTC &mdash; 01 March 2026, 10:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>1.00</td><td></td><td><tr><td><a href="/event/3142">CyberGame 2026</a></td><td>28 Feb., 23:00 UTC &mdash; 09 May 2026, 21:59 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/3043">Srdnlen CTF 2026 Quals</a></td><td>28 Feb., 18:00 UTC &mdash; 01 March 2026, 18:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>34.76</td><td></td><td><tr><td><a href="/event/3123">CREST CTF</a></td><td>28 Feb., 04:30 UTC &mdash; 28 Feb. 2026, 12:30 UTC</td><td>Jeopardy</td><td>
+
+    India, Pune
+
+</td><td>6.00</td><td></td><td><tr><td><a href="/event/3106">SECCON CTF 14 International Finals</a></td><td>28 Feb., 01:00 UTC &mdash; 01 March 2026, 09:00 UTC</td><td>Jeopardy</td><td>
+
+    Tokyo, Japan
+
+</td><td>37.00</td><td></td><td><tr><td><a href="/event/3107">SECCON CTF 14 Domestic Finals</a></td><td>28 Feb., 01:00 UTC &mdash; 01 March 2026, 09:00 UTC</td><td>Jeopardy</td><td>
+
+    Tokyo, Japan
+
+</td><td>37.00</td><td></td><td><tr><td><a href="/event/3127">EHAX CTF 2026</a></td><td>27 Feb., 18:30 UTC &mdash; 01 March 2026, 06:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>22.67</td><td></td><td><tr><td><a href="/event/3092">UniVsThreats 26 Quals CTF</a></td><td>27 Feb., 08:00 UTC &mdash; 28 Feb. 2026, 08:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>18.35</td><td></td><td><tr><td><a href="/event/3046">BearcatCTF 2026 - Setting Sail</a></td><td>21 Feb., 17:00 UTC &mdash; 22 Feb. 2026, 17:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>23.89</td><td></td><td><tr><td><a href="/event/3076">EPIHACK CTF: L&#39;arène numérique</a></td><td>21 Feb., 09:00 UTC &mdash; 21 Feb. 2026, 17:00 UTC</td><td>Jeopardy</td><td>
+
+    Benin, Cotonou
+
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/3078">Eschaton CTF 2026 Finals</a></td><td>21 Feb., 04:30 UTC &mdash; 21 Feb. 2026, 14:30 UTC</td><td>Attack-Defense</td><td>
+
+    India, Kochi
+
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3098">Batman&#39;s Kitchen CTF 2026</a></td><td>21 Feb., 01:30 UTC &mdash; 23 Feb. 2026, 01:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.24</td><td></td><td><tr><td><a href="/event/3088">THJCC CTF 2026</a></td><td>21 Feb., 00:00 UTC &mdash; 22 Feb. 2026, 13:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3122">BITSCTF 2026</a></td><td>20 Feb., 05:30 UTC &mdash; 22 Feb. 2026, 05:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.54</td><td></td><td><tr><td><a href="/event/3135">RamadanCTF 2026</a></td><td>18 Feb., 00:00 UTC &mdash; 17 March 2026, 00:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><tr><td><a href="/event/3086">TaipanByte’s Chart CTF</a></td><td>14 Feb., 10:00 UTC &mdash; 15 Feb. 2026, 10:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.23</td><td></td><td><tr><td><a href="/event/3075">Breach Point CTF - Siege Of Troy(Online Round)</a></td><td>14 Feb., 07:30 UTC &mdash; 15 Feb. 2026, 07:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><tr><td><a href="/event/3014">Crackmes.one Reverse Engineering CTF 2026</a></td><td>14 Feb., 00:00 UTC &mdash; 21 Feb. 2026, 00:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/3081">0xFUN CTF 2026</a></td><td>12 Feb., 18:00 UTC &mdash; 14 Feb. 2026, 18:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>17.74</td><td></td><td><tr><td><a href="/event/3074">EncipherX CTF 4.0</a></td><td>07 Feb., 11:00 UTC &mdash; 08 Feb. 2026, 11:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3067">DUCKERZ CTF 2026</a></td><td>07 Feb., 09:00 UTC &mdash; 08 Feb. 2026, 09:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>23.20</td><td></td><td><tr><td><a href="/event/3066">Nullcon Goa HackIM 2026 CTF</a></td><td>07 Feb., 08:30 UTC &mdash; 08 Feb. 2026, 08:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.72</td><td></td><td><tr><td><a href="/event/3015">LA CTF 2026</a></td><td>07 Feb., 02:00 UTC &mdash; 09 Feb. 2026, 02:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>53.58</td><td></td><td><tr><td><a href="/event/3058">Pragyan CTF 2026</a></td><td>06 Feb., 13:00 UTC &mdash; 08 Feb. 2026, 13:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>1.84</td><td></td><td><tr><td><a href="/event/2767">PascalCTF 2026</a></td><td>31 Jan., 08:00 UTC &mdash; 01 Feb. 2026, 08:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>24.00</td><td></td><td><tr><td><a href="/event/3072">Eschaton CTF 2026 Quals</a></td><td>31 Jan., 04:30 UTC &mdash; 01 Feb. 2026, 04:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>23.42</td><td></td><td><tr><td><a href="/event/3114">RCS CTF 26</a></td><td>30 Jan., 19:00 UTC &mdash; 31 Jan. 2026, 14:00 UTC</td><td>Jeopardy</td><td>
+
+    Lovely Professional University, Jalandhar
+
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3068">ATC Winter Vibes Community CTF 2.0</a></td><td>30 Jan., 14:00 UTC &mdash; 31 Jan. 2026, 14:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/2941">Jeanne d&#39;Hack CTF 2026 | 3ème Édition</a></td><td>30 Jan., 09:00 UTC &mdash; 30 Jan. 2026, 18:00 UTC</td><td>Jeopardy</td><td>
+
+    France, Rouen
+
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3099">ASCF CTF</a></td><td>30 Jan., 09:00 UTC &mdash; 31 Jan. 2026, 09:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/3083">Hack for a Change 2026 January: UN SDG 15</a></td><td>30 Jan., 00:00 UTC &mdash; 02 Feb. 2026, 23:59 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>14.38</td><td></td><td><tr><td><a href="/event/3080">CyberQuest 26</a></td><td>28 Jan., 03:30 UTC &mdash; 28 Jan. 2026, 11:00 UTC</td><td>Jeopardy</td><td>
+
+    Dr. N.G.P. Institute Of Technology, Kalapatti Road, Coimbatore, Tamil Nadu, India - 641048
+
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3087">Fluid Attacks&#39; CTF 2026-1</a></td><td>24 Jan., 13:00 UTC &mdash; 25 Jan. 2026, 13:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/3060">VSL CTF 2026</a></td><td>24 Jan., 08:00 UTC &mdash; 25 Jan. 2026, 08:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>23.60</td><td></td><td><tr><td><a href="/event/3071">LilacCTF 2026</a></td><td>24 Jan., 01:00 UTC &mdash; 26 Jan. 2026, 01:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>25.00</td><td></td><td><tr><td><a href="/event/3025">Dreamhack Invitational Quals 2026</a></td><td>24 Jan., 00:00 UTC &mdash; 25 Jan. 2026, 00:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/2945">Säkerhets-SM Quals 2026</a></td><td>23 Jan., 19:00 UTC &mdash; 25 Jan. 2026, 19:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>School teams only</b></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3038">HackDay 2026 - Qualifications</a></td><td>23 Jan., 19:00 UTC &mdash; 25 Jan. 2026, 19:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td><b>Academic teams only</b></td><td><tr><td><a href="/event/3024">0xL4ugh CTF v5</a></td><td>23 Jan., 13:00 UTC &mdash; 25 Jan. 2026, 13:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>29.19</td><td></td><td><tr><td><a href="/event/3079">MetaCTF January 2026 Flash CTF</a></td><td>22 Jan., 22:00 UTC &mdash; 23 Jan. 2026, 01:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/3053">KnightCTF 2026</a></td><td>20 Jan., 15:00 UTC &mdash; 21 Jan. 2026, 15:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>22.21</td><td></td><td><tr><td><a href="/event/2986">SWIMMER OSINT CTF</a></td><td>17 Jan., 03:10 UTC &mdash; 17 Jan. 2026, 15:10 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0.00</td><td></td><td><tr><td><a href="/event/3089">CyberCup Indian Ocean</a></td><td>16 Jan., 16:00 UTC &mdash; 18 Jan. 2026, 16:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/2916">2026 Embedded Capture the Flag</a></td><td>14 Jan., 12:00 UTC &mdash; 15 April 2026, 12:00 UTC</td><td>Attack-Defense</td><td>
+On-line
+</td><td>0</td><td></td><td><a href="/for-organizers/">missing the scoreboard</a><tr><td><a href="/event/3021">New Year CTF 2026</a></td><td>10 Jan., 09:00 UTC &mdash; 12 Jan. 2026, 09:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>23.42</td><td></td><td><tr><td><a href="/event/3064">SCPCTF</a></td><td>10 Jan., 03:30 UTC &mdash; 12 Jan. 2026, 03:30 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>0</td><td></td><td><b>Individual</b><tr><td><a href="/event/2969">UofTCTF 2026</a></td><td>10 Jan., 00:00 UTC &mdash; 12 Jan. 2026, 00:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>33.49</td><td></td><td><tr><td><a href="/event/2981">Scarlet CTF 2026</a></td><td>09 Jan., 00:00 UTC &mdash; 12 Jan. 2026, 00:00 UTC</td><td>Jeopardy</td><td>
+On-line
+</td><td>23.42</td><td></td><td></td></tr></table>
+
+
+<script type="text/javascript">
+$(function() {
+    $('#weight_voting').tooltip({ placement : 'right', title: 'Weight voting in progress'});
+});
+</script>
+
+
+        <div class="modal hide fade" id="loginModal">
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">x</button>
+        <h3>Sign in with</h3>
+    </div>
+    <div class="modal-body" align="center">
+        <a href="/login/google-oauth2/?next=/event/list/"><img src="/static/images/google.svg" class="icon_logon" alt="Enter using Google" /></a>
+        <a href="/login/twitter/?next=/event/list/"><img src="/static/images/twitter.svg"  class="icon_logon" alt="Enter using Twitter" /></a>
+        <a href="/login/facebook/?next=/event/list/"><img src="/static/images/facebook.svg"  class="icon_logon" alt="Enter using Facebook" /></a>
+        <a href="/login/github/?next=/event/list/"><img src="/static/images/github.svg"  class="icon_logon" alt="Enter using Github" /></a>
+        <p><a href="/amnesia">I don't remember</a></p>
+    </div>
+    </div>
+
+
+  <div class="row">
+    <div class="span4">
+    </div>
+  </div>
+
+    </div>
+
+
+    <footer class="footer">
+    <div class="container">
+      <p class="pull-right"><a href="//twitter.com/CTFtime" class="twitter-follow-button" data-show-count="false">Follow @CTFtime</a> </p>
+      <p>&copy; 2012 &mdash; 2026 CTFtime team.</p><p>All tasks and writeups are copyrighted by their respective authors. <a href="/privacy">Privacy Policy</a>.<br/>
+    Hosting provided by <a href="http://www.transdata.no/">Transdata</a>.</p>
+    </div>
+    </footer>
+
+
+    <script src="/static/bootstrap/js/bootstrap-transition.js"></script>
+    <script src="/static/bootstrap/js/bootstrap-alert.js"></script>
+    <script src="/static/bootstrap/js/bootstrap-modal.js"></script>
+    <script src="/static/bootstrap/js/bootstrap-dropdown.js"></script>
+<!--    <script src="/static/bootstrap/js/bootstrap-scrollspy.js"></script>-->
+    <script src="/static/bootstrap/js/bootstrap-tab.js"></script>
+    <script src="/static/bootstrap/js/bootstrap-tooltip.js"></script>
+    <script src="/static/bootstrap/js/bootstrap-popover.js"></script>
+    <script src="/static/bootstrap/js/bootstrap-button.js"></script>
+    <script src="/static/bootstrap/js/bootstrap-collapse.js"></script>
+<!--    <script src="/static/bootstrap/js/bootstrap-carousel.js"></script>-->
+    <script src="/static/js/typeahead_f.js"></script>
+
+    <script type="text/javascript">
+        $('.dropdown-toggle').dropdown();
+
+        window.addEventListener("load", function () {
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#efefef",
+                        "text": "#404040"
+                    },
+                    "button": {
+                        "background": "#fb0505"
+                    }
+                },
+                "position": "bottom-right",
+                "content": {
+                    "message": "This website uses cookies to manage authentication, for analytics, and other functions.",
+                    "link": "Privacy policy",
+                    "href": "https://ctftime.org/privacy"
+                }
+            })
+        });
+    </script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter14236711 = new Ya.Metrika({id:14236711, enableAll: true, webvisor:true});
+        } catch(e) {}
+    });
+    
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/14236711" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-559211-27']);
+  _gaq.push(['_setDomainName', 'ctftime.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"f41de5a188974826ab97e9aa03b6a713","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

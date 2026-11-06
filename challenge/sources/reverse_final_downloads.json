@@ -1,0 +1,26 @@
+[
+  {
+    "status": "downloaded",
+    "bytes": 50331648,
+    "sha256": "d518f4887fe5b140597ac0b0a018caf40823e76066194757e3f2c8f6812b1e54",
+    "title": "SU_MvsicPlayer",
+    "local": "虚拟化\\SUCTF_2026\\SU_MvsicPlayer\\attachments\\attachments\\SU_MusicPlayer.zip.part-aa",
+    "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/attachments/SU_MusicPlayer.zip.part-aa"
+  },
+  {
+    "status": "downloaded",
+    "bytes": 101246014,
+    "sha256": "bad2182d24a1369f90eb5f9a7293bf13269299e5d7efe68ed1ccfaa6d4573927",
+    "title": "BrainfOok",
+    "local": "虚拟化\\SCTF_2026\\BrainfOok\\attachments\\BrainfOok.zip",
+    "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/BrainfOok/BrainfOok.zip"
+  },
+  {
+    "status": "downloaded",
+    "bytes": 138125965,
+    "sha256": "812fe49b1e9217171d2fdeac616d519755161c2b80d135b30ff23abd029f6986",
+    "title": "Pay For 2048",
+    "local": "逆向\\NCTF_2026\\Pay For 2048\\attachments\\pay-for-2048-attachment.zip",
+    "url": "https://drive.usercontent.google.com/download?id=1tNrpgo4SzocbQCowDM3nIrVEMX4Lfypc&export=download&confirm=t"
+  }
+]

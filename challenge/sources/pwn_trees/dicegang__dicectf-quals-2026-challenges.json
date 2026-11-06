@@ -1,0 +1,2896 @@
+{
+  "sha": "308891d205d5d16329b0c0e888f430f73b35d54b",
+  "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/308891d205d5d16329b0c0e888f430f73b35d54b",
+  "tree": [
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a9d9ac67f3b7d82806a816db828e905eaef67836",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/a9d9ac67f3b7d82806a816db828e905eaef67836"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5c5b1b7f69f0b1971f5d7c298adb7fc58a9a665e",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/5c5b1b7f69f0b1971f5d7c298adb7fc58a9a665e"
+    },
+    {
+      "path": ".github/workflows/deploy.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c769c36d720b270d9ca812c8f5fbff841e6679ab",
+      "size": 1954,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/c769c36d720b270d9ca812c8f5fbff841e6679ab"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ad25db4bd1d86c452db3f9602ccdbe172438f52",
+      "size": 34523,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/0ad25db4bd1d86c452db3f9602ccdbe172438f52"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "999dda17ffd627b2e2e3bea4f1c209c89624f259",
+      "size": 2165,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/999dda17ffd627b2e2e3bea4f1c209c89624f259"
+    },
+    {
+      "path": "crypto",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fa24dcf762df0b7a597b27d9dde3db4da1308962",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/fa24dcf762df0b7a597b27d9dde3db4da1308962"
+    },
+    {
+      "path": "crypto/carry-the-flame",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9142eefe39f082760981815954c7288c4bb22e9d",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/9142eefe39f082760981815954c7288c4bb22e9d"
+    },
+    {
+      "path": "crypto/carry-the-flame/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46a7ebb65682e78a1591eef7f3600ea11f3ad1dc",
+      "size": 392,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/46a7ebb65682e78a1591eef7f3600ea11f3ad1dc"
+    },
+    {
+      "path": "crypto/carry-the-flame/challenge.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2295337c3746e3b929e40cbbea00a134c8e1697",
+      "size": 3166,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/f2295337c3746e3b929e40cbbea00a134c8e1697"
+    },
+    {
+      "path": "crypto/carry-the-flame/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "63b5afa949371e38a3ea5e884c8df35325542b14",
+      "size": 34,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/63b5afa949371e38a3ea5e884c8df35325542b14"
+    },
+    {
+      "path": "crypto/carry-the-flame/kona.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f86bc15e14d7ae4608d0ad7a6e8cfb7ea89715f",
+      "size": 2687,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/6f86bc15e14d7ae4608d0ad7a6e8cfb7ea89715f"
+    },
+    {
+      "path": "crypto/dot",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "909ec481ffd98c5d1c974cb054687167cd8e1c4a",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/909ec481ffd98c5d1c974cb054687167cd8e1c4a"
+    },
+    {
+      "path": "crypto/dot/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "52d8936acb4f4ea430765e8638e0c29c20e5af94",
+      "size": 464,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/52d8936acb4f4ea430765e8638e0c29c20e5af94"
+    },
+    {
+      "path": "crypto/dot/add.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "723170541bf0e11ea44c08b9c3ee16dfa9fcf745",
+      "size": 1280,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/723170541bf0e11ea44c08b9c3ee16dfa9fcf745"
+    },
+    {
+      "path": "crypto/dot/circuit.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6fadfe7e76b8f2c8fd1b51a86bb61419b224512f",
+      "size": 2571,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/6fadfe7e76b8f2c8fd1b51a86bb61419b224512f"
+    },
+    {
+      "path": "crypto/dot/crs.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf46b8d6b8fda3839dc80b86eb077bc740c189f3",
+      "size": 6699330,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/bf46b8d6b8fda3839dc80b86eb077bc740c189f3"
+    },
+    {
+      "path": "crypto/dot/dpp.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2eb6d3bd3c27e80a8e5b237612fa153fc7387b55",
+      "size": 3322,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/2eb6d3bd3c27e80a8e5b237612fa153fc7387b55"
+    },
+    {
+      "path": "crypto/dot/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb291513935bee88c93bb21ac64cbeb028eb7a07",
+      "size": 46,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/cb291513935bee88c93bb21ac64cbeb028eb7a07"
+    },
+    {
+      "path": "crypto/dot/kona.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7ef8b8deb563b4d35ba3de4f513cb2ae2ab0262",
+      "size": 1848,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/e7ef8b8deb563b4d35ba3de4f513cb2ae2ab0262"
+    },
+    {
+      "path": "crypto/dot/server.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "43d40a4bdce7a599fe1a169c9ccd328c1f4bac3e",
+      "size": 1111,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/43d40a4bdce7a599fe1a169c9ccd328c1f4bac3e"
+    },
+    {
+      "path": "crypto/dot/setup.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "830a56475310e1f7beb5747d3b3a0ab2f476fb86",
+      "size": 200,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/830a56475310e1f7beb5747d3b3a0ab2f476fb86"
+    },
+    {
+      "path": "crypto/dot/snarg.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "045085e470ec159db650fee5f85905092e4683cf",
+      "size": 2672,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/045085e470ec159db650fee5f85905092e4683cf"
+    },
+    {
+      "path": "crypto/dot/vk.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8e132942bdb7ab493df6937d77c27b0db7bcc246",
+      "size": 873586,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/8e132942bdb7ab493df6937d77c27b0db7bcc246"
+    },
+    {
+      "path": "crypto/plane-or-exchange",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a853e0c79da51f74cc7f362242746e981b724130",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/a853e0c79da51f74cc7f362242746e981b724130"
+    },
+    {
+      "path": "crypto/plane-or-exchange/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b5e1242a898c6a64245a4a3b52f66299786f74e",
+      "size": 49,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/6b5e1242a898c6a64245a4a3b52f66299786f74e"
+    },
+    {
+      "path": "crypto/plane-or-exchange/kona.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0efa5bf34bb8e499821d1f08662c7107d6fe2ee0",
+      "size": 384,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/0efa5bf34bb8e499821d1f08662c7107d6fe2ee0"
+    },
+    {
+      "path": "crypto/plane-or-exchange/protocol.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "384184aed3049c85ecb452e510e48a054a79fa53",
+      "size": 4138,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/384184aed3049c85ecb452e510e48a054a79fa53"
+    },
+    {
+      "path": "crypto/plane-or-exchange/public.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2a4dc2d3b720c16a554ea66d712ade5f0076d769",
+      "size": 660,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/2a4dc2d3b720c16a554ea66d712ade5f0076d769"
+    },
+    {
+      "path": "crypto/plane-or-exchange/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e963d26b07ecee5789dccc64d7f4c97314c70525",
+      "size": 1731,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/e963d26b07ecee5789dccc64d7f4c97314c70525"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e049f2ff6ef32c2eafc2396b2548ea457a4571f1",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/e049f2ff6ef32c2eafc2396b2548ea457a4571f1"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/.dockerignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "623df2aedced0f1aa4b59a2e3c508d11edce5af0",
+      "size": 14,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/623df2aedced0f1aa4b59a2e3c508d11edce5af0"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e479fb091992b0938643635b57a5c0b109096a3",
+      "size": 1862,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/3e479fb091992b0938643635b57a5c0b109096a3"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "73cf0dc8b9a70c180547158e9eae0144c016859f",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/73cf0dc8b9a70c180547158e9eae0144c016859f"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c81dd390c11792f45e404eb129e5eb80585d28a",
+      "size": 35,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/2c81dd390c11792f45e404eb129e5eb80585d28a"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/build-circuits.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "8d23d17ba33ed56f8fb6073d60f1d5bb83620fd9",
+      "size": 1068,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/8d23d17ba33ed56f8fb6073d60f1d5bb83620fd9"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "749137b00b5215fe06e320dd137f48206c2fab63",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/749137b00b5215fe06e320dd137f48206c2fab63"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/MerkleTree.circom",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16580e1ecbef2af30966a48c8c6ed2eac03357f1",
+      "size": 951,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/16580e1ecbef2af30966a48c8c6ed2eac03357f1"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/Proposal.circom",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fde5e6cc042057bab8e06f48659dd2f8345b7a6d",
+      "size": 839,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/fde5e6cc042057bab8e06f48659dd2f8345b7a6d"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/Proposal.zkey",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d43b5268d2f13de67d0af386e53c53672c95c5d",
+      "size": 2221784,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/7d43b5268d2f13de67d0af386e53c53672c95c5d"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/Tally.circom",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a45cfc5c35764979719a43bb682fa88d8571779",
+      "size": 2070,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/0a45cfc5c35764979719a43bb682fa88d8571779"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/Tally.zkey",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "387bfcbcacb1912740fb221fc348c37b4c0ebca6",
+      "size": 5855012,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/387bfcbcacb1912740fb221fc348c37b4c0ebca6"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/Vote.circom",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76e63aee9be26163db59e316384ddc6ded76e98e",
+      "size": 2602,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/76e63aee9be26163db59e316384ddc6ded76e98e"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/Vote.zkey",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "27d0390e8289b29a4abaca2f8f77c4522d0b3caa",
+      "size": 5831684,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/27d0390e8289b29a4abaca2f8f77c4522d0b3caa"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/generated",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1cd900dc11f1f1dd11c97cf100099904543f963a",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/1cd900dc11f1f1dd11c97cf100099904543f963a"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/generated/ProposalVerifier.sol",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f0791136919dcd6355fc6f339d0672b8f7cfd98",
+      "size": 7447,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/0f0791136919dcd6355fc6f339d0672b8f7cfd98"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/generated/Proposal_js",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "63900b2bdf9bc662d752f7b47e6d8bfa1b2c2981",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/63900b2bdf9bc662d752f7b47e6d8bfa1b2c2981"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/generated/Proposal_js/Proposal.wasm",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6541a5811c6874848f7a56f1321d38dca4d7fa37",
+      "size": 1773238,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/6541a5811c6874848f7a56f1321d38dca4d7fa37"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/generated/Proposal_js/generate_witness.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a059e66dfb5d32e90b602791babf29d6c50e05d1",
+      "size": 697,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/a059e66dfb5d32e90b602791babf29d6c50e05d1"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/generated/Proposal_js/witness_calculator.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f16502b7e1fd164d3b13532d2e601a606909ca8",
+      "size": 10356,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/4f16502b7e1fd164d3b13532d2e601a606909ca8"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/generated/TallyVerifier.sol",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "71f7e194d516f4ad67337a5544979f8faf37b53f",
+      "size": 9774,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/71f7e194d516f4ad67337a5544979f8faf37b53f"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/generated/Tally_js",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0e7341b727151b587972cf65ef86b81bbc02632a",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/0e7341b727151b587972cf65ef86b81bbc02632a"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/generated/Tally_js/Tally.wasm",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c68823327af06f64d8667b85e51b043023aa9f0",
+      "size": 119797,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/6c68823327af06f64d8667b85e51b043023aa9f0"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/generated/Tally_js/generate_witness.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a059e66dfb5d32e90b602791babf29d6c50e05d1",
+      "size": 697,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/a059e66dfb5d32e90b602791babf29d6c50e05d1"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/generated/Tally_js/witness_calculator.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f16502b7e1fd164d3b13532d2e601a606909ca8",
+      "size": 10356,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/4f16502b7e1fd164d3b13532d2e601a606909ca8"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/generated/VoteVerifier.sol",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05ea9ef356a18d6b5286dc252ee493b1d7a7fa90",
+      "size": 10171,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/05ea9ef356a18d6b5286dc252ee493b1d7a7fa90"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/generated/Vote_js",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fa94b34448542a05e899c0b2e67c68aadc25e22a",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/fa94b34448542a05e899c0b2e67c68aadc25e22a"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/generated/Vote_js/Vote.wasm",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54a4c6ba7d82866e7dc43814b3b5906050fb0e3c",
+      "size": 1877118,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/54a4c6ba7d82866e7dc43814b3b5906050fb0e3c"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/generated/Vote_js/generate_witness.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a059e66dfb5d32e90b602791babf29d6c50e05d1",
+      "size": 697,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/a059e66dfb5d32e90b602791babf29d6c50e05d1"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/circuits/generated/Vote_js/witness_calculator.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f16502b7e1fd164d3b13532d2e601a606909ca8",
+      "size": 10356,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/4f16502b7e1fd164d3b13532d2e601a606909ca8"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/foundry.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7374ca3a07dd1960f29b5f5bb980af70e0d2464",
+      "size": 276,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/e7374ca3a07dd1960f29b5f5bb980af70e0d2464"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/launcher.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "53be943c3e5e719e1276b80a09254cf4368148ff",
+      "size": 9706,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/53be943c3e5e719e1276b80a09254cf4368148ff"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/nginx.conf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "131abfbd1c004aefbab1bb638ba386fb0ff959f1",
+      "size": 422,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/131abfbd1c004aefbab1bb638ba386fb0ff959f1"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/package-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "45d2d489ef3ada9df1381bdfc16ea1bcce9fdf45",
+      "size": 29333,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/45d2d489ef3ada9df1381bdfc16ea1bcce9fdf45"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "078b652e9a16b7c6776616f84444adab998b83b9",
+      "size": 426,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/078b652e9a16b7c6776616f84444adab998b83b9"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/public",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "af96d37dc2d7fee2f2e181908dc4fb49bf386199",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/af96d37dc2d7fee2f2e181908dc4fb49bf386199"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/public/dicemarket.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa3e485e43724b682536d11e2194f64ffc791797",
+      "size": 377,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/aa3e485e43724b682536d11e2194f64ffc791797"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/public/index.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c1328f53a5d91fd16dd14a356c8cdaf17dfa89c",
+      "size": 4927,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/8c1328f53a5d91fd16dd14a356c8cdaf17dfa89c"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/public/index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3c337d4a7cc21de4e5fc7d504d15ea19612fe23",
+      "size": 7142,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/c3c337d4a7cc21de4e5fc7d504d15ea19612fe23"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/script",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d9c059b238b59db94e2ba812574c20c250645fdf",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/d9c059b238b59db94e2ba812574c20c250645fdf"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/script/DAOTest.s.sol",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a41b2413f5c025db9f1e9d468f8eaf39d063366b",
+      "size": 18855,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/a41b2413f5c025db9f1e9d468f8eaf39d063366b"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/script/SolveProposal.sol",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee71d78c7a770b4c99b8c878df2d2b9dc348526a",
+      "size": 1141,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/ee71d78c7a770b4c99b8c878df2d2b9dc348526a"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/script/solve.mjs",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "7accb62d01a838bf03a0091e28eeeebda6203808",
+      "size": 7977,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/7accb62d01a838bf03a0091e28eeeebda6203808"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7d2fcf39020ba515c8c474bf80e0122443728fe3",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/7d2fcf39020ba515c8c474bf80e0122443728fe3"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/src/DiceMarket.sol",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b954c88b21b94a0207c645b1eff72f74f13359eb",
+      "size": 2750,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/b954c88b21b94a0207c645b1eff72f74f13359eb"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/src/DiceMarketDAO.sol",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2604d4fb408cfd1ceead2c27ebad486da4a90fe9",
+      "size": 7908,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/2604d4fb408cfd1ceead2c27ebad486da4a90fe9"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/src/MerkleTree.sol",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06bacdcb97f369d6d8e29b2a67aeb31365410e41",
+      "size": 1831,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/06bacdcb97f369d6d8e29b2a67aeb31365410e41"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/chall/src/Setup.sol",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6ba29d74b43605dc697ff427aae85fe53204f54",
+      "size": 2394,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/a6ba29d74b43605dc697ff427aae85fe53204f54"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2bd793111202349989f64507a9cd3907930f8668",
+      "size": 127,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/2bd793111202349989f64507a9cd3907930f8668"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/kona.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de82b3ed17b91a444f7bafdf024bc10e083406d0",
+      "size": 1966,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/de82b3ed17b91a444f7bafdf024bc10e083406d0"
+    },
+    {
+      "path": "crypto/the-2000s-american-housing-crisis/ptau.ptau",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a5ea7647787f4da24f59cb7df5447a2dec29d3b",
+      "size": 75498912,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/0a5ea7647787f4da24f59cb7df5447a2dec29d3b"
+    },
+    {
+      "path": "misc",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "31e6c261893c212f4caf27ac038233a48c5a6503",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/31e6c261893c212f4caf27ac038233a48c5a6503"
+    },
+    {
+      "path": "misc/good-vibes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e5b1cd659135aab821b57a05c2db99463cbc1241",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/e5b1cd659135aab821b57a05c2db99463cbc1241"
+    },
+    {
+      "path": "misc/good-vibes/challenge.pcap",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0cd226fd85086f2e95a65f49e7a3c55004f1b3c6",
+      "size": 2851720,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/0cd226fd85086f2e95a65f49e7a3c55004f1b3c6"
+    },
+    {
+      "path": "misc/good-vibes/kona.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8cd06a5a550549cc1d3a5ebddce93471e9098c11",
+      "size": 676,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/8cd06a5a550549cc1d3a5ebddce93471e9098c11"
+    },
+    {
+      "path": "misc/good-vibes/vibepn-client.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "37a5cdd47749a3ee3f95e6f2f4bdb46b0d0f59ad",
+      "size": 9153,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/37a5cdd47749a3ee3f95e6f2f4bdb46b0d0f59ad"
+    },
+    {
+      "path": "misc/leadgate",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5cc34e4458e50d050e0f12f20df6fb12aa428f3c",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/5cc34e4458e50d050e0f12f20df6fb12aa428f3c"
+    },
+    {
+      "path": "misc/leadgate/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41461ab9bd5c0bd76652b6415a67c8f3e742c8a9",
+      "size": 28,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/41461ab9bd5c0bd76652b6415a67c8f3e742c8a9"
+    },
+    {
+      "path": "misc/leadgate/kona.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56067e59d983904b0a165a08f76e697e314fa815",
+      "size": 346,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/56067e59d983904b0a165a08f76e697e314fa815"
+    },
+    {
+      "path": "misc/leadgate/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d953a94afa3b719f00efafae205d5935b09d1ddd",
+      "size": 2046,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/d953a94afa3b719f00efafae205d5935b09d1ddd"
+    },
+    {
+      "path": "misc/pytecoding",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "002a0a36294a3dfa1c05beb2624a79ed4789798e",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/002a0a36294a3dfa1c05beb2624a79ed4789798e"
+    },
+    {
+      "path": "misc/pytecoding/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c18dd8d83ceed1806b50b0aaa46beb7e335fff13",
+      "size": 13,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/c18dd8d83ceed1806b50b0aaa46beb7e335fff13"
+    },
+    {
+      "path": "misc/pytecoding/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be3c43282bf0acfd7fb009b86dff6504d78d198b",
+      "size": 222,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/be3c43282bf0acfd7fb009b86dff6504d78d198b"
+    },
+    {
+      "path": "misc/pytecoding/chall.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "7c4409531cad33a67e46b4dc1fb221fed24747e4",
+      "size": 1050,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/7c4409531cad33a67e46b4dc1fb221fed24747e4"
+    },
+    {
+      "path": "misc/pytecoding/compile.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "65f94ef610db70f2fec567d2fd09dc555e7ecdb1",
+      "size": 194,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/65f94ef610db70f2fec567d2fd09dc555e7ecdb1"
+    },
+    {
+      "path": "misc/pytecoding/kona.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0374021bbbc3457e1c69d0243c2ac35d5d8e6bf5",
+      "size": 1773,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/0374021bbbc3457e1c69d0243c2ac35d5d8e6bf5"
+    },
+    {
+      "path": "misc/pytecoding/ops.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8e29c4cb325f4504ede35014db61146ae574e07e",
+      "size": 12355,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/8e29c4cb325f4504ede35014db61146ae574e07e"
+    },
+    {
+      "path": "misc/pytecoding/printflag",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "9039129f3c4177edf92f2b2d35b2436ad6831fa1",
+      "size": 13776,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/9039129f3c4177edf92f2b2d35b2436ad6831fa1"
+    },
+    {
+      "path": "misc/pytecoding/printflag-example",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "33f35ed83fb82045c098c577595a8b5964ea9317",
+      "size": 13776,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/33f35ed83fb82045c098c577595a8b5964ea9317"
+    },
+    {
+      "path": "misc/pytecoding/printflag.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f6e9e7d2901711a23334866b1b03776d4ae12325",
+      "size": 55,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/f6e9e7d2901711a23334866b1b03776d4ae12325"
+    },
+    {
+      "path": "misc/pytecoding/scratch.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5232c48955937df7b45265ed23a1f5ba2ef8711e",
+      "size": 1902,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/5232c48955937df7b45265ed23a1f5ba2ef8711e"
+    },
+    {
+      "path": "misc/pytecoding/solve.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4a04ff11c6e0ec9ffa4d98878b002acdbdf353fa",
+      "size": 186,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/4a04ff11c6e0ec9ffa4d98878b002acdbdf353fa"
+    },
+    {
+      "path": "misc/yaps",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8c2914a2037d4c921714f98e51b681ce8c7117c6",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/8c2914a2037d4c921714f98e51b681ce8c7117c6"
+    },
+    {
+      "path": "misc/yaps/.dockerignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bbc233cb2905c4e4a47b79cbfbf14ad63968d7e8",
+      "size": 97,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/bbc233cb2905c4e4a47b79cbfbf14ad63968d7e8"
+    },
+    {
+      "path": "misc/yaps/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cbd0236c95d720cd74b7d3bb86498926bc46b44d",
+      "size": 373,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/cbd0236c95d720cd74b7d3bb86498926bc46b44d"
+    },
+    {
+      "path": "misc/yaps/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fd884616b372f23255c747fd6c2d9de315a166e8",
+      "size": 33,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/fd884616b372f23255c747fd6c2d9de315a166e8"
+    },
+    {
+      "path": "misc/yaps/kona.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "88e6334a87cc40a604adeb42398276af63198da6",
+      "size": 1825,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/88e6334a87cc40a604adeb42398276af63198da6"
+    },
+    {
+      "path": "misc/yaps/scanner.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "91e45eae8a196830227a84dd122acd60f52d771f",
+      "size": 20315,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/91e45eae8a196830227a84dd122acd60f52d771f"
+    },
+    {
+      "path": "misc/yaps/server.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "258958484a8044a698f1a02f25682f81e0289067",
+      "size": 4202,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/258958484a8044a698f1a02f25682f81e0289067"
+    },
+    {
+      "path": "misc/yaps/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6057d8a4e321863f5786245dd3e76ff8e1cc5c8",
+      "size": 3928,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/a6057d8a4e321863f5786245dd3e76ff8e1cc5c8"
+    },
+    {
+      "path": "pwn",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cd651c6eb3967d613c038d217e8697b692d046c4",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/cd651c6eb3967d613c038d217e8697b692d046c4"
+    },
+    {
+      "path": "pwn/CoRnelslop",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4695e1f349335d6e68485b01a02765267285bc72",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/4695e1f349335d6e68485b01a02765267285bc72"
+    },
+    {
+      "path": "pwn/CoRnelslop/config",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8a67f8fac47dd16228b770c9f31508ca80a9ea4",
+      "size": 111288,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/a8a67f8fac47dd16228b770c9f31508ca80a9ea4"
+    },
+    {
+      "path": "pwn/CoRnelslop/cornelslop.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0364c9bc51e0465ef34cc0f045fd971f6adc9efd",
+      "size": 6990,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/0364c9bc51e0465ef34cc0f045fd971f6adc9efd"
+    },
+    {
+      "path": "pwn/CoRnelslop/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "14f054604787b3eb73944de03d9a0f27e1e1682a",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/14f054604787b3eb73944de03d9a0f27e1e1682a"
+    },
+    {
+      "path": "pwn/CoRnelslop/dist/initramfs.cpio.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9de3f004191ee13ef5277f2c6d6a2cc18e25ed2a",
+      "size": 1468597,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/9de3f004191ee13ef5277f2c6d6a2cc18e25ed2a"
+    },
+    {
+      "path": "pwn/CoRnelslop/kona.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "986a48a6e97b1ad2142678b5e58a805d8a602585",
+      "size": 958,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/986a48a6e97b1ad2142678b5e58a805d8a602585"
+    },
+    {
+      "path": "pwn/CoRnelslop/remote",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f5e6d6342c64a156043e80a334942017f28b4492",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/f5e6d6342c64a156043e80a334942017f28b4492"
+    },
+    {
+      "path": "pwn/CoRnelslop/remote/bzImage",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dae05adda15cb2672ece16c9a9281fcfa30243ed",
+      "size": 19431424,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/dae05adda15cb2672ece16c9a9281fcfa30243ed"
+    },
+    {
+      "path": "pwn/CoRnelslop/remote/initramfs.cpio.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4abda9e722200a7716946671f1a883506918f11e",
+      "size": 1468647,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/4abda9e722200a7716946671f1a883506918f11e"
+    },
+    {
+      "path": "pwn/CoRnelslop/remote/run.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "7a64a599292a2cf20d61a452477713a76f965ba1",
+      "size": 291,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/7a64a599292a2cf20d61a452477713a76f965ba1"
+    },
+    {
+      "path": "pwn/bytecrusher",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0bd1c2bd2227855639e3a34bc046ce90e21e417a",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/0bd1c2bd2227855639e3a34bc046ce90e21e417a"
+    },
+    {
+      "path": "pwn/bytecrusher/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "af487617a3f145d65b533daadb626b21d85559e9",
+      "size": 218,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/af487617a3f145d65b533daadb626b21d85559e9"
+    },
+    {
+      "path": "pwn/bytecrusher/build.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "cff09a533ae48109b7e6e41fd31eb8b8d54dc0cb",
+      "size": 44,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/cff09a533ae48109b7e6e41fd31eb8b8d54dc0cb"
+    },
+    {
+      "path": "pwn/bytecrusher/bytecrusher",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "f4c9ba35f79ca958cda0aad5e2248e3bb8895c4c",
+      "size": 16664,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/f4c9ba35f79ca958cda0aad5e2248e3bb8895c4c"
+    },
+    {
+      "path": "pwn/bytecrusher/bytecrusher.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9088e49a922d4aefa2e0c26cc47022bfea80c4d2",
+      "size": 2236,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/9088e49a922d4aefa2e0c26cc47022bfea80c4d2"
+    },
+    {
+      "path": "pwn/bytecrusher/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "174c0e45789ce8f9c39b885ca8705b2e606c0ad5",
+      "size": 25,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/174c0e45789ce8f9c39b885ca8705b2e606c0ad5"
+    },
+    {
+      "path": "pwn/bytecrusher/kona.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5698eea38e62b00b72e05a5ce001e85944fd4b39",
+      "size": 1946,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/5698eea38e62b00b72e05a5ce001e85944fd4b39"
+    },
+    {
+      "path": "pwn/garden",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "147a21cd25657c42c9cdc6eba9bd91c04ef915f8",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/147a21cd25657c42c9cdc6eba9bd91c04ef915f8"
+    },
+    {
+      "path": "pwn/garden/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "335e4291912afcb320a88e7385d80cc040b69a47",
+      "size": 348,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/335e4291912afcb320a88e7385d80cc040b69a47"
+    },
+    {
+      "path": "pwn/garden/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20396c2bf107e0582b49f01d61eebf21048e2e08",
+      "size": 6009,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/20396c2bf107e0582b49f01d61eebf21048e2e08"
+    },
+    {
+      "path": "pwn/garden/build.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "8fd4aa2015cd6aec47077edba881ea27bb57209c",
+      "size": 134,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/8fd4aa2015cd6aec47077edba881ea27bb57209c"
+    },
+    {
+      "path": "pwn/garden/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1478abe9486cda07132ca10086aa4200a6fa566b",
+      "size": 59,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/1478abe9486cda07132ca10086aa4200a6fa566b"
+    },
+    {
+      "path": "pwn/garden/garden",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "de7b0807ebb30cf2541da43d6271147c8f3331de",
+      "size": 33593,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/de7b0807ebb30cf2541da43d6271147c8f3331de"
+    },
+    {
+      "path": "pwn/garden/garden.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96f5064bc5015ce21379d4ecb2df894fcb6f24a4",
+      "size": 20855,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/96f5064bc5015ce21379d4ecb2df894fcb6f24a4"
+    },
+    {
+      "path": "pwn/garden/kona.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4b493e00f3f53d6519b4ae446b66e3852498499",
+      "size": 1896,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/f4b493e00f3f53d6519b4ae446b66e3852498499"
+    },
+    {
+      "path": "pwn/garden/ld-linux-x86-64.so.2",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "5660c3c9771f517c416c6d854456c593fe27c512",
+      "size": 236616,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/5660c3c9771f517c416c6d854456c593fe27c512"
+    },
+    {
+      "path": "pwn/garden/libc.so.6",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "da510d48da1ebc0c331b3695f74cb0354596e326",
+      "size": 2125328,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/da510d48da1ebc0c331b3695f74cb0354596e326"
+    },
+    {
+      "path": "pwn/message-store",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8095dd438d669dfe5b04c8b3342f8337c269f7ed",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/8095dd438d669dfe5b04c8b3342f8337c269f7ed"
+    },
+    {
+      "path": "pwn/message-store/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19800c52459480eb1ee47cf9a1c01c977b7f262f",
+      "size": 184,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/19800c52459480eb1ee47cf9a1c01c977b7f262f"
+    },
+    {
+      "path": "pwn/message-store/challenge",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "d534cf83deca1fd1aa3eed53245730b236ae8055",
+      "size": 5308368,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/d534cf83deca1fd1aa3eed53245730b236ae8055"
+    },
+    {
+      "path": "pwn/message-store/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ad25702dfb426e9719d3fc07fc11783d88a95f1",
+      "size": 29,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/7ad25702dfb426e9719d3fc07fc11783d88a95f1"
+    },
+    {
+      "path": "pwn/message-store/kona.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e425aab93239365804ec444517a1a90a451b84f",
+      "size": 1762,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/7e425aab93239365804ec444517a1a90a451b84f"
+    },
+    {
+      "path": "pwn/message-store/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59920ec79c7221079d9422fb2ed80dffce67fd96",
+      "size": 1885,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/59920ec79c7221079d9422fb2ed80dffce67fd96"
+    },
+    {
+      "path": "pwn/message-store/source",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4cbaff33c9dc04749188333df420649ff115352e",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/4cbaff33c9dc04749188333df420649ff115352e"
+    },
+    {
+      "path": "pwn/message-store/source/.cargo",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "eac6c720914b8f4ebd3735375952bf89a2f77c5d",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/eac6c720914b8f4ebd3735375952bf89a2f77c5d"
+    },
+    {
+      "path": "pwn/message-store/source/.cargo/config.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f7e1da1cae71b79406146b0a4bd164a3644d49d1",
+      "size": 64,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/f7e1da1cae71b79406146b0a4bd164a3644d49d1"
+    },
+    {
+      "path": "pwn/message-store/source/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f7896d1d1365eafb0da03d9fe456fac81408487",
+      "size": 8,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/2f7896d1d1365eafb0da03d9fe456fac81408487"
+    },
+    {
+      "path": "pwn/message-store/source/Cargo.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a12ded7f3effcb69e33813b313e98a78aa88b42",
+      "size": 1037,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/5a12ded7f3effcb69e33813b313e98a78aa88b42"
+    },
+    {
+      "path": "pwn/message-store/source/Cargo.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a41bc8dae365b9c3f3731aa4d504faa3cba872c",
+      "size": 188,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/3a41bc8dae365b9c3f3731aa4d504faa3cba872c"
+    },
+    {
+      "path": "pwn/message-store/source/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dccf452ca3e9bde05ae00098f93d2defc8616799",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/dccf452ca3e9bde05ae00098f93d2defc8616799"
+    },
+    {
+      "path": "pwn/message-store/source/src/main.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f25754dc613958883d79ea8fad22693e430b36c7",
+      "size": 4194,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/f25754dc613958883d79ea8fad22693e430b36c7"
+    },
+    {
+      "path": "rev",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "149cc4f96b1f74208cf94ed4b089159dc726e80f",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/149cc4f96b1f74208cf94ed4b089159dc726e80f"
+    },
+    {
+      "path": "rev/another-onion",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "889975215efcb7cf2e0e5fd34f899ebefc3ce14a",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/889975215efcb7cf2e0e5fd34f899ebefc3ce14a"
+    },
+    {
+      "path": "rev/another-onion/.dockerignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d72ce5b4f220261365f70f4171dbbe554731d08",
+      "size": 151,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/2d72ce5b4f220261365f70f4171dbbe554731d08"
+    },
+    {
+      "path": "rev/another-onion/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46018896c1e08e43fc2e3ff405b3f988dc2e0d3b",
+      "size": 507,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/46018896c1e08e43fc2e3ff405b3f988dc2e0d3b"
+    },
+    {
+      "path": "rev/another-onion/Dockerfile.solver",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be1fae892cad50ae044ac739d0cf58ce94097745",
+      "size": 349,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/be1fae892cad50ae044ac739d0cf58ce94097745"
+    },
+    {
+      "path": "rev/another-onion/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6279f85176672d8436280b0c8f598e8659717a6e",
+      "size": 4112,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/6279f85176672d8436280b0c8f598e8659717a6e"
+    },
+    {
+      "path": "rev/another-onion/a_key",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36b76e271bd8f9cb2c5ec823a863e5dbe6bbfc8f",
+      "size": 16,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/36b76e271bd8f9cb2c5ec823a863e5dbe6bbfc8f"
+    },
+    {
+      "path": "rev/another-onion/an_onion",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "839dc14210dbaabe94718ab8ca5d2b25b6972dd5",
+      "size": 38488,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/839dc14210dbaabe94718ab8ca5d2b25b6972dd5"
+    },
+    {
+      "path": "rev/another-onion/benchmarks",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "90a62b374996219fb83fbf58a7e6149a580b86d1",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/90a62b374996219fb83fbf58a7e6149a580b86d1"
+    },
+    {
+      "path": "rev/another-onion/benchmarks/benchmark_unicorn_vs_native.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7fe56b489fb6a265b3714821a4486a9e60931b9a",
+      "size": 16131,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/7fe56b489fb6a265b3714821a4486a9e60931b9a"
+    },
+    {
+      "path": "rev/another-onion/benchmarks/instruction_bench.S",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f561d8518607c97702488c68e18d561a5db3fb4",
+      "size": 6889,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/0f561d8518607c97702488c68e18d561a5db3fb4"
+    },
+    {
+      "path": "rev/another-onion/benchmarks/unicorn_vs_native_report.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a538c8217d33bca69a0b195d8af6fad2e6228d64",
+      "size": 2996,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/a538c8217d33bca69a0b195d8af6fad2e6228d64"
+    },
+    {
+      "path": "rev/another-onion/benchmarks/unicorn_vs_native_results.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64f6c0924a8038b5ed024c0a56e16abda593ae9e",
+      "size": 12199,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/64f6c0924a8038b5ed024c0a56e16abda593ae9e"
+    },
+    {
+      "path": "rev/another-onion/compile.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0bb906b6db761020eb9a3173019ca83e830b3667",
+      "size": 1086,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/0bb906b6db761020eb9a3173019ca83e830b3667"
+    },
+    {
+      "path": "rev/another-onion/docker-compose-test.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ffa53c901f98568bbdd9989f671b2fe469180314",
+      "size": 963,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/ffa53c901f98568bbdd9989f671b2fe469180314"
+    },
+    {
+      "path": "rev/another-onion/encrypt.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d2b63cd8fb29bf9ae0e222d9f57f8a7e0aee549",
+      "size": 3515,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/9d2b63cd8fb29bf9ae0e222d9f57f8a7e0aee549"
+    },
+    {
+      "path": "rev/another-onion/generate.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54a66f23495253d3ef96e9535997d859a9781b32",
+      "size": 67061,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/54a66f23495253d3ef96e9535997d859a9781b32"
+    },
+    {
+      "path": "rev/another-onion/generated_code_example.S",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4398fc2b9a925830db90efeb8f3227c0e3f91b2c",
+      "size": 1348675,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/4398fc2b9a925830db90efeb8f3227c0e3f91b2c"
+    },
+    {
+      "path": "rev/another-onion/generated_code_example.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04986cd69ce91b9a4a796b863b8e67b2edc3f509",
+      "size": 5398314,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/04986cd69ce91b9a4a796b863b8e67b2edc3f509"
+    },
+    {
+      "path": "rev/another-onion/generated_code_example.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5eed44369b0f3a7905b34497a05a40fbd028aded",
+      "size": 626669,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/5eed44369b0f3a7905b34497a05a40fbd028aded"
+    },
+    {
+      "path": "rev/another-onion/instance_server.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f811b509553f376a8e97a071be91d2d118c753df",
+      "size": 5008,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/f811b509553f376a8e97a071be91d2d118c753df"
+    },
+    {
+      "path": "rev/another-onion/kona.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f02b5ca5cbcf372e8cd5b16373d110866e5ac250",
+      "size": 2611,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/f02b5ca5cbcf372e8cd5b16373d110866e5ac250"
+    },
+    {
+      "path": "rev/another-onion/solution",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f2c6ce878dbf6d3c0a417311c034ea0791accdeb",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/f2c6ce878dbf6d3c0a417311c034ea0791accdeb"
+    },
+    {
+      "path": "rev/another-onion/solution/asmhelp.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d3007865d53401e7085828c04e8070a31e4709c",
+      "size": 528,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/7d3007865d53401e7085828c04e8070a31e4709c"
+    },
+    {
+      "path": "rev/another-onion/solution/compile-solve.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "8cb08cf6a8c09201e986afe6a408bc98e5fc38ba",
+      "size": 203,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/8cb08cf6a8c09201e986afe6a408bc98e5fc38ba"
+    },
+    {
+      "path": "rev/another-onion/solution/e2e_solver_submit.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8bbce6e92b839d107b53a43190dc52cdb862dc8",
+      "size": 4020,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/a8bbce6e92b839d107b53a43190dc52cdb862dc8"
+    },
+    {
+      "path": "rev/another-onion/solution/solve.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c896d509f585bb83ae0c636c4e1f7aa95f61f188",
+      "size": 24535,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/c896d509f585bb83ae0c636c4e1f7aa95f61f188"
+    },
+    {
+      "path": "rev/another-onion/solution/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da106e7070e3140cd4f8dab480b1f6e949ded921",
+      "size": 16172,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/da106e7070e3140cd4f8dab480b1f6e949ded921"
+    },
+    {
+      "path": "rev/another-onion/solution2",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "80878710323c9b6054f36c6c2e3fac6309325af0",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/80878710323c9b6054f36c6c2e3fac6309325af0"
+    },
+    {
+      "path": "rev/another-onion/solution2/solve_onion.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c922f485457deca2c13f6fbdebc0431ee388b5b",
+      "size": 36224,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/2c922f485457deca2c13f6fbdebc0431ee388b5b"
+    },
+    {
+      "path": "rev/bedtime",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3cba7b8d69a38217771d2d112741b815a942809e",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/3cba7b8d69a38217771d2d112741b815a942809e"
+    },
+    {
+      "path": "rev/bedtime/bedtime",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "3061427e430537f05c0ace604153e4fff2f76252",
+      "size": 586408,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/3061427e430537f05c0ace604153e4fff2f76252"
+    },
+    {
+      "path": "rev/bedtime/kona.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c677d19d5dcb48a73d27a94a60b33eb7bb4a5b5",
+      "size": 255,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/6c677d19d5dcb48a73d27a94a60b33eb7bb4a5b5"
+    },
+    {
+      "path": "rev/explorer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bd8baa07c2e92154dc381f9cbc2522b7c9a3c51d",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/bd8baa07c2e92154dc381f9cbc2522b7c9a3c51d"
+    },
+    {
+      "path": "rev/explorer/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c1328db1cffbe231390476fbe6e49776b6d17b66",
+      "size": 18,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/c1328db1cffbe231390476fbe6e49776b6d17b66"
+    },
+    {
+      "path": "rev/explorer/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "82f44fc1bd69dabfe6c6ef9aeb5354cbeacb55e2",
+      "size": 5245,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/82f44fc1bd69dabfe6c6ef9aeb5354cbeacb55e2"
+    },
+    {
+      "path": "rev/explorer/Makefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48783de8d5b755661b5ff3da4070898b72946b1d",
+      "size": 2788,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/48783de8d5b755661b5ff3da4070898b72946b1d"
+    },
+    {
+      "path": "rev/explorer/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ffa888ed2b8b5647ce0f882e3a55f4937524ece",
+      "size": 937,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/6ffa888ed2b8b5647ce0f882e3a55f4937524ece"
+    },
+    {
+      "path": "rev/explorer/challenge.rs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09f5d283e32b693a6ea99cb0791be316f16207a5",
+      "size": 14975,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/09f5d283e32b693a6ea99cb0791be316f16207a5"
+    },
+    {
+      "path": "rev/explorer/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9842b0f39a1f94244332a52f59b5809bcb887e49",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/9842b0f39a1f94244332a52f59b5809bcb887e49"
+    },
+    {
+      "path": "rev/explorer/dist/bzImage",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3cb04130cac8614c815e9654753cb6abb8d216b8",
+      "size": 1340416,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/3cb04130cac8614c815e9654753cb6abb8d216b8"
+    },
+    {
+      "path": "rev/explorer/dist/initramfs.cpio.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15c61493d265822e0c9bd6f964e8458f1f9a2dc4",
+      "size": 746098,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/15c61493d265822e0c9bd6f964e8458f1f9a2dc4"
+    },
+    {
+      "path": "rev/explorer/kona.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d97be0762573978f8df2f26244ea5c73dc5bca6",
+      "size": 1646,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/9d97be0762573978f8df2f26244ea5c73dc5bca6"
+    },
+    {
+      "path": "rev/explorer/rootfs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f59946b02affb29b7816590c59202fe810c68561",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/f59946b02affb29b7816590c59202fe810c68561"
+    },
+    {
+      "path": "rev/explorer/rootfs/init",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "bde647bc62ffe4742b8f1e2d7a5fe29e463a5990",
+      "size": 343,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/bde647bc62ffe4742b8f1e2d7a5fe29e463a5990"
+    },
+    {
+      "path": "rev/explorer/rootfs/user.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "618d526e2807fdbf9b43ef5f5a5c006ae167eede",
+      "size": 10793,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/618d526e2807fdbf9b43ef5f5a5c006ae167eede"
+    },
+    {
+      "path": "rev/explorer/scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "79298889e851130d49834c1c5f95827fa45b8c69",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/79298889e851130d49834c1c5f95827fa45b8c69"
+    },
+    {
+      "path": "rev/explorer/scripts/maze_viz.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "521e7677b90d7848d2d34382a369a1d9a4cd994d",
+      "size": 10382,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/521e7677b90d7848d2d34382a369a1d9a4cd994d"
+    },
+    {
+      "path": "rev/explorer/scripts/upload_solver.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "2a1ec9cb3b55da64b2f3ddcfd273e3c96d7565fb",
+      "size": 2142,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/2a1ec9cb3b55da64b2f3ddcfd273e3c96d7565fb"
+    },
+    {
+      "path": "rev/interpreter-required",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "52680b7e9f9143c193cec0a1b047d9a23932065e",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/52680b7e9f9143c193cec0a1b047d9a23932065e"
+    },
+    {
+      "path": "rev/interpreter-required/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "407da64f0d0d5bc5e2058394c02a105d96f627b5",
+      "size": 2925,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/407da64f0d0d5bc5e2058394c02a105d96f627b5"
+    },
+    {
+      "path": "rev/interpreter-required/build.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "12974dff4ee40ffcfcd7d3725dc22a5ab66ebea9",
+      "size": 231,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/12974dff4ee40ffcfcd7d3725dc22a5ab66ebea9"
+    },
+    {
+      "path": "rev/interpreter-required/flag_riddle.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e5f2713939c97f9929914a40e4b2fd339c6ce45",
+      "size": 73052,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/4e5f2713939c97f9929914a40e4b2fd339c6ce45"
+    },
+    {
+      "path": "rev/interpreter-required/generate_flag.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "643876d4a75faab1f3b3a716359e19950922f0c2",
+      "size": 17197,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/643876d4a75faab1f3b3a716359e19950922f0c2"
+    },
+    {
+      "path": "rev/interpreter-required/generated_flag_code.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7f16e3f841edc3eab0c29a66b183c50ce85e7aa3",
+      "size": 70791,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/7f16e3f841edc3eab0c29a66b183c50ce85e7aa3"
+    },
+    {
+      "path": "rev/interpreter-required/interpreter",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "67f7f2bb292fb6192fa501d6cfc7b90e4b0b05c4",
+      "size": 710664,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/67f7f2bb292fb6192fa501d6cfc7b90e4b0b05c4"
+    },
+    {
+      "path": "rev/interpreter-required/interpreter.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8acfa26f8027c45632f0b8170380d41d49d7ad99",
+      "size": 25738,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/8acfa26f8027c45632f0b8170380d41d49d7ad99"
+    },
+    {
+      "path": "rev/interpreter-required/kona.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "162661fad85d252a3cc70e3f830762fc35c873e0",
+      "size": 484,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/162661fad85d252a3cc70e3f830762fc35c873e0"
+    },
+    {
+      "path": "rev/interpreter-required/sample_file.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16972580f2c5c37f94175536854833919a3fd3f1",
+      "size": 2261,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/16972580f2c5c37f94175536854833919a3fd3f1"
+    },
+    {
+      "path": "rev/interpreter-required/translate.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "65a6440dbefaac7ce563a3b7e2c7853216b8e8be",
+      "size": 2816,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/65a6440dbefaac7ce563a3b7e2c7853216b8e8be"
+    },
+    {
+      "path": "rev/locked-in",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "80bbb3951958b18e8c857f8a3efcb07fbe2cb2db",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/80bbb3951958b18e8c857f8a3efcb07fbe2cb2db"
+    },
+    {
+      "path": "rev/locked-in/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7971acb331904180b3a21316ddd6293aa3f403db",
+      "size": 4731,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/7971acb331904180b3a21316ddd6293aa3f403db"
+    },
+    {
+      "path": "rev/locked-in/assembler.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23d8f3f5308f76fd88a8c76157090d5bcbbcaa9c",
+      "size": 17010,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/23d8f3f5308f76fd88a8c76157090d5bcbbcaa9c"
+    },
+    {
+      "path": "rev/locked-in/build.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "d367c5ec837a333e8cd72a1277b5ff97e05ba536",
+      "size": 572,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/d367c5ec837a333e8cd72a1277b5ff97e05ba536"
+    },
+    {
+      "path": "rev/locked-in/chall_assembler.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0cfb84b1c34f2506ef2c84a597eba55fc8846116",
+      "size": 33418,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/0cfb84b1c34f2506ef2c84a597eba55fc8846116"
+    },
+    {
+      "path": "rev/locked-in/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8bd4f90376db0c3ba2fbc11eb357e0631e93c063",
+      "size": 30,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/8bd4f90376db0c3ba2fbc11eb357e0631e93c063"
+    },
+    {
+      "path": "rev/locked-in/flag_verifier.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9af755313c5e19f23cf2eacc252f25d60b2c6349",
+      "size": 43360,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/9af755313c5e19f23cf2eacc252f25d60b2c6349"
+    },
+    {
+      "path": "rev/locked-in/kona.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68b3cb5c54a3eb4aad0e0fbbe3ca0b25280db9e1",
+      "size": 330,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/68b3cb5c54a3eb4aad0e0fbbe3ca0b25280db9e1"
+    },
+    {
+      "path": "rev/locked-in/locked_in",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "b3508ec83fe93af44d178e59d9a753f19adf4af1",
+      "size": 846840,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/b3508ec83fe93af44d178e59d9a753f19adf4af1"
+    },
+    {
+      "path": "rev/locked-in/locked_in.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddd0d2c6ca29beea0c15c79cbc116b2c28a0d52c",
+      "size": 15996,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/ddd0d2c6ca29beea0c15c79cbc116b2c28a0d52c"
+    },
+    {
+      "path": "rev/locked-in/maze.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e8bb03156e47a9f4fea8b539e21a6e13df33a8c",
+      "size": 2243,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/6e8bb03156e47a9f4fea8b539e21a6e13df33a8c"
+    },
+    {
+      "path": "rev/locked-in/rendered_maze.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11336b9731e9e7909d3123701f5fe8f53585fadc",
+      "size": 2075,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/11336b9731e9e7909d3123701f5fe8f53585fadc"
+    },
+    {
+      "path": "rev/locked-in/types.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ecd188e92d587ef08814104d6f5931d347076af6",
+      "size": 433,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/ecd188e92d587ef08814104d6f5931d347076af6"
+    },
+    {
+      "path": "sanity",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6e4e8ee0ce61ce1f45753864e2976dd439b1946f",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/6e4e8ee0ce61ce1f45753864e2976dd439b1946f"
+    },
+    {
+      "path": "sanity/check",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b31865ce5d4587a75b2ef2e7ba7d9ec9f4bc934a",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/b31865ce5d4587a75b2ef2e7ba7d9ec9f4bc934a"
+    },
+    {
+      "path": "sanity/check/kona.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e20034c33b0ad6010b89cb7e0ed6a89c0bc3d3cb",
+      "size": 429,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/e20034c33b0ad6010b89cb7e0ed6a89c0bc3d3cb"
+    },
+    {
+      "path": "sanity/survey",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "95a67766d0ae7966df3e1768480d972af90ab09a",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/95a67766d0ae7966df3e1768480d972af90ab09a"
+    },
+    {
+      "path": "sanity/survey/kona.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b1f1e92f9eec867593cc2ae6ef322f09d5a702a",
+      "size": 406,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/7b1f1e92f9eec867593cc2ae6ef322f09d5a702a"
+    },
+    {
+      "path": "web",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fd8f1692b64df32fedd88e7125bf8803bab034b2",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/fd8f1692b64df32fedd88e7125bf8803bab034b2"
+    },
+    {
+      "path": "web/diceminer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "da1c2325be3a92af00ccdac919d9c6aff48345fe",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/da1c2325be3a92af00ccdac919d9c6aff48345fe"
+    },
+    {
+      "path": "web/diceminer/challenge",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5225e1eb3ca039511165dc0d5de3bf3cfb79c11a",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/5225e1eb3ca039511165dc0d5de3bf3cfb79c11a"
+    },
+    {
+      "path": "web/diceminer/challenge/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b277dfcc57b6bd171eb6474b3afc880781d0d9e7",
+      "size": 227,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/b277dfcc57b6bd171eb6474b3afc880781d0d9e7"
+    },
+    {
+      "path": "web/diceminer/challenge/package-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef180cdbe67379cdf6ea7eebe802fbae541e947b",
+      "size": 33968,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/ef180cdbe67379cdf6ea7eebe802fbae541e947b"
+    },
+    {
+      "path": "web/diceminer/challenge/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26625177472a3fa9f09d019a2a1ca24959f24a87",
+      "size": 304,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/26625177472a3fa9f09d019a2a1ca24959f24a87"
+    },
+    {
+      "path": "web/diceminer/challenge/public",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6c433e7d342ef097ffd326dce7d26bdd8d044f9b",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/6c433e7d342ef097ffd326dce7d26bdd8d044f9b"
+    },
+    {
+      "path": "web/diceminer/challenge/public/index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "450c31eb004059f0ece43d04b876180773dcbe6f",
+      "size": 26534,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/450c31eb004059f0ece43d04b876180773dcbe6f"
+    },
+    {
+      "path": "web/diceminer/challenge/server.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2116e2b72349b9c6c3742af3be4352fe0837ad56",
+      "size": 9368,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/2116e2b72349b9c6c3742af3be4352fe0837ad56"
+    },
+    {
+      "path": "web/diceminer/kona.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47c022861893098083291fd87e83169f8e0f9594",
+      "size": 1373,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/47c022861893098083291fd87e83169f8e0f9594"
+    },
+    {
+      "path": "web/dicewallet",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e22a69391deed7cda4ee2410025d02b1bd4780c8",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/e22a69391deed7cda4ee2410025d02b1bd4780c8"
+    },
+    {
+      "path": "web/dicewallet/bot",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "55ec6532fc0e2d76277939234d41ec0700ae9693",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/55ec6532fc0e2d76277939234d41ec0700ae9693"
+    },
+    {
+      "path": "web/dicewallet/bot/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cefde2c92b319d6fe2c0f41aca269119f768c280",
+      "size": 1527,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/cefde2c92b319d6fe2c0f41aca269119f768c280"
+    },
+    {
+      "path": "web/dicewallet/bot/package-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "017c53cff0842967b331efd2815a7af6f39061ea",
+      "size": 39667,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/017c53cff0842967b331efd2815a7af6f39061ea"
+    },
+    {
+      "path": "web/dicewallet/bot/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8914f2b40c879bcff8dba24b9a02fe7ef33eddbc",
+      "size": 234,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/8914f2b40c879bcff8dba24b9a02fe7ef33eddbc"
+    },
+    {
+      "path": "web/dicewallet/bot/public",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "53f305907635359f326fa0645ec59d7a93f676d6",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/53f305907635359f326fa0645ec59d7a93f676d6"
+    },
+    {
+      "path": "web/dicewallet/bot/public/admin",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4314a9dcca58b1e86457e31b3406c981c61cca24",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/4314a9dcca58b1e86457e31b3406c981c61cca24"
+    },
+    {
+      "path": "web/dicewallet/bot/public/admin/index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "365c1cdfea7ac0a9d3c364e273e821aafca41320",
+      "size": 4797,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/365c1cdfea7ac0a9d3c364e273e821aafca41320"
+    },
+    {
+      "path": "web/dicewallet/bot/public/index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da5988f821573a460f19332f4701c18a18996747",
+      "size": 610,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/da5988f821573a460f19332f4701c18a18996747"
+    },
+    {
+      "path": "web/dicewallet/bot/public/onboard.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a88ce1636d03bd7582e822c12bead277d8bb0ca",
+      "size": 7153,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/5a88ce1636d03bd7582e822c12bead277d8bb0ca"
+    },
+    {
+      "path": "web/dicewallet/bot/public/onboard.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5986936b98d21b5cdf96035b0157c8afd79acc6b",
+      "size": 10601,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/5986936b98d21b5cdf96035b0157c8afd79acc6b"
+    },
+    {
+      "path": "web/dicewallet/bot/server.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b61db4d7c3ab5fef3eca36ed0690cf417945a8c",
+      "size": 3945,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/0b61db4d7c3ab5fef3eca36ed0690cf417945a8c"
+    },
+    {
+      "path": "web/dicewallet/challenge",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a4e7868476d9c3b7032dcf455de2f9b57440b019",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/a4e7868476d9c3b7032dcf455de2f9b57440b019"
+    },
+    {
+      "path": "web/dicewallet/challenge/build.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa2a64bb55804afe49d77b4ee5f50f447c477ca4",
+      "size": 2335,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/fa2a64bb55804afe49d77b4ee5f50f447c477ca4"
+    },
+    {
+      "path": "web/dicewallet/challenge/dist_ext",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4092fb96eebb501f6b7ddadf61c5f855eab9b205",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/4092fb96eebb501f6b7ddadf61c5f855eab9b205"
+    },
+    {
+      "path": "web/dicewallet/challenge/dist_ext/background.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "27bd15818c8fed0195b3814b3e3a3796d8828c11",
+      "size": 844180,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/27bd15818c8fed0195b3814b3e3a3796d8828c11"
+    },
+    {
+      "path": "web/dicewallet/challenge/dist_ext/content.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7f1a410c383badc1ad5512b88dcce2177f402d10",
+      "size": 1071,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/7f1a410c383badc1ad5512b88dcce2177f402d10"
+    },
+    {
+      "path": "web/dicewallet/challenge/dist_ext/fonts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6ca0e0596224c84990e215b98e910b2b56c7cc63",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/6ca0e0596224c84990e215b98e910b2b56c7cc63"
+    },
+    {
+      "path": "web/dicewallet/challenge/dist_ext/fonts/SpaceGrotesk-Variable.woff2",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6878537dad262498c422ea4ef6ab2ac232b44492",
+      "size": 22284,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/6878537dad262498c422ea4ef6ab2ac232b44492"
+    },
+    {
+      "path": "web/dicewallet/challenge/dist_ext/icons",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a347fed880508a761b5ef030bed6e3e5e1875619",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/a347fed880508a761b5ef030bed6e3e5e1875619"
+    },
+    {
+      "path": "web/dicewallet/challenge/dist_ext/icons/icon128.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9c0c0bd3e46f4e32ab1c5a1c573fc2f24121c3a",
+      "size": 6323,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/f9c0c0bd3e46f4e32ab1c5a1c573fc2f24121c3a"
+    },
+    {
+      "path": "web/dicewallet/challenge/dist_ext/icons/icon16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23f32abfd8f971c8e60935f5e2f1d96b846c545b",
+      "size": 1020,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/23f32abfd8f971c8e60935f5e2f1d96b846c545b"
+    },
+    {
+      "path": "web/dicewallet/challenge/dist_ext/icons/icon48.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f80e02e08ef7694a6d45fde827e08365c7d63f4",
+      "size": 3134,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/4f80e02e08ef7694a6d45fde827e08365c7d63f4"
+    },
+    {
+      "path": "web/dicewallet/challenge/dist_ext/inpage.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a84f73fabab041d45a4a982e94d65539530fa807",
+      "size": 11859,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/a84f73fabab041d45a4a982e94d65539530fa807"
+    },
+    {
+      "path": "web/dicewallet/challenge/dist_ext/manifest.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f3fdc95e069dd8331ea8915c1aaa6cd1d7e5efa4",
+      "size": 1236,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/f3fdc95e069dd8331ea8915c1aaa6cd1d7e5efa4"
+    },
+    {
+      "path": "web/dicewallet/challenge/dist_ext/popup.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "50c7104498907f59d8789304a40087b010764003",
+      "size": 377,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/50c7104498907f59d8789304a40087b010764003"
+    },
+    {
+      "path": "web/dicewallet/challenge/dist_ext/popup.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2547e520cee05c98fb8dddd904f7da2246c0488b",
+      "size": 35763,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/2547e520cee05c98fb8dddd904f7da2246c0488b"
+    },
+    {
+      "path": "web/dicewallet/challenge/dist_ext/styles.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a7b6bcc85c185535d1074bc74bb733bbc0b38ce",
+      "size": 19847,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/0a7b6bcc85c185535d1074bc74bb733bbc0b38ce"
+    },
+    {
+      "path": "web/dicewallet/challenge/fonts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6ca0e0596224c84990e215b98e910b2b56c7cc63",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/6ca0e0596224c84990e215b98e910b2b56c7cc63"
+    },
+    {
+      "path": "web/dicewallet/challenge/fonts/SpaceGrotesk-Variable.woff2",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6878537dad262498c422ea4ef6ab2ac232b44492",
+      "size": 22284,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/6878537dad262498c422ea4ef6ab2ac232b44492"
+    },
+    {
+      "path": "web/dicewallet/challenge/icon-transparent.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62fd042d66d38c755838a9659be32b95de558148",
+      "size": 19459,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/62fd042d66d38c755838a9659be32b95de558148"
+    },
+    {
+      "path": "web/dicewallet/challenge/icons",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a347fed880508a761b5ef030bed6e3e5e1875619",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/a347fed880508a761b5ef030bed6e3e5e1875619"
+    },
+    {
+      "path": "web/dicewallet/challenge/icons/icon128.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9c0c0bd3e46f4e32ab1c5a1c573fc2f24121c3a",
+      "size": 6323,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/f9c0c0bd3e46f4e32ab1c5a1c573fc2f24121c3a"
+    },
+    {
+      "path": "web/dicewallet/challenge/icons/icon16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23f32abfd8f971c8e60935f5e2f1d96b846c545b",
+      "size": 1020,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/23f32abfd8f971c8e60935f5e2f1d96b846c545b"
+    },
+    {
+      "path": "web/dicewallet/challenge/icons/icon48.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f80e02e08ef7694a6d45fde827e08365c7d63f4",
+      "size": 3134,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/4f80e02e08ef7694a6d45fde827e08365c7d63f4"
+    },
+    {
+      "path": "web/dicewallet/challenge/manifest.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f3fdc95e069dd8331ea8915c1aaa6cd1d7e5efa4",
+      "size": 1236,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/f3fdc95e069dd8331ea8915c1aaa6cd1d7e5efa4"
+    },
+    {
+      "path": "web/dicewallet/challenge/package-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1ca4f817381c3be88ab79dafc05e600b1599f3d",
+      "size": 50696,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/a1ca4f817381c3be88ab79dafc05e600b1599f3d"
+    },
+    {
+      "path": "web/dicewallet/challenge/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "746305e25b48b339de9dddeb16a61273e2134c9b",
+      "size": 294,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/746305e25b48b339de9dddeb16a61273e2134c9b"
+    },
+    {
+      "path": "web/dicewallet/challenge/popup.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "50c7104498907f59d8789304a40087b010764003",
+      "size": 377,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/50c7104498907f59d8789304a40087b010764003"
+    },
+    {
+      "path": "web/dicewallet/challenge/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "515323e24ea7d466b579b3142f7a0f3048161af5",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/515323e24ea7d466b579b3142f7a0f3048161af5"
+    },
+    {
+      "path": "web/dicewallet/challenge/src/background.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0840758b6a44037494cf54ff288c20462a2ba2f6",
+      "size": 15277,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/0840758b6a44037494cf54ff288c20462a2ba2f6"
+    },
+    {
+      "path": "web/dicewallet/challenge/src/content.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "91746b5c8411157511f7b98aaf7678b2a4fe8d2e",
+      "size": 1075,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/91746b5c8411157511f7b98aaf7678b2a4fe8d2e"
+    },
+    {
+      "path": "web/dicewallet/challenge/src/inpage.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "39dc93120c8cc2cdcf2f2c1fa8568bd87a928047",
+      "size": 11863,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/39dc93120c8cc2cdcf2f2c1fa8568bd87a928047"
+    },
+    {
+      "path": "web/dicewallet/challenge/src/popup.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d09a84924bba17f3af9c17651283af7b58d61693",
+      "size": 35612,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/d09a84924bba17f3af9c17651283af7b58d61693"
+    },
+    {
+      "path": "web/dicewallet/challenge/src/styles.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05553f04939c2a7f10589345f9dcac14efc5541b",
+      "size": 2639,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/05553f04939c2a7f10589345f9dcac14efc5541b"
+    },
+    {
+      "path": "web/dicewallet/kona.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c0fe60a6f39f6a3ba69301c2a0dbdfbbfb889d7",
+      "size": 2118,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/9c0fe60a6f39f6a3ba69301c2a0dbdfbbfb889d7"
+    },
+    {
+      "path": "web/mirror-temple-b-side",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "82b562e6b655bd3f781f1792ed2d7793b5717b91",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/82b562e6b655bd3f781f1792ed2d7793b5717b91"
+    },
+    {
+      "path": "web/mirror-temple-b-side/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca67a15877f313960de9ab08a11b9e2701d4cd4f",
+      "size": 516,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/ca67a15877f313960de9ab08a11b9e2701d4cd4f"
+    },
+    {
+      "path": "web/mirror-temple-b-side/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e6e915f9d999244209832198b0c72485cde92fa",
+      "size": 961,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/4e6e915f9d999244209832198b0c72485cde92fa"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b590206684808723ec316de6187cdb78d0c949cf",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/b590206684808723ec316de6187cdb78d0c949cf"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/.gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8af972cded0d3e3ccb3c6e801150168bcc93150a",
+      "size": 54,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/8af972cded0d3e3ccb3c6e801150168bcc93150a"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/admin.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b46bda172d477a7145fad616f634998cb5f139a",
+      "size": 1100,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/8b46bda172d477a7145fad616f634998cb5f139a"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/build.gradle.kts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb573635d52449c57bbcc365992c16cfbdced37f",
+      "size": 1177,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/fb573635d52449c57bbcc365992c16cfbdced37f"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/gradle",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3e136e7588909051caf87cfd4f6053f139085d16",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/3e136e7588909051caf87cfd4f6053f139085d16"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/gradle/wrapper",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4bd6d36b36205991d5fd0f40fe9136ed45c39810",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/4bd6d36b36205991d5fd0f40fe9136ed45c39810"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/gradle/wrapper/gradle-wrapper.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b33c55baabb587c669f562ae36f953de2481846",
+      "size": 43764,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/1b33c55baabb587c669f562ae36f953de2481846"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/gradle/wrapper/gradle-wrapper.properties",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff23a68d70f3cdb1e68a3761ef342d929fd90aee",
+      "size": 253,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/ff23a68d70f3cdb1e68a3761ef342d929fd90aee"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/gradlew",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "23d15a9367071145e9c79bb4ddf879d1fbe78b5d",
+      "size": 8733,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/23d15a9367071145e9c79bb4ddf879d1fbe78b5d"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/gradlew.bat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db3a6ac207e507b0bc1635a9f2c18d3b174e682e",
+      "size": 2843,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/db3a6ac207e507b0bc1635a9f2c18d3b174e682e"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/package-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d957dc6884e37037074f6f29e00f2508b9c03253",
+      "size": 68377,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/d957dc6884e37037074f6f29e00f2508b9c03253"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ffdbb9faffa510e9af586e1cde92828823e1f112",
+      "size": 194,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/ffdbb9faffa510e9af586e1cde92828823e1f112"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/settings.gradle.kts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa97cf6dd02a39aaecdd6dedfcaf05b61be0582c",
+      "size": 35,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/aa97cf6dd02a39aaecdd6dedfcaf05b61be0582c"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ed18c8481f6849e4923247674789190f8852e6c5",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/ed18c8481f6849e4923247674789190f8852e6c5"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ac48693529986ff7c861afb215c9bdedba25b1c4",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/ac48693529986ff7c861afb215c9bdedba25b1c4"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/kotlin",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4b783abb6af7672a40d8c35d390a48c054a3c75c",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/4b783abb6af7672a40d8c35d390a48c054a3c75c"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/kotlin/ng",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2641b0a8031823b13e7a4e0393d4f0938a6b565d",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/2641b0a8031823b13e7a4e0393d4f0938a6b565d"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/kotlin/ng/dicega",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6af1e37f6bd64137b9d55ccad7007d89aac42e7c",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/6af1e37f6bd64137b9d55ccad7007d89aac42e7c"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/kotlin/ng/dicega/ctf",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "81a2bbca9a29fab5685d68015a364852aec7d85e",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/81a2bbca9a29fab5685d68015a364852aec7d85e"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/kotlin/ng/dicega/ctf/web",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "207459ce231b4c97230a68450572683c64faf6ba",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/207459ce231b4c97230a68450572683c64faf6ba"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/kotlin/ng/dicega/ctf/web/mirrortemple",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9a145e3f6765bd2bac9a55622c64c036799507b6",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/9a145e3f6765bd2bac9a55622c64c036799507b6"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/kotlin/ng/dicega/ctf/web/mirrortemple/CorsProxy.kt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3080c02beb2c76af68d859705ffbc50405418610",
+      "size": 2976,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/3080c02beb2c76af68d859705ffbc50405418610"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/kotlin/ng/dicega/ctf/web/mirrortemple/MirrorTemple.kt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4cec9ba8adc59db780f05235816f9d6db96cca0c",
+      "size": 2191,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/4cec9ba8adc59db780f05235816f9d6db96cca0c"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/kotlin/ng/dicega/ctf/web/mirrortemple/SaveFile.kt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eace7422f9427ac26e218e42f000ce9e79e8ddec",
+      "size": 3065,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/eace7422f9427ac26e218e42f000ce9e79e8ddec"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/kotlin/ng/dicega/ctf/web/mirrortemple/SecurityTM.kt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c27224a428cafe77555e4265cf456c69af15a01",
+      "size": 3685,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/4c27224a428cafe77555e4265cf456c69af15a01"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/resources",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a9f50e1bad7b7c9dc0eafeee92cf3bc57369edd3",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/a9f50e1bad7b7c9dc0eafeee92cf3bc57369edd3"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/resources/application.properties",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b4e805ee5613453d3324af256c2d693c3713d191",
+      "size": 93,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/b4e805ee5613453d3324af256c2d693c3713d191"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/resources/static",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "05b916d27f6ddbfd0acd975c24ff7ec279123344",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/05b916d27f6ddbfd0acd975c24ff7ec279123344"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/resources/static/index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc6a9b853c3c30257a687882c04f47f2798298de",
+      "size": 2058,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/fc6a9b853c3c30257a687882c04f47f2798298de"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/resources/static/static",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1327954580d4e7db6918fcc8cedde1d9f8127825",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/1327954580d4e7db6918fcc8cedde1d9f8127825"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/resources/static/static/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35519ecad07ad55e0d0d0d99e383b567c2a62b64",
+      "size": 1271,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/35519ecad07ad55e0d0d0d99e383b567c2a62b64"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/resources/static/static/matter.min.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d401fc4566e72a98e632bc64c748414ffd1bf110",
+      "size": 83476,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/d401fc4566e72a98e632bc64c748414ffd1bf110"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/resources/templates",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d465cddae24810e40a430a00e79dc73817623d15",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/d465cddae24810e40a430a00e79dc73817623d15"
+    },
+    {
+      "path": "web/mirror-temple-b-side/chall/src/main/resources/templates/postcard-from-nyc.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f92d58b871c815b8a64bd82cc7f1517b11da3976",
+      "size": 5831,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/f92d58b871c815b8a64bd82cc7f1517b11da3976"
+    },
+    {
+      "path": "web/mirror-temple-b-side/dev",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "768902d487321960c59058ced983291bc7a3b3df",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/768902d487321960c59058ced983291bc7a3b3df"
+    },
+    {
+      "path": "web/mirror-temple-b-side/dev/Test.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5797f4b9f66f8fce749d17c13c13e5e6bf82352f",
+      "size": 3199,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/5797f4b9f66f8fce749d17c13c13e5e6bf82352f"
+    },
+    {
+      "path": "web/mirror-temple-b-side/dev/compressed-template.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a3ad942267037a0d45fe05307a0cd63be262a56f",
+      "size": 119,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/a3ad942267037a0d45fe05307a0cd63be262a56f"
+    },
+    {
+      "path": "web/mirror-temple-b-side/dev/make-image-payload.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "7456b94628713e44524c3f3f1fb617dbd809dfab",
+      "size": 1015,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/7456b94628713e44524c3f3f1fb617dbd809dfab"
+    },
+    {
+      "path": "web/mirror-temple-b-side/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c956f416e5caa817ab3b7117068b7343685d58c",
+      "size": 197,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/5c956f416e5caa817ab3b7117068b7343685d58c"
+    },
+    {
+      "path": "web/mirror-temple-b-side/kona.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7af8f235092afc4ec701aa2285884400bc602f5",
+      "size": 1839,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/b7af8f235092afc4ec701aa2285884400bc602f5"
+    },
+    {
+      "path": "web/mirror-temple",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bb4e9c52f1a8fea859932f78dc0b8618588f3da7",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/bb4e9c52f1a8fea859932f78dc0b8618588f3da7"
+    },
+    {
+      "path": "web/mirror-temple/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca67a15877f313960de9ab08a11b9e2701d4cd4f",
+      "size": 516,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/ca67a15877f313960de9ab08a11b9e2701d4cd4f"
+    },
+    {
+      "path": "web/mirror-temple/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e6e915f9d999244209832198b0c72485cde92fa",
+      "size": 961,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/4e6e915f9d999244209832198b0c72485cde92fa"
+    },
+    {
+      "path": "web/mirror-temple/chall",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "727eecbdd7e8abb8dc778fd7e2b6a3914964a5f8",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/727eecbdd7e8abb8dc778fd7e2b6a3914964a5f8"
+    },
+    {
+      "path": "web/mirror-temple/chall/.gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8af972cded0d3e3ccb3c6e801150168bcc93150a",
+      "size": 54,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/8af972cded0d3e3ccb3c6e801150168bcc93150a"
+    },
+    {
+      "path": "web/mirror-temple/chall/admin.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b46bda172d477a7145fad616f634998cb5f139a",
+      "size": 1100,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/8b46bda172d477a7145fad616f634998cb5f139a"
+    },
+    {
+      "path": "web/mirror-temple/chall/build.gradle.kts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb573635d52449c57bbcc365992c16cfbdced37f",
+      "size": 1177,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/fb573635d52449c57bbcc365992c16cfbdced37f"
+    },
+    {
+      "path": "web/mirror-temple/chall/gradle",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3e136e7588909051caf87cfd4f6053f139085d16",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/3e136e7588909051caf87cfd4f6053f139085d16"
+    },
+    {
+      "path": "web/mirror-temple/chall/gradle/wrapper",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4bd6d36b36205991d5fd0f40fe9136ed45c39810",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/4bd6d36b36205991d5fd0f40fe9136ed45c39810"
+    },
+    {
+      "path": "web/mirror-temple/chall/gradle/wrapper/gradle-wrapper.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b33c55baabb587c669f562ae36f953de2481846",
+      "size": 43764,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/1b33c55baabb587c669f562ae36f953de2481846"
+    },
+    {
+      "path": "web/mirror-temple/chall/gradle/wrapper/gradle-wrapper.properties",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff23a68d70f3cdb1e68a3761ef342d929fd90aee",
+      "size": 253,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/ff23a68d70f3cdb1e68a3761ef342d929fd90aee"
+    },
+    {
+      "path": "web/mirror-temple/chall/gradlew",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "23d15a9367071145e9c79bb4ddf879d1fbe78b5d",
+      "size": 8733,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/23d15a9367071145e9c79bb4ddf879d1fbe78b5d"
+    },
+    {
+      "path": "web/mirror-temple/chall/gradlew.bat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db3a6ac207e507b0bc1635a9f2c18d3b174e682e",
+      "size": 2843,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/db3a6ac207e507b0bc1635a9f2c18d3b174e682e"
+    },
+    {
+      "path": "web/mirror-temple/chall/package-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d957dc6884e37037074f6f29e00f2508b9c03253",
+      "size": 68377,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/d957dc6884e37037074f6f29e00f2508b9c03253"
+    },
+    {
+      "path": "web/mirror-temple/chall/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ffdbb9faffa510e9af586e1cde92828823e1f112",
+      "size": 194,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/ffdbb9faffa510e9af586e1cde92828823e1f112"
+    },
+    {
+      "path": "web/mirror-temple/chall/settings.gradle.kts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa97cf6dd02a39aaecdd6dedfcaf05b61be0582c",
+      "size": 35,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/aa97cf6dd02a39aaecdd6dedfcaf05b61be0582c"
+    },
+    {
+      "path": "web/mirror-temple/chall/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a5a75d5e4af62b86ec56cbf64467731d99160206",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/a5a75d5e4af62b86ec56cbf64467731d99160206"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "900e34797ff2c71bd213fc7f3fd3393e90ac2276",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/900e34797ff2c71bd213fc7f3fd3393e90ac2276"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/kotlin",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f5fd275bd5cdeeea4767973968d39e1cad94d259",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/f5fd275bd5cdeeea4767973968d39e1cad94d259"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/kotlin/ng",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e51a05511bc5d7056664f1fffc6981d95c6a66e8",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/e51a05511bc5d7056664f1fffc6981d95c6a66e8"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/kotlin/ng/dicega",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "aa38560346fb6522b95130416293ec4fb7696979",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/aa38560346fb6522b95130416293ec4fb7696979"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/kotlin/ng/dicega/ctf",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8988047a9d05a2bf40aead277cb21e31d44ef839",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/8988047a9d05a2bf40aead277cb21e31d44ef839"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/kotlin/ng/dicega/ctf/web",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "98e7de86e5a411562a2ceef763e483234934bfb6",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/98e7de86e5a411562a2ceef763e483234934bfb6"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/kotlin/ng/dicega/ctf/web/mirrortemple",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e2d8b5070298316ee85e42517eda0f4cc3312abe",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/e2d8b5070298316ee85e42517eda0f4cc3312abe"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/kotlin/ng/dicega/ctf/web/mirrortemple/CorsProxy.kt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3080c02beb2c76af68d859705ffbc50405418610",
+      "size": 2976,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/3080c02beb2c76af68d859705ffbc50405418610"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/kotlin/ng/dicega/ctf/web/mirrortemple/MirrorTemple.kt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4cec9ba8adc59db780f05235816f9d6db96cca0c",
+      "size": 2191,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/4cec9ba8adc59db780f05235816f9d6db96cca0c"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/kotlin/ng/dicega/ctf/web/mirrortemple/SaveFile.kt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eace7422f9427ac26e218e42f000ce9e79e8ddec",
+      "size": 3065,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/eace7422f9427ac26e218e42f000ce9e79e8ddec"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/kotlin/ng/dicega/ctf/web/mirrortemple/SecurityTM.kt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85c7600ac5e1c3dc1203b45d82f4b6773aac92a3",
+      "size": 3378,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/85c7600ac5e1c3dc1203b45d82f4b6773aac92a3"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/resources",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "caf9ff50f49a54f0bbad60d8b6144da6eb5d157a",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/caf9ff50f49a54f0bbad60d8b6144da6eb5d157a"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/resources/application.properties",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b4e805ee5613453d3324af256c2d693c3713d191",
+      "size": 93,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/b4e805ee5613453d3324af256c2d693c3713d191"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/resources/static",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f5b442ff06618143eecf33c60e6f8597d450de09",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/f5b442ff06618143eecf33c60e6f8597d450de09"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/resources/static/index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13427fa48dd050fd0042ec59963b35fc65ab277f",
+      "size": 822,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/13427fa48dd050fd0042ec59963b35fc65ab277f"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/resources/static/static",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d43c6868214f5e1e61003471e7b135c286e35bc8",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/d43c6868214f5e1e61003471e7b135c286e35bc8"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/resources/static/static/index.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc02195fa09d2a7b873aef8f5d2b49873d668d0c",
+      "size": 918,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/bc02195fa09d2a7b873aef8f5d2b49873d668d0c"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/resources/static/static/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35519ecad07ad55e0d0d0d99e383b567c2a62b64",
+      "size": 1271,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/35519ecad07ad55e0d0d0d99e383b567c2a62b64"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/resources/static/static/matter.min.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d401fc4566e72a98e632bc64c748414ffd1bf110",
+      "size": 83476,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/d401fc4566e72a98e632bc64c748414ffd1bf110"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/resources/static/static/postcard.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c5b333d6c635f9c228c58131f5eb238b331f567c",
+      "size": 3613,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/c5b333d6c635f9c228c58131f5eb238b331f567c"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/resources/templates",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3bcc486e7b396b7933caffc0f0fbc3bc2da4983c",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/3bcc486e7b396b7933caffc0f0fbc3bc2da4983c"
+    },
+    {
+      "path": "web/mirror-temple/chall/src/main/resources/templates/postcard-from-nyc.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b528b8692ded7187857a41d86bdc62b536514b00",
+      "size": 1567,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/b528b8692ded7187857a41d86bdc62b536514b00"
+    },
+    {
+      "path": "web/mirror-temple/dev",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "768902d487321960c59058ced983291bc7a3b3df",
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/trees/768902d487321960c59058ced983291bc7a3b3df"
+    },
+    {
+      "path": "web/mirror-temple/dev/Test.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5797f4b9f66f8fce749d17c13c13e5e6bf82352f",
+      "size": 3199,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/5797f4b9f66f8fce749d17c13c13e5e6bf82352f"
+    },
+    {
+      "path": "web/mirror-temple/dev/compressed-template.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a3ad942267037a0d45fe05307a0cd63be262a56f",
+      "size": 119,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/a3ad942267037a0d45fe05307a0cd63be262a56f"
+    },
+    {
+      "path": "web/mirror-temple/dev/make-image-payload.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "7456b94628713e44524c3f3f1fb617dbd809dfab",
+      "size": 1015,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/7456b94628713e44524c3f3f1fb617dbd809dfab"
+    },
+    {
+      "path": "web/mirror-temple/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb4a3fe49d30e381dd3289b82d90abba8effb8b8",
+      "size": 84,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/fb4a3fe49d30e381dd3289b82d90abba8effb8b8"
+    },
+    {
+      "path": "web/mirror-temple/kona.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "508ee71fa5f6dab88fee1837bb357ed3f73dc173",
+      "size": 1864,
+      "url": "https://api.github.com/repos/dicegang/dicectf-quals-2026-challenges/git/blobs/508ee71fa5f6dab88fee1837bb357ed3f73dc173"
+    }
+  ],
+  "truncated": false
+}

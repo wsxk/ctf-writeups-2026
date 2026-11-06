@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ouroboros · KubSTU 2026 (reverse) writeup · ctf42</title>
+  
+
+<meta name="description" content="Ouroboros: Reverse challenge from KubSTU 2026. Techniques: self-referential-key-decryption. We made a small program here. The developer left a lot of…">
+<link rel="canonical" href="https://ctf42.online/ctfs/kubstu/2026/ouroboros/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/kubstu/2026/ouroboros/">
+<meta property="og:title" content="Ouroboros">
+<meta property="og:description" content="Ouroboros: Reverse challenge from KubSTU 2026. Techniques: self-referential-key-decryption. We made a small program here. The developer left a lot of…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/kubstu/">KubSTU</a> / <a href="/ctfs/kubstu/2026/">2026</a> / Ouroboros</nav>
+
+
+<div class="challenge-head">
+  <h1>Ouroboros
+    </h1>
+  <div class="badges">
+    <a class="cat cat-rev" href="/category/rev/">Reverse</a>
+    
+    
+    <span class="chip">weight 24.83</span>
+    <a class="tag" href="/techniques/self-referential-key-decryption/">#self-referential-key-decryption</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/kubstu/2026/ouroboros/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/kubstu/2026/ouroboros/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  
+  <p class="meta">Flag format: <code class="flag-format">KubSTU{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>We made a small program here. The developer left a lot of Easter eggs.</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>Ouroboros — writeup</b>
+    
+    
+    <span class="muted">by mpei_larpers</span>
+  </header>
+  <p><a href="https://ctftime.org/writeup/41127" rel="noopener nofollow ugc" target="_blank">https://ctftime.org/writeup/41127</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/kubstu/2026/ouroboros/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KubSTU/2026/rev/Ouroboros" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/kubstu/2026/ouroboros/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from KubSTU 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/kubstu/2026/web_3_casino/">WEB_3_Casino</a> <span class="cat cat-blockchain cat-xs">Blockchain</span></li><li>
+<a href="/ctfs/kubstu/2026/aes_is_secure_right/">AES_Is_Secure_Right</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kubstu/2026/base/">Base</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kubstu/2026/curve_ball/">Curve_Ball</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kubstu/2026/do_you_like_reading/">Do_you_like_reading</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kubstu/2026/it_really_isnt_enough/">It_really_isnt_enough</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kubstu/2026/l_lawliet/">L._Lawliet</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kubstu/2026/not_enough_part_1/">Not_enough_part_1</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kubstu/2026/numbers_station/">Numbers_Station</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kubstu/2026/strange_sequence_of_numbers/">Strange_sequence_of_numbers</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kubstu/2026/the_deterministic_fog/">The_Deterministic_Fog</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kubstu/2026/what_do_you_know_about_perelman/">What_do_you_know_about_Perelman</a> <span class="cat cat-crypto cat-xs">Crypto</span></li>
+      </ul>
+      <a class="small" href="/ctfs/kubstu/2026/">All KubSTU 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

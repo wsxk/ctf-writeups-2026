@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">DoReMi</string>
+    <string name="frame">frame</string>
+    <string name="doo">do</string>
+    <string name="re">re</string>
+    <string name="mi">mi</string>
+    <string name="fa">fa</string>
+    <string name="sol">sol</string>
+    <string name="enter">Enter</string>
+    <string name="welcome">welcome</string>
+</resources>

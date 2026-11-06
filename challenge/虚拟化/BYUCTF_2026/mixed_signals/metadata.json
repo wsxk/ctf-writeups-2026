@@ -1,0 +1,51 @@
+{
+  "event_id": "CTF-3247",
+  "event_title": "BYUCTF 2026",
+  "category": "虚拟化",
+  "title": "mixed_signals",
+  "dirname": "BYUCTF_2026",
+  "source_urls": [
+    "https://github.com/BYU-CSA/BYUCTF-2026/tree/HEAD/rev/mixed_signals"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/mixed_signals/README.md",
+      "local": "writeups/README.md",
+      "size_expected": 764,
+      "git_blob_sha": "e683e63cb9d650ee17089178b5b8c9bb639a15fb",
+      "status": "downloaded",
+      "bytes": 764,
+      "sha256": "f1f7c1c24919322b9f441feeff4875a85f853c6d0aa43acadb33aadab69ea856"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/mixed_signals/mixed_signals",
+      "local": "attachments/mixed_signals",
+      "size_expected": 2349136,
+      "git_blob_sha": "4f15d5776b69dc0ecc635df608ec5302799a01e4",
+      "status": "downloaded",
+      "bytes": 2349136,
+      "sha256": "4a3d8ffc571f1dd7436ac468c2a58c41aa2dd1202093c8e501e3298e1d502753"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/mixed_signals/program",
+      "local": "attachments/program",
+      "size_expected": 3178069,
+      "git_blob_sha": "1685894e52b278db80923c1b6ea8abfcd4c865e6",
+      "status": "downloaded",
+      "bytes": 3178069,
+      "sha256": "d7336534440689aa48c59cd39f0424e56b67cd3f8f5c0e767d52b0db8adcc4ce"
+    }
+  ],
+  "notes": "官方README有Solve章节；Linux信号实现的自定义VM，官方未提供solver。",
+  "directory": "虚拟化/BYUCTF_2026/mixed_signals",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/mixed_signals/README.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/mixed_signals/mixed_signals",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/mixed_signals/program"
+  ],
+  "attachment_status": "downloaded"
+}

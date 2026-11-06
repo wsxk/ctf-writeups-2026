@@ -1,0 +1,99 @@
+Source: https://pentest.bi0s.in/blog/posts/sekai-ctf-2026-ufo/
+
+ufo - SekaiCTF 2026 Writeup
+Walkthrough for the ufo Android reverse engineering challenge from SekaiCTF-2026.
+Posted
+Oct 28, 2026
+By
+Narain Krishna
+2 min
+read
+Challenge Info
+Field
+Details
+CTF
+SekaiCTF
+Challenge
+ufo
+Category
+Android / Reverse Engineering
+Description
+1
+2
+3
+This app is pretty handy
+Solution
+We can start by opening the apk in our emulator,
+This seems like a file opener application which supports a variety of extensions, after searching for a bit…I found that this same application is available in playstore
+link: https://play.google.com/store/apps/details?id=com.krauq.universalfileopener&hl=en_IN
+This app has a premium subscription, but since this is a legit app we can rule out a possibility of bypassing them to find the flag.
+Now, we can proceed to inspect it in Jadx,
+An obfuscated code, which makes it much harder to find anything related to the flag, But after some time of searching through the code we find something interesting
+The class
+b7.w
+initializes a interger preference key
+ambient_trace
+and if we track this key ,
+In class
+b7.a
+we find something, we open particular file types like spreadsheet,pdf with signature etc the value of
+ambient_trace
+updates, more clearly -
+bit 1 = PdfSignature
+bit 2 = PdfMetadata
+bit 4 = OfficeText
+bit 8 = Spreadsheet
+bit 16 = ImageTransform
+As this value changes a pixel art starts to appear in the main screen, to see the full pixel art we must set the value of
+ambient_trace
+to
+0b11111
+or
+31
+To do that we can :
+Open all those files and set it manually
+modify the config file i.e
+ufo_prefs.preferences_pb
+which is present in
+/data/data/com.krauq.universalfileopener/files/datastore/
+using a hex editor and change the value
+Use frida to force the value to be 31
+I will be using method 3 here, The script i used :
+1
+2
+3
+4
+5
+6
+Java.perform(function() {
+    var m0 = Java.use('r7.m0');
+    m0.g.overload('int', 'int', 'y0.k').implementation = function(i3, i10, k) {
+        return this.g(31, i10, k);
+    };
+});
+After loading this script, We see
+We can use Gemini to clean up the background and to only keep the colour pixels
+Now, we can load this photo into a photo editor and turn it into black and white and darken the black pixels
+Now, this looks like a qr code but it does not contain the three black boxes at the corners We can try to reconstruct this qr for that I used
+Qrazybox
+The error correction level is L and Mask pattern is 5 After reconstructing it, we get the final QR -
+Google lens or Camera might not be able to scan this qr, So we might need to install a qr and barcode scanner from playstore, After scanning the qr, we get a text
+clankedormiscgod
+and it was mentioned in the desc to wrap the flag in
+SEKAI{}
+Flag
+1
+SEKAI{clankedormiscgod}
+Writeups
+,
+CTF
+,
+Mobile Security
+ctf
+android
+reverse engineering
+mobile security
+This post is licensed under
+CC BY 4.0
+by the author.
+Share

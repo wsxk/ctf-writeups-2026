@@ -1,0 +1,25 @@
+# This is the standard metadata for a challenge with a server-side component.
+# In terms of file structure, please also have the following:
+#
+# - A challenge/ folder with everything needed to create the challenge assets
+# - A distfiles/ folder which contains all files (or symlinks to files) that
+#   will be attached to the challenge
+# - A solution/ folder with a working solution to the challenge (or a README.md
+#   file documenting the solution)
+
+version: 'beta1'
+name: 'wromwarp'
+author: 'symmetric'
+flag: 'CTF{new_tas_wr}'
+description: |
+  Ah the good old days of sitting around and playing the Lonely Entertainment System... With this new emulator I should dust off some of my old games! (Note: tty is 60 rows by 120 cols)
+value: 1000 # Leave this as 1000 unless you have a reason to change it
+tags:
+  - 'RE'
+  - 'Pwn'
+port: 6502
+protocol: 'tcp' # accepted: http, https, tcp, udp
+flag_path: '0xF0 in WRAM' # Optional; but helpful for players
+notes: |
+  Private notes on deployment, setup, etc.
+use_podperconn: true # required to be deployed as a terminal challenge

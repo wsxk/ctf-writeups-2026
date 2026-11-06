@@ -1,0 +1,62 @@
+{
+  "event_id": "CTF-3161",
+  "event_title": "SUCTF 2026",
+  "category": "pwn",
+  "title": "SU_fullchian",
+  "source_urls": [
+    "https://github.com/team-su/SUCTF-2026/tree/HEAD/pwn/SU_fullchian",
+    "https://ctftime.org/event/3161/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_fullchian/env/pwn_deploy/README.md"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_fullchian/attachments/attachment.txt"
+  ],
+  "writeup_status": "未取得有效writeup：上游解答为空占位/模板",
+  "attachment_status": "未下载完整环境；26,374,590,293字节7z已停止，因未找到有效writeup",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。",
+    "Google Drive实际可公开下载，但该题不满足已有writeup的收录条件，停止大文件下载。attachment.7z.part为65,011,712字节不完整临时文件，删除被自动审批策略拒绝，不能解压当作题目包。"
+  ],
+  "repository": "team-su/SUCTF-2026",
+  "repository_tree_sha": "f52d0aec9aa6c7575795edeb317dcfd130d04d99",
+  "artifacts": [
+    {
+      "path": "attachments/attachments/attachment.txt",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_fullchian/attachments/attachment.txt",
+      "bytes": 375,
+      "sha256": "140b3c4bfd7f05f909aa2b90f18903e28be07f029818000ea3ee7bb01d885e86",
+      "git_blob_sha1": "46471aef43ea7062abcb0cd8444fc21df810207c",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/env/pwn_deploy/README.md",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_fullchian/env/pwn_deploy/README.md",
+      "bytes": 30,
+      "sha256": "cb351a4844f7f9c179a35ae8da9cec15576552a2a97ee3d57ccc5a6ced4785bf",
+      "git_blob_sha1": "81d1e1f0c9999f93062972dc4a2c68aa380033e9",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [
+    {
+      "error": "empty download",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_fullchian/writeup/README.md",
+      "path": "writeup/README.md",
+      "kind": "writeups"
+    }
+  ],
+  "omitted_files": [],
+  "has_verified_solution": false,
+  "prose_files": [],
+  "attachment_complete": false,
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06"
+}

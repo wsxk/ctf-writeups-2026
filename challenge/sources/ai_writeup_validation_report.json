@@ -1,0 +1,48 @@
+{
+  "catalog_rows": 331,
+  "canonical_rewritten": 324,
+  "duplicates": 2,
+  "pending_sources": 5,
+  "categories": {
+    "逆向": 104,
+    "pwn": 124,
+    "虚拟化": 49,
+    "车联网": 18,
+    "iot": 16,
+    "android": 13
+  },
+  "missing_files": [],
+  "broken_local_links": [
+    {
+      "file": "pwn/NepCTF 2026/47_different_ROP/AI_WRITEUP.md",
+      "target": "attachments/"
+    },
+    {
+      "file": "pwn/NepCTF 2026/48_onlyone/AI_WRITEUP.md",
+      "target": "attachments/"
+    },
+    {
+      "file": "pwn/NepCTF 2026/51_shadow_signal/AI_WRITEUP.md",
+      "target": "attachments/"
+    },
+    {
+      "file": "pwn/第十届“强网杯”全国网络安全挑战赛·线上赛/Easytl/AI_WRITEUP.md",
+      "target": "attachments/"
+    },
+    {
+      "file": "pwn/第十届“强网杯”全国网络安全挑战赛·线上赛/Oldsvr/AI_WRITEUP.md",
+      "target": "attachments/"
+    },
+    {
+      "file": "虚拟化/NepCTF 2026/36_ColorfulArray/AI_WRITEUP.md",
+      "target": "attachments/"
+    },
+    {
+      "file": "虚拟化/NepCTF 2026/42_T.A.S P.W.N/AI_WRITEUP.md",
+      "target": "attachments/"
+    }
+  ],
+  "empty_sections": [],
+  "executed_challenges": false,
+  "passed": false
+}

@@ -1,0 +1,65 @@
+{
+  "event_id": "CTF-3370",
+  "event_title": "z0d1ak CTF Qualifiers",
+  "title": "paperweight",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "poppler",
+    "pdf",
+    "heap-overflow",
+    "cet",
+    "stack-pivot"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/paperweight/",
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/pwn/paperweight"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/pwn/paperweight"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/pwn/paperweight",
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/paperweight/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/z0d1ak_2026-quals/paperweight/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/z0d1ak-ctf-qualifiers-2026/main/pwn/paperweight/README.md",
+      "bytes": 10043,
+      "sha256": "0da05c60b0845edef172889e53c5819da1ababb5bfb08fb7504ed94f39d45a43",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/z0d1ak_2026-quals/paperweight/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Z0d1ak/2026/Quals/pwn/paperweight/README.md",
+      "bytes": 217,
+      "sha256": "8d6c4958fda1def47977fde139615cb3e0788d3423c5d73f7e7424a5728fefe7",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/z0d1ak_2026-quals/paperweight/attachments/upstream/pwn_paperweight.tar.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Z0d1ak/2026/Quals/pwn/paperweight/pwn_paperweight.tar.gz",
+      "bytes": 4765371,
+      "sha256": "acc50d5bc148095adef20d3d50a136d42738d7073dbf54c6741cc40518af5b34",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/paperweight/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/z0d1ak/2026-quals/paperweight/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

@@ -1,0 +1,71 @@
+{
+  "event_id": "CTF-3195",
+  "event_title": "TJCTF 2026",
+  "title": "rotated",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "reversing",
+    "byte-rotation"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/tjctf/2026/rotated/",
+    "https://ctf42.online/ctfs/tjctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TJCTF/2026/rev/rotated"
+  ],
+  "writeup_urls": [
+    "https://blog.rawpayload.com/blog/tjctf-2026-rotated-writeup",
+    "https://dhtson.github.io/blogs/TJCTF-2026-Rev-Rotated/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TJCTF/2026/rev/rotated",
+    "https://ctf42.online/ctfs/tjctf/2026/rotated/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/tjctf_2026/rotated/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TJCTF/2026/rev/rotated/README.md",
+      "bytes": 141,
+      "sha256": "1be7b837e725f438238c530ca731e50fd0d7f95ffc296ac8f6ec80fe45aacbfa",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/tjctf_2026/rotated/attachments/upstream/chall",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TJCTF/2026/rev/rotated/chall",
+      "bytes": 6480,
+      "sha256": "d7622db106133782a0ad97832104f4a454f1eb062a324de037bbbdc708f292d2",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/tjctf_2026/rotated/writeups/replacement_source.html",
+      "url": "https://dhtson.github.io/blogs/TJCTF-2026-Rev-Rotated/",
+      "bytes": 79204,
+      "sha256": "9def801e5e244d6be9796ab0242e56f02ef443595981d1c15f9d182d584ee051",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/tjctf_2026/rotated/writeups/replacement_readable.txt",
+      "url": "https://dhtson.github.io/blogs/TJCTF-2026-Rev-Rotated/",
+      "bytes": 6432,
+      "sha256": "8e01052aef1630579830d4124c6b85c25dac79e32392c25c2f5ffc774288575a",
+      "kind": "writeup"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/tjctf/2026/rotated/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/tjctf/2026/rotated/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files",
+  "writeup_kind": "prose"
+}

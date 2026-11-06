@@ -1,0 +1,353 @@
+{
+  "event_id": "CTF-3043",
+  "event_title": "Srdnlen CTF 2026 Quals",
+  "category": "pwn",
+  "title": "Linx",
+  "source_urls": [
+    "https://github.com/srdnlen/srdnlenctf-2026_public/tree/HEAD/pwn_linx",
+    "https://ctftime.org/event/3043/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/exploit_linx_wu.py",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup.md",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup/img0.png",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup/img1.png",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup/img2.png",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup/img3.png",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup/img4.png",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup/img5.png",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup/img6.png",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup/img7.png",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup/img8.png"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/attachments/Dockerfile",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/attachments/linx",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/attachments/linx.c",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/authors.txt",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/description.md",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/flags.txt",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/Dockerfile",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/Dockerfile.compile",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/Makefile",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/compile.sh",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/debug_dir/ld-linux-x86-64.so.2",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/debug_dir/libc.so.6",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/debug_dir/linx",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/docker-compose.yml",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/flag.txt",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/linx",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/linx.c",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/title.txt"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "srdnlen/srdnlenctf-2026_public",
+  "repository_tree_sha": "bbb6ae789775d2429ae2bdaae3d120d44ad758b8",
+  "artifacts": [
+    {
+      "path": "attachments/attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/attachments/Dockerfile",
+      "bytes": 537,
+      "sha256": "3eb41e3fca9c517183061e700aacd8de807d2fc091660630678b7d6fbb27fac3",
+      "git_blob_sha1": "922b981f3aa085710de6f12a6f94001d75bc6775",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/attachments/linx",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/attachments/linx",
+      "bytes": 23664,
+      "sha256": "da33374f3c4489a27c0ea6fc5a763edc7d6b989cfa127a5061490788dc3bb056",
+      "git_blob_sha1": "a6287f834aaeeb91fdc005a26fab3f28c15491a9",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/attachments/linx.c",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/attachments/linx.c",
+      "bytes": 4687,
+      "sha256": "cea626a83bad3e77de4bae889827d8632b9b2f8773e70f3012ba6ef83da4ce95",
+      "git_blob_sha1": "12fbcb401587811cbe2e0711fbc20090c05a434d",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/authors.txt",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/authors.txt",
+      "bytes": 20,
+      "sha256": "f40c949cc6501a505d319a62fde0c582b4298381712fadc9e7a6d88bc5a28d2f",
+      "git_blob_sha1": "ee5655e7f6cab19457b8a04fd73bef4ff7ab9034",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/description.md",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/description.md",
+      "bytes": 140,
+      "sha256": "ada1564fa5c74202f37780d197e6c312ad2b469bcc6af1f3d4a36df83bcf92d2",
+      "git_blob_sha1": "1b0e22470b6631ebcae224d43e6768322f187e99",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flags.txt",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/flags.txt",
+      "bytes": 32,
+      "sha256": "848513b42249ada5046b266374fbb62fa54cd1a432de93db688d93ccee60b0b2",
+      "git_blob_sha1": "7d706b83ef3333c6010a0d26ed22e758237fb8d4",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/Dockerfile",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/Dockerfile",
+      "bytes": 538,
+      "sha256": "f4a31a2454c542d6d45dd4210d311f8d039f6a7a8f5f368a428fb9fd99c448a8",
+      "git_blob_sha1": "1994e2de95d9e6970983c388c8ba61f142e895e7",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/Dockerfile.compile",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/Dockerfile.compile",
+      "bytes": 333,
+      "sha256": "e59417ca745d0a82d66e49c187f570e3fc3829197b1b6cc6d53d3a32cb6da18f",
+      "git_blob_sha1": "9cdfae8a01f52d39bf777cb3bcab0bb1fca41ea5",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/Makefile",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/Makefile",
+      "bytes": 325,
+      "sha256": "05ac6880e38b49b1f0057b06a27bc8da473250aeeca8ed6cd49d7b01d093ee94",
+      "git_blob_sha1": "50a1814ef17827bfa674ec66a0447bc308eef937",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/compile.sh",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/compile.sh",
+      "bytes": 127,
+      "sha256": "2a6076fdd348c1f6da16ed33405aca00307f1a20b92c90d450c32f8f5644f2d4",
+      "git_blob_sha1": "ceb064510cb3ae953192bb43d17748143eabbda1",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/debug_dir/ld-linux-x86-64.so.2",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/debug_dir/ld-linux-x86-64.so.2",
+      "bytes": 263200,
+      "sha256": "4062cfe0016452a5a07d3c25159eda1d27e3f660850216c58c7c0eb65fd4ab16",
+      "git_blob_sha1": "5326c5cfac9939ce8ab16634183c31b3c4bc6292",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/debug_dir/libc.so.6",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/debug_dir/libc.so.6",
+      "bytes": 6512592,
+      "sha256": "208ed5304dc56d80c0c9ccb8354a95d8ed0ef752520f334b4aa1e6fc38bd8f3a",
+      "git_blob_sha1": "d3d50a71728a1ddcd8bef342c5756ab41ec6fafd",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/debug_dir/linx",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/debug_dir/linx",
+      "bytes": 29520,
+      "sha256": "608cce2478c18320d7814897c225deafd40e453df3a35017180ac710a83f518d",
+      "git_blob_sha1": "8749163be0982b87ff132f2fac07510886cb69a7",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/docker-compose.yml",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/docker-compose.yml",
+      "bytes": 161,
+      "sha256": "f235fa311d0eae62402bd253abc3f97cede5f933b3a263dd547c3ea7780d9196",
+      "git_blob_sha1": "6cab234bc390ba05d9e541cf9ddf0cfcd34799b6",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/src/exploit_linx_wu.py",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/exploit_linx_wu.py",
+      "bytes": 4457,
+      "sha256": "5137de6852b72e4764e39770a11823b5e20d73560459f6981c25dd6fe7da7906",
+      "git_blob_sha1": "5fa9a6eadb408a2da11f784ef6eee7898cabb61a",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/flag.txt",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/flag.txt",
+      "bytes": 32,
+      "sha256": "848513b42249ada5046b266374fbb62fa54cd1a432de93db688d93ccee60b0b2",
+      "git_blob_sha1": "7d706b83ef3333c6010a0d26ed22e758237fb8d4",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/linx",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/linx",
+      "bytes": 23664,
+      "sha256": "da33374f3c4489a27c0ea6fc5a763edc7d6b989cfa127a5061490788dc3bb056",
+      "git_blob_sha1": "a6287f834aaeeb91fdc005a26fab3f28c15491a9",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/linx.c",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/src/linx.c",
+      "bytes": 4687,
+      "sha256": "cea626a83bad3e77de4bae889827d8632b9b2f8773e70f3012ba6ef83da4ce95",
+      "git_blob_sha1": "12fbcb401587811cbe2e0711fbc20090c05a434d",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/title.txt",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/title.txt",
+      "bytes": 4,
+      "sha256": "9d2db8874c06707c276eabb37ac10a0a52782c0e23859d28a7c8717d9ddbbc81",
+      "git_blob_sha1": "bac92691e90f3170e0ceb2fae81ee87b8a997aa8",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup.md",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup.md",
+      "bytes": 10671,
+      "sha256": "4edac80cc0e285291b36c03dcd81731e3cb5ba2fab75645aca6546f9432923e0",
+      "git_blob_sha1": "1abc1b80323b6387a5b16b0aacb3fd0ed6b9ef01",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/img0.png",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup/img0.png",
+      "bytes": 14482,
+      "sha256": "be77be8a9731bb3fd93080cdc26d3c2445dc27d3b78911666c57ad8aa9802ee2",
+      "git_blob_sha1": "f7c019b304081a5605dfea1b689628649692484c",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/img1.png",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup/img1.png",
+      "bytes": 203599,
+      "sha256": "8b7ec6e93e49b7ae21eb482017c83e7ebe8ea4a6cd8ad867bd70562bc941ce57",
+      "git_blob_sha1": "bc8cabd37e939ef1e2a2dd009bcc3c2d71d3e2cd",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/img2.png",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup/img2.png",
+      "bytes": 354438,
+      "sha256": "e6a0c274c302dc86b324c248bfd32a658c6f399f8479924d50e15a9f18c0abc1",
+      "git_blob_sha1": "99f5b2c362d33ef226f870bf1d1c6032ee6202d3",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/img3.png",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup/img3.png",
+      "bytes": 129901,
+      "sha256": "1c2f046a81f630373375cceea7ee9a5c681d1260b503dd3dd6fd236471e5d4a3",
+      "git_blob_sha1": "c0fb4a4e2bfe36fb84a54b5c83d119a1246f842d",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/img4.png",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup/img4.png",
+      "bytes": 411195,
+      "sha256": "a1723d9b54a7dd9bfa86f59cb796b9f737f17036956ea34427941f2e76dabf7e",
+      "git_blob_sha1": "3e8748e4f13ff751a6a3bf4491af624d156b6b08",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/img5.png",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup/img5.png",
+      "bytes": 15775,
+      "sha256": "1f6c61e62f56d891c984c0ad1e90cf0820d5d542c68b37c2f36ac8d699f91d90",
+      "git_blob_sha1": "b455214cdac5c97dadad3a45bab78f75d38949e9",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/img6.png",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup/img6.png",
+      "bytes": 74518,
+      "sha256": "e8ba597278afda8d9759d54db5b31f1b79c3f723cf4e0956b09fdc0d4246ad56",
+      "git_blob_sha1": "646b52f55da07c9eed286f9aa5e8ca5a3768ee00",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/img7.png",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup/img7.png",
+      "bytes": 80901,
+      "sha256": "a0c0168453cc455159dd95f792c3ab27fc38397d44062ba9027d8b11b5d94e82",
+      "git_blob_sha1": "326577a3ea24850142f0ab6faea20ab35a7f870f",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/img8.png",
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/pwn_linx/writeup/img8.png",
+      "bytes": 43831,
+      "sha256": "fcf33e85161b049733352f213efc143b192653c7880ff50b7c5367fb48e1fced",
+      "git_blob_sha1": "d61e161c97b4c61ace461a09375aafb575e9446b",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/writeup.md"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

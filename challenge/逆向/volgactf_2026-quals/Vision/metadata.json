@@ -1,0 +1,52 @@
+{
+  "event_id": "CTF-3045",
+  "event_title": "VolgaCTF 2026 Qualifier",
+  "title": "Vision",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [],
+  "source_urls": [
+    "https://ctf42.online/ctfs/volgactf/2026-quals/vision/",
+    "https://ctf42.online/ctfs/volgactf/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/VolgaCTF/2026/Quals/rev/Vision"
+  ],
+  "writeup_urls": [
+    "https://blog.sdark.me/vision-volgactf-2026"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/VolgaCTF/2026/Quals/rev/Vision",
+    "https://ctf42.online/ctfs/volgactf/2026-quals/vision/folder.zip?kind=files"
+  ],
+  "writeup_status": "unavailable",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/volgactf_2026-quals/Vision/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/VolgaCTF/2026/Quals/rev/Vision/README.md",
+      "bytes": 54,
+      "sha256": "14b44fb0d8d3d5ceca1ae9372767372da983a6b139ef00d6ff63495db30bc438",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/volgactf_2026-quals/Vision/attachments/upstream/vision.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/VolgaCTF/2026/Quals/rev/Vision/vision.zip",
+      "bytes": 32006540,
+      "sha256": "b277decc2e5f33645477a3f1023200e1d834cdc616cd0ef3c66367605097c5fb",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/volgactf/2026-quals/vision/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/volgactf/2026-quals/vision/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

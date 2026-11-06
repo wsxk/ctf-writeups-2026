@@ -1,0 +1,4026 @@
+{
+  "sha": "8519e2bb29b3e49b0e48a2078728f9fc6e6cb0ac",
+  "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/8519e2bb29b3e49b0e48a2078728f9fc6e6cb0ac",
+  "tree": [
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8dcde3b343b62ff35cf0d8cddceb51338744b7f3",
+      "size": 5362,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/8dcde3b343b62ff35cf0d8cddceb51338744b7f3"
+    },
+    {
+      "path": "aes-aead",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "333f963da3dd7b51b38f8bcffd85f0501ba5a88d",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/333f963da3dd7b51b38f8bcffd85f0501ba5a88d"
+    },
+    {
+      "path": "aes-aead/.gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddd4285ceda70bd22eca752d621b003629bcc57e",
+      "size": 52,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ddd4285ceda70bd22eca752d621b003629bcc57e"
+    },
+    {
+      "path": "aes-aead/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "035fca1bd578c9f2a7f81275b9955400bd5f3852",
+      "size": 245,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/035fca1bd578c9f2a7f81275b9955400bd5f3852"
+    },
+    {
+      "path": "aes-aead/Makefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f2560ba553085b72a8c24e1c67776ee0e6e3b47",
+      "size": 170,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/0f2560ba553085b72a8c24e1c67776ee0e6e3b47"
+    },
+    {
+      "path": "aes-aead/aes-gcm.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "477c6ac565879d63b0e4c3be99f28305850f791c",
+      "size": 7369,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/477c6ac565879d63b0e4c3be99f28305850f791c"
+    },
+    {
+      "path": "aes-aead/aes-gcm.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3fb6ed8f49f4078dfc04cd5a0999cff0cebabcb3",
+      "size": 444,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/3fb6ed8f49f4078dfc04cd5a0999cff0cebabcb3"
+    },
+    {
+      "path": "aes-aead/aes.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cdac7fbdb87db38c649851cabf72980ac17b082f",
+      "size": 17243,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/cdac7fbdb87db38c649851cabf72980ac17b082f"
+    },
+    {
+      "path": "aes-aead/aes.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3d4884133c202b9ce287671d90b8fd0fe4088001",
+      "size": 289,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/3d4884133c202b9ce287671d90b8fd0fe4088001"
+    },
+    {
+      "path": "aes-aead/chall",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "9f64206c74458a5f860f42622cf2f5872aafaf14",
+      "size": 30856,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/9f64206c74458a5f860f42622cf2f5872aafaf14"
+    },
+    {
+      "path": "aes-aead/chall.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8e12c2c5de09ee28742966f1b1b4acaff99b7579",
+      "size": 6303,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/8e12c2c5de09ee28742966f1b1b4acaff99b7579"
+    },
+    {
+      "path": "aes-aead/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ef1f5228a0fbac571ff327c1f8765017234e935",
+      "size": 471,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/3ef1f5228a0fbac571ff327c1f8765017234e935"
+    },
+    {
+      "path": "aes-aead/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e17ce2d7b5a3ec5f4f83776dc70858675516498f",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/e17ce2d7b5a3ec5f4f83776dc70858675516498f"
+    },
+    {
+      "path": "aes-aead/dist/aes-aead.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c65d2b2145f42615a708369a9f560ba59c1f3ead",
+      "size": 13183,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/c65d2b2145f42615a708369a9f560ba59c1f3ead"
+    },
+    {
+      "path": "aes-aead/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60e3e52bb0debc9a80c1922a231f15a2afec0c1a",
+      "size": 40,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/60e3e52bb0debc9a80c1922a231f15a2afec0c1a"
+    },
+    {
+      "path": "aes-aead/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d3bae54ea842fd8b34b165da03ee80a657f33388",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/d3bae54ea842fd8b34b165da03ee80a657f33388"
+    },
+    {
+      "path": "aes-aead/solve/aes_aead.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "411d33aa8a822625ab0eaf309991d96cac66c0b2",
+      "size": 2992,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/411d33aa8a822625ab0eaf309991d96cac66c0b2"
+    },
+    {
+      "path": "aes-aead/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "450659184637ed435e372b5bedab17ab5174270d",
+      "size": 3842,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/450659184637ed435e372b5bedab17ab5174270d"
+    },
+    {
+      "path": "aes-aead/startup.args",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e89dd886d4780a02dca131ee0952ed74b2ec1fdb",
+      "size": 25,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e89dd886d4780a02dca131ee0952ed74b2ec1fdb"
+    },
+    {
+      "path": "baby-exfil",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d033c0c84fa16324e021daeb51e67f49e3d09cae",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/d033c0c84fa16324e021daeb51e67f49e3d09cae"
+    },
+    {
+      "path": "baby-exfil/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2aaf05b1dc1bbbf0333c5ee05d512e4583c5fc67",
+      "size": 636,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/2aaf05b1dc1bbbf0333c5ee05d512e4583c5fc67"
+    },
+    {
+      "path": "baby-exfil/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "72d42819139915244b3ad5eec53badb9231694df",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/72d42819139915244b3ad5eec53badb9231694df"
+    },
+    {
+      "path": "baby-exfil/dist/final.pcapng",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "197d691f0db74d87b37c1e618e96a3e1a672fea2",
+      "size": 17762356,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/197d691f0db74d87b37c1e618e96a3e1a672fea2"
+    },
+    {
+      "path": "baby-flag-checker",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "43f318b338ea40d03415bb142a20e86bc774b687",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/43f318b338ea40d03415bb142a20e86bc774b687"
+    },
+    {
+      "path": "baby-flag-checker/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f65f72e5af587e901c3731bcddcb0c077a42e873",
+      "size": 816,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/f65f72e5af587e901c3731bcddcb0c077a42e873"
+    },
+    {
+      "path": "baby-flag-checker/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9785069658ea9f187736b79f59e38156d0621ea3",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/9785069658ea9f187736b79f59e38156d0621ea3"
+    },
+    {
+      "path": "baby-flag-checker/dist/baby.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9828157d945e78374f173b4f7c686c357556b9e4",
+      "size": 296440,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/9828157d945e78374f173b4f7c686c357556b9e4"
+    },
+    {
+      "path": "baby-flag-checker/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6c40d65fb13eb9baf38da81fd0b8f637b8db7cd5",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/6c40d65fb13eb9baf38da81fd0b8f637b8db7cd5"
+    },
+    {
+      "path": "baby-flag-checker/solve/baby.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9828157d945e78374f173b4f7c686c357556b9e4",
+      "size": 296440,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/9828157d945e78374f173b4f7c686c357556b9e4"
+    },
+    {
+      "path": "baby-flag-checker/solve/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9cf9c32be148577dc7416fc274b99339faa64bfe",
+      "size": 74,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/9cf9c32be148577dc7416fc274b99339faa64bfe"
+    },
+    {
+      "path": "baby-flag-checker/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "efc52639fa7796ad739b3b2495a0cd09d5a2239a",
+      "size": 1209,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/efc52639fa7796ad739b3b2495a0cd09d5a2239a"
+    },
+    {
+      "path": "babybof",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f291a014fc52b5b73b6752f03a4a1ff2786234a9",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/f291a014fc52b5b73b6752f03a4a1ff2786234a9"
+    },
+    {
+      "path": "babybof/.gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddd4285ceda70bd22eca752d621b003629bcc57e",
+      "size": 52,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ddd4285ceda70bd22eca752d621b003629bcc57e"
+    },
+    {
+      "path": "babybof/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "035fca1bd578c9f2a7f81275b9955400bd5f3852",
+      "size": 245,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/035fca1bd578c9f2a7f81275b9955400bd5f3852"
+    },
+    {
+      "path": "babybof/Makefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64ec99c3fa94a22cdffdbc55c0b5824bc24640c1",
+      "size": 108,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/64ec99c3fa94a22cdffdbc55c0b5824bc24640c1"
+    },
+    {
+      "path": "babybof/chall",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "7e36a8253a7ede671dd415bb759b8177b177aeea",
+      "size": 16304,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/7e36a8253a7ede671dd415bb759b8177b177aeea"
+    },
+    {
+      "path": "babybof/chall.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a504fc25e57ed4cdcff94be598aca8943c029914",
+      "size": 380,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/a504fc25e57ed4cdcff94be598aca8943c029914"
+    },
+    {
+      "path": "babybof/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6569649f71bf6d923093e5cc478a2b064cf54d57",
+      "size": 474,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/6569649f71bf6d923093e5cc478a2b064cf54d57"
+    },
+    {
+      "path": "babybof/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0e6c7155db6ee48299dc773357bd1a7665211230",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/0e6c7155db6ee48299dc773357bd1a7665211230"
+    },
+    {
+      "path": "babybof/dist/babybof.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee918295adbdcc180f9146e92f00eb63d74a3ac1",
+      "size": 3259,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ee918295adbdcc180f9146e92f00eb63d74a3ac1"
+    },
+    {
+      "path": "babybof/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3aa008ef9b6c6bc63e877a986666ce4d704da05c",
+      "size": 50,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/3aa008ef9b6c6bc63e877a986666ce4d704da05c"
+    },
+    {
+      "path": "babybof/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5aef9571bb9044ce191fac6af0332c23c27cf347",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/5aef9571bb9044ce191fac6af0332c23c27cf347"
+    },
+    {
+      "path": "babybof/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "afbb2347408c8d78288b6fd9871d2dfa3f090578",
+      "size": 114,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/afbb2347408c8d78288b6fd9871d2dfa3f090578"
+    },
+    {
+      "path": "babybof/startup.args",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e89dd886d4780a02dca131ee0952ed74b2ec1fdb",
+      "size": 25,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e89dd886d4780a02dca131ee0952ed74b2ec1fdb"
+    },
+    {
+      "path": "bring-your-own-program",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a974c0550d78c273f0fdab84598b8b737451756b",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/a974c0550d78c273f0fdab84598b8b737451756b"
+    },
+    {
+      "path": "bring-your-own-program/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1bee09351e06467e2ae682becd13e59afe62fe96",
+      "size": 415,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/1bee09351e06467e2ae682becd13e59afe62fe96"
+    },
+    {
+      "path": "bring-your-own-program/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ea3cb1c154eadca7e66d8f1e01b7a209aa18a69",
+      "size": 579,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/3ea3cb1c154eadca7e66d8f1e01b7a209aa18a69"
+    },
+    {
+      "path": "bring-your-own-program/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f431273c76d500f8b26060684c27cf586834d3df",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/f431273c76d500f8b26060684c27cf586834d3df"
+    },
+    {
+      "path": "bring-your-own-program/dist/byop.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b2229a28902a1387902db9dff948ba7912a7a211",
+      "size": 6028,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/b2229a28902a1387902db9dff948ba7912a7a211"
+    },
+    {
+      "path": "bring-your-own-program/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "04e238f195afe8916ae1a98ae07dd5c61b943ca8",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/04e238f195afe8916ae1a98ae07dd5c61b943ca8"
+    },
+    {
+      "path": "bring-your-own-program/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07bfa2708eba574293e7e3586e304f61de8190a9",
+      "size": 1867,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/07bfa2708eba574293e7e3586e304f61de8190a9"
+    },
+    {
+      "path": "bring-your-own-program/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fc0417eaa593af6af6a5966a85884569cf4ef802",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/fc0417eaa593af6af6a5966a85884569cf4ef802"
+    },
+    {
+      "path": "bring-your-own-program/src/chal.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d29538d5e6b1cfa30ee2c3be97b08ef79ab38b44",
+      "size": 11495,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/d29538d5e6b1cfa30ee2c3be97b08ef79ab38b44"
+    },
+    {
+      "path": "bring-your-own-program/src/data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "57b572fe102ef1028eba36fb43ce0c24289d3ccd",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/57b572fe102ef1028eba36fb43ce0c24289d3ccd"
+    },
+    {
+      "path": "bring-your-own-program/src/data/n",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "301160a93062df23030a69f4b5e4d9bf71866ee9",
+      "size": 1,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/301160a93062df23030a69f4b5e4d9bf71866ee9"
+    },
+    {
+      "path": "bring-your-own-program/src/data/test",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5e1c309dae7f45e0f39b1bf3ac3cd9db12e7d689",
+      "size": 11,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/5e1c309dae7f45e0f39b1bf3ac3cd9db12e7d689"
+    },
+    {
+      "path": "bring-your-own-program/src/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "135362f841d9e3a4f0c79bca2e33997333d65f57",
+      "size": 39,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/135362f841d9e3a4f0c79bca2e33997333d65f57"
+    },
+    {
+      "path": "bring-your-own-program/src/run",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca0b9c65367d7008c0a076d6c3406117877ca629",
+      "size": 53,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ca0b9c65367d7008c0a076d6c3406117877ca629"
+    },
+    {
+      "path": "bring-your-own-program/startup.args",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a8dd8c7b8892aeb23827a3aa041298c20e68917",
+      "size": 26,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/0a8dd8c7b8892aeb23827a3aa041298c20e68917"
+    },
+    {
+      "path": "calculator",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d0a73c9670d894bd89b658c2826395c87ed46ca7",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/d0a73c9670d894bd89b658c2826395c87ed46ca7"
+    },
+    {
+      "path": "calculator/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "035fca1bd578c9f2a7f81275b9955400bd5f3852",
+      "size": 245,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/035fca1bd578c9f2a7f81275b9955400bd5f3852"
+    },
+    {
+      "path": "calculator/chall",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "69c0e87d55bb4e72ff16e0bd84323ff60ebb23f1",
+      "size": 101320,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/69c0e87d55bb4e72ff16e0bd84323ff60ebb23f1"
+    },
+    {
+      "path": "calculator/chall.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c85521230340cb897076d2e9986a3ed7c52816f",
+      "size": 3625,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/6c85521230340cb897076d2e9986a3ed7c52816f"
+    },
+    {
+      "path": "calculator/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "90cbc2b9d950cf295f5d5523cbf8cbe45cdde4ca",
+      "size": 477,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/90cbc2b9d950cf295f5d5523cbf8cbe45cdde4ca"
+    },
+    {
+      "path": "calculator/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e4008e85045af05f5df06e446d5dfc8ac6960abd",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/e4008e85045af05f5df06e446d5dfc8ac6960abd"
+    },
+    {
+      "path": "calculator/dist/calc.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fc0ce2829cd6b5fe5f2728fcfb3d5703ed09834",
+      "size": 23874,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/2fc0ce2829cd6b5fe5f2728fcfb3d5703ed09834"
+    },
+    {
+      "path": "calculator/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1160727904b62af50cc246cf0a7cf52fc2013c39",
+      "size": 42,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/1160727904b62af50cc246cf0a7cf52fc2013c39"
+    },
+    {
+      "path": "calculator/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e60c3b68378096e10505155c80b6cdd1dadefc7d",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/e60c3b68378096e10505155c80b6cdd1dadefc7d"
+    },
+    {
+      "path": "calculator/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "500922fe1fcd265ea299b1d82818e23537c73e2b",
+      "size": 2159,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/500922fe1fcd265ea299b1d82818e23537c73e2b"
+    },
+    {
+      "path": "calculator/startup.args",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e89dd886d4780a02dca131ee0952ed74b2ec1fdb",
+      "size": 25,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e89dd886d4780a02dca131ee0952ed74b2ec1fdb"
+    },
+    {
+      "path": "eebpf",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9da881b521615e46c5e47ea5bb5acd09260f8c3e",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/9da881b521615e46c5e47ea5bb5acd09260f8c3e"
+    },
+    {
+      "path": "eebpf/.gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddd4285ceda70bd22eca752d621b003629bcc57e",
+      "size": 52,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ddd4285ceda70bd22eca752d621b003629bcc57e"
+    },
+    {
+      "path": "eebpf/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "65257fcc2dcc2f52531366ee318969189b43c1ee",
+      "size": 547,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/65257fcc2dcc2f52531366ee318969189b43c1ee"
+    },
+    {
+      "path": "eebpf/bzImage",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2412de2ccc2a63a0c6f34f3aa8754ee38451c58",
+      "size": 7480320,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/a2412de2ccc2a63a0c6f34f3aa8754ee38451c58"
+    },
+    {
+      "path": "eebpf/chall.patch",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d26e00a129b6fce4b15bae19206d4fd3540c6be7",
+      "size": 798,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/d26e00a129b6fce4b15bae19206d4fd3540c6be7"
+    },
+    {
+      "path": "eebpf/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e2e5a21576779c51251e8bb7888fb2b2e116c1c8",
+      "size": 482,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e2e5a21576779c51251e8bb7888fb2b2e116c1c8"
+    },
+    {
+      "path": "eebpf/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5309d1a0a388fca9f11ba9436343c7d5395cb426",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/5309d1a0a388fca9f11ba9436343c7d5395cb426"
+    },
+    {
+      "path": "eebpf/dist/eebpf.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "39f67bb2076c1dbe9f6314fc33a85b9b80b57ed7",
+      "size": 10051387,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/39f67bb2076c1dbe9f6314fc33a85b9b80b57ed7"
+    },
+    {
+      "path": "eebpf/initramfs.cpio.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4d546232b3d096d233471f0ee0b429938cb88d64",
+      "size": 2665896,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/4d546232b3d096d233471f0ee0b429938cb88d64"
+    },
+    {
+      "path": "eebpf/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "93e631831ba16f8f2dd543587c200bc648d529bd",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/93e631831ba16f8f2dd543587c200bc648d529bd"
+    },
+    {
+      "path": "eebpf/solve/Makefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "083e6e724dc78d39070c8546de437df202c41a14",
+      "size": 55,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/083e6e724dc78d39070c8546de437df202c41a14"
+    },
+    {
+      "path": "eebpf/solve/bpf_insn.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa640f7618e23ba73c5f56d40060f794d73066b6",
+      "size": 5718,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/fa640f7618e23ba73c5f56d40060f794d73066b6"
+    },
+    {
+      "path": "eebpf/solve/exp",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "59f8bdab6ae2735c0473293e251ad99accf8b66d",
+      "size": 46784,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/59f8bdab6ae2735c0473293e251ad99accf8b66d"
+    },
+    {
+      "path": "eebpf/solve/exp.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "50388b85d274ccc1503e3ded6a5ba8e3255ed0de",
+      "size": 8460,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/50388b85d274ccc1503e3ded6a5ba8e3255ed0de"
+    },
+    {
+      "path": "eebpf/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "01f3be3b9ed18096a30231127b9e3b5442e785c8",
+      "size": 504,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/01f3be3b9ed18096a30231127b9e3b5442e785c8"
+    },
+    {
+      "path": "eebpf/start-qemu.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "590e6d19fc8599b47c520bdb769134be9f4b6665",
+      "size": 267,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/590e6d19fc8599b47c520bdb769134be9f4b6665"
+    },
+    {
+      "path": "eebpf/startup.args",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e89dd886d4780a02dca131ee0952ed74b2ec1fdb",
+      "size": 25,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e89dd886d4780a02dca131ee0952ed74b2ec1fdb"
+    },
+    {
+      "path": "encryption-service",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "072600db0f8f61095d42a8de8a8d29388ecff992",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/072600db0f8f61095d42a8de8a8d29388ecff992"
+    },
+    {
+      "path": "encryption-service/.gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddd4285ceda70bd22eca752d621b003629bcc57e",
+      "size": 52,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ddd4285ceda70bd22eca752d621b003629bcc57e"
+    },
+    {
+      "path": "encryption-service/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1b9bb6c609fffc7480e29200e22a4f2bc97668f",
+      "size": 290,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/f1b9bb6c609fffc7480e29200e22a4f2bc97668f"
+    },
+    {
+      "path": "encryption-service/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d17978632a7304caa08e7d6e320b7cfc4a9a19f1",
+      "size": 532,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/d17978632a7304caa08e7d6e320b7cfc4a9a19f1"
+    },
+    {
+      "path": "encryption-service/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "af4b0f2b8202285e08532fc2efc03b7280a15bc0",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/af4b0f2b8202285e08532fc2efc03b7280a15bc0"
+    },
+    {
+      "path": "encryption-service/dist/encryption-service.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "12d6ecbb1fe9ab2ea38396ebff622591d13eb918",
+      "size": 1528,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/12d6ecbb1fe9ab2ea38396ebff622591d13eb918"
+    },
+    {
+      "path": "encryption-service/enc.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "077606f1be7b02e71b5a456218c2d596ad7de59e",
+      "size": 747,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/077606f1be7b02e71b5a456218c2d596ad7de59e"
+    },
+    {
+      "path": "encryption-service/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b69233a5311e86d1e14e430c0794473abd11cf69",
+      "size": 41,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/b69233a5311e86d1e14e430c0794473abd11cf69"
+    },
+    {
+      "path": "encryption-service/run.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "df5ae6876f32aa329f06c57c8f036431bb399d5e",
+      "size": 490,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/df5ae6876f32aa329f06c57c8f036431bb399d5e"
+    },
+    {
+      "path": "encryption-service/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a3c29d9df83c1fe1e59d4f0a725d279f2615871f",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/a3c29d9df83c1fe1e59d4f0a725d279f2615871f"
+    },
+    {
+      "path": "encryption-service/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "849a119f312447efbf11b4f276e9c7020cf1466e",
+      "size": 469,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/849a119f312447efbf11b4f276e9c7020cf1466e"
+    },
+    {
+      "path": "encryption-service/startup.args",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e89dd886d4780a02dca131ee0952ed74b2ec1fdb",
+      "size": 25,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e89dd886d4780a02dca131ee0952ed74b2ec1fdb"
+    },
+    {
+      "path": "feedback",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "58ec875a13f6b5badd84b42c057137ca65176686",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/58ec875a13f6b5badd84b42c057137ca65176686"
+    },
+    {
+      "path": "feedback/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a90387d88b9a29b95cf179b719529420dd95c847",
+      "size": 510,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/a90387d88b9a29b95cf179b719529420dd95c847"
+    },
+    {
+      "path": "fileupload",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6d6d6272ca9e530dad7ea654054c2083758f8dfb",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/6d6d6272ca9e530dad7ea654054c2083758f8dfb"
+    },
+    {
+      "path": "fileupload/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e8a2bce49d1877f58509a03b70f16f55e33cfe0",
+      "size": 700,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/7e8a2bce49d1877f58509a03b70f16f55e33cfe0"
+    },
+    {
+      "path": "fileupload/app.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "90635c2ca252064a6b7f2b0ce3d681d2ff3b88a7",
+      "size": 2387,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/90635c2ca252064a6b7f2b0ce3d681d2ff3b88a7"
+    },
+    {
+      "path": "fileupload/app.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "72e695a7bb91b5dc0fccdc00a25a7f29292ee19a",
+      "size": 188,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/72e695a7bb91b5dc0fccdc00a25a7f29292ee19a"
+    },
+    {
+      "path": "fileupload/catflag.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96f58406bb763c75953346ae2da7b5e702bc6226",
+      "size": 273,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/96f58406bb763c75953346ae2da7b5e702bc6226"
+    },
+    {
+      "path": "fileupload/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f87848536692fe6bf092f3f48d1a7ab61b948754",
+      "size": 460,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/f87848536692fe6bf092f3f48d1a7ab61b948754"
+    },
+    {
+      "path": "fileupload/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6912c2732e5cd634791a76b095fde87a44790d4b",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/6912c2732e5cd634791a76b095fde87a44790d4b"
+    },
+    {
+      "path": "fileupload/dist/fileupload.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "37b4bd9fd36f1d0838abfc26d80210748f813e71",
+      "size": 2601,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/37b4bd9fd36f1d0838abfc26d80210748f813e71"
+    },
+    {
+      "path": "fileupload/fileupload.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48ee6439e83c4e222e27bb911ad4ce9ad20dee66",
+      "size": 3487,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/48ee6439e83c4e222e27bb911ad4ce9ad20dee66"
+    },
+    {
+      "path": "fileupload/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5fd676341f3e08c31ab5d66668163c9c53ca655",
+      "size": 45,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e5fd676341f3e08c31ab5d66668163c9c53ca655"
+    },
+    {
+      "path": "fileupload/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bbb186404b06a04aa40177073bda2ba31229cd99",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/bbb186404b06a04aa40177073bda2ba31229cd99"
+    },
+    {
+      "path": "fileupload/solve/_speedups.cpython-312-x86_64-linux-gnu.so",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d4b8f955db81fddbfe4f90b3bad053bb2edbe83",
+      "size": 44072,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/6d4b8f955db81fddbfe4f90b3bad053bb2edbe83"
+    },
+    {
+      "path": "fileupload/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "924944b999661021d0f92bbafea9c42aaa222531",
+      "size": 1145,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/924944b999661021d0f92bbafea9c42aaa222531"
+    },
+    {
+      "path": "firewall",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "be2cbc77f2121739ba3102d04fa1343201d22c6e",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/be2cbc77f2121739ba3102d04fa1343201d22c6e"
+    },
+    {
+      "path": "firewall/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b288295f4f181898764a9b77a20cce138b18503",
+      "size": 561,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/2b288295f4f181898764a9b77a20cce138b18503"
+    },
+    {
+      "path": "firewall/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab811a8ca76a50c7d1fd843cbe23971378f17da2",
+      "size": 546,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ab811a8ca76a50c7d1fd843cbe23971378f17da2"
+    },
+    {
+      "path": "firewall/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6df7c8f63060089446d0e78673c4ae2fd04b86e0",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/6df7c8f63060089446d0e78673c4ae2fd04b86e0"
+    },
+    {
+      "path": "firewall/dist/firewall.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2c305790137fdc9c5b10406ebea331a68390d0f",
+      "size": 3017,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/f2c305790137fdc9c5b10406ebea331a68390d0f"
+    },
+    {
+      "path": "firewall/entrypoint.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "390f6958fefd31bf5957a931c90c4de2a57a2d05",
+      "size": 631,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/390f6958fefd31bf5957a931c90c4de2a57a2d05"
+    },
+    {
+      "path": "firewall/firewall.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0671207502db75f5917f1e122a0b6c8e0f12be67",
+      "size": 4324,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/0671207502db75f5917f1e122a0b6c8e0f12be67"
+    },
+    {
+      "path": "firewall/flag.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c81a981abb840f728ab8ccbd11783f5d4077d706",
+      "size": 213,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/c81a981abb840f728ab8ccbd11783f5d4077d706"
+    },
+    {
+      "path": "firewall/index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b770fb25b26410582485ac283551c955df957944",
+      "size": 151,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/b770fb25b26410582485ac283551c955df957944"
+    },
+    {
+      "path": "firewall/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "214fe41f0cc9f927361cd43f85028f60bfd96fb2",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/214fe41f0cc9f927361cd43f85028f60bfd96fb2"
+    },
+    {
+      "path": "firewall/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2c11b62e732d8ac440fd7220e04a120dffac75a",
+      "size": 330,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/a2c11b62e732d8ac440fd7220e04a120dffac75a"
+    },
+    {
+      "path": "firewall/startup.args",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a8dd8c7b8892aeb23827a3aa041298c20e68917",
+      "size": 26,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/0a8dd8c7b8892aeb23827a3aa041298c20e68917"
+    },
+    {
+      "path": "gamblers-fallacy",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b922265f1c1502d267eb188ad32ce3b907b81c69",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/b922265f1c1502d267eb188ad32ce3b907b81c69"
+    },
+    {
+      "path": "gamblers-fallacy/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ecc3f2995750f2e0f93e9016d99c0989689e800",
+      "size": 411,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/3ecc3f2995750f2e0f93e9016d99c0989689e800"
+    },
+    {
+      "path": "gamblers-fallacy/chall.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59f064dc7948fd7e7bbb1408f337e73cd008fb78",
+      "size": 3731,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/59f064dc7948fd7e7bbb1408f337e73cd008fb78"
+    },
+    {
+      "path": "gamblers-fallacy/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da06269c4b3700f217bad03297972eca3c60f15b",
+      "size": 527,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/da06269c4b3700f217bad03297972eca3c60f15b"
+    },
+    {
+      "path": "gamblers-fallacy/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3258fcf5e4235e2971683f6ba183c56edca81406",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/3258fcf5e4235e2971683f6ba183c56edca81406"
+    },
+    {
+      "path": "gamblers-fallacy/dist/gamblers-fallacy.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "91297dccd9f53de2d9419b0aba399332f6c3c761",
+      "size": 2244,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/91297dccd9f53de2d9419b0aba399332f6c3c761"
+    },
+    {
+      "path": "gamblers-fallacy/flag",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "78a87be3350cee0353bff6c832e4f8f7c1c902ae",
+      "size": 34,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/78a87be3350cee0353bff6c832e4f8f7c1c902ae"
+    },
+    {
+      "path": "gamblers-fallacy/run.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf852ef85ba0751acf5497511c9fa969dd255c88",
+      "size": 45,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/cf852ef85ba0751acf5497511c9fa969dd255c88"
+    },
+    {
+      "path": "gamblers-fallacy/serverseed",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "90d2950097fa1850b6f692ab1095ec9cdd3f7fae",
+      "size": 7,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/90d2950097fa1850b6f692ab1095ec9cdd3f7fae"
+    },
+    {
+      "path": "gamblers-fallacy/solution",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f4e85a06dcfd12d1e74835a7caa83816e14bb3e7",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/f4e85a06dcfd12d1e74835a7caa83816e14bb3e7"
+    },
+    {
+      "path": "gamblers-fallacy/solution/results.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5172c5ba03984b718911fb4431296b8618c9bae7",
+      "size": 68780,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/5172c5ba03984b718911fb4431296b8618c9bae7"
+    },
+    {
+      "path": "gamblers-fallacy/solution/solution.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f701f97c512dccb8aad550e6584975a7e63b6cb9",
+      "size": 2466,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/f701f97c512dccb8aad550e6584975a7e63b6cb9"
+    },
+    {
+      "path": "gamblers-fallacy/startup.args",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b229d4a2acb64ab04d215fb509a4ff00dde43fbc",
+      "size": 13,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/b229d4a2acb64ab04d215fb509a4ff00dde43fbc"
+    },
+    {
+      "path": "go-go-cabinet",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0f8f3842886f11b13cde1be028d7ab04dcb56262",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/0f8f3842886f11b13cde1be028d7ab04dcb56262"
+    },
+    {
+      "path": "go-go-cabinet/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8536707b3955672ec9a552a0b7cfce227a1cbbe1",
+      "size": 1062,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/8536707b3955672ec9a552a0b7cfce227a1cbbe1"
+    },
+    {
+      "path": "go-go-cabinet/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1083c0c3bfb618885efbe76eca43b65565403b1a",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/1083c0c3bfb618885efbe76eca43b65565403b1a"
+    },
+    {
+      "path": "go-go-cabinet/dist/cabinet.png",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "c2983e2ae4dee1871e4415bd7c6dcdd0eebb6529",
+      "size": 724716,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/c2983e2ae4dee1871e4415bd7c6dcdd0eebb6529"
+    },
+    {
+      "path": "go-go-cabinet/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9d1b69b9a610aeea20b1c00b6b6549ef24e9f927",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/9d1b69b9a610aeea20b1c00b6b6549ef24e9f927"
+    },
+    {
+      "path": "go-go-cabinet/solve/solve.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9279b30f764cf191d464ae80bdf28e9895447e02",
+      "size": 53,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/9279b30f764cf191d464ae80bdf28e9895447e02"
+    },
+    {
+      "path": "go-go-coaster",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f42a4269a0f6d3603e1c70061ee197e92730ec2f",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/f42a4269a0f6d3603e1c70061ee197e92730ec2f"
+    },
+    {
+      "path": "go-go-coaster/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6aaf7706a18610b0eb2e3ff7518138b26435cf68",
+      "size": 764,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/6aaf7706a18610b0eb2e3ff7518138b26435cf68"
+    },
+    {
+      "path": "go-go-coaster/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a8e799c5b0df443c4f806d0ef2e2e02625fec2cf",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/a8e799c5b0df443c4f806d0ef2e2e02625fec2cf"
+    },
+    {
+      "path": "go-go-coaster/solve/solve.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0d24c6b9f0ac2284ef8151081496d59a560d7ce",
+      "size": 125,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/d0d24c6b9f0ac2284ef8151081496d59a560d7ce"
+    },
+    {
+      "path": "guessthenumber",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7fe59e6bb5eb505ceb6fb725531317a28b56881d",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/7fe59e6bb5eb505ceb6fb725531317a28b56881d"
+    },
+    {
+      "path": "guessthenumber/.gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddd4285ceda70bd22eca752d621b003629bcc57e",
+      "size": 52,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ddd4285ceda70bd22eca752d621b003629bcc57e"
+    },
+    {
+      "path": "guessthenumber/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54bbb2df0a21a108a0fdc146997d3d1fef7cb245",
+      "size": 248,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/54bbb2df0a21a108a0fdc146997d3d1fef7cb245"
+    },
+    {
+      "path": "guessthenumber/chall.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d12cfc1622fc6ccd85b776cf19013b3dcd517e6a",
+      "size": 2016,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/d12cfc1622fc6ccd85b776cf19013b3dcd517e6a"
+    },
+    {
+      "path": "guessthenumber/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0873b679925efad0e1f5ace4d6f6e6115c6c5b46",
+      "size": 420,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/0873b679925efad0e1f5ace4d6f6e6115c6c5b46"
+    },
+    {
+      "path": "guessthenumber/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ed6a2f8cb2d291cff35b594f57c4a5c81ffe2259",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/ed6a2f8cb2d291cff35b594f57c4a5c81ffe2259"
+    },
+    {
+      "path": "guessthenumber/dist/guess.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ce15d1bbd75848f55cf3494fbaff88a94fae3bf",
+      "size": 1232,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/4ce15d1bbd75848f55cf3494fbaff88a94fae3bf"
+    },
+    {
+      "path": "guessthenumber/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3bba1fbc54b03d7f7655a8f9152f4c6a36a620c0",
+      "size": 37,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/3bba1fbc54b03d7f7655a8f9152f4c6a36a620c0"
+    },
+    {
+      "path": "guessthenumber/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d32747f633af46109d9e896f96efe6e588f657b",
+      "size": 842,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/8d32747f633af46109d9e896f96efe6e588f657b"
+    },
+    {
+      "path": "guessthenumber/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2e5a9e25ea23a3cf01013b9f7427e1e74e238efa",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/2e5a9e25ea23a3cf01013b9f7427e1e74e238efa"
+    },
+    {
+      "path": "guessthenumber/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02733bbf716542adb65b190702a286de5dd39bec",
+      "size": 1289,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/02733bbf716542adb65b190702a286de5dd39bec"
+    },
+    {
+      "path": "guessthenumber/startup.args",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e89dd886d4780a02dca131ee0952ed74b2ec1fdb",
+      "size": 25,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e89dd886d4780a02dca131ee0952ed74b2ec1fdb"
+    },
+    {
+      "path": "kk-training-room",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0dffca04296a7843e61f494bb6013c07721a2ef8",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/0dffca04296a7843e61f494bb6013c07721a2ef8"
+    },
+    {
+      "path": "kk-training-room/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a23d233c65067869bb5a040034c18251cde82ad",
+      "size": 89,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/8a23d233c65067869bb5a040034c18251cde82ad"
+    },
+    {
+      "path": "kk-training-room/bot",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b32f57dd4fc23817dfc5ba0f05ece72628bf75f6",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/b32f57dd4fc23817dfc5ba0f05ece72628bf75f6"
+    },
+    {
+      "path": "kk-training-room/bot/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e0e1a31f7d04a37d8360430867178a65a49e609",
+      "size": 5605,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/1e0e1a31f7d04a37d8360430867178a65a49e609"
+    },
+    {
+      "path": "kk-training-room/bot/package-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba2146746a0501be2f04227f80a26cd07db5afaf",
+      "size": 11660,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ba2146746a0501be2f04227f80a26cd07db5afaf"
+    },
+    {
+      "path": "kk-training-room/bot/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2572a438530e9687d85fbefacdefdb0c4e9d5813",
+      "size": 57,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/2572a438530e9687d85fbefacdefdb0c4e9d5813"
+    },
+    {
+      "path": "kk-training-room/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bbc7d273432a2435d464d79346c0d0f1c473a53a",
+      "size": 652,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/bbc7d273432a2435d464d79346c0d0f1c473a53a"
+    },
+    {
+      "path": "kk-training-room/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7e810ef40902f254cacfcbf6f0f1d4fd0cb1cdb7",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/7e810ef40902f254cacfcbf6f0f1d4fd0cb1cdb7"
+    },
+    {
+      "path": "kk-training-room/dist/kk-training-room.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b556af4f12e61dc06e28c3aab0b8984e2ab3fc0d",
+      "size": 6906,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/b556af4f12e61dc06e28c3aab0b8984e2ab3fc0d"
+    },
+    {
+      "path": "kk-training-room/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "88d32e7dd8a7cfb73d3e198d075331403adde23e",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/88d32e7dd8a7cfb73d3e198d075331403adde23e"
+    },
+    {
+      "path": "kk-training-room/solve/solve.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ef5b92710b823ffc6f06a98ba81f2d8ab66a5f4",
+      "size": 1371,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/6ef5b92710b823ffc6f06a98ba81f2d8ab66a5f4"
+    },
+    {
+      "path": "leaked-d",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b5e3327085364a83655827970b4877dbd2b1dd2f",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/b5e3327085364a83655827970b4877dbd2b1dd2f"
+    },
+    {
+      "path": "leaked-d/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ceef5851b85519db35b6da02e0e22864a94f5b23",
+      "size": 1455,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ceef5851b85519db35b6da02e0e22864a94f5b23"
+    },
+    {
+      "path": "leaked-d/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "49d2042f3cdb637b37c7e03c73d7218b03287271",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/49d2042f3cdb637b37c7e03c73d7218b03287271"
+    },
+    {
+      "path": "leaked-d/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dc79e84c10d795be779cb945c76624e812160233",
+      "size": 1533,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/dc79e84c10d795be779cb945c76624e812160233"
+    },
+    {
+      "path": "lottery",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "988b5a9e3c0e3d24166366306541db0dd2344fc9",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/988b5a9e3c0e3d24166366306541db0dd2344fc9"
+    },
+    {
+      "path": "lottery/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1fb67e6bca0699b6b8f5172f653a32386c20f4aa",
+      "size": 276,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/1fb67e6bca0699b6b8f5172f653a32386c20f4aa"
+    },
+    {
+      "path": "lottery/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "331788466c0c881eef02ffbbe89619b082c6e4a6",
+      "size": 658,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/331788466c0c881eef02ffbbe89619b082c6e4a6"
+    },
+    {
+      "path": "lottery/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2e7ff7e47736e93f70a259cf77a618a0462f98f3",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/2e7ff7e47736e93f70a259cf77a618a0462f98f3"
+    },
+    {
+      "path": "lottery/dist/lottery.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd9eec188f6934aaf4fdd1fd8b7cea918fcad122",
+      "size": 908,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/cd9eec188f6934aaf4fdd1fd8b7cea918fcad122"
+    },
+    {
+      "path": "lottery/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96097ff1d5b130f5868e791c7ea716e31bef19a9",
+      "size": 49,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/96097ff1d5b130f5868e791c7ea716e31bef19a9"
+    },
+    {
+      "path": "lottery/lottery.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e034ee8972e3f186905e2e087af472dcbd528bb7",
+      "size": 399,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e034ee8972e3f186905e2e087af472dcbd528bb7"
+    },
+    {
+      "path": "lottery/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e0d866715df3e6112b5ee31c0dde6ea8197e3b72",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/e0d866715df3e6112b5ee31c0dde6ea8197e3b72"
+    },
+    {
+      "path": "lottery/solve/solve.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fac3b0a77c6d2bdcb56f7cce1b1924f65874c94b",
+      "size": 38,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/fac3b0a77c6d2bdcb56f7cce1b1924f65874c94b"
+    },
+    {
+      "path": "lottery/startup.args",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a8dd8c7b8892aeb23827a3aa041298c20e68917",
+      "size": 26,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/0a8dd8c7b8892aeb23827a3aa041298c20e68917"
+    },
+    {
+      "path": "mat247",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6cded49f7575e625666fc86f030764f0b49d6f05",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/6cded49f7575e625666fc86f030764f0b49d6f05"
+    },
+    {
+      "path": "mat247/chall.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7dfc2466f733f9fa3c6a13f019b3158576387f3c",
+      "size": 6410,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/7dfc2466f733f9fa3c6a13f019b3158576387f3c"
+    },
+    {
+      "path": "mat247/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8bb12fba8a371a47d7ed4b49784380bdb62a5d33",
+      "size": 495,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/8bb12fba8a371a47d7ed4b49784380bdb62a5d33"
+    },
+    {
+      "path": "mat247/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d3b1cb3c4ae58bbc58985207031c0109d70db85d",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/d3b1cb3c4ae58bbc58985207031c0109d70db85d"
+    },
+    {
+      "path": "mat247/dist/chall.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "08f15643a2111b55e70f708adb1d73c796ab509b",
+      "size": 6351,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/08f15643a2111b55e70f708adb1d73c796ab509b"
+    },
+    {
+      "path": "mat247/dist/output.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "232a47748abf97f43f1d6f2e7b8a1c8a604309ed",
+      "size": 2230448,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/232a47748abf97f43f1d6f2e7b8a1c8a604309ed"
+    },
+    {
+      "path": "mat247/secret.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a599d805a6b35e10037a2067109ea8961f3212ce",
+      "size": 353,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/a599d805a6b35e10037a2067109ea8961f3212ce"
+    },
+    {
+      "path": "mat247/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4160fc3a80eced9bb13187859ffa9faff37755cc",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/4160fc3a80eced9bb13187859ffa9faff37755cc"
+    },
+    {
+      "path": "mat247/solve/solve.sage",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef1912feef5c611da56a825d9a0caeec4aea0623",
+      "size": 8728,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ef1912feef5c611da56a825d9a0caeec4aea0623"
+    },
+    {
+      "path": "mat347",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "afb90f6eb96b98e587e1892c2b8bbd9026dc687e",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/afb90f6eb96b98e587e1892c2b8bbd9026dc687e"
+    },
+    {
+      "path": "mat347/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f11114d1f7b1a41a837051a4b6c31fc693f5cec8",
+      "size": 522,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/f11114d1f7b1a41a837051a4b6c31fc693f5cec8"
+    },
+    {
+      "path": "mat347/chall.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "131a7318ba54f9ca749abc478067c105335961b3",
+      "size": 1793,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/131a7318ba54f9ca749abc478067c105335961b3"
+    },
+    {
+      "path": "mat347/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bfd2492dadfb0abb464e8349c30b6c1d705d6b92",
+      "size": 509,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/bfd2492dadfb0abb464e8349c30b6c1d705d6b92"
+    },
+    {
+      "path": "mat347/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b217f24980486c3bda005ec8b0a79d01f3590a38",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/b217f24980486c3bda005ec8b0a79d01f3590a38"
+    },
+    {
+      "path": "mat347/dist/chall.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dbdb5ce17ce78ed54351848dd10a28155d9c43d2",
+      "size": 1736,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/dbdb5ce17ce78ed54351848dd10a28155d9c43d2"
+    },
+    {
+      "path": "mat347/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7aba488a085faa91380aa55aa32fbd0236b75318",
+      "size": 54,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/7aba488a085faa91380aa55aa32fbd0236b75318"
+    },
+    {
+      "path": "mat347/run.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d68811d9bf865b948f8b66436bff41f1cb682b9f",
+      "size": 90,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/d68811d9bf865b948f8b66436bff41f1cb682b9f"
+    },
+    {
+      "path": "mat347/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "543b2b53ed0b033ad1d96b22208c4c704a432f37",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/543b2b53ed0b033ad1d96b22208c4c704a432f37"
+    },
+    {
+      "path": "mat347/solve/solve.sage",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c4f2bedf24adfba2778ff7699f8b67d1262851c",
+      "size": 3305,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/5c4f2bedf24adfba2778ff7699f8b67d1262851c"
+    },
+    {
+      "path": "mat347/startup.args",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b229d4a2acb64ab04d215fb509a4ff00dde43fbc",
+      "size": 13,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/b229d4a2acb64ab04d215fb509a4ff00dde43fbc"
+    },
+    {
+      "path": "ml-connoisseur",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5cb198632bc953b9afba5065f90e8e7b2a9b503f",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/5cb198632bc953b9afba5065f90e8e7b2a9b503f"
+    },
+    {
+      "path": "ml-connoisseur/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "767d8a9b79ea883e006787e6982cc020f5bb7060",
+      "size": 761,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/767d8a9b79ea883e006787e6982cc020f5bb7060"
+    },
+    {
+      "path": "ml-connoisseur/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7129ee22c5625880f7fd69865cfa5597a7ee9019",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/7129ee22c5625880f7fd69865cfa5597a7ee9019"
+    },
+    {
+      "path": "ml-connoisseur/dist/chal.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40175e80518812aa20834c720749f0e68549c105",
+      "size": 3854,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/40175e80518812aa20834c720749f0e68549c105"
+    },
+    {
+      "path": "ml-connoisseur/dist/examples",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f0edb793dfe05b793e1cb71fcb9ba361584834b1",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/f0edb793dfe05b793e1cb71fcb9ba361584834b1"
+    },
+    {
+      "path": "ml-connoisseur/dist/examples/0.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d5a25db0ded428d302c6f5a9d4338a748e0129a",
+      "size": 310,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/7d5a25db0ded428d302c6f5a9d4338a748e0129a"
+    },
+    {
+      "path": "ml-connoisseur/dist/examples/1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48ba48297e402a4528e1dec9e6ca0f0a762e1f90",
+      "size": 213,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/48ba48297e402a4528e1dec9e6ca0f0a762e1f90"
+    },
+    {
+      "path": "ml-connoisseur/dist/examples/2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d5d4b45d3361a3373abf46499c2b71ecc98011f1",
+      "size": 319,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/d5d4b45d3361a3373abf46499c2b71ecc98011f1"
+    },
+    {
+      "path": "ml-connoisseur/dist/examples/3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c8cf7161c32fdf11803d11d0d01083874517d36",
+      "size": 310,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/0c8cf7161c32fdf11803d11d0d01083874517d36"
+    },
+    {
+      "path": "ml-connoisseur/dist/examples/4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ccd08859f4464668402264914305a5a406b2bd5",
+      "size": 258,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/0ccd08859f4464668402264914305a5a406b2bd5"
+    },
+    {
+      "path": "ml-connoisseur/dist/examples/5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b48c70c1e783489769d9d76e0e266a81b1809968",
+      "size": 289,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/b48c70c1e783489769d9d76e0e266a81b1809968"
+    },
+    {
+      "path": "ml-connoisseur/dist/examples/6.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2751614e598d7b4831634d228312a855f97e0c2d",
+      "size": 306,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/2751614e598d7b4831634d228312a855f97e0c2d"
+    },
+    {
+      "path": "ml-connoisseur/dist/examples/7.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d5028896b070429bcdcd7507197ee51d026ad975",
+      "size": 277,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/d5028896b070429bcdcd7507197ee51d026ad975"
+    },
+    {
+      "path": "ml-connoisseur/dist/examples/8.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c7b1673f5cf4204948801473cccc682dcb7c841",
+      "size": 298,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/9c7b1673f5cf4204948801473cccc682dcb7c841"
+    },
+    {
+      "path": "ml-connoisseur/dist/examples/9.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca6e65d1f048ec4f22f5ae7899f3c0f33f94970d",
+      "size": 267,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ca6e65d1f048ec4f22f5ae7899f3c0f33f94970d"
+    },
+    {
+      "path": "ml-connoisseur/dist/ml-connoisseur.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ecdfce7a47fcbea1809238124940b9b2f2196b6",
+      "size": 93219822,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/3ecdfce7a47fcbea1809238124940b9b2f2196b6"
+    },
+    {
+      "path": "ml-connoisseur/dist/model.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dfe6c4f19ab25f2d3ed0d11e50c14df04328ef84",
+      "size": 442469,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/dfe6c4f19ab25f2d3ed0d11e50c14df04328ef84"
+    },
+    {
+      "path": "ml-connoisseur/dist/requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "92fb4eee576776ff611e297cf0fa5bb35414a193",
+      "size": 31,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/92fb4eee576776ff611e297cf0fa5bb35414a193"
+    },
+    {
+      "path": "ml-connoisseur/dist/weights.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bac2650e6abf456b485ebf43257c11979906f500",
+      "size": 104263141,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/bac2650e6abf456b485ebf43257c11979906f500"
+    },
+    {
+      "path": "ml-connoisseur/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "08d6348f87d084a4e0af5ff2884c61ded5fe86e5",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/08d6348f87d084a4e0af5ff2884c61ded5fe86e5"
+    },
+    {
+      "path": "ml-connoisseur/solve/deobbed_model.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a352dceb3cb30ed72d2f0607e1e03fbe033a0bb7",
+      "size": 10978,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/a352dceb3cb30ed72d2f0607e1e03fbe033a0bb7"
+    },
+    {
+      "path": "ml-connoisseur/solve/deobfuscate.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ca0bb7f47d998be7c1d80e1630c2d3f5c876d02",
+      "size": 25005,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/4ca0bb7f47d998be7c1d80e1630c2d3f5c876d02"
+    },
+    {
+      "path": "ml-connoisseur/solve/flag.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9f298d3e17f6be34281845da317c1cc8e6f73306",
+      "size": 101878,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/9f298d3e17f6be34281845da317c1cc8e6f73306"
+    },
+    {
+      "path": "ml-connoisseur/solve/obf_map.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "259af40f31fb6177825c7e4f2870633de041b3c5",
+      "size": 1802,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/259af40f31fb6177825c7e4f2870633de041b3c5"
+    },
+    {
+      "path": "ml-connoisseur/solve/original.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74e5271de81da43c563d3e5294c0ab161956369a",
+      "size": 8250,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/74e5271de81da43c563d3e5294c0ab161956369a"
+    },
+    {
+      "path": "ml-connoisseur/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "79c6306edf439853dccd71edd3b702b4fa5a2f16",
+      "size": 8410,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/79c6306edf439853dccd71edd3b702b4fa5a2f16"
+    },
+    {
+      "path": "my-pokemon-autograph-is-fake",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3ece12bf36314f04046f3be1884ff7db1b92e23e",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/3ece12bf36314f04046f3be1884ff7db1b92e23e"
+    },
+    {
+      "path": "my-pokemon-autograph-is-fake/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "603e81d35a005824e650d9f5004d1352d54563d6",
+      "size": 1992,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/603e81d35a005824e650d9f5004d1352d54563d6"
+    },
+    {
+      "path": "my-pokemon-autograph-is-fake/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8053c371956fa1a80f35bdeca7ea382163130255",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/8053c371956fa1a80f35bdeca7ea382163130255"
+    },
+    {
+      "path": "my-pokemon-autograph-is-fake/solve/solve.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7463d2b1145c8150458a6049bc1323eaa5de3b12",
+      "size": 2973,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/7463d2b1145c8150458a6049bc1323eaa5de3b12"
+    },
+    {
+      "path": "my-pokemon-card-is-fake",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f2f00fe078e71ed4fd5e4024a2cd296e2cb41342",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/f2f00fe078e71ed4fd5e4024a2cd296e2cb41342"
+    },
+    {
+      "path": "my-pokemon-card-is-fake/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f1cb617317a1d09d251d7afbcff4791fd5ef067",
+      "size": 1635,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/4f1cb617317a1d09d251d7afbcff4791fd5ef067"
+    },
+    {
+      "path": "my-pokemon-card-is-fake/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cdbb218af774bc13e8376dd08e470876604613b3",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/cdbb218af774bc13e8376dd08e470876604613b3"
+    },
+    {
+      "path": "my-pokemon-card-is-fake/dist/Zard.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5bc06433cc734d01b1b60396587b797a6aad97a7",
+      "size": 27202166,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/5bc06433cc734d01b1b60396587b797a6aad97a7"
+    },
+    {
+      "path": "my-pokemon-card-is-fake/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1eadd524dc44dc0ce3bc7f09df7cfd17ca8aa4a3",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/1eadd524dc44dc0ce3bc7f09df7cfd17ca8aa4a3"
+    },
+    {
+      "path": "my-pokemon-card-is-fake/solve/solve.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e51c71cfe5c3a9239751c0bd2bc12809773d3e2",
+      "size": 736,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/3e51c71cfe5c3a9239751c0bd2bc12809773d3e2"
+    },
+    {
+      "path": "my-shikishi-is-fake",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2b2334c176e3aeef6e020abb28b6271f52871396",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/2b2334c176e3aeef6e020abb28b6271f52871396"
+    },
+    {
+      "path": "my-shikishi-is-fake/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c6b1fe7feb5c472ca72a9617e03baefb5595b228",
+      "size": 1758,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/c6b1fe7feb5c472ca72a9617e03baefb5595b228"
+    },
+    {
+      "path": "my-shikishi-is-fake/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a5c4a2ae0c4c44e82a9071f7267e800ff8b8990c",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/a5c4a2ae0c4c44e82a9071f7267e800ff8b8990c"
+    },
+    {
+      "path": "my-shikishi-is-fake/solve/solve.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31226dd655088c7136fbf264a4b49a8c762a0fe7",
+      "size": 2050,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/31226dd655088c7136fbf264a4b49a8c762a0fe7"
+    },
+    {
+      "path": "no-quotes-2",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3bb225cde3adefae518ee469a3fefbe0672d1121",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/3bb225cde3adefae518ee469a3fefbe0672d1121"
+    },
+    {
+      "path": "no-quotes-2/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b01a7b591037090d83ded61e2eadec2b0d17c65",
+      "size": 699,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/1b01a7b591037090d83ded61e2eadec2b0d17c65"
+    },
+    {
+      "path": "no-quotes-2/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ba1699642d2b9e14103e6d796bab540c2233924",
+      "size": 796,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/7ba1699642d2b9e14103e6d796bab540c2233924"
+    },
+    {
+      "path": "no-quotes-2/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e69ba5e16b6f541a626389684a52fe9972967d4f",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/e69ba5e16b6f541a626389684a52fe9972967d4f"
+    },
+    {
+      "path": "no-quotes-2/dist/no-quotes-2.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f1244c02493f4148b34e15bf7acc3d39fb7f123",
+      "size": 5721,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/1f1244c02493f4148b34e15bf7acc3d39fb7f123"
+    },
+    {
+      "path": "no-quotes-2/no-quotes-2.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2b875c40df6e0536ca764040a4e2b4d21d31b6d",
+      "size": 3273,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/f2b875c40df6e0536ca764040a4e2b4d21d31b6d"
+    },
+    {
+      "path": "no-quotes-2/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6e1adb190930fdfeca84bba90cd56caf956cb956",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/6e1adb190930fdfeca84bba90cd56caf956cb956"
+    },
+    {
+      "path": "no-quotes-2/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74245e1abb13b76f066aefc4ba3871bc7d59364b",
+      "size": 1159,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/74245e1abb13b76f066aefc4ba3871bc7d59364b"
+    },
+    {
+      "path": "no-quotes-2/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9bca928fbd02c0c4967d6765c030a9e84ce97eb9",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/9bca928fbd02c0c4967d6765c030a9e84ce97eb9"
+    },
+    {
+      "path": "no-quotes-2/src/app.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75976fef8d8f2be1fddecc2368270fc232e59475",
+      "size": 3187,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/75976fef8d8f2be1fddecc2368270fc232e59475"
+    },
+    {
+      "path": "no-quotes-2/src/entrypoint.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d891686cb30c11bb29c130e924349e470229bde1",
+      "size": 664,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/d891686cb30c11bb29c130e924349e470229bde1"
+    },
+    {
+      "path": "no-quotes-2/src/readflag.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41c52cf97a2428a9bb3ac9986e56b6e65e132029",
+      "size": 137,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/41c52cf97a2428a9bb3ac9986e56b6e65e132029"
+    },
+    {
+      "path": "no-quotes-2/src/requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b5383224d7680b29632356d00f87be00829e85a",
+      "size": 27,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/4b5383224d7680b29632356d00f87be00829e85a"
+    },
+    {
+      "path": "no-quotes-2/src/static",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9d9befea1bcc4eee3a83d4417b8f889b4f80b847",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/9d9befea1bcc4eee3a83d4417b8f889b4f80b847"
+    },
+    {
+      "path": "no-quotes-2/src/static/styles.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5530a2d5af7b6c67f71defb2cea562b3241969e",
+      "size": 2793,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/f5530a2d5af7b6c67f71defb2cea562b3241969e"
+    },
+    {
+      "path": "no-quotes-2/src/templates",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "44340a3834860897e6c5a52684c4b26740c0a3ee",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/44340a3834860897e6c5a52684c4b26740c0a3ee"
+    },
+    {
+      "path": "no-quotes-2/src/templates/home.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6c3646f3858bedd069c9dbe2e07c727c86b91b7",
+      "size": 983,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e6c3646f3858bedd069c9dbe2e07c727c86b91b7"
+    },
+    {
+      "path": "no-quotes-2/src/templates/login.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9750c35003b3ee58156688e8a49e7306297998fc",
+      "size": 1506,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/9750c35003b3ee58156688e8a49e7306297998fc"
+    },
+    {
+      "path": "no-quotes-3",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "628aebbf5c2ffcb99d21eb593302c2a0ba21690c",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/628aebbf5c2ffcb99d21eb593302c2a0ba21690c"
+    },
+    {
+      "path": "no-quotes-3/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76ef24d4275029b5c1f5776a26718284f6840ea8",
+      "size": 666,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/76ef24d4275029b5c1f5776a26718284f6840ea8"
+    },
+    {
+      "path": "no-quotes-3/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea8bd4f46663bb54f855fceba15313eab2b76ee0",
+      "size": 843,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ea8bd4f46663bb54f855fceba15313eab2b76ee0"
+    },
+    {
+      "path": "no-quotes-3/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d677bf09e3f3c24cd91afa1db0d883f3a4be2a2b",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/d677bf09e3f3c24cd91afa1db0d883f3a4be2a2b"
+    },
+    {
+      "path": "no-quotes-3/dist/no-quotes-3.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5bd178daeea3d3d7b9aed0928e5b75409d4a34f",
+      "size": 5882,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/b5bd178daeea3d3d7b9aed0928e5b75409d4a34f"
+    },
+    {
+      "path": "no-quotes-3/no-quotes-3.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "82486bd95d8ed92914fadabfeb07f6712989fb27",
+      "size": 3273,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/82486bd95d8ed92914fadabfeb07f6712989fb27"
+    },
+    {
+      "path": "no-quotes-3/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2d09219b7b28ee699e5afe732ab77e9029d6b00f",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/2d09219b7b28ee699e5afe732ab77e9029d6b00f"
+    },
+    {
+      "path": "no-quotes-3/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "430e18f7d733253a3b50ce6c8d6e7ae667e6c838",
+      "size": 788,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/430e18f7d733253a3b50ce6c8d6e7ae667e6c838"
+    },
+    {
+      "path": "no-quotes-3/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5dbcd8d51e0fc2e48e79cd48bfa42e4c645c49ed",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/5dbcd8d51e0fc2e48e79cd48bfa42e4c645c49ed"
+    },
+    {
+      "path": "no-quotes-3/src/app.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9db8b0c9ac92529398065d4588eee1ec6e9b9c0b",
+      "size": 3302,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/9db8b0c9ac92529398065d4588eee1ec6e9b9c0b"
+    },
+    {
+      "path": "no-quotes-3/src/entrypoint.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d891686cb30c11bb29c130e924349e470229bde1",
+      "size": 664,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/d891686cb30c11bb29c130e924349e470229bde1"
+    },
+    {
+      "path": "no-quotes-3/src/readflag.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41c52cf97a2428a9bb3ac9986e56b6e65e132029",
+      "size": 137,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/41c52cf97a2428a9bb3ac9986e56b6e65e132029"
+    },
+    {
+      "path": "no-quotes-3/src/requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b5383224d7680b29632356d00f87be00829e85a",
+      "size": 27,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/4b5383224d7680b29632356d00f87be00829e85a"
+    },
+    {
+      "path": "no-quotes-3/src/static",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9d9befea1bcc4eee3a83d4417b8f889b4f80b847",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/9d9befea1bcc4eee3a83d4417b8f889b4f80b847"
+    },
+    {
+      "path": "no-quotes-3/src/static/styles.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5530a2d5af7b6c67f71defb2cea562b3241969e",
+      "size": 2793,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/f5530a2d5af7b6c67f71defb2cea562b3241969e"
+    },
+    {
+      "path": "no-quotes-3/src/templates",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "44340a3834860897e6c5a52684c4b26740c0a3ee",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/44340a3834860897e6c5a52684c4b26740c0a3ee"
+    },
+    {
+      "path": "no-quotes-3/src/templates/home.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6c3646f3858bedd069c9dbe2e07c727c86b91b7",
+      "size": 983,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e6c3646f3858bedd069c9dbe2e07c727c86b91b7"
+    },
+    {
+      "path": "no-quotes-3/src/templates/login.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9750c35003b3ee58156688e8a49e7306297998fc",
+      "size": 1506,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/9750c35003b3ee58156688e8a49e7306297998fc"
+    },
+    {
+      "path": "no-quotes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3bc2d2f0e96e428f869e9ee59f914ffba8b96cbb",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/3bc2d2f0e96e428f869e9ee59f914ffba8b96cbb"
+    },
+    {
+      "path": "no-quotes/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aee07261179e395d09787ff2e7db0b856e492b6d",
+      "size": 682,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/aee07261179e395d09787ff2e7db0b856e492b6d"
+    },
+    {
+      "path": "no-quotes/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f21d38ef51b0ae814645ea56d2029fbbf806f05",
+      "size": 715,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/1f21d38ef51b0ae814645ea56d2029fbbf806f05"
+    },
+    {
+      "path": "no-quotes/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6a8831f87201ceb7efec8ca1f5e03211b915d433",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/6a8831f87201ceb7efec8ca1f5e03211b915d433"
+    },
+    {
+      "path": "no-quotes/dist/no-quotes.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d251dcdab8917bcbf3ff7d606c83e7333add01f1",
+      "size": 5705,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/d251dcdab8917bcbf3ff7d606c83e7333add01f1"
+    },
+    {
+      "path": "no-quotes/no-quotes.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5e1851fb2643b971277a1d146b8c86a6dd421e8e",
+      "size": 3261,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/5e1851fb2643b971277a1d146b8c86a6dd421e8e"
+    },
+    {
+      "path": "no-quotes/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "09bbb60afd6ae7a873a4687281f3f35efb2ddc92",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/09bbb60afd6ae7a873a4687281f3f35efb2ddc92"
+    },
+    {
+      "path": "no-quotes/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a844071969e0db986417de468f9f5dc9ea11fb1",
+      "size": 559,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/8a844071969e0db986417de468f9f5dc9ea11fb1"
+    },
+    {
+      "path": "no-quotes/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9aea4db231cd950e1401043787959b63acf85cba",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/9aea4db231cd950e1401043787959b63acf85cba"
+    },
+    {
+      "path": "no-quotes/src/app.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "541c2609322508e21c17d1b6b38012b5cd94ea4f",
+      "size": 2986,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/541c2609322508e21c17d1b6b38012b5cd94ea4f"
+    },
+    {
+      "path": "no-quotes/src/entrypoint.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d891686cb30c11bb29c130e924349e470229bde1",
+      "size": 664,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/d891686cb30c11bb29c130e924349e470229bde1"
+    },
+    {
+      "path": "no-quotes/src/readflag.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41c52cf97a2428a9bb3ac9986e56b6e65e132029",
+      "size": 137,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/41c52cf97a2428a9bb3ac9986e56b6e65e132029"
+    },
+    {
+      "path": "no-quotes/src/requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b5383224d7680b29632356d00f87be00829e85a",
+      "size": 27,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/4b5383224d7680b29632356d00f87be00829e85a"
+    },
+    {
+      "path": "no-quotes/src/static",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9d9befea1bcc4eee3a83d4417b8f889b4f80b847",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/9d9befea1bcc4eee3a83d4417b8f889b4f80b847"
+    },
+    {
+      "path": "no-quotes/src/static/styles.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5530a2d5af7b6c67f71defb2cea562b3241969e",
+      "size": 2793,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/f5530a2d5af7b6c67f71defb2cea562b3241969e"
+    },
+    {
+      "path": "no-quotes/src/templates",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "44340a3834860897e6c5a52684c4b26740c0a3ee",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/44340a3834860897e6c5a52684c4b26740c0a3ee"
+    },
+    {
+      "path": "no-quotes/src/templates/home.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6c3646f3858bedd069c9dbe2e07c727c86b91b7",
+      "size": 983,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e6c3646f3858bedd069c9dbe2e07c727c86b91b7"
+    },
+    {
+      "path": "no-quotes/src/templates/login.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9750c35003b3ee58156688e8a49e7306297998fc",
+      "size": 1506,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/9750c35003b3ee58156688e8a49e7306297998fc"
+    },
+    {
+      "path": "nothing-ever-changes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2ed89d278068c288ea1e4d1e8819b66d5fb337ac",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/2ed89d278068c288ea1e4d1e8819b66d5fb337ac"
+    },
+    {
+      "path": "nothing-ever-changes/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4d2fa658e7af4798f29a9e25c25f6abb51786c15",
+      "size": 461,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/4d2fa658e7af4798f29a9e25c25f6abb51786c15"
+    },
+    {
+      "path": "nothing-ever-changes/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07c05d1812572baf693af39cc844f9e0cde6debb",
+      "size": 826,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/07c05d1812572baf693af39cc844f9e0cde6debb"
+    },
+    {
+      "path": "nothing-ever-changes/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d6a5969431523aa37e35f223d47c5d811d6443ce",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/d6a5969431523aa37e35f223d47c5d811d6443ce"
+    },
+    {
+      "path": "nothing-ever-changes/dist/nothing-ever-changes.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c9ccb3de74f3355c76e84410e1d2abcdd47d16ca",
+      "size": 1575442,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/c9ccb3de74f3355c76e84410e1d2abcdd47d16ca"
+    },
+    {
+      "path": "nothing-ever-changes/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "af7f4c81ed3eca6fad7c9cf36da212c4a41c677c",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/af7f4c81ed3eca6fad7c9cf36da212c4a41c677c"
+    },
+    {
+      "path": "nothing-ever-changes/solve/collision.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2ba84a8a2308c135148427371b99cf6ed735a4a",
+      "size": 19864,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/f2ba84a8a2308c135148427371b99cf6ed735a4a"
+    },
+    {
+      "path": "nothing-ever-changes/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "247fccad966532b96056697626f066df9614d2d1",
+      "size": 2196,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/247fccad966532b96056697626f066df9614d2d1"
+    },
+    {
+      "path": "nothing-ever-changes/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "008aaea32e6ede31b7c41e806ee93f698be8e728",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/008aaea32e6ede31b7c41e806ee93f698be8e728"
+    },
+    {
+      "path": "nothing-ever-changes/src/app.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ffcb54dbd16b6cedfa0640af20e2ae0fdf73c47f",
+      "size": 2813,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ffcb54dbd16b6cedfa0640af20e2ae0fdf73c47f"
+    },
+    {
+      "path": "nothing-ever-changes/src/config.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "027ce74baa779bd6afe6920b83c29b943410a6e0",
+      "size": 809,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/027ce74baa779bd6afe6920b83c29b943410a6e0"
+    },
+    {
+      "path": "nothing-ever-changes/src/data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "578ea28ff2777ca5241bf1843b34418d2520cdf8",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/578ea28ff2777ca5241bf1843b34418d2520cdf8"
+    },
+    {
+      "path": "nothing-ever-changes/src/data/refs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "83e6fd7570428300c7f3d6ba9cd82448b33ce798",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/83e6fd7570428300c7f3d6ba9cd82448b33ce798"
+    },
+    {
+      "path": "nothing-ever-changes/src/data/refs/ref_00.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e284f3ce0bd95498fd73e46abce8ef8934e27f50",
+      "size": 295,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e284f3ce0bd95498fd73e46abce8ef8934e27f50"
+    },
+    {
+      "path": "nothing-ever-changes/src/data/refs/ref_01.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9eb6daf858f77ebf21c3c67eee877c528855fbe3",
+      "size": 193,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/9eb6daf858f77ebf21c3c67eee877c528855fbe3"
+    },
+    {
+      "path": "nothing-ever-changes/src/data/refs/ref_02.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "539f35ecafa4ba6a4f73c9379645f9aabf98c3d2",
+      "size": 280,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/539f35ecafa4ba6a4f73c9379645f9aabf98c3d2"
+    },
+    {
+      "path": "nothing-ever-changes/src/data/refs/ref_03.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49c0a90867d5c859c2e7ea6479c40555f4068f7f",
+      "size": 339,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/49c0a90867d5c859c2e7ea6479c40555f4068f7f"
+    },
+    {
+      "path": "nothing-ever-changes/src/data/refs/ref_04.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab98edb78190a9647adefbbd1924e8ac556d83e9",
+      "size": 277,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ab98edb78190a9647adefbbd1924e8ac556d83e9"
+    },
+    {
+      "path": "nothing-ever-changes/src/data/refs/ref_05.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fb51491dd21187b908463c03eb48d07044452d7",
+      "size": 285,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/2fb51491dd21187b908463c03eb48d07044452d7"
+    },
+    {
+      "path": "nothing-ever-changes/src/data/refs/ref_06.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee62f8d9014065177626f8d407050349d5cb7c4b",
+      "size": 338,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ee62f8d9014065177626f8d407050349d5cb7c4b"
+    },
+    {
+      "path": "nothing-ever-changes/src/data/refs/ref_07.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "640f2e3c5f024e3a9bfe8310a27f23d0261d7bcf",
+      "size": 249,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/640f2e3c5f024e3a9bfe8310a27f23d0261d7bcf"
+    },
+    {
+      "path": "nothing-ever-changes/src/data/refs/ref_08.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b239c3d6aac1a609c73d3981765370fac0089ce3",
+      "size": 313,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/b239c3d6aac1a609c73d3981765370fac0089ce3"
+    },
+    {
+      "path": "nothing-ever-changes/src/data/refs/ref_09.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b760a5b6b67aab2b818b9b4a62d68709f71f8bd9",
+      "size": 268,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/b760a5b6b67aab2b818b9b4a62d68709f71f8bd9"
+    },
+    {
+      "path": "nothing-ever-changes/src/mnist_cnn.pth",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "98a2747986c6c5b8143ca1b6712672b99b635478",
+      "size": 1689816,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/98a2747986c6c5b8143ca1b6712672b99b635478"
+    },
+    {
+      "path": "nothing-ever-changes/src/model.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca6342ba2dcba86eb16df3e56cbb2e5b2927123c",
+      "size": 3133,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ca6342ba2dcba86eb16df3e56cbb2e5b2927123c"
+    },
+    {
+      "path": "nothing-ever-changes/src/requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8a389ef07988472bc7d6bb64eefcd9c4623befa",
+      "size": 129,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/a8a389ef07988472bc7d6bb64eefcd9c4623befa"
+    },
+    {
+      "path": "nothing-ever-changes/src/verification.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7753f7ba9af6c34c4f84c88486192dc7b397f7fd",
+      "size": 3515,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/7753f7ba9af6c34c4f84c88486192dc7b397f7fd"
+    },
+    {
+      "path": "nothing-ever-changes/startup.args",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8ebad5d417531fd964517555a6a35d84b74d454",
+      "size": 12,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/a8ebad5d417531fd964517555a6a35d84b74d454"
+    },
+    {
+      "path": "orca",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c2897a8d8ed81d0d90758178da3bba619e031271",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/c2897a8d8ed81d0d90758178da3bba619e031271"
+    },
+    {
+      "path": "orca/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a172ea6bb1c0a141d3710d316898f064cb842f7d",
+      "size": 396,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/a172ea6bb1c0a141d3710d316898f064cb842f7d"
+    },
+    {
+      "path": "orca/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59676141cde20872b02ec4b28056e2c8956116b0",
+      "size": 513,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/59676141cde20872b02ec4b28056e2c8956116b0"
+    },
+    {
+      "path": "orca/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a5e6f84063d518198b06d9afcb46e285fba54773",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/a5e6f84063d518198b06d9afcb46e285fba54773"
+    },
+    {
+      "path": "orca/dist/orca.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1225bac42b14f287d6dcf8e507c62955a2033a0e",
+      "size": 1551,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/1225bac42b14f287d6dcf8e507c62955a2033a0e"
+    },
+    {
+      "path": "orca/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f651ef994ecebb373d48ab091ee3cffc5c152a48",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/f651ef994ecebb373d48ab091ee3cffc5c152a48"
+    },
+    {
+      "path": "orca/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c32cf06208244b4ca0d60c8d195937a0c9f53de",
+      "size": 3003,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/0c32cf06208244b4ca0d60c8d195937a0c9f53de"
+    },
+    {
+      "path": "orca/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c3b3f5169490d988e8ea766513abc784c4dbb857",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/c3b3f5169490d988e8ea766513abc784c4dbb857"
+    },
+    {
+      "path": "orca/src/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15d7aa35691eb9404d122fbfbc57285aacfbef32",
+      "size": 84,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/15d7aa35691eb9404d122fbfbc57285aacfbef32"
+    },
+    {
+      "path": "orca/src/server.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0a1db3a3abd21a49754379a8ea7e781795244c5",
+      "size": 1651,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/f0a1db3a3abd21a49754379a8ea7e781795244c5"
+    },
+    {
+      "path": "orca/startup.args",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b229d4a2acb64ab04d215fb509a4ff00dde43fbc",
+      "size": 13,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/b229d4a2acb64ab04d215fb509a4ff00dde43fbc"
+    },
+    {
+      "path": "pasteboard",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "281c8268319bf3edae4a02b6d9057d786a31ea07",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/281c8268319bf3edae4a02b6d9057d786a31ea07"
+    },
+    {
+      "path": "pasteboard/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "653e28cecce0b3ca356f400716c01459630b3c2c",
+      "size": 571,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/653e28cecce0b3ca356f400716c01459630b3c2c"
+    },
+    {
+      "path": "pasteboard/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "696e2553842d6a23e5c9b74567b9fb31fa6f90d4",
+      "size": 726,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/696e2553842d6a23e5c9b74567b9fb31fa6f90d4"
+    },
+    {
+      "path": "pasteboard/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "de77d63154bcb066668816f47b179ea3df52c0ae",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/de77d63154bcb066668816f47b179ea3df52c0ae"
+    },
+    {
+      "path": "pasteboard/dist/pasteboard.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c1e06a51177b0b7e29b0c88d2c9b11bd8d952e3",
+      "size": 15672,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/6c1e06a51177b0b7e29b0c88d2c9b11bd8d952e3"
+    },
+    {
+      "path": "pasteboard/pasteboard.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4980abfb1ff9bf6f5c4415841117f7106ef1802e",
+      "size": 3276,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/4980abfb1ff9bf6f5c4415841117f7106ef1802e"
+    },
+    {
+      "path": "pasteboard/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "458fd7316b23459cb73e6275a0d059c8daadfd0f",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/458fd7316b23459cb73e6275a0d059c8daadfd0f"
+    },
+    {
+      "path": "pasteboard/solve/server.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9fd0d8f4b0fc212dc536db672af23e87a047dd3e",
+      "size": 2296,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/9fd0d8f4b0fc212dc536db672af23e87a047dd3e"
+    },
+    {
+      "path": "pasteboard/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4cbe86dd88c0a6756e5ba0cad847df646c1ec208",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/4cbe86dd88c0a6756e5ba0cad847df646c1ec208"
+    },
+    {
+      "path": "pasteboard/src/app.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3339646a5414ace30c7378389446b7ea577e5c2f",
+      "size": 3590,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/3339646a5414ace30c7378389446b7ea577e5c2f"
+    },
+    {
+      "path": "pasteboard/src/bot.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a42ac4e2d36c95eabc9f56a93d604883a9be512",
+      "size": 536,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/0a42ac4e2d36c95eabc9f56a93d604883a9be512"
+    },
+    {
+      "path": "pasteboard/src/static",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "adaf7f7ed4cf321a0b08c4ebde793b015c82b4f5",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/adaf7f7ed4cf321a0b08c4ebde793b015c82b4f5"
+    },
+    {
+      "path": "pasteboard/src/static/app.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "37ac96067b3de8c810249e721162ec26867ba590",
+      "size": 1257,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/37ac96067b3de8c810249e721162ec26867ba590"
+    },
+    {
+      "path": "pasteboard/src/static/dompurify.min.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc750d5a8369beb9bfe5a53ee206411681d97428",
+      "size": 23128,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/bc750d5a8369beb9bfe5a53ee206411681d97428"
+    },
+    {
+      "path": "pasteboard/src/static/style.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5742a11edc49c274654a2ee2484e8d898acaa9b",
+      "size": 2588,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/b5742a11edc49c274654a2ee2484e8d898acaa9b"
+    },
+    {
+      "path": "pasteboard/src/templates",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c6c0774525521c23d86c0a9fc17b5f949239ec31",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/c6c0774525521c23d86c0a9fc17b5f949239ec31"
+    },
+    {
+      "path": "pasteboard/src/templates/index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4caa7e24067383bb62b3e32f5760af6f46f02b50",
+      "size": 1268,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/4caa7e24067383bb62b3e32f5760af6f46f02b50"
+    },
+    {
+      "path": "pasteboard/src/templates/new_paste.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2674ac5b9999029c98cbd78ace7185c2ad2b7c1",
+      "size": 859,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/f2674ac5b9999029c98cbd78ace7185c2ad2b7c1"
+    },
+    {
+      "path": "pasteboard/src/templates/report.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fe87a2fb8e5f67023f04529fcd7b771367103545",
+      "size": 566,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/fe87a2fb8e5f67023f04529fcd7b771367103545"
+    },
+    {
+      "path": "pasteboard/src/templates/view.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5355ae4e1fff86ea6acecbcceb346079457051a",
+      "size": 816,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e5355ae4e1fff86ea6acecbcceb346079457051a"
+    },
+    {
+      "path": "personal-blog",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c0d20435dc0d6c8f046804d7f7de0a21aba15762",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/c0d20435dc0d6c8f046804d7f7de0a21aba15762"
+    },
+    {
+      "path": "personal-blog/.gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddd4285ceda70bd22eca752d621b003629bcc57e",
+      "size": 52,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ddd4285ceda70bd22eca752d621b003629bcc57e"
+    },
+    {
+      "path": "personal-blog/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09e0eb1a91cf03dc8b9c06041b1fa93ce21ea027",
+      "size": 553,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/09e0eb1a91cf03dc8b9c06041b1fa93ce21ea027"
+    },
+    {
+      "path": "personal-blog/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dfffc99b64beeb9de8b5b08c07c351b2ef609779",
+      "size": 93,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/dfffc99b64beeb9de8b5b08c07c351b2ef609779"
+    },
+    {
+      "path": "personal-blog/bot",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1168f194e439dac14abf16ace09a718be49a8e71",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/1168f194e439dac14abf16ace09a718be49a8e71"
+    },
+    {
+      "path": "personal-blog/bot/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9db3f3b07ac075c99528e1c1985c6e836426d7ca",
+      "size": 2158,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/9db3f3b07ac075c99528e1c1985c6e836426d7ca"
+    },
+    {
+      "path": "personal-blog/bot/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c69d3925ca017ba2857addd480c59bcbd68443e",
+      "size": 262,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/6c69d3925ca017ba2857addd480c59bcbd68443e"
+    },
+    {
+      "path": "personal-blog/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ac5bc722f3fa05ddd8bfa1ae60330c26a8b81ae3",
+      "size": 450,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ac5bc722f3fa05ddd8bfa1ae60330c26a8b81ae3"
+    },
+    {
+      "path": "personal-blog/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b4969732fea3dfe3e899fd3ee1f752c093a2b2cd",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/b4969732fea3dfe3e899fd3ee1f752c093a2b2cd"
+    },
+    {
+      "path": "personal-blog/dist/personal-blog.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "10f97e84e8bd59af8f3fd1e771c782264b7e867f",
+      "size": 16299,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/10f97e84e8bd59af8f3fd1e771c782264b7e867f"
+    },
+    {
+      "path": "personal-blog/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7143d9cdb0add3c77abe064ecc7ee56777d5f70f",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/7143d9cdb0add3c77abe064ecc7ee56777d5f70f"
+    },
+    {
+      "path": "personal-blog/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca3cad08939d30a6f24fc9270e5ca04988a3da9f",
+      "size": 3625,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ca3cad08939d30a6f24fc9270e5ca04988a3da9f"
+    },
+    {
+      "path": "personal-blog/start.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "114b0c58a055145236fe14ff96dd33d9a9e66bfb",
+      "size": 582,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/114b0c58a055145236fe14ff96dd33d9a9e66bfb"
+    },
+    {
+      "path": "personal-blog/startup.args",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c08bffd80406fa0241b2c86777d68c3358a1c447",
+      "size": 12,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/c08bffd80406fa0241b2c86777d68c3358a1c447"
+    },
+    {
+      "path": "personal-blog/web",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8873fa67589d322260291d95a690abe41d40ef1b",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/8873fa67589d322260291d95a690abe41d40ef1b"
+    },
+    {
+      "path": "personal-blog/web/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a16ca8216e9be4330764308bec48b9470d3facb8",
+      "size": 360,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/a16ca8216e9be4330764308bec48b9470d3facb8"
+    },
+    {
+      "path": "personal-blog/web/public",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4f2ea5f386870eee95206436c072bb1afc338b0c",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/4f2ea5f386870eee95206436c072bb1afc338b0c"
+    },
+    {
+      "path": "personal-blog/web/public/editor.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "075b27ebd0db33715f9ac7b8cc76e94db583f1f0",
+      "size": 931,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/075b27ebd0db33715f9ac7b8cc76e94db583f1f0"
+    },
+    {
+      "path": "personal-blog/web/public/styles.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8e0907c0298ef3ffc32172545a03354f2181b4c4",
+      "size": 5213,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/8e0907c0298ef3ffc32172545a03354f2181b4c4"
+    },
+    {
+      "path": "personal-blog/web/server.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "156aa62b9bc3ecaefc8cba7c30296e7e4220912e",
+      "size": 14331,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/156aa62b9bc3ecaefc8cba7c30296e7e4220912e"
+    },
+    {
+      "path": "personal-blog/web/views",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d7f23514668f24f03d54aa203d66f751234bc05a",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/d7f23514668f24f03d54aa203d66f751234bc05a"
+    },
+    {
+      "path": "personal-blog/web/views/account.ejs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc4d663c7a24d9a8a0ab3ea0652d60463d835c3f",
+      "size": 791,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/cc4d663c7a24d9a8a0ab3ea0652d60463d835c3f"
+    },
+    {
+      "path": "personal-blog/web/views/dashboard.ejs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e1e620375baa1ad09b4cec6f4d5c84e96389fed1",
+      "size": 1101,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e1e620375baa1ad09b4cec6f4d5c84e96389fed1"
+    },
+    {
+      "path": "personal-blog/web/views/editor.ejs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ca1687f1a3cbe85341b4a9e386281a434bde7ed",
+      "size": 808,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/5ca1687f1a3cbe85341b4a9e386281a434bde7ed"
+    },
+    {
+      "path": "personal-blog/web/views/index.ejs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e879c644bc95ef09c3e2f04d31108d146e42dcb0",
+      "size": 1126,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e879c644bc95ef09c3e2f04d31108d146e42dcb0"
+    },
+    {
+      "path": "personal-blog/web/views/login.ejs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "974fd8a12e1fd571c9e9755f3c0d71c0f5004fb3",
+      "size": 627,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/974fd8a12e1fd571c9e9755f3c0d71c0f5004fb3"
+    },
+    {
+      "path": "personal-blog/web/views/partials",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9813f5e163bbf50d8c6965e124e236b6d521dbbe",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/9813f5e163bbf50d8c6965e124e236b6d521dbbe"
+    },
+    {
+      "path": "personal-blog/web/views/partials/page-end.ejs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fd8d4157300121f6f094adc02e4c15da2d42d8ed",
+      "size": 30,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/fd8d4157300121f6f094adc02e4c15da2d42d8ed"
+    },
+    {
+      "path": "personal-blog/web/views/partials/page-start.ejs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3219be116ad628915841d8ad3bca2a2ba350e493",
+      "size": 1211,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/3219be116ad628915841d8ad3bca2a2ba350e493"
+    },
+    {
+      "path": "personal-blog/web/views/post.ejs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d82233679e1025dec9649e8d2d83cc751af3dcbd",
+      "size": 637,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/d82233679e1025dec9649e8d2d83cc751af3dcbd"
+    },
+    {
+      "path": "personal-blog/web/views/register.ejs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b51c7bd04348d26dd702dc7736ecb2eb53c87834",
+      "size": 663,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/b51c7bd04348d26dd702dc7736ecb2eb53c87834"
+    },
+    {
+      "path": "personal-blog/web/views/report.ejs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "10ef04f096322b72bc936ae53d818f15869d5f73",
+      "size": 1092,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/10ef04f096322b72bc936ae53d818f15869d5f73"
+    },
+    {
+      "path": "rev-wasm-kotlin",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d4767f8e6873c31ec5370c4f387c74974f81992f",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/d4767f8e6873c31ec5370c4f387c74974f81992f"
+    },
+    {
+      "path": "rev-wasm-kotlin/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60b4d7e85b35e09e1df2f87652cb2fc405032d0f",
+      "size": 447,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/60b4d7e85b35e09e1df2f87652cb2fc405032d0f"
+    },
+    {
+      "path": "rev-wasm-kotlin/README",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa68ce82ed160e86e3224ef53534e58ec0ba2873",
+      "size": 426,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/fa68ce82ed160e86e3224ef53534e58ec0ba2873"
+    },
+    {
+      "path": "rev-wasm-kotlin/build.gradle.kts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e86581abbd8cd014b968a2f586a88911be00e3b5",
+      "size": 269,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e86581abbd8cd014b968a2f586a88911be00e3b5"
+    },
+    {
+      "path": "rev-wasm-kotlin/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18249a1c7108a05deff540ad3d2b55cd7beb84f6",
+      "size": 524,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/18249a1c7108a05deff540ad3d2b55cd7beb84f6"
+    },
+    {
+      "path": "rev-wasm-kotlin/check-logic.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "6db677afa4c355c0843be2b0b10c4e9731df588d",
+      "size": 2245,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/6db677afa4c355c0843be2b0b10c4e9731df588d"
+    },
+    {
+      "path": "rev-wasm-kotlin/compile.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "11d9a937dc4864682bf78765f32ff0a2f026f8c6",
+      "size": 1039,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/11d9a937dc4864682bf78765f32ff0a2f026f8c6"
+    },
+    {
+      "path": "rev-wasm-kotlin/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1d3eebf3a3467c5dca8efc45f5545438688bbc3e",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/1d3eebf3a3467c5dca8efc45f5545438688bbc3e"
+    },
+    {
+      "path": "rev-wasm-kotlin/dist/program.wasm",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b31a04fe63017eae3d4f079437c2d8b769382e1",
+      "size": 38752,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/2b31a04fe63017eae3d4f079437c2d8b769382e1"
+    },
+    {
+      "path": "rev-wasm-kotlin/dist/runner.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "71a06463e6917c5a3c9a02748b32de837f51870a",
+      "size": 650,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/71a06463e6917c5a3c9a02748b32de837f51870a"
+    },
+    {
+      "path": "rev-wasm-kotlin/gradle.properties",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29e08e8ca88fa533ad7405b809505e5a89171e1e",
+      "size": 26,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/29e08e8ca88fa533ad7405b809505e5a89171e1e"
+    },
+    {
+      "path": "rev-wasm-kotlin/gradle",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a0fbaa117810e408df4ec43198499d7feb2b9e21",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/a0fbaa117810e408df4ec43198499d7feb2b9e21"
+    },
+    {
+      "path": "rev-wasm-kotlin/gradle/libs.versions.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "203cea7d464e4a9872948c4b140f52936fd645b0",
+      "size": 335,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/203cea7d464e4a9872948c4b140f52936fd645b0"
+    },
+    {
+      "path": "rev-wasm-kotlin/gradle/wrapper",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "405501339cc8d6abf26b78f9932026c83440fbbf",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/405501339cc8d6abf26b78f9932026c83440fbbf"
+    },
+    {
+      "path": "rev-wasm-kotlin/gradle/wrapper/gradle-wrapper.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7454180f2ae8848c63b8b4dea2cb829da983f2fa",
+      "size": 59536,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/7454180f2ae8848c63b8b4dea2cb829da983f2fa"
+    },
+    {
+      "path": "rev-wasm-kotlin/gradle/wrapper/gradle-wrapper.properties",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19cfad969bafd581907bf37ef79470a80d807b45",
+      "size": 200,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/19cfad969bafd581907bf37ef79470a80d807b45"
+    },
+    {
+      "path": "rev-wasm-kotlin/gradlew",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "1b6c787337ffb79f0e3cf8b1e9f00f680a959de1",
+      "size": 8070,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/1b6c787337ffb79f0e3cf8b1e9f00f680a959de1"
+    },
+    {
+      "path": "rev-wasm-kotlin/gradlew.bat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "107acd32c4e687021ef32db511e8a206129b88ec",
+      "size": 2674,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/107acd32c4e687021ef32db511e8a206129b88ec"
+    },
+    {
+      "path": "rev-wasm-kotlin/minimize.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4547bce26bbba687779758a55c180f06a8742ecb",
+      "size": 1946,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/4547bce26bbba687779758a55c180f06a8742ecb"
+    },
+    {
+      "path": "rev-wasm-kotlin/minimize.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "e08fec8f2c3938c7d9defaff877a7f792f510a32",
+      "size": 321,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e08fec8f2c3938c7d9defaff877a7f792f510a32"
+    },
+    {
+      "path": "rev-wasm-kotlin/settings.gradle.kts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "53ce844782ee08caf0a72f051c5c0e4278e669dd",
+      "size": 149,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/53ce844782ee08caf0a72f051c5c0e4278e669dd"
+    },
+    {
+      "path": "rev-wasm-kotlin/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cef8edfc422145904eabcdd0d032ce269c495b0d",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/cef8edfc422145904eabcdd0d032ce269c495b0d"
+    },
+    {
+      "path": "rev-wasm-kotlin/solve/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40b878db5b1c97fc77049537a71bb2e249abe5dc",
+      "size": 13,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/40b878db5b1c97fc77049537a71bb2e249abe5dc"
+    },
+    {
+      "path": "rev-wasm-kotlin/solve/README",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "505633ad9cb44fc969ccfcb526a3cb24f569136f",
+      "size": 1642,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/505633ad9cb44fc969ccfcb526a3cb24f569136f"
+    },
+    {
+      "path": "rev-wasm-kotlin/solve/hook.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ff83d0545e5485e56286ab30bc2b1a26d4d250f",
+      "size": 1881,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/6ff83d0545e5485e56286ab30bc2b1a26d4d250f"
+    },
+    {
+      "path": "rev-wasm-kotlin/solve/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "95a195d01e3e6219817346185ee8cfc3b50b246a",
+      "size": 874,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/95a195d01e3e6219817346185ee8cfc3b50b246a"
+    },
+    {
+      "path": "rev-wasm-kotlin/solve/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "520e5ee72ccb8cc20a1e42655492c4e9ef197d1f",
+      "size": 151,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/520e5ee72ccb8cc20a1e42655492c4e9ef197d1f"
+    },
+    {
+      "path": "rev-wasm-kotlin/solve/pnpm-lock.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "728f0dd764c68f9c195ed3616137243adf8bbe7a",
+      "size": 408,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/728f0dd764c68f9c195ed3616137243adf8bbe7a"
+    },
+    {
+      "path": "rev-wasm-kotlin/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "31618ab004e1d1f9d314982448bfc59e0be99e12",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/31618ab004e1d1f9d314982448bfc59e0be99e12"
+    },
+    {
+      "path": "rev-wasm-kotlin/src/wasmWasiMain",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "882586eadd41ad1747f1175655678a25addcd681",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/882586eadd41ad1747f1175655678a25addcd681"
+    },
+    {
+      "path": "rev-wasm-kotlin/src/wasmWasiMain/kotlin",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0499d4537ad2b667bcc9d985b28bb41c3e7a9eb4",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/0499d4537ad2b667bcc9d985b28bb41c3e7a9eb4"
+    },
+    {
+      "path": "rev-wasm-kotlin/src/wasmWasiMain/kotlin/Main.kt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a237119a21b3f48338de223dc355a9f1ccc4c94",
+      "size": 41958,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/5a237119a21b3f48338de223dc355a9f1ccc4c94"
+    },
+    {
+      "path": "reverse-wordle",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a3e34b185c51bfc56bc3a3a70e8396d44b4e6e06",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/a3e34b185c51bfc56bc3a3a70e8396d44b4e6e06"
+    },
+    {
+      "path": "reverse-wordle/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "699dbc5f2e65ba01a765ff82953575a2416ad66d",
+      "size": 630,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/699dbc5f2e65ba01a765ff82953575a2416ad66d"
+    },
+    {
+      "path": "reverse-wordle/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "617e5f3b16edcc0ddf13fbe552524510542931a0",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/617e5f3b16edcc0ddf13fbe552524510542931a0"
+    },
+    {
+      "path": "reverse-wordle/dist/chall.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1a8026f8e2fcc463da2db419778fe6d5bf07eb54",
+      "size": 295,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/1a8026f8e2fcc463da2db419778fe6d5bf07eb54"
+    },
+    {
+      "path": "reverse-wordle/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "49c45e27b2bae7112102c14cfb4df1b5d48de41a",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/49c45e27b2bae7112102c14cfb4df1b5d48de41a"
+    },
+    {
+      "path": "reverse-wordle/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6df75f0c145732bd3da505200aeb7bc8bf8281ec",
+      "size": 1690,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/6df75f0c145732bd3da505200aeb7bc8bf8281ec"
+    },
+    {
+      "path": "rotor-cipher",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bfc98b985fb53c2e788623b93ee4ce5c44a376c6",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/bfc98b985fb53c2e788623b93ee4ce5c44a376c6"
+    },
+    {
+      "path": "rotor-cipher/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7fe103f1a39da4e31e6d775d69d4ece2685c8179",
+      "size": 713,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/7fe103f1a39da4e31e6d775d69d4ece2685c8179"
+    },
+    {
+      "path": "rotor-cipher/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "83b6963168aa25b5ee3aecf950442bbb29bfce88",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/83b6963168aa25b5ee3aecf950442bbb29bfce88"
+    },
+    {
+      "path": "rotor-cipher/dist/rotor_cipher_dist.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d404a7e5a4bad02de7a1108928340ee0f26ceff2",
+      "size": 14715,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/d404a7e5a4bad02de7a1108928340ee0f26ceff2"
+    },
+    {
+      "path": "rotor-cipher/rotor_cipher.log",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5fab6877b0003a5cde2dcad603b98be3f392dfc2",
+      "size": 32541,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/5fab6877b0003a5cde2dcad603b98be3f392dfc2"
+    },
+    {
+      "path": "rotor-cipher/rotor_cipher.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c34c1b0ca58d6e2a42981b58d03288676d21636f",
+      "size": 5897,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/c34c1b0ca58d6e2a42981b58d03288676d21636f"
+    },
+    {
+      "path": "rotor-cipher/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "150b66edec51d66e7d8aada4dfb1a14d184ebf8c",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/150b66edec51d66e7d8aada4dfb1a14d184ebf8c"
+    },
+    {
+      "path": "rotor-cipher/solve/solve_rotor.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "98922491fb8b5dee255f0ca3dfa414060a45e3f9",
+      "size": 19012,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/98922491fb8b5dee255f0ca3dfa414060a45e3f9"
+    },
+    {
+      "path": "sanity-check",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bbe5ac5d95b629e5398e56738476654e97d88bd2",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/bbe5ac5d95b629e5398e56738476654e97d88bd2"
+    },
+    {
+      "path": "sanity-check/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf0fbfb80c53dfcaea57fb1a4d7a753e1b64137b",
+      "size": 564,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/bf0fbfb80c53dfcaea57fb1a4d7a753e1b64137b"
+    },
+    {
+      "path": "symbol-of-hope",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "da6347177a43f556e36e6cf23ae56ce6d44675f3",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/da6347177a43f556e36e6cf23ae56ce6d44675f3"
+    },
+    {
+      "path": "symbol-of-hope/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f6d2fadca64c80fd0ef7904a5dba4bcbeee296b4",
+      "size": 517,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/f6d2fadca64c80fd0ef7904a5dba4bcbeee296b4"
+    },
+    {
+      "path": "symbol-of-hope/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "72fc14eaa00a61f2164a73dcf4bc12e77493fa02",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/72fc14eaa00a61f2164a73dcf4bc12e77493fa02"
+    },
+    {
+      "path": "symbol-of-hope/dist/checker",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44e0037a22ea263ea0bbd022f1e7ced68d0fbbfb",
+      "size": 117368,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/44e0037a22ea263ea0bbd022f1e7ced68d0fbbfb"
+    },
+    {
+      "path": "symbol-of-hope/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fcafffe53a7d4aa8a9d5865b2caf3f39b5b8f86c",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/fcafffe53a7d4aa8a9d5865b2caf3f39b5b8f86c"
+    },
+    {
+      "path": "symbol-of-hope/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f328e41722796b36df7dbb36ca893dffb094d97",
+      "size": 1095,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/6f328e41722796b36df7dbb36ca893dffb094d97"
+    },
+    {
+      "path": "unrealistic-1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6b4c86fefdb5c0c8d29f231a118d3acc23d96335",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/6b4c86fefdb5c0c8d29f231a118d3acc23d96335"
+    },
+    {
+      "path": "unrealistic-1/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6026531bec0c2bd481fde1f3a24e49bccc924f1f",
+      "size": 550,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/6026531bec0c2bd481fde1f3a24e49bccc924f1f"
+    },
+    {
+      "path": "unrealistic-1/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6cebce995871e8bec0e1a13fa9b3713f364ab5f",
+      "size": 1151,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e6cebce995871e8bec0e1a13fa9b3713f364ab5f"
+    },
+    {
+      "path": "unrealistic-1/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ed84bd90e5fe16b5bf9f5a14e2631f2a4aa72f5e",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/ed84bd90e5fe16b5bf9f5a14e2631f2a4aa72f5e"
+    },
+    {
+      "path": "unrealistic-1/dist/unrealistic-clientside-challenge.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "045a8c32f5d67ed872ff26c2d3bcd720c04dd772",
+      "size": 29275,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/045a8c32f5d67ed872ff26c2d3bcd720c04dd772"
+    },
+    {
+      "path": "unrealistic-1/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "54af79ee3b8cee08f6f7b4e178a9a968eb8e504e",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/54af79ee3b8cee08f6f7b4e178a9a968eb8e504e"
+    },
+    {
+      "path": "unrealistic-1/solve/server.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6728634c76f04918b7174d0fe4798394edf64a36",
+      "size": 5340,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/6728634c76f04918b7174d0fe4798394edf64a36"
+    },
+    {
+      "path": "unrealistic-1/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "676937c6f3d2f297f7421c500d9ceab0118d5177",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/676937c6f3d2f297f7421c500d9ceab0118d5177"
+    },
+    {
+      "path": "unrealistic-1/src/app.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "72dbcb70fd8dd0128e9017b7f673dc9136c86f92",
+      "size": 14403,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/72dbcb70fd8dd0128e9017b7f673dc9136c86f92"
+    },
+    {
+      "path": "unrealistic-1/src/bot_runner.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67616ed7827695b8224cbe9223f776f06761e621",
+      "size": 2229,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/67616ed7827695b8224cbe9223f776f06761e621"
+    },
+    {
+      "path": "unrealistic-1/src/flag1.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07c05cb6f9aee9160b899a405419e375bd5ac4e2",
+      "size": 33,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/07c05cb6f9aee9160b899a405419e375bd5ac4e2"
+    },
+    {
+      "path": "unrealistic-1/src/flag2.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b049db2f608a3db6e2667e34d95de2fd48b36d38",
+      "size": 25,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/b049db2f608a3db6e2667e34d95de2fd48b36d38"
+    },
+    {
+      "path": "unrealistic-1/src/requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e53fbcb9323f810a0b7f0f3432fee9716c599bb3",
+      "size": 77,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e53fbcb9323f810a0b7f0f3432fee9716c599bb3"
+    },
+    {
+      "path": "unrealistic-1/src/static",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "23a7ece132bf4ed697b03e03edad134e6a853bc6",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/23a7ece132bf4ed697b03e03edad134e6a853bc6"
+    },
+    {
+      "path": "unrealistic-1/src/static/purify.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "905cc93eb87e4332fff60bbb8705204427734fbb",
+      "size": 67240,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/905cc93eb87e4332fff60bbb8705204427734fbb"
+    },
+    {
+      "path": "unrealistic-1/src/static/site.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f7438e595e120d64a1f47bf7251d0d290eb155b",
+      "size": 3299,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/1f7438e595e120d64a1f47bf7251d0d290eb155b"
+    },
+    {
+      "path": "unrealistic-1/src/templates",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "13c8a9e5b159b4323d8bb09144ecd8f28b952369",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/13c8a9e5b159b4323d8bb09144ecd8f28b952369"
+    },
+    {
+      "path": "unrealistic-1/src/templates/base.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eeeebdd2c696114b533890fe74f40e536f664078",
+      "size": 1003,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/eeeebdd2c696114b533890fe74f40e536f664078"
+    },
+    {
+      "path": "unrealistic-1/src/templates/bot.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c7f0078c59fb0c44117cd69cef9290289b23db72",
+      "size": 474,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/c7f0078c59fb0c44117cd69cef9290289b23db72"
+    },
+    {
+      "path": "unrealistic-1/src/templates/compose.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02f65a0a6a56dffd71fa4e70f3be08fe5a1b08fa",
+      "size": 460,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/02f65a0a6a56dffd71fa4e70f3be08fe5a1b08fa"
+    },
+    {
+      "path": "unrealistic-1/src/templates/inbox.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b2f3a3e25f4056d3d55615c4fcd6410183d7a2a4",
+      "size": 2446,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/b2f3a3e25f4056d3d55615c4fcd6410183d7a2a4"
+    },
+    {
+      "path": "unrealistic-1/src/templates/index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d46491df57960a20166dd8cc8b696027398f877",
+      "size": 236,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/8d46491df57960a20166dd8cc8b696027398f877"
+    },
+    {
+      "path": "unrealistic-1/src/templates/login.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc80669ea9adaabffff305a4cc96b72de0c54b04",
+      "size": 377,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/bc80669ea9adaabffff305a4cc96b72de0c54b04"
+    },
+    {
+      "path": "unrealistic-1/src/templates/motd.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "194336fb5054b72267a159b1e09ec37c34154d3a",
+      "size": 494,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/194336fb5054b72267a159b1e09ec37c34154d3a"
+    },
+    {
+      "path": "unrealistic-1/src/templates/register.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a045475cad92270eeac226d5437177bd779c7c78",
+      "size": 389,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/a045475cad92270eeac226d5437177bd779c7c78"
+    },
+    {
+      "path": "unrealistic-1/startup.args",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "751e3ad25c332068261ae10c532c4d1ff181d0d5",
+      "size": 25,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/751e3ad25c332068261ae10c532c4d1ff181d0d5"
+    },
+    {
+      "path": "unrealistic-1/unrealistic-1.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a15d4b3fb9c1e748121beaf49b78d0b76e6ce87",
+      "size": 3512,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/7a15d4b3fb9c1e748121beaf49b78d0b76e6ce87"
+    },
+    {
+      "path": "unrealistic-2",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4856b4f319af656493ce51e601a450591135c297",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/4856b4f319af656493ce51e601a450591135c297"
+    },
+    {
+      "path": "unrealistic-2/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "252119075cdf4b7cf0302cc9d1c1610f32b3765c",
+      "size": 1056,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/252119075cdf4b7cf0302cc9d1c1610f32b3765c"
+    },
+    {
+      "path": "uoft-lfsr-labyrinth",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6d80855b7bc33eb921e91bff5f6711e00b29a865",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/6d80855b7bc33eb921e91bff5f6711e00b29a865"
+    },
+    {
+      "path": "uoft-lfsr-labyrinth/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b1fa3b4089d01a8783feab0e2309a70f10415b5",
+      "size": 608,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/0b1fa3b4089d01a8783feab0e2309a70f10415b5"
+    },
+    {
+      "path": "uoft-lfsr-labyrinth/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "59ea61ce95deba3374903fb8ea2f0073ffd33191",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/59ea61ce95deba3374903fb8ea2f0073ffd33191"
+    },
+    {
+      "path": "uoft-lfsr-labyrinth/dist/LFSR.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "08c0764269d5c50c8e7294fc77dcee5e9277c4d3",
+      "size": 3068,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/08c0764269d5c50c8e7294fc77dcee5e9277c4d3"
+    },
+    {
+      "path": "uoft-lfsr-labyrinth/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "68f218e10c31abd5fd5b0d9d506bdd13a06c3438",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/68f218e10c31abd5fd5b0d9d506bdd13a06c3438"
+    },
+    {
+      "path": "uoft-lfsr-labyrinth/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5755ed5f82f8536de4218c5e2a97afe8037b40ff",
+      "size": 6138,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/5755ed5f82f8536de4218c5e2a97afe8037b40ff"
+    },
+    {
+      "path": "uprobe",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d9bb47d00ef3e079a6bf5f0d7bd5202c97708789",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/d9bb47d00ef3e079a6bf5f0d7bd5202c97708789"
+    },
+    {
+      "path": "uprobe/.gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddd4285ceda70bd22eca752d621b003629bcc57e",
+      "size": 52,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ddd4285ceda70bd22eca752d621b003629bcc57e"
+    },
+    {
+      "path": "uprobe/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "65257fcc2dcc2f52531366ee318969189b43c1ee",
+      "size": 547,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/65257fcc2dcc2f52531366ee318969189b43c1ee"
+    },
+    {
+      "path": "uprobe/bzImage",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9304f048976b0585771e61953b3c3c98e72df9e6",
+      "size": 7480320,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/9304f048976b0585771e61953b3c3c98e72df9e6"
+    },
+    {
+      "path": "uprobe/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a909cfe2e8f5ea4434d6b89016ab1c2fc7db7ca",
+      "size": 434,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/7a909cfe2e8f5ea4434d6b89016ab1c2fc7db7ca"
+    },
+    {
+      "path": "uprobe/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3c69641709f072139e201b20e77e80915a6f92e4",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/3c69641709f072139e201b20e77e80915a6f92e4"
+    },
+    {
+      "path": "uprobe/dist/uprobe.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e381ada045cc1c93128ef7a683b2d046ea5630b",
+      "size": 16047668,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/4e381ada045cc1c93128ef7a683b2d046ea5630b"
+    },
+    {
+      "path": "uprobe/initramfs.cpio.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40d9c720d4da6be38bcc800cf2f9a9ca00377cdc",
+      "size": 5660395,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/40d9c720d4da6be38bcc800cf2f9a9ca00377cdc"
+    },
+    {
+      "path": "uprobe/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "881fce4353aa0743985fafbc586258b8bd50ff53",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/881fce4353aa0743985fafbc586258b8bd50ff53"
+    },
+    {
+      "path": "uprobe/solve/writeup.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "27f3f2312b66c500229156460f6c1fd61eea19e8",
+      "size": 533,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/27f3f2312b66c500229156460f6c1fd61eea19e8"
+    },
+    {
+      "path": "uprobe/start-qemu.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "590e6d19fc8599b47c520bdb769134be9f4b6665",
+      "size": 267,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/590e6d19fc8599b47c520bdb769134be9f4b6665"
+    },
+    {
+      "path": "uprobe/startup.args",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e89dd886d4780a02dca131ee0952ed74b2ec1fdb",
+      "size": 25,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/e89dd886d4780a02dca131ee0952ed74b2ec1fdb"
+    },
+    {
+      "path": "uprobe/uprobe-runner",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "2ef6344c4ac15586c04ab93c24f5ed542934f958",
+      "size": 5248937,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/2ef6344c4ac15586c04ab93c24f5ed542934f958"
+    },
+    {
+      "path": "uprobe/uprobe-runner.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ab0a210270441c7fe647feddded772f7a35154d",
+      "size": 2266,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/1ab0a210270441c7fe647feddded772f7a35154d"
+    },
+    {
+      "path": "uprobe/uprobe.bpf.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "560c2a8e9ec5ee602b7f26f4915f9211686b1157",
+      "size": 481,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/560c2a8e9ec5ee602b7f26f4915f9211686b1157"
+    },
+    {
+      "path": "vibe-code",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c6aa0b872a567453e9e150c3f349ad8373060ab2",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/c6aa0b872a567453e9e150c3f349ad8373060ab2"
+    },
+    {
+      "path": "vibe-code/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de07a0401395631866cd61c0935184d9726c9a82",
+      "size": 909,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/de07a0401395631866cd61c0935184d9726c9a82"
+    },
+    {
+      "path": "vibe-code/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9840175a66e77b5cae69e562f730f300dacb515e",
+      "size": 563,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/9840175a66e77b5cae69e562f730f300dacb515e"
+    },
+    {
+      "path": "vibe-code/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a28d4d36486e8e6e6e022ef680c2771050682e6f",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/a28d4d36486e8e6e6e022ef680c2771050682e6f"
+    },
+    {
+      "path": "vibe-code/dist/vibe-code.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6375db4f23ed5249e7d21650d8d14aa72c679dd",
+      "size": 2513,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/a6375db4f23ed5249e7d21650d8d14aa72c679dd"
+    },
+    {
+      "path": "vibe-code/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "97fffbbde5ac7f7a48dd26ede2c70aec133d9dbd",
+      "size": 77,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/97fffbbde5ac7f7a48dd26ede2c70aec133d9dbd"
+    },
+    {
+      "path": "vibe-code/readflag.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54606ab7944a279eb3d0f425701cceb6d87fa77e",
+      "size": 248,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/54606ab7944a279eb3d0f425701cceb6d87fa77e"
+    },
+    {
+      "path": "vibe-code/run_vibe_code.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15665840c1ec2b2ceae0b200fd8df756a485ba6e",
+      "size": 216,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/15665840c1ec2b2ceae0b200fd8df756a485ba6e"
+    },
+    {
+      "path": "vibe-code/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "29ad1355d04224e7a005f0d8a68ec5c49ac5511f",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/29ad1355d04224e7a005f0d8a68ec5c49ac5511f"
+    },
+    {
+      "path": "vibe-code/solve/kctf_pow.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad5928c4d819c2f7e6418c7a7a99aea878043112",
+      "size": 5497,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/ad5928c4d819c2f7e6418c7a7a99aea878043112"
+    },
+    {
+      "path": "vibe-code/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c96ab5525daf8f9e7d466b61c78558a831f1f32c",
+      "size": 800,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/c96ab5525daf8f9e7d466b61c78558a831f1f32c"
+    },
+    {
+      "path": "vibe-code/startup.args",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a8dd8c7b8892aeb23827a3aa041298c20e68917",
+      "size": 26,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/0a8dd8c7b8892aeb23827a3aa041298c20e68917"
+    },
+    {
+      "path": "vibe-code/vibe_code.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a5c852837e78abc9397955a03ea9cfd57ee3c90",
+      "size": 1763,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/3a5c852837e78abc9397955a03ea9cfd57ee3c90"
+    },
+    {
+      "path": "vulnerability-research",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a0779f823865e72abe57e063b556b491c87fee90",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/a0779f823865e72abe57e063b556b491c87fee90"
+    },
+    {
+      "path": "vulnerability-research/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc520cdc0fbde27124942c6c4a8941df6e1b5216",
+      "size": 6,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/bc520cdc0fbde27124942c6c4a8941df6e1b5216"
+    },
+    {
+      "path": "vulnerability-research/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c79fc032e9409cf8bccda060dc9e89d2204dafbc",
+      "size": 896,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/c79fc032e9409cf8bccda060dc9e89d2204dafbc"
+    },
+    {
+      "path": "vulnerability-research/challenge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de97d62271e1006a5b019b192e75f29e98d8cd7a",
+      "size": 906,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/de97d62271e1006a5b019b192e75f29e98d8cd7a"
+    },
+    {
+      "path": "vulnerability-research/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2ffb3db51d71dd0932928a470eab3dcefb898883",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/2ffb3db51d71dd0932928a470eab3dcefb898883"
+    },
+    {
+      "path": "vulnerability-research/dist/vuln-research.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c38454a2c15608a9b159f04ad2ed44732a11631a",
+      "size": 1266,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/c38454a2c15608a9b159f04ad2ed44732a11631a"
+    },
+    {
+      "path": "vulnerability-research/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6f47867271d3d7bba2b044df00be4c629c4910ac",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/6f47867271d3d7bba2b044df00be4c629c4910ac"
+    },
+    {
+      "path": "vulnerability-research/solve/solve.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7f1c408b313225c2a36171c1bc4d521e4723632",
+      "size": 107,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/b7f1c408b313225c2a36171c1bc4d521e4723632"
+    },
+    {
+      "path": "vulnerability-research/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0ea3ba5b86ae40881e678da501485987995d5644",
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/trees/0ea3ba5b86ae40881e678da501485987995d5644"
+    },
+    {
+      "path": "vulnerability-research/src/docker-entrypoint.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c133321724513b92d1469c95d23c99eabfb57dfc",
+      "size": 157,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/c133321724513b92d1469c95d23c99eabfb57dfc"
+    },
+    {
+      "path": "vulnerability-research/src/readflag.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41c52cf97a2428a9bb3ac9986e56b6e65e132029",
+      "size": 137,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/41c52cf97a2428a9bb3ac9986e56b6e65e132029"
+    },
+    {
+      "path": "vulnerability-research/startup.args",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b229d4a2acb64ab04d215fb509a4ff00dde43fbc",
+      "size": 13,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/b229d4a2acb64ab04d215fb509a4ff00dde43fbc"
+    },
+    {
+      "path": "vulnerability-research/vulnerability-research.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3798d9397f6eac3ea96ca0201e35b13b6c8bbae1",
+      "size": 3417,
+      "url": "https://api.github.com/repos/UofTCTF/uoftctf-2026-chals-public/git/blobs/3798d9397f6eac3ea96ca0201e35b13b6c8bbae1"
+    }
+  ],
+  "truncated": false
+}

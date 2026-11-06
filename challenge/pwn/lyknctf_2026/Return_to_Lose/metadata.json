@@ -1,0 +1,47 @@
+{
+  "event_id": "CTF-3280",
+  "event_title": "LYKNCTF",
+  "title": "Return_to_Lose",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "ret2win"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/lyknctf/2026/return_to_lose/",
+    "https://ctf42.online/ctfs/lyknctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/pwn/Return_to_Lose"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/lyknctf-2026-pwn-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/pwn/Return_to_Lose",
+    "https://ctf42.online/ctfs/lyknctf/2026/return_to_lose/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/lyknctf_2026/Return_to_Lose/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/lyknctf-2026-pwn-writeup/",
+      "bytes": 138628,
+      "sha256": "32d0d1f90f9a94d5ef2c997b2217f49e3b0586ed36421bc69a851517dfeb8d47",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/lyknctf_2026/Return_to_Lose/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/lyknctf/2026/return_to_lose/folder.zip?kind=files",
+      "bytes": 3609,
+      "sha256": "f923810ce560c8dd5158c578f08e6a72e792c3282be2ec226eaa1a49ad00f11b",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artistic_warmup · Srdnlen 2026 Quals (reverse) writeup · ctf42</title>
+  
+
+<meta name="description" content="Artistic_warmup: Reverse challenge from Srdnlen 2026 Quals. Techniques: windows-reversing, gdi, bitmap-comparison. salsa just an easy warmup">
+<link rel="canonical" href="https://ctf42.online/ctfs/srdnlen/2026-quals/artistic_warmup/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/srdnlen/2026-quals/artistic_warmup/">
+<meta property="og:title" content="Artistic_warmup">
+<meta property="og:description" content="Artistic_warmup: Reverse challenge from Srdnlen 2026 Quals. Techniques: windows-reversing, gdi, bitmap-comparison. salsa just an easy warmup">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/srdnlen/">Srdnlen</a> / <a href="/ctfs/srdnlen/2026-quals/">2026 Quals</a> / Artistic_warmup</nav>
+
+
+<div class="challenge-head">
+  <h1>Artistic_warmup
+    </h1>
+  <div class="badges">
+    <a class="cat cat-rev" href="/category/rev/">Reverse</a>
+    
+    
+    <span class="chip">weight 34.76</span>
+    <a class="tag" href="/techniques/windows-reversing/">#windows-reversing</a><a class="tag" href="/techniques/gdi/">#gdi</a><a class="tag" href="/techniques/bitmap-comparison/">#bitmap-comparison</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/srdnlen/2026-quals/artistic_warmup/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/srdnlen/2026-quals/artistic_warmup/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  
+  <p class="meta">Flag format: <code class="flag-format">srdnlen{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>salsa
+just an easy warmup</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>Artistic_warmup — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/srdnlen-CTF-2026/blob/main/rev/artistic-warmup.md" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/srdnlen-CTF-2026/blob/main/rev/artistic-warmup.md</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/srdnlen/2026-quals/artistic_warmup/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/vishwactf/2023/etherealcrackme/">EtherealCrackme</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/windows-reversing/">#windows-reversing</a><a class="tag tag-sm" href="/techniques/anti-analysis/">#anti-analysis</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/vishwactf/2023/">VishwaCTF 2023</a></td>
+        <td class="num">22.69</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/zer0pts/2022/service/">service</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/windows-reversing/">#windows-reversing</a><a class="tag tag-sm" href="/techniques/cryptoapi/">#cryptoapi</a><a class="tag tag-sm" href="/techniques/aes/">#aes</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/zer0pts/2022/">zer0pts 2022</a></td>
+        <td class="num">35.97</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/hitcon/2022/meow_way/">meow_way</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/heavens-gate/">#heavens-gate</a><a class="tag tag-sm" href="/techniques/z3/">#z3</a><a class="tag tag-sm" href="/techniques/windows-reversing/">#windows-reversing</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/hitcon/2022/">HITCON 2022</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/zh3r0/2021/sabloom_text_6/">Sabloom_Text_6</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/crackme/">#crackme</a><a class="tag tag-sm" href="/techniques/windows-reversing/">#windows-reversing</a><a class="tag tag-sm" href="/techniques/xor/">#xor</a><a class="tag tag-sm" href="/techniques/maze-solving/">#maze-solving</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/zh3r0/2021/">Zh3r0 2021</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        <span title="Source / Docker setup">src</span>
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/umdctf/2021/painting_windows/">Painting_Windows</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/anti-debugging/">#anti-debugging</a><a class="tag tag-sm" href="/techniques/xor/">#xor</a><a class="tag tag-sm" href="/techniques/windows-reversing/">#windows-reversing</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/umdctf/2021/">UMDCTF 2021</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/cybrics/2021/paired/">Paired</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/windows-reversing/">#windows-reversing</a><a class="tag tag-sm" href="/techniques/ipc-postmessage/">#ipc-postmessage</a><a class="tag tag-sm" href="/techniques/inter-process-code-injection/">#inter-process-code-injection</a><a class="tag tag-sm" href="/techniques/xor/">#xor</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/cybrics/2021/">CyBRICS 2021</a></td>
+        <td class="num">33.32</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/windows-reversing/">#windows-reversing</a> · <a href="/techniques/gdi/">#gdi</a> · <a href="/techniques/bitmap-comparison/">#bitmap-comparison</a>
+          · <a href="/category/rev/">all Reverse</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Srdnlen/2026/Quals/rev/Artistic_warmup" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/srdnlen/2026-quals/artistic_warmup/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from Srdnlen 2026 Quals</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/srdnlen/2026-quals/fhaes/">FHAES</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/srdnlen/2026-quals/faulty_mayo/">Faulty_Mayo</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/srdnlen/2026-quals/lightweight/">Lightweight</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/srdnlen/2026-quals/threshold/">Threshold</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/srdnlen/2026-quals/common_offset/">Common_offset</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/srdnlen/2026-quals/echo/">Echo</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/srdnlen/2026-quals/linx/">Linx</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/srdnlen/2026-quals/registered_stack/">Registered_Stack</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/srdnlen/2026-quals/cornflake_v35/">Cornflake_v3.5</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/srdnlen/2026-quals/dantes_trial/">Dantes_Trial</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/srdnlen/2026-quals/rev_juice/">Rev_Juice</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/srdnlen/2026-quals/after_image/">After_Image</a> <span class="cat cat-web cat-xs">Web</span></li>
+      </ul>
+      <a class="small" href="/ctfs/srdnlen/2026-quals/">All Srdnlen 2026 Quals challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

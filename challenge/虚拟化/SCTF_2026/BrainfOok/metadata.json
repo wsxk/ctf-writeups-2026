@@ -1,0 +1,51 @@
+{
+  "event_id": "CTF-3314",
+  "event_title": "SCTF 2026",
+  "category": "虚拟化",
+  "title": "BrainfOok",
+  "dirname": "SCTF_2026",
+  "source_urls": [
+    "https://github.com/SycloverTeam/SCTF-2026/tree/HEAD/Reverse/BrainfOok"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/BrainfOok/BrainfOok.zip",
+      "local": "attachments/BrainfOok.zip",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 101246014,
+      "sha256": "bad2182d24a1369f90eb5f9a7293bf13269299e5d7efe68ed1ccfaa6d4573927"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/BrainfOok/README.md",
+      "local": "attachments/README.md",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 266,
+      "sha256": "9f41c2aed24122ba16fc5eedb9d59cc9b0116690d3627defdcac347239e7081d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/BrainfOok/Writeup/Writeup.md",
+      "local": "writeups/Writeup/Writeup.md",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 47168,
+      "sha256": "29b4482e156403e9399e1b518759a4c64ec42fa3740909390cf484c403f2907d"
+    }
+  ],
+  "notes": "官方2026仓库题目附件和完整writeup。按题目实际内容归类：GuardMaster为APK；BrainfOok及babel_furnace使用自定义VM。",
+  "directory": "虚拟化/SCTF_2026/BrainfOok",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/BrainfOok/Writeup/Writeup.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/BrainfOok/BrainfOok.zip",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/BrainfOok/README.md"
+  ],
+  "attachment_status": "downloaded"
+}

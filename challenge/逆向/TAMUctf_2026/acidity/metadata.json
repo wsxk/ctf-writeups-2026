@@ -1,0 +1,149 @@
+{
+  "event_id": "CTF-3095",
+  "event_title": "TAMUctf 2026",
+  "category": "逆向",
+  "title": "acidity",
+  "dirname": "TAMUctf_2026",
+  "source_urls": [
+    "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/rev/acidity",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TAMUctf/2026/rev/acidity"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/Dockerfile",
+      "local": "attachments/Dockerfile",
+      "size_expected": 625,
+      "git_blob_sha": "750e482f1c66e0396fe9a416f92141698909732e",
+      "status": "downloaded",
+      "bytes": 625,
+      "sha256": "40765b8a8b3f0227cd5b7a495d87e2c67632a48b2bb8b751912806419dcde164"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/Makefile",
+      "local": "attachments/Makefile",
+      "size_expected": 2107,
+      "git_blob_sha": "971535f273872b16ea8e7387566e3359dfe4a1dd",
+      "status": "downloaded",
+      "bytes": 2107,
+      "sha256": "50ae1011e66568a9dfb32906e12e35eceedc97e96ec50d4bf97d3ae8e90acec9"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/README.md",
+      "local": "attachments/README.md",
+      "size_expected": 1097,
+      "git_blob_sha": "c76c3770f49c63ebc1ffcba54a3756e0a643b4b4",
+      "status": "downloaded",
+      "bytes": 1097,
+      "sha256": "cc26dc4d1291c2fa3c19c9e3fcd524b591d2eb010c2cd4339d1c0a17e19fee64"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/ai_solve/solve.py",
+      "local": "writeups/ai_solve/solve.py",
+      "size_expected": 2802,
+      "git_blob_sha": "29a3588b5ce99377f9965676becc4380405abcd7",
+      "status": "downloaded",
+      "bytes": 2802,
+      "sha256": "02484c7da0d311e4a978f1e004827693a170256a0b772d34bf736691dfb6832f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/ai_solve/transcript.md",
+      "local": "writeups/ai_solve/transcript.md",
+      "size_expected": 14020,
+      "git_blob_sha": "7e8ea73152f5b093791df56684eac14d46c0b217",
+      "status": "downloaded",
+      "bytes": 14020,
+      "sha256": "bd8d57cf33c29e80f26771297f5ef5dc10e69e2c4b3313448fd0e693eace93b1"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/author_solve/brute.py",
+      "local": "writeups/author_solve/brute.py",
+      "size_expected": 1353,
+      "git_blob_sha": "53a6cb024f8157e561e64bbe6e44514ea48e8f95",
+      "status": "downloaded",
+      "bytes": 1353,
+      "sha256": "363d9fd258d93f7a01317cb7d504ef0bd2a020cef5320fa553d1842ddcf30a72"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/author_solve/interact.py",
+      "local": "writeups/author_solve/interact.py",
+      "size_expected": 1639,
+      "git_blob_sha": "759c33913f019afdd7f88558936e8a147a50a568",
+      "status": "downloaded",
+      "bytes": 1639,
+      "sha256": "9ce97644f2e10e96192bfd508bade780f29956a5e95fc75860ba9e9273cb2b91"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/config.toml",
+      "local": "attachments/config.toml",
+      "size_expected": 1036,
+      "git_blob_sha": "4b3eee4d08906dae4c4f5d507d37c0349e1342bf",
+      "status": "downloaded",
+      "bytes": 1036,
+      "sha256": "36ab12f7ff295991b638acb301eaba20e0d4a8eda86ffa9a03e3f18ead43552d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/flag.txt",
+      "local": "attachments/flag.txt",
+      "size_expected": 53,
+      "git_blob_sha": "11a44fcef73c63436f214486d5d564b22b745984",
+      "status": "downloaded",
+      "bytes": 53,
+      "sha256": "fb613ddb8c1dfd45c5bfce406f680f820a7dd5ef597b28981685991cff417a35"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/solver-template.py",
+      "local": "attachments/solver-template.py",
+      "size_expected": 945,
+      "git_blob_sha": "e9ca8a45184b13ac00a8d891a0c0ed572ce3b724",
+      "status": "downloaded",
+      "bytes": 945,
+      "sha256": "9df2365bd0751ecfd88529ebda30ff5701a06177d30970016cf6dbcee594fd22"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/src/game.cpp",
+      "local": "attachments/src/game.cpp",
+      "size_expected": 9518,
+      "git_blob_sha": "f9102d327a4b331b5092b2047239cfec7088765d",
+      "status": "downloaded",
+      "bytes": 9518,
+      "sha256": "7f32b2a0ed2fc1c4d27faebb5476bbc3545db4b068247e3ba5d75fe1846e5b23"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/acidity/README.md",
+      "local": "attachments/archived_handout/README.md",
+      "status": "downloaded",
+      "bytes": 51,
+      "sha256": "ce1a408af6392670e520fc45162a79a1eec163c63b912ee35330dd6f9b2fda39"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/acidity/acidity.tar.gz",
+      "local": "attachments/archived_handout/acidity.tar.gz",
+      "status": "downloaded",
+      "bytes": 51967,
+      "sha256": "f52a9a432c2ab920f00233df909b6b830415bee5eda43663c699009068a8b8f0"
+    }
+  ],
+  "notes": "官方仓库源码/构建材料及求解脚本，另从sajjadium/ctf-archives的2026目录配对下载原始题包（archived_handout）。未构建或执行。",
+  "attachment_kind": "original_package_and_official_source",
+  "directory": "逆向/TAMUctf_2026/acidity",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/ai_solve/solve.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/ai_solve/transcript.md",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/author_solve/brute.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/author_solve/interact.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/Dockerfile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/Makefile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/README.md",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/config.toml",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/flag.txt",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/solver-template.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/src/game.cpp",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/acidity/README.md",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/acidity/acidity.tar.gz"
+  ],
+  "attachment_status": "downloaded"
+}

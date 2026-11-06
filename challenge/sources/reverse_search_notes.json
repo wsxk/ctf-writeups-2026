@@ -1,0 +1,51 @@
+{
+  "date_beijing": "2026-11-06",
+  "reviewed_events": [
+    "CTF-2969",
+    "CTF-3015",
+    "CTF-3043",
+    "CTF-3110",
+    "CTF-3247",
+    "CTF-3095",
+    "CTF-3153",
+    "CTF-2767",
+    "CTF-3161",
+    "CTF-3314",
+    "CTF-3330",
+    "CTF-3206",
+    "CTF-3149"
+  ],
+  "queries": [
+    "2026 CTF reverse writeups github UofTCTF LACTF",
+    "2026 CTF challenges github reverse writeup PascalCTF",
+    "site:github.com 2026 srdnlen challenges",
+    "site:github.com 2026 UIUCTF challenges",
+    "site:github.com 2026 EHAX challenges",
+    "LA CTF 2026 reflection writeup",
+    "PascalCTF 2026 StrangeVM writeup",
+    "R3CTF 2026 lift writeup",
+    "R3CTF 2026 FunnyGame writeup",
+    "NCTF 2026 VM Encryptor"
+  ],
+  "excluded_or_deferred": [
+    {
+      "event_id": "CTF-3149",
+      "title": "lift; FunnyGame",
+      "reason": "官方仓库README仅题目说明和flag，未查到有效writeup/solver，未冒充解答收录。",
+      "source": "https://github.com/r3kapig/r3ctf-2026"
+    },
+    {
+      "event_id": "CTF-2767",
+      "title": "AuraTester2000; curly-crab; Mysterious Game",
+      "reason": "官方writeup/README.md仅5字节TODO；仅发现Aura文章检索线索，未配对下载有效完整解答；未收录。",
+      "source": "https://github.com/PascalCTF/PascalCTF-2026"
+    },
+    {
+      "event_id": "CTF-3153",
+      "title": "bike; piano",
+      "reason": "官方README为题目开发模板，solve目录未见有效解答；未收录。",
+      "source": "https://github.com/b01lers/b01lers-ctf-2026-public"
+    }
+  ],
+  "download_validation": "原始官方tree来源文件核对Git blob SHA/字节数，所有下载生成SHA-256；原始ZIP测试CRC，未执行题目或solver。GitHub API限流后改用公开网页树，网页来源文件只能以本地SHA-256/格式校验并记录原URL，不能声称已与Git blob SHA核对。"
+}

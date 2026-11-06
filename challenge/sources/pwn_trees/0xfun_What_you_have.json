@@ -1,0 +1,23 @@
+{
+  "sha": "3627c4b2bd4460c12df59967a59dcc6556b3cda4",
+  "url": "https://api.github.com/repos/sajjadium/ctf-archives/git/trees/3627c4b2bd4460c12df59967a59dcc6556b3cda4",
+  "tree": [
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e5054555522c99d990cb9283e107a1d029fcd17",
+      "size": 82,
+      "url": "https://api.github.com/repos/sajjadium/ctf-archives/git/blobs/2e5054555522c99d990cb9283e107a1d029fcd17"
+    },
+    {
+      "path": "chall",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ee096dbbb0c0e33bac01803126488f15e38eac7",
+      "size": 12768,
+      "url": "https://api.github.com/repos/sajjadium/ctf-archives/git/blobs/4ee096dbbb0c0e33bac01803126488f15e38eac7"
+    }
+  ],
+  "truncated": false
+}

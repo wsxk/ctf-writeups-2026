@@ -1,0 +1,9 @@
+services:
+  incontinent:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "1366:5000"
+    privileged: true

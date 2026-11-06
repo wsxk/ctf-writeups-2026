@@ -1,0 +1,114 @@
+[
+  {
+    "name": "67",
+    "path": "ctfs/0xFUN/2026/pwn/67",
+    "sha": "0a3abed7f112c0dbc3ec62fc009a2370f49e2201",
+    "size": 0,
+    "url": "https://api.github.com/repos/sajjadium/ctf-archives/contents/ctfs/0xFUN/2026/pwn/67?ref=main",
+    "html_url": "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/67",
+    "git_url": "https://api.github.com/repos/sajjadium/ctf-archives/git/trees/0a3abed7f112c0dbc3ec62fc009a2370f49e2201",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sajjadium/ctf-archives/contents/ctfs/0xFUN/2026/pwn/67?ref=main",
+      "git": "https://api.github.com/repos/sajjadium/ctf-archives/git/trees/0a3abed7f112c0dbc3ec62fc009a2370f49e2201",
+      "html": "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/67"
+    }
+  },
+  {
+    "name": "67_revenge",
+    "path": "ctfs/0xFUN/2026/pwn/67_revenge",
+    "sha": "11b7de5b598d075df411f7e60cc0454b5ebedcaa",
+    "size": 0,
+    "url": "https://api.github.com/repos/sajjadium/ctf-archives/contents/ctfs/0xFUN/2026/pwn/67_revenge?ref=main",
+    "html_url": "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/67_revenge",
+    "git_url": "https://api.github.com/repos/sajjadium/ctf-archives/git/trees/11b7de5b598d075df411f7e60cc0454b5ebedcaa",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sajjadium/ctf-archives/contents/ctfs/0xFUN/2026/pwn/67_revenge?ref=main",
+      "git": "https://api.github.com/repos/sajjadium/ctf-archives/git/trees/11b7de5b598d075df411f7e60cc0454b5ebedcaa",
+      "html": "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/67_revenge"
+    }
+  },
+  {
+    "name": "Fridge",
+    "path": "ctfs/0xFUN/2026/pwn/Fridge",
+    "sha": "8898a695f322cae0108409979bf35f6e4ce94d58",
+    "size": 0,
+    "url": "https://api.github.com/repos/sajjadium/ctf-archives/contents/ctfs/0xFUN/2026/pwn/Fridge?ref=main",
+    "html_url": "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/Fridge",
+    "git_url": "https://api.github.com/repos/sajjadium/ctf-archives/git/trees/8898a695f322cae0108409979bf35f6e4ce94d58",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sajjadium/ctf-archives/contents/ctfs/0xFUN/2026/pwn/Fridge?ref=main",
+      "git": "https://api.github.com/repos/sajjadium/ctf-archives/git/trees/8898a695f322cae0108409979bf35f6e4ce94d58",
+      "html": "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/Fridge"
+    }
+  },
+  {
+    "name": "Warden",
+    "path": "ctfs/0xFUN/2026/pwn/Warden",
+    "sha": "37165e0f9dee0cbe70cce275aa37a16f0eaf9aeb",
+    "size": 0,
+    "url": "https://api.github.com/repos/sajjadium/ctf-archives/contents/ctfs/0xFUN/2026/pwn/Warden?ref=main",
+    "html_url": "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/Warden",
+    "git_url": "https://api.github.com/repos/sajjadium/ctf-archives/git/trees/37165e0f9dee0cbe70cce275aa37a16f0eaf9aeb",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sajjadium/ctf-archives/contents/ctfs/0xFUN/2026/pwn/Warden?ref=main",
+      "git": "https://api.github.com/repos/sajjadium/ctf-archives/git/trees/37165e0f9dee0cbe70cce275aa37a16f0eaf9aeb",
+      "html": "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/Warden"
+    }
+  },
+  {
+    "name": "What_you_have",
+    "path": "ctfs/0xFUN/2026/pwn/What_you_have",
+    "sha": "3627c4b2bd4460c12df59967a59dcc6556b3cda4",
+    "size": 0,
+    "url": "https://api.github.com/repos/sajjadium/ctf-archives/contents/ctfs/0xFUN/2026/pwn/What_you_have?ref=main",
+    "html_url": "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/What_you_have",
+    "git_url": "https://api.github.com/repos/sajjadium/ctf-archives/git/trees/3627c4b2bd4460c12df59967a59dcc6556b3cda4",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sajjadium/ctf-archives/contents/ctfs/0xFUN/2026/pwn/What_you_have?ref=main",
+      "git": "https://api.github.com/repos/sajjadium/ctf-archives/git/trees/3627c4b2bd4460c12df59967a59dcc6556b3cda4",
+      "html": "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/What_you_have"
+    }
+  },
+  {
+    "name": "bit_flips",
+    "path": "ctfs/0xFUN/2026/pwn/bit_flips",
+    "sha": "04ad0a7d9cea3ecc68a730f1c17e4de504f4b67a",
+    "size": 0,
+    "url": "https://api.github.com/repos/sajjadium/ctf-archives/contents/ctfs/0xFUN/2026/pwn/bit_flips?ref=main",
+    "html_url": "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/bit_flips",
+    "git_url": "https://api.github.com/repos/sajjadium/ctf-archives/git/trees/04ad0a7d9cea3ecc68a730f1c17e4de504f4b67a",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sajjadium/ctf-archives/contents/ctfs/0xFUN/2026/pwn/bit_flips?ref=main",
+      "git": "https://api.github.com/repos/sajjadium/ctf-archives/git/trees/04ad0a7d9cea3ecc68a730f1c17e4de504f4b67a",
+      "html": "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/bit_flips"
+    }
+  },
+  {
+    "name": "chaos",
+    "path": "ctfs/0xFUN/2026/pwn/chaos",
+    "sha": "66b9ec0d8c481e93be7788feb1fd11c1deb3a3c3",
+    "size": 0,
+    "url": "https://api.github.com/repos/sajjadium/ctf-archives/contents/ctfs/0xFUN/2026/pwn/chaos?ref=main",
+    "html_url": "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/chaos",
+    "git_url": "https://api.github.com/repos/sajjadium/ctf-archives/git/trees/66b9ec0d8c481e93be7788feb1fd11c1deb3a3c3",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/sajjadium/ctf-archives/contents/ctfs/0xFUN/2026/pwn/chaos?ref=main",
+      "git": "https://api.github.com/repos/sajjadium/ctf-archives/git/trees/66b9ec0d8c481e93be7788feb1fd11c1deb3a3c3",
+      "html": "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/chaos"
+    }
+  }
+]

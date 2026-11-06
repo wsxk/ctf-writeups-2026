@@ -1,0 +1,39 @@
+{
+  "event_id": "CTF-3206",
+  "event_title": "NCTF 2026",
+  "category": "android",
+  "title": "Hook My Secret",
+  "dirname": "NCTF_2026",
+  "source_urls": [
+    "https://github.com/X1cT34m/NCTF2026/tree/HEAD/Reverse/hook-my-secret"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/X1cT34m/NCTF2026/HEAD/Reverse/hook-my-secret/app-release.apk",
+      "local": "attachments/app-release.apk",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 2847400,
+      "sha256": "596c398a063cf7a5e272f6df535e5f8ad56912de31e10408015b22356744efc9"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/X1cT34m/NCTF2026/main/NCTF%202026%20Official%20Writeup.pdf",
+      "local": "writeups/NCTF_2026_Official_Writeup.pdf",
+      "status": "downloaded",
+      "bytes": 3769458,
+      "sha256": "ce86aa9f1e908adea309519cf73e58f2fc7e0463a73a238b7153b6bc3de48726"
+    }
+  ],
+  "notes": "官方仓库附件，配整场官方解答PDF；请在PDF目录中定位本题。PDF为原始文件，未重新排版。",
+  "directory": "android/NCTF_2026/Hook My Secret",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/X1cT34m/NCTF2026/main/NCTF%202026%20Official%20Writeup.pdf"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/X1cT34m/NCTF2026/HEAD/Reverse/hook-my-secret/app-release.apk"
+  ],
+  "attachment_status": "downloaded"
+}

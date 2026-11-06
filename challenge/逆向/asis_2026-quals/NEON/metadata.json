@@ -1,0 +1,49 @@
+{
+  "event_id": "CTF-3033",
+  "event_title": "ASIS CTF Quals 2026",
+  "title": "NEON",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "aarch64",
+    "custom-package-format",
+    "vulkan"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/asis/2026-quals/neon/",
+    "https://ctf42.online/ctfs/asis/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/NEON"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/neon"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/NEON",
+    "https://ctf42.online/ctfs/asis/2026-quals/neon/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/asis_2026-quals/NEON/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/ASIS-CTF-Quals-2026/main/rev/neon/README.md",
+      "bytes": 6272,
+      "sha256": "8a020c09f2c386729e87f4e2624f0859885a5a20da517df9a6a86020281318d4",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/asis_2026-quals/NEON/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/asis/2026-quals/neon/folder.zip?kind=files",
+      "bytes": 14139542,
+      "sha256": "3989ed053fdf1e1e526cba7b4ba7133c87066c79eb2f8eb128c63876e777496f",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

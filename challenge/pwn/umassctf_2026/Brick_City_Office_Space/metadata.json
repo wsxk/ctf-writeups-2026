@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-2937",
+  "event_title": "UMassCTF 2026",
+  "title": "Brick_City_Office_Space",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "format-string",
+    "got-overwrite",
+    "ret2libc"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/umassctf/2026/brick_city_office_space/",
+    "https://ctf42.online/ctfs/umassctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMassCTF/2026/pwn/Brick_City_Office_Space"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/UMASSCTF-2026-writeups/tree/main/UMASSCTF-2026-writeups/pwn/brick-city-office-space"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMassCTF/2026/pwn/Brick_City_Office_Space",
+    "https://ctf42.online/ctfs/umassctf/2026/brick_city_office_space/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/umassctf_2026/Brick_City_Office_Space/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/UMASSCTF-2026-writeups/main/UMASSCTF-2026-writeups/pwn/brick-city-office-space/README.md",
+      "bytes": 8542,
+      "sha256": "35776f297126a726ac5deab622fe9b94291b527da70161216b98658f477b9da7",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/umassctf_2026/Brick_City_Office_Space/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMassCTF/2026/pwn/Brick_City_Office_Space/README.md",
+      "bytes": 129,
+      "sha256": "98f699a051693ccf80c43c401a3440cd75f78e8b8807d02d8f9984271baeb2bf",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/umassctf_2026/Brick_City_Office_Space/attachments/upstream/brick-city-office-space.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMassCTF/2026/pwn/Brick_City_Office_Space/brick-city-office-space.zip",
+      "bytes": 1103686,
+      "sha256": "acfa91bf859fe5d509dfbb6f26b9f1e73cc59a949d13b832404a765fb724ae8d",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/umassctf/2026/brick_city_office_space/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/umassctf/2026/brick_city_office_space/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

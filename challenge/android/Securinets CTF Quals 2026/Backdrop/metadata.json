@@ -1,0 +1,118 @@
+{
+  "event_id": "CTF-3364",
+  "event_title": "Securinets CTF Quals 2026",
+  "category": "android",
+  "title": "Backdrop",
+  "source_urls": [
+    "https://ctftime.org/event/3364/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Securinets/2026/Quals/mobile/Backdrop"
+  ],
+  "writeup_urls": [
+    "https://khalilammar.me/writeups/backdrop-securinets-quals",
+    "https://khalilammar.me/media/securinets-logo.webp",
+    "https://khalilammar.me/media/backdrop/01-splash.webp",
+    "https://khalilammar.me/media/backdrop/02-main.webp",
+    "https://khalilammar.me/media/backdrop/03-timer.webp",
+    "https://khalilammar.me/media/backdrop/06-issue-workaround.webp",
+    "https://khalilammar.me/media/backdrop/05-error.webp",
+    "https://khalilammar.me/media/backdrop/flag-on-device.webp",
+    "https://pentest.bi0s.in/blog/posts/securinet-quals-ctf-backdrop/",
+    "https://pentest.bi0s.in/blog/assets/img/posts/securinet-quals-ctf-backdrop/image-1.png",
+    "https://pentest.bi0s.in/blog/assets/img/posts/securinet-quals-ctf-backdrop/image-2.png",
+    "https://pentest.bi0s.in/blog/assets/img/posts/securinet-quals-ctf-backdrop/image-3.png"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/Securinets/2026/Quals/mobile/Backdrop/README.md",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/Securinets/2026/Quals/mobile/Backdrop/backdrop.zip"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": "Securinets CTF Quals 2026，Android Flutter APK / 定时器 / 渲染错误 / 签名绑定解密。两个参赛者 writeup 均已保存；原APK另查镜像。文章引用的 AGENTS.md 是赛题诱饵数据，不是本工作区指令。 后续补充：已从 sajjadium/ctf-archives 下载镜像题目资料，见 attachments；此前缺失记录仅描述初次检索状态。",
+  "files": [
+    {
+      "path": "writeups/KhalilAmmar.html",
+      "url": "https://khalilammar.me/writeups/backdrop-securinets-quals",
+      "bytes": 92186,
+      "sha256": "0d6887b0da342d62974ea1b3479408ea9816175ecc2a34f1642bbd784848d036"
+    },
+    {
+      "path": "writeups/KhalilAmmar_assets/000.webp",
+      "url": "https://khalilammar.me/media/securinets-logo.webp",
+      "bytes": 10404,
+      "sha256": "bcad883bf5a5f3efc1a3e70c875410abbfb3922df83a12ec259f1cf4d0a303ad"
+    },
+    {
+      "path": "writeups/KhalilAmmar_assets/001.webp",
+      "url": "https://khalilammar.me/media/backdrop/01-splash.webp",
+      "bytes": 12762,
+      "sha256": "17ed87ff75465702d75ce0422cea51e550640c386725c929aeec09f6619d87aa"
+    },
+    {
+      "path": "writeups/KhalilAmmar_assets/002.webp",
+      "url": "https://khalilammar.me/media/backdrop/02-main.webp",
+      "bytes": 33668,
+      "sha256": "6d9437c2c6c3ba1e647891862a1611bd000f23caa9c984425ab01fb6dab0edda"
+    },
+    {
+      "path": "writeups/KhalilAmmar_assets/003.webp",
+      "url": "https://khalilammar.me/media/backdrop/03-timer.webp",
+      "bytes": 11708,
+      "sha256": "0828149bc448f4fbaaca8c6445116b5a2006bb8e97705c258936caa2a4d9ff6c"
+    },
+    {
+      "path": "writeups/KhalilAmmar_assets/004.webp",
+      "url": "https://khalilammar.me/media/backdrop/06-issue-workaround.webp",
+      "bytes": 31336,
+      "sha256": "e3d929500cb2d460f4ca7115c45befc0c163291c08b8b4bfb25c1521cb2e7519"
+    },
+    {
+      "path": "writeups/KhalilAmmar_assets/005.webp",
+      "url": "https://khalilammar.me/media/backdrop/05-error.webp",
+      "bytes": 9128,
+      "sha256": "3889988150f94710f40b6f3fd12acfc448f0fcb5278f502907e702ed40908962"
+    },
+    {
+      "path": "writeups/KhalilAmmar_assets/006.webp",
+      "url": "https://khalilammar.me/media/backdrop/flag-on-device.webp",
+      "bytes": 29920,
+      "sha256": "18e396f9397c50b632457a00bae81854d01a7d5f963f0e4f7a077d0e097bdeee"
+    },
+    {
+      "path": "writeups/bi0s.html",
+      "url": "https://pentest.bi0s.in/blog/posts/securinet-quals-ctf-backdrop/",
+      "bytes": 56402,
+      "sha256": "82c14880aad27b3bc4315e25368f206c6250dda6c3b76ca7f8c095c91d5a9322"
+    },
+    {
+      "path": "writeups/bi0s_assets/000.png",
+      "url": "https://pentest.bi0s.in/blog/assets/img/posts/securinet-quals-ctf-backdrop/image-1.png",
+      "bytes": 31258,
+      "sha256": "c5b8d7db3530cbaed6bc88968a4124ab5fc798259534d39ce3ca59c3b5280c5d"
+    },
+    {
+      "path": "writeups/bi0s_assets/001.png",
+      "url": "https://pentest.bi0s.in/blog/assets/img/posts/securinet-quals-ctf-backdrop/image-2.png",
+      "bytes": 66697,
+      "sha256": "b74966a9fc55ca160e0f6d96fe699fd99b21fb5ccdb41c00d4bcf876943c0656"
+    },
+    {
+      "path": "writeups/bi0s_assets/002.png",
+      "url": "https://pentest.bi0s.in/blog/assets/img/posts/securinet-quals-ctf-backdrop/image-3.png",
+      "bytes": 29041,
+      "sha256": "6b8f13eb313dc5e1084ae5d4088767fa7f476de8fae92a767c18c0c2263c5ad6"
+    },
+    {
+      "path": "attachments/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/Securinets/2026/Quals/mobile/Backdrop/README.md",
+      "bytes": 25,
+      "sha256": "3b1fc415d9b69762818ed2d750a54b8f879b64768b8d0201df50aab30fd9ab57"
+    },
+    {
+      "path": "attachments/backdrop.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/Securinets/2026/Quals/mobile/Backdrop/backdrop.zip",
+      "bytes": 22123544,
+      "sha256": "b3934110de7cfdf137df8476a29de044e16f6a01559f4f478b77c2c10b713e7a"
+    }
+  ],
+  "errors": []
+}

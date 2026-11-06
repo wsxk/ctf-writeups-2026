@@ -1,0 +1,64 @@
+{
+  "event_id": "CTF-3379",
+  "event_title": "Haruulzangi CTF 2026 Qualifier",
+  "title": "Automaton",
+  "category": "虚拟化",
+  "original_category": "Reverse",
+  "tags": [
+    "wasm",
+    "reversible-transformations",
+    "custom-vm"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/haruulzangi/2026-quals/automaton/",
+    "https://ctf42.online/ctfs/haruulzangi/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/rev/Automaton"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/rev/automaton"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/rev/Automaton",
+    "https://ctf42.online/ctfs/haruulzangi/2026-quals/automaton/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/haruulzangi_2026-quals/Automaton/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/main/rev/automaton/README.md",
+      "bytes": 3849,
+      "sha256": "e5bad4ee8e512b5e0291c81f998165fd8c7977ceb1bfc5505f54d31dcab6ee40",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/haruulzangi_2026-quals/Automaton/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Haruulzangi/2026/Quals/rev/Automaton/README.md",
+      "bytes": 598,
+      "sha256": "3ad46427a7a0c83c083101c1f42fe2fceb318cdd9274f8faaf41e475665c7254",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/haruulzangi_2026-quals/Automaton/attachments/upstream/artifact.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Haruulzangi/2026/Quals/rev/Automaton/artifact.zip",
+      "bytes": 18344,
+      "sha256": "44d90750c98786cb21e7ab94fe4335de9a562514d2493fa14a65af54acead05f",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/automaton/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/haruulzangi/2026-quals/automaton/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

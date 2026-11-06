@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>obfpyscated · RITSEC 2026 (reverse) writeup · ctf42</title>
+  
+
+<meta name="description" content="obfpyscated: Reverse challenge from RITSEC 2026. Techniques: python-obfuscation, xor, aes. Doubloons10 Doubloons python is really easy to understand…">
+<link rel="canonical" href="https://ctf42.online/ctfs/ritsec/2026/obfpyscated/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/ritsec/2026/obfpyscated/">
+<meta property="og:title" content="obfpyscated">
+<meta property="og:description" content="obfpyscated: Reverse challenge from RITSEC 2026. Techniques: python-obfuscation, xor, aes. Doubloons10 Doubloons python is really easy to understand…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/ritsec/">RITSEC</a> / <a href="/ctfs/ritsec/2026/">2026</a> / obfpyscated</nav>
+
+
+<div class="challenge-head">
+  <h1>obfpyscated
+    </h1>
+  <div class="badges">
+    <a class="cat cat-rev" href="/category/rev/">Reverse</a>
+    
+    
+    
+    <a class="tag" href="/techniques/python-obfuscation/">#python-obfuscation</a><a class="tag" href="/techniques/xor/">#xor</a><a class="tag" href="/techniques/aes/">#aes</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/ritsec/2026/obfpyscated/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/ritsec/2026/obfpyscated/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  <p class="meta">Author: sy1vi3</p>
+  <p class="meta">Flag format: <code class="flag-format">RITSEC{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>Doubloons10 Doubloons
+python is really easy to understand because it's basically just pseudocode lol</p>
+<p>dockerfile provided for your convenience</p>
+<p>Author: sy1vi3</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>obfpyscated — writeup</b>
+    
+    
+    <span class="muted">by Echelon Obscura</span>
+  </header>
+  <p><a href="https://ctftime.org/writeup/40707" rel="noopener nofollow ugc" target="_blank">https://ctftime.org/writeup/40707</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/ritsec/2026/obfpyscated/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/uoftctf/2026/baby_obfuscated_flag_checker/">Baby_Obfuscated_Flag_Checker</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/python-obfuscation/">#python-obfuscation</a><a class="tag tag-sm" href="/techniques/xor/">#xor</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/uoftctf/2026/">UofTCTF 2026</a></td>
+        <td class="num">33.49</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/patriotctf/2023/python_garbage_compiler/">Python_Garbage_Compiler</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/python-obfuscation/">#python-obfuscation</a><a class="tag tag-sm" href="/techniques/seeded-prng/">#seeded-prng</a><a class="tag tag-sm" href="/techniques/xor/">#xor</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/patriotctf/2023/">PatriotCTF 2023</a></td>
+        <td class="num">24.52</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/bearcat/2026/captain_morgan/">Captain_Morgan</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/python-obfuscation/">#python-obfuscation</a><a class="tag tag-sm" href="/techniques/z3/">#z3</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/bearcat/2026/">Bearcat 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/thecyberjawarainternational/2024/python_is_hard/">Python_is_Hard</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/python-obfuscation/">#python-obfuscation</a><a class="tag tag-sm" href="/techniques/js2py/">#js2py</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/thecyberjawarainternational/2024/">TheCyberJawaraInternational 2024</a></td>
+        <td class="num">23.62</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/umdctf/2026/the_akari/">the_akari</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/akari-puzzle/">#akari-puzzle</a><a class="tag tag-sm" href="/techniques/constraint-propagation/">#constraint-propagation</a><a class="tag tag-sm" href="/techniques/sat-solver/">#sat-solver</a><a class="tag tag-sm" href="/techniques/aes/">#aes</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/umdctf/2026/">UMDCTF 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/imaginaryctf/2023/chaos/">chaos</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/python-obfuscation/">#python-obfuscation</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/imaginaryctf/2023/">ImaginaryCTF 2023</a></td>
+        <td class="num">34.52</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        <span title="Source / Docker setup">src</span>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/python-obfuscation/">#python-obfuscation</a> · <a href="/techniques/xor/">#xor</a> · <a href="/techniques/aes/">#aes</a>
+          · <a href="/category/rev/">all Reverse</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/obfpyscated" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/ritsec/2026/obfpyscated/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from RITSEC 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/ritsec/2026/captain_marks_compass/">Captain_Marks_Compass</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/ritsec/2026/pierres_compass/">Pierres_Compass</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/ritsec/2026/portobelo/">Portobelo</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/ritsec/2026/davy_jones_message/">Davy_Jones_Message</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/ritsec/2026/ocean_wildlife/">Ocean_Wildlife</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/ritsec/2026/song_inside_a_shell/">Song_Inside_a_Shell</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/ritsec/2026/this_craft_is_mine/">This_Craft_is_Mine</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/ritsec/2026/zipped_up/">Zipped_Up</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/ritsec/2026/highly_specific/">highly_specific</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/ritsec/2026/impossibler_pygolf/">impossibler_pygolf</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/ritsec/2026/slopjail/">slopjail</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/ritsec/2026/bake_a_pi/">Bake_a_Pi</a> <span class="cat cat-pwn cat-xs">Pwn</span></li>
+      </ul>
+      <a class="small" href="/ctfs/ritsec/2026/">All RITSEC 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

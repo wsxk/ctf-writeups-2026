@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>redactr · squ1rrel 2026 (reverse) writeup · ctf42</title>
+  
+
+<meta name="description" content="redactr: Reverse challenge from squ1rrel 2026. Techniques: image-deblurring, milp, rust-reversing. zerodaytea Ugh I can&#x27;t read it I can&#x27;t read it">
+<link rel="canonical" href="https://ctf42.online/ctfs/squ1rrel/2026/redactr/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/squ1rrel/2026/redactr/">
+<meta property="og:title" content="redactr">
+<meta property="og:description" content="redactr: Reverse challenge from squ1rrel 2026. Techniques: image-deblurring, milp, rust-reversing. zerodaytea Ugh I can&#x27;t read it I can&#x27;t read it">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/squ1rrel/">squ1rrel</a> / <a href="/ctfs/squ1rrel/2026/">2026</a> / redactr</nav>
+
+
+<div class="challenge-head">
+  <h1>redactr
+    </h1>
+  <div class="badges">
+    <a class="cat cat-rev" href="/category/rev/">Reverse</a>
+    
+    
+    <span class="chip">weight 32.47</span>
+    <a class="tag" href="/techniques/image-deblurring/">#image-deblurring</a><a class="tag" href="/techniques/milp/">#milp</a><a class="tag" href="/techniques/rust-reversing/">#rust-reversing</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/squ1rrel/2026/redactr/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/squ1rrel/2026/redactr/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  
+  <p class="meta">Flag format: <code class="flag-format">squ1rrel{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>zerodaytea
+Ugh I can't read it I can't read it</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>redactr — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/squ1rrel-CTF-2026-Writeups/tree/main/rev/Redactr" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/squ1rrel-CTF-2026-Writeups/tree/main/rev/Redactr</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/squ1rrel/2026/redactr/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/seetf/2023/linear_programming/">Linear_Programming</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/milp/">#milp</a><a class="tag tag-sm" href="/techniques/linear-programming/">#linear-programming</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/seetf/2023/">SEETF 2023</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/dicectf/2026-quals/bedtime/">bedtime</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/rust-reversing/">#rust-reversing</a><a class="tag tag-sm" href="/techniques/nim-game/">#nim-game</a><a class="tag tag-sm" href="/techniques/prng/">#prng</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/dicectf/2026-quals/">DiceCTF 2026 Quals</a></td>
+        <td class="num">100.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/null/2025/wordleos/">wordleOS</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/boot-sector/">#boot-sector</a><a class="tag tag-sm" href="/techniques/rust-reversing/">#rust-reversing</a><a class="tag tag-sm" href="/techniques/vga-buffer/">#vga-buffer</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/null/2025/">Null 2025</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/1337up/2023/flagchecker/">FlagChecker</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/z3-constraint-solving/">#z3-constraint-solving</a><a class="tag tag-sm" href="/techniques/rust-reversing/">#rust-reversing</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/1337up/2023/">1337UP 2023</a></td>
+        <td class="num">24.23</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;2</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/seccon/2022-quals/eguite/">eguite</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/rust-reversing/">#rust-reversing</a><a class="tag tag-sm" href="/techniques/constraint-solving/">#constraint-solving</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/seccon/2022-quals/">SECCON 2022 Quals</a></td>
+        <td class="num">97.90</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/b01lers/2022/rust1/">rust1</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/z3/">#z3</a><a class="tag tag-sm" href="/techniques/rust-reversing/">#rust-reversing</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/b01lers/2022/">b01lers 2022</a></td>
+        <td class="num">33.05</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/image-deblurring/">#image-deblurring</a> · <a href="/techniques/milp/">#milp</a> · <a href="/techniques/rust-reversing/">#rust-reversing</a>
+          · <a href="/category/rev/">all Reverse</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/squ1rrel/2026/rev/redactr" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/squ1rrel/2026/redactr/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from squ1rrel 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/squ1rrel/2026/flat_earth_2/">flat_earth_2</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/squ1rrel/2026/rsa/">rsa</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/squ1rrel/2026/a_3d_world/">a_3d_world</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/squ1rrel/2026/bawk_bawk/">bawk_bawk</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/squ1rrel/2026/gitting_the_secret/">gitting_the_secret</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/squ1rrel/2026/lorem_ipsum/">lorem_ipsum</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/squ1rrel/2026/no_p_cap/">no_p_cap</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/squ1rrel/2026/pdfpile/">pdfpile</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/squ1rrel/2026/save_the_tower/">save_the_tower</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/squ1rrel/2026/soulmate/">soulmate</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/squ1rrel/2026/b2b/">b2b</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/squ1rrel/2026/echo/">echo</a> <span class="cat cat-pwn cat-xs">Pwn</span></li>
+      </ul>
+      <a class="small" href="/ctfs/squ1rrel/2026/">All squ1rrel 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

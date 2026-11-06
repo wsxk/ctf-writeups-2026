@@ -1,0 +1,946 @@
+{
+  "date": "2026-11-06",
+  "complete": true,
+  "scope": "Reviewed 2026 catalog events, all selected attachments and public solutions downloaded; sources retained per file",
+  "entries": [
+    {
+      "event_id": "CTF-3314",
+      "event_title": "SCTF 2026",
+      "category": "逆向",
+      "title": "Alice",
+      "dirname": "SCTF_2026",
+      "source_urls": [
+        "https://github.com/SycloverTeam/SCTF-2026/tree/HEAD/Reverse/Alice"
+      ],
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Alice/Alice.zip",
+          "local": "attachments/Alice.zip",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 468789,
+          "sha256": "00a5b3043f7d93d89d617abd1c131543311c385e33fd339708da7e65ed85b9cc"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Alice/README.md",
+          "local": "attachments/README.md",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 225,
+          "sha256": "292a9dc1563866d89203c26ba5ec9bb6a1eafee8cbd0b1414eda24a668a851b9"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Alice/writeup/writeup.md",
+          "local": "writeups/writeup/writeup.md",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 10485,
+          "sha256": "888c15f8aa413b63b7382c949026ee82e2fdbfb97afd331c9796145ee27e16bd"
+        }
+      ],
+      "notes": "官方2026仓库题目附件和完整writeup。按题目实际内容归类：GuardMaster为APK；BrainfOok及babel_furnace使用自定义VM。",
+      "directory": "逆向/SCTF_2026/Alice",
+      "retrieved_date_beijing": "2026-11-06",
+      "writeup_urls": [
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Alice/writeup/writeup.md"
+      ],
+      "writeup_status": "downloaded",
+      "attachment_urls": [
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Alice/Alice.zip",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Alice/README.md"
+      ],
+      "attachment_status": "downloaded"
+    },
+    {
+      "event_id": "CTF-3314",
+      "event_title": "SCTF 2026",
+      "category": "虚拟化",
+      "title": "BrainfOok",
+      "dirname": "SCTF_2026",
+      "source_urls": [
+        "https://github.com/SycloverTeam/SCTF-2026/tree/HEAD/Reverse/BrainfOok"
+      ],
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/BrainfOok/BrainfOok.zip",
+          "local": "attachments/BrainfOok.zip",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 101246014,
+          "sha256": "bad2182d24a1369f90eb5f9a7293bf13269299e5d7efe68ed1ccfaa6d4573927"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/BrainfOok/README.md",
+          "local": "attachments/README.md",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 266,
+          "sha256": "9f41c2aed24122ba16fc5eedb9d59cc9b0116690d3627defdcac347239e7081d"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/BrainfOok/Writeup/Writeup.md",
+          "local": "writeups/Writeup/Writeup.md",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 47168,
+          "sha256": "29b4482e156403e9399e1b518759a4c64ec42fa3740909390cf484c403f2907d"
+        }
+      ],
+      "notes": "官方2026仓库题目附件和完整writeup。按题目实际内容归类：GuardMaster为APK；BrainfOok及babel_furnace使用自定义VM。",
+      "directory": "虚拟化/SCTF_2026/BrainfOok",
+      "retrieved_date_beijing": "2026-11-06",
+      "writeup_urls": [
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/BrainfOok/Writeup/Writeup.md"
+      ],
+      "writeup_status": "downloaded",
+      "attachment_urls": [
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/BrainfOok/BrainfOok.zip",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/BrainfOok/README.md"
+      ],
+      "attachment_status": "downloaded"
+    },
+    {
+      "event_id": "CTF-3314",
+      "event_title": "SCTF 2026",
+      "category": "android",
+      "title": "GuardMaster",
+      "dirname": "SCTF_2026",
+      "source_urls": [
+        "https://github.com/SycloverTeam/SCTF-2026/tree/HEAD/Reverse/GuardMaster"
+      ],
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/GuardMaster/GuardMaster.zip",
+          "local": "attachments/GuardMaster.zip",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 80146867,
+          "sha256": "42fa12511f2fd81a64f616808fb4b7cf787cfc5b2837e03440a518f5eee885c7"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/GuardMaster/README.md",
+          "local": "attachments/README.md",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 370,
+          "sha256": "382bc7f8dc826ef1fb555acfc1f416c2d89d416a1d6246fd88784b48c6f27694"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/GuardMaster/Writeup/writeup.md",
+          "local": "writeups/Writeup/writeup.md",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 282366,
+          "sha256": "f638793ca6291937cec100307d621dcb7e3d8ff9389b63da746ead02f6b9245b"
+        }
+      ],
+      "notes": "官方2026仓库题目附件和完整writeup。按题目实际内容归类：GuardMaster为APK；BrainfOok及babel_furnace使用自定义VM。",
+      "directory": "android/SCTF_2026/GuardMaster",
+      "retrieved_date_beijing": "2026-11-06",
+      "writeup_urls": [
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/GuardMaster/Writeup/writeup.md"
+      ],
+      "writeup_status": "downloaded",
+      "attachment_urls": [
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/GuardMaster/GuardMaster.zip",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/GuardMaster/README.md"
+      ],
+      "attachment_status": "downloaded"
+    },
+    {
+      "event_id": "CTF-3314",
+      "event_title": "SCTF 2026",
+      "category": "逆向",
+      "title": "Zombie_progression",
+      "dirname": "SCTF_2026",
+      "source_urls": [
+        "https://github.com/SycloverTeam/SCTF-2026/tree/HEAD/Reverse/Zombie_progression"
+      ],
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Zombie_progression/WP.md",
+          "local": "writeups/WP.md",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 8563,
+          "sha256": "4b2743b9ac9f9d69d032e65e04b2314ec02770c76974c994ca2f67ba93d94fe8"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Zombie_progression/Zombie_progression",
+          "local": "attachments/Zombie_progression",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 108760,
+          "sha256": "607b5b77dfbd587b293526efc6887583b18ea3fd27a6021f143f6d944c1c7e2e"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Zombie_progression/exp/solve.py",
+          "local": "writeups/exp/solve.py",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 267122,
+          "sha256": "84bbe240fc536be212d363158771a2089a40c89fc8ead5cd795e40eedb0d9e39"
+        }
+      ],
+      "notes": "官方2026仓库题目附件和完整writeup。按题目实际内容归类：GuardMaster为APK；BrainfOok及babel_furnace使用自定义VM。",
+      "directory": "逆向/SCTF_2026/Zombie_progression",
+      "retrieved_date_beijing": "2026-11-06",
+      "writeup_urls": [
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Zombie_progression/WP.md",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Zombie_progression/exp/solve.py"
+      ],
+      "writeup_status": "downloaded",
+      "attachment_urls": [
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Zombie_progression/Zombie_progression"
+      ],
+      "attachment_status": "downloaded"
+    },
+    {
+      "event_id": "CTF-3314",
+      "event_title": "SCTF 2026",
+      "category": "虚拟化",
+      "title": "babel_furnace",
+      "dirname": "SCTF_2026",
+      "source_urls": [
+        "https://github.com/SycloverTeam/SCTF-2026/tree/HEAD/Reverse/babel_furnace"
+      ],
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/WP.md",
+          "local": "writeups/WP.md",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 6117,
+          "sha256": "7838b9642cc396138e6ef12f8e009b8baf34f14b28544ae83946368492ae7b63"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/babel_furnace.exe",
+          "local": "attachments/babel_furnace.exe",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 6568960,
+          "sha256": "831be3673020007e25d9d03c4b2a881b515ff4e1c4382a52d5d8484f7c318276"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/bin/bridge.pyd",
+          "local": "attachments/bin/bridge.pyd",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 36352,
+          "sha256": "e1d1112cba6a23d76f04f91ad2bd3da8c77479668199ceb414bfee719306176c"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/bin/engine.dll",
+          "local": "attachments/bin/engine.dll",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 209408,
+          "sha256": "4a11df4e3db50c6e18b00bb95dab16e083dec06ee56cb42c6ab99a5b786aeb8a"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/bin/python_carrier.bin",
+          "local": "attachments/bin/python_carrier.bin",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 15704,
+          "sha256": "b6c9bb98dc957efe5513dd9cd926f14617beac0467336feb1a4c81926127aff8"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/exp/solve.py",
+          "local": "writeups/exp/solve.py",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 25914,
+          "sha256": "30746c9700307bed98268282b6c36aece198957a0e8585d0ec47242774b82ea2"
+        }
+      ],
+      "notes": "官方2026仓库题目附件和完整writeup。按题目实际内容归类：GuardMaster为APK；BrainfOok及babel_furnace使用自定义VM。",
+      "directory": "虚拟化/SCTF_2026/babel_furnace",
+      "retrieved_date_beijing": "2026-11-06",
+      "writeup_urls": [
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/WP.md",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/exp/solve.py"
+      ],
+      "writeup_status": "downloaded",
+      "attachment_urls": [
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/babel_furnace.exe",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/bin/bridge.pyd",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/bin/engine.dll",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/bin/python_carrier.bin"
+      ],
+      "attachment_status": "downloaded"
+    },
+    {
+      "event_id": "CTF-3314",
+      "event_title": "SCTF 2026",
+      "category": "逆向",
+      "title": "ghost_projection",
+      "dirname": "SCTF_2026",
+      "source_urls": [
+        "https://github.com/SycloverTeam/SCTF-2026/tree/HEAD/Reverse/ghost_projection"
+      ],
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/README.md",
+          "local": "attachments/README.md",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 1512,
+          "sha256": "cc55be37d23ca3fe46eb7a6c805da800da1b6e5d81f0a4c8253901fe06d9ae72"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/exp/fix_outer_payload.py",
+          "local": "writeups/exp/fix_outer_payload.py",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 5994,
+          "sha256": "579901111c4a6144b3bf4d9faafadfa4f2264227407a9f759508904c4ea0b531"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/exp/recover_flag_patch_oracle.py",
+          "local": "writeups/exp/recover_flag_patch_oracle.py",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 7334,
+          "sha256": "d1f860c9203b6eaaafad4c06028533a99d1b42dd37a94f652efa0d296f302bbf"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/generate_packed_player.sh",
+          "local": "attachments/src/generate_packed_player.sh",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 523,
+          "sha256": "20b473e5b83d7cd8673d39a3a20ac77156ce983d0be640da212c62750fbb7218"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/writeup/ghost_projection.md",
+          "local": "writeups/writeup/ghost_projection.md",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 46060,
+          "sha256": "69f129292eda6a1827e22dbcc80d254506aa6eca70aa6234448e066d42224f57"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/assets/prime_mov.o",
+          "local": "attachments/src/assets/prime_mov.o",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 70884,
+          "sha256": "542ae5a2ef8778e353bd70896b276f72933241d7ac00cc6fcc500997d768e1fb"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/player/Dockerfile",
+          "local": "attachments/src/player/Dockerfile",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 166,
+          "sha256": "f833d3dde8ab3e9cd292769799f8fe356811eac6c912d1e80a24cab15bb2beac"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/player/README.md",
+          "local": "attachments/src/player/README.md",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 381,
+          "sha256": "5ccac8815d182c79afddbcbf8e7329061a2d3fc8366d4806bb7c955a12d5fba4"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/player/ghost_abyss_hardened",
+          "local": "attachments/src/player/ghost_abyss_hardened",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 270352,
+          "sha256": "f6bd79a7ef072a977e04804e7dbbc77a373d825cdce1cf66327db97796f77265"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/scripts/build_hidden_oracle_traces.py",
+          "local": "attachments/src/scripts/build_hidden_oracle_traces.py",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 5192,
+          "sha256": "42c345d4b1c329daa1559b3fe8c343d6e561546302b6513aecbedde84b00b0f5"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/scripts/pack_ghost_abyss_author.py",
+          "local": "attachments/src/scripts/pack_ghost_abyss_author.py",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 28387,
+          "sha256": "44cec348953746a51db2567960fc892134b9f40ae0621a579f54e11c10fdd6b7"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/build.sh",
+          "local": "attachments/src/source/build.sh",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 927,
+          "sha256": "db30176b9c9679effc29833b3f99143b98bf2c78702c36707edc9b6c3e44d575"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/ghost_abyss_hardened_step40_route_projection.c",
+          "local": "attachments/src/source/ghost_abyss_hardened_step40_route_projection.c",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 478493,
+          "sha256": "5a5524d5d76ecaa486e6420584db3deb7e4173e0fc82e8d034ba05c195e1de5a"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/ghost_step30_generated.h",
+          "local": "attachments/src/source/ghost_step30_generated.h",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 5190,
+          "sha256": "9cf8d5908ed21eef9979eb15e420bf9b5db9ffddc0897953d3feb1c82bbec194"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/ghost_step30_manifest.json",
+          "local": "attachments/src/source/ghost_step30_manifest.json",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 679,
+          "sha256": "7c2ea169af0ff3be499786bddc182d7abe974aa10e1f2df7a0edd229b94b418f"
+        }
+      ],
+      "notes": "官方2026仓库题目附件和完整writeup。按题目实际内容归类：GuardMaster为APK；BrainfOok及babel_furnace使用自定义VM。",
+      "directory": "逆向/SCTF_2026/ghost_projection",
+      "retrieved_date_beijing": "2026-11-06",
+      "writeup_urls": [
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/exp/fix_outer_payload.py",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/exp/recover_flag_patch_oracle.py",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/writeup/ghost_projection.md"
+      ],
+      "writeup_status": "downloaded",
+      "attachment_urls": [
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/README.md",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/generate_packed_player.sh",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/assets/prime_mov.o",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/player/Dockerfile",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/player/README.md",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/player/ghost_abyss_hardened",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/scripts/build_hidden_oracle_traces.py",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/scripts/pack_ghost_abyss_author.py",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/build.sh",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/ghost_abyss_hardened_step40_route_projection.c",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/ghost_step30_generated.h",
+        "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/ghost_step30_manifest.json"
+      ],
+      "attachment_status": "downloaded"
+    },
+    {
+      "event_id": "CTF-3330",
+      "event_title": "Thryve CTF 2026",
+      "category": "逆向",
+      "title": "black-blood",
+      "dirname": "Thryve_CTF_2026",
+      "source_urls": [
+        "https://github.com/hax1ng/thryve-ctf-2026-writeups/tree/HEAD/rev/black-blood"
+      ],
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/README.md",
+          "local": "writeups/README.md",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 8928,
+          "sha256": "41737e5808c421acab4ca691cf4153cafefba37f1428f29f5482b312a3462e14"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/angr_concrete.py",
+          "local": "writeups/angr_concrete.py",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 870,
+          "sha256": "29db7aa5c212ff5df54df7e50809d7787d98da3d78c8a79c81e891bd158f4362"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/angr_solve_q0.py",
+          "local": "writeups/angr_solve_q0.py",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 1108,
+          "sha256": "92f892879ba339153b76d8ffdd5f952bf4cb06517f214a257da246f4c2831917"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/final.c.txt",
+          "local": "writeups/final.c.txt",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 8976,
+          "sha256": "e75e1daaead397bfc6ff598608d1c169388de904b13e20eb21aaf3ebc8a98a1d"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/hook.c",
+          "local": "writeups/hook.c",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 563,
+          "sha256": "052534951730c64f64f5a4f774b5f35f4041b58c1161f8be2b6977063b8e56cf"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/pekaboo",
+          "local": "attachments/pekaboo",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 84104,
+          "sha256": "26cf06d1e43748abeaa4ac857bcb4a7a78981f76346070c462ad734612f0c793"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/solve.py",
+          "local": "writeups/solve.py",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 6006,
+          "sha256": "6441b4619d438b63b75e0d50cfde246eba8478aad8eeb821f21d07c67e0d7f1e"
+        }
+      ],
+      "notes": "参赛者hax1ng公开仓库，保留文章、solver及其提供的比赛原始二进制/7z包；解法未运行验证。",
+      "directory": "逆向/Thryve_CTF_2026/black-blood",
+      "retrieved_date_beijing": "2026-11-06",
+      "writeup_urls": [
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/README.md",
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/angr_concrete.py",
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/angr_solve_q0.py",
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/final.c.txt",
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/hook.c",
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/solve.py"
+      ],
+      "writeup_status": "downloaded",
+      "attachment_urls": [
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/pekaboo"
+      ],
+      "attachment_status": "downloaded"
+    },
+    {
+      "event_id": "CTF-3330",
+      "event_title": "Thryve CTF 2026",
+      "category": "虚拟化",
+      "title": "chimera-mirrors",
+      "dirname": "Thryve_CTF_2026",
+      "source_urls": [
+        "https://github.com/hax1ng/thryve-ctf-2026-writeups/tree/HEAD/rev/chimera-mirrors"
+      ],
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/chimera-mirrors/README.md",
+          "local": "writeups/README.md",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 11310,
+          "sha256": "344810d80114c06a69935bda109e0bf2d1770b8baf518cdc359f2d4b0cbcd666"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/chimera-mirrors/chimera_mirror",
+          "local": "attachments/chimera_mirror",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 26800,
+          "sha256": "e47fe9daa456cb26c2ec5fac4e4bcd33d13c69b8f7a6f68e194bc0180d20daca"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/chimera-mirrors/solve.py",
+          "local": "writeups/solve.py",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 3839,
+          "sha256": "c102929aca26b6b6fa20f52da84d61b806e7a4b6643651c0862e88de91e44a86"
+        }
+      ],
+      "notes": "参赛者hax1ng公开仓库，保留文章、solver及其提供的比赛原始二进制/7z包；解法未运行验证。",
+      "directory": "虚拟化/Thryve_CTF_2026/chimera-mirrors",
+      "retrieved_date_beijing": "2026-11-06",
+      "writeup_urls": [
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/chimera-mirrors/README.md",
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/chimera-mirrors/solve.py"
+      ],
+      "writeup_status": "downloaded",
+      "attachment_urls": [
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/chimera-mirrors/chimera_mirror"
+      ],
+      "attachment_status": "downloaded"
+    },
+    {
+      "event_id": "CTF-3330",
+      "event_title": "Thryve CTF 2026",
+      "category": "逆向",
+      "title": "hell",
+      "dirname": "Thryve_CTF_2026",
+      "source_urls": [
+        "https://github.com/hax1ng/thryve-ctf-2026-writeups/tree/HEAD/rev/hell"
+      ],
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/hell/README.md",
+          "local": "writeups/README.md",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 6195,
+          "sha256": "8e9110f2ea449ba23ddf1c533cc9edc0e800f66c3d9749bb8d2a28407d038aec"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/hell/rev_hell",
+          "local": "attachments/rev_hell",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 14512,
+          "sha256": "c6bbbc68d0b7921815b77033a936dddb862d1bf75e3a764b1ca0b828cee0d92e"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/hell/solve.py",
+          "local": "writeups/solve.py",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 477,
+          "sha256": "b8adb3b00dc92eb71171e2195797bd4315d40a06043006d3b361ac967757ab1d"
+        }
+      ],
+      "notes": "参赛者hax1ng公开仓库，保留文章、solver及其提供的比赛原始二进制/7z包；解法未运行验证。",
+      "directory": "逆向/Thryve_CTF_2026/hell",
+      "retrieved_date_beijing": "2026-11-06",
+      "writeup_urls": [
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/hell/README.md",
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/hell/solve.py"
+      ],
+      "writeup_status": "downloaded",
+      "attachment_urls": [
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/hell/rev_hell"
+      ],
+      "attachment_status": "downloaded"
+    },
+    {
+      "event_id": "CTF-3330",
+      "event_title": "Thryve CTF 2026",
+      "category": "虚拟化",
+      "title": "parallax",
+      "dirname": "Thryve_CTF_2026",
+      "source_urls": [
+        "https://github.com/hax1ng/thryve-ctf-2026-writeups/tree/HEAD/rev/parallax"
+      ],
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/parallax/README.md",
+          "local": "writeups/README.md",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 10738,
+          "sha256": "996b7ddca1b24e0b56dba49b70f73e806515088af5b0b2e871c33bafc8243ce0"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/parallax/parallax",
+          "local": "attachments/parallax",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 26824,
+          "sha256": "b80a4b0775d1a566cbbe581648397e3467989119bf5d7a16b3f7c18d57d66c2f"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/parallax/solve.py",
+          "local": "writeups/solve.py",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 9053,
+          "sha256": "4b43b33bb5afaf94850f1700427e92f6565817a78f413277d69593842b791a29"
+        }
+      ],
+      "notes": "参赛者hax1ng公开仓库，保留文章、solver及其提供的比赛原始二进制/7z包；解法未运行验证。",
+      "directory": "虚拟化/Thryve_CTF_2026/parallax",
+      "retrieved_date_beijing": "2026-11-06",
+      "writeup_urls": [
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/parallax/README.md",
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/parallax/solve.py"
+      ],
+      "writeup_status": "downloaded",
+      "attachment_urls": [
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/parallax/parallax"
+      ],
+      "attachment_status": "downloaded"
+    },
+    {
+      "event_id": "CTF-3330",
+      "event_title": "Thryve CTF 2026",
+      "category": "逆向",
+      "title": "redline",
+      "dirname": "Thryve_CTF_2026",
+      "source_urls": [
+        "https://github.com/hax1ng/thryve-ctf-2026-writeups/tree/HEAD/rev/redline"
+      ],
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/redline/README.md",
+          "local": "writeups/README.md",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 9034,
+          "sha256": "d0e039a567a2931fdab2a8ded63ef8fc12c44017a96615ae9b04daff38babc08"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/redline/redline",
+          "local": "attachments/redline",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 733680,
+          "sha256": "9c5d8af636748bbcc4a014b5271921155ee70a4a722c55ccdba29116287b85aa"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/redline/solve.py",
+          "local": "writeups/solve.py",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 1932,
+          "sha256": "3d35ab783c9f614bc6cf87319c9d196348c2556e6ccb9bfe4567409b8a79daf4"
+        }
+      ],
+      "notes": "参赛者hax1ng公开仓库，保留文章、solver及其提供的比赛原始二进制/7z包；解法未运行验证。",
+      "directory": "逆向/Thryve_CTF_2026/redline",
+      "retrieved_date_beijing": "2026-11-06",
+      "writeup_urls": [
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/redline/README.md",
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/redline/solve.py"
+      ],
+      "writeup_status": "downloaded",
+      "attachment_urls": [
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/redline/redline"
+      ],
+      "attachment_status": "downloaded"
+    },
+    {
+      "event_id": "CTF-3330",
+      "event_title": "Thryve CTF 2026",
+      "category": "虚拟化",
+      "title": "soul",
+      "dirname": "Thryve_CTF_2026",
+      "source_urls": [
+        "https://github.com/hax1ng/thryve-ctf-2026-writeups/tree/HEAD/rev/soul"
+      ],
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/soul/README.md",
+          "local": "writeups/README.md",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 9242,
+          "sha256": "e6fc20ccaf0bb92ce5539c2764f24d8e78be56840974d0a40b7451033e8a687d"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/soul/solve.py",
+          "local": "writeups/solve.py",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 1447,
+          "sha256": "95d53c1f6b78b50265aa6bb00f7ce908cf5dfbee1431b6db66a337afa4c15be3"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/soul/soul_dist.7z",
+          "local": "attachments/soul_dist.7z",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 6104,
+          "sha256": "39b14ba3e003209c16cb37d8ff6aa64628402ed3a5b09c2754af4ee9a3f54bd5"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/soul/vm.asm",
+          "local": "writeups/vm.asm",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 13332,
+          "sha256": "c2676e80e7944f2519171667768113e3e337d926efb587fe0ca005d7ca5c2817"
+        }
+      ],
+      "notes": "参赛者hax1ng公开仓库，保留文章、solver及其提供的比赛原始二进制/7z包；解法未运行验证。",
+      "directory": "虚拟化/Thryve_CTF_2026/soul",
+      "retrieved_date_beijing": "2026-11-06",
+      "writeup_urls": [
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/soul/README.md",
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/soul/solve.py",
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/soul/vm.asm"
+      ],
+      "writeup_status": "downloaded",
+      "attachment_urls": [
+        "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/soul/soul_dist.7z"
+      ],
+      "attachment_status": "downloaded"
+    },
+    {
+      "event_id": "CTF-3206",
+      "event_title": "NCTF 2026",
+      "category": "逆向",
+      "title": "鸡爪流高手",
+      "dirname": "NCTF_2026",
+      "source_urls": [
+        "https://github.com/X1cT34m/NCTF2026/tree/HEAD/Reverse/chicken-feet-master"
+      ],
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/X1cT34m/NCTF2026/HEAD/Reverse/chicken-feet-master/server",
+          "local": "attachments/server",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 1457832,
+          "sha256": "b773669a7bdc5b20731616d867d994fb44f6a03060a431d65b1dca0f9936244d"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/X1cT34m/NCTF2026/main/NCTF%202026%20Official%20Writeup.pdf",
+          "local": "writeups/NCTF_2026_Official_Writeup.pdf",
+          "status": "downloaded",
+          "bytes": 3769458,
+          "sha256": "ce86aa9f1e908adea309519cf73e58f2fc7e0463a73a238b7153b6bc3de48726"
+        }
+      ],
+      "notes": "官方仓库附件，配整场官方解答PDF；请在PDF目录中定位本题。PDF为原始文件，未重新排版。",
+      "directory": "逆向/NCTF_2026/鸡爪流高手",
+      "retrieved_date_beijing": "2026-11-06",
+      "writeup_urls": [
+        "https://raw.githubusercontent.com/X1cT34m/NCTF2026/main/NCTF%202026%20Official%20Writeup.pdf"
+      ],
+      "writeup_status": "downloaded",
+      "attachment_urls": [
+        "https://raw.githubusercontent.com/X1cT34m/NCTF2026/HEAD/Reverse/chicken-feet-master/server"
+      ],
+      "attachment_status": "downloaded"
+    },
+    {
+      "event_id": "CTF-3206",
+      "event_title": "NCTF 2026",
+      "category": "android",
+      "title": "Hook My Secret",
+      "dirname": "NCTF_2026",
+      "source_urls": [
+        "https://github.com/X1cT34m/NCTF2026/tree/HEAD/Reverse/hook-my-secret"
+      ],
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/X1cT34m/NCTF2026/HEAD/Reverse/hook-my-secret/app-release.apk",
+          "local": "attachments/app-release.apk",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 2847400,
+          "sha256": "596c398a063cf7a5e272f6df535e5f8ad56912de31e10408015b22356744efc9"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/X1cT34m/NCTF2026/main/NCTF%202026%20Official%20Writeup.pdf",
+          "local": "writeups/NCTF_2026_Official_Writeup.pdf",
+          "status": "downloaded",
+          "bytes": 3769458,
+          "sha256": "ce86aa9f1e908adea309519cf73e58f2fc7e0463a73a238b7153b6bc3de48726"
+        }
+      ],
+      "notes": "官方仓库附件，配整场官方解答PDF；请在PDF目录中定位本题。PDF为原始文件，未重新排版。",
+      "directory": "android/NCTF_2026/Hook My Secret",
+      "retrieved_date_beijing": "2026-11-06",
+      "writeup_urls": [
+        "https://raw.githubusercontent.com/X1cT34m/NCTF2026/main/NCTF%202026%20Official%20Writeup.pdf"
+      ],
+      "writeup_status": "downloaded",
+      "attachment_urls": [
+        "https://raw.githubusercontent.com/X1cT34m/NCTF2026/HEAD/Reverse/hook-my-secret/app-release.apk"
+      ],
+      "attachment_status": "downloaded"
+    },
+    {
+      "event_id": "CTF-3206",
+      "event_title": "NCTF 2026",
+      "category": "逆向",
+      "title": "No My Bank!",
+      "dirname": "NCTF_2026",
+      "source_urls": [
+        "https://github.com/X1cT34m/NCTF2026/tree/HEAD/Reverse/no-my-bank"
+      ],
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/X1cT34m/NCTF2026/HEAD/Reverse/no-my-bank/NoMyBank%21.zip",
+          "local": "attachments/NoMyBank!.zip",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 29598874,
+          "sha256": "18853b936716a76a5c64b568a5fc4f04acfe3f49fef07f65cd9f2b29dcea5b6e"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/X1cT34m/NCTF2026/HEAD/Reverse/no-my-bank/%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0.txt",
+          "local": "attachments/题目描述.txt",
+          "size_expected": null,
+          "git_blob_sha": null,
+          "status": "downloaded",
+          "bytes": 494,
+          "sha256": "dabd9fd87651f03648652eeb24f1e5855a3d3302aef33e0e8ced8c1ada96ce05"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/X1cT34m/NCTF2026/main/NCTF%202026%20Official%20Writeup.pdf",
+          "local": "writeups/NCTF_2026_Official_Writeup.pdf",
+          "status": "downloaded",
+          "bytes": 3769458,
+          "sha256": "ce86aa9f1e908adea309519cf73e58f2fc7e0463a73a238b7153b6bc3de48726"
+        }
+      ],
+      "notes": "官方仓库附件，配整场官方解答PDF；请在PDF目录中定位本题。PDF为原始文件，未重新排版。",
+      "directory": "逆向/NCTF_2026/No My Bank!",
+      "retrieved_date_beijing": "2026-11-06",
+      "writeup_urls": [
+        "https://raw.githubusercontent.com/X1cT34m/NCTF2026/main/NCTF%202026%20Official%20Writeup.pdf"
+      ],
+      "writeup_status": "downloaded",
+      "attachment_urls": [
+        "https://raw.githubusercontent.com/X1cT34m/NCTF2026/HEAD/Reverse/no-my-bank/NoMyBank%21.zip",
+        "https://raw.githubusercontent.com/X1cT34m/NCTF2026/HEAD/Reverse/no-my-bank/%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0.txt"
+      ],
+      "attachment_status": "downloaded"
+    }
+  ]
+}

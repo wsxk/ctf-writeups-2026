@@ -1,0 +1,64 @@
+{
+  "event_id": "CTF-3399",
+  "event_title": "SunshineCTF 2026",
+  "title": "Safe_House",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "stack-buffer-overflow",
+    "negative-index",
+    "rop",
+    "ipc"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/sunshinectf/2026/safe_house/",
+    "https://ctf42.online/ctfs/sunshinectf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Safe_House"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/SunshineCTF-2026/tree/main/pwn/safe-house"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Safe_House",
+    "https://ctf42.online/ctfs/sunshinectf/2026/safe_house/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/sunshinectf_2026/Safe_House/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/SunshineCTF-2026/main/pwn/safe-house/README.md",
+      "bytes": 4209,
+      "sha256": "eabbcc76532ac9d32db5bb888a3e968954df669e75a08db8edaf688fd1e9a512",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/sunshinectf_2026/Safe_House/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SunshineCTF/2026/pwn/Safe_House/README.md",
+      "bytes": 121,
+      "sha256": "4028c661146bea96bad8bbf7a7cf9e87b47cc785bf145bd37b4e07d0366975e7",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/sunshinectf_2026/Safe_House/attachments/upstream/service",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SunshineCTF/2026/pwn/Safe_House/service",
+      "bytes": 18504,
+      "sha256": "40c8993c1a853f62a5d7f19df147eb07e0745bb7ce10a874d6e58313668c19aa",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/sunshinectf/2026/safe_house/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/sunshinectf/2026/safe_house/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

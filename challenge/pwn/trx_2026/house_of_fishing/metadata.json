@@ -1,0 +1,72 @@
+{
+  "event_id": "CTF-3141",
+  "event_title": "TRX CTF 2026",
+  "title": "house_of_fishing",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "largebin-attack",
+    "heap"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/trx/2026/house_of_fishing/",
+    "https://ctf42.online/ctfs/trx/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/pwn/house_of_fishing"
+  ],
+  "writeup_urls": [
+    "https://blog.rawpayload.com/blog/trx-ctf-2026-house-of-fishing-writeup",
+    "https://blog.davidherm.es/posts/hof/",
+    "https://blog.davidherm.es/posts/hof"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/pwn/house_of_fishing",
+    "https://ctf42.online/ctfs/trx/2026/house_of_fishing/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/trx_2026/house_of_fishing/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TRX/2026/pwn/house_of_fishing/README.md",
+      "bytes": 79,
+      "sha256": "667591371c6889a16d55285753714cea09251943bbf259047e3b7b7ad9fedf43",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/trx_2026/house_of_fishing/attachments/upstream/pwn_hof.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TRX/2026/pwn/house_of_fishing/pwn_hof.zip",
+      "bytes": 6442,
+      "sha256": "5d26081cd8749d85572f206b44c680fa26450ff74722c5295049baa6eeefb1ff",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/trx_2026/house_of_fishing/writeups/replacement_source.html",
+      "url": "https://blog.davidherm.es/posts/hof",
+      "bytes": 927184,
+      "sha256": "54ad819e23d28e6da788b2cd7366a6c1595ae4f8870a80aa0fdbdbdffe9844e3",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/trx_2026/house_of_fishing/writeups/replacement_readable.txt",
+      "url": "https://blog.davidherm.es/posts/hof",
+      "bytes": 13495,
+      "sha256": "fadad8f57e59d1282f70a4a07feaa495d5ec9578b7e508108a9ce05a3af3fa71",
+      "kind": "writeup"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/trx/2026/house_of_fishing/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/trx/2026/house_of_fishing/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files",
+  "writeup_kind": "prose"
+}

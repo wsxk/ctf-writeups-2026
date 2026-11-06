@@ -1,0 +1,61 @@
+{
+  "event_id": "CTF-3061",
+  "event_title": "L3akCTF 2026",
+  "title": "Supervisor",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "seccomp-notify-escape"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/l3akctf/2026/supervisor/",
+    "https://ctf42.online/ctfs/l3akctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/L3akCTF/2026/pwn/Supervisor"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/l3akctf-2026-pwn-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/L3akCTF/2026/pwn/Supervisor",
+    "https://ctf42.online/ctfs/l3akctf/2026/supervisor/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/l3akctf_2026/Supervisor/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/l3akctf-2026-pwn-writeup/",
+      "bytes": 111343,
+      "sha256": "9e18e53eea5d7edf7d14b6c0d2589f24db00243060aef987bb51e407cd7c0111",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/l3akctf_2026/Supervisor/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/L3akCTF/2026/pwn/Supervisor/README.md",
+      "bytes": 153,
+      "sha256": "38a0591541e37eef502eb15e315e3a95859aa1d697aeffdad84ce85c7adb3632",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/l3akctf_2026/Supervisor/attachments/upstream/pwn_supervisor.tar.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/L3akCTF/2026/pwn/Supervisor/pwn_supervisor.tar.gz",
+      "bytes": 21818,
+      "sha256": "03f431cf35775cd59612cfca3c156549a3aa8147af6f587d3cd62512c43d7b28",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/l3akctf/2026/supervisor/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/l3akctf/2026/supervisor/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

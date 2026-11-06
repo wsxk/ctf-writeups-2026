@@ -1,0 +1,101 @@
+{
+  "event_id": "CTF-3153",
+  "event_title": "b01lers CTF 2026",
+  "category": "虚拟化",
+  "title": "favorite_potato",
+  "dirname": "b01lers_CTF_2026",
+  "source_urls": [
+    "https://github.com/b01lers/b01lers-ctf-2026-public/tree/HEAD/src/rev/favorite_potato"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/favorite_potato/chal.json",
+      "local": "attachments/chal.json",
+      "size_expected": 471,
+      "git_blob_sha": "55003666cec5375db01dbd266e321e0d75370b47",
+      "status": "downloaded",
+      "bytes": 471,
+      "sha256": "52518597da0b77dc0051601f705e440e64150276ad829080b06d520d6819400d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/favorite_potato/dist/favorite_potato.zip",
+      "local": "attachments/dist/favorite_potato.zip",
+      "size_expected": 233841,
+      "git_blob_sha": "95a638bde054e6cd76c3ebffc77f7e50dbff29c4",
+      "status": "downloaded",
+      "bytes": 233841,
+      "sha256": "309465b9dd9eb01a0395b09875a02a17375c3960be23a16a8cf505932ec2d2d8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/favorite_potato/sol/README.txt",
+      "local": "writeups/sol/README.txt",
+      "size_expected": 3340,
+      "git_blob_sha": "2d61588b1ae0513af971a32eb66d482ad3538e80",
+      "status": "downloaded",
+      "bytes": 3340,
+      "sha256": "1c60f2061ca772b6d58a095c351ac16e3af4e6541188c0765b46dad2b1c85848"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/favorite_potato/sol/check.py",
+      "local": "writeups/sol/check.py",
+      "size_expected": 1540,
+      "git_blob_sha": "8e48621fe2457c22fb675d1d938db37844d1ec16",
+      "status": "downloaded",
+      "bytes": 1540,
+      "sha256": "5cbf4a02737636dad5e63be2ee4a0921c965ed428170968a3fb6dda8f6ac13ab"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/favorite_potato/sol/code.bin.gz",
+      "local": "writeups/sol/code.bin.gz",
+      "size_expected": 18,
+      "git_blob_sha": "3609630bd684120092df5d19f33310779a47d802",
+      "status": "downloaded",
+      "bytes": 18,
+      "sha256": "1a3e5daa771bbf39de7223d7814b296fcbb39195a374415c2aa5d538eb6f4009"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/favorite_potato/sol/sol%2Bcheck.py",
+      "local": "writeups/sol/sol+check.py",
+      "size_expected": 2239,
+      "git_blob_sha": "6d4f4e96d4f2340b7289ce51689171ba95d420b4",
+      "status": "downloaded",
+      "bytes": 2239,
+      "sha256": "e9388650f7eb369b975879777a95c957cddc2c5464bb14df5fe2ed7fd87e8981"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/favorite_potato/sol/sol.py",
+      "local": "writeups/sol/sol.py",
+      "size_expected": 2079,
+      "git_blob_sha": "08a14e51847a4fc2cdd9143bc4bf11680bc3ea48",
+      "status": "downloaded",
+      "bytes": 2079,
+      "sha256": "8d29ee88980ece1fa970088fca3b5906dd3a15ab001ddb07d29431a982bdcae2"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/favorite_potato/sol/sol2.py",
+      "local": "writeups/sol/sol2.py",
+      "size_expected": 1893,
+      "git_blob_sha": "0ac085841976aa78fcb662b3aafdd726e27a724f",
+      "status": "downloaded",
+      "bytes": 1893,
+      "sha256": "88ec5ba3dfed9356e83bb42a32fa0016573dfc6905c5e8f781b051fc5d4dca16"
+    }
+  ],
+  "notes": "官方dist题目包及sol/solve解答目录。模板README未作为writeup。 通过模拟器运行6502机器码，归虚拟化专题。",
+  "directory": "虚拟化/b01lers_CTF_2026/favorite_potato",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/favorite_potato/sol/README.txt",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/favorite_potato/sol/check.py",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/favorite_potato/sol/code.bin.gz",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/favorite_potato/sol/sol%2Bcheck.py",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/favorite_potato/sol/sol.py",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/favorite_potato/sol/sol2.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/favorite_potato/chal.json",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/favorite_potato/dist/favorite_potato.zip"
+  ],
+  "attachment_status": "downloaded"
+}

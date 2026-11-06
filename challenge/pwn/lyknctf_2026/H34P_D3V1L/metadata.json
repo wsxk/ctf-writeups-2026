@@ -1,0 +1,61 @@
+{
+  "event_id": "CTF-3280",
+  "event_title": "LYKNCTF",
+  "title": "H34P_D3V1L",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "tcache-poisoning"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/lyknctf/2026/h34p_d3v1l/",
+    "https://ctf42.online/ctfs/lyknctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/pwn/H34P_D3V1L"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/lyknctf-2026-pwn-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/pwn/H34P_D3V1L",
+    "https://ctf42.online/ctfs/lyknctf/2026/h34p_d3v1l/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/lyknctf_2026/H34P_D3V1L/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/lyknctf-2026-pwn-writeup/",
+      "bytes": 138628,
+      "sha256": "12f394ffadd709906a48d8f4d5ff7f18e5e4521a306a7371d477ff6fc8e6f188",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/lyknctf_2026/H34P_D3V1L/attachments/upstream/H34p_D3v1l.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/LYKNCTF/2026/pwn/H34P_D3V1L/H34p_D3v1l.zip",
+      "bytes": 4740451,
+      "sha256": "17cbcc245451a55fa88ae3841c4e6aa2634a4adc06aa6b5202b4b3e4605e4360",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/lyknctf_2026/H34P_D3V1L/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/LYKNCTF/2026/pwn/H34P_D3V1L/README.md",
+      "bytes": 208,
+      "sha256": "5baab9e56871e0ffd0401f1250d81a12639e14659ab9a6a57cbbf7230b6cce19",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/lyknctf/2026/h34p_d3v1l/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/lyknctf/2026/h34p_d3v1l/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

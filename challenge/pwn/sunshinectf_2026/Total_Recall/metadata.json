@@ -1,0 +1,62 @@
+{
+  "event_id": "CTF-3399",
+  "event_title": "SunshineCTF 2026",
+  "title": "Total_Recall",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "srop",
+    "sigreturn"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/sunshinectf/2026/total_recall/",
+    "https://ctf42.online/ctfs/sunshinectf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Total_Recall"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/SunshineCTF-2026/tree/main/pwn/total-recall"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Total_Recall",
+    "https://ctf42.online/ctfs/sunshinectf/2026/total_recall/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/sunshinectf_2026/Total_Recall/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/SunshineCTF-2026/main/pwn/total-recall/README.md",
+      "bytes": 3994,
+      "sha256": "caf8b59d8ffebd9c81d5ba67b21a29529be08c7df17dbed8cfd778a7177bd22e",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/sunshinectf_2026/Total_Recall/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SunshineCTF/2026/pwn/Total_Recall/README.md",
+      "bytes": 56,
+      "sha256": "2ba8e5f972978917767303e037d6de55236b3aece2654788be924d62814f3cc1",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/sunshinectf_2026/Total_Recall/attachments/upstream/total_recall",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SunshineCTF/2026/pwn/Total_Recall/total_recall",
+      "bytes": 4416,
+      "sha256": "219750f55ff49e008fa02141affe2ce0db271b8791c672ef24671fda395a69de",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/sunshinectf/2026/total_recall/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/sunshinectf/2026/total_recall/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

@@ -1,0 +1,157 @@
+{
+  "event_id": "CTF-3161",
+  "event_title": "SUCTF 2026",
+  "category": "虚拟化",
+  "title": "SU_MvsicPlayer",
+  "dirname": "SUCTF_2026",
+  "source_urls": [
+    "https://github.com/team-su/SUCTF-2026/tree/HEAD/re/SU_MvsicPlayer"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/attachments/SU_MusicPlayer.zip.part-aa",
+      "local": "attachments/attachments/SU_MusicPlayer.zip.part-aa",
+      "size_expected": 50331648,
+      "git_blob_sha": "0e16d3570241d520a649a616f5a23abc0befab5f",
+      "status": "downloaded",
+      "bytes": 50331648,
+      "sha256": "d518f4887fe5b140597ac0b0a018caf40823e76066194757e3f2c8f6812b1e54"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/attachments/SU_MusicPlayer.zip.part-ab",
+      "local": "attachments/attachments/SU_MusicPlayer.zip.part-ab",
+      "size_expected": 50331648,
+      "git_blob_sha": "788105ffdbe67f0940fee5ef49560d6a7be810c5",
+      "status": "downloaded",
+      "bytes": 50331648,
+      "sha256": "c83195640287c7901c319ed2d840644bd67d9a5a131f119ca1fe35304ecc4112"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/attachments/SU_MusicPlayer.zip.part-ac",
+      "local": "attachments/attachments/SU_MusicPlayer.zip.part-ac",
+      "size_expected": 14860494,
+      "git_blob_sha": "48a0280ae28036a20c7e44b2a92bd675f2e1766a",
+      "status": "downloaded",
+      "bytes": 14860494,
+      "sha256": "12577cb4740eb2c7d0416e7fc988e7e450f8ca707759d3d68d99e19e9d6c241b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/attachments/SU_MusicPlayer.zip.sha256",
+      "local": "attachments/attachments/SU_MusicPlayer.zip.sha256",
+      "size_expected": 115,
+      "git_blob_sha": "05be6ea64fb2c1abcb64872ad278f2200d3b9a2c",
+      "status": "downloaded",
+      "bytes": 115,
+      "sha256": "6d7c851081d1e758e152d70c14e64a11ccaeb34514aacddf5d4c46762125467d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/attachments/restore_attachment.sh",
+      "local": "attachments/attachments/restore_attachment.sh",
+      "size_expected": 325,
+      "git_blob_sha": "aa7d7a4cf23b972104f82c4f32bba51c7d94a265",
+      "status": "downloaded",
+      "bytes": 325,
+      "sha256": "6745ff8cd7f88357c1c1e4c8ff7174167068c5a5310804d12140faebf57a9b4c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/exp/ddd.su_mv_enc",
+      "local": "writeups/exp/ddd.su_mv_enc",
+      "size_expected": 5292228,
+      "git_blob_sha": "d6cf7cfe149088fe060efcc79881b773f1e291dc",
+      "status": "downloaded",
+      "bytes": 5292228,
+      "sha256": "926347746eaa90596c813484c5d758925096a8c6d766abf25d1ce25f2db1242b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/exp/exp.py",
+      "local": "writeups/exp/exp.py",
+      "size_expected": 6277,
+      "git_blob_sha": "c4070cf86d311bb3899d710488db31f9c3071ee5",
+      "status": "downloaded",
+      "bytes": 6277,
+      "sha256": "8826fe0ecf0bdcaa52654011f69e0d76a1b38e78ccbd8738a4545acd27f57c0c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/writeup/img/image-20260316165014753.png",
+      "local": "writeups/writeup/img/image-20260316165014753.png",
+      "size_expected": 49809,
+      "git_blob_sha": "3224e8559bd591b3613a9203ec66a3966e0cb51e",
+      "status": "downloaded",
+      "bytes": 49809,
+      "sha256": "e623a5f9b350c4533dd519643d97aaa3300ebd146a31352ab8cc26f897b28422"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/writeup/img/image-20260316171131296.png",
+      "local": "writeups/writeup/img/image-20260316171131296.png",
+      "size_expected": 48169,
+      "git_blob_sha": "d1d6840817a638febdd2d068735ca1ea429200d5",
+      "status": "downloaded",
+      "bytes": 48169,
+      "sha256": "aec1893e15bdefff9b5e04da18c1720c847d2c94292e05e156f64888436604af"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/writeup/img/image-20260316173425704.png",
+      "local": "writeups/writeup/img/image-20260316173425704.png",
+      "size_expected": 33836,
+      "git_blob_sha": "0cbcbe7e311be3100c682ef343ffa8d98760b40b",
+      "status": "downloaded",
+      "bytes": 33836,
+      "sha256": "719c748bcb90eba2a103d1919c528385b41ebb1db4b0bd9875eb91ecaf5cb7a5"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/writeup/img/image-20260316195920230.png",
+      "local": "writeups/writeup/img/image-20260316195920230.png",
+      "size_expected": 172451,
+      "git_blob_sha": "77ddffddad0e23008251c6479625032ee34e31a7",
+      "status": "downloaded",
+      "bytes": 172451,
+      "sha256": "b5539491ccf2d8d79e902ee75c19c81d6b270d540a0cd4ea1880f5b2c52814e6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/writeup/writeup.md",
+      "local": "writeups/writeup/writeup.md",
+      "size_expected": 29607,
+      "git_blob_sha": "b99c5f715e3ce75117f1fe19d9763a7b3ac4bb76",
+      "status": "downloaded",
+      "bytes": 29607,
+      "sha256": "ca787c1884db8dc4f169bd65c1910027d62efdf7da8fb5cb9d05f7a6a7a79244"
+    }
+  ],
+  "notes": "官方原分类Reverse，writeup明确分析自定义VM/虚拟化校验，主分类归虚拟化。附件分片均原样下载，不执行恢复脚本。 已将3个分片按字节拼接为attachments/attachments/SU_MusicPlayer.zip，与官方SHA-256完全一致且ZIP CRC通过；未执行仓库restore脚本。",
+  "directory": "虚拟化/SUCTF_2026/SU_MvsicPlayer",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/exp/ddd.su_mv_enc",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/exp/exp.py",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/writeup/img/image-20260316165014753.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/writeup/img/image-20260316171131296.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/writeup/img/image-20260316173425704.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/writeup/img/image-20260316195920230.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/writeup/writeup.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/attachments/SU_MusicPlayer.zip.part-aa",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/attachments/SU_MusicPlayer.zip.part-ab",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/attachments/SU_MusicPlayer.zip.part-ac",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/attachments/SU_MusicPlayer.zip.sha256",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_MvsicPlayer/attachments/restore_attachment.sh"
+  ],
+  "attachment_status": "downloaded",
+  "derived_files": [
+    {
+      "local": "attachments/attachments/SU_MusicPlayer.zip",
+      "status": "assembled_and_verified",
+      "bytes": 115523790,
+      "sha256": "60bf41e9b77c417668be4d38566c8f8cdb1c1c87614aebc6aae356d7f19418ec",
+      "source_files": [
+        "attachments/attachments/SU_MusicPlayer.zip.part-aa",
+        "attachments/attachments/SU_MusicPlayer.zip.part-ab",
+        "attachments/attachments/SU_MusicPlayer.zip.part-ac"
+      ],
+      "official_sha256_matches": true,
+      "zip_members": 3,
+      "zip_crc_ok": true
+    }
+  ]
+}

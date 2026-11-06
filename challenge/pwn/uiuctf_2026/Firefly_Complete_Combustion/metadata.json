@@ -1,0 +1,59 @@
+{
+  "event_id": "CTF-3148",
+  "event_title": "UIUCTF 2026",
+  "title": "Firefly_Complete_Combustion",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [],
+  "source_urls": [
+    "https://ctf42.online/ctfs/uiuctf/2026/firefly_complete_combustion/",
+    "https://ctf42.online/ctfs/uiuctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/pwn/Firefly_Complete_Combustion"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/uiuctf-2026-pwn-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/pwn/Firefly_Complete_Combustion",
+    "https://ctf42.online/ctfs/uiuctf/2026/firefly_complete_combustion/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/uiuctf_2026/Firefly_Complete_Combustion/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/uiuctf-2026-pwn-writeup/",
+      "bytes": 163124,
+      "sha256": "1047c3b3751dc4d27bff677d911ef0cb10b7eb077d7f364aa2cf96e948f3d3e6",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/uiuctf_2026/Firefly_Complete_Combustion/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UIUCTF/2026/pwn/Firefly_Complete_Combustion/README.md",
+      "bytes": 283,
+      "sha256": "93b6e442d87d3d64f74f0b92c01afd0e71caeaca0f94cc0c3f4f44e8b9f04edd",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/uiuctf_2026/Firefly_Complete_Combustion/attachments/upstream/firefly-complete-combustion.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UIUCTF/2026/pwn/Firefly_Complete_Combustion/firefly-complete-combustion.zip",
+      "bytes": 1793848,
+      "sha256": "6f1c73c440690eed0bfbf95fbfab11592f1de384e3fb4bba91361860cc35196c",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/uiuctf/2026/firefly_complete_combustion/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/uiuctf/2026/firefly_complete_combustion/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

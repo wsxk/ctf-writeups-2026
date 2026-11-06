@@ -1,0 +1,209 @@
+{
+  "event_id": "CTF-3110",
+  "event_title": "DiceCTF 2026 Quals",
+  "category": "逆向",
+  "title": "another-onion",
+  "dirname": "DiceCTF_2026_Quals",
+  "source_urls": [
+    "https://github.com/dicegang/dicectf-quals-2026-challenges/tree/HEAD/rev/another-onion"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/.dockerignore",
+      "local": "attachments/.dockerignore",
+      "size_expected": 151,
+      "git_blob_sha": "2d72ce5b4f220261365f70f4171dbbe554731d08",
+      "status": "downloaded",
+      "bytes": 151,
+      "sha256": "aa70424339734a8c936c7fb943c04bc5f0205a06343b17e6892e0e9843371a50"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/Dockerfile",
+      "local": "attachments/Dockerfile",
+      "size_expected": 507,
+      "git_blob_sha": "46018896c1e08e43fc2e3ff405b3f988dc2e0d3b",
+      "status": "downloaded",
+      "bytes": 507,
+      "sha256": "a363ad76668bc38d39a0d03a3d484c361205ece1902ddbf4091d59e29f628310"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/Dockerfile.solver",
+      "local": "attachments/Dockerfile.solver",
+      "size_expected": 349,
+      "git_blob_sha": "be1fae892cad50ae044ac739d0cf58ce94097745",
+      "status": "downloaded",
+      "bytes": 349,
+      "sha256": "326766856ea85c187e80c460ba649d01552b6a89f6952e83f2313d815d5fabe6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/README.md",
+      "local": "writeups/official/README.md",
+      "size_expected": 4112,
+      "git_blob_sha": "6279f85176672d8436280b0c8f598e8659717a6e",
+      "status": "downloaded",
+      "bytes": 4112,
+      "sha256": "9acc7f580899b68c1f4c1c075697d8c93950857cccb190cd5ddcfa19382e5ded"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/a_key",
+      "local": "attachments/a_key",
+      "size_expected": 16,
+      "git_blob_sha": "36b76e271bd8f9cb2c5ec823a863e5dbe6bbfc8f",
+      "status": "downloaded",
+      "bytes": 16,
+      "sha256": "4e03ca1067af143cf01363dfd272d770f7ea32fa016cb5663f051749d32dec2f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/an_onion",
+      "local": "attachments/an_onion",
+      "size_expected": 38488,
+      "git_blob_sha": "839dc14210dbaabe94718ab8ca5d2b25b6972dd5",
+      "status": "downloaded",
+      "bytes": 38488,
+      "sha256": "0ec11c579dda8f6fb73dc9964894ceb0ca2a62bc58a48a1b6b53e5cb7123a726"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/compile.sh",
+      "local": "attachments/compile.sh",
+      "size_expected": 1086,
+      "git_blob_sha": "0bb906b6db761020eb9a3173019ca83e830b3667",
+      "status": "downloaded",
+      "bytes": 1086,
+      "sha256": "24b073cae9687713799ffab280e6bc8e09984453262f3bca6e788c6a3bdabadc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/docker-compose-test.yaml",
+      "local": "attachments/docker-compose-test.yaml",
+      "size_expected": 963,
+      "git_blob_sha": "ffa53c901f98568bbdd9989f671b2fe469180314",
+      "status": "downloaded",
+      "bytes": 963,
+      "sha256": "5f8b77d81f627dc81f8ed3eabc755f617db7c5d9f23767c06e20dfaca7751f9a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/encrypt.py",
+      "local": "attachments/encrypt.py",
+      "size_expected": 3515,
+      "git_blob_sha": "9d2b63cd8fb29bf9ae0e222d9f57f8a7e0aee549",
+      "status": "downloaded",
+      "bytes": 3515,
+      "sha256": "18c63c711a4e1b199e79da214a981617d0c6146f401a52eea80c5782d456ba82"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/generate.py",
+      "local": "attachments/generate.py",
+      "size_expected": 67061,
+      "git_blob_sha": "54a66f23495253d3ef96e9535997d859a9781b32",
+      "status": "downloaded",
+      "bytes": 67061,
+      "sha256": "a8aaad16638f88d17fa2e0ea8beb0b79ff5e4c4035d9ef78eab0b68b4b76590b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/instance_server.py",
+      "local": "attachments/instance_server.py",
+      "size_expected": 5008,
+      "git_blob_sha": "f811b509553f376a8e97a071be91d2d118c753df",
+      "status": "downloaded",
+      "bytes": 5008,
+      "sha256": "cb9339e65c824ff78021264b9fd17d826115bba74041621531d70eb54998a75a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/kona.yaml",
+      "local": "attachments/kona.yaml",
+      "size_expected": 2611,
+      "git_blob_sha": "f02b5ca5cbcf372e8cd5b16373d110866e5ac250",
+      "status": "downloaded",
+      "bytes": 2611,
+      "sha256": "30c85380e5191c10b1f7fbd0ea1177e1e47d95a7347151df9d3b4e5acb79fc09"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/solution/asmhelp.py",
+      "local": "writeups/official/solution/asmhelp.py",
+      "size_expected": 528,
+      "git_blob_sha": "7d3007865d53401e7085828c04e8070a31e4709c",
+      "status": "downloaded",
+      "bytes": 528,
+      "sha256": "893d9a11fd61b3bc60be346ac5afe04e1051126ce13533cb043d7ec60a975540"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/solution/compile-solve.sh",
+      "local": "writeups/official/solution/compile-solve.sh",
+      "size_expected": 203,
+      "git_blob_sha": "8cb08cf6a8c09201e986afe6a408bc98e5fc38ba",
+      "status": "downloaded",
+      "bytes": 203,
+      "sha256": "8e7c37a7fa2ddc5981c0ce371b7da2279730eeaf93c1545e04d6248cbdff2c13"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/solution/e2e_solver_submit.py",
+      "local": "writeups/official/solution/e2e_solver_submit.py",
+      "size_expected": 4020,
+      "git_blob_sha": "a8bbce6e92b839d107b53a43190dc52cdb862dc8",
+      "status": "downloaded",
+      "bytes": 4020,
+      "sha256": "7fe3af82640122bc5dd6af68e80c3a2d31c1e5be580213f4203a1256a7a67508"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/solution/solve.c",
+      "local": "writeups/official/solution/solve.c",
+      "size_expected": 24535,
+      "git_blob_sha": "c896d509f585bb83ae0c636c4e1f7aa95f61f188",
+      "status": "downloaded",
+      "bytes": 24535,
+      "sha256": "1210a0cd1f426467c36c3c4d4507daf9256a00529e44b4ae90e2ebbe2f66f849"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/solution/solve.py",
+      "local": "writeups/official/solution/solve.py",
+      "size_expected": 16172,
+      "git_blob_sha": "da106e7070e3140cd4f8dab480b1f6e949ded921",
+      "status": "downloaded",
+      "bytes": 16172,
+      "sha256": "042da8aa708fbdeb66598be4301d16205d35c30a7f3552f21ba8c034e0fbe840"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/solution2/solve_onion.py",
+      "local": "writeups/official/solution2/solve_onion.py",
+      "size_expected": 36224,
+      "git_blob_sha": "2c922f485457deca2c13f6fbdebc0431ee388b5b",
+      "status": "downloaded",
+      "bytes": 36224,
+      "sha256": "901fc75866830ef5e254c72cead239eb1f5d2f0a0dd007902074acacccd8e803"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/dicectf2026-writeups/HEAD/rev/another-onion/README.md",
+      "local": "writeups/community/README.md",
+      "status": "downloaded",
+      "bytes": 4511,
+      "sha256": "b2814bb1ee75cbb2cb1f9b6d25f39925166b7e166295b926356422b02382cdb4"
+    }
+  ],
+  "notes": "官方题目附件；参赛者 hax1ng 的解题文章；another-onion 另有官方多组解法。",
+  "directory": "逆向/DiceCTF_2026_Quals/another-onion",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/README.md",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/solution/asmhelp.py",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/solution/compile-solve.sh",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/solution/e2e_solver_submit.py",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/solution/solve.c",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/solution/solve.py",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/solution2/solve_onion.py",
+    "https://raw.githubusercontent.com/hax1ng/dicectf2026-writeups/HEAD/rev/another-onion/README.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/.dockerignore",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/Dockerfile",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/Dockerfile.solver",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/a_key",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/an_onion",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/compile.sh",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/docker-compose-test.yaml",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/encrypt.py",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/generate.py",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/instance_server.py",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/kona.yaml"
+  ],
+  "attachment_status": "downloaded"
+}

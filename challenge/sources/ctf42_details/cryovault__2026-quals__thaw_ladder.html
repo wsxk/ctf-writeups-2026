@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>thaw_ladder · Cryovault 2026 Quals (pwn) writeup · ctf42</title>
+  
+
+<meta name="description" content="thaw_ladder: Pwn challenge from Cryovault 2026 Quals. Techniques: custom-vm, signedness-bug, oob-write. AJ Pod 7 has been in vitrification since bay C…">
+<link rel="canonical" href="https://ctf42.online/ctfs/cryovault/2026-quals/thaw_ladder/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/cryovault/2026-quals/thaw_ladder/">
+<meta property="og:title" content="thaw_ladder">
+<meta property="og:description" content="thaw_ladder: Pwn challenge from Cryovault 2026 Quals. Techniques: custom-vm, signedness-bug, oob-write. AJ Pod 7 has been in vitrification since bay C…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/cryovault/">Cryovault</a> / <a href="/ctfs/cryovault/2026-quals/">2026 Quals</a> / thaw_ladder</nav>
+
+
+<div class="challenge-head">
+  <h1>thaw_ladder
+    </h1>
+  <div class="badges">
+    <a class="cat cat-pwn" href="/category/pwn/">Pwn</a>
+    
+    
+    <span class="chip">weight 25.00</span>
+    <a class="tag" href="/techniques/custom-vm/">#custom-vm</a><a class="tag" href="/techniques/signedness-bug/">#signedness-bug</a><a class="tag" href="/techniques/oob-write/">#oob-write</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/cryovault/2026-quals/thaw_ladder/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/cryovault/2026-quals/thaw_ladder/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  
+  
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>AJ</p>
+<p>Pod 7 has been in vitrification since bay C lost power. Its controller still takes thaw plans written in FROSTLANG. Wake the pod. Each connection is a fresh controller session. The handout is the 7.2 bench kit; the pod runs the 7.3 field build.</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>thaw_ladder — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/Cryovault-2026-Quals/tree/main/pwn/thaw-ladder" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/Cryovault-2026-Quals/tree/main/pwn/thaw-ladder</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/cryovault/2026-quals/thaw_ladder/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/dicectf/2026-quals/garden/">garden</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a><a class="tag tag-sm" href="/techniques/garbage-collector-bug/">#garbage-collector-bug</a><a class="tag tag-sm" href="/techniques/oob-write/">#oob-write</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/dicectf/2026-quals/">DiceCTF 2026 Quals</a></td>
+        <td class="num">100.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/buckeyectf/2024/disa/">D.I.S.A.</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a><a class="tag tag-sm" href="/techniques/range-check-bypass/">#range-check-bypass</a><a class="tag tag-sm" href="/techniques/oob-write/">#oob-write</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/buckeyectf/2024/">BuckeyeCTF 2024</a></td>
+        <td class="num">50.91</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/haruulzangi/2026-quals/cabinet/">Cabinet</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/oob-write/">#oob-write</a><a class="tag tag-sm" href="/techniques/function-pointer-overwrite/">#function-pointer-overwrite</a><a class="tag tag-sm" href="/techniques/game-replay/">#game-replay</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/haruulzangi/2026-quals/">Haruulzangi 2026 Quals</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/b01lers/2026/throughthewall/">throughthewall</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/kernel-exploitation/">#kernel-exploitation</a><a class="tag tag-sm" href="/techniques/oob-write/">#oob-write</a><a class="tag tag-sm" href="/techniques/pipe-buffer/">#pipe-buffer</a><a class="tag tag-sm" href="/techniques/kernel-rop/">#kernel-rop</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/b01lers/2026/">b01lers 2026</a></td>
+        <td class="num">66.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/umdctf/2026/vkexchange/">vkexchange</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/vulkan/">#vulkan</a><a class="tag tag-sm" href="/techniques/oob-write/">#oob-write</a><a class="tag tag-sm" href="/techniques/descriptor-sets/">#descriptor-sets</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/umdctf/2026/">UMDCTF 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/corctf/2024/trojan_turtles/">trojan_turtles</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/kvm-hypervisor/">#kvm-hypervisor</a><a class="tag tag-sm" href="/techniques/nested-vmx/">#nested-vmx</a><a class="tag tag-sm" href="/techniques/oob-write/">#oob-write</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/corctf/2024/">corCTF 2024</a></td>
+        <td class="num">55.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/custom-vm/">#custom-vm</a> · <a href="/techniques/signedness-bug/">#signedness-bug</a> · <a href="/techniques/oob-write/">#oob-write</a>
+          · <a href="/category/pwn/">all Pwn</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Cryovault/2026/Quals/pwn/thaw_ladder" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/cryovault/2026-quals/thaw_ladder/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from Cryovault 2026 Quals</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/cryovault/2026-quals/monodromy/">Monodromy</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/cryovault/2026-quals/parallax/">Parallax</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/cryovault/2026-quals/prismwake/">Prismwake</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/cryovault/2026-quals/brine/">brine</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/cryovault/2026-quals/free_lunch/">free_lunch</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/cryovault/2026-quals/half_truths/">half_truths</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/cryovault/2026-quals/hidden_weights/">hidden_weights</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/cryovault/2026-quals/implicit_twins/">implicit_twins</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/cryovault/2026-quals/leaky_eval/">leaky_eval</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/cryovault/2026-quals/neve/">neve</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/cryovault/2026-quals/one_more/">one_more</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/cryovault/2026-quals/sparse_change/">sparse_change</a> <span class="cat cat-crypto cat-xs">Crypto</span></li>
+      </ul>
+      <a class="small" href="/ctfs/cryovault/2026-quals/">All Cryovault 2026 Quals challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

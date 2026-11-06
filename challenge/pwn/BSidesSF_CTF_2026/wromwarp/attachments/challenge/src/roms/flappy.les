@@ -1,0 +1,327 @@
+; flappy.les -- subpixel flappy-style LES game
+;
+; Player is a 1x1 square at x=1, moves with iU/iD.
+; One pillar stream: each pillar has x_sub (0..255), rendered by x_sub >> 3.
+; Pillars move left by speed_sub each frame, speeding up after each pass.
+;
+; WRAM layout:
+; 0 player_y
+; 1 speed_sub        (subpixels per frame)
+; 2 pillar_active    (0/1)
+; 3 spawn_timer_sub  (counts down while no pillar active)
+; 4 pillar_x_sub
+; 5 pillar_gap_y
+; 6 pillar_scored    (0/1, speed-up already awarded for current pillar)
+; 16..27 text buffer: "Score: 0000" + NUL
+
+INIT
+CALL <RESET_GAME>
+
+MAIN:
+INPUT
+CALL <UPDATE_PLAYER>
+CALL <UPDATE_PILLAR>
+CALL <CHECK_COLLISION>
+CMP gA, 1
+JMPNE <NO_HIT>
+CALL <DRAW_FRAME>
+SLEEP 1000
+CALL <RESET_GAME>
+NO_HIT:
+SET 16, mR
+PRINT
+CALL <DRAW_FRAME>
+SLEEP 40
+JMP <MAIN>
+
+; --- game state ---
+
+RESET_GAME:
+; player near center
+SET 16, gA
+SET 0, mW
+STORE gA
+
+; start slow
+SET 2, gA
+SET 1, mW
+STORE gA
+
+; no active pillar yet
+SET 0, gA
+SET 2, mW
+STORE gA
+
+; initial spawn countdown (about 20 columns)
+SET 20, gA
+SHIFTL gA, 3, gA
+SET 3, mW
+STORE gA
+
+; defaults
+SET 255, gA
+SET 4, mW
+STORE gA
+SET 16, gA
+SET 5, mW
+STORE gA
+SET 0, gA
+SET 6, mW
+STORE gA
+
+; text buffer: "Score: 0000\\0"
+SET 16, mW
+SET 83, gA   ; S
+STORE gA
+INC mW
+SET 99, gA   ; c
+STORE gA
+INC mW
+SET 111, gA  ; o
+STORE gA
+INC mW
+SET 114, gA  ; r
+STORE gA
+INC mW
+SET 101, gA  ; e
+STORE gA
+INC mW
+SET 58, gA   ; :
+STORE gA
+INC mW
+SET 32, gA   ; space
+STORE gA
+INC mW
+SET 48, gA   ; 0
+STORE gA
+INC mW
+STORE gA
+INC mW
+STORE gA
+INC mW
+STORE gA
+INC mW
+SET 0, gA    ; NUL terminator
+STORE gA
+RET
+
+UPDATE_PLAYER:
+SET 0, mR
+LOAD gA
+
+CMP iU, 0
+JMPE <UP_DOWN>
+CMP gA, 0
+JMPLE <UP_DOWN>
+DEC gA
+
+UP_DOWN:
+CMP iD, 0
+JMPE <UP_SAVE>
+CMP gA, 31
+JMPGE <UP_SAVE>
+INC gA
+
+UP_SAVE:
+SET 0, mW
+STORE gA
+RET
+
+UPDATE_PILLAR:
+SET 2, mR
+LOAD gA
+CMP gA, 0
+JMPE <UP_INACTIVE>
+
+; active pillar: x_sub -= speed
+SET 4, mR
+LOAD gA            ; old x
+SET 1, mR
+LOAD gB            ; speed
+SUB gA, gB, gC     ; new x
+SET 4, mW
+STORE gC
+
+; if underflowed, pillar fully left -> deactivate and set next spawn timer
+CMP gC, gA
+JMPLT <UP_ACTIVE_CONT>
+SET 0, gD
+SET 2, mW
+STORE gD
+CALL <SET_SPAWN_TMR>
+JMP <UP_DONE>
+
+UP_ACTIVE_CONT:
+; award pass when pillar reaches player column or left (x_screen <= 1)
+SET 4, mR
+LOAD gD
+SHIFTR gD, 3, gD
+CMP gD, 1
+JMPGT <UP_DONE>
+
+SET 6, mR
+LOAD gA
+CMP gA, 0
+JMPNE <UP_DONE>
+
+; speed up once per passed pillar, cap at 12
+SET 1, mR
+LOAD gA
+CMP gA, 12
+JMPGE <UP_MARK_SCORED>
+INC gA
+SET 1, mW
+STORE gA
+
+UP_MARK_SCORED:
+CALL <INC_SCORE>
+SET 1, gA
+SET 6, mW
+STORE gA
+JMP <UP_DONE>
+
+UP_INACTIVE:
+; inactive: timer -= speed, spawn when it underflows
+SET 3, mR
+LOAD gA            ; old timer
+SET 1, mR
+LOAD gB            ; speed
+SUB gA, gB, gC     ; new timer
+SET 3, mW
+STORE gC
+
+CMP gC, gA
+JMPLT <UP_DONE>
+CALL <SPAWN_PILLAR>
+
+UP_DONE:
+RET
+
+SPAWN_PILLAR:
+SET 1, gA
+SET 2, mW
+STORE gA
+
+SET 255, gA
+SET 4, mW
+STORE gA
+
+; gap center near middle: 8..23
+RND gA
+SHIFTR gA, 4, gA
+ADD gA, 8, gA
+SET 5, mW
+STORE gA
+
+SET 0, gA
+SET 6, mW
+STORE gA
+RET
+
+SET_SPAWN_TMR:
+; random spacing 12..27 columns -> convert to subpixels (*8)
+RND gA
+SHIFTR gA, 4, gA
+ADD gA, 12, gA
+SHIFTL gA, 3, gA
+SET 3, mW
+STORE gA
+RET
+
+CHECK_COLLISION:
+; gA=1 hit, gA=0 safe
+SET 0, gA
+
+SET 2, mR
+LOAD gB
+CMP gB, 0
+JMPE <CC_DONE>
+
+; collide only when pillar is in player column (x == 1)
+SET 4, mR
+LOAD gB
+SHIFTR gB, 3, gB
+CMP gB, 1
+JMPNE <CC_DONE>
+
+SET 0, mR
+LOAD gC            ; player y
+SET 5, mR
+LOAD gD            ; gap center
+
+; safe window [gap-2, gap+2]
+SUB gD, 2, gB
+CMP gC, gB
+JMPLT <CC_HIT>
+ADD gD, 2, gB
+CMP gC, gB
+JMPGT <CC_HIT>
+JMP <CC_DONE>
+
+CC_HIT:
+SET 1, gA
+CC_DONE:
+RET
+
+INC_SCORE:
+; increment ASCII decimal at text indices 10..7 (RAM 26..23)
+SET 26, mR
+SET 57, gB
+IS_INC:
+DUPE mR, mW
+LOAD gA
+INC gA
+CMP gA, gB
+JMPGT <IS_ZERO>
+STORE gA
+RET
+IS_ZERO:
+SET 48, gA
+STORE gA
+DEC mR
+JMP <IS_INC>
+
+; --- rendering ---
+
+DRAW_FRAME:
+CLEAR
+SET 1, pA
+
+; draw player at x=1
+SET 1, cX1
+SET 0, mR
+LOAD cY1
+SETP 1, pA
+
+; draw active pillar
+SET 2, mR
+LOAD gA
+CMP gA, 0
+JMPE <DF_DONE>
+
+SET 4, mR
+LOAD gA
+SHIFTR gA, 3, cX1
+SET 5, mR
+LOAD gA            ; gap center
+
+SET 0, cY1
+DF_Y_LOOP:
+SUB gA, 2, gB
+CMP cY1, gB
+JMPLT <DF_DRAW>
+ADD gA, 2, gB
+CMP cY1, gB
+JMPGT <DF_DRAW>
+JMP <DF_SKIP>
+
+DF_DRAW:
+SETP 1, pA
+DF_SKIP:
+INC cY1
+CMP cY1, 0
+JMPNE <DF_Y_LOOP>
+
+DF_DONE:
+DRAW
+RET

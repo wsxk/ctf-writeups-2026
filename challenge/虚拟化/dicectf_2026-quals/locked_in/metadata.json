@@ -1,0 +1,49 @@
+{
+  "event_id": "CTF-3110",
+  "event_title": "DiceCTF 2026 Quals",
+  "title": "locked_in",
+  "category": "虚拟化",
+  "original_category": "Reverse",
+  "tags": [
+    "custom-vm",
+    "multithreading"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/dicectf/2026-quals/locked_in/",
+    "https://ctf42.online/ctfs/dicectf/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/DiceCTF/2026/Quals/rev/locked_in"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/dicectf2026-writeups/tree/main/rev/locked-in"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/DiceCTF/2026/Quals/rev/locked_in",
+    "https://ctf42.online/ctfs/dicectf/2026-quals/locked_in/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/dicectf_2026-quals/locked_in/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/dicectf2026-writeups/main/rev/locked-in/README.md",
+      "bytes": 3252,
+      "sha256": "9660379182fd1659ac50be96f9fd07cd559fb55ddcd73bb982eb8be4cbd4ae2c",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/dicectf_2026-quals/locked_in/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/dicectf/2026-quals/locked_in/folder.zip?kind=files",
+      "bytes": 374820,
+      "sha256": "b926a300c7b4b9bb6eed51a4e278d622acb19b22fbbd5f69bb0ef3b2e1696d34",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

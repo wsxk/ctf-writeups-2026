@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snaking_Revenge · SAS 2026 Quals (pwn) writeup · ctf42</title>
+  
+
+<meta name="description" content="Snaking_Revenge: Pwn challenge from SAS 2026 Quals. Techniques: pyjnius, type-confusion, jni. Wild nature of Kazakhstan is amazing: yesterday we watched…">
+<link rel="canonical" href="https://ctf42.online/ctfs/sas/2026-quals/snaking_revenge/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/sas/2026-quals/snaking_revenge/">
+<meta property="og:title" content="Snaking_Revenge">
+<meta property="og:description" content="Snaking_Revenge: Pwn challenge from SAS 2026 Quals. Techniques: pyjnius, type-confusion, jni. Wild nature of Kazakhstan is amazing: yesterday we watched…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/sas/">SAS</a> / <a href="/ctfs/sas/2026-quals/">2026 Quals</a> / Snaking_Revenge</nav>
+
+
+<div class="challenge-head">
+  <h1>Snaking_Revenge
+    </h1>
+  <div class="badges">
+    <a class="cat cat-pwn" href="/category/pwn/">Pwn</a>
+    
+    
+    <span class="chip">weight 31.00</span>
+    <a class="tag" href="/techniques/pyjnius/">#pyjnius</a><a class="tag" href="/techniques/type-confusion/">#type-confusion</a><a class="tag" href="/techniques/jni/">#jni</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/sas/2026-quals/snaking_revenge/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/sas/2026-quals/snaking_revenge/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  
+  
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>Wild nature of Kazakhstan is amazing: yesterday we watched how a snake choked. Let's hope we will never see that again. n</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>Snaking Revenge — writeup</b>
+    
+    
+    <span class="muted">by RubiyaLab Expeditions</span>
+  </header>
+  <p><a href="https://ctftime.org/writeup/40862" rel="noopener nofollow ugc" target="_blank">https://ctftime.org/writeup/40862</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/sas/2026-quals/snaking_revenge/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/snakectf/2024-quals/native_coffee_interface/">Native_Coffee_Interface</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/jni/">#jni</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/snakectf/2024-quals/">snakeCTF 2024 Quals</a></td>
+        <td class="num">24.79</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/z0d1ak/2026-quals/house_xiii/">House_XIII</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/heap-exploitation/">#heap-exploitation</a><a class="tag tag-sm" href="/techniques/type-confusion/">#type-confusion</a><a class="tag tag-sm" href="/techniques/use-after-free/">#use-after-free (uaf)</a><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/z0d1ak/2026-quals/">Z0d1ak 2026 Quals</a></td>
+        <td class="num">25.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/haruulzangi/2026-quals/made_in_mongolia/">Made_In_Mongolia</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/jit-bug/">#jit-bug</a><a class="tag tag-sm" href="/techniques/type-confusion/">#type-confusion</a><a class="tag tag-sm" href="/techniques/waf-bypass/">#waf-bypass</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/haruulzangi/2026-quals/">Haruulzangi 2026 Quals</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/trx/2026/triforce/">triforce</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/v8-exploitation/">#v8-exploitation</a><a class="tag tag-sm" href="/techniques/jit/">#jit</a><a class="tag tag-sm" href="/techniques/type-confusion/">#type-confusion</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/trx/2026/">TRX 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/nexhunt/2025/vowbreaker/">VowBreaker</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/v8/">#v8</a><a class="tag tag-sm" href="/techniques/type-confusion/">#type-confusion</a><a class="tag tag-sm" href="/techniques/browser-exploitation/">#browser-exploitation</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/nexhunt/2025/">NexHunt 2025</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/wanictf/2023/timetable/">TimeTable</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/type-confusion/">#type-confusion</a><a class="tag tag-sm" href="/techniques/got-overwrite/">#got-overwrite</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/wanictf/2023/">WaniCTF 2023</a></td>
+        <td class="num">24.99</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/pyjnius/">#pyjnius</a> · <a href="/techniques/type-confusion/">#type-confusion</a> · <a href="/techniques/jni/">#jni</a>
+          · <a href="/category/pwn/">all Pwn</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SAS/2026/Quals/pwn/Snaking_Revenge" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/sas/2026-quals/snaking_revenge/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from SAS 2026 Quals</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/sas/2026-quals/net/">net</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/sas/2026-quals/gatekeeper_v20/">Gatekeeper_v2.0</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/sas/2026-quals/jsculator/">JSculator</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/sas/2026-quals/sasenger/">Sasenger</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/sas/2026-quals/snaking/">Snaking</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/sas/2026-quals/cerum/">Cerum</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/sas/2026-quals/lut_i_am_your_father/">Lut_I_am_your_father</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/sas/2026-quals/venom_protect/">Venom_Protect</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/sas/2026-quals/gav/">Gav</a> <span class="cat cat-web cat-xs">Web</span></li><li>
+<a href="/ctfs/sas/2026-quals/nexus_as_a_service/">Nexus_as_a_Service</a> <span class="cat cat-web cat-xs">Web</span></li><li>
+<a href="/ctfs/sas/2026-quals/redis_nightmare/">Redis_Nightmare</a> <span class="cat cat-web cat-xs">Web</span></li><li>
+<a href="/ctfs/sas/2026-quals/xod_revenge/">XOD_Revenge</a> <span class="cat cat-web cat-xs">Web</span></li>
+      </ul>
+      <a class="small" href="/ctfs/sas/2026-quals/">All SAS 2026 Quals challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

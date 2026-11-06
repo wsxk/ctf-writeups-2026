@@ -1,0 +1,9 @@
+services:
+  heap2win:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "1364:5000"
+    privileged: true

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Silicon_Snare · CSS 2026 (hardware) writeup · ctf42</title>
+  
+
+<meta name="description" content="Silicon_Snare: Hardware challenge from CSS 2026, insane. Techniques: logic-circuit, sat-solver, netlist-transcription. Expert The Kuiper Belt relay…">
+<link rel="canonical" href="https://ctf42.online/ctfs/css/2026/silicon_snare/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/css/2026/silicon_snare/">
+<meta property="og:title" content="Silicon_Snare">
+<meta property="og:description" content="Silicon_Snare: Hardware challenge from CSS 2026, insane. Techniques: logic-circuit, sat-solver, netlist-transcription. Expert The Kuiper Belt relay…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/css/">CSS</a> / <a href="/ctfs/css/2026/">2026</a> / Silicon_Snare</nav>
+
+
+<div class="challenge-head">
+  <h1>Silicon_Snare
+    </h1>
+  <div class="badges">
+    <a class="cat cat-hardware" href="/category/hardware/">Hardware</a>
+    
+    
+    
+    <a class="tag" href="/techniques/logic-circuit/">#logic-circuit</a><a class="tag" href="/techniques/sat-solver/">#sat-solver</a><a class="tag" href="/techniques/netlist-transcription/">#netlist-transcription</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/css/2026/silicon_snare/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/css/2026/silicon_snare/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  
+  
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>Expert
+The Kuiper Belt relay fail-safe is a hardwired optical routing matrix.</p>
+<p>Thanks to the bravery of a specific R2-series astromech droid, you have been provided the original schematic for its layout and proprietary analogue logic nodes. Trace the signal paths through the gates and find the one 32-bit input pattern that drives the centre node, Override, to logic high (1).</p>
+<p>Software won't help you much here. The only thing to follow is the wire.
+Some wires will intentionally overlap to hinder your efforts. Thankfully, you have its SVG; it will let you zoom in infinitely to inspect for detail. Push on!
+Submit CSSCTF{…}.</p>
+<p>Inside the braces, enter 32 bits (32 characters, 1s and 0s) with no spaces. I00, at 12 o’clock, is the first bit. Read clockwise through I31.
+This challenge is inspired by the same work bare-metal hardware engineers conduct when reverse engineering proprietary dies. Believe it or not, but this problem is trivial in comparison to their work; in real life, analysts must decap a proprietary chip, image the die, and trace the gates under microscope to see what routes where. Among other discoveries, this process may identify a backdoor.</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>Silicon_Snare — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/css-ctf-2026-return-of-nexus/tree/main/hardware/silicon-snare" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/css-ctf-2026-return-of-nexus/tree/main/hardware/silicon-snare</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/css/2026/silicon_snare/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/googlectf/2022/iliketrains/">ILikeTrains</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/openttd/">#openttd</a><a class="tag tag-sm" href="/techniques/logic-circuit/">#logic-circuit</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/googlectf/2022/">GoogleCTF 2022</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/logic-circuit/">#logic-circuit</a> · <a href="/techniques/sat-solver/">#sat-solver</a> · <a href="/techniques/netlist-transcription/">#netlist-transcription</a>
+          · <a href="/category/hardware/">all Hardware</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/CSS/2026/hw/Silicon_Snare" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/css/2026/silicon_snare/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from CSS 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/css/2026/gateway/">Gateway</a> <span class="cat cat-blockchain cat-xs">Blockchain</span></li><li>
+<a href="/ctfs/css/2026/lottery/">Lottery</a> <span class="cat cat-blockchain cat-xs">Blockchain</span></li><li>
+<a href="/ctfs/css/2026/chimera_vault/">Chimera_Vault</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/css/2026/chrono_i/">Chrono_I</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/css/2026/severed_symmetry/">Severed_Symmetry</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/css/2026/echoes_of_the_relay/">Echoes_of_the_Relay</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/css/2026/ghost_frequency/">Ghost_Frequency</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/css/2026/signal_fracture/">Signal_Fracture</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/css/2026/the_false_timeline/">The_False_Timeline</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/css/2026/lamp_drill/">Lamp_Drill</a> <span class="cat cat-hardware cat-xs">Hardware</span></li><li>
+<a href="/ctfs/css/2026/a_star_trail_1/">A_Star_Trail_1</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/css/2026/the_astrolobe_overwrite/">The_Astrolobe_Overwrite</a> <span class="cat cat-misc cat-xs">Misc</span></li>
+      </ul>
+      <a class="small" href="/ctfs/css/2026/">All CSS 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

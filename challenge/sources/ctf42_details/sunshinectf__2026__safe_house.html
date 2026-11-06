@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Safe_House · SunshineCTF 2026 (pwn) writeup · ctf42</title>
+  
+
+<meta name="description" content="Safe_House: Pwn challenge from SunshineCTF 2026. Techniques: stack-buffer-overflow, negative-index, rop, ipc. Oreomeister The safe house processes reports…">
+<link rel="canonical" href="https://ctf42.online/ctfs/sunshinectf/2026/safe_house/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/sunshinectf/2026/safe_house/">
+<meta property="og:title" content="Safe_House">
+<meta property="og:description" content="Safe_House: Pwn challenge from SunshineCTF 2026. Techniques: stack-buffer-overflow, negative-index, rop, ipc. Oreomeister The safe house processes reports…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/sunshinectf/">SunshineCTF</a> / <a href="/ctfs/sunshinectf/2026/">2026</a> / Safe_House</nav>
+
+
+<div class="challenge-head">
+  <h1>Safe_House
+    </h1>
+  <div class="badges">
+    <a class="cat cat-pwn" href="/category/pwn/">Pwn</a>
+    
+    
+    <span class="chip">weight 51.63</span>
+    <a class="tag" href="/techniques/stack-buffer-overflow/">#stack-buffer-overflow</a><a class="tag" href="/techniques/negative-index/">#negative-index</a><a class="tag" href="/techniques/rop/">#rop</a><a class="tag" href="/techniques/ipc/">#ipc</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/sunshinectf/2026/safe_house/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/sunshinectf/2026/safe_house/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  
+  <p class="meta">Flag format: <code class="flag-format">sun{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>Oreomeister</p>
+<p>The safe house processes reports and files notes for the field. Get past the front desk and into the vault.</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>Safe_House — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/SunshineCTF-2026/tree/main/pwn/safe-house" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/SunshineCTF-2026/tree/main/pwn/safe-house</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/sunshinectf/2026/safe_house/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/wolvctf/2024/game_cet_match/">Game_CET_Match</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/negative-index/">#negative-index</a><a class="tag tag-sm" href="/techniques/got-overwrite/">#got-overwrite</a><a class="tag tag-sm" href="/techniques/rop/">#rop</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/wolvctf/2024/">WolvCTF 2024</a></td>
+        <td class="num">35.25</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/defcamp/2023-quals/bistro_v2/">bistro_v2</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/stack-buffer-overflow/">#stack-buffer-overflow</a><a class="tag tag-sm" href="/techniques/gets/">#gets</a><a class="tag tag-sm" href="/techniques/rop/">#rop</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/defcamp/2023-quals/">Defcamp 2023 Quals</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/defcamp/2023-quals/bistro/">bistro</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/stack-buffer-overflow/">#stack-buffer-overflow</a><a class="tag tag-sm" href="/techniques/gets/">#gets</a><a class="tag tag-sm" href="/techniques/rop/">#rop</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/defcamp/2023-quals/">Defcamp 2023 Quals</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/sekaictf/2023/network_tools/">Network_Tools</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/stack-buffer-overflow/">#stack-buffer-overflow</a><a class="tag tag-sm" href="/techniques/rop/">#rop</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/sekaictf/2023/">SekaiCTF 2023</a></td>
+        <td class="num">24.86</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/dicectf/2023/bop/">bop</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/stack-buffer-overflow/">#stack-buffer-overflow</a><a class="tag tag-sm" href="/techniques/gets/">#gets</a><a class="tag tag-sm" href="/techniques/seccomp/">#seccomp</a><a class="tag tag-sm" href="/techniques/orw/">#orw</a><a class="tag tag-sm" href="/techniques/rop/">#rop</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/dicectf/2023/">DiceCTF 2023</a></td>
+        <td class="num">36.70</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;3</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/defcon/2021-quals/mra/">mra</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/stack-buffer-overflow/">#stack-buffer-overflow</a><a class="tag tag-sm" href="/techniques/rop/">#rop</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/defcon/2021-quals/">DEFCON 2021 Quals</a></td>
+        <td class="num">80.92</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/stack-buffer-overflow/">#stack-buffer-overflow</a> · <a href="/techniques/negative-index/">#negative-index</a> · <a href="/techniques/rop/">#rop</a> · <a href="/techniques/ipc/">#ipc</a>
+          · <a href="/category/pwn/">all Pwn</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Safe_House" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/sunshinectf/2026/safe_house/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from SunshineCTF 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/sunshinectf/2026/nas_coal/">NAS_coal</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/sunshinectf/2026/welcome_call/">Welcome_Call</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/sunshinectf/2026/ghost_in_the_thread_1_start_here/">ghost_in_the_thread_1_start_here</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/sunshinectf/2026/ghost_in_the_thread_2/">ghost_in_the_thread_2</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/sunshinectf/2026/ghost_in_the_thread_3/">ghost_in_the_thread_3</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/sunshinectf/2026/ghost_in_the_thread_4/">ghost_in_the_thread_4</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/sunshinectf/2026/my_eyes_burn/">my_eyes_burn</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/sunshinectf/2026/suntrail/">suntrail</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/sunshinectf/2026/you_cut_me_off/">you_cut_me_off</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/sunshinectf/2026/cache_money/">Cache_Money</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/sunshinectf/2026/code_breaker/">Code_Breaker</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/sunshinectf/2026/homemaker/">Homemaker</a> <span class="cat cat-pwn cat-xs">Pwn</span></li>
+      </ul>
+      <a class="small" href="/ctfs/sunshinectf/2026/">All SunshineCTF 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

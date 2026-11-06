@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Borrowed_Memory · BDSec 2026 (reverse) writeup · ctf42</title>
+  
+
+<meta name="description" content="Borrowed_Memory: Reverse challenge from BDSec 2026. Techniques: bytecode-vm-emulation, xorshift-table-regeneration, checksum-guided-debugging, xor-decryption. Author NomanProdhan Memory can be borrowed right ? Flag Format :…">
+<link rel="canonical" href="https://ctf42.online/ctfs/bdsec/2026/borrowed_memory/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/bdsec/2026/borrowed_memory/">
+<meta property="og:title" content="Borrowed_Memory">
+<meta property="og:description" content="Borrowed_Memory: Reverse challenge from BDSec 2026. Techniques: bytecode-vm-emulation, xorshift-table-regeneration, checksum-guided-debugging, xor-decryption. Author NomanProdhan Memory can be borrowed right ? Flag Format :…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/bdsec/">BDSec</a> / <a href="/ctfs/bdsec/2026/">2026</a> / Borrowed_Memory</nav>
+
+
+<div class="challenge-head">
+  <h1>Borrowed_Memory
+    </h1>
+  <div class="badges">
+    <a class="cat cat-rev" href="/category/rev/">Reverse</a>
+    
+    
+    <span class="chip">weight 15.62</span>
+    <a class="tag" href="/techniques/bytecode-vm-emulation/">#bytecode-vm-emulation</a><a class="tag" href="/techniques/xorshift-table-regeneration/">#xorshift-table-regeneration</a><a class="tag" href="/techniques/checksum-guided-debugging/">#checksum-guided-debugging</a><a class="tag" href="/techniques/xor-decryption/">#xor-decryption</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/bdsec/2026/borrowed_memory/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/bdsec/2026/borrowed_memory/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  <p class="meta">Author: NomanProdhan</p>
+  <p class="meta">Flag format: <code class="flag-format">BDSEC{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>Author
+NomanProdhan</p>
+<p>Memory can be borrowed right ?</p>
+<p>Flag Format : BDSEC{som3thing_her3P}</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>Borrowed Memory — writeup</b>
+    
+    
+    <span class="muted">by Abdelkader</span>
+  </header>
+  <p><a href="https://ctftime.org/writeup/41042" rel="noopener nofollow ugc" target="_blank">https://ctftime.org/writeup/41042</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/bdsec/2026/borrowed_memory/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/bcactf/2024/xor/">XOR</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/xor-decryption/">#xor-decryption</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/bcactf/2024/">BCACTF 2024</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/byuctf/2023/reveng/">RevEng</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/xor-decryption/">#xor-decryption</a><a class="tag tag-sm" href="/techniques/ghidra/">#ghidra</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/byuctf/2023/">BYUCTF 2023</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/bcactf/2021/storytime_the_tragic_interlude/">Storytime_The_Tragic_Interlude</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/xor-decryption/">#xor-decryption</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/bcactf/2021/">BCACTF 2021</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;2</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/bytecode-vm-emulation/">#bytecode-vm-emulation</a> · <a href="/techniques/xorshift-table-regeneration/">#xorshift-table-regeneration</a> · <a href="/techniques/checksum-guided-debugging/">#checksum-guided-debugging</a> · <a href="/techniques/xor-decryption/">#xor-decryption</a>
+          · <a href="/category/rev/">all Reverse</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/rev/Borrowed_Memory" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/bdsec/2026/borrowed_memory/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from BDSec 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/bdsec/2026/inside_job/">Inside_Job</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/bdsec/2026/cordination_password/">Cordination_password</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/bdsec/2026/ekusher_shobdo/">Ekusher_Shobdo</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/bdsec/2026/muktir_shongket/">Muktir_Shongket</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/bdsec/2026/phantom_device/">Phantom_Device</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/bdsec/2026/broken_printer/">Broken_Printer</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/bdsec/2026/cold_start/">Cold_Start</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/bdsec/2026/crack_me_vault/">Crack_Me_Vault</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/bdsec/2026/easy_re_challenge/">Easy_RE_Challenge</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/bdsec/2026/four_registers/">Four_Registers</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/bdsec/2026/night_shift/">Night_Shift</a> <span class="cat cat-rev cat-xs">Reverse</span></li>
+      </ul>
+      <a class="small" href="/ctfs/bdsec/2026/">All BDSec 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

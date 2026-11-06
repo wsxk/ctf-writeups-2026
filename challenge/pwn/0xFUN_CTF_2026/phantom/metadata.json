@@ -1,0 +1,109 @@
+{
+  "event_id": "CTF-3081",
+  "event_title": "0xFUN CTF 2026",
+  "category": "pwn",
+  "title": "phantom",
+  "source_urls": [
+    "https://github.com/marlithor-cyber/0xfun-2026-writeups/tree/main/pwn/phantom",
+    "https://github.com/marlithor-cyber/0xfun-2026-writeups/tree/main/pwn/phantom_pwn",
+    "https://ctftime.org/event/3081/",
+    "https://github.com/mito753/Kernel-Exploit-Dojo/tree/main/2026/0xFUN_CTF_2026/Pwn_Phantom"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/phantom/README.md",
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/phantom/output.txt",
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/phantom/solve.py",
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/phantom_pwn/README.md",
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/phantom_pwn/exploit.c",
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/phantom_pwn/solve.py",
+    "https://raw.githubusercontent.com/mito753/Kernel-Exploit-Dojo/main/2026/0xFUN_CTF_2026/Pwn_Phantom/exploit/README.md",
+    "https://raw.githubusercontent.com/mito753/Kernel-Exploit-Dojo/main/2026/0xFUN_CTF_2026/Pwn_Phantom/exploit/exp01.c",
+    "https://raw.githubusercontent.com/mito753/Kernel-Exploit-Dojo/main/2026/0xFUN_CTF_2026/Pwn_Phantom/writeup/writeup01.txt"
+  ],
+  "attachment_urls": [
+    "https://media.githubusercontent.com/media/mito753/Kernel-Exploit-Dojo/main/2026/0xFUN_CTF_2026/Pwn_Phantom/distribution/phantom.gz"
+  ],
+  "writeup_status": "已下载参赛者正文及解题脚本",
+  "attachment_status": "已下载Phantom原始分发包（参赛者镜像，Git LFS SHA-256验证通过）",
+  "notes": [
+    "writeup来自解题者原始仓库；附件来自CTF Archives镜像。只保存文件，未执行。",
+    "phantom与phantom_pwn为同一内核模块题的静态泄漏解法和实际漏洞利用解法，合并为一题；作者说明本地包flag存在差异。"
+  ],
+  "artifacts": [
+    {
+      "path": "writeups/phantom/README.md",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/phantom/README.md",
+      "bytes": 932,
+      "sha256": "b26b489a42783cc4842f0d2bfa602b8921e3434af7d0b857599c3c039abbbe0d",
+      "kind": "writeups"
+    },
+    {
+      "path": "writeups/phantom/output.txt",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/phantom/output.txt",
+      "bytes": 136,
+      "sha256": "b93bca7aec64315bd48fcef1dfe368be59756aea25c084e8a9db1137adb316e5",
+      "kind": "writeups"
+    },
+    {
+      "path": "writeups/phantom/solve.py",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/phantom/solve.py",
+      "bytes": 674,
+      "sha256": "5cb09ea1359223f286d6255130825fb0b7d3688a44016986e63433df77aade84",
+      "kind": "writeups"
+    },
+    {
+      "path": "writeups/phantom_pwn/README.md",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/phantom_pwn/README.md",
+      "bytes": 2789,
+      "sha256": "6131f43d420e328621efce2d7b3e885c66926b7636e29288985c0a4f692c889b",
+      "kind": "writeups"
+    },
+    {
+      "path": "writeups/phantom_pwn/exploit.c",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/phantom_pwn/exploit.c",
+      "bytes": 13140,
+      "sha256": "676f2120ef7a182617be7c5b6d60f2a2cf586fbc719980ab28f783feef519f9d",
+      "kind": "writeups"
+    },
+    {
+      "path": "writeups/phantom_pwn/solve.py",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/phantom_pwn/solve.py",
+      "bytes": 7303,
+      "sha256": "8a440adacceaca9f3b4fb8561e9a66a85a60a8d39c1567dad4ddcde17589b348",
+      "kind": "writeups"
+    },
+    {
+      "path": "attachments/phantom.gz",
+      "url": "https://media.githubusercontent.com/media/mito753/Kernel-Exploit-Dojo/main/2026/0xFUN_CTF_2026/Pwn_Phantom/distribution/phantom.gz",
+      "kind": "attachments",
+      "bytes": 13599221,
+      "sha256": "e2349cb8bc759dbd2f196ed3b060aa260b5f3e094e1731c6824aeaa6bb023f52"
+    },
+    {
+      "path": "writeups/mito753/README.md",
+      "url": "https://raw.githubusercontent.com/mito753/Kernel-Exploit-Dojo/main/2026/0xFUN_CTF_2026/Pwn_Phantom/exploit/README.md",
+      "kind": "writeups",
+      "bytes": 4703,
+      "sha256": "40b925f56e1442d3a428632d74f41ec01b3703f4e2f940ac111c56da9a4fe13b"
+    },
+    {
+      "path": "writeups/mito753/exp01.c",
+      "url": "https://raw.githubusercontent.com/mito753/Kernel-Exploit-Dojo/main/2026/0xFUN_CTF_2026/Pwn_Phantom/exploit/exp01.c",
+      "kind": "writeups",
+      "bytes": 3931,
+      "sha256": "db1aa457cdd815e65df027553e498f0d4dc07721efbac0a32b7fbf4b119f1b0e"
+    },
+    {
+      "path": "writeups/mito753/writeup01.txt",
+      "url": "https://raw.githubusercontent.com/mito753/Kernel-Exploit-Dojo/main/2026/0xFUN_CTF_2026/Pwn_Phantom/writeup/writeup01.txt",
+      "kind": "writeups",
+      "bytes": 3332,
+      "sha256": "4765acbe4dc216a1fcd70af6d75ab9729124f08591a3590635caa53e8e3d3c25"
+    }
+  ],
+  "download_errors": [],
+  "has_verified_solution": true,
+  "attachment_complete": true,
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06"
+}

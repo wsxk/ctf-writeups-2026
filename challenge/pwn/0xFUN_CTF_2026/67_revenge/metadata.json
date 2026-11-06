@@ -1,0 +1,75 @@
+{
+  "event_id": "CTF-3081",
+  "event_title": "0xFUN CTF 2026",
+  "category": "pwn",
+  "title": "67_revenge",
+  "source_urls": [
+    "https://github.com/marlithor-cyber/0xfun-2026-writeups/tree/main/pwn/67_revenge",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/67_revenge",
+    "https://ctftime.org/event/3081/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/67_revenge/README.md",
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/67_revenge/output.txt",
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/67_revenge/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/67_revenge/Dockerfile",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/67_revenge/README.md",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/67_revenge/six-seven-revenge.gz"
+  ],
+  "writeup_status": "已下载参赛者正文及解题脚本",
+  "attachment_status": "已下载题目镜像附件",
+  "notes": [
+    "writeup来自解题者原始仓库；附件来自CTF Archives镜像。只保存文件，未执行。"
+  ],
+  "artifacts": [
+    {
+      "path": "writeups/67_revenge/README.md",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/67_revenge/README.md",
+      "bytes": 2433,
+      "sha256": "07cc4248fd6b2feb1b3444f1fb0a04a3d66cc22f09035e230dbe8fca86164cdd",
+      "kind": "writeups"
+    },
+    {
+      "path": "writeups/67_revenge/output.txt",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/67_revenge/output.txt",
+      "bytes": 330,
+      "sha256": "32d4e2203bef9e39cbe48b5499b1a541d96fc379353b122ec8a9c6e6626cf882",
+      "kind": "writeups"
+    },
+    {
+      "path": "writeups/67_revenge/solve.py",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/67_revenge/solve.py",
+      "bytes": 6947,
+      "sha256": "1769781439bb964cc5caff4620f81f86f80a2162e89b78d0773d1b10a4c7e404",
+      "kind": "writeups"
+    },
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/67_revenge/Dockerfile",
+      "bytes": 425,
+      "sha256": "298ae40c8d5db48c49c31454238e2e0663371347215835b9af59475540f20543",
+      "kind": "attachments"
+    },
+    {
+      "path": "attachments/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/67_revenge/README.md",
+      "bytes": 38,
+      "sha256": "5e4d906e30fae13446064abbac29105e24030573a522085c20bb373b5250051a",
+      "kind": "attachments"
+    },
+    {
+      "path": "attachments/six-seven-revenge.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/67_revenge/six-seven-revenge.gz",
+      "bytes": 1068261,
+      "sha256": "a6270c885921c06868ac9a39132a8f1ece9b461ed986640d4c639b8e597e182a",
+      "kind": "attachments"
+    }
+  ],
+  "download_errors": [],
+  "has_verified_solution": true,
+  "attachment_complete": true,
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06"
+}

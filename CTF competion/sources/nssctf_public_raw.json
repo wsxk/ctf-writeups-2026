@@ -1,0 +1,1784 @@
+{
+  "fetched_at": "2026-11-06T13:36:10.222840+00:00",
+  "pages": [
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/1/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 879,
+              "cover": "/files/2025/9/25/8be99c2335.png",
+              "title": "2026年NSSCTF秋季招新赛（线下）",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1793422800000,
+              "ends_date": 1793440800000,
+              "desc": "最后的战斗！DO YOUR BEST!",
+              "state": 2,
+              "reg_state": 0,
+              "count": 22
+            },
+            {
+              "id": 876,
+              "cover": "/files/2025/10/24/1220a3fd8f.png",
+              "title": "成都大学第九届\"玄武杯\"信息安全比赛",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1793419200000,
+              "ends_date": 1793624400000,
+              "desc": "成都大学第九届\"玄武杯\"信息安全比赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 28
+            },
+            {
+              "id": 875,
+              "cover": "/files/2026/10/22/727f85afed.png",
+              "title": "2026年NSSCTF秋季招新赛（公开赛道）",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1792800000000,
+              "ends_date": 1793203200000,
+              "desc": "Welcome to NSS!",
+              "state": 2,
+              "reg_state": 0,
+              "count": 1086
+            },
+            {
+              "id": 874,
+              "cover": "/files/2026/10/22/727f85afed.png",
+              "title": "2026年NSSCTF秋季招新赛（校内赛道）",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1792800000000,
+              "ends_date": 1793203200000,
+              "desc": "Welcome to NSS!",
+              "state": 2,
+              "reg_state": 0,
+              "count": 45
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/2/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 865,
+              "cover": "",
+              "title": "测试赛",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1790092800000,
+              "ends_date": 1790226000000,
+              "desc": "测试",
+              "state": 2,
+              "reg_state": 0,
+              "count": 2
+            },
+            {
+              "id": 864,
+              "cover": "/files/2026/9/21/77a3a437ef.png",
+              "title": "第五届中国研究生网络安全创新大赛-实网对抗校赛",
+              "level": 3,
+              "mode": 0,
+              "start_date": 1790229600000,
+              "ends_date": 1790236800000,
+              "desc": "本次比赛作为第五届中国研究生网络安全创新大赛实网对抗赛的校内选拔赛，旨在考察参赛学生的网络安全基础知识、漏洞分析、攻防实践及综合问题解决能力。比赛采用C",
+              "state": 2,
+              "reg_state": 0,
+              "count": 8
+            },
+            {
+              "id": 858,
+              "cover": "/files/2026/9/13/00ae34bb7f.png",
+              "title": "KPCTF 2026 第五届 “鲲鹏杯”网络攻防大赛(决赛)",
+              "level": 3,
+              "mode": 0,
+              "start_date": 1789641000000,
+              "ends_date": 1789653600000,
+              "desc": "KPCTF 2026 第五届 “鲲鹏杯”网络攻防大赛(决赛)",
+              "state": 2,
+              "reg_state": 0,
+              "count": 57
+            },
+            {
+              "id": 855,
+              "cover": "/files/2026/9/13/00ae34bb7f.png",
+              "title": "KPCTF 2026 第五届 “鲲鹏杯”网络攻防大赛",
+              "level": 3,
+              "mode": 0,
+              "start_date": 1789437600000,
+              "ends_date": 1789552800000,
+              "desc": "KPCTF 2026 第五届 “鲲鹏杯”网络攻防大赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 79
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/3/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 849,
+              "cover": "/files/2025/9/25/8be99c2335.png",
+              "title": "2026 SWPU-NSSCTF 秋季招新入门训练赛",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1785427200000,
+              "ends_date": 1792771200000,
+              "desc": "0基础也能轻松入门的训练赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 74
+            },
+            {
+              "id": 840,
+              "cover": "",
+              "title": "2026SWPU校园网实战训练赛",
+              "level": 1,
+              "mode": 20,
+              "start_date": 1780070400000,
+              "ends_date": 1781452740000,
+              "desc": "2026SWPU校园网实战训练赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 130
+            },
+            {
+              "id": 838,
+              "cover": "/files/2026/5/17/684aee726b.png",
+              "title": "南阳工艺美术职业学院御网杯校内选拔赛",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1779172200000,
+              "ends_date": 1779183000000,
+              "desc": "本次选拔赛面向全校学生，旨在选拔具备综合能力的选手担任御网杯团队赛队长。比赛涵盖Misc、Crypto、Web等方向，考察选手的编码分析、密码破解、We",
+              "state": 2,
+              "reg_state": 0,
+              "count": 42
+            },
+            {
+              "id": 836,
+              "cover": "",
+              "title": "比赛测试",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1778601600000,
+              "ends_date": 1778947200000,
+              "desc": "比赛测试",
+              "state": 2,
+              "reg_state": 0,
+              "count": 3
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/4/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 815,
+              "cover": "/files/2025/11/7/23fa9123de.png",
+              "title": "2025年NSSCTF秋季招新赛（线下）",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1762578000000,
+              "ends_date": 1762596000000,
+              "desc": "最后的战斗！一举夺旗！",
+              "state": 2,
+              "reg_state": 0,
+              "count": 31
+            },
+            {
+              "id": 812,
+              "cover": "/files/2025/10/24/1220a3fd8f.png",
+              "title": "成都大学第八届玄武杯（校内赛道）",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1761872400000,
+              "ends_date": 1762088400000,
+              "desc": "成都大学第八届玄武杯黑客夺旗赛（CTF）是专为校内新生打造的友好型入门赛事，聚焦 Web 安全、二进制漏洞（Pwn）、安全杂项（Misc）三大核心方向，",
+              "state": 2,
+              "reg_state": 0,
+              "count": 64
+            },
+            {
+              "id": 811,
+              "cover": "/files/2025/10/29/ba7a0363e5.png",
+              "title": "2025年NSSCTF秋季招新赛（校内赛道）",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1761872400000,
+              "ends_date": 1762261200000,
+              "desc": "NSSCTF招新赛启动，入场券在此，挑战与荣耀只待你来取。",
+              "state": 2,
+              "reg_state": 0,
+              "count": 58
+            },
+            {
+              "id": 810,
+              "cover": "/files/2025/10/29/ba7a0363e5.png",
+              "title": "2025年NSSCTF秋季招新赛（校外赛道）",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1761872400000,
+              "ends_date": 1762261200000,
+              "desc": "NSSCTF招新赛启动，入场券在此，挑战与荣耀只待你来取。",
+              "state": 2,
+              "reg_state": 0,
+              "count": 866
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/5/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 809,
+              "cover": "/files/2025/10/24/1220a3fd8f.png",
+              "title": "成都大学第八届玄武杯（校外赛道）",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1761872400000,
+              "ends_date": 1762088400000,
+              "desc": "成都大学第八届玄武杯黑客夺旗赛（CTF）是专为校内新生打造的友好型入门赛事，聚焦 Web 安全、二进制漏洞（Pwn）、安全杂项（Misc）三大核心方向，",
+              "state": 2,
+              "reg_state": 0,
+              "count": 702
+            },
+            {
+              "id": 807,
+              "cover": "/files/2025/9/17/54fbe92d72.png",
+              "title": "第三届中国传媒大学网络安全大赛（校内赛道）",
+              "level": 1,
+              "mode": 20,
+              "start_date": 1761370200000,
+              "ends_date": 1761384600000,
+              "desc": "第三届中国传媒大学网络安全大赛（CTF）校内赛道。\n本场比赛flag格式为GCCCTF{}。",
+              "state": 2,
+              "reg_state": 0,
+              "count": 55
+            },
+            {
+              "id": 806,
+              "cover": "/files/2025/9/25/8be99c2335.png",
+              "title": "NSS之寻宝夺旗活动夺旗赛",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1758848400000,
+              "ends_date": 1760403600000,
+              "desc": "破解密令只是开始，宝藏的旗帜等你来夺！",
+              "state": 2,
+              "reg_state": 0,
+              "count": 25
+            },
+            {
+              "id": 805,
+              "cover": "/files/2025/9/17/54fbe92d72.png",
+              "title": "第三届中国传媒大学网络安全大赛（校外赛道）",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1761370200000,
+              "ends_date": 1761384600000,
+              "desc": "这里是“第三届中国传媒大学网络安全大赛（CTF）”赛道的同步赛，校内选手请使用报名时填写的 ID 登录校赛专属比赛页面。校赛选手只有在校赛专属比赛页面的",
+              "state": 2,
+              "reg_state": 0,
+              "count": 1119
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/6/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 782,
+              "cover": "",
+              "title": "高校联合训练摸底赛",
+              "level": 3,
+              "mode": 0,
+              "start_date": 1755324000000,
+              "ends_date": 1755334800000,
+              "desc": "高校联合训练摸底赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 33
+            },
+            {
+              "id": 776,
+              "cover": "/files/2025/7/31/675c028734.png",
+              "title": "2025 SWPU-NSSCTF 秋季招新入门训练赛",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1753971480000,
+              "ends_date": 1761839940000,
+              "desc": "0基础也能轻松入门的训练赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 3427
+            },
+            {
+              "id": 770,
+              "cover": "/files/2025/7/24/267478667a.png",
+              "title": "NSSCTF 4th",
+              "level": 2,
+              "mode": 0,
+              "start_date": 1756000800000,
+              "ends_date": 1756029600000,
+              "desc": "NSSCTF四周年竞赛暨Round#31竞赛，一等奖（一名）：1000元京东卡+VIP年卡*6+NSS纪念T恤*3+实物周边（贴纸、吧唧、亚克力等），二",
+              "state": 2,
+              "reg_state": 0,
+              "count": 817
+            },
+            {
+              "id": 746,
+              "cover": "/files/2025/5/15/32c513cb1b.png",
+              "title": "LitCTF2025（校内赛道）",
+              "level": 3,
+              "mode": 0,
+              "start_date": 1748134800000,
+              "ends_date": 1748167200000,
+              "desc": "LitCTF 2025是郑州轻工业大学第三届网络安全赛，本届赛事采用梯度难度设计，题目涵盖基础入门到高阶实战，旨在推动本校学生们深入了解网络安全技术，提",
+              "state": 2,
+              "reg_state": 0,
+              "count": 67
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/7/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 745,
+              "cover": "/files/2025/5/15/32c513cb1b.png",
+              "title": "LitCTF2025（公开赛道）",
+              "level": 2,
+              "mode": 0,
+              "start_date": 1748135400000,
+              "ends_date": 1748167200000,
+              "desc": "LitCTF 2025是郑州轻工业大学第三届网络安全赛，本届赛事采用梯度难度设计，题目涵盖基础入门到高阶实战，旨在推动本校学生们深入了解网络安全技术，提",
+              "state": 2,
+              "reg_state": 0,
+              "count": 1567
+            },
+            {
+              "id": 739,
+              "cover": "",
+              "title": "V2.6.9 Team测试",
+              "level": 3,
+              "mode": 1,
+              "start_date": 1743911880000,
+              "ends_date": 1743915480000,
+              "desc": "V2.6.9 Team测试",
+              "state": 2,
+              "reg_state": 0,
+              "count": 2
+            },
+            {
+              "id": 737,
+              "cover": "/files/2025/4/3/042095bc12.png",
+              "title": "NSSCTF Round#30 Duo",
+              "level": 2,
+              "mode": 1,
+              "start_date": 1743915600000,
+              "ends_date": 1743933600000,
+              "desc": "NSSCTF Round#30 Basic双人组队赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 167
+            },
+            {
+              "id": 734,
+              "cover": "",
+              "title": "v2.6.9测试场",
+              "level": 1,
+              "mode": 1,
+              "start_date": 1743304680000,
+              "ends_date": 1743308280000,
+              "desc": "v2.6.9测试场",
+              "state": 2,
+              "reg_state": 0,
+              "count": 2
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/8/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 733,
+              "cover": "/files/2025/3/25/0abadcc166.png",
+              "title": "NSSCTF Round#29 Basic",
+              "level": 0,
+              "mode": 1,
+              "start_date": 1743312600000,
+              "ends_date": 1743325200000,
+              "desc": "NSSCTF Round#29 Basic MISC个人赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 355
+            },
+            {
+              "id": 732,
+              "cover": "/files/2025/3/17/95aa6b1364.png",
+              "title": "NSSCTF Round#28 Team",
+              "level": 2,
+              "mode": 0,
+              "start_date": 1742619600000,
+              "ends_date": 1742630400000,
+              "desc": "NSSCTF Round#28 Team组队赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 439
+            },
+            {
+              "id": 731,
+              "cover": "/files/2022/7/26/f17afad55d.jpg",
+              "title": "2025年NSSCTF团队春季招新赛",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1742619600000,
+              "ends_date": 1742630400000,
+              "desc": "2025年NSSCTF团队春季招新赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 26
+            },
+            {
+              "id": 725,
+              "cover": "/files/2025/3/10/ce4ee0e8b6.png",
+              "title": "NSSCTF Round#27 Basic",
+              "level": 0,
+              "mode": 1,
+              "start_date": 1742105700000,
+              "ends_date": 1742116500000,
+              "desc": "NSSCTF Round#27 Basic Reverse个人赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 430
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/9/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 710,
+              "cover": "/files/2024/2/29/8e7eff8f46.png",
+              "title": "GHCTF 2025 新生赛（公开赛道）",
+              "level": 2,
+              "mode": 0,
+              "start_date": 1740879000000,
+              "ends_date": 1741428000000,
+              "desc": "（新生赛爆 0？偷偷塞国际赛题？出题人私货多？老登来炸鱼？）哈哈，觉得眼熟？\n这样的场景，此时此刻正在 CTF 各处上演✋ ️\n下一个可能就是你\n除非你",
+              "state": 2,
+              "reg_state": 0,
+              "count": 1769
+            },
+            {
+              "id": 707,
+              "cover": "/files/2024/2/29/8e7eff8f46.png",
+              "title": "GHCTF 2025 新生赛",
+              "level": 3,
+              "mode": 0,
+              "start_date": 1740792600000,
+              "ends_date": 1741428000000,
+              "desc": "（新生赛爆 0？偷偷塞国际赛题？出题人私货多？老登来炸鱼？）哈哈，觉得眼熟？\n这样的场景，此时此刻正在 CTF 各处上演✋ ️\n下一个可能就是你\n除非你",
+              "state": 2,
+              "reg_state": 0,
+              "count": 51
+            },
+            {
+              "id": 698,
+              "cover": "/files/2025/2/2/7ab08150b3.png",
+              "title": "2025青海民族大学新生赛(测试场)",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1738425600000,
+              "ends_date": 1738684800000,
+              "desc": "2025青海民族大学新生赛(测试场)",
+              "state": 2,
+              "reg_state": 0,
+              "count": 6
+            },
+            {
+              "id": 697,
+              "cover": "/files/2025/2/2/7ab08150b3.png",
+              "title": "2025青海民族大学新生赛",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1738886400000,
+              "ends_date": 1738940400000,
+              "desc": "2025青海民族大学新生赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 430
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/10/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 674,
+              "cover": "/files/2024/12/21/a6ae82fc74.png",
+              "title": "NSSCTF Round#26 Basic",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1735365600000,
+              "ends_date": 1735376400000,
+              "desc": "NSSCTF Round#26 LLM个人专项赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 418
+            },
+            {
+              "id": 654,
+              "cover": "/files/2024/12/1/03957ad038.png",
+              "title": "NSSCTF Round#25 Basic",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1733637600000,
+              "ends_date": 1733648400000,
+              "desc": "NSSCTF Round#25 LLM个人专项赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 376
+            },
+            {
+              "id": 640,
+              "cover": "/files/2024/11/18/2b04381d64.png",
+              "title": "2024安全月CTF大赛（demo）",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1732032000000,
+              "ends_date": 1732118400000,
+              "desc": "2024安全月CTF大赛（demo）",
+              "state": 2,
+              "reg_state": 0,
+              "count": 4
+            },
+            {
+              "id": 599,
+              "cover": "/files/2024/10/1/5a2f797bba.png",
+              "title": "2024年NSSCTF秋季招新赛（校内2024）",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1728352800000,
+              "ends_date": 1729936800000,
+              "desc": "2024年NSSCTF秋季招新赛（校内2024）",
+              "state": 2,
+              "reg_state": 0,
+              "count": 82
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/11/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 598,
+              "cover": "/files/2024/10/1/5a2f797bba.png",
+              "title": "2024年NSSCTF秋季招新赛（校内2023）",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1728352800000,
+              "ends_date": 1729936800000,
+              "desc": "2024年NSSCTF秋季招新赛（校内2023）",
+              "state": 2,
+              "reg_state": 0,
+              "count": 44
+            },
+            {
+              "id": 597,
+              "cover": "/files/2024/10/1/5a2f797bba.png",
+              "title": "2024年NSSCTF秋季招新赛（校外赛道）",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1728352800000,
+              "ends_date": 1729850400000,
+              "desc": "2024年NSSCTF秋季招新赛（校外赛道）",
+              "state": 2,
+              "reg_state": 0,
+              "count": 1792
+            },
+            {
+              "id": 560,
+              "cover": "/files/2024/9/16/5c363e3230.png",
+              "title": "KPCTF 2024 第四届“鲲鹏杯”网络攻防大赛(校内决赛)",
+              "level": 3,
+              "mode": 0,
+              "start_date": 1726984800000,
+              "ends_date": 1726997400000,
+              "desc": "KPCTF 2024",
+              "state": 2,
+              "reg_state": 0,
+              "count": 54
+            },
+            {
+              "id": 559,
+              "cover": "/files/2024/9/16/5c363e3230.png",
+              "title": "KPCTF 2024 第四届“鲲鹏杯”网络攻防大赛(校内初赛)",
+              "level": 3,
+              "mode": 0,
+              "start_date": 1726707600000,
+              "ends_date": 1726826400000,
+              "desc": "KPCTF 2024",
+              "state": 2,
+              "reg_state": 0,
+              "count": 86
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/12/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 533,
+              "cover": "/files/2024/8/7/d17ca12d11.png",
+              "title": "NSSCTF 3rd",
+              "level": 2,
+              "mode": 0,
+              "start_date": 1724551200000,
+              "ends_date": 1724637600000,
+              "desc": "NSSCTF三周年竞赛暨Round#24竞赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 518
+            },
+            {
+              "id": 471,
+              "cover": "/files/2024/5/10/efa4c9e15a.png",
+              "title": "LitCTF 2024（校内赛道）",
+              "level": 3,
+              "mode": 0,
+              "start_date": 1717203600000,
+              "ends_date": 1717246800000,
+              "desc": "LitCTF 2024 是郑州轻工业大学第二届网络安全赛，相比于第一次，我们稍微扩展了一下知识面，一些方面也更加深入，所以难度的定位相比去年略有提升，同",
+              "state": 2,
+              "reg_state": 0,
+              "count": 76
+            },
+            {
+              "id": 470,
+              "cover": "/files/2024/5/10/efa4c9e15a.png",
+              "title": "LitCTF 2024（公开赛道）",
+              "level": 2,
+              "mode": 0,
+              "start_date": 1717203600000,
+              "ends_date": 1717246800000,
+              "desc": "LitCTF 2024 是郑州轻工业大学第二届网络安全赛，相比于第一次，我们稍微扩展了一下知识面，一些方面也更加深入，所以难度的定位相比去年略有提升，同",
+              "state": 2,
+              "reg_state": 0,
+              "count": 1456
+            },
+            {
+              "id": 450,
+              "cover": "/files/2024/4/22/de73adb60f.png",
+              "title": "NSSCTF Round#23 Basic",
+              "level": 0,
+              "mode": 1,
+              "start_date": 1714282200000,
+              "ends_date": 1714296600000,
+              "desc": "NSSCTF Round#23 Misc个人专项赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 478
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/13/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 449,
+              "cover": "/files/2024/4/12/8b56d7357b.png",
+              "title": "第三届广东大学生网络安全攻防竞赛（广州理工学院校内决赛）",
+              "level": 3,
+              "mode": 0,
+              "start_date": 1713922200000,
+              "ends_date": 1713931200000,
+              "desc": "本次竞赛主要采用CTF夺旗赛形式，题型主要涵括Web安全、Reverse逆向分析、Crypto密码破译、Misc综合杂项等类别，每个题型都有不同的挑战和",
+              "state": 2,
+              "reg_state": 0,
+              "count": 118
+            },
+            {
+              "id": 370,
+              "cover": "/files/2024/4/12/8b56d7357b.png",
+              "title": "第三届广东大学生网络安全攻防竞赛（广州理工学院校内选拔赛）",
+              "level": 3,
+              "mode": 0,
+              "start_date": 1713416400000,
+              "ends_date": 1713425400000,
+              "desc": "本次竞赛主要采用CTF夺旗赛形式，题型主要涵括Web安全、Reverse逆向分析、Crypto密码破译、Misc综合杂项等类别，每个题型都有不同的挑战和",
+              "state": 2,
+              "reg_state": 0,
+              "count": 906
+            },
+            {
+              "id": 354,
+              "cover": "/files/2024/4/9/e9453a9911.png",
+              "title": "NSSCTF Round#22 Basic",
+              "level": 0,
+              "mode": 1,
+              "start_date": 1712986200000,
+              "ends_date": 1713000600000,
+              "desc": "NSSCTF Round#22 Reverse个人专项赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 318
+            },
+            {
+              "id": 349,
+              "cover": "/files/2024/4/2/678e963c55.png",
+              "title": "NSSCTF Round#21 Basic",
+              "level": 0,
+              "mode": 1,
+              "start_date": 1712381400000,
+              "ends_date": 1712395800000,
+              "desc": "NSSCTF Round#21 Basic",
+              "state": 2,
+              "reg_state": 0,
+              "count": 257
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/14/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 342,
+              "cover": "/files/2024/3/20/3ff71f2071.png",
+              "title": "2024年SWPU NSS 春季招新赛",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1711774800000,
+              "ends_date": 1711796400000,
+              "desc": "Welcome to NSS!",
+              "state": 2,
+              "reg_state": 0,
+              "count": 46
+            },
+            {
+              "id": 327,
+              "cover": "/files/2024/3/26/cb84ba086f.png",
+              "title": "NSSCTF Round#20 Basic",
+              "level": 0,
+              "mode": 1,
+              "start_date": 1711776600000,
+              "ends_date": 1711791000000,
+              "desc": "NSSCTF Round#20 Basic个人WEB专场。",
+              "state": 2,
+              "reg_state": 0,
+              "count": 652
+            },
+            {
+              "id": 324,
+              "cover": "/files/2024/3/8/a38bd08368.png",
+              "title": "NSSCTF Round#19 Basic",
+              "level": 0,
+              "mode": 1,
+              "start_date": 1710567000000,
+              "ends_date": 1710579600000,
+              "desc": "NSSCTF Round#19 Basic",
+              "state": 2,
+              "reg_state": 0,
+              "count": 505
+            },
+            {
+              "id": 322,
+              "cover": "/files/2024/2/29/8e7eff8f46.png",
+              "title": "GHCTF 2024 新生赛",
+              "level": 3,
+              "mode": 0,
+              "start_date": 1709344800000,
+              "ends_date": 1709949600000,
+              "desc": "上号",
+              "state": 2,
+              "reg_state": 0,
+              "count": 110
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/15/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 317,
+              "cover": "/files/2024/2/5/9ccc3ee8a0.png",
+              "title": "NSSCTF Round#18 Basic",
+              "level": 2,
+              "mode": 0,
+              "start_date": 1707874200000,
+              "ends_date": 1707903000000,
+              "desc": "NSSCTF Round#18 Basic",
+              "state": 2,
+              "reg_state": 0,
+              "count": 566
+            },
+            {
+              "id": 316,
+              "cover": "/files/2024/1/16/a0548c7a97.png",
+              "title": "NSSCTF Round#17 Basic",
+              "level": 2,
+              "mode": 0,
+              "start_date": 1706421600000,
+              "ends_date": 1706434200000,
+              "desc": "NSSCTF Round#17 Basic",
+              "state": 2,
+              "reg_state": 0,
+              "count": 707
+            },
+            {
+              "id": 300,
+              "cover": "/files/2024/1/6/2a61a7405a.png",
+              "title": "NSSCTF Round#16 Basic",
+              "level": 2,
+              "mode": 0,
+              "start_date": 1705125600000,
+              "ends_date": 1705138800000,
+              "desc": "NSSCTF Round#16 Basic\n前三名战队：2023纪念徽章+钥匙扣+贴纸\n前五名战队：钥匙扣+贴纸",
+              "state": 2,
+              "reg_state": 0,
+              "count": 743
+            },
+            {
+              "id": 263,
+              "cover": "/files/2023/11/28/f8041a4139.png",
+              "title": "PCTF 2023 联合新生赛",
+              "level": 1,
+              "mode": 20,
+              "start_date": 1701489600000,
+              "ends_date": 1702008000000,
+              "desc": "PCTF 2023 联合新生赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 441
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/16/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 262,
+              "cover": "/files/2023/11/28/9b768e53fb.png",
+              "title": "2023山东警察学院电子取证实战技能竞赛",
+              "level": 1,
+              "mode": 20,
+              "start_date": 1701478800000,
+              "ends_date": 1701489600000,
+              "desc": "2023山东警察学院电子取证实战技能竞赛 ",
+              "state": 2,
+              "reg_state": 0,
+              "count": 21
+            },
+            {
+              "id": 223,
+              "cover": "/files/2023/10/10/6592d5a1e2.png",
+              "title": "FSCTF 2023（公开赛道）",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1698022800000,
+              "ends_date": 1698066000000,
+              "desc": "FSCTF新生赛是由中国民航大学、天津理工大学、滁州学院、吉林师范大学、三明学院(排名不分先后)等5所高校共同举办的CTF新生赛，比赛涵盖Web、Pwn",
+              "state": 2,
+              "reg_state": 0,
+              "count": 1303
+            },
+            {
+              "id": 221,
+              "cover": "/files/2022/7/26/f1c87fcc39.jpg",
+              "title": "2023年SWPU NSS 秋季招新赛 (校外赛道)",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1697248800000,
+              "ends_date": 1697785200000,
+              "desc": "Welcome to NSS!",
+              "state": 2,
+              "reg_state": 0,
+              "count": 1048
+            },
+            {
+              "id": 220,
+              "cover": "/files/2022/7/26/f1c87fcc39.jpg",
+              "title": "2023年SWPU NSS 秋季招新赛 (校内赛道)",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1697212800000,
+              "ends_date": 1697853600000,
+              "desc": "Welcome to NSS!",
+              "state": 2,
+              "reg_state": 0,
+              "count": 129
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/17/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 219,
+              "cover": "/files/2023/10/10/6592d5a1e2.png",
+              "title": "FSCTF 2023",
+              "level": 1,
+              "mode": 20,
+              "start_date": 1697846400000,
+              "ends_date": 1697976000000,
+              "desc": "FSCTF新生赛是由`中国民航大学`、`天津理工大学`、`滁州学院`、`吉林师范大学`、`三明学院`(排名不分先后)等5所高校共同举办的CTF新生赛，比",
+              "state": 2,
+              "reg_state": 0,
+              "count": 557
+            },
+            {
+              "id": 172,
+              "cover": "/files/2023/8/8/2d5f7c69e5.png",
+              "title": "NSSCTF 2nd（test）",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1692892800000,
+              "ends_date": 1693062840000,
+              "desc": "NSSCTF 2nd（test）",
+              "state": 2,
+              "reg_state": 0,
+              "count": 7
+            },
+            {
+              "id": 169,
+              "cover": "/files/2023/8/8/2d5f7c69e5.png",
+              "title": "NSSCTF 2nd",
+              "level": 2,
+              "mode": 0,
+              "start_date": 1693101600000,
+              "ends_date": 1693188000000,
+              "desc": "NSSCTF两周年竞赛暨Round#15竞赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 929
+            },
+            {
+              "id": 162,
+              "cover": "/files/2023/7/21/fd155ffa57.png",
+              "title": "NSSCTF Round#14 Basic（test）",
+              "level": 1,
+              "mode": 1,
+              "start_date": 1690077600000,
+              "ends_date": 1690527600000,
+              "desc": "",
+              "state": 2,
+              "reg_state": 0,
+              "count": 3
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/18/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 160,
+              "cover": "/files/2023/7/21/fd155ffa57.png",
+              "title": "NSSCTF Round#14 Basic",
+              "level": 0,
+              "mode": 1,
+              "start_date": 1690682400000,
+              "ends_date": 1690700400000,
+              "desc": "Round#14 Illuminate with your bril.扫码加群获取平台通知...",
+              "state": 2,
+              "reg_state": 0,
+              "count": 437
+            },
+            {
+              "id": 103,
+              "cover": "/files/2023/5/26/5957b1e1b0.png",
+              "title": "Round#13 Baisc(test)",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1685721600000,
+              "ends_date": 1685808000000,
+              "desc": "Round#13 Baisc(test)",
+              "state": 2,
+              "reg_state": 0,
+              "count": 4
+            },
+            {
+              "id": 102,
+              "cover": "/files/2023/5/26/5957b1e1b0.png",
+              "title": "NSSCTF Round#13 Basic",
+              "level": 0,
+              "mode": 1,
+              "start_date": 1685844000000,
+              "ends_date": 1685862000000,
+              "desc": "Round#13 Persist with unwavering determination.扫码加群获取平台通知",
+              "state": 2,
+              "reg_state": 0,
+              "count": 782
+            },
+            {
+              "id": 101,
+              "cover": "/files/2023/5/13/ea6815f9b8.png",
+              "title": "NSSCTF Round#12 Basic",
+              "level": 0,
+              "mode": 1,
+              "start_date": 1684548000000,
+              "ends_date": 1684569600000,
+              "desc": "Round#12 Spin Destiny,Create your own reality.扫码加群获取平台通知",
+              "state": 2,
+              "reg_state": 0,
+              "count": 993
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/19/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 89,
+              "cover": "/files/2023/4/24/4f18e3d989.png",
+              "title": "LitCTF 2023 （校内赛道）",
+              "level": 3,
+              "mode": 0,
+              "start_date": 1683943200000,
+              "ends_date": 1684058400000,
+              "desc": "LitCTF2023是郑州轻工业大学首届网络安全赛，作为第一次举办的网络安全类型的校赛，它的难度极其容易，很适合对CTF感兴趣但是没有基础的同学。\n\n旨",
+              "state": 2,
+              "reg_state": 0,
+              "count": 134
+            },
+            {
+              "id": 88,
+              "cover": "/files/2023/4/24/4f18e3d989.png",
+              "title": "LitCTF 2023 （公开赛道）",
+              "level": 2,
+              "mode": 0,
+              "start_date": 1683943200000,
+              "ends_date": 1684058400000,
+              "desc": "LitCTF2023是郑州轻工业大学首届网络安全赛，作为第一次举办的网络安全类型的校赛，它的难度极其容易，很适合对CTF感兴趣但是没有基础的同学。\n\n旨",
+              "state": 2,
+              "reg_state": 0,
+              "count": 2065
+            },
+            {
+              "id": 87,
+              "cover": "/files/2023/4/18/3214386459.png",
+              "title": "HDCTF 2023（省外赛道）",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1682121600000,
+              "ends_date": 1682164800000,
+              "desc": "为积极响应国家网络空间安全人才需求，加快攻防兼备创新人才培养步伐，实现以赛促学、以赛促教、以赛促用，从而推动网络空间安全人才培养和产学研用的生态体系，由",
+              "state": 2,
+              "reg_state": 0,
+              "count": 1312
+            },
+            {
+              "id": 86,
+              "cover": "/files/2023/4/18/3214386459.png",
+              "title": "HDCTF 2023（省内赛道）",
+              "level": 1,
+              "mode": 20,
+              "start_date": 1682121600000,
+              "ends_date": 1682164800000,
+              "desc": "为积极响应国家网络空间安全人才需求，加快攻防兼备创新人才培养步伐，实现以赛促学、以赛促教、以赛促用，从而推动网络空间安全人才培养和产学研用的生态体系，由",
+              "state": 2,
+              "reg_state": 0,
+              "count": 56
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/20/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 83,
+              "cover": "/files/2023/4/5/2dd3efcc6a.png",
+              "title": "GDOUCTF（校内赛道）",
+              "level": 3,
+              "mode": 0,
+              "start_date": 1681524000000,
+              "ends_date": 1681639200000,
+              "desc": "GDOUCTF 为广东海洋大学Hor1zon战队面向本校的第一次新生赛性质的校赛，比赛旨在选拔出有能力且志同道合的师傅加入战队，同时对海大校内学生普及信",
+              "state": 2,
+              "reg_state": 0,
+              "count": 68
+            },
+            {
+              "id": 82,
+              "cover": "/files/2023/4/5/2dd3efcc6a.png",
+              "title": "GDOUCTF",
+              "level": 2,
+              "mode": 0,
+              "start_date": 1681610400000,
+              "ends_date": 1681639200000,
+              "desc": "GDOUCTF 为广东海洋大学Hor1zon战队面向本校的第一次新生赛性质的校赛，比赛旨在选拔出有能力且志同道合的师傅加入战队，同时对海大校内学生普及信",
+              "state": 2,
+              "reg_state": 0,
+              "count": 1447
+            },
+            {
+              "id": 80,
+              "cover": "/files/2023/4/4/d84b97dd23.png",
+              "title": "NSSCTF Round#11 Basic",
+              "level": 0,
+              "mode": 1,
+              "start_date": 1680919200000,
+              "ends_date": 1680939000000,
+              "desc": "NSSCTF Round#11 Basic 密码个人赛.Still water run deep。扫码加群获取平台信息。",
+              "state": 2,
+              "reg_state": 0,
+              "count": 449
+            },
+            {
+              "id": 79,
+              "cover": "/files/2022/7/26/a0787c0a3a.jpg",
+              "title": "2023年NSSCTF团队春季招新赛",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1679118300000,
+              "ends_date": 1679132700000,
+              "desc": "Welcome to NSS!",
+              "state": 2,
+              "reg_state": 0,
+              "count": 84
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/21/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 77,
+              "cover": "/files/2023/3/7/8b4963ed08.png",
+              "title": "NSSCTF Round#X Basic",
+              "level": 0,
+              "mode": 1,
+              "start_date": 1679709600000,
+              "ends_date": 1679727600000,
+              "desc": "Round#X Press on, with unwavering determination.扫码加群获取平台通知",
+              "state": 2,
+              "reg_state": 0,
+              "count": 425
+            },
+            {
+              "id": 75,
+              "cover": "/files/2022/7/26/a0787c0a3a.jpg",
+              "title": "NSSCTF Round#9 Basic",
+              "level": 0,
+              "mode": 1,
+              "start_date": 1677290400000,
+              "ends_date": 1677308400000,
+              "desc": "Round#9 Basic. Never forget why you started. 扫码加群获取平台通知",
+              "state": 2,
+              "reg_state": 0,
+              "count": 179
+            },
+            {
+              "id": 72,
+              "cover": "/files/2022/7/26/a0787c0a3a.jpg",
+              "title": "NSSCTF Round#8 Basic",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1676080800000,
+              "ends_date": 1676102400000,
+              "desc": "Round#8 Basic. Aim the high, the more and higher.扫码加群获取平台通知",
+              "state": 2,
+              "reg_state": 0,
+              "count": 282
+            },
+            {
+              "id": 70,
+              "cover": "/files/2023/1/22/38ccb38e77.png",
+              "title": "NSSCTF Round#7 Team",
+              "level": 2,
+              "mode": 0,
+              "start_date": 1674871200000,
+              "ends_date": 1674892808000,
+              "desc": "Round#7 Team. 辞寅迎卯，岁岁遂愿。扫码加群获取平台通知。",
+              "state": 2,
+              "reg_state": 0,
+              "count": 326
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/22/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 62,
+              "cover": "/files/2022/10/27/c774b7af90.png",
+              "title": "NUSTCTF(校外赛道)",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1668211200000,
+              "ends_date": 1668254400000,
+              "desc": "NUSTCTF是由南京理工大学C.A.T.战队独立出题的面向广大CTF新人爱好者举办的CTF比赛，时长为1天，0基础新生可以通过本次比赛了解入门CTF，",
+              "state": 2,
+              "reg_state": 0,
+              "count": 575
+            },
+            {
+              "id": 61,
+              "cover": "/files/2022/10/27/c774b7af90.png",
+              "title": "NUSTCTF(校内赛道)",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1668211200000,
+              "ends_date": 1668254400000,
+              "desc": "NUSTCTF是由南京理工大学C.A.T.战队独立出题的面向广大CTF新人爱好者举办的CTF比赛，时长为1天，0基础新生可以通过本次比赛了解入门CTF，",
+              "state": 2,
+              "reg_state": 0,
+              "count": 36
+            },
+            {
+              "id": 60,
+              "cover": "/files/2022/10/16/70ec26b671.png",
+              "title": "UUCTF(公共赛道)",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1666252800000,
+              "ends_date": 1667116800000,
+              "desc": "UUCTF(union university CTF)是由长春大学，成都大学等院校发起的联合性质新生招新赛，旨在联合更多拥有CTFer的院校共同举办联合",
+              "state": 2,
+              "reg_state": 0,
+              "count": 911
+            },
+            {
+              "id": 59,
+              "cover": "/files/2022/10/16/70ec26b671.png",
+              "title": "UUCTF(内部赛道）",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1666252800000,
+              "ends_date": 1667116800000,
+              "desc": "UUCTF(union university CTF)是由长春大学，成都大学等院校发起的联合性质新生招新赛，旨在联合更多拥有CTFer的院校共同举办联合",
+              "state": 2,
+              "reg_state": 0,
+              "count": 81
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/23/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 58,
+              "cover": "/files/2022/7/26/a0787c0a3a.jpg",
+              "title": "NSSCTF Round#6 Team",
+              "level": 2,
+              "mode": 0,
+              "start_date": 1665885600000,
+              "ends_date": 1665907200000,
+              "desc": "Round#6 Team. Say hello to goodbye.扫码加群获取平台通知。",
+              "state": 2,
+              "reg_state": 0,
+              "count": 349
+            },
+            {
+              "id": 56,
+              "cover": "/files/2022/9/27/df58fd9310.png",
+              "title": "HNCTF（自由赛道）",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1664622000000,
+              "ends_date": 1666954800000,
+              "desc": "HNCTF是由F61d、VOZ、Data3rr0r、CSAsec_lab等多校战队联合举办的面向新人的CTF比赛，时长为一个月，0基础新生可以通过本次比",
+              "state": 2,
+              "reg_state": 0,
+              "count": 1615
+            },
+            {
+              "id": 55,
+              "cover": "/files/2022/9/27/df58fd9310.png",
+              "title": "HNCTF（萌新赛道）",
+              "level": 1,
+              "mode": 20,
+              "start_date": 1664622000000,
+              "ends_date": 1666954800000,
+              "desc": "HNCTF是由F61d、VOZ、Data3rr0r、CSAsec_lab等多校战队联合举办的面向新人的CTF比赛，时长为一个月，0基础新生可以通过本次比",
+              "state": 2,
+              "reg_state": 0,
+              "count": 585
+            },
+            {
+              "id": 52,
+              "cover": "/files/2022/7/26/f1c87fcc39.jpg",
+              "title": "SWPU NSS新生赛（校外通道）",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1663995600000,
+              "ends_date": 1666414800000,
+              "desc": "SWPU NSS新生赛校外通道。",
+              "state": 2,
+              "reg_state": 0,
+              "count": 1109
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/24/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 51,
+              "cover": "/files/2022/7/26/f1c87fcc39.jpg",
+              "title": "SWPU NSS新生赛（校内通道）",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1663995600000,
+              "ends_date": 1666414800000,
+              "desc": "SWPU NSS新生赛校内通道。请使用校内专用账号参加比赛。",
+              "state": 2,
+              "reg_state": 0,
+              "count": 155
+            },
+            {
+              "id": 49,
+              "cover": "https://files.nssctf.cn/8ca5f59420734e9fb4bab9ab9af4be1a.png?response-content-disposition=attachment;filename=QQ20220903-232916%402x.png",
+              "title": "HUBUCTF 新生赛",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1663412400000,
+              "ends_date": 1663498800000,
+              "desc": "HUBUCTF 新生赛为湖北大学HUBUMars战队面向本校的一次纳新比赛，比赛旨在选拔出有能力且志同道合的师傅加入战队，同时也是对参与新生的成果检测。",
+              "state": 2,
+              "reg_state": 0,
+              "count": 360
+            },
+            {
+              "id": 46,
+              "cover": "/files/2022/8/11/fc54726121.jpg",
+              "title": "NSSCTF Round#V Team",
+              "level": 2,
+              "mode": 0,
+              "start_date": 1661652000000,
+              "ends_date": 1661680800000,
+              "desc": "Round#V Team. Zeal won't be vicissitude.扫码加群获取平台通知",
+              "state": 2,
+              "reg_state": 0,
+              "count": 304
+            },
+            {
+              "id": 45,
+              "cover": "/files/2022/7/26/44fa6dabcc.png",
+              "title": "NSSCTF Round#4 Team",
+              "level": 2,
+              "mode": 0,
+              "start_date": 1659492030000,
+              "ends_date": 1659520830000,
+              "desc": "Round#4 Team. Tricks through the cobble.扫码加群获取平台通知",
+              "state": 2,
+              "reg_state": 0,
+              "count": 333
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/25/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 43,
+              "cover": "/files/2022/7/26/e942e1360b.png",
+              "title": "OtterCTF 2018（复现赛）",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1657702800000,
+              "ends_date": 1658307600000,
+              "desc": "原比赛链接：https://otterctf.com/。本赛事为赛后复现赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 93
+            },
+            {
+              "id": 41,
+              "cover": "/files/2022/7/26/21a8858e94.png",
+              "title": "SDCTF 2022（复现赛）",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1655254800000,
+              "ends_date": 1655809200000,
+              "desc": "San Diego CTF is managed by the ACM chapter at UC San Diego's Cyber communit",
+              "state": 2,
+              "reg_state": 0,
+              "count": 71
+            },
+            {
+              "id": 36,
+              "cover": "/files/2022/7/26/3722654f76.jpg",
+              "title": "NSSCTF Round#3 Team",
+              "level": 2,
+              "mode": 1,
+              "start_date": 1652493600000,
+              "ends_date": 1652511600000,
+              "desc": "Round#3 Team! Show the world where u from.扫码加群获取平台通知",
+              "state": 2,
+              "reg_state": 0,
+              "count": 194
+            },
+            {
+              "id": 35,
+              "cover": "/files/2022/7/26/a0787c0a3a.jpg",
+              "title": "NSSCTF Round#2 Able+Basic",
+              "level": 0,
+              "mode": 1,
+              "start_date": 1650088847000,
+              "ends_date": 1650103208000,
+              "desc": "Round#2 Able+Basic! Dancing with the bit.扫码加群获取平台通知",
+              "state": 2,
+              "reg_state": 0,
+              "count": 92
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/26/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 33,
+              "cover": "/files/2022/7/26/81da6c499e.jpg",
+              "title": "NSSCTF Round#1 Basic",
+              "level": 0,
+              "mode": 1,
+              "start_date": 1648949406000,
+              "ends_date": 1648962000000,
+              "desc": "Round#1 Basic! To make the stars come out.扫码加群获取平台通知",
+              "state": 2,
+              "reg_state": 0,
+              "count": 180
+            },
+            {
+              "id": 32,
+              "cover": "/files/2022/7/26/95ac8040f1.jpg",
+              "title": "NISACTF2022校内通道",
+              "level": 1,
+              "mode": 0,
+              "start_date": 1648206018000,
+              "ends_date": 1648378825000,
+              "desc": "NISACTF新生赛为福建师范大学网络与信息安全协会NISA战队面向本校的一次纳新比赛，比赛旨在选拔出有能力且志同道合的师傅加入战队，同时也是对参与首次",
+              "state": 2,
+              "reg_state": 0,
+              "count": 265
+            },
+            {
+              "id": 31,
+              "cover": "/files/2022/7/26/87932e27bf.jpg",
+              "title": "NISACTF2022公开通道",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1648206008000,
+              "ends_date": 1648378836000,
+              "desc": "NISACTF新生赛为福建师范大学网络与信息安全协会NISA战队面向本校的一次纳新比赛，比赛旨在选拔出有能力且志同道合的师傅加入战队，同时也是对参与首次",
+              "state": 2,
+              "reg_state": 0,
+              "count": 347
+            },
+            {
+              "id": 26,
+              "cover": "/files/2022/7/26/9dc3762f1e.jpg",
+              "title": "2022年NSSCTF春季招新赛(线下赛)",
+              "level": 1,
+              "mode": 1,
+              "start_date": 1647666000000,
+              "ends_date": 1647680400000,
+              "desc": "NSSCTF是SWPU南充校区的CTF团队，团队成员涵盖大一至大四。团队曾获2020全国大学生信息安全竞赛西南赛区特等奖，2021全国大学生信息安全竞赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 55
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/27/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 25,
+              "cover": "/files/2022/7/26/35001f7d06.jpg",
+              "title": "2022年NSSCTF春季招新赛(线上赛)",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1647666000000,
+              "ends_date": 1647770400000,
+              "desc": "NSSCTF是SWPU南充校区的CTF团队，团队成员涵盖大一至大四。团队曾获2020全国大学生信息安全竞赛西南赛区特等奖，2021全国大学生信息安全竞赛",
+              "state": 2,
+              "reg_state": 0,
+              "count": 203
+            },
+            {
+              "id": 6,
+              "cover": "/files/2022/7/26/f1c87fcc39.jpg",
+              "title": "SWPU新生赛（场外同步赛）",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1632996000000,
+              "ends_date": 1633946400000,
+              "desc": "请新生分别选取对应比赛解题，其他人员请参加本比赛。",
+              "state": 2,
+              "reg_state": 0,
+              "count": 239
+            },
+            {
+              "id": 5,
+              "cover": "/files/2022/7/26/f17afad55d.jpg",
+              "title": "NSSCTF 新生赛",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1632996000000,
+              "ends_date": 1633946400000,
+              "desc": "NSSCTF 新生赛为西南石油大学 CTF 实验室面向本校南充校区的一次招新比赛。本次比赛单人一队，根据题目描述及标签提示，题目附件解出flag并提交，",
+              "state": 2,
+              "reg_state": 0,
+              "count": 82
+            },
+            {
+              "id": 4,
+              "cover": "/files/2022/7/26/8fbe8c55a1.webp",
+              "title": "WLLMCTF 新生赛",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1632996000000,
+              "ends_date": 1633946400000,
+              "desc": "网络联盟CTF新生赛为西南石油大学08067Sec安全实验室面向本校成都校区的一次招新比赛。本次比赛单人一队，根据题目描述，题目附件解出flag并提交，",
+              "state": 2,
+              "reg_state": 0,
+              "count": 41
+            }
+          ],
+          "total": 111
+        }
+      }
+    },
+    {
+      "url": "https://www.nssctf.cn/api/contest/list/28/",
+      "request_body": {},
+      "response": {
+        "code": 200,
+        "data": {
+          "contests": [
+            {
+              "id": 3,
+              "cover": "/files/2022/7/26/48f0892510.jpg",
+              "title": "测试3",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1632839414000,
+              "ends_date": 1632925465000,
+              "desc": "测试",
+              "state": 2,
+              "reg_state": 0,
+              "count": 13
+            },
+            {
+              "id": 2,
+              "cover": "/files/2022/7/26/ae3bdd0248.jpg",
+              "title": "测试2",
+              "level": 0,
+              "mode": 0,
+              "start_date": 1632791200000,
+              "ends_date": 1632998480000,
+              "desc": "测试",
+              "state": 2,
+              "reg_state": 0,
+              "count": 5
+            },
+            {
+              "id": 1,
+              "cover": "/files/2022/7/26/bb409d22fa.jpg",
+              "title": "测试1",
+              "level": 2,
+              "mode": 0,
+              "start_date": 1632142680000,
+              "ends_date": 1632522840000,
+              "desc": "比赛测试",
+              "state": 2,
+              "reg_state": 0,
+              "count": 5
+            }
+          ],
+          "total": 111
+        }
+      }
+    }
+  ]
+}

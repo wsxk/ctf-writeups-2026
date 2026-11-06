@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patcher_2 · KBxAc 2026 (reverse) writeup · ctf42</title>
+  
+
+<meta name="description" content="Patcher_2: Reverse challenge from KBxAc 2026. Techniques: binary-patching. I think i&#x27;m expert now. Instructions -Filename -No. of bytes allowed to change…">
+<link rel="canonical" href="https://ctf42.online/ctfs/kbxac/2026/patcher_2/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/kbxac/2026/patcher_2/">
+<meta property="og:title" content="Patcher_2">
+<meta property="og:description" content="Patcher_2: Reverse challenge from KBxAc 2026. Techniques: binary-patching. I think i&#x27;m expert now. Instructions -Filename -No. of bytes allowed to change…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/kbxac/">KBxAc</a> / <a href="/ctfs/kbxac/2026/">2026</a> / Patcher_2</nav>
+
+
+<div class="challenge-head">
+  <h1>Patcher_2
+    </h1>
+  <div class="badges">
+    <a class="cat cat-rev" href="/category/rev/">Reverse</a>
+    
+    
+    
+    <a class="tag" href="/techniques/binary-patching/">#binary-patching</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/kbxac/2026/patcher_2/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/kbxac/2026/patcher_2/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  <p class="meta">Author: ayushch</p>
+  
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>I think i'm expert now. Instructions -<code>Filename -No. of bytes allowed to change -Allowed range (inclusive) patchme1 -up to 2 byte(s) -0x4003d0 to 0x4005c3 patchme2 -up to 4 byte(s) -0x401000 to 0x4b6771 patchme3 -up to 3 byte(s) -0x4003d0 to 0x43e04a patchme4 -up to 3 byte(s) -0x4003d0 to 0x43e04a</code> NOTE :-A team can only attempt this challenge 5 times Author: ayushch</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>Patcher_2 — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/rev/patcher-2" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/rev/patcher-2</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/kbxac/2026/patcher_2/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/kbxac/2026/patcher_1/">Patcher_1</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/binary-patching/">#binary-patching</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/kbxac/2026/">KBxAc 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/tjctf/2024/embedder/">embedder</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/esp32/">#esp32</a><a class="tag tag-sm" href="/techniques/morse/">#morse</a><a class="tag tag-sm" href="/techniques/binary-patching/">#binary-patching</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/tjctf/2024/">TJCTF 2024</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/sekaictf/2024/sekai_licensing/">Sekai_Licensing</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/pcap-analysis/">#pcap-analysis</a><a class="tag tag-sm" href="/techniques/binary-patching/">#binary-patching</a><a class="tag tag-sm" href="/techniques/license-check/">#license-check</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/sekaictf/2024/">SekaiCTF 2024</a></td>
+        <td class="num">36.96</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/tamuctf/2023/nope/">nope</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/binary-patching/">#binary-patching</a><a class="tag tag-sm" href="/techniques/bruteforce/">#bruteforce</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/tamuctf/2023/">TAMUctf 2023</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/tamuctf/2023/eyepatch/">eyepatch</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/binary-patching/">#binary-patching</a><a class="tag tag-sm" href="/techniques/ghidra/">#ghidra</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/tamuctf/2023/">TAMUctf 2023</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/patriotctf/2023/patchwork/">Patchwork</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/binary-patching/">#binary-patching</a><a class="tag tag-sm" href="/techniques/radare2/">#radare2</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/patriotctf/2023/">PatriotCTF 2023</a></td>
+        <td class="num">24.52</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/binary-patching/">#binary-patching</a>
+          · <a href="/category/rev/">all Reverse</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/Patcher_2" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/kbxac/2026/patcher_2/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from KBxAc 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/kbxac/2026/crossword_1/">Crossword_1</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/crossword_2/">Crossword_2</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/dead_validator/">Dead_Validator</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/ghost_in_the_group/">Ghost_in_the_Group</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/icarus_enclave/">Icarus_Enclave</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/ten_symbols/">Ten_Symbols</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/the_last_protocol/">The_Last_Protocol</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/weiner/">Weiner</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/kbxac/2026/c_laude/">C_Laude</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/kbxac/2026/ghost_frame/">Ghost_Frame</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/kbxac/2026/hidden_patronus/">Hidden_Patronus</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/kbxac/2026/who_let_the_dog_out/">Who_Let_the_Dog_Out</a> <span class="cat cat-forensics cat-xs">Forensics</span></li>
+      </ul>
+      <a class="small" href="/ctfs/kbxac/2026/">All KBxAc 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

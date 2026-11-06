@@ -1,0 +1,580 @@
+{
+  "event_id": "CTF-3108",
+  "event_title": "BSidesSF CTF 2026",
+  "category": "android",
+  "title": "vinyl-drop",
+  "source_urls": [
+    "https://ctftime.org/event/3108/",
+    "https://github.com/BSidesSF/ctf-2026-release/tree/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/solution/Test%20QRs/correct_qr.png",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/solution/Test%20QRs/wrong_amount_qr.png",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/solution/Test%20QRs/wrong_date_qr.png",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/solution/Test%20QRs/past_date_qr.png",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/solution/Test%20QRs/future_date_qr.png",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/solution/README.md",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/solution/Test%20QRs/wrong_user_qr.png",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/solution/frida-validate.js"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/compiler.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/deviceManager.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/deploymentTargetSelector.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/.gitignore",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/.name",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.gitignore",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/AndroidProjectSystem.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/.gitignore",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/proguard-rules.pro",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/gradle.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/migrations.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/misc.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/build.gradle.kts",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/runConfigurations.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/androidTest/java/com/bsidessf/vinyldrop/BarcodeScannerInstrumentedTest.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/debug/java/com/bsidessf/vinyldrop/AppCheckProviderFactoryProvider.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/androidTest/java/com/bsidessf/vinyldrop/ExampleInstrumentedTest.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/CustomAppCheckProvider.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/AndroidManifest.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/BarcodeDecoder.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/CustomAppCheckProviderFactory.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/RegisterActivity.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/BarcodeScanActivity.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/drawable/ic_launcher_background.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/drawable/drop.png",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/RewardActivity.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/MainActivity.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/VinylDropApp.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/drawable/reward_img.png",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/drawable/ic_launcher_foreground.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/drawable/vinyl_drop_receipt.png",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/layout/activity_main.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/layout/activity_reward.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/layout/activity_barcode.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/WelcomeAcitivity.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/layout/activity_register.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/layout/activity_welcome.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-mdpi/ic_launcher.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-hdpi/ic_launcher.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-xhdpi/ic_launcher.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/xml/backup_rules.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/release/java/com/bsidessf/vinyldrop/AppCheckProviderFactoryProvider.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/xml/data_extraction_rules.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/values-night/themes.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/values/colors.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/gradle.properties",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/gradlew.bat",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/values/strings.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/values/themes.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/test/java/com/bsidessf/vinyldrop/ExampleUnitTest.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/Function/.firebaserc",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/build.gradle.kts",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/settings.gradle.kts",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/Function/.gitignore",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/Function/firebase.json",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/Function/functions/.gitignore",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/gradlew",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/Function/functions/package.json",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/README.md",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/metadata.yml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/Function/functions/index.js",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/Function/functions/package-lock.json",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/distfiles/vinyl-drop.apk"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": "BSidesSF 2026 官方 Android APK、源码及 solution 正文/脚本/图片。仓库内通用工具 frida-server 和 apktool JAR 未重复下载；题目APK与解题脚本已保存。",
+  "files": [
+    {
+      "path": "attachments/challenge/App/VinylDrop/.idea/compiler.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/compiler.xml",
+      "bytes": 169,
+      "sha256": "f66612f3f9425a66cb8026dcde534ab28d45f43e18e5a6734177fe1a122e4203"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/.idea/deviceManager.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/deviceManager.xml",
+      "bytes": 351,
+      "sha256": "63338b97a54438369aef4796a1a7cb447fa0b696cba89c4ff3fd548988be3446"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/.idea/deploymentTargetSelector.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/deploymentTargetSelector.xml",
+      "bytes": 301,
+      "sha256": "3501593d4e83c06ae7b0c7451985456ddbba7f60b47b7851bceb45ea4c962684"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/.idea/.gitignore",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/.gitignore",
+      "bytes": 47,
+      "sha256": "a9e54fc4f08bc97d82c04bd86ff37d3af84ba9ef4ad87fcfcb438dab622e8aaa"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/.idea/.name",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/.name",
+      "bytes": 9,
+      "sha256": "309ddb0f826f1e2a8523d3ddf5312e2610bb3231738a67525c73fda76cedbeeb"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/.gitignore",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.gitignore",
+      "bytes": 225,
+      "sha256": "703238443066325af08e3868d1e4b571a633baf68fcc93e323f0066999a97e1b"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/.idea/AndroidProjectSystem.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/AndroidProjectSystem.xml",
+      "bytes": 212,
+      "sha256": "bcdc8749688b237f88ee6c20e6cc2e655a600e4ec9e69478f396783b383d48bc"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/.gitignore",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/.gitignore",
+      "bytes": 6,
+      "sha256": "5c3174b74edc6f2b9e0743594b8bd3c7f31e4f4405758cc9872b3fe1de1d28b4"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/proguard-rules.pro",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/proguard-rules.pro",
+      "bytes": 750,
+      "sha256": "56fd960cf225f6ca40f982b13a5dbb0d8bc3dfde13ff76422825c6070d0a1890"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/.idea/gradle.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/gradle.xml",
+      "bytes": 690,
+      "sha256": "87e3fb1e063cb7d6e57a1d8508ef0bc15d2c826fc00360241b40231e20aec1d9"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/.idea/migrations.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/migrations.xml",
+      "bytes": 254,
+      "sha256": "b714eb426b7fda953cba49ad303ea7f2c575215359713eb4c79ae8534bc64306"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/.idea/misc.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/misc.xml",
+      "bytes": 409,
+      "sha256": "a4fc9064f8ecc392fa265b19aaa98e493b32cd382d2030286b3308b8f99e329a"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/build.gradle.kts",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/build.gradle.kts",
+      "bytes": 1753,
+      "sha256": "5345ca8c8c77bf8f4276f694a44da04a093368b4b14198b9787e25eff8d01a73"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/.idea/runConfigurations.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/.idea/runConfigurations.xml",
+      "bytes": 964,
+      "sha256": "f9a438180a87c9074496a4368ffc240cb8ec30fab87f01bce6d6dd00ea03f394"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/androidTest/java/com/bsidessf/vinyldrop/BarcodeScannerInstrumentedTest.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/androidTest/java/com/bsidessf/vinyldrop/BarcodeScannerInstrumentedTest.kt",
+      "bytes": 2775,
+      "sha256": "5eb1e547a9a06f813b7a8e3cdb08b44d9840c6c7b5f3ded5893e1457ac6ec491"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/debug/java/com/bsidessf/vinyldrop/AppCheckProviderFactoryProvider.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/debug/java/com/bsidessf/vinyldrop/AppCheckProviderFactoryProvider.kt",
+      "bytes": 211,
+      "sha256": "25cb9d2f95dddb60b9f6086675c0128c71e6318b983dd846e9c4aa59d61b501f"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/androidTest/java/com/bsidessf/vinyldrop/ExampleInstrumentedTest.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/androidTest/java/com/bsidessf/vinyldrop/ExampleInstrumentedTest.kt",
+      "bytes": 671,
+      "sha256": "158ac4e6d6b097aa2e4b56ad715fce87fb84434c5990d630df510f3526cdfee7"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/CustomAppCheckProvider.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/CustomAppCheckProvider.kt",
+      "bytes": 3525,
+      "sha256": "4e4d418459b533b1338eda91cba224dd6b5fde23d9cab43a0c97370e4014b465"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/AndroidManifest.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/AndroidManifest.xml",
+      "bytes": 1485,
+      "sha256": "04144550d1b34a645b3f95563e7b436bfe4918b8db4dd96351855803200ebbc0"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/BarcodeDecoder.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/BarcodeDecoder.kt",
+      "bytes": 2960,
+      "sha256": "c20a0c963af07348d6a8c1c1deb1c4949e6febf7439677b84bdc4d5cb3b16aa9"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/CustomAppCheckProviderFactory.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/CustomAppCheckProviderFactory.kt",
+      "bytes": 363,
+      "sha256": "1e1474e957b81193ccd3df28917db42cd40f78d0d9c03b925b43e2ecf1f89a04"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/RegisterActivity.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/RegisterActivity.kt",
+      "bytes": 2488,
+      "sha256": "0cd29ffca3860cae4edac29a87a9c2591bcd17885fd21a40f020ebf0c26e71b5"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/BarcodeScanActivity.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/BarcodeScanActivity.kt",
+      "bytes": 6215,
+      "sha256": "a312f4060124b9f18897f13bdd58d85907e9b8ac0393260bc726f93802134b6d"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/drawable/ic_launcher_background.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/drawable/ic_launcher_background.xml",
+      "bytes": 5606,
+      "sha256": "ed423c73a6f40a4d2909f0901e60527b3a807cd59e1b5593bcaae1808b1c6321"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/drawable/drop.png",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/drawable/drop.png",
+      "bytes": 29233,
+      "sha256": "7cf738bbf287c34cf153e3e561e1e2491b0ebc120fadacd65a834a5155b2856f"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/RewardActivity.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/RewardActivity.kt",
+      "bytes": 1141,
+      "sha256": "f0a194bba658914595746c6042d0b846d76e031f5a83828e95cafb946f6100ca"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/MainActivity.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/MainActivity.kt",
+      "bytes": 2594,
+      "sha256": "160bbb792c8fb2007460cd0c515d07a028508279426f1744e73a7e4928faa087"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/VinylDropApp.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/VinylDropApp.kt",
+      "bytes": 491,
+      "sha256": "2a46bf7033d8d31cd0f65b96ab7308b9cf02334fd3d03ca8d73a4a1e04b3b109"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/drawable/reward_img.png",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/drawable/reward_img.png",
+      "bytes": 10277,
+      "sha256": "e2c180b801e16ba683edeeab61252ad6adf49281d45d1ca474eb6059054ed6fb"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/drawable/ic_launcher_foreground.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/drawable/ic_launcher_foreground.xml",
+      "bytes": 868,
+      "sha256": "cec798409c0814123e70c83227446651de9e888904ba9dbd3e1b2312091e3fd9"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/drawable/vinyl_drop_receipt.png",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/drawable/vinyl_drop_receipt.png",
+      "bytes": 1557269,
+      "sha256": "c9108ae5380006e929e57bc36d55ad00ed276c251643e4410f98c8d54cce7c0f"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/layout/activity_main.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/layout/activity_main.xml",
+      "bytes": 4669,
+      "sha256": "7567d1e44d390e23f8b4651dd9ccdaffea6ec06edb17e3444b505eb600162a02"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/layout/activity_reward.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/layout/activity_reward.xml",
+      "bytes": 3417,
+      "sha256": "1e9a247b8d7fc6e4621a7dc83f59ebfbae790df4c6ccd02f967e2d5b6a152a28"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+      "bytes": 343,
+      "sha256": "88f7653499ef524126ea5018a99baf9cc3269e7e584d6205dfdd76db39f39cc0"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/layout/activity_barcode.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/layout/activity_barcode.xml",
+      "bytes": 250,
+      "sha256": "065dec21b67b1959e36f8de31d6dfabf2a2f6133427911a11b142b7f25893bc2"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/WelcomeAcitivity.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/java/com/bsidessf/vinyldrop/WelcomeAcitivity.kt",
+      "bytes": 3670,
+      "sha256": "177ef1aa178d7acb7a33987e03d4f8a67fcd5e03153dcaecf29481a299c7da1a"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/layout/activity_register.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/layout/activity_register.xml",
+      "bytes": 4954,
+      "sha256": "1e763a63eca1135283c7d81b695f08349f7fe19e7ac5c1f25a5075e12cf5a9d0"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/layout/activity_welcome.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/layout/activity_welcome.xml",
+      "bytes": 4420,
+      "sha256": "abbcd9245040c77910f2d1f1b3b9680e2e2bf9363c677cecd7bb8f1a2e296a92"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+      "bytes": 343,
+      "sha256": "88f7653499ef524126ea5018a99baf9cc3269e7e584d6205dfdd76db39f39cc0"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp",
+      "bytes": 2898,
+      "sha256": "1ed73f5341a69d3b41c7e02e126803f50cc8c3284adf4bbb737f0c93577aef07"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/mipmap-mdpi/ic_launcher.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-mdpi/ic_launcher.webp",
+      "bytes": 982,
+      "sha256": "846219e6f72fe9a6c104ca8919cbee36a101e7d2ff8da9da67b689a5888f060d"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp",
+      "bytes": 3918,
+      "sha256": "91b490aef86574901137f0a252272e1f1add99c1ad709e0696ed68929b88d261"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/mipmap-hdpi/ic_launcher.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-hdpi/ic_launcher.webp",
+      "bytes": 1404,
+      "sha256": "dd00996198640ed28fbc09cdcd7a3807cf8707f3eb255b659634da3ca6a6ff01"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp",
+      "bytes": 1772,
+      "sha256": "4e2c58b91de01130e6479e00cbbaaf6e77cd961dd2c8e303cf13cd077fa92632"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/mipmap-xhdpi/ic_launcher.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-xhdpi/ic_launcher.webp",
+      "bytes": 1900,
+      "sha256": "398340dad816fc9a6338cb151a8cf1e45b926f9bfb70628b24c4bd2523cc94d4"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp",
+      "bytes": 2884,
+      "sha256": "58ae87fa0c5b5d1562d27fd648d2c061553fe20e3ed570bde588162d01ea7a27"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp",
+      "bytes": 7778,
+      "sha256": "5faf033745c8c882c43bb1b372d4e4a5890caec63d9892a2e756c954108b85dc"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp",
+      "bytes": 3844,
+      "sha256": "f98fef5bc3bfe5b65692c40ad1cbae2bec4faf9f1b249c397626740db71b62d8"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp",
+      "bytes": 5914,
+      "sha256": "3009fad079f5772f30ecd767f98924367fbe0f81c30048d672d4fda2d5ca7d12"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/xml/backup_rules.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/xml/backup_rules.xml",
+      "bytes": 478,
+      "sha256": "6cf1a27e6807b1d24e41d3fbe7ddc1bfe1f42226027964f6eaf477d71b43b283"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/release/java/com/bsidessf/vinyldrop/AppCheckProviderFactoryProvider.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/release/java/com/bsidessf/vinyldrop/AppCheckProviderFactoryProvider.kt",
+      "bytes": 211,
+      "sha256": "25cb9d2f95dddb60b9f6086675c0128c71e6318b983dd846e9c4aa59d61b501f"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/xml/data_extraction_rules.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/xml/data_extraction_rules.xml",
+      "bytes": 551,
+      "sha256": "cb1fc47ab4a984530ed60e0e6ee638929c3038290e7e7e0b4b03a3a30fbe7381"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/values-night/themes.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/values-night/themes.xml",
+      "bytes": 811,
+      "sha256": "5de228fd9e03b9fdbded9dc398476e54b0cacfae746905502721fb87149e15f7"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/values/colors.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/values/colors.xml",
+      "bytes": 378,
+      "sha256": "b5626527d503417f0d8e5b1e08f338de7b31173bf0e122815f03e64932adbd88"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/gradle.properties",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/gradle.properties",
+      "bytes": 1346,
+      "sha256": "51e4b5a131eb01b1cdeb2f6f26aaba69d367a4a9d4ccd10c6d6f6d12fd545b66"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/gradlew.bat",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/gradlew.bat",
+      "bytes": 2937,
+      "sha256": "1d297e00bd21de3ace22b4d7f2de1f9dfa858883d66bbf7c1ccbecccec8f4f3b"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/values/strings.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/values/strings.xml",
+      "bytes": 880,
+      "sha256": "6b0ae8766626d5aec34dc39f1293ef4fc30990d16f1f08cbe9330664c991717e"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/main/res/values/themes.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/main/res/values/themes.xml",
+      "bytes": 811,
+      "sha256": "c9e87977740b6e7d447f6a0616270671d1f19dafb20f606e84c999a299136ee2"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/app/src/test/java/com/bsidessf/vinyldrop/ExampleUnitTest.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/app/src/test/java/com/bsidessf/vinyldrop/ExampleUnitTest.kt",
+      "bytes": 346,
+      "sha256": "2a77020ad86a05414e290eb2ea0ea74280864e0c1bf454ec09cb1e90d62813c5"
+    },
+    {
+      "path": "attachments/challenge/Function/.firebaserc",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/Function/.firebaserc",
+      "bytes": 55,
+      "sha256": "8480476edf89c6b3f23728c2d4dd115934d4593ce88d76d7fa9006bc91f9f8d2"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/build.gradle.kts",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/build.gradle.kts",
+      "bytes": 236,
+      "sha256": "c14c79ae061854db4c263286638ac4098eeda418a45fa8354e98d08443269879"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/settings.gradle.kts",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/settings.gradle.kts",
+      "bytes": 534,
+      "sha256": "b80b6e59fd6b7044d491d59cdf45e06e5dfa98b4e276ca9d0f60be8b5d52fb76"
+    },
+    {
+      "path": "attachments/challenge/Function/.gitignore",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/Function/.gitignore",
+      "bytes": 1210,
+      "sha256": "7c416e16d2c30d1276fb3adb7f36fe0b904b1d8b5a52df2dc2c5197526defba3"
+    },
+    {
+      "path": "attachments/challenge/Function/firebase.json",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/Function/firebase.json",
+      "bytes": 284,
+      "sha256": "36bdd20d36d4ae0f4e57a3ff1207234ce615fc8531781c84c8ff38c09280cee2"
+    },
+    {
+      "path": "attachments/challenge/Function/functions/.gitignore",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/Function/functions/.gitignore",
+      "bytes": 22,
+      "sha256": "941c82dba85de1141902d287dfa3fe19e156da9e9e3a3be78ece467876fb9769"
+    },
+    {
+      "path": "attachments/challenge/App/VinylDrop/gradlew",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/App/VinylDrop/gradlew",
+      "bytes": 8728,
+      "sha256": "3238afb2aed5cb16eb7d6718077e7138059108f007b54179e9cc157c5a6e0e89"
+    },
+    {
+      "path": "attachments/challenge/Function/functions/package.json",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/Function/functions/package.json",
+      "bytes": 213,
+      "sha256": "466521208fbb57116d0e4dcf292fd4914a1796609d876af785e74f84818a745f"
+    },
+    {
+      "path": "writeups/solution/Test QRs/correct_qr.png",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/solution/Test%20QRs/correct_qr.png",
+      "bytes": 1578,
+      "sha256": "ef91212b0401fa8f1c2b5346347b5aba371bb4ce5b015e8ec8081d955aa39214"
+    },
+    {
+      "path": "attachments/challenge/README.md",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/README.md",
+      "bytes": 1158,
+      "sha256": "f60d71160132d11a27b8293d85cf11ae35af30735cfed76f1931863f67532f67"
+    },
+    {
+      "path": "attachments/metadata.yml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/metadata.yml",
+      "bytes": 763,
+      "sha256": "28a3006dceb86f41ce97b92ee7b6dce4256913e4830edd48b798dc7d296597ec"
+    },
+    {
+      "path": "attachments/challenge/Function/functions/index.js",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/Function/functions/index.js",
+      "bytes": 3659,
+      "sha256": "5fc186d1c79e2617ab2b2ea6e7fe61db1793e104bdb33da965c31fb8e559a193"
+    },
+    {
+      "path": "attachments/challenge/Function/functions/package-lock.json",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/challenge/Function/functions/package-lock.json",
+      "bytes": 99620,
+      "sha256": "3fa1d41fa02722dd2989756b27f35615ef68a424e62164d6169e1c5a846a6b60"
+    },
+    {
+      "path": "writeups/solution/Test QRs/wrong_amount_qr.png",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/solution/Test%20QRs/wrong_amount_qr.png",
+      "bytes": 1543,
+      "sha256": "1678937770688386ccb8460785c7aa67a08df86bcaf853bf3fe124ab57814ae5"
+    },
+    {
+      "path": "writeups/solution/Test QRs/wrong_date_qr.png",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/solution/Test%20QRs/wrong_date_qr.png",
+      "bytes": 1609,
+      "sha256": "6064c9aecdb032d2bceb2e085337e87c41d3bc49f02a3e320e59bfee53ea38ae"
+    },
+    {
+      "path": "writeups/solution/Test QRs/past_date_qr.png",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/solution/Test%20QRs/past_date_qr.png",
+      "bytes": 1569,
+      "sha256": "675f8132d5ee3d8d2295cf35ef8ce003a218996d39c41b562b417deb0bad062f"
+    },
+    {
+      "path": "writeups/solution/Test QRs/future_date_qr.png",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/solution/Test%20QRs/future_date_qr.png",
+      "bytes": 1487,
+      "sha256": "2ae125ed03da042fb31abb257845cb403ccbd420d2e9b39e56886e8ca8c9bbc1"
+    },
+    {
+      "path": "writeups/solution/README.md",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/solution/README.md",
+      "bytes": 4274,
+      "sha256": "cbfabf7008531b50477a059e34a492b0e5b8ba619fbcabc9807dabc7008bb5ae"
+    },
+    {
+      "path": "writeups/solution/Test QRs/wrong_user_qr.png",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/solution/Test%20QRs/wrong_user_qr.png",
+      "bytes": 1287,
+      "sha256": "6341fe966dbf11c22c4dd56ea62a244cf09054516680b93131aa3b35e429b601"
+    },
+    {
+      "path": "writeups/solution/frida-validate.js",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/solution/frida-validate.js",
+      "bytes": 2969,
+      "sha256": "10f527137c5b9956b082a2b6329b99539e26ad5c1ccadea76f99f2776192c783"
+    },
+    {
+      "path": "attachments/distfiles/vinyl-drop.apk",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/vinyl-drop/distfiles/vinyl-drop.apk",
+      "bytes": 34166662,
+      "sha256": "43c8272e3fbe6775f2a81328bdeaf7144d64d7d5b2b6392b0ec31eacc091729e"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3379",
+  "event_title": "Haruulzangi CTF 2026 Qualifier",
+  "title": "Made_In_Mongolia",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "jit-bug",
+    "type-confusion",
+    "waf-bypass"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/haruulzangi/2026-quals/made_in_mongolia/",
+    "https://ctf42.online/ctfs/haruulzangi/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/pwn/Made_In_Mongolia"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/pwn/made-in-mongolia"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/pwn/Made_In_Mongolia",
+    "https://ctf42.online/ctfs/haruulzangi/2026-quals/made_in_mongolia/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/haruulzangi_2026-quals/Made_In_Mongolia/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/main/pwn/made-in-mongolia/README.md",
+      "bytes": 6624,
+      "sha256": "d458ec01535e2d704996e8f020eb23216eadbb52284d26894548e02cca13916f",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/haruulzangi_2026-quals/Made_In_Mongolia/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Haruulzangi/2026/Quals/pwn/Made_In_Mongolia/README.md",
+      "bytes": 223,
+      "sha256": "459bcfdce1c09a276b214ca77e614e6d8c91466d51b3509d2ebed71d4f071f12",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/haruulzangi_2026-quals/Made_In_Mongolia/attachments/upstream/pwn_made-in-mongolia.tar.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Haruulzangi/2026/Quals/pwn/Made_In_Mongolia/pwn_made-in-mongolia.tar.gz",
+      "bytes": 55112,
+      "sha256": "a432e1160b46c3c55632c84f5f0aa5c5dbef7241e547f9c5f0df9c122e17d892",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/made_in_mongolia/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/haruulzangi/2026-quals/made_in_mongolia/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3370",
+  "event_title": "z0d1ak CTF Qualifiers",
+  "title": "Black_Tide_Survey",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "file-format-reversing",
+    "sonar",
+    "image-reconstruction"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/black_tide_survey/",
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/rev/Black_Tide_Survey"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/rev/black-tide-survey"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/rev/Black_Tide_Survey",
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/black_tide_survey/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/z0d1ak_2026-quals/Black_Tide_Survey/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/z0d1ak-ctf-qualifiers-2026/main/rev/black-tide-survey/README.md",
+      "bytes": 5333,
+      "sha256": "80f7a737919693157db512523248e07137784f0c9ac4694fe54a50855e5eca1c",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/z0d1ak_2026-quals/Black_Tide_Survey/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Z0d1ak/2026/Quals/rev/Black_Tide_Survey/README.md",
+      "bytes": 183,
+      "sha256": "702a6dbb2545a8b692696a573a2f38d45943f426439d98fff4259f0ee09e3313",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/z0d1ak_2026-quals/Black_Tide_Survey/attachments/upstream/rev_black-tide-survey.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Z0d1ak/2026/Quals/rev/Black_Tide_Survey/rev_black-tide-survey.zip",
+      "bytes": 858010,
+      "sha256": "e528486d5f7357c53e9ba28cc27327e32006ac83a87602f48c2a76796e686501",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/black_tide_survey/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/z0d1ak/2026-quals/black_tide_survey/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

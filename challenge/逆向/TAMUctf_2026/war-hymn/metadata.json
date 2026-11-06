@@ -1,0 +1,199 @@
+{
+  "event_id": "CTF-3095",
+  "event_title": "TAMUctf 2026",
+  "category": "逆向",
+  "title": "war-hymn",
+  "dirname": "TAMUctf_2026",
+  "source_urls": [
+    "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/rev/war-hymn",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TAMUctf/2026/rev/War_Hymn"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/Dockerfile",
+      "local": "attachments/Dockerfile",
+      "size_expected": 365,
+      "git_blob_sha": "fd6226a7bac85260e15e68fd13391a8965c84c02",
+      "status": "downloaded",
+      "bytes": 365,
+      "sha256": "ede0380e508e6190609a9096b435b20642f70ba88fbe3906245604be513dd40f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/Makefile",
+      "local": "attachments/Makefile",
+      "size_expected": 1405,
+      "git_blob_sha": "96dd8a73239969f5f52d62c9a975ed500767ac46",
+      "status": "downloaded",
+      "bytes": 1405,
+      "sha256": "02c933545430398f4bc553b6b770362ea3c9ff15aa5d46cf7a14ddd42b30a167"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/README.md",
+      "local": "attachments/README.md",
+      "size_expected": 2199,
+      "git_blob_sha": "a87f3cbb8ee069f8825c77fb90313f8dab62607a",
+      "status": "downloaded",
+      "bytes": 2199,
+      "sha256": "bdc47289aaf1c631df8abb1ade98d1f723b712d716d273fa23754ebcc12b027c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/config.toml",
+      "local": "attachments/config.toml",
+      "size_expected": 439,
+      "git_blob_sha": "c2d22b04082130425de55499558016336a574c98",
+      "status": "downloaded",
+      "bytes": 439,
+      "sha256": "09f25fce67df8c9e591cd42fe878a7460b3d5e833e1e8e1910adfea20e8929f2"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/decrypt.c",
+      "local": "attachments/decrypt.c",
+      "size_expected": 314,
+      "git_blob_sha": "288358e1662d11a30ce721788524082a28441088",
+      "status": "downloaded",
+      "bytes": 314,
+      "sha256": "8d3af53b1f16efcbfa866f9bbd9e8aa473b91144013546ef109e55a464d673fe"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/make_encrypted_blobs.py",
+      "local": "attachments/make_encrypted_blobs.py",
+      "size_expected": 1237,
+      "git_blob_sha": "647c923502356b062695fa6ad534922dcf0fbd67",
+      "status": "downloaded",
+      "bytes": 1237,
+      "sha256": "d852bcb03e56d63f150e2e1b1c7042c55a9d43dfd9025e264b5539ef75370343"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/make_encrypted_rc4.py",
+      "local": "attachments/make_encrypted_rc4.py",
+      "size_expected": 1016,
+      "git_blob_sha": "f3788c3462bd2afca574c7e0d1aa597aa7a2890d",
+      "status": "downloaded",
+      "bytes": 1016,
+      "sha256": "05f1b1a3b64372c4dc4030dad0a7e77bb3748d9c41af639f5d762e8d669be5cd"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/make_encrypted_zlib.py",
+      "local": "attachments/make_encrypted_zlib.py",
+      "size_expected": 2433,
+      "git_blob_sha": "b2a1d2df02556cc608fdac902e7c620040e3eebe",
+      "status": "downloaded",
+      "bytes": 2433,
+      "sha256": "4b3ae5b413f858b2c723c0463838f45151a264cc129047317c21e01a0a40c7ef"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/perform_zlib_compression.py",
+      "local": "attachments/perform_zlib_compression.py",
+      "size_expected": 1061,
+      "git_blob_sha": "d9c84fc912ba5644cd5bb905b09e751c711be5a1",
+      "status": "downloaded",
+      "bytes": 1061,
+      "sha256": "a999603adcdf83566179fb5b84c2ee4e17cb92e5020af209acaed55fa4b2d6fd"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/shared.c",
+      "local": "attachments/shared.c",
+      "size_expected": 3416,
+      "git_blob_sha": "18603fa9b10c4552ab3d7aac6fc0e9436372833c",
+      "status": "downloaded",
+      "bytes": 3416,
+      "sha256": "1f7cef8c202f48d3f53b4775833ab8a1ca677253e68323c83694eff40c6adec3"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/solve/ai_solve.py",
+      "local": "writeups/solve/ai_solve.py",
+      "size_expected": 2161,
+      "git_blob_sha": "455fadc883b1e07645f1da71e4aa8719bec2061a",
+      "status": "downloaded",
+      "bytes": 2161,
+      "sha256": "dc095807bac2d69de00a5c1ecfe3691bccdffd9b611f853d98ffbb03f1da582a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/solve/decrypt_stuff.py",
+      "local": "writeups/solve/decrypt_stuff.py",
+      "size_expected": 3125,
+      "git_blob_sha": "fd85f6dbe837f396f1baa06e5d2774366a2bdd51",
+      "status": "downloaded",
+      "bytes": 3125,
+      "sha256": "19a6fb45fba3e81382bdba3d8d9561bdd2decd3f5f915669971a1b6b6c91727b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/solve/decrypted_zlib.bin",
+      "local": "writeups/solve/decrypted_zlib.bin",
+      "size_expected": 3130,
+      "git_blob_sha": "c8fd93b06923572e57a53c2d9bd735581cc51559",
+      "status": "downloaded",
+      "bytes": 3130,
+      "sha256": "08b6cc3e9728f173904e3cf756557ee55e4195f99129e4364003544aa24c67c0"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/solve/shared_library.so",
+      "local": "writeups/solve/shared_library.so",
+      "size_expected": 16440,
+      "git_blob_sha": "34e00ded8a1773a4f6ef65f1a86d8ab987db8cb4",
+      "status": "downloaded",
+      "bytes": 16440,
+      "sha256": "5d392ccd8682f3a5f48f578f4083225fa6d3855c8fd950b59f028bee9ff0be43"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/solve/solve.py",
+      "local": "writeups/solve/solve.py",
+      "size_expected": 3006,
+      "git_blob_sha": "fb6944931963584b512b70f66dd177771032e2ea",
+      "status": "downloaded",
+      "bytes": 3006,
+      "sha256": "1f4cb627d3f5b6ff3023c578b7d8dd7412c8a058af30e7f4f1b2808c61204cae"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/war-hymn.c",
+      "local": "attachments/war-hymn.c",
+      "size_expected": 15164,
+      "git_blob_sha": "32ee5c82682943a8e867607a7b8331697d7de610",
+      "status": "downloaded",
+      "bytes": 15164,
+      "sha256": "9957c79538763b3c94e3d1c4575f505b55abaab7c643d983265dab0a8dd016a9"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/War_Hymn/README.md",
+      "local": "attachments/archived_handout/README.md",
+      "status": "downloaded",
+      "bytes": 317,
+      "sha256": "1b984a7fe10d984eacc70794fec64d075a2082f5458a32a3cbe425ac5a3bd020"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/War_Hymn/war-hymn.tar.gz",
+      "local": "attachments/archived_handout/war-hymn.tar.gz",
+      "status": "downloaded",
+      "bytes": 9311,
+      "sha256": "e176f80a1be08495f74bfddb70d5510cd521531ff87ef74136ddd31998314fab"
+    }
+  ],
+  "notes": "官方仓库源码/构建材料及求解脚本，另从sajjadium/ctf-archives的2026目录配对下载原始题包（archived_handout）。未构建或执行。",
+  "attachment_kind": "original_package_and_official_source",
+  "directory": "逆向/TAMUctf_2026/war-hymn",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/solve/ai_solve.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/solve/decrypt_stuff.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/solve/decrypted_zlib.bin",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/solve/shared_library.so",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/solve/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/Dockerfile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/Makefile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/README.md",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/config.toml",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/decrypt.c",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/make_encrypted_blobs.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/make_encrypted_rc4.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/make_encrypted_zlib.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/perform_zlib_compression.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/shared.c",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/war-hymn.c",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/War_Hymn/README.md",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/War_Hymn/war-hymn.tar.gz"
+  ],
+  "attachment_status": "downloaded"
+}

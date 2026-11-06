@@ -1,0 +1,48 @@
+{
+  "event_id": "CTF-3033",
+  "event_title": "ASIS CTF Quals 2026",
+  "title": "Arena_Snapshots",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "handle-forgery",
+    "generation-confusion"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/asis/2026-quals/arena_snapshots/",
+    "https://ctf42.online/ctfs/asis/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/pwn/Arena_Snapshots"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/pwn/arena-snapshots"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/pwn/Arena_Snapshots",
+    "https://ctf42.online/ctfs/asis/2026-quals/arena_snapshots/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/asis_2026-quals/Arena_Snapshots/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/ASIS-CTF-Quals-2026/main/pwn/arena-snapshots/README.md",
+      "bytes": 5129,
+      "sha256": "f0a5ad60ce4e7101b0eae25e1f23da7d7b4cac7ac89522e603e8fe27f06ac09a",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/asis_2026-quals/Arena_Snapshots/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/asis/2026-quals/arena_snapshots/folder.zip?kind=files",
+      "bytes": 7463,
+      "sha256": "a75fe78a61514d7dd0ccf7fc19d3f4cb46ff4a2a4fe195594f29ca16ce476e4e",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

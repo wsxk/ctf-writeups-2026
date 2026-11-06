@@ -1,0 +1,31 @@
+{
+  "sha": "11b7de5b598d075df411f7e60cc0454b5ebedcaa",
+  "url": "https://api.github.com/repos/sajjadium/ctf-archives/git/trees/11b7de5b598d075df411f7e60cc0454b5ebedcaa",
+  "tree": [
+    {
+      "path": "Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11a8cc5ffe9188dd4e4bde3f576eed5cc31074de",
+      "size": 425,
+      "url": "https://api.github.com/repos/sajjadium/ctf-archives/git/blobs/11a8cc5ffe9188dd4e4bde3f576eed5cc31074de"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1568af956c320f6c6e7abaa41d1d0f3dba752d2",
+      "size": 38,
+      "url": "https://api.github.com/repos/sajjadium/ctf-archives/git/blobs/f1568af956c320f6c6e7abaa41d1d0f3dba752d2"
+    },
+    {
+      "path": "six-seven-revenge.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "765e48553b91651818b0e8a0a8c14c45eadd210a",
+      "size": 1068261,
+      "url": "https://api.github.com/repos/sajjadium/ctf-archives/git/blobs/765e48553b91651818b0e8a0a8c14c45eadd210a"
+    }
+  ],
+  "truncated": false
+}

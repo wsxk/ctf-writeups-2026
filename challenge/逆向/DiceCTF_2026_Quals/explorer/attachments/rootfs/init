@@ -1,0 +1,16 @@
+#!/bin/sh
+set -eu
+
+mount -t proc none /proc
+mount -t sysfs none /sys
+mount -t devtmpfs none /dev
+mount -t tmpfs -o mode=1777,nosuid,nodev tmpfs /tmp
+chmod 1777 /tmp
+
+if [ ! -e /dev/challenge ]; then
+  mknod /dev/challenge c 10 123
+fi
+chmod 666 /dev/challenge
+mkdir -p /home/ctf
+chown 1000:1000 /home/ctf
+exec setsid cttyhack su -s /bin/sh ctf

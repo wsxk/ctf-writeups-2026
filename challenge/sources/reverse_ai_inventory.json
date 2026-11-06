@@ -1,0 +1,3160 @@
+[
+  {
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "category": "逆向",
+    "title": "Atarude",
+    "directory": "逆向/asis_2026-quals/Atarude",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 12833986,
+    "source_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/atarude/",
+      "https://ctf42.online/ctfs/asis/2026-quals/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Atarude"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/atarude"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Atarude",
+      "https://ctf42.online/ctfs/asis/2026-quals/atarude/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "category": "逆向",
+    "title": "Beyond_the_fourth_wall",
+    "directory": "逆向/asis_2026-quals/Beyond_the_fourth_wall",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 367033,
+    "source_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/beyond_the_fourth_wall/",
+      "https://ctf42.online/ctfs/asis/2026-quals/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Beyond_the_fourth_wall"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/beyond-the-fourth-wall"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Beyond_the_fourth_wall",
+      "https://ctf42.online/ctfs/asis/2026-quals/beyond_the_fourth_wall/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "category": "逆向",
+    "title": "Collector",
+    "directory": "逆向/asis_2026-quals/Collector",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 272029,
+    "source_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/collector/",
+      "https://ctf42.online/ctfs/asis/2026-quals/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Collector"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/collector"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Collector",
+      "https://ctf42.online/ctfs/asis/2026-quals/collector/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "category": "逆向",
+    "title": "LeakMeAk",
+    "directory": "逆向/asis_2026-quals/LeakMeAk",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 7033,
+    "source_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/leakmeak/",
+      "https://ctf42.online/ctfs/asis/2026-quals/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/LeakMeAk"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/leak-me-ak"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/LeakMeAk",
+      "https://ctf42.online/ctfs/asis/2026-quals/leakmeak/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "category": "逆向",
+    "title": "Lesh",
+    "directory": "逆向/asis_2026-quals/Lesh",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 9011,
+    "source_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/lesh/",
+      "https://ctf42.online/ctfs/asis/2026-quals/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Lesh"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/lesh"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Lesh",
+      "https://ctf42.online/ctfs/asis/2026-quals/lesh/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "category": "逆向",
+    "title": "Mousa",
+    "directory": "逆向/asis_2026-quals/Mousa",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 17159956,
+    "source_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/mousa/",
+      "https://ctf42.online/ctfs/asis/2026-quals/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Mousa"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/mousa"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Mousa",
+      "https://ctf42.online/ctfs/asis/2026-quals/mousa/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "category": "逆向",
+    "title": "NEON",
+    "directory": "逆向/asis_2026-quals/NEON",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 14146028,
+    "source_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/neon/",
+      "https://ctf42.online/ctfs/asis/2026-quals/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/NEON"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/neon"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/NEON",
+      "https://ctf42.online/ctfs/asis/2026-quals/neon/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3153",
+    "event_title": "b01lers CTF 2026",
+    "category": "逆向",
+    "title": "shakespeares-revenge",
+    "directory": "逆向/b01lers_CTF_2026/shakespeares-revenge",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 7,
+    "bytes": 3823435,
+    "source_urls": [
+      "https://github.com/b01lers/b01lers-ctf-2026-public/tree/HEAD/src/rev/shakespeares-revenge"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/solve/README.md",
+      "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/solve/challenge.spl",
+      "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/solve/shakespeare",
+      "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/solve/solve.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/chal.json",
+      "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/dist/challenge.spl",
+      "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/dist/server.py",
+      "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/shakespeares-revenge/dist/shakespeare"
+    ],
+    "notes": "官方dist题目包及sol/solve解答目录。模板README未作为writeup。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3153",
+    "event_title": "b01lers CTF 2026",
+    "category": "逆向",
+    "title": "tiles--ai",
+    "directory": "逆向/b01lers_CTF_2026/tiles--ai",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 4,
+    "bytes": 75104,
+    "source_urls": [
+      "https://github.com/b01lers/b01lers-ctf-2026-public/tree/HEAD/src/rev/tiles--ai"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/tiles--ai/solve/dfs_solver.py",
+      "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/tiles--ai/solve/solves.txt"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/tiles--ai/chal.json",
+      "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/tiles--ai/dist/chall"
+    ],
+    "notes": "官方dist题目包及sol/solve解答目录。模板README未作为writeup。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3349",
+    "event_title": "BDSec CTF 2026",
+    "category": "逆向",
+    "title": "Easy_RE_Challenge",
+    "directory": "逆向/bdsec_2026/Easy_RE_Challenge",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 4,
+    "bytes": 223757,
+    "source_urls": [
+      "https://ctf42.online/ctfs/bdsec/2026/easy_re_challenge/",
+      "https://ctf42.online/ctfs/bdsec/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/rev/Easy_RE_Challenge"
+    ],
+    "writeup_urls": [
+      "https://cybersecurityelite.com/ctf-writeups/bdsec-ctf-2026-reverse-writeup/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/rev/Easy_RE_Challenge",
+      "https://ctf42.online/ctfs/bdsec/2026/easy_re_challenge/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3349",
+    "event_title": "BDSec CTF 2026",
+    "category": "逆向",
+    "title": "Night_Shift",
+    "directory": "逆向/bdsec_2026/Night_Shift",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 4,
+    "bytes": 223476,
+    "source_urls": [
+      "https://ctf42.online/ctfs/bdsec/2026/night_shift/",
+      "https://ctf42.online/ctfs/bdsec/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/rev/Night_Shift"
+    ],
+    "writeup_urls": [
+      "https://cybersecurityelite.com/ctf-writeups/bdsec-ctf-2026-reverse-writeup/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/rev/Night_Shift",
+      "https://ctf42.online/ctfs/bdsec/2026/night_shift/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3046",
+    "event_title": "BearcatCTF 2026 - Setting Sail",
+    "category": "逆向",
+    "title": "Captain_Morgan",
+    "directory": "逆向/bearcat_2026/Captain_Morgan",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 16013,
+    "source_urls": [
+      "https://ctf42.online/ctfs/bearcat/2026/captain_morgan/",
+      "https://ctf42.online/ctfs/bearcat/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bearcat/2026/rev/Captain_Morgan"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/bearcatctf2026/tree/main/rev/captain-morgan"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bearcat/2026/rev/Captain_Morgan",
+      "https://ctf42.online/ctfs/bearcat/2026/captain_morgan/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3046",
+    "event_title": "BearcatCTF 2026 - Setting Sail",
+    "category": "逆向",
+    "title": "Missing_One_Piece",
+    "directory": "逆向/bearcat_2026/Missing_One_Piece",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 18022,
+    "source_urls": [
+      "https://ctf42.online/ctfs/bearcat/2026/missing_one_piece/",
+      "https://ctf42.online/ctfs/bearcat/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bearcat/2026/rev/Missing_One_Piece"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/bearcatctf2026/tree/main/rev/missing-one-piece"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bearcat/2026/rev/Missing_One_Piece",
+      "https://ctf42.online/ctfs/bearcat/2026/missing_one_piece/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3046",
+    "event_title": "BearcatCTF 2026 - Setting Sail",
+    "category": "逆向",
+    "title": "Pollys_Key",
+    "directory": "逆向/bearcat_2026/Pollys_Key",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 7782,
+    "source_urls": [
+      "https://ctf42.online/ctfs/bearcat/2026/pollys_key/",
+      "https://ctf42.online/ctfs/bearcat/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bearcat/2026/rev/Pollys_Key"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/bearcatctf2026/tree/main/rev/pollys-key"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bearcat/2026/rev/Pollys_Key",
+      "https://ctf42.online/ctfs/bearcat/2026/pollys_key/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3302",
+    "event_title": "bhackari CTF 2026",
+    "category": "逆向",
+    "title": "Dont_unpack_me",
+    "directory": "逆向/bhackari_2026/Dont_unpack_me",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 237666,
+    "source_urls": [
+      "https://ctf42.online/ctfs/bhackari/2026/dont_unpack_me/",
+      "https://ctf42.online/ctfs/bhackari/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bhackari/2026/rev/Dont_unpack_me"
+    ],
+    "writeup_urls": [
+      "https://cybersecurityelite.com/ctf-writeups/bhackari-ctf-2026-writeup/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bhackari/2026/rev/Dont_unpack_me",
+      "https://ctf42.online/ctfs/bhackari/2026/dont_unpack_me/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3302",
+    "event_title": "bhackari CTF 2026",
+    "category": "逆向",
+    "title": "Mystery",
+    "directory": "逆向/bhackari_2026/Mystery",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 242395,
+    "source_urls": [
+      "https://ctf42.online/ctfs/bhackari/2026/mystery/",
+      "https://ctf42.online/ctfs/bhackari/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bhackari/2026/rev/Mystery"
+    ],
+    "writeup_urls": [
+      "https://cybersecurityelite.com/ctf-writeups/bhackari-ctf-2026-writeup/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bhackari/2026/rev/Mystery",
+      "https://ctf42.online/ctfs/bhackari/2026/mystery/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3309",
+    "event_title": "boroCTF 2026",
+    "category": "逆向",
+    "title": "AlphaCode",
+    "directory": "逆向/boroctf_2026/AlphaCode",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 4,
+    "bytes": 188282,
+    "source_urls": [
+      "https://ctf42.online/ctfs/boroctf/2026/alphacode/",
+      "https://ctf42.online/ctfs/boroctf/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BoroCTF/2026/rev/AlphaCode"
+    ],
+    "writeup_urls": [
+      "https://cybersecurityelite.com/ctf-writeups/boroctf-2026-writeup/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BoroCTF/2026/rev/AlphaCode",
+      "https://ctf42.online/ctfs/boroctf/2026/alphacode/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3247",
+    "event_title": "BYUCTF 2026",
+    "category": "逆向",
+    "title": "angr_management",
+    "directory": "逆向/BYUCTF_2026/angr_management",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 9,
+    "bytes": 102007,
+    "source_urls": [
+      "https://github.com/BYU-CSA/BYUCTF-2026/tree/HEAD/rev/angr_management"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/solve.py",
+      "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/writeup.md"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/Dockerfile",
+      "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/angr_management",
+      "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/challenge.zip",
+      "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/description.txt",
+      "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/docker-compose.yml",
+      "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/maze_ans.txt",
+      "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/notes.md"
+    ],
+    "notes": "官方比赛仓库，README包含Solve章节；保留官方解题脚本及附件。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3247",
+    "event_title": "BYUCTF 2026",
+    "category": "逆向",
+    "title": "picklerick",
+    "directory": "逆向/BYUCTF_2026/picklerick",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 425423,
+    "source_urls": [
+      "https://github.com/BYU-CSA/BYUCTF-2026/tree/HEAD/rev/picklerick"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/picklerick/readme.md",
+      "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/picklerick/solve.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/picklerick/pickled.txt"
+    ],
+    "notes": "官方比赛仓库，README包含Solve章节；保留官方解题脚本及附件。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3247",
+    "event_title": "BYUCTF 2026",
+    "category": "逆向",
+    "title": "rcaas",
+    "directory": "逆向/BYUCTF_2026/rcaas",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 7996277,
+    "source_urls": [
+      "https://github.com/BYU-CSA/BYUCTF-2026/tree/HEAD/rev/rcaas"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/rcaas/README.md",
+      "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/rcaas/solve.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/rcaas/rcaas"
+    ],
+    "notes": "官方比赛仓库，README包含Solve章节；保留官方解题脚本及附件。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3247",
+    "event_title": "BYUCTF 2026",
+    "category": "逆向",
+    "title": "yara",
+    "directory": "逆向/BYUCTF_2026/yara",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 1,
+    "bytes": 802,
+    "source_urls": [
+      "https://github.com/BYU-CSA/BYUCTF-2026/tree/HEAD/rev/yara"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/yara/README.md"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/yara/rule.yar"
+    ],
+    "notes": "官方比赛仓库，README包含Solve章节；保留官方解题脚本及附件。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3290",
+    "event_title": "COMPFEST CTF 2026",
+    "category": "逆向",
+    "title": "ITS_ME_BURHAN",
+    "directory": "逆向/compfest_2026/ITS_ME_BURHAN",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 109820,
+    "source_urls": [
+      "https://ctf42.online/ctfs/compfest/2026/its_me_burhan/",
+      "https://ctf42.online/ctfs/compfest/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/COMPFEST/2026/rev/ITS_ME_BURHAN"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/compfest-ctf-2026/tree/main/rev/its-me-burhan"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/COMPFEST/2026/rev/ITS_ME_BURHAN",
+      "https://ctf42.online/ctfs/compfest/2026/its_me_burhan/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3441",
+    "event_title": "Cryovault 2026 Quals",
+    "category": "逆向",
+    "title": "rime_scrub",
+    "directory": "逆向/cryovault_2026-quals/rime_scrub",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 4,
+    "bytes": 14549,
+    "source_urls": [
+      "https://ctf42.online/ctfs/cryovault/2026-quals/rime_scrub/",
+      "https://ctf42.online/ctfs/cryovault/2026-quals/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Cryovault/2026/Quals/rev/rime_scrub"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/Cryovault-2026-Quals/tree/main/rev/rime-scrub"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Cryovault/2026/Quals/rev/rime_scrub",
+      "https://ctf42.online/ctfs/cryovault/2026-quals/rime_scrub/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。",
+      "中断的scrubd文件已重试取得并保存哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3434",
+    "event_title": "CSS CTF 2026: Return of Nexus",
+    "category": "逆向",
+    "title": "FLAPPY_BOARD",
+    "directory": "逆向/css_2026/FLAPPY_BOARD",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 49391,
+    "source_urls": [
+      "https://ctf42.online/ctfs/css/2026/flappy_board/",
+      "https://ctf42.online/ctfs/css/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/CSS/2026/rev/FLAPPY_BOARD"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/css-ctf-2026-return-of-nexus/tree/main/rev/flappy-board"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/CSS/2026/rev/FLAPPY_BOARD",
+      "https://ctf42.online/ctfs/css/2026/flappy_board/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3110",
+    "event_title": "DiceCTF 2026 Quals",
+    "category": "逆向",
+    "title": "another-onion",
+    "directory": "逆向/DiceCTF_2026_Quals/another-onion",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 17,
+    "bytes": 201437,
+    "source_urls": [
+      "https://github.com/dicegang/dicectf-quals-2026-challenges/tree/HEAD/rev/another-onion"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/README.md",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/solution/asmhelp.py",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/solution/compile-solve.sh",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/solution/e2e_solver_submit.py",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/solution/solve.c",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/solution/solve.py",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/solution2/solve_onion.py",
+      "https://raw.githubusercontent.com/hax1ng/dicectf2026-writeups/HEAD/rev/another-onion/README.md"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/.dockerignore",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/Dockerfile",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/Dockerfile.solver",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/a_key",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/an_onion",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/compile.sh",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/docker-compose-test.yaml",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/encrypt.py",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/generate.py",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/instance_server.py",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/another-onion/kona.yaml"
+    ],
+    "notes": "官方题目附件；参赛者 hax1ng 的解题文章；another-onion 另有官方多组解法。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3110",
+    "event_title": "DiceCTF 2026 Quals",
+    "category": "逆向",
+    "title": "bedtime",
+    "directory": "逆向/DiceCTF_2026_Quals/bedtime",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 586663,
+    "source_urls": [
+      "https://github.com/dicegang/dicectf-quals-2026-challenges/tree/HEAD/rev/bedtime"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/hax1ng/dicectf2026-writeups/HEAD/rev/bedtime/README.md"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/bedtime/bedtime",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/bedtime/kona.yaml"
+    ],
+    "notes": "官方题目附件；参赛者 hax1ng 的解题文章；another-onion 另有官方多组解法。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3110",
+    "event_title": "DiceCTF 2026 Quals",
+    "category": "逆向",
+    "title": "explorer",
+    "directory": "逆向/DiceCTF_2026_Quals/explorer",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 11,
+    "bytes": 2134846,
+    "source_urls": [
+      "https://github.com/dicegang/dicectf-quals-2026-challenges/tree/HEAD/rev/explorer"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/hax1ng/dicectf2026-writeups/HEAD/rev/explorer/README.md"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/.gitignore",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/Dockerfile",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/Makefile",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/README.md",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/challenge.rs",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/dist/bzImage",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/dist/initramfs.cpio.gz",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/kona.yaml",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/rootfs/init",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/rootfs/user.c",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/scripts/maze_viz.py",
+      "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/scripts/upload_solver.py"
+    ],
+    "notes": "官方题目附件；参赛者 hax1ng 的解题文章；another-onion 另有官方多组解法。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3379",
+    "event_title": "Haruulzangi CTF 2026 Qualifier",
+    "category": "逆向",
+    "title": "Ehlel",
+    "directory": "逆向/haruulzangi_2026-quals/Ehlel",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 97381,
+    "source_urls": [
+      "https://ctf42.online/ctfs/haruulzangi/2026-quals/ehlel/",
+      "https://ctf42.online/ctfs/haruulzangi/2026-quals/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/rev/Ehlel"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/rev/ehlel"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/rev/Ehlel",
+      "https://ctf42.online/ctfs/haruulzangi/2026-quals/ehlel/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3379",
+    "event_title": "Haruulzangi CTF 2026 Qualifier",
+    "category": "逆向",
+    "title": "Furnace",
+    "directory": "逆向/haruulzangi_2026-quals/Furnace",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 35497,
+    "source_urls": [
+      "https://ctf42.online/ctfs/haruulzangi/2026-quals/furnace/",
+      "https://ctf42.online/ctfs/haruulzangi/2026-quals/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/rev/Furnace"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/rev/furnace"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/rev/Furnace",
+      "https://ctf42.online/ctfs/haruulzangi/2026-quals/furnace/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3379",
+    "event_title": "Haruulzangi CTF 2026 Qualifier",
+    "category": "逆向",
+    "title": "Trace",
+    "directory": "逆向/haruulzangi_2026-quals/Trace",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 315789,
+    "source_urls": [
+      "https://ctf42.online/ctfs/haruulzangi/2026-quals/trace/",
+      "https://ctf42.online/ctfs/haruulzangi/2026-quals/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/rev/Trace"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/rev/trace"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/rev/Trace",
+      "https://ctf42.online/ctfs/haruulzangi/2026-quals/trace/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3456",
+    "event_title": "kBxAc CTF 2026",
+    "category": "逆向",
+    "title": "Patcher_1",
+    "directory": "逆向/kbxac_2026/Patcher_1",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 13734,
+    "source_urls": [
+      "https://ctf42.online/ctfs/kbxac/2026/patcher_1/",
+      "https://ctf42.online/ctfs/kbxac/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/Patcher_1"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/rev/patcher-1"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/Patcher_1",
+      "https://ctf42.online/ctfs/kbxac/2026/patcher_1/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3456",
+    "event_title": "kBxAc CTF 2026",
+    "category": "逆向",
+    "title": "Patcher_2",
+    "directory": "逆向/kbxac_2026/Patcher_2",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 1007218,
+    "source_urls": [
+      "https://ctf42.online/ctfs/kbxac/2026/patcher_2/",
+      "https://ctf42.online/ctfs/kbxac/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/Patcher_2"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/rev/patcher-2"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/Patcher_2",
+      "https://ctf42.online/ctfs/kbxac/2026/patcher_2/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3456",
+    "event_title": "kBxAc CTF 2026",
+    "category": "逆向",
+    "title": "Shherrr",
+    "directory": "逆向/kbxac_2026/Shherrr",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 19527429,
+    "source_urls": [
+      "https://ctf42.online/ctfs/kbxac/2026/shherrr/",
+      "https://ctf42.online/ctfs/kbxac/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/Shherrr"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/rev/shherrr"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/Shherrr",
+      "https://ctf42.online/ctfs/kbxac/2026/shherrr/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3456",
+    "event_title": "kBxAc CTF 2026",
+    "category": "逆向",
+    "title": "simphell",
+    "directory": "逆向/kbxac_2026/simphell",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 1018043,
+    "source_urls": [
+      "https://ctf42.online/ctfs/kbxac/2026/simphell/",
+      "https://ctf42.online/ctfs/kbxac/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/simphell"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/rev/simphell"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/simphell",
+      "https://ctf42.online/ctfs/kbxac/2026/simphell/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3446",
+    "event_title": "KubSTU CTF",
+    "category": "逆向",
+    "title": "Ouroboros",
+    "directory": "逆向/kubstu_2026/Ouroboros",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 138032,
+    "source_urls": [
+      "https://ctf42.online/ctfs/kubstu/2026/ouroboros/",
+      "https://ctf42.online/ctfs/kubstu/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KubSTU/2026/rev/Ouroboros",
+      "https://ctftime.org/event/3446/tasks/"
+    ],
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41127",
+      "https://raw.githubusercontent.com/hax1ng/KubSTU-CTF-2026/main/rev/ouroboros/README.md"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KubSTU/2026/rev/Ouroboros",
+      "https://ctf42.online/ctfs/kubstu/2026/ouroboros/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。",
+      "已核对CTFtime秋季赛题表；聚合站的春季赛3177关联错误，改为3446（2026-10-10至11）。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3446",
+    "event_title": "KubSTU CTF",
+    "category": "逆向",
+    "title": "RISC_V.",
+    "directory": "逆向/kubstu_2026/RISC_V",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 21906,
+    "source_urls": [
+      "https://ctf42.online/ctfs/kubstu/2026/risc_v/",
+      "https://ctf42.online/ctfs/kubstu/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KubSTU/2026/rev/RISC_V.",
+      "https://ctftime.org/event/3446/tasks/"
+    ],
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41128",
+      "https://raw.githubusercontent.com/hax1ng/KubSTU-CTF-2026/main/rev/risc-v/README.md"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KubSTU/2026/rev/RISC_V.",
+      "https://ctf42.online/ctfs/kubstu/2026/risc_v/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "已核对CTFtime秋季赛题表；聚合站的春季赛3177关联错误，改为3446（2026-10-10至11）。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3015",
+    "event_title": "LA CTF 2026",
+    "category": "逆向",
+    "title": "flag-finder",
+    "directory": "逆向/LA_CTF_2026/flag-finder",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 5,
+    "bytes": 52447,
+    "source_urls": [
+      "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/rev/flag-finder"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/flag_finder/README.md",
+      "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/flag_finder/solve.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/flag-finder/Dockerfile",
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/flag-finder/challenge.yaml",
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/flag-finder/src/index.html",
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/flag-finder/src/script.js"
+    ],
+    "notes": "官方题目附件，配官方 solver（若有）及参赛者 hax1ng 的文章/脚本。社区文章部分标题误写2025，但本题与官方2026目录的描述和flag一致，已逐题核对（ooo使用Unicode NFC比较）；保留原文。reflection另归虚拟化。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3015",
+    "event_title": "LA CTF 2026",
+    "category": "逆向",
+    "title": "lactf-1986",
+    "directory": "逆向/LA_CTF_2026/lactf-1986",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 1475469,
+    "source_urls": [
+      "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/rev/lactf-1986"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/lactf_1986/README.md"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/lactf-1986/CHALL.IMG",
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/lactf-1986/challenge.yaml",
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/lactf-1986/src.py"
+    ],
+    "notes": "官方题目附件，配官方 solver（若有）及参赛者 hax1ng 的文章/脚本。社区文章部分标题误写2025，但本题与官方2026目录的描述和flag一致，已逐题核对（ooo使用Unicode NFC比较）；保留原文。reflection另归虚拟化。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3015",
+    "event_title": "LA CTF 2026",
+    "category": "逆向",
+    "title": "ooo",
+    "directory": "逆向/LA_CTF_2026/ooo",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 1446,
+    "source_urls": [
+      "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/rev/ooo"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/ooo/solve.py",
+      "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/ooo/README.md"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/ooo/challenge.yaml",
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/ooo/ooo.py"
+    ],
+    "notes": "官方题目附件，配官方 solver（若有）及参赛者 hax1ng 的文章/脚本。社区文章部分标题误写2025，但本题与官方2026目录的描述和flag一致，已逐题核对（ooo使用Unicode NFC比较）；保留原文。reflection另归虚拟化。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3015",
+    "event_title": "LA CTF 2026",
+    "category": "逆向",
+    "title": "starless-c",
+    "directory": "逆向/LA_CTF_2026/starless-c",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 8,
+    "bytes": 122121,
+    "source_urls": [
+      "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/rev/starless-c"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/solve.txt",
+      "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/starless_c/README.md",
+      "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/starless_c/solve.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/Dockerfile",
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/challenge.yaml",
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/flag.txt",
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/gen.py",
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/sim.py",
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/starless_c"
+    ],
+    "notes": "官方题目附件，配官方 solver（若有）及参赛者 hax1ng 的文章/脚本。社区文章部分标题误写2025，但本题与官方2026目录的描述和flag一致，已逐题核对（ooo使用Unicode NFC比较）；保留原文。reflection另归虚拟化。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3015",
+    "event_title": "LA CTF 2026",
+    "category": "逆向",
+    "title": "the-fish",
+    "directory": "逆向/LA_CTF_2026/the-fish",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 16062,
+    "source_urls": [
+      "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/rev/the-fish"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-fish/solve.py",
+      "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/the_fish/README.md"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-fish/challenge.yaml",
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-fish/fish.py"
+    ],
+    "notes": "官方题目附件，配官方 solver（若有）及参赛者 hax1ng 的文章/脚本。社区文章部分标题误写2025，但本题与官方2026目录的描述和flag一致，已逐题核对（ooo使用Unicode NFC比较）；保留原文。reflection另归虚拟化。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3015",
+    "event_title": "LA CTF 2026",
+    "category": "逆向",
+    "title": "the-three-sat-problem",
+    "directory": "逆向/LA_CTF_2026/the-three-sat-problem",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 10,
+    "bytes": 157886,
+    "source_urls": [
+      "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/rev/the-three-sat-problem"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/solve.txt",
+      "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/three_sat_problem/README.md",
+      "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/three_sat_problem/solve.py",
+      "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/three_sat_problem/solve_sat.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/Makefile",
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/challenge.yaml",
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/consts.h",
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/gen.py",
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/logic.h",
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/three_sat_problem",
+      "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/the-three-sat-problem/three_sat_problem.c"
+    ],
+    "notes": "官方题目附件，配官方 solver（若有）及参赛者 hax1ng 的文章/脚本。社区文章部分标题误写2025，但本题与官方2026目录的描述和flag一致，已逐题核对（ooo使用Unicode NFC比较）；保留原文。reflection另归虚拟化。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3280",
+    "event_title": "LYKNCTF",
+    "category": "逆向",
+    "title": "Control_Freak_1",
+    "directory": "逆向/lyknctf_2026/Control_Freak_1",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 4,
+    "bytes": 271627,
+    "source_urls": [
+      "https://ctf42.online/ctfs/lyknctf/2026/control_freak_1/",
+      "https://ctf42.online/ctfs/lyknctf/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/rev/Control_Freak_1"
+    ],
+    "writeup_urls": [
+      "https://cybersecurityelite.com/ctf-writeups/lyknctf-2026-crack-writeup/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/rev/Control_Freak_1",
+      "https://ctf42.online/ctfs/lyknctf/2026/control_freak_1/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3280",
+    "event_title": "LYKNCTF",
+    "category": "逆向",
+    "title": "Control_Freak_2",
+    "directory": "逆向/lyknctf_2026/Control_Freak_2",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 4,
+    "bytes": 316627,
+    "source_urls": [
+      "https://ctf42.online/ctfs/lyknctf/2026/control_freak_2/",
+      "https://ctf42.online/ctfs/lyknctf/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/rev/Control_Freak_2"
+    ],
+    "writeup_urls": [
+      "https://cybersecurityelite.com/ctf-writeups/lyknctf-2026-crack-writeup/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/rev/Control_Freak_2",
+      "https://ctf42.online/ctfs/lyknctf/2026/control_freak_2/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3280",
+    "event_title": "LYKNCTF",
+    "category": "逆向",
+    "title": "Waguri2",
+    "directory": "逆向/lyknctf_2026/Waguri2",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 244783,
+    "source_urls": [
+      "https://ctf42.online/ctfs/lyknctf/2026/waguri2/",
+      "https://ctf42.online/ctfs/lyknctf/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/rev/Waguri2"
+    ],
+    "writeup_urls": [
+      "https://cybersecurityelite.com/ctf-writeups/lyknctf-2026-crack-writeup/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/rev/Waguri2",
+      "https://ctf42.online/ctfs/lyknctf/2026/waguri2/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3206",
+    "event_title": "NCTF 2026",
+    "category": "逆向",
+    "title": "No My Bank!",
+    "directory": "逆向/NCTF_2026/No My Bank!",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 33368826,
+    "source_urls": [
+      "https://github.com/X1cT34m/NCTF2026/tree/HEAD/Reverse/no-my-bank"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/X1cT34m/NCTF2026/main/NCTF%202026%20Official%20Writeup.pdf"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/X1cT34m/NCTF2026/HEAD/Reverse/no-my-bank/NoMyBank%21.zip",
+      "https://raw.githubusercontent.com/X1cT34m/NCTF2026/HEAD/Reverse/no-my-bank/%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0.txt"
+    ],
+    "notes": "官方仓库附件，配整场官方解答PDF；请在PDF目录中定位本题。PDF为原始文件，未重新排版。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3206",
+    "event_title": "NCTF 2026",
+    "category": "逆向",
+    "title": "Pay For 2048",
+    "directory": "逆向/NCTF_2026/Pay For 2048",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 141895423,
+    "source_urls": [
+      "https://github.com/X1cT34m/NCTF2026",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/NCTF/2026/rev/Pay_For_2048"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/X1cT34m/NCTF2026/main/NCTF%202026%20Official%20Writeup.pdf"
+    ],
+    "attachment_urls": [
+      "https://drive.usercontent.google.com/download?id=1tNrpgo4SzocbQCowDM3nIrVEMX4Lfypc&export=download&confirm=t"
+    ],
+    "notes": "解答为官方91页PDF：Pay For 2048从第70页开始，VM Encryptor从第75页开始。官方附件仓库没有这两题，分别由CTF Archives镜像和该镜像README链接的公开Google Drive下载补齐。仅下载，未运行。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3206",
+    "event_title": "NCTF 2026",
+    "category": "逆向",
+    "title": "鸡爪流高手",
+    "directory": "逆向/NCTF_2026/鸡爪流高手",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 5227290,
+    "source_urls": [
+      "https://github.com/X1cT34m/NCTF2026/tree/HEAD/Reverse/chicken-feet-master"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/X1cT34m/NCTF2026/main/NCTF%202026%20Official%20Writeup.pdf"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/X1cT34m/NCTF2026/HEAD/Reverse/chicken-feet-master/server"
+    ],
+    "notes": "官方仓库附件，配整场官方解答PDF；请在PDF目录中定位本题。PDF为原始文件，未重新排版。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CAL-004",
+    "event_title": "NepCTF 2026",
+    "category": "逆向",
+    "title": "compile_me_maybe",
+    "directory": "逆向/NepCTF 2026/19_compile_me_maybe",
+    "writeup_status": "downloaded",
+    "attachment_status": "missing",
+    "has_writeup": true,
+    "attachment_state": "缺失",
+    "file_count": 1,
+    "bytes": 3370,
+    "source_urls": [
+      "https://github.com/ProbiusOfficial/Hello-CTF/blob/main/docs/Event/json/CN_archive.json",
+      "https://github.com/fjh1997/nepctf2026-writeup"
+    ],
+    "writeup_urls": [
+      "https://github.com/fjh1997/nepctf2026-writeup/blob/main/writeup/WriteUp_%E5%AE%8C%E6%95%B4%E8%87%AA%E5%8C%85%E5%90%AB.md"
+    ],
+    "attachment_urls": [],
+    "notes": "解答摘自 fjh1997/nepctf2026-writeup 的完整自包含 writeup，保留该题原文及其中全部解题代码。原题大附件/固件/镜像未随该仓库发布；ctf-archives/NepCTF/2026 镜像路径核验为404。没有把解题代码当成题目附件，attachment_status 为 missing。本次未执行任何代码或联系文中历史服务。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CAL-004",
+    "event_title": "NepCTF 2026",
+    "category": "逆向",
+    "title": "【Game】共生（本地）",
+    "directory": "逆向/NepCTF 2026/70_【Game】共生（本地）",
+    "writeup_status": "downloaded",
+    "attachment_status": "missing",
+    "has_writeup": true,
+    "attachment_state": "缺失",
+    "file_count": 1,
+    "bytes": 4177,
+    "source_urls": [
+      "https://github.com/ProbiusOfficial/Hello-CTF/blob/main/docs/Event/json/CN_archive.json",
+      "https://github.com/fjh1997/nepctf2026-writeup"
+    ],
+    "writeup_urls": [
+      "https://github.com/fjh1997/nepctf2026-writeup/blob/main/writeup/WriteUp_%E5%AE%8C%E6%95%B4%E8%87%AA%E5%8C%85%E5%90%AB.md"
+    ],
+    "attachment_urls": [],
+    "notes": "解答摘自 fjh1997/nepctf2026-writeup 的完整自包含 writeup，保留该题原文及其中全部解题代码。原题大附件/固件/镜像未随该仓库发布；ctf-archives/NepCTF/2026 镜像路径核验为404。没有把解题代码当成题目附件，attachment_status 为 missing。本次未执行任何代码或联系文中历史服务。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CAL-004",
+    "event_title": "NepCTF 2026",
+    "category": "逆向",
+    "title": "【Game】共生（联机）",
+    "directory": "逆向/NepCTF 2026/72_【Game】共生（联机）",
+    "writeup_status": "downloaded",
+    "attachment_status": "missing",
+    "has_writeup": true,
+    "attachment_state": "缺失",
+    "file_count": 1,
+    "bytes": 7583,
+    "source_urls": [
+      "https://github.com/ProbiusOfficial/Hello-CTF/blob/main/docs/Event/json/CN_archive.json",
+      "https://github.com/fjh1997/nepctf2026-writeup"
+    ],
+    "writeup_urls": [
+      "https://github.com/fjh1997/nepctf2026-writeup/blob/main/writeup/WriteUp_%E5%AE%8C%E6%95%B4%E8%87%AA%E5%8C%85%E5%90%AB.md"
+    ],
+    "attachment_urls": [],
+    "notes": "解答摘自 fjh1997/nepctf2026-writeup 的完整自包含 writeup，保留该题原文及其中全部解题代码。原题大附件/固件/镜像未随该仓库发布；ctf-archives/NepCTF/2026 镜像路径核验为404。没有把解题代码当成题目附件，attachment_status 为 missing。本次未执行任何代码或联系文中历史服务。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-2767",
+    "event_title": "PascalCTF 2026",
+    "category": "逆向",
+    "title": "Albo delle Eccellenze",
+    "directory": "逆向/PascalCTF_2026/Albo delle Eccellenze",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 5,
+    "bytes": 522060,
+    "source_urls": [
+      "https://github.com/PascalCTF/PascalCTF-2026/tree/HEAD/rev04"
+    ],
+    "writeup_urls": [
+      "https://blog.maksimhayder.com/posts/pascalctf-2026/"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev04/attachments/albo.zip",
+      "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev04/description.md",
+      "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev04/endpoint.txt",
+      "https://raw.githubusercontent.com/PascalCTF/PascalCTF-2026/HEAD/rev04/title.txt"
+    ],
+    "notes": "官方writeup为TODO占位，未当作解答；配对Maksim Hayder公开文章中的Albo delle Eccellenze章节。HTML保存全文原始快照。官方分类Reverse，解法涉及溢出。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3159",
+    "event_title": "PwnSec CTF 2026",
+    "category": "逆向",
+    "title": "Operation_Split_Horizon",
+    "directory": "逆向/pwnsec_2026/Operation_Split_Horizon",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 251770,
+    "source_urls": [
+      "https://ctf42.online/ctfs/pwnsec/2026/operation_split_horizon/",
+      "https://ctf42.online/ctfs/pwnsec/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/Operation_Split_Horizon"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/rev/operation-split-horizon"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/Operation_Split_Horizon",
+      "https://ctf42.online/ctfs/pwnsec/2026/operation_split_horizon/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3159",
+    "event_title": "PwnSec CTF 2026",
+    "category": "逆向",
+    "title": "Two_Worlds_One_Heart",
+    "directory": "逆向/pwnsec_2026/Two_Worlds_One_Heart",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 71979,
+    "source_urls": [
+      "https://ctf42.online/ctfs/pwnsec/2026/two_worlds_one_heart/",
+      "https://ctf42.online/ctfs/pwnsec/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/Two_Worlds_One_Heart"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/rev/two-worlds-one-heart"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/Two_Worlds_One_Heart",
+      "https://ctf42.online/ctfs/pwnsec/2026/two_worlds_one_heart/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3096",
+    "event_title": "RITSEC CTF 2026",
+    "category": "逆向",
+    "title": "Buried_Treasure",
+    "directory": "逆向/ritsec_2026/Buried_Treasure",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 471502,
+    "source_urls": [
+      "https://ctf42.online/ctfs/ritsec/2026/buried_treasure/",
+      "https://ctf42.online/ctfs/ritsec/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/Buried_Treasure"
+    ],
+    "writeup_urls": [
+      "https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-3-buried-treasure/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/Buried_Treasure",
+      "https://ctf42.online/ctfs/ritsec/2026/buried_treasure/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3096",
+    "event_title": "RITSEC CTF 2026",
+    "category": "逆向",
+    "title": "not_quite_optimal",
+    "directory": "逆向/ritsec_2026/not_quite_optimal",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 75004,
+    "source_urls": [
+      "https://ctf42.online/ctfs/ritsec/2026/not_quite_optimal/",
+      "https://ctf42.online/ctfs/ritsec/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/not_quite_optimal"
+    ],
+    "writeup_urls": [
+      "https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-2-not-quite-optimal/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/not_quite_optimal",
+      "https://ctf42.online/ctfs/ritsec/2026/not_quite_optimal/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3096",
+    "event_title": "RITSEC CTF 2026",
+    "category": "逆向",
+    "title": "obfpyscated",
+    "directory": "逆向/ritsec_2026/obfpyscated",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 401454,
+    "source_urls": [
+      "https://ctf42.online/ctfs/ritsec/2026/obfpyscated/",
+      "https://ctf42.online/ctfs/ritsec/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/obfpyscated"
+    ],
+    "writeup_urls": [
+      "https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-4-obfpyscated/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/obfpyscated",
+      "https://ctf42.online/ctfs/ritsec/2026/obfpyscated/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3096",
+    "event_title": "RITSEC CTF 2026",
+    "category": "逆向",
+    "title": "T_reasure_Chest",
+    "directory": "逆向/ritsec_2026/T_reasure_Chest",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 54752,
+    "source_urls": [
+      "https://ctf42.online/ctfs/ritsec/2026/t_reasure_chest/",
+      "https://ctf42.online/ctfs/ritsec/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/T_reasure_Chest"
+    ],
+    "writeup_urls": [
+      "https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-1-t-reasure-chest/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/T_reasure_Chest",
+      "https://ctf42.online/ctfs/ritsec/2026/t_reasure_chest/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3052",
+    "event_title": "scriptCTF 2026",
+    "category": "逆向",
+    "title": "F_K",
+    "directory": "逆向/scriptctf_2026/F_K",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 149956,
+    "source_urls": [
+      "https://ctf42.online/ctfs/scriptctf/2026/f_k/",
+      "https://ctf42.online/ctfs/scriptctf/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ScriptCTF/2026/rev/F_K"
+    ],
+    "writeup_urls": [
+      "https://cybersecurityelite.com/ctf-writeups/scriptctf-2026-writeup/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ScriptCTF/2026/rev/F_K",
+      "https://ctf42.online/ctfs/scriptctf/2026/f_k/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3314",
+    "event_title": "SCTF 2026",
+    "category": "逆向",
+    "title": "Alice",
+    "directory": "逆向/SCTF_2026/Alice",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 479274,
+    "source_urls": [
+      "https://github.com/SycloverTeam/SCTF-2026/tree/HEAD/Reverse/Alice"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Alice/writeup/writeup.md"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Alice/Alice.zip",
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Alice/README.md"
+    ],
+    "notes": "官方2026仓库题目附件和完整writeup。按题目实际内容归类：GuardMaster为APK；BrainfOok及babel_furnace使用自定义VM。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3314",
+    "event_title": "SCTF 2026",
+    "category": "逆向",
+    "title": "ghost_projection",
+    "directory": "逆向/SCTF_2026/ghost_projection",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 13,
+    "bytes": 920181,
+    "source_urls": [
+      "https://github.com/SycloverTeam/SCTF-2026/tree/HEAD/Reverse/ghost_projection"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/exp/fix_outer_payload.py",
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/exp/recover_flag_patch_oracle.py",
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/writeup/ghost_projection.md"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/README.md",
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/generate_packed_player.sh",
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/assets/prime_mov.o",
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/player/Dockerfile",
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/player/README.md",
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/player/ghost_abyss_hardened",
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/scripts/build_hidden_oracle_traces.py",
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/scripts/pack_ghost_abyss_author.py",
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/build.sh",
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/ghost_abyss_hardened_step40_route_projection.c",
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/ghost_step30_generated.h",
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/ghost_step30_manifest.json"
+    ],
+    "notes": "官方2026仓库题目附件和完整writeup。按题目实际内容归类：GuardMaster为APK；BrainfOok及babel_furnace使用自定义VM。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3314",
+    "event_title": "SCTF 2026",
+    "category": "逆向",
+    "title": "Zombie_progression",
+    "directory": "逆向/SCTF_2026/Zombie_progression",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 384445,
+    "source_urls": [
+      "https://github.com/SycloverTeam/SCTF-2026/tree/HEAD/Reverse/Zombie_progression"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Zombie_progression/WP.md",
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Zombie_progression/exp/solve.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Zombie_progression/Zombie_progression"
+    ],
+    "notes": "官方2026仓库题目附件和完整writeup。按题目实际内容归类：GuardMaster为APK；BrainfOok及babel_furnace使用自定义VM。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3113",
+    "event_title": "SekaiCTF 2026",
+    "category": "逆向",
+    "title": "Chibile",
+    "directory": "逆向/sekaictf_2026/Chibile",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 29117109,
+    "source_urls": [
+      "https://ctf42.online/ctfs/sekaictf/2026/chibile/",
+      "https://ctf42.online/ctfs/sekaictf/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/rev/Chibile"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/Sekai-CTF-2026/tree/main/rev/chibile"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/rev/Chibile",
+      "https://ctf42.online/ctfs/sekaictf/2026/chibile/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3113",
+    "event_title": "SekaiCTF 2026",
+    "category": "逆向",
+    "title": "Untitled_Encore",
+    "directory": "逆向/sekaictf_2026/Untitled_Encore",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 330227,
+    "source_urls": [
+      "https://ctf42.online/ctfs/sekaictf/2026/untitled_encore/",
+      "https://ctf42.online/ctfs/sekaictf/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/rev/Untitled_Encore"
+    ],
+    "writeup_urls": [
+      "https://cybersecurityelite.com/ctf-writeups/sekai-ctf-2026-writeup/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/rev/Untitled_Encore",
+      "https://ctf42.online/ctfs/sekaictf/2026/untitled_encore/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3234",
+    "event_title": "squ1rrel CTF 2026",
+    "category": "逆向",
+    "title": "redactr",
+    "directory": "逆向/squ1rrel_2026/redactr",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 628746,
+    "source_urls": [
+      "https://ctf42.online/ctfs/squ1rrel/2026/redactr/",
+      "https://ctf42.online/ctfs/squ1rrel/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/squ1rrel/2026/rev/redactr"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/squ1rrel-CTF-2026-Writeups/tree/main/rev/Redactr"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/squ1rrel/2026/rev/redactr",
+      "https://ctf42.online/ctfs/squ1rrel/2026/redactr/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3234",
+    "event_title": "squ1rrel CTF 2026",
+    "category": "逆向",
+    "title": "squ1rrel_o_tron",
+    "directory": "逆向/squ1rrel_2026/squ1rrel_o_tron",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 3957192,
+    "source_urls": [
+      "https://ctf42.online/ctfs/squ1rrel/2026/squ1rrel_o_tron/",
+      "https://ctf42.online/ctfs/squ1rrel/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/squ1rrel/2026/rev/squ1rrel_o_tron"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/squ1rrel-CTF-2026-Writeups/tree/main/rev/squ1rrel-o-tron"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/squ1rrel/2026/rev/squ1rrel_o_tron",
+      "https://ctf42.online/ctfs/squ1rrel/2026/squ1rrel_o_tron/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3043",
+    "event_title": "Srdnlen CTF 2026 Quals",
+    "category": "逆向",
+    "title": "Artistic warmup",
+    "directory": "逆向/Srdnlen_CTF_2026_Quals/Artistic warmup",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 5,
+    "bytes": 1088767,
+    "source_urls": [
+      "https://github.com/srdnlen/srdnlenctf-2026_public/tree/HEAD/rev_artistic_warmup"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_artistic_warmup/writeup.md"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_artistic_warmup/attachments/rev_artistic_warmup.exe",
+      "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_artistic_warmup/authors.txt",
+      "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_artistic_warmup/description.md",
+      "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_artistic_warmup/title.txt"
+    ],
+    "notes": "官方题目附件和完整官方 writeup。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3043",
+    "event_title": "Srdnlen CTF 2026 Quals",
+    "category": "逆向",
+    "title": "Rev Juice",
+    "directory": "逆向/Srdnlen_CTF_2026_Quals/Rev Juice",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 5,
+    "bytes": 16579,
+    "source_urls": [
+      "https://github.com/srdnlen/srdnlenctf-2026_public/tree/HEAD/rev_juice"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_juice/writeup.md"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_juice/attachments/rev_juice.zip",
+      "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_juice/authors.txt",
+      "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_juice/description.md",
+      "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_juice/title.txt"
+    ],
+    "notes": "官方题目附件和完整官方 writeup。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3161",
+    "event_title": "SUCTF 2026",
+    "category": "逆向",
+    "title": "SU_easygal",
+    "directory": "逆向/SUCTF_2026/SU_easygal",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 4,
+    "bytes": 24857770,
+    "source_urls": [
+      "https://github.com/team-su/SUCTF-2026/tree/HEAD/re/SU_easygal"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_easygal/exp/exp.py",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_easygal/writeup/writeup.md"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_easygal/attachments/app.zip",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_easygal/sourcecode/sourcecode.zip"
+    ],
+    "notes": "官方附件、完整writeup（含仓库自带图片）及非空exp。仓库中的0字节占位文件未作为实际内容收录。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3161",
+    "event_title": "SUCTF 2026",
+    "category": "逆向",
+    "title": "SU_Protocol",
+    "directory": "逆向/SUCTF_2026/SU_Protocol",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 13,
+    "bytes": 5243838,
+    "source_urls": [
+      "https://github.com/team-su/SUCTF-2026/tree/HEAD/re/SU_Protocol"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/SU_Protocol%2031bef3f8bbc880d98410dd9efed3e0d2.md",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%201.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%202.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%203.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%204.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%205.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%206.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%207.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%208.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image%209.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/writeup/image.png"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/attachments/taskdemo.zip",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_Protocol/sourcecode/sourcecode.zip"
+    ],
+    "notes": "官方附件、完整writeup（含仓库自带图片）及非空exp。仓库中的0字节占位文件未作为实际内容收录。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3161",
+    "event_title": "SUCTF 2026",
+    "category": "逆向",
+    "title": "SU_revird",
+    "directory": "逆向/SUCTF_2026/SU_revird",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 20,
+    "bytes": 743332,
+    "source_urls": [
+      "https://github.com/team-su/SUCTF-2026/tree/HEAD/re/SU_revird"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/exp/exp.py",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/writeup/img/image-20260316212555530.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/writeup/img/image-20260316212757049.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/writeup/img/image-20260316214653605.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/writeup/img/image-20260316215116888.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/writeup/img/image-20260317153418008.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/writeup/img/image-20260317154329307.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/writeup/img/image-20260317154621356.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/writeup/img/image-20260317154744291.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/writeup/img/image-20260317154847753.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/writeup/img/image-20260317161925482.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/writeup/img/image-20260317162112978.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/writeup/img/image-20260317162932814.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/writeup/img/image-20260317165555616.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/writeup/img/image-20260317170716258.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/writeup/img/image-20260317170907745.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/writeup/img/image-20260317171103030.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/writeup/img/image-20260317171146059.png",
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/writeup/writeup.md"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/re/SU_revird/attachments/SU_Revird.zip"
+    ],
+    "notes": "官方附件、完整writeup（含仓库自带图片）及非空exp。仓库中的0字节占位文件未作为实际内容收录。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3095",
+    "event_title": "TAMUctf 2026",
+    "category": "逆向",
+    "title": "acidity",
+    "directory": "逆向/TAMUctf_2026/acidity",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 11,
+    "bytes": 86065,
+    "source_urls": [
+      "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/rev/acidity",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TAMUctf/2026/rev/acidity"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/ai_solve/solve.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/ai_solve/transcript.md",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/author_solve/brute.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/author_solve/interact.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/Dockerfile",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/Makefile",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/README.md",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/config.toml",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/flag.txt",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/solver-template.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/acidity/src/game.cpp",
+      "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/acidity/README.md",
+      "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/acidity/acidity.tar.gz"
+    ],
+    "notes": "官方仓库源码/构建材料及求解脚本，另从sajjadium/ctf-archives的2026目录配对下载原始题包（archived_handout）。未构建或执行。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3095",
+    "event_title": "TAMUctf 2026",
+    "category": "逆向",
+    "title": "challenge7",
+    "directory": "逆向/TAMUctf_2026/challenge7",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 16,
+    "bytes": 378491,
+    "source_urls": [
+      "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/rev/challenge7",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TAMUctf/2026/rev/challenge7"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/solve/recover_inner_payload.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/solve/solve_inner.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/Dockerfile",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/Makefile",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/README.md",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/config.toml",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/flag.txt",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/scripts/gen_inner_chunks.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/scripts/gen_inner_expected.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/scripts/gen_self_hash.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/src/inner.c",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/src/inner_chunks.h",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/src/inner_expected.h",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/src/loader_abi.h",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/src/main.c",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/challenge7/src/self_hash.h",
+      "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/challenge7/README.md",
+      "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/challenge7/challenge7.tar.gz"
+    ],
+    "notes": "官方仓库源码/构建材料及求解脚本，另从sajjadium/ctf-archives的2026目录配对下载原始题包（archived_handout）。未构建或执行。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3095",
+    "event_title": "TAMUctf 2026",
+    "category": "逆向",
+    "title": "hyper-neighbor",
+    "directory": "逆向/TAMUctf_2026/hyper-neighbor",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 15,
+    "bytes": 239271,
+    "source_urls": [
+      "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/rev/hyper-neighbor",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TAMUctf/2026/rev/hyper_neighbor"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/solve.c",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/solve.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/Cargo.lock",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/Cargo.toml",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/Dockerfile",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/Dockerfile.adjacent",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/Makefile",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/README.md",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/bin/recv.rs",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/bin/send.rs",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/config.toml",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/flag.txt",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/init.sh",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/solver-template.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/hyper-neighbor/src/lib.rs",
+      "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/hyper_neighbor/README.md",
+      "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/hyper_neighbor/hyper-neighbor.tar.gz"
+    ],
+    "notes": "官方仓库源码/构建材料及求解脚本，另从sajjadium/ctf-archives的2026目录配对下载原始题包（archived_handout）。未构建或执行。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3095",
+    "event_title": "TAMUctf 2026",
+    "category": "逆向",
+    "title": "kitchen-sink",
+    "directory": "逆向/TAMUctf_2026/kitchen-sink",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 6,
+    "bytes": 22415,
+    "source_urls": [
+      "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/rev/kitchen-sink",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TAMUctf/2026/rev/kitchen_sink"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/kitchen-sink/solve.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/kitchen-sink/Makefile",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/kitchen-sink/README.md",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/kitchen-sink/config.toml",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/kitchen-sink/flag.txt",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/kitchen-sink/src/main.c",
+      "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/kitchen_sink/README.md",
+      "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/kitchen_sink/kitchen-sink.tar.gz"
+    ],
+    "notes": "官方仓库源码/构建材料及求解脚本，另从sajjadium/ctf-archives的2026目录配对下载原始题包（archived_handout）。未构建或执行。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3095",
+    "event_title": "TAMUctf 2026",
+    "category": "逆向",
+    "title": "nucleus",
+    "directory": "逆向/TAMUctf_2026/nucleus",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 7,
+    "bytes": 446256,
+    "source_urls": [
+      "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/rev/nucleus",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TAMUctf/2026/rev/Nucleus"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/solve.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/Makefile",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/README.md",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/config.toml",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/flag.txt",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/nucleus21.exe",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/source.cpp",
+      "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/Nucleus/README.md",
+      "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/Nucleus/nucleus.tar.gz"
+    ],
+    "notes": "官方仓库源码/构建材料及求解脚本，另从sajjadium/ctf-archives的2026目录配对下载原始题包（archived_handout）。未构建或执行。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3095",
+    "event_title": "TAMUctf 2026",
+    "category": "逆向",
+    "title": "skretch",
+    "directory": "逆向/TAMUctf_2026/skretch",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 16,
+    "bytes": 42873512,
+    "source_urls": [
+      "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/rev/skretch",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TAMUctf/2026/rev/skretch"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/poc/fast.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/poc/make_eqs.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/poc/slow.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/README.md",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/config.toml",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/flag.png",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/flag.png.header",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/flag.txt",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/cleaned.json",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/eqs.txt",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/populate.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/skretch.sb3.zstd",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/skretch/927d672925e7b99f7813735c484c6922.svg",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/skretch/beaf987d503696840f625e7fedf704eb.svg",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/src/skretch/cd21514d0531fdffb22204e0ec5ed84a.svg",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/skretch/wrong.png.header",
+      "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/skretch/README.md",
+      "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/skretch/skretch_FULL.sb3.zstd"
+    ],
+    "notes": "官方仓库源码/构建材料及求解脚本，另从sajjadium/ctf-archives的2026目录配对下载原始题包（archived_handout）。未构建或执行。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3095",
+    "event_title": "TAMUctf 2026",
+    "category": "逆向",
+    "title": "sun-temple",
+    "directory": "逆向/TAMUctf_2026/sun-temple",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 11,
+    "bytes": 60513,
+    "source_urls": [
+      "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/rev/sun-temple",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TAMUctf/2026/rev/Sun_Temple"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/scripts/find_solution.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/scripts/find_solution_fast.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/Dockerfile",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/Makefile",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/README.md",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/config.toml",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/flag.txt",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/scripts/gen_chamber.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/solver-template.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/src/generated_chamber.h",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/src/sun-temple.c",
+      "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/Sun_Temple/README.md",
+      "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/Sun_Temple/sun-temple.tar.gz"
+    ],
+    "notes": "官方仓库源码/构建材料及求解脚本，另从sajjadium/ctf-archives的2026目录配对下载原始题包（archived_handout）。未构建或执行。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3095",
+    "event_title": "TAMUctf 2026",
+    "category": "逆向",
+    "title": "war-hymn",
+    "directory": "逆向/TAMUctf_2026/war-hymn",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 16,
+    "bytes": 64023,
+    "source_urls": [
+      "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/rev/war-hymn",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TAMUctf/2026/rev/War_Hymn"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/solve/ai_solve.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/solve/decrypt_stuff.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/solve/decrypted_zlib.bin",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/solve/shared_library.so",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/solve/solve.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/Dockerfile",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/Makefile",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/README.md",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/config.toml",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/decrypt.c",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/make_encrypted_blobs.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/make_encrypted_rc4.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/make_encrypted_zlib.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/perform_zlib_compression.py",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/shared.c",
+      "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/war-hymn/war-hymn.c",
+      "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/War_Hymn/README.md",
+      "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/War_Hymn/war-hymn.tar.gz"
+    ],
+    "notes": "官方仓库源码/构建材料及求解脚本，另从sajjadium/ctf-archives的2026目录配对下载原始题包（archived_handout）。未构建或执行。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3330",
+    "event_title": "Thryve CTF 2026",
+    "category": "逆向",
+    "title": "black-blood",
+    "directory": "逆向/Thryve_CTF_2026/black-blood",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 6,
+    "bytes": 101627,
+    "source_urls": [
+      "https://github.com/hax1ng/thryve-ctf-2026-writeups/tree/HEAD/rev/black-blood"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/README.md",
+      "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/angr_concrete.py",
+      "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/angr_solve_q0.py",
+      "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/final.c.txt",
+      "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/hook.c",
+      "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/solve.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/pekaboo"
+    ],
+    "notes": "参赛者hax1ng公开仓库，保留文章、solver及其提供的比赛原始二进制/7z包；解法未运行验证。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3330",
+    "event_title": "Thryve CTF 2026",
+    "category": "逆向",
+    "title": "hell",
+    "directory": "逆向/Thryve_CTF_2026/hell",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 14989,
+    "source_urls": [
+      "https://github.com/hax1ng/thryve-ctf-2026-writeups/tree/HEAD/rev/hell"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/hell/README.md",
+      "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/hell/solve.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/hell/rev_hell"
+    ],
+    "notes": "参赛者hax1ng公开仓库，保留文章、solver及其提供的比赛原始二进制/7z包；解法未运行验证。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3330",
+    "event_title": "Thryve CTF 2026",
+    "category": "逆向",
+    "title": "redline",
+    "directory": "逆向/Thryve_CTF_2026/redline",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 735612,
+    "source_urls": [
+      "https://github.com/hax1ng/thryve-ctf-2026-writeups/tree/HEAD/rev/redline"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/redline/README.md",
+      "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/redline/solve.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/redline/redline"
+    ],
+    "notes": "参赛者hax1ng公开仓库，保留文章、solver及其提供的比赛原始二进制/7z包；解法未运行验证。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3195",
+    "event_title": "TJCTF 2026",
+    "category": "逆向",
+    "title": "rotated",
+    "directory": "逆向/tjctf_2026/rotated",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 92116,
+    "source_urls": [
+      "https://ctf42.online/ctfs/tjctf/2026/rotated/",
+      "https://ctf42.online/ctfs/tjctf/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TJCTF/2026/rev/rotated"
+    ],
+    "writeup_urls": [
+      "https://blog.rawpayload.com/blog/tjctf-2026-rotated-writeup",
+      "https://dhtson.github.io/blogs/TJCTF-2026-Rev-Rotated/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TJCTF/2026/rev/rotated",
+      "https://ctf42.online/ctfs/tjctf/2026/rotated/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3141",
+    "event_title": "TRX CTF 2026",
+    "category": "逆向",
+    "title": "faulty_road",
+    "directory": "逆向/trx_2026/faulty_road",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 16934435,
+    "source_urls": [
+      "https://ctf42.online/ctfs/trx/2026/faulty_road/",
+      "https://ctf42.online/ctfs/trx/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/rev/faulty_road"
+    ],
+    "writeup_urls": [
+      "https://blog.rawpayload.com/blog/trx-ctf-2026-faulty-road-writeup",
+      "https://kqx.io/writeups/faulty_road/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/rev/faulty_road",
+      "https://ctf42.online/ctfs/trx/2026/faulty_road/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3148",
+    "event_title": "UIUCTF 2026",
+    "category": "逆向",
+    "title": "glyphs",
+    "directory": "逆向/uiuctf_2026/glyphs",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 24327320,
+    "source_urls": [
+      "https://ctf42.online/ctfs/uiuctf/2026/glyphs/",
+      "https://ctf42.online/ctfs/uiuctf/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/rev/glyphs"
+    ],
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41116",
+      "https://cybersecurityelite.com/ctf-writeups/uiuctf-2026-reverse-engineering-writeup/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/rev/glyphs",
+      "https://ctf42.online/ctfs/uiuctf/2026/glyphs/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3148",
+    "event_title": "UIUCTF 2026",
+    "category": "逆向",
+    "title": "GODMODE_999",
+    "directory": "逆向/uiuctf_2026/GODMODE_999",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 4,
+    "bytes": 16996431,
+    "source_urls": [
+      "https://ctf42.online/ctfs/uiuctf/2026/godmode_999/",
+      "https://ctf42.online/ctfs/uiuctf/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/rev/GODMODE_999"
+    ],
+    "writeup_urls": [
+      "https://cybersecurityelite.com/ctf-writeups/uiuctf-2026-reverse-engineering-writeup/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/rev/GODMODE_999",
+      "https://ctf42.online/ctfs/uiuctf/2026/godmode_999/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3148",
+    "event_title": "UIUCTF 2026",
+    "category": "逆向",
+    "title": "vector_cache",
+    "directory": "逆向/uiuctf_2026/vector_cache",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 234072,
+    "source_urls": [
+      "https://ctf42.online/ctfs/uiuctf/2026/vector_cache/",
+      "https://ctf42.online/ctfs/uiuctf/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/rev/vector_cache"
+    ],
+    "writeup_urls": [
+      "https://cybersecurityelite.com/ctf-writeups/uiuctf-2026-reverse-engineering-writeup/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/rev/vector_cache",
+      "https://ctf42.online/ctfs/uiuctf/2026/vector_cache/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3148",
+    "event_title": "UIUCTF 2026",
+    "category": "逆向",
+    "title": "Veil_of_Evernight",
+    "directory": "逆向/uiuctf_2026/Veil_of_Evernight",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 1677791,
+    "source_urls": [
+      "https://ctf42.online/ctfs/uiuctf/2026/veil_of_evernight/",
+      "https://ctf42.online/ctfs/uiuctf/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/rev/Veil_of_Evernight"
+    ],
+    "writeup_urls": [
+      "https://cybersecurityelite.com/ctf-writeups/uiuctf-2026-reverse-engineering-writeup/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/rev/Veil_of_Evernight",
+      "https://ctf42.online/ctfs/uiuctf/2026/veil_of_evernight/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-2937",
+    "event_title": "UMassCTF 2026",
+    "category": "逆向",
+    "title": "Batcave_Bitflips",
+    "directory": "逆向/umassctf_2026/Batcave_Bitflips",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 10793,
+    "source_urls": [
+      "https://ctf42.online/ctfs/umassctf/2026/batcave_bitflips/",
+      "https://ctf42.online/ctfs/umassctf/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMassCTF/2026/rev/Batcave_Bitflips"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/UMASSCTF-2026-writeups/tree/main/UMASSCTF-2026-writeups/rev/batcave-bitflips"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMassCTF/2026/rev/Batcave_Bitflips",
+      "https://ctf42.online/ctfs/umassctf/2026/batcave_bitflips/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3056",
+    "event_title": "UMDCTF 2026",
+    "category": "逆向",
+    "title": "nuclear_codes",
+    "directory": "逆向/umdctf_2026/nuclear_codes",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 788996,
+    "source_urls": [
+      "https://ctf42.online/ctfs/umdctf/2026/nuclear_codes/",
+      "https://ctf42.online/ctfs/umdctf/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/nuclear_codes"
+    ],
+    "writeup_urls": [
+      "https://blog.rawpayload.com/blog/umd-ctf-2026-nuclear-codes-writeup",
+      "https://medium.com/@mazenmagdy1598/nuclear-codes-umdctf-135f0fa30c3d"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/nuclear_codes",
+      "https://ctf42.online/ctfs/umdctf/2026/nuclear_codes/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3056",
+    "event_title": "UMDCTF 2026",
+    "category": "逆向",
+    "title": "rainbet",
+    "directory": "逆向/umdctf_2026/rainbet",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 15332,
+    "source_urls": [
+      "https://ctf42.online/ctfs/umdctf/2026/rainbet/",
+      "https://ctf42.online/ctfs/umdctf/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/rainbet"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/UMDCTF-2026/tree/main/UMDCTF-2026/rev/rainbet"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/rainbet",
+      "https://ctf42.online/ctfs/umdctf/2026/rainbet/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3056",
+    "event_title": "UMDCTF 2026",
+    "category": "逆向",
+    "title": "the_akari",
+    "directory": "逆向/umdctf_2026/the_akari",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 4,
+    "bytes": 1329062,
+    "source_urls": [
+      "https://ctf42.online/ctfs/umdctf/2026/the_akari/",
+      "https://ctf42.online/ctfs/umdctf/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/the_akari"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/UMDCTF-2026/tree/main/UMDCTF-2026/rev/the-akari"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/the_akari",
+      "https://ctf42.online/ctfs/umdctf/2026/the_akari/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-2969",
+    "event_title": "UofTCTF 2026",
+    "category": "逆向",
+    "title": "Baby (Obfuscated) Flag Checker",
+    "directory": "逆向/UofTCTF_2026/Baby (Obfuscated) Flag Checker",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 5,
+    "bytes": 594979,
+    "source_urls": [
+      "https://github.com/UofTCTF/uoftctf-2026-chals-public/tree/HEAD/baby-flag-checker"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/baby-flag-checker/solve/baby.py",
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/baby-flag-checker/solve/flag.txt",
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/baby-flag-checker/solve/solve.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/baby-flag-checker/challenge.yml",
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/baby-flag-checker/dist/baby.py"
+    ],
+    "notes": "官方赛后仓库。writeups 中保留官方求解脚本；不保证每题都有叙述型解题文章。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-2969",
+    "event_title": "UofTCTF 2026",
+    "category": "逆向",
+    "title": "ML Connoisseur",
+    "directory": "逆向/UofTCTF_2026/ML Connoisseur",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 8,
+    "bytes": 93376906,
+    "source_urls": [
+      "https://github.com/UofTCTF/uoftctf-2026-chals-public/tree/HEAD/ml-connoisseur"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/solve/deobbed_model.py",
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/solve/deobfuscate.py",
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/solve/flag.png",
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/solve/obf_map.json",
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/solve/original.py",
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/solve/solve.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/challenge.yml",
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/dist/ml-connoisseur.zip"
+    ],
+    "notes": "官方赛后仓库。writeups 中保留官方求解脚本；不保证每题都有叙述型解题文章。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-2969",
+    "event_title": "UofTCTF 2026",
+    "category": "逆向",
+    "title": "Symbol of Hope",
+    "directory": "逆向/UofTCTF_2026/Symbol of Hope",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 118980,
+    "source_urls": [
+      "https://github.com/UofTCTF/uoftctf-2026-chals-public/tree/HEAD/symbol-of-hope"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/symbol-of-hope/solve/solve.py"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/symbol-of-hope/challenge.yml",
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/symbol-of-hope/dist/checker"
+    ],
+    "notes": "官方赛后仓库。writeups 中保留官方求解脚本；不保证每题都有叙述型解题文章。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-2969",
+    "event_title": "UofTCTF 2026",
+    "category": "逆向",
+    "title": "Will u Accept Some Magic?",
+    "directory": "逆向/UofTCTF_2026/Will u Accept Some Magic_",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 9,
+    "bytes": 45308,
+    "source_urls": [
+      "https://github.com/UofTCTF/uoftctf-2026-chals-public/tree/HEAD/rev-wasm-kotlin"
+    ],
+    "writeup_urls": [
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/solve/README",
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/solve/hook.js",
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/solve/index.js",
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/solve/package.json",
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/solve/pnpm-lock.yaml"
+    ],
+    "attachment_urls": [
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/README",
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/challenge.yml",
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/dist/program.wasm",
+      "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/rev-wasm-kotlin/dist/runner.mjs"
+    ],
+    "notes": "官方赛后仓库。writeups 中保留官方求解脚本；不保证每题都有叙述型解题文章。",
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3249",
+    "event_title": "V1T CTF 2026",
+    "category": "逆向",
+    "title": "Ducks_Ping_Pong",
+    "directory": "逆向/v1t_2026/Ducks_Ping_Pong",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 4,
+    "bytes": 259060,
+    "source_urls": [
+      "https://ctf42.online/ctfs/v1t/2026/ducks_ping_pong/",
+      "https://ctf42.online/ctfs/v1t/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/V1T/2026/rev/Ducks_Ping_Pong"
+    ],
+    "writeup_urls": [
+      "https://cybersecurityelite.com/ctf-writeups/v1t-ctf-2026-writeup/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/V1T/2026/rev/Ducks_Ping_Pong",
+      "https://ctf42.online/ctfs/v1t/2026/ducks_ping_pong/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3249",
+    "event_title": "V1T CTF 2026",
+    "category": "逆向",
+    "title": "Tiny",
+    "directory": "逆向/v1t_2026/Tiny",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 238920,
+    "source_urls": [
+      "https://ctf42.online/ctfs/v1t/2026/tiny/",
+      "https://ctf42.online/ctfs/v1t/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/V1T/2026/rev/Tiny"
+    ],
+    "writeup_urls": [
+      "https://cybersecurityelite.com/ctf-writeups/v1t-ctf-2026-writeup/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/V1T/2026/rev/Tiny",
+      "https://ctf42.online/ctfs/v1t/2026/tiny/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3311",
+    "event_title": "VuwCTF 2026",
+    "category": "逆向",
+    "title": "dotsbedashing",
+    "directory": "逆向/vuwctf_2026/dotsbedashing",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 130454,
+    "source_urls": [
+      "https://ctf42.online/ctfs/vuwctf/2026/dotsbedashing/",
+      "https://ctf42.online/ctfs/vuwctf/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/VuwCTF/2026/rev/dotsbedashing"
+    ],
+    "writeup_urls": [
+      "https://cybersecurityelite.com/ctf-writeups/vuwctf-2026-reverse-writeup/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/VuwCTF/2026/rev/dotsbedashing",
+      "https://ctf42.online/ctfs/vuwctf/2026/dotsbedashing/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3311",
+    "event_title": "VuwCTF 2026",
+    "category": "逆向",
+    "title": "ilikewords",
+    "directory": "逆向/vuwctf_2026/ilikewords",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 3,
+    "bytes": 130206,
+    "source_urls": [
+      "https://ctf42.online/ctfs/vuwctf/2026/ilikewords/",
+      "https://ctf42.online/ctfs/vuwctf/2026/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/VuwCTF/2026/rev/ilikewords"
+    ],
+    "writeup_urls": [
+      "https://cybersecurityelite.com/ctf-writeups/vuwctf-2026-reverse-writeup/"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/VuwCTF/2026/rev/ilikewords",
+      "https://ctf42.online/ctfs/vuwctf/2026/ilikewords/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3370",
+    "event_title": "z0d1ak CTF Qualifiers",
+    "category": "逆向",
+    "title": "Black_Tide_Survey",
+    "directory": "逆向/z0d1ak_2026-quals/Black_Tide_Survey",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 863343,
+    "source_urls": [
+      "https://ctf42.online/ctfs/z0d1ak/2026-quals/black_tide_survey/",
+      "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/rev/Black_Tide_Survey"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/rev/black-tide-survey"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/rev/Black_Tide_Survey",
+      "https://ctf42.online/ctfs/z0d1ak/2026-quals/black_tide_survey/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3370",
+    "event_title": "z0d1ak CTF Qualifiers",
+    "category": "逆向",
+    "title": "pekpek_stadium_64",
+    "directory": "逆向/z0d1ak_2026-quals/pekpek_stadium_64",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 249523,
+    "source_urls": [
+      "https://ctf42.online/ctfs/z0d1ak/2026-quals/pekpek_stadium_64/",
+      "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/rev/pekpek_stadium_64"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/rev/pekpek-stadium-64"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/rev/pekpek_stadium_64",
+      "https://ctf42.online/ctfs/z0d1ak/2026-quals/pekpek_stadium_64/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CTF-3370",
+    "event_title": "z0d1ak CTF Qualifiers",
+    "category": "逆向",
+    "title": "rival_battle",
+    "directory": "逆向/z0d1ak_2026-quals/rival_battle",
+    "writeup_status": "downloaded",
+    "attachment_status": "downloaded",
+    "has_writeup": true,
+    "attachment_state": "已下载",
+    "file_count": 2,
+    "bytes": 12185,
+    "source_urls": [
+      "https://ctf42.online/ctfs/z0d1ak/2026-quals/rival_battle/",
+      "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/rev/rival_battle"
+    ],
+    "writeup_urls": [
+      "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/rev/rival-battle"
+    ],
+    "attachment_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/rev/rival_battle",
+      "https://ctf42.online/ctfs/z0d1ak/2026-quals/rival_battle/folder.zip?kind=files"
+    ],
+    "notes": [
+      "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+      "题目ZIP保留原目录；contents.json列出压缩包成员。",
+      "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+    ],
+    "duplicate_of": null
+  },
+  {
+    "event_id": "CN-001",
+    "event_title": "第十届“强网杯”全国网络安全挑战赛·线上赛",
+    "category": "逆向",
+    "title": "ELFStudy",
+    "directory": "逆向/第十届“强网杯”全国网络安全挑战赛·线上赛/ELFStudy",
+    "writeup_status": "downloaded",
+    "attachment_status": "missing",
+    "has_writeup": true,
+    "attachment_state": "缺失",
+    "file_count": 3,
+    "bytes": 214322,
+    "source_urls": [
+      "https://www.qiangwangbei.com/"
+    ],
+    "writeup_urls": [
+      "https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/",
+      "https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/",
+      "https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/"
+    ],
+    "attachment_urls": [],
+    "notes": "Lufer 原创第十届强网杯 WP，题解对应全文中的“ELFStudy”章节。完整原始 HTML 与该章节离线正文均保存；图片可能仍引用源站。原文未提供题目附件直链，附件标 missing。解答、脚本及历史远程服务均未执行/访问。",
+    "duplicate_of": null
+  }
+]

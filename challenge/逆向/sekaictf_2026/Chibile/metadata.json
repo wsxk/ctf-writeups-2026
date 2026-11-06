@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3113",
+  "event_title": "SekaiCTF 2026",
+  "title": "Chibile",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "anti-cheat",
+    "unpacking",
+    "protocol-reversing"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/sekaictf/2026/chibile/",
+    "https://ctf42.online/ctfs/sekaictf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/rev/Chibile"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/Sekai-CTF-2026/tree/main/rev/chibile"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/rev/Chibile",
+    "https://ctf42.online/ctfs/sekaictf/2026/chibile/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/sekaictf_2026/Chibile/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/Sekai-CTF-2026/main/rev/chibile/README.md",
+      "bytes": 7857,
+      "sha256": "d44186b9669f5c45a43ab5887e3914e321a146f62bf3eac823826479a0ba4ad8",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/sekaictf_2026/Chibile/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SekaiCTF/2026/rev/Chibile/README.md",
+      "bytes": 201,
+      "sha256": "c872f5c2c64c3a8e29f476849bf83791dcb983d234ddd4f3890fffc95c4e5f5f",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/sekaictf_2026/Chibile/attachments/upstream/rev_chibile.tar.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SekaiCTF/2026/rev/Chibile/rev_chibile.tar.gz",
+      "bytes": 29109252,
+      "sha256": "52904674a5cb09d14090f95dbea66e3b4d70703371ebc61a83bb7e4fbfad3f28",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/sekaictf/2026/chibile/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/sekaictf/2026/chibile/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

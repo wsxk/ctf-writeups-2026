@@ -1,0 +1,64 @@
+{
+  "event_id": "CTF-3370",
+  "event_title": "z0d1ak CTF Qualifiers",
+  "title": "stars_below",
+  "category": "虚拟化",
+  "original_category": "Reverse",
+  "tags": [
+    "plt-relocation-trap",
+    "custom-vm",
+    "base32"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/stars_below/",
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/rev/stars_below"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/rev/stars-below"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/rev/stars_below",
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/stars_below/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/z0d1ak_2026-quals/stars_below/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/z0d1ak-ctf-qualifiers-2026/main/rev/stars-below/README.md",
+      "bytes": 5817,
+      "sha256": "ed52425c4fd86d42514957fb5014fa5dd196794e169c49a1b318e4812a92de2f",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/z0d1ak_2026-quals/stars_below/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Z0d1ak/2026/Quals/rev/stars_below/README.md",
+      "bytes": 73,
+      "sha256": "25cf467107fb791ea231bd563cfd9a1821a4d4375b4f52fe133ba2591161ce70",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/z0d1ak_2026-quals/stars_below/attachments/upstream/rev_stars-below.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Z0d1ak/2026/Quals/rev/stars_below/rev_stars-below.zip",
+      "bytes": 38462,
+      "sha256": "026cb55cf00bf70eb7e71612f2b6f4e1223705e5d53529698a893207b6e60450",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/stars_below/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/z0d1ak/2026-quals/stars_below/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

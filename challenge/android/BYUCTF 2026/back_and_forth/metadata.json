@@ -1,0 +1,83 @@
+{
+  "event_id": "CTF-3247",
+  "event_title": "BYUCTF 2026",
+  "category": "android",
+  "title": "back_and_forth",
+  "source_urls": [
+    "https://ctftime.org/event/3247/",
+    "https://github.com/BYU-CSA/BYUCTF-2026/tree/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth/README.md",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth/brute.py",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth/image.png"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth/gen_bytes.cpp",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth/brute.py",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth/Main.java",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth/image.png",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth/README.md",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth/bk_n_forth.apk"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": "BYUCTF 2026 官方 APK、Java 源码与 README 完整题解。附题解图片与原始 brute.py，未执行。",
+  "files": [
+    {
+      "path": "attachments/gen_bytes.cpp",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth/gen_bytes.cpp",
+      "bytes": 678,
+      "sha256": "10069e37250f107f3aef0e57aa5d276074ffe12b9d9e1d1543cb908563a67b18"
+    },
+    {
+      "path": "attachments/brute.py",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth/brute.py",
+      "bytes": 530,
+      "sha256": "7baf6ef24646d376d10fe55bb97629746d4315fcd39a317c3c3040899f36149c"
+    },
+    {
+      "path": "attachments/Main.java",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth/Main.java",
+      "bytes": 583,
+      "sha256": "889306f1947c26d96b75acb56d2581fbff9d7a29dc118b231a278770723e5f0c"
+    },
+    {
+      "path": "attachments/image.png",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth/image.png",
+      "bytes": 19607,
+      "sha256": "baf06fa72008ff18e5d1ed271f5d3591c7025f44916c4e8cd7e2e17d1874f8d5"
+    },
+    {
+      "path": "attachments/README.md",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth/README.md",
+      "bytes": 22763,
+      "sha256": "6edb0ef6a983cc94da52be73a07928cc4530632aa167ba6ce656aaad5581f347"
+    },
+    {
+      "path": "attachments/bk_n_forth.apk",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth/bk_n_forth.apk",
+      "bytes": 10910343,
+      "sha256": "ce7c841457f650a2b935f7bd64896646ed474f060fc9ed1d3018976133aa7a2b"
+    },
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth/README.md",
+      "bytes": 22763,
+      "sha256": "6edb0ef6a983cc94da52be73a07928cc4530632aa167ba6ce656aaad5581f347"
+    },
+    {
+      "path": "writeups/brute.py",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth/brute.py",
+      "bytes": 530,
+      "sha256": "7baf6ef24646d376d10fe55bb97629746d4315fcd39a317c3c3040899f36149c"
+    },
+    {
+      "path": "writeups/image.png",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/51a8050d89cc1bc0265d5b5035157edec64286e1/rev/back_and_forth/image.png",
+      "bytes": 19607,
+      "sha256": "baf06fa72008ff18e5d1ed271f5d3591c7025f44916c4e8cd7e2e17d1874f8d5"
+    }
+  ],
+  "errors": []
+}

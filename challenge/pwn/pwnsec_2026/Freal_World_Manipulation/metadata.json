@@ -1,0 +1,49 @@
+{
+  "event_id": "CTF-3159",
+  "event_title": "PwnSec CTF 2026",
+  "title": "Freal_World_Manipulation",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "oob-index",
+    "float-overflow",
+    "arbitrary-read-write"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/pwnsec/2026/freal_world_manipulation/",
+    "https://ctf42.online/ctfs/pwnsec/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/pwn/Freal_World_Manipulation"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/pwn/freal-world-manipulation"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/pwn/Freal_World_Manipulation",
+    "https://ctf42.online/ctfs/pwnsec/2026/freal_world_manipulation/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/pwnsec_2026/Freal_World_Manipulation/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/pwnsec-ctf-2026/main/pwn/freal-world-manipulation/README.md",
+      "bytes": 13906,
+      "sha256": "eb8a6f12e200f05e65c28339de583f408467f91186200497d98348e0d5aa68ef",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/pwnsec_2026/Freal_World_Manipulation/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/pwnsec/2026/freal_world_manipulation/folder.zip?kind=files",
+      "bytes": 9493,
+      "sha256": "40c7da5f3301df4782d9bef0ca496f7d679a998264793a1d31888f27c3afae23",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

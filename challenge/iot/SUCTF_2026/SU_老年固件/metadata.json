@@ -1,0 +1,62 @@
+{
+  "event_id": "CTF-3161",
+  "event_title": "SUCTF 2026",
+  "category": "iot",
+  "title": "SU_老年固件",
+  "source_urls": [
+    "https://ctftime.org/event/3161/",
+    "https://github.com/team-su/SUCTF-2026/tree/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_老年固件"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_%E8%80%81%E5%B9%B4%E5%9B%BA%E4%BB%B6/writeup/writeup.md",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_%E8%80%81%E5%B9%B4%E5%9B%BA%E4%BB%B6/exp/old_firmware_extract.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_%E8%80%81%E5%B9%B4%E5%9B%BA%E4%BB%B6/env/README.md",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_%E8%80%81%E5%B9%B4%E5%9B%BA%E4%BB%B6/sourcecode/README.md",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_%E8%80%81%E5%B9%B4%E5%9B%BA%E4%BB%B6/env/bootenv.txt",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_%E8%80%81%E5%B9%B4%E5%9B%BA%E4%BB%B6/attachments/attachment.zip"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": "SUCTF 2026 官方归档。固件题归入 iot；Flutter/Dart/Hermes/Native APK 题归入 android。原题压缩包、源码、官方题解与 exp 一并保留。",
+  "files": [
+    {
+      "path": "attachments/env/README.md",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_%E8%80%81%E5%B9%B4%E5%9B%BA%E4%BB%B6/env/README.md",
+      "bytes": 412,
+      "sha256": "4af8667fbbe4cf182623e8c83e4b50dc8c48f01cb0f1ca4b41aacd8dd2381bab"
+    },
+    {
+      "path": "writeups/writeup/writeup.md",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_%E8%80%81%E5%B9%B4%E5%9B%BA%E4%BB%B6/writeup/writeup.md",
+      "bytes": 1900,
+      "sha256": "4beda05e0f321d276e00013e93f3ee4604cd89192c281edd7e9dec396174b1dd"
+    },
+    {
+      "path": "attachments/sourcecode/README.md",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_%E8%80%81%E5%B9%B4%E5%9B%BA%E4%BB%B6/sourcecode/README.md",
+      "bytes": 350,
+      "sha256": "969dbba42ea69cc9a7a80ed842df257fba63fbaa6c5bf6107592107498c1d894"
+    },
+    {
+      "path": "attachments/env/bootenv.txt",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_%E8%80%81%E5%B9%B4%E5%9B%BA%E4%BB%B6/env/bootenv.txt",
+      "bytes": 97,
+      "sha256": "f679174133d83d130cd9b0a57e349a791f91d381941585a146eefbffc9c6bc47"
+    },
+    {
+      "path": "attachments/attachments/attachment.zip",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_%E8%80%81%E5%B9%B4%E5%9B%BA%E4%BB%B6/attachments/attachment.zip",
+      "bytes": 339102,
+      "sha256": "b996eb930d3acc0d5a3ea8c186dab7df7e4fe3c30f38eff4a59a29941e4d7423"
+    },
+    {
+      "path": "writeups/exp/old_firmware_extract.py",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/re/SU_%E8%80%81%E5%B9%B4%E5%9B%BA%E4%BB%B6/exp/old_firmware_extract.py",
+      "bytes": 5388,
+      "sha256": "e0cd30908e5b0c4017dd350f5181b6bce0f543c4eaba2e75c58b2ca4d319cf59"
+    }
+  ],
+  "errors": []
+}

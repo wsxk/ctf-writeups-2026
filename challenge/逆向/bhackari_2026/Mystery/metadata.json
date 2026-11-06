@@ -1,0 +1,61 @@
+{
+  "event_id": "CTF-3302",
+  "event_title": "bhackari CTF 2026",
+  "title": "Mystery",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "aes-ctr"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/bhackari/2026/mystery/",
+    "https://ctf42.online/ctfs/bhackari/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bhackari/2026/rev/Mystery"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/bhackari-ctf-2026-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bhackari/2026/rev/Mystery",
+    "https://ctf42.online/ctfs/bhackari/2026/mystery/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/bhackari_2026/Mystery/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/bhackari-ctf-2026-writeup/",
+      "bytes": 190273,
+      "sha256": "bd46718f2254471bec41442f5070c18ce15323a8526ae004334f3832ed5cca04",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/bhackari_2026/Mystery/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Bhackari/2026/rev/Mystery/README.md",
+      "bytes": 342,
+      "sha256": "79005a29ae92ff8cc4f8d55f55088e585cfa67cf6f5ce2499122b91e9d93c894",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/bhackari_2026/Mystery/attachments/upstream/mystery.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Bhackari/2026/rev/Mystery/mystery.zip",
+      "bytes": 6906,
+      "sha256": "5258920856da9e4363b7b6b025f141ab85cfb97667c0a4d8d25890069f33fbdb",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/bhackari/2026/mystery/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/bhackari/2026/mystery/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

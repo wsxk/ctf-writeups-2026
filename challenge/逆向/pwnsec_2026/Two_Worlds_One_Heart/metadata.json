@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3159",
+  "event_title": "PwnSec CTF 2026",
+  "title": "Two_Worlds_One_Heart",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "heavens-gate",
+    "wow64",
+    "polyglot-code"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/pwnsec/2026/two_worlds_one_heart/",
+    "https://ctf42.online/ctfs/pwnsec/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/Two_Worlds_One_Heart"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/rev/two-worlds-one-heart"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/Two_Worlds_One_Heart",
+    "https://ctf42.online/ctfs/pwnsec/2026/two_worlds_one_heart/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/pwnsec_2026/Two_Worlds_One_Heart/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/pwnsec-ctf-2026/main/rev/two-worlds-one-heart/README.md",
+      "bytes": 5703,
+      "sha256": "753555b9098531a91cfdf82db6de575c6dbae4feb37f1f34a0207618bb01ce17",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/pwnsec_2026/Two_Worlds_One_Heart/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/PwnSec/2026/rev/Two_Worlds_One_Heart/README.md",
+      "bytes": 221,
+      "sha256": "f02819032f3d8ae3f7411d5937de93331c5f94815e4f577bc44005849bc04303",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/pwnsec_2026/Two_Worlds_One_Heart/attachments/upstream/public.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/PwnSec/2026/rev/Two_Worlds_One_Heart/public.zip",
+      "bytes": 66276,
+      "sha256": "16f7079aec0118b57faca43cc0b2fa73963887b9d3bc5837f944e9eddf8b11d9",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/pwnsec/2026/two_worlds_one_heart/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/pwnsec/2026/two_worlds_one_heart/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

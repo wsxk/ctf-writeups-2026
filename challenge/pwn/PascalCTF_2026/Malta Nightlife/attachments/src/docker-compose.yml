@@ -1,0 +1,16 @@
+name: pwn01
+services:
+  malta:
+    image: cybersecnatlab/challenge-jail:ubuntu-noble@sha256:bdb4f33f2c4604c8818b86fc7d52ce50c047a9556b43a8005c3d61ca1622dd43
+    restart: unless-stopped
+    container_name: pwn01-malta
+    privileged: true
+    init: true
+    ports:
+      - "9001:1337"
+    volumes:
+      - "./malta:/home/user/chall:ro"
+    environment:
+      - "FLAG=pascalCTF{St0p_dR1nKing_3ven_1f_it5_ch34p}"
+      - "FLAG_IN_ENV=true"
+      - "LOG_STDERR=true"

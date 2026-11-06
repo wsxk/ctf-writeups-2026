@@ -1,0 +1,67 @@
+# Reference: https://github.com/project-sekai-ctf/konata
+challenges:
+  - category: pwn
+    name: bytecrusher
+    author: maxster
+    sort_weight: 92
+    description: |
+      Dice's new proprietary text crusher is here!
+      Try it out for free with our sixteen free trials of the premium service!
+    attachments:
+      files:
+        - build.sh
+        - Dockerfile
+        - bytecrusher
+        - bytecrusher.c
+      additional:
+        - path: flag.txt
+          str_content: 'dice{dummy_flag}'
+    flags:
+      rctf:
+        file: flag.txt
+    endpoints:
+      - type: nc
+        endpoint: "{{ challenge.name }}.{{ config.domains['kctf'] }}"
+        port: 1337
+
+deployment:
+  images:
+    - path: .
+      name: "{{ challenges[0].name }}"
+      tag: latest
+      registry_name: challenges
+      platform: linux/amd64
+
+  kubernetes_inline_manifests:
+    - cluster_name: main
+      documents:
+        - apiVersion: kctf.dev/v1
+          kind: Challenge
+          metadata:
+            name: "{{ challenges[0].name }}"
+          spec:
+            deployed: true
+            image: "{{ images[challenges[0].name] }}"
+            network:
+              public: true  # instance will not be exposed until this is set to true (dns update can take a while)
+              ports:
+                - protocol: "TCP"
+                  port: 1337
+                  targetPort: 5000
+            healthcheck:
+              enabled: false
+            # horizontalPodAutoscalerSpec:
+            #   maxReplicas: 6
+            #   minReplicas: 1
+            #   targetCPUUtilizationPercentage: 80
+            podTemplate:
+              template:
+                spec:
+                  containers:
+                    - name: challenge
+                      resources:
+                        requests:
+                          cpu: "100m"
+                          memory: "64Mi"
+                      securityContext:
+                        privileged: true

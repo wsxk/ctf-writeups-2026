@@ -1,0 +1,48 @@
+ARG UBUNTU_REF=ubuntu:26.04@sha256:53958ec7b67c2c9355df922dd08dbf0360611f8c3cdb656875e81873db9ffdba
+FROM --platform=linux/arm64 ${UBUNTU_REF} AS runtime
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    bash \
+    ca-certificates \
+    coreutils \
+    libatomic1 \
+    libfdt1 \
+    libglib2.0-0 \
+    libpcre2-8-0 \
+    libpixman-1-0 \
+    passwd \
+    python3 \
+    socat \
+    zlib1g \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN if ! getent passwd 1000 >/dev/null; then \
+        useradd -m -u 1000 -s /bin/bash ubuntu; \
+    fi
+
+WORKDIR /challenge
+COPY artifacts/Image /challenge/Image
+COPY artifacts/initramfs.cpio.gz /challenge/initramfs.cpio.gz
+COPY artifacts/qemu-system-aarch64.tar.gz /tmp/qemu-system-aarch64.tar.gz
+COPY flag.txt /challenge/flag.txt
+COPY run.sh /challenge/run.sh
+COPY run.py /challenge/run.py
+RUN mkdir -p /tmp/qemu-system-aarch64 \
+    && tar -xzf /tmp/qemu-system-aarch64.tar.gz -C /tmp/qemu-system-aarch64 \
+    && mv /tmp/qemu-system-aarch64/qemu-system-aarch64-aarch64 /challenge/qemu-system-aarch64 \
+    && rm -rf /tmp/qemu-system-aarch64 /tmp/qemu-system-aarch64.tar.gz \
+    && chmod 0755 /challenge/qemu-system-aarch64 /challenge/run.sh /challenge/run.py \
+    && chown root:root /challenge/qemu-system-aarch64 \
+    && chown root:root /challenge/flag.txt \
+    && chmod 0444 /challenge/flag.txt \
+    && mkdir -p /tmp \
+    && chmod 1777 /tmp
+
+ENV PORT=5000
+ENV TIMEOUT=2400
+ENV MAX_SOLVER=16777216
+
+EXPOSE 5000
+CMD ["sh", "-c", "exec socat -T \"${TIMEOUT:-2400}\" \"TCP-LISTEN:${PORT:-5000},reuseaddr,fork\" \"EXEC:/challenge/run.py,stderr\""]

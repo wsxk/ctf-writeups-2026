@@ -1,0 +1,12 @@
+challenges:
+  - category: rev
+    name: bedtime
+    author: BrownieInMotion
+    sort_weight: 99
+    description: |
+      description
+    attachments:
+      files:
+        - 'bedtime'
+    flags:
+      rctf: dice{regularly_runs_like_mad_to_game_of_matches}

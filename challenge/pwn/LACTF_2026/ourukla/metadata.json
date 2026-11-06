@@ -1,0 +1,153 @@
+{
+  "event_id": "CTF-3015",
+  "event_title": "LA CTF 2026",
+  "category": "pwn",
+  "title": "ourukla",
+  "source_urls": [
+    "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/pwn/ourukla",
+    "https://ctftime.org/event/3015/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/solve.py",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/solve_attempt_hob.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/Dockerfile",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/Makefile",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/chall",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/chall.c",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/chall_patched",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/challenge.yml",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/flag.txt",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/ld-linux-x86-64.so.2",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/libc.so.6"
+  ],
+  "writeup_status": "已下载官方解题脚本（独立文字writeup未提供）",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "uclaacm/lactf-archive",
+  "repository_tree_sha": "3379d4a7b36680764a34e7dc817cc3c94c244764",
+  "artifacts": [
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/Dockerfile",
+      "bytes": 218,
+      "sha256": "470cacbb0d8da5a94a3c5bb54274c5310952c7a63c9f5034a85a214a54662019",
+      "git_blob_sha1": "b9cf940ac8b99edc19b68034f2a8d42c6d01a09b",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/Makefile",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/Makefile",
+      "bytes": 609,
+      "sha256": "bd6e99c549f97cd3843fb4c3b40101886a35b6b7bd06a9dd24738dd2a68eb148",
+      "git_blob_sha1": "2532107cd05e4a828f03f5a3aa3552e9ea320abd",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/chall",
+      "bytes": 16536,
+      "sha256": "ee5ba88928e9962f24f99fe0e44d043fae0ca16445abcb1ba894c87e50cecc61",
+      "git_blob_sha1": "892f72982fa176eaf8a199c505b1a9612faa8e47",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall.c",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/chall.c",
+      "bytes": 4367,
+      "sha256": "ec7951b97fcf43ea214c31eda30c30baad6d331b285096fb2482a27b9f727205",
+      "git_blob_sha1": "cafb64083b52631725cfa2834da7b86f4f83d7fc",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall_patched",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/chall_patched",
+      "bytes": 21744,
+      "sha256": "8f39a39060288e64c39147128d67439aa159ac16d733c4e49f30c68e4eaf39d4",
+      "git_blob_sha1": "8d627620a1313f3542df1b1344f5e53799b89160",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge.yml",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/challenge.yml",
+      "bytes": 328,
+      "sha256": "1b52a847a65675eb81d3227d34de54bb6b2dd0b4d55420e549bd4ee013b41d0b",
+      "git_blob_sha1": "dc0ea84eb1d18209bfc6f5a8de5615876d6f6d67",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flag.txt",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/flag.txt",
+      "bytes": 41,
+      "sha256": "14616e1029c4367225d4ffbdb2aeeb47bcec19072d8d3a5cb5b103447b33ff46",
+      "git_blob_sha1": "f811ab65639d355f64fee11aa4137ac84588a502",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/ld-linux-x86-64.so.2",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/ld-linux-x86-64.so.2",
+      "bytes": 225600,
+      "sha256": "0de72615c3b0d9bf39f7dc7ec52f18b4b83bcfda7837c8916cd3de162e6f4dc9",
+      "git_blob_sha1": "747fc9f6f8e923a8e249a7f028e9077af7f70503",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/libc.so.6",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/libc.so.6",
+      "bytes": 5945240,
+      "sha256": "7d30524d521dbe1815c0e41406810686263503de1493c8809d480f37040bd027",
+      "git_blob_sha1": "9ccd022b51ce98532b6a676e6f6334596f838a39",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve.py",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/solve.py",
+      "bytes": 5175,
+      "sha256": "016601a57213df56e511180bb9d503014c476d2f466f3a176205c0598747e243",
+      "git_blob_sha1": "540962aacd8c50e55a96f9c1c9b5eabad3cde040",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve_attempt_hob.py",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/ourukla/solve_attempt_hob.py",
+      "bytes": 4553,
+      "sha256": "54fa6d6c7e7a7d1e22b760d0c43615f12c77a9ad8771d9b2dd269cc86d47e577",
+      "git_blob_sha1": "83779d21b4649db57217bda7128912e5c10b12fd",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

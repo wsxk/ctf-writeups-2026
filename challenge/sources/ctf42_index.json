@@ -1,0 +1,4363 @@
+[
+  {
+    "title": "ASIS_Arch",
+    "url": "https://ctf42.online/ctfs/asis/2026-quals/asis_arch/",
+    "edition_title": "ASIS 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/asis/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "custom-vm",
+      "emulator-reversing"
+    ],
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/asis__2026-quals__asis_arch.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/asis-arch"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/ASIS_Arch"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/asis_arch/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Arena_Snapshots",
+    "url": "https://ctf42.online/ctfs/asis/2026-quals/arena_snapshots/",
+    "edition_title": "ASIS 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/asis/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "handle-forgery",
+      "generation-confusion"
+    ],
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/asis__2026-quals__arena_snapshots.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/pwn/arena-snapshots"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/pwn/Arena_Snapshots"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/arena_snapshots/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Beyond_the_fourth_wall",
+    "url": "https://ctf42.online/ctfs/asis/2026-quals/beyond_the_fourth_wall/",
+    "edition_title": "ASIS 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/asis/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "riscv",
+      "whitespace-steganography"
+    ],
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/asis__2026-quals__beyond_the_fourth_wall.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/beyond-the-fourth-wall"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Beyond_the_fourth_wall"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/beyond_the_fourth_wall/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Dead_Letter",
+    "url": "https://ctf42.online/ctfs/asis/2026-quals/dead_letter/",
+    "edition_title": "ASIS 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/asis/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "custom-protocol",
+      "use-after-free (uaf)",
+      "crc32"
+    ],
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/asis__2026-quals__dead_letter.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/pwn/dead-letter"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/pwn/Dead_Letter"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/dead_letter/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "LeakMeAk",
+    "url": "https://ctf42.online/ctfs/asis/2026-quals/leakmeak/",
+    "edition_title": "ASIS 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/asis/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "chunked-flag-check",
+      "bruteforce"
+    ],
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/asis__2026-quals__leakmeak.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/leak-me-ak"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/LeakMeAk"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/leakmeak/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Lesh",
+    "url": "https://ctf42.online/ctfs/asis/2026-quals/lesh/",
+    "edition_title": "ASIS 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/asis/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "shellcode",
+      "anti-sleep",
+      "api-hooking"
+    ],
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/asis__2026-quals__lesh.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/lesh"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Lesh"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/lesh/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Mousa",
+    "url": "https://ctf42.online/ctfs/asis/2026-quals/mousa/",
+    "edition_title": "ASIS 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/asis/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "go-reversing",
+      "sha256-oracle"
+    ],
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/asis__2026-quals__mousa.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/mousa"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Mousa"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/mousa/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "NEON",
+    "url": "https://ctf42.online/ctfs/asis/2026-quals/neon/",
+    "edition_title": "ASIS 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/asis/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "aarch64",
+      "custom-package-format",
+      "vulkan"
+    ],
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/asis__2026-quals__neon.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/neon"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/NEON"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/neon/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "OutOfPhase",
+    "url": "https://ctf42.online/ctfs/asis/2026-quals/outofphase/",
+    "edition_title": "ASIS 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/asis/2026-quals/",
+    "original_category": "Hardware",
+    "tags": [
+      "ofdm",
+      "signal-processing",
+      "phase-encoding"
+    ],
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/asis__2026-quals__outofphase.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/hardware/out-of-phase"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/hw/OutOfPhase"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/outofphase/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "QFilter",
+    "url": "https://ctf42.online/ctfs/asis/2026-quals/qfilter/",
+    "edition_title": "ASIS 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/asis/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "quickjs",
+      "js-engine-exploitation"
+    ],
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/asis__2026-quals__qfilter.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/pwn/qfilter"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/pwn/QFilter"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/qfilter/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Revenant_buddy",
+    "url": "https://ctf42.online/ctfs/asis/2026-quals/revenant_buddy/",
+    "edition_title": "ASIS 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/asis/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "custom-vm",
+      "obfuscation"
+    ],
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/asis__2026-quals__revenant_buddy.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/pwn/revenant-buddy"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/pwn/Revenant_buddy"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/revenant_buddy/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Signal_Race",
+    "url": "https://ctf42.online/ctfs/asis/2026-quals/signal_race/",
+    "edition_title": "ASIS 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/asis/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "generation-counter-wraparound",
+      "use-after-free (uaf)",
+      "murmurhash-inversion"
+    ],
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/asis__2026-quals__signal_race.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/pwn/signal-race"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/pwn/Signal_Race"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/signal_race/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Silent_Carrier",
+    "url": "https://ctf42.online/ctfs/asis/2026-quals/silent_carrier/",
+    "edition_title": "ASIS 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/asis/2026-quals/",
+    "original_category": "Hardware",
+    "tags": [
+      "usb-pcap",
+      "dmr",
+      "radio-codeplug"
+    ],
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/asis__2026-quals__silent_carrier.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/hardware/silent-carrier"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/hw/Silent_Carrier"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/silent_carrier/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Draw_Me",
+    "url": "https://ctf42.online/ctfs/apoorvctf/2026/draw_me/",
+    "edition_title": "ApoorvCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/apoorvctf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "webgl",
+      "shader-vm",
+      "custom-vm"
+    ],
+    "event_id": "CTF-3171",
+    "event_title": "ApoorvCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/apoorvctf__2026__draw_me.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/apoorvctf2026/tree/main/rev/draw-me"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ApoorvCTF/2026/rev/Draw_Me"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/apoorvctf/2026/draw_me/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "House_of_Wade",
+    "url": "https://ctf42.online/ctfs/apoorvctf/2026/house_of_wade/",
+    "edition_title": "ApoorvCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/apoorvctf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "use-after-free (uaf)",
+      "tcache-poisoning"
+    ],
+    "event_id": "CTF-3171",
+    "event_title": "ApoorvCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/apoorvctf__2026__house_of_wade.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/apoorvctf2026/tree/main/pwn/house-of-wade"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ApoorvCTF/2026/pwn/House_of_Wade"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/apoorvctf/2026/house_of_wade/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Borrowed_Memory",
+    "url": "https://ctf42.online/ctfs/bdsec/2026/borrowed_memory/",
+    "edition_title": "BDSec 2026",
+    "edition_url": "https://ctf42.online/ctfs/bdsec/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "bytecode-vm-emulation",
+      "xorshift-table-regeneration",
+      "checksum-guided-debugging",
+      "xor-decryption"
+    ],
+    "event_id": "CTF-3349",
+    "event_title": "BDSec CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/bdsec__2026__borrowed_memory.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41042"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/rev/Borrowed_Memory"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/bdsec/2026/borrowed_memory/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Easy_RE_Challenge",
+    "url": "https://ctf42.online/ctfs/bdsec/2026/easy_re_challenge/",
+    "edition_title": "BDSec 2026",
+    "edition_url": "https://ctf42.online/ctfs/bdsec/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "symbol-guided-static-analysis",
+      "xor-rol-inversion",
+      "decoy-path-elimination"
+    ],
+    "event_id": "CTF-3349",
+    "event_title": "BDSec CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/bdsec__2026__easy_re_challenge.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41040"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/rev/Easy_RE_Challenge"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/bdsec/2026/easy_re_challenge/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Muktir_Shongket",
+    "url": "https://ctf42.online/ctfs/bdsec/2026/muktir_shongket/",
+    "edition_title": "BDSec 2026",
+    "edition_url": "https://ctf42.online/ctfs/bdsec/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "jit-bytecode-verifier-executor-mismatch",
+      "jmp-into-literal",
+      "shellcode"
+    ],
+    "event_id": "CTF-3349",
+    "event_title": "BDSec CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/bdsec__2026__muktir_shongket.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41044"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/pwn/Muktir_Shongket"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/bdsec/2026/muktir_shongket/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Night_Shift",
+    "url": "https://ctf42.online/ctfs/bdsec/2026/night_shift/",
+    "edition_title": "BDSec 2026",
+    "edition_url": "https://ctf42.online/ctfs/bdsec/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "pthread-scheduling-analysis",
+      "exhaustive-brute-force",
+      "fnv-1a-hash"
+    ],
+    "event_id": "CTF-3349",
+    "event_title": "BDSec CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/bdsec__2026__night_shift.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41041"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/rev/Night_Shift"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/bdsec/2026/night_shift/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Phantom_Device",
+    "url": "https://ctf42.online/ctfs/bdsec/2026/phantom_device/",
+    "edition_title": "BDSec 2026",
+    "edition_url": "https://ctf42.online/ctfs/bdsec/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "use-after-free (uaf)",
+      "refcount-mismatch",
+      "tcache-grooming",
+      "role-forgery"
+    ],
+    "event_id": "CTF-3349",
+    "event_title": "BDSec CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/bdsec__2026__phantom_device.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41043"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/pwn/Phantom_Device"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/bdsec/2026/phantom_device/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Captain_Morgan",
+    "url": "https://ctf42.online/ctfs/bearcat/2026/captain_morgan/",
+    "edition_title": "Bearcat 2026",
+    "edition_url": "https://ctf42.online/ctfs/bearcat/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "python-obfuscation",
+      "z3"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/bearcat__2026__captain_morgan.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/bearcatctf2026/tree/main/rev/captain-morgan"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bearcat/2026/rev/Captain_Morgan"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/bearcat/2026/captain_morgan/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Missing_One_Piece",
+    "url": "https://ctf42.online/ctfs/bearcat/2026/missing_one_piece/",
+    "edition_title": "Bearcat 2026",
+    "edition_url": "https://ctf42.online/ctfs/bearcat/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "environment-checks",
+      "argv0"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/bearcat__2026__missing_one_piece.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/bearcatctf2026/tree/main/rev/missing-one-piece"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bearcat/2026/rev/Missing_One_Piece"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/bearcat/2026/missing_one_piece/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Pollys_Key",
+    "url": "https://ctf42.online/ctfs/bearcat/2026/pollys_key/",
+    "edition_title": "Bearcat 2026",
+    "edition_url": "https://ctf42.online/ctfs/bearcat/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "primitive-roots",
+      "permutation-recovery"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/bearcat__2026__pollys_key.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/bearcatctf2026/tree/main/rev/pollys-key"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bearcat/2026/rev/Pollys_Key"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/bearcat/2026/pollys_key/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Dont_unpack_me",
+    "url": "https://ctf42.online/ctfs/bhackari/2026/dont_unpack_me/",
+    "edition_title": "Bhackari 2026",
+    "edition_url": "https://ctf42.online/ctfs/bhackari/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "rc4",
+      "pe-unpacking"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/bhackari__2026__dont_unpack_me.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40850"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bhackari/2026/rev/Dont_unpack_me"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/bhackari/2026/dont_unpack_me/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Mystery",
+    "url": "https://ctf42.online/ctfs/bhackari/2026/mystery/",
+    "edition_title": "Bhackari 2026",
+    "edition_url": "https://ctf42.online/ctfs/bhackari/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "aes-ctr"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/bhackari__2026__mystery.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40851"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bhackari/2026/rev/Mystery"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/bhackari/2026/mystery/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "AlphaCode",
+    "url": "https://ctf42.online/ctfs/boroctf/2026/alphacode/",
+    "edition_title": "BoroCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/boroctf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "custom-dsl-reversing",
+      "opcode-fuzzing"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/boroctf__2026__alphacode.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40888"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BoroCTF/2026/rev/AlphaCode"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/boroctf/2026/alphacode/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "another_onion",
+    "url": "https://ctf42.online/ctfs/dicectf/2026-quals/another_onion/",
+    "edition_title": "DiceCTF 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/dicectf/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "self-decrypting-binary",
+      "layered-decryption",
+      "automation"
+    ],
+    "event_id": "CTF-3110",
+    "event_title": "DiceCTF 2026 Quals",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/dicectf__2026-quals__another_onion.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/dicectf2026-writeups/tree/main/rev/another-onion"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/DiceCTF/2026/Quals/rev/another_onion"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/dicectf/2026-quals/another_onion/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "bedtime",
+    "url": "https://ctf42.online/ctfs/dicectf/2026-quals/bedtime/",
+    "edition_title": "DiceCTF 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/dicectf/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "rust-reversing",
+      "nim-game",
+      "prng"
+    ],
+    "event_id": "CTF-3110",
+    "event_title": "DiceCTF 2026 Quals",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/dicectf__2026-quals__bedtime.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/dicectf2026-writeups/tree/main/rev/bedtime"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/DiceCTF/2026/Quals/rev/bedtime"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/dicectf/2026-quals/bedtime/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "bytecrusher",
+    "url": "https://ctf42.online/ctfs/dicectf/2026-quals/bytecrusher/",
+    "edition_title": "DiceCTF 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/dicectf/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "oob-read",
+      "canary-leak",
+      "stack-buffer-overflow"
+    ],
+    "event_id": "CTF-3110",
+    "event_title": "DiceCTF 2026 Quals",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/dicectf__2026-quals__bytecrusher.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/dicectf2026-writeups/tree/main/pwn/bytecrusher"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/DiceCTF/2026/Quals/pwn/bytecrusher"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/dicectf/2026-quals/bytecrusher/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "explorer",
+    "url": "https://ctf42.online/ctfs/dicectf/2026-quals/explorer/",
+    "edition_title": "DiceCTF 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/dicectf/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "rust",
+      "kernel-module",
+      "ioctl",
+      "maze"
+    ],
+    "event_id": "CTF-3110",
+    "event_title": "DiceCTF 2026 Quals",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/dicectf__2026-quals__explorer.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/dicectf2026-writeups/tree/main/rev/explorer"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/DiceCTF/2026/Quals/rev/explorer"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/dicectf/2026-quals/explorer/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "garden",
+    "url": "https://ctf42.online/ctfs/dicectf/2026-quals/garden/",
+    "edition_title": "DiceCTF 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/dicectf/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "custom-vm",
+      "garbage-collector-bug",
+      "oob-write"
+    ],
+    "event_id": "CTF-3110",
+    "event_title": "DiceCTF 2026 Quals",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/dicectf__2026-quals__garden.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/dicectf2026-writeups/tree/main/pwn/garden"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/DiceCTF/2026/Quals/pwn/garden"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/dicectf/2026-quals/garden/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "locked_in",
+    "url": "https://ctf42.online/ctfs/dicectf/2026-quals/locked_in/",
+    "edition_title": "DiceCTF 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/dicectf/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "custom-vm",
+      "multithreading"
+    ],
+    "event_id": "CTF-3110",
+    "event_title": "DiceCTF 2026 Quals",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/dicectf__2026-quals__locked_in.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/dicectf2026-writeups/tree/main/rev/locked-in"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/DiceCTF/2026/Quals/rev/locked_in"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/dicectf/2026-quals/locked_in/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "message_store",
+    "url": "https://ctf42.online/ctfs/dicectf/2026-quals/message_store/",
+    "edition_title": "DiceCTF 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/dicectf/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "rust",
+      "oob-index",
+      "function-pointer-hijack"
+    ],
+    "event_id": "CTF-3110",
+    "event_title": "DiceCTF 2026 Quals",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/dicectf__2026-quals__message_store.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/dicectf2026-writeups/tree/main/pwn/message-store"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/DiceCTF/2026/Quals/pwn/message_store"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/dicectf/2026-quals/message_store/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Food_Inspector_II",
+    "url": "https://ctf42.online/ctfs/gpn/2026/food_inspector_ii/",
+    "edition_title": "GPN 2026",
+    "edition_url": "https://ctf42.online/ctfs/gpn/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "frida",
+      "dynamic-instrumentation"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/gpn__2026__food_inspector_ii.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/GPN-CTF-2026/tree/main/Food%20Inspector%20II"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/GPN/2026/pwn/Food_Inspector_II"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/gpn/2026/food_inspector_ii/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Scanwich_Station",
+    "url": "https://ctf42.online/ctfs/gpn/2026/scanwich_station/",
+    "edition_title": "GPN 2026",
+    "edition_url": "https://ctf42.online/ctfs/gpn/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "integer-overflow",
+      "qr-code",
+      "image-dimensions"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/gpn__2026__scanwich_station.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/GPN-CTF-2026/tree/main/Scanwich%20Station"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/GPN/2026/pwn/Scanwich_Station"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/gpn/2026/scanwich_station/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Ouroboros",
+    "url": "https://ctf42.online/ctfs/kubstu/2026/ouroboros/",
+    "edition_title": "KubSTU 2026",
+    "edition_url": "https://ctf42.online/ctfs/kubstu/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "self-referential-key-decryption"
+    ],
+    "event_id": "CTF-3446",
+    "event_title": "KubSTU CTF",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/kubstu__2026__ouroboros.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41127"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KubSTU/2026/rev/Ouroboros"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/kubstu/2026/ouroboros/folder.zip?kind=files"
+    ],
+    "status": "indexed",
+    "event_match_correction": "Autumn 2026 confirmed by https://ctftime.org/event/3446/tasks/; aggregator linked spring event 3177 incorrectly."
+  },
+  {
+    "title": "RISC_V.",
+    "url": "https://ctf42.online/ctfs/kubstu/2026/risc_v/",
+    "edition_title": "KubSTU 2026",
+    "edition_url": "https://ctf42.online/ctfs/kubstu/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "feistel-key-inversion"
+    ],
+    "event_id": "CTF-3446",
+    "event_title": "KubSTU CTF",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/kubstu__2026__risc_v.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41128"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KubSTU/2026/rev/RISC_V."
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/kubstu/2026/risc_v/folder.zip?kind=files"
+    ],
+    "status": "indexed",
+    "event_match_correction": "Autumn 2026 confirmed by https://ctftime.org/event/3446/tasks/; aggregator linked spring event 3177 incorrectly."
+  },
+  {
+    "title": "STEGO_Subway_2",
+    "url": "https://ctf42.online/ctfs/kubstu/2026/stego_subway_2/",
+    "edition_title": "KubSTU 2026",
+    "edition_url": "https://ctf42.online/ctfs/kubstu/2026/",
+    "original_category": "Hardware",
+    "tags": [
+      "ascii-value-stego"
+    ],
+    "event_id": "CTF-3446",
+    "event_title": "KubSTU CTF",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/kubstu__2026__stego_subway_2.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41129"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KubSTU/2026/hw/STEGO_Subway_2"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/kubstu/2026/stego_subway_2/folder.zip?kind=files"
+    ],
+    "status": "indexed",
+    "event_match_correction": "Autumn 2026 confirmed by https://ctftime.org/event/3446/tasks/; aggregator linked spring event 3177 incorrectly."
+  },
+  {
+    "title": "Bosh",
+    "url": "https://ctf42.online/ctfs/l3akctf/2026/bosh/",
+    "edition_title": "L3akCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/l3akctf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "fault-injection-oracle"
+    ],
+    "event_id": "CTF-3061",
+    "event_title": "L3akCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/l3akctf__2026__bosh.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41074"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/L3akCTF/2026/pwn/Bosh"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/l3akctf/2026/bosh/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "LattiaVM",
+    "url": "https://ctf42.online/ctfs/l3akctf/2026/lattiavm/",
+    "edition_title": "L3akCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/l3akctf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "vm-stack-pointer-corruption"
+    ],
+    "event_id": "CTF-3061",
+    "event_title": "L3akCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/l3akctf__2026__lattiavm.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41072"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/L3akCTF/2026/pwn/LattiaVM"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/l3akctf/2026/lattiavm/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "LattiaVM_2",
+    "url": "https://ctf42.online/ctfs/l3akctf/2026/lattiavm_2/",
+    "edition_title": "L3akCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/l3akctf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "vm-stack-pointer-corruption"
+    ],
+    "event_id": "CTF-3061",
+    "event_title": "L3akCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/l3akctf__2026__lattiavm_2.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41073"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/L3akCTF/2026/pwn/LattiaVM_2"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/l3akctf/2026/lattiavm_2/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Piet",
+    "url": "https://ctf42.online/ctfs/l3akctf/2026/piet/",
+    "edition_title": "L3akCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/l3akctf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "stack-depth-alias-primitive"
+    ],
+    "event_id": "CTF-3061",
+    "event_title": "L3akCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/l3akctf__2026__piet.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41075"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/L3akCTF/2026/pwn/Piet"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/l3akctf/2026/piet/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Piet_2",
+    "url": "https://ctf42.online/ctfs/l3akctf/2026/piet_2/",
+    "edition_title": "L3akCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/l3akctf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "saved-rbp-pivot"
+    ],
+    "event_id": "CTF-3061",
+    "event_title": "L3akCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/l3akctf__2026__piet_2.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41076"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/L3akCTF/2026/pwn/Piet_2"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/l3akctf/2026/piet_2/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Rudimentary_Calculator",
+    "url": "https://ctf42.online/ctfs/l3akctf/2026/rudimentary_calculator/",
+    "edition_title": "L3akCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/l3akctf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "null-byte-stack-leak"
+    ],
+    "event_id": "CTF-3061",
+    "event_title": "L3akCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/l3akctf__2026__rudimentary_calculator.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41071"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/L3akCTF/2026/pwn/Rudimentary_Calculator"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/l3akctf/2026/rudimentary_calculator/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Supervisor",
+    "url": "https://ctf42.online/ctfs/l3akctf/2026/supervisor/",
+    "edition_title": "L3akCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/l3akctf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "seccomp-notify-escape"
+    ],
+    "event_id": "CTF-3061",
+    "event_title": "L3akCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/l3akctf__2026__supervisor.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41077"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/L3akCTF/2026/pwn/Supervisor"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/l3akctf/2026/supervisor/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "helm_hell",
+    "url": "https://ctf42.online/ctfs/la/2026/helm_hell/",
+    "edition_title": "LA 2026",
+    "edition_url": "https://ctf42.online/ctfs/la/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "helm",
+      "kubernetes",
+      "go-templates"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/la__2026__helm_hell.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/LACTF2026/tree/master/rev/helm_hell"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LA/2026/rev/helm_hell"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/la/2026/helm_hell/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "lactf_1986",
+    "url": "https://ctf42.online/ctfs/la/2026/lactf_1986/",
+    "edition_title": "LA 2026",
+    "edition_url": "https://ctf42.online/ctfs/la/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "lfsr",
+      "dos-reversing",
+      "bruteforce"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/la__2026__lactf_1986.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/LACTF2026/tree/master/rev/lactf_1986"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LA/2026/rev/lactf_1986"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/la/2026/lactf_1986/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "ooo",
+    "url": "https://ctf42.online/ctfs/la/2026/ooo/",
+    "edition_title": "LA 2026",
+    "edition_url": "https://ctf42.online/ctfs/la/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "homoglyph",
+      "obfuscation"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/la__2026__ooo.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/LACTF2026/tree/master/rev/ooo"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LA/2026/rev/ooo"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/la/2026/ooo/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "starless_c",
+    "url": "https://ctf42.online/ctfs/la/2026/starless_c/",
+    "edition_title": "LA 2026",
+    "edition_url": "https://ctf42.online/ctfs/la/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "self-modifying-code",
+      "maze"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/la__2026__starless_c.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/LACTF2026/tree/master/rev/starless_c"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LA/2026/rev/starless_c"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/la/2026/starless_c/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "the_fish",
+    "url": "https://ctf42.online/ctfs/la/2026/the_fish/",
+    "edition_title": "LA 2026",
+    "edition_url": "https://ctf42.online/ctfs/la/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "collatz",
+      "number-encoding"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/la__2026__the_fish.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/LACTF2026/tree/master/rev/the_fish"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LA/2026/rev/the_fish"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/la/2026/the_fish/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Control_Freak_1",
+    "url": "https://ctf42.online/ctfs/lyknctf/2026/control_freak_1/",
+    "edition_title": "LYKNCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/lyknctf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "custom-cipher-reversing"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/lyknctf__2026__control_freak_1.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40983"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/rev/Control_Freak_1"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/lyknctf/2026/control_freak_1/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Control_Freak_2",
+    "url": "https://ctf42.online/ctfs/lyknctf/2026/control_freak_2/",
+    "edition_title": "LYKNCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/lyknctf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "splitmix64-prng"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/lyknctf__2026__control_freak_2.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40984"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/rev/Control_Freak_2"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/lyknctf/2026/control_freak_2/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Ez_Pwn",
+    "url": "https://ctf42.online/ctfs/lyknctf/2026/ez_pwn/",
+    "edition_title": "LYKNCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/lyknctf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "signed-integer-overflow"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/lyknctf__2026__ez_pwn.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40964"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/pwn/Ez_Pwn"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/lyknctf/2026/ez_pwn/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "H34P_D3V1L",
+    "url": "https://ctf42.online/ctfs/lyknctf/2026/h34p_d3v1l/",
+    "edition_title": "LYKNCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/lyknctf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "tcache-poisoning"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/lyknctf__2026__h34p_d3v1l.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40965"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/pwn/H34P_D3V1L"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/lyknctf/2026/h34p_d3v1l/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "I_HATE_THIS_APP",
+    "url": "https://ctf42.online/ctfs/lyknctf/2026/i_hate_this_app/",
+    "edition_title": "LYKNCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/lyknctf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "static-string-analysis"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/lyknctf__2026__i_hate_this_app.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40981"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/rev/I_HATE_THIS_APP"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/lyknctf/2026/i_hate_this_app/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "I_HATE_THIS_APP_REVENGE",
+    "url": "https://ctf42.online/ctfs/lyknctf/2026/i_hate_this_app_revenge/",
+    "edition_title": "LYKNCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/lyknctf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "aes-ctr-fixed-key"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/lyknctf__2026__i_hate_this_app_revenge.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40982"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/rev/I_HATE_THIS_APP_REVENGE"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/lyknctf/2026/i_hate_this_app_revenge/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Return_to_Lose",
+    "url": "https://ctf42.online/ctfs/lyknctf/2026/return_to_lose/",
+    "edition_title": "LYKNCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/lyknctf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "ret2win"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/lyknctf__2026__return_to_lose.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40963"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/pwn/Return_to_Lose"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/lyknctf/2026/return_to_lose/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Waguri2",
+    "url": "https://ctf42.online/ctfs/lyknctf/2026/waguri2/",
+    "edition_title": "LYKNCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/lyknctf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "brainfuck-esolang"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/lyknctf__2026__waguri2.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40980"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/rev/Waguri2"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/lyknctf/2026/waguri2/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "RepusPing",
+    "url": "https://ctf42.online/ctfs/mntcrlctf/2026/repusping/",
+    "edition_title": "MntcrlCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/mntcrlctf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "ptr-guard-key-recovery"
+    ],
+    "event_id": "CTF-3282",
+    "event_title": "MntcrlCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/mntcrlctf__2026__repusping.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40962"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/MntcrlCTF/2026/pwn/RepusPing"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/mntcrlctf/2026/repusping/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Freal_World_Manipulation",
+    "url": "https://ctf42.online/ctfs/pwnsec/2026/freal_world_manipulation/",
+    "edition_title": "PwnSec 2026",
+    "edition_url": "https://ctf42.online/ctfs/pwnsec/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "oob-index",
+      "float-overflow",
+      "arbitrary-read-write"
+    ],
+    "event_id": "CTF-3159",
+    "event_title": "PwnSec CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/pwnsec__2026__freal_world_manipulation.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/pwn/freal-world-manipulation"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/pwn/Freal_World_Manipulation"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/pwnsec/2026/freal_world_manipulation/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "ICX_Confusion",
+    "url": "https://ctf42.online/ctfs/pwnsec/2026/icx_confusion/",
+    "edition_title": "PwnSec 2026",
+    "edition_url": "https://ctf42.online/ctfs/pwnsec/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "custom-vm",
+      "type-confusion",
+      "stale-reference"
+    ],
+    "event_id": "CTF-3159",
+    "event_title": "PwnSec CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/pwnsec__2026__icx_confusion.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/rev/icx-confusion"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/ICX_Confusion"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/pwnsec/2026/icx_confusion/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "ICX_Regulate",
+    "url": "https://ctf42.online/ctfs/pwnsec/2026/icx_regulate/",
+    "edition_title": "PwnSec 2026",
+    "edition_url": "https://ctf42.online/ctfs/pwnsec/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "custom-vm",
+      "emulator",
+      "privilege-escalation"
+    ],
+    "event_id": "CTF-3159",
+    "event_title": "PwnSec CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/pwnsec__2026__icx_regulate.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/rev/icx-regulate"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/ICX_Regulate"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/pwnsec/2026/icx_regulate/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "JavaScript_After_Core",
+    "url": "https://ctf42.online/ctfs/pwnsec/2026/javascript_after_core/",
+    "edition_title": "PwnSec 2026",
+    "edition_url": "https://ctf42.online/ctfs/pwnsec/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "javascriptcore",
+      "jit",
+      "ftl",
+      "osr-exit",
+      "browser-exploitation"
+    ],
+    "event_id": "CTF-3159",
+    "event_title": "PwnSec CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/pwnsec__2026__javascript_after_core.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/pwn/javascript-after-core"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/pwn/JavaScript_After_Core"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/pwnsec/2026/javascript_after_core/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Operation_Split_Horizon",
+    "url": "https://ctf42.online/ctfs/pwnsec/2026/operation_split_horizon/",
+    "edition_title": "PwnSec 2026",
+    "edition_url": "https://ctf42.online/ctfs/pwnsec/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "pcap-analysis",
+      "malware-analysis",
+      "exfiltration"
+    ],
+    "event_id": "CTF-3159",
+    "event_title": "PwnSec CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/pwnsec__2026__operation_split_horizon.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/rev/operation-split-horizon"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/Operation_Split_Horizon"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/pwnsec/2026/operation_split_horizon/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "PHP_Sandbox_Escape",
+    "url": "https://ctf42.online/ctfs/pwnsec/2026/php_sandbox_escape/",
+    "edition_title": "PwnSec 2026",
+    "edition_url": "https://ctf42.online/ctfs/pwnsec/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "php-sandbox-escape",
+      "pdo-sqlite",
+      "load-extension"
+    ],
+    "event_id": "CTF-3159",
+    "event_title": "PwnSec CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/pwnsec__2026__php_sandbox_escape.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/pwn/php-sandbox-escape"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/pwn/PHP_Sandbox_Escape"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/pwnsec/2026/php_sandbox_escape/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "PwnSec_Support",
+    "url": "https://ctf42.online/ctfs/pwnsec/2026/pwnsec_support/",
+    "edition_title": "PwnSec 2026",
+    "edition_url": "https://ctf42.online/ctfs/pwnsec/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "custom-vm",
+      "lua",
+      "web-exploitation"
+    ],
+    "event_id": "CTF-3159",
+    "event_title": "PwnSec CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/pwnsec__2026__pwnsec_support.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/pwn/pwnsec-support"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/pwn/PwnSec_Support"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/pwnsec/2026/pwnsec_support/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Two_Worlds_One_Heart",
+    "url": "https://ctf42.online/ctfs/pwnsec/2026/two_worlds_one_heart/",
+    "edition_title": "PwnSec 2026",
+    "edition_url": "https://ctf42.online/ctfs/pwnsec/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "heavens-gate",
+      "wow64",
+      "polyglot-code"
+    ],
+    "event_id": "CTF-3159",
+    "event_title": "PwnSec CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/pwnsec__2026__two_worlds_one_heart.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/rev/two-worlds-one-heart"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/Two_Worlds_One_Heart"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/pwnsec/2026/two_worlds_one_heart/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Zigerions",
+    "url": "https://ctf42.online/ctfs/pwnsec/2026/zigerions/",
+    "edition_title": "PwnSec 2026",
+    "edition_url": "https://ctf42.online/ctfs/pwnsec/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "layered-reversing",
+      "vmprotect",
+      "gameboy"
+    ],
+    "event_id": "CTF-3159",
+    "event_title": "PwnSec CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/pwnsec__2026__zigerions.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/rev/zigerions"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/Zigerions"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/pwnsec/2026/zigerions/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Buried_Treasure",
+    "url": "https://ctf42.online/ctfs/ritsec/2026/buried_treasure/",
+    "edition_title": "RITSEC 2026",
+    "edition_url": "https://ctf42.online/ctfs/ritsec/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "multi-stage-unpacking",
+      "memfd-create",
+      "xor",
+      "strace-dump"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/ritsec__2026__buried_treasure.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40704"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/Buried_Treasure"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/ritsec/2026/buried_treasure/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "T_reasure_Chest",
+    "url": "https://ctf42.online/ctfs/ritsec/2026/t_reasure_chest/",
+    "edition_title": "RITSEC 2026",
+    "edition_url": "https://ctf42.online/ctfs/ritsec/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "xtea"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/ritsec__2026__t_reasure_chest.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40702"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/T_reasure_Chest"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/ritsec/2026/t_reasure_chest/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "doMonkeysSwim",
+    "url": "https://ctf42.online/ctfs/ritsec/2026/domonkeysswim/",
+    "edition_title": "RITSEC 2026",
+    "edition_url": "https://ctf42.online/ctfs/ritsec/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "static-rop",
+      "stack-buffer-overflow",
+      "stack-pivot",
+      "syscall"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/ritsec__2026__domonkeysswim.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40688"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/pwn/doMonkeysSwim"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/ritsec/2026/domonkeysswim/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "not_quite_optimal",
+    "url": "https://ctf42.online/ctfs/ritsec/2026/not_quite_optimal/",
+    "edition_title": "RITSEC 2026",
+    "edition_url": "https://ctf42.online/ctfs/ritsec/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "gmp",
+      "tetration",
+      "power-tower"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/ritsec__2026__not_quite_optimal.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40703"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/not_quite_optimal"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/ritsec/2026/not_quite_optimal/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "obfpyscated",
+    "url": "https://ctf42.online/ctfs/ritsec/2026/obfpyscated/",
+    "edition_title": "RITSEC 2026",
+    "edition_url": "https://ctf42.online/ctfs/ritsec/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "python-obfuscation",
+      "xor",
+      "aes"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/ritsec__2026__obfpyscated.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40707"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/obfpyscated"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/ritsec/2026/obfpyscated/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "F_K",
+    "url": "https://ctf42.online/ctfs/scriptctf/2026/f_k/",
+    "edition_title": "ScriptCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/scriptctf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "brainfuck",
+      "timing-side-channel"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/scriptctf__2026__f_k.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41121"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ScriptCTF/2026/rev/F_K"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/scriptctf/2026/f_k/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Chibile",
+    "url": "https://ctf42.online/ctfs/sekaictf/2026/chibile/",
+    "edition_title": "SekaiCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/sekaictf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "anti-cheat",
+      "unpacking",
+      "protocol-reversing"
+    ],
+    "event_id": "CTF-3113",
+    "event_title": "SekaiCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/sekaictf__2026__chibile.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/Sekai-CTF-2026/tree/main/rev/chibile"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/rev/Chibile"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/sekaictf/2026/chibile/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "MTE",
+    "url": "https://ctf42.online/ctfs/sekaictf/2026/mte/",
+    "edition_title": "SekaiCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/sekaictf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "kernel-exploitation",
+      "arm-mte",
+      "pointer-authentication",
+      "use-after-free (uaf)"
+    ],
+    "event_id": "CTF-3113",
+    "event_title": "SekaiCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/sekaictf__2026__mte.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/Sekai-CTF-2026/tree/main/pwn/mte"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/pwn/MTE"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/sekaictf/2026/mte/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Untitled_Encore",
+    "url": "https://ctf42.online/ctfs/sekaictf/2026/untitled_encore/",
+    "edition_title": "SekaiCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/sekaictf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "reversing",
+      "constraint-solving"
+    ],
+    "event_id": "CTF-3113",
+    "event_title": "SekaiCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/sekaictf__2026__untitled_encore.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40956"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/rev/Untitled_Encore"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/sekaictf/2026/untitled_encore/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "echo_chamber",
+    "url": "https://ctf42.online/ctfs/sekaictf/2026/echo_chamber/",
+    "edition_title": "SekaiCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/sekaictf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "integer-overflow",
+      "content-length",
+      "heap-overflow"
+    ],
+    "event_id": "CTF-3113",
+    "event_title": "SekaiCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/sekaictf__2026__echo_chamber.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/Sekai-CTF-2026/tree/main/pwn/echo-chamber"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/pwn/echo_chamber"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/sekaictf/2026/echo_chamber/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Artistic_warmup",
+    "url": "https://ctf42.online/ctfs/srdnlen/2026-quals/artistic_warmup/",
+    "edition_title": "Srdnlen 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/srdnlen/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "windows-reversing",
+      "gdi",
+      "bitmap-comparison"
+    ],
+    "event_id": "CTF-3043",
+    "event_title": "Srdnlen CTF 2026 Quals",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/srdnlen__2026-quals__artistic_warmup.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/srdnlen-CTF-2026/blob/main/rev/artistic-warmup.md"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Srdnlen/2026/Quals/rev/Artistic_warmup"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/srdnlen/2026-quals/artistic_warmup/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Common_offset",
+    "url": "https://ctf42.online/ctfs/srdnlen/2026-quals/common_offset/",
+    "edition_title": "Srdnlen 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/srdnlen/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "index-validation-bug",
+      "ret2dlresolve",
+      "rop"
+    ],
+    "event_id": "CTF-3043",
+    "event_title": "Srdnlen CTF 2026 Quals",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/srdnlen__2026-quals__common_offset.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/srdnlen-CTF-2026/blob/main/pwn/common-offset.md"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Srdnlen/2026/Quals/pwn/Common_offset"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/srdnlen/2026-quals/common_offset/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Dantes_Trial",
+    "url": "https://ctf42.online/ctfs/srdnlen/2026-quals/dantes_trial/",
+    "edition_title": "Srdnlen 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/srdnlen/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "gba-rom",
+      "custom-vm",
+      "fnv-1a"
+    ],
+    "event_id": "CTF-3043",
+    "event_title": "Srdnlen CTF 2026 Quals",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/srdnlen__2026-quals__dantes_trial.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/srdnlen-CTF-2026/blob/main/rev/dantes-trial.md"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Srdnlen/2026/Quals/rev/Dantes_Trial"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/srdnlen/2026-quals/dantes_trial/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Echo",
+    "url": "https://ctf42.online/ctfs/srdnlen/2026-quals/echo/",
+    "edition_title": "Srdnlen 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/srdnlen/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "off-by-one",
+      "stack-leak",
+      "rop"
+    ],
+    "event_id": "CTF-3043",
+    "event_title": "Srdnlen CTF 2026 Quals",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/srdnlen__2026-quals__echo.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/srdnlen-CTF-2026/blob/main/pwn/echo.md"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Srdnlen/2026/Quals/pwn/Echo"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/srdnlen/2026-quals/echo/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Linx",
+    "url": "https://ctf42.online/ctfs/srdnlen/2026-quals/linx/",
+    "edition_title": "Srdnlen 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/srdnlen/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "heap-overflow",
+      "regex",
+      "tcache-poisoning",
+      "shellcode"
+    ],
+    "event_id": "CTF-3043",
+    "event_title": "Srdnlen CTF 2026 Quals",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/srdnlen__2026-quals__linx.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/srdnlen-CTF-2026/blob/main/pwn/linx.md"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Srdnlen/2026/Quals/pwn/Linx"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/srdnlen/2026-quals/linx/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Registered_Stack",
+    "url": "https://ctf42.online/ctfs/srdnlen/2026-quals/registered_stack/",
+    "edition_title": "Srdnlen 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/srdnlen/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "shellcode-restrictions",
+      "push-pop-only",
+      "self-modifying-code",
+      "aslr-bruteforce"
+    ],
+    "event_id": "CTF-3043",
+    "event_title": "Srdnlen CTF 2026 Quals",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/srdnlen__2026-quals__registered_stack.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/srdnlen-CTF-2026/blob/main/pwn/registered-stack.md"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Srdnlen/2026/Quals/pwn/Registered_Stack"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/srdnlen/2026-quals/registered_stack/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Cache_Money",
+    "url": "https://ctf42.online/ctfs/sunshinectf/2026/cache_money/",
+    "edition_title": "SunshineCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/sunshinectf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "use-after-free (uaf)",
+      "tcache-poisoning",
+      "safe-linking"
+    ],
+    "event_id": "CTF-3399",
+    "event_title": "SunshineCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/sunshinectf__2026__cache_money.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/SunshineCTF-2026/tree/main/pwn/cache-money"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Cache_Money"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/sunshinectf/2026/cache_money/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Code_Breaker",
+    "url": "https://ctf42.online/ctfs/sunshinectf/2026/code_breaker/",
+    "edition_title": "SunshineCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/sunshinectf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "use-after-free (uaf)",
+      "refcount-bug",
+      "tcache-poisoning",
+      "cet"
+    ],
+    "event_id": "CTF-3399",
+    "event_title": "SunshineCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/sunshinectf__2026__code_breaker.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/SunshineCTF-2026/tree/main/pwn/code-breaker"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Code_Breaker"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/sunshinectf/2026/code_breaker/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Homemaker",
+    "url": "https://ctf42.online/ctfs/sunshinectf/2026/homemaker/",
+    "edition_title": "SunshineCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/sunshinectf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "off-by-one",
+      "length-field-overwrite",
+      "crc"
+    ],
+    "event_id": "CTF-3399",
+    "event_title": "SunshineCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/sunshinectf__2026__homemaker.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/SunshineCTF-2026/tree/main/pwn/homemaker"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Homemaker"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/sunshinectf/2026/homemaker/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "IntMod",
+    "url": "https://ctf42.online/ctfs/sunshinectf/2026/intmod/",
+    "edition_title": "SunshineCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/sunshinectf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "signal-driven-vm",
+      "anti-debugging",
+      "self-decrypting-code"
+    ],
+    "event_id": "CTF-3399",
+    "event_title": "SunshineCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/sunshinectf__2026__intmod.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/SunshineCTF-2026/tree/main/rev/intmod"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/rev/IntMod"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/sunshinectf/2026/intmod/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Print_Print_Revolution",
+    "url": "https://ctf42.online/ctfs/sunshinectf/2026/print_print_revolution/",
+    "edition_title": "SunshineCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/sunshinectf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "custom-printf",
+      "format-string",
+      "arbitrary-write"
+    ],
+    "event_id": "CTF-3399",
+    "event_title": "SunshineCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/sunshinectf__2026__print_print_revolution.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/SunshineCTF-2026/tree/main/pwn/print-print-revolution"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Print_Print_Revolution"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/sunshinectf/2026/print_print_revolution/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Safe_House",
+    "url": "https://ctf42.online/ctfs/sunshinectf/2026/safe_house/",
+    "edition_title": "SunshineCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/sunshinectf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "stack-buffer-overflow",
+      "negative-index",
+      "rop",
+      "ipc"
+    ],
+    "event_id": "CTF-3399",
+    "event_title": "SunshineCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/sunshinectf__2026__safe_house.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/SunshineCTF-2026/tree/main/pwn/safe-house"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Safe_House"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/sunshinectf/2026/safe_house/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Total_Recall",
+    "url": "https://ctf42.online/ctfs/sunshinectf/2026/total_recall/",
+    "edition_title": "SunshineCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/sunshinectf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "srop",
+      "sigreturn"
+    ],
+    "event_id": "CTF-3399",
+    "event_title": "SunshineCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/sunshinectf__2026__total_recall.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/SunshineCTF-2026/tree/main/pwn/total-recall"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Total_Recall"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/sunshinectf/2026/total_recall/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "rotated",
+    "url": "https://ctf42.online/ctfs/tjctf/2026/rotated/",
+    "edition_title": "TJCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/tjctf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "reversing",
+      "byte-rotation"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/tjctf__2026__rotated.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40785"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TJCTF/2026/rev/rotated"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/tjctf/2026/rotated/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "1+1",
+    "url": "https://ctf42.online/ctfs/trx/2026/11/",
+    "edition_title": "TRX 2026",
+    "edition_url": "https://ctf42.online/ctfs/trx/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "reversing",
+      "vm"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/trx__2026__11.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40721"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/rev/1%2B1"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/trx/2026/11/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "down_the_line",
+    "url": "https://ctf42.online/ctfs/trx/2026/down_the_line/",
+    "edition_title": "TRX 2026",
+    "edition_url": "https://ctf42.online/ctfs/trx/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "bootsector-pwn",
+      "heap-overflow"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/trx__2026__down_the_line.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40716"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/pwn/down_the_line"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/trx/2026/down_the_line/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "faulty_road",
+    "url": "https://ctf42.online/ctfs/trx/2026/faulty_road/",
+    "edition_title": "TRX 2026",
+    "edition_url": "https://ctf42.online/ctfs/trx/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "kernel",
+      "reversing"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/trx__2026__faulty_road.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40718"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/rev/faulty_road"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/trx/2026/faulty_road/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "house_of_fishing",
+    "url": "https://ctf42.online/ctfs/trx/2026/house_of_fishing/",
+    "edition_title": "TRX 2026",
+    "edition_url": "https://ctf42.online/ctfs/trx/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "largebin-attack",
+      "heap"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/trx__2026__house_of_fishing.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40715",
+      "https://ctftime.org/writeup/40815"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/pwn/house_of_fishing"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/trx/2026/house_of_fishing/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "krwd",
+    "url": "https://ctf42.online/ctfs/trx/2026/krwd/",
+    "edition_title": "TRX 2026",
+    "edition_url": "https://ctf42.online/ctfs/trx/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "kernel-exploitation"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/trx__2026__krwd.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40711"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/pwn/krwd"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/trx/2026/krwd/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "slop_allocator",
+    "url": "https://ctf42.online/ctfs/trx/2026/slop_allocator/",
+    "edition_title": "TRX 2026",
+    "edition_url": "https://ctf42.online/ctfs/trx/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "custom-allocator",
+      "heap"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/trx__2026__slop_allocator.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40717"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/pwn/slop_allocator"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/trx/2026/slop_allocator/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "triforce",
+    "url": "https://ctf42.online/ctfs/trx/2026/triforce/",
+    "edition_title": "TRX 2026",
+    "edition_url": "https://ctf42.online/ctfs/trx/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "v8-exploitation",
+      "jit",
+      "type-confusion"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/trx__2026__triforce.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40712"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/pwn/triforce"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/trx/2026/triforce/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "wandering",
+    "url": "https://ctf42.online/ctfs/trx/2026/wandering/",
+    "edition_title": "TRX 2026",
+    "edition_url": "https://ctf42.online/ctfs/trx/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "reversing",
+      "vm"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/trx__2026__wandering.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40714"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/rev/wandering"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/trx/2026/wandering/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "bookmaker",
+    "url": "https://ctf42.online/ctfs/umdctf/2026/bookmaker/",
+    "edition_title": "UMDCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/umdctf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "use-after-free (uaf)",
+      "arraybuffer"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/umdctf__2026__bookmaker.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40708"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/pwn/bookmaker"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/umdctf/2026/bookmaker/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "gnalekcip",
+    "url": "https://ctf42.online/ctfs/umdctf/2026/gnalekcip/",
+    "edition_title": "UMDCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/umdctf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "pickle-vm",
+      "custom-vm"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/umdctf__2026__gnalekcip.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/UMDCTF-2026/tree/main/UMDCTF-2026/rev/gnalekcip"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/gnalekcip"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/umdctf/2026/gnalekcip/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "rainbet",
+    "url": "https://ctf42.online/ctfs/umdctf/2026/rainbet/",
+    "edition_title": "UMDCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/umdctf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "wasm",
+      "prng-prediction"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/umdctf__2026__rainbet.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/UMDCTF-2026/tree/main/UMDCTF-2026/rev/rainbet"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/rainbet"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/umdctf/2026/rainbet/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "roulette",
+    "url": "https://ctf42.online/ctfs/umdctf/2026/roulette/",
+    "edition_title": "UMDCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/umdctf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "custom-vm",
+      "crt",
+      "forward-computation"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/umdctf__2026__roulette.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/UMDCTF-2026/tree/main/UMDCTF-2026/rev/roulette"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/roulette"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/umdctf/2026/roulette/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "the_akari",
+    "url": "https://ctf42.online/ctfs/umdctf/2026/the_akari/",
+    "edition_title": "UMDCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/umdctf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "akari-puzzle",
+      "constraint-propagation",
+      "sat-solver",
+      "aes"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/umdctf__2026__the_akari.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/UMDCTF-2026/tree/main/UMDCTF-2026/rev/the-akari"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/the_akari"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/umdctf/2026/the_akari/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "vkexchange",
+    "url": "https://ctf42.online/ctfs/umdctf/2026/vkexchange/",
+    "edition_title": "UMDCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/umdctf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "vulkan",
+      "oob-write",
+      "descriptor-sets"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/umdctf__2026__vkexchange.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/UMDCTF-2026/tree/main/UMDCTF-2026/pwn/vkexchange"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/pwn/vkexchange"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/umdctf/2026/vkexchange/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Batcave_Bitflips",
+    "url": "https://ctf42.online/ctfs/umassctf/2026/batcave_bitflips/",
+    "edition_title": "UMassCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/umassctf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "bitflip-repair",
+      "xor",
+      "sbox"
+    ],
+    "event_id": "CTF-2937",
+    "event_title": "UMassCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/umassctf__2026__batcave_bitflips.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/UMASSCTF-2026-writeups/tree/main/UMASSCTF-2026-writeups/rev/batcave-bitflips"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMassCTF/2026/rev/Batcave_Bitflips"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/umassctf/2026/batcave_bitflips/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Brick_City_Office_Space",
+    "url": "https://ctf42.online/ctfs/umassctf/2026/brick_city_office_space/",
+    "edition_title": "UMassCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/umassctf/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "format-string",
+      "got-overwrite",
+      "ret2libc"
+    ],
+    "event_id": "CTF-2937",
+    "event_title": "UMassCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/umassctf__2026__brick_city_office_space.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/UMASSCTF-2026-writeups/tree/main/UMASSCTF-2026-writeups/pwn/brick-city-office-space"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMassCTF/2026/pwn/Brick_City_Office_Space"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/umassctf/2026/brick_city_office_space/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Brick_by_Brick",
+    "url": "https://ctf42.online/ctfs/umassctf/2026/brick_by_brick/",
+    "edition_title": "UMassCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/umassctf/2026/",
+    "original_category": "Hardware",
+    "tags": [
+      "uart",
+      "logic-analyzer",
+      "signal-decoding"
+    ],
+    "event_id": "CTF-2937",
+    "event_title": "UMassCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/umassctf__2026__brick_by_brick.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/UMASSCTF-2026-writeups/tree/main/UMASSCTF-2026-writeups/hardware/brick-by-brick"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMassCTF/2026/hw/Brick_by_Brick"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/umassctf/2026/brick_by_brick/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Smart_Brick_v2",
+    "url": "https://ctf42.online/ctfs/umassctf/2026/smart_brick_v2/",
+    "edition_title": "UMassCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/umassctf/2026/",
+    "original_category": "Hardware",
+    "tags": [
+      "pcb-reversing",
+      "kicad",
+      "logic-simulation"
+    ],
+    "event_id": "CTF-2937",
+    "event_title": "UMassCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/umassctf__2026__smart_brick_v2.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/UMASSCTF-2026-writeups/tree/main/UMASSCTF-2026-writeups/hardware/smart-brick-v2"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMassCTF/2026/hw/Smart_Brick_v2"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/umassctf/2026/smart_brick_v2/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Baby_Obfuscated_Flag_Checker",
+    "url": "https://ctf42.online/ctfs/uoftctf/2026/baby_obfuscated_flag_checker/",
+    "edition_title": "UofTCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/uoftctf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "python-obfuscation",
+      "xor"
+    ],
+    "event_id": "CTF-2969",
+    "event_title": "UofTCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/uoftctf__2026__baby_obfuscated_flag_checker.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/UofTCTF2026/tree/main/rev/baby_obfuscated_flag_checker"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UofTCTF/2026/rev/Baby_Obfuscated_Flag_Checker"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/uoftctf/2026/baby_obfuscated_flag_checker/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Ducks_Ping_Pong",
+    "url": "https://ctf42.online/ctfs/v1t/2026/ducks_ping_pong/",
+    "edition_title": "V1T 2026",
+    "edition_url": "https://ctf42.online/ctfs/v1t/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "windows-driver-reversing",
+      "ioctl",
+      "veh"
+    ],
+    "event_id": "CTF-3249",
+    "event_title": "V1T CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/v1t__2026__ducks_ping_pong.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40897"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/V1T/2026/rev/Ducks_Ping_Pong"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/v1t/2026/ducks_ping_pong/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Tiny",
+    "url": "https://ctf42.online/ctfs/v1t/2026/tiny/",
+    "edition_title": "V1T 2026",
+    "edition_url": "https://ctf42.online/ctfs/v1t/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "reversing",
+      "run-length-encoding"
+    ],
+    "event_id": "CTF-3249",
+    "event_title": "V1T CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/v1t__2026__tiny.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40895"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/V1T/2026/rev/Tiny"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/v1t/2026/tiny/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "dotsbedashing",
+    "url": "https://ctf42.online/ctfs/vuwctf/2026/dotsbedashing/",
+    "edition_title": "VuwCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/vuwctf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "morse-code",
+      "xor",
+      "bit-rotation"
+    ],
+    "event_id": "CTF-3311",
+    "event_title": "VuwCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/vuwctf__2026__dotsbedashing.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41060"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/VuwCTF/2026/rev/dotsbedashing"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/vuwctf/2026/dotsbedashing/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "ilikewords",
+    "url": "https://ctf42.online/ctfs/vuwctf/2026/ilikewords/",
+    "edition_title": "VuwCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/vuwctf/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "xor",
+      "kaprekar-constant"
+    ],
+    "event_id": "CTF-3311",
+    "event_title": "VuwCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/vuwctf__2026__ilikewords.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41059"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/VuwCTF/2026/rev/ilikewords"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/vuwctf/2026/ilikewords/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Favorite_Potato",
+    "url": "https://ctf42.online/ctfs/b01lers/2026/favorite_potato/",
+    "edition_title": "b01lers 2026",
+    "edition_url": "https://ctf42.online/ctfs/b01lers/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "6502",
+      "program-inversion"
+    ],
+    "event_id": "CTF-3153",
+    "event_title": "b01lers CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/b01lers__2026__favorite_potato.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/b01lers-ctf-2026/tree/main/rev/favorite-potato"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/b01lers/2026/rev/Favorite_Potato"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/b01lers/2026/favorite_potato/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "indirect_memory_access",
+    "url": "https://ctf42.online/ctfs/b01lers/2026/indirect_memory_access/",
+    "edition_title": "b01lers 2026",
+    "edition_url": "https://ctf42.online/ctfs/b01lers/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "gba-rom",
+      "boolean-circuit",
+      "z3",
+      "unicorn"
+    ],
+    "event_id": "CTF-3153",
+    "event_title": "b01lers CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/b01lers__2026__indirect_memory_access.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/b01lers-ctf-2026/tree/main/rev/indirect-memory-access"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/b01lers/2026/rev/indirect_memory_access"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/b01lers/2026/indirect_memory_access/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "piano",
+    "url": "https://ctf42.online/ctfs/b01lers/2026/piano/",
+    "edition_title": "b01lers 2026",
+    "edition_url": "https://ctf42.online/ctfs/b01lers/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "ptrace-vm",
+      "sigbus",
+      "linear-equations"
+    ],
+    "event_id": "CTF-3153",
+    "event_title": "b01lers CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/b01lers__2026__piano.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/b01lers-ctf-2026/tree/main/rev/piano"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/b01lers/2026/rev/piano"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/b01lers/2026/piano/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "priority_queue",
+    "url": "https://ctf42.online/ctfs/b01lers/2026/priority_queue/",
+    "edition_title": "b01lers 2026",
+    "edition_url": "https://ctf42.online/ctfs/b01lers/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "heap-overflow",
+      "tcache-poisoning"
+    ],
+    "event_id": "CTF-3153",
+    "event_title": "b01lers CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/b01lers__2026__priority_queue.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/b01lers-ctf-2026/tree/main/pwn/priority-queue"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/b01lers/2026/pwn/priority_queue"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/b01lers/2026/priority_queue/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "throughthewall",
+    "url": "https://ctf42.online/ctfs/b01lers/2026/throughthewall/",
+    "edition_title": "b01lers 2026",
+    "edition_url": "https://ctf42.online/ctfs/b01lers/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "kernel-exploitation",
+      "oob-write",
+      "pipe-buffer",
+      "kernel-rop"
+    ],
+    "event_id": "CTF-3153",
+    "event_title": "b01lers CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/b01lers__2026__throughthewall.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/b01lers-ctf-2026/tree/main/pwn/through-the-wall"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/b01lers/2026/pwn/throughthewall"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/b01lers/2026/throughthewall/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "tiles_+_ai",
+    "url": "https://ctf42.online/ctfs/b01lers/2026/tiles__ai/",
+    "edition_title": "b01lers 2026",
+    "edition_url": "https://ctf42.online/ctfs/b01lers/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "intel-amx",
+      "bfs"
+    ],
+    "event_id": "CTF-3153",
+    "event_title": "b01lers CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/b01lers__2026__tiles__ai.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/b01lers-ctf-2026/tree/main/rev/tiles-ai"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/b01lers/2026/rev/tiles_%2B_ai"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/b01lers/2026/tiles__ai/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "gaem",
+    "url": "https://ctf42.online/ctfs/squ1rrel/2026/gaem/",
+    "edition_title": "squ1rrel 2026",
+    "edition_url": "https://ctf42.online/ctfs/squ1rrel/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "heap-overflow",
+      "function-pointer-overwrite",
+      "format-string",
+      "stack-pivot",
+      "ibt"
+    ],
+    "event_id": "CTF-3234",
+    "event_title": "squ1rrel CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/squ1rrel__2026__gaem.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/squ1rrel-CTF-2026-Writeups/tree/main/pwn/Gaem"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/squ1rrel/2026/pwn/gaem"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/squ1rrel/2026/gaem/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "redactr",
+    "url": "https://ctf42.online/ctfs/squ1rrel/2026/redactr/",
+    "edition_title": "squ1rrel 2026",
+    "edition_url": "https://ctf42.online/ctfs/squ1rrel/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "image-deblurring",
+      "milp",
+      "rust-reversing"
+    ],
+    "event_id": "CTF-3234",
+    "event_title": "squ1rrel CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/squ1rrel__2026__redactr.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/squ1rrel-CTF-2026-Writeups/tree/main/rev/Redactr"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/squ1rrel/2026/rev/redactr"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/squ1rrel/2026/redactr/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "squ1rrel_o_tron",
+    "url": "https://ctf42.online/ctfs/squ1rrel/2026/squ1rrel_o_tron/",
+    "edition_title": "squ1rrel 2026",
+    "edition_url": "https://ctf42.online/ctfs/squ1rrel/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "pdf-javascript",
+      "riscv",
+      "custom-instructions",
+      "tinyemu"
+    ],
+    "event_id": "CTF-3234",
+    "event_title": "squ1rrel CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/squ1rrel__2026__squ1rrel_o_tron.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/squ1rrel-CTF-2026-Writeups/tree/main/rev/squ1rrel-o-tron"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/squ1rrel/2026/rev/squ1rrel_o_tron"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/squ1rrel/2026/squ1rrel_o_tron/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "squ1rrel_o_tron_2",
+    "url": "https://ctf42.online/ctfs/squ1rrel/2026/squ1rrel_o_tron_2/",
+    "edition_title": "squ1rrel 2026",
+    "edition_url": "https://ctf42.online/ctfs/squ1rrel/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "pdf-javascript",
+      "custom-vm",
+      "algorithm-identification"
+    ],
+    "event_id": "CTF-3234",
+    "event_title": "squ1rrel CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/squ1rrel__2026__squ1rrel_o_tron_2.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/squ1rrel-CTF-2026-Writeups/tree/main/rev/squ1rrel-o-tron-2"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/squ1rrel/2026/rev/squ1rrel_o_tron_2"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/squ1rrel/2026/squ1rrel_o_tron_2/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Atarude",
+    "url": "https://ctf42.online/ctfs/asis/2026-quals/atarude/",
+    "edition_title": "ASIS 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/asis/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [],
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/asis__2026-quals__atarude.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/atarude"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Atarude"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/atarude/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Collector",
+    "url": "https://ctf42.online/ctfs/asis/2026-quals/collector/",
+    "edition_title": "ASIS 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/asis/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [],
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/asis__2026-quals__collector.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/collector"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Collector"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/asis/2026-quals/collector/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Boring_APK",
+    "url": "https://ctf42.online/ctfs/bkisc/2026/boring_apk/",
+    "edition_title": "BKISC 2026",
+    "edition_url": "https://ctf42.online/ctfs/bkisc/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "android-native-reversing",
+      "meet-in-the-middle (mitm)"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/bkisc__2026__boring_apk.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40784"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BKISC/2026/rev/Boring_APK"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/bkisc/2026/boring_apk/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "ITS_ME_BURHAN",
+    "url": "https://ctf42.online/ctfs/compfest/2026/its_me_burhan/",
+    "edition_title": "COMPFEST 2026",
+    "edition_url": "https://ctf42.online/ctfs/compfest/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "deterministic-password-generation"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/compfest__2026__its_me_burhan.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/compfest-ctf-2026/tree/main/rev/its-me-burhan"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/COMPFEST/2026/rev/ITS_ME_BURHAN"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/compfest/2026/its_me_burhan/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "menfess",
+    "url": "https://ctf42.online/ctfs/compfest/2026/menfess/",
+    "edition_title": "COMPFEST 2026",
+    "edition_url": "https://ctf42.online/ctfs/compfest/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "kernel-exploitation",
+      "function-pointer-overwrite",
+      "heap-overflow"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/compfest__2026__menfess.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/compfest-ctf-2026/tree/main/pwn/menfess"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/COMPFEST/2026/pwn/menfess"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/compfest/2026/menfess/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "redis_cli_0_day",
+    "url": "https://ctf42.online/ctfs/compfest/2026/redis_cli_0_day/",
+    "edition_title": "COMPFEST 2026",
+    "edition_url": "https://ctf42.online/ctfs/compfest/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "redis-cli",
+      "one-byte-write",
+      "malicious-server",
+      "heap-exploitation"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/compfest__2026__redis_cli_0_day.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/compfest-ctf-2026/tree/main/pwn/redis-cli-0-day"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/COMPFEST/2026/pwn/redis_cli_0_day"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/compfest/2026/redis_cli_0_day/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Dockside_Ticket_Office",
+    "url": "https://ctf42.online/ctfs/css/2026/dockside_ticket_office/",
+    "edition_title": "CSS 2026",
+    "edition_url": "https://ctf42.online/ctfs/css/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "use-after-free (uaf)",
+      "function-pointer-overwrite"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/css__2026__dockside_ticket_office.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/css-ctf-2026-return-of-nexus/tree/main/pwn/dockside-ticket-office"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/CSS/2026/pwn/Dockside_Ticket_Office"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/css/2026/dockside_ticket_office/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "FLAPPY_BOARD",
+    "url": "https://ctf42.online/ctfs/css/2026/flappy_board/",
+    "edition_title": "CSS 2026",
+    "edition_url": "https://ctf42.online/ctfs/css/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "protocol-reversing",
+      "deterministic-simulation"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/css__2026__flappy_board.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/css-ctf-2026-return-of-nexus/tree/main/rev/flappy-board"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/CSS/2026/rev/FLAPPY_BOARD"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/css/2026/flappy_board/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Lamp_Drill",
+    "url": "https://ctf42.online/ctfs/css/2026/lamp_drill/",
+    "edition_title": "CSS 2026",
+    "edition_url": "https://ctf42.online/ctfs/css/2026/",
+    "original_category": "Hardware",
+    "tags": [
+      "logic-gates"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/css__2026__lamp_drill.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/css-ctf-2026-return-of-nexus/tree/main/hardware/lamp-drill"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/CSS/2026/hw/Lamp_Drill"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/css/2026/lamp_drill/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Maintenance_Log",
+    "url": "https://ctf42.online/ctfs/css/2026/maintenance_log/",
+    "edition_title": "CSS 2026",
+    "edition_url": "https://ctf42.online/ctfs/css/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "off-by-one",
+      "rbp-overwrite",
+      "stack-pivot"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/css__2026__maintenance_log.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/css-ctf-2026-return-of-nexus/tree/main/pwn/maintenance-log"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/CSS/2026/pwn/Maintenance_Log"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/css/2026/maintenance_log/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Silicon_Snare",
+    "url": "https://ctf42.online/ctfs/css/2026/silicon_snare/",
+    "edition_title": "CSS 2026",
+    "edition_url": "https://ctf42.online/ctfs/css/2026/",
+    "original_category": "Hardware",
+    "tags": [
+      "logic-circuit",
+      "sat-solver",
+      "netlist-transcription"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/css__2026__silicon_snare.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/css-ctf-2026-return-of-nexus/tree/main/hardware/silicon-snare"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/CSS/2026/hw/Silicon_Snare"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/css/2026/silicon_snare/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "prince_walk",
+    "url": "https://ctf42.online/ctfs/css/2026/prince_walk/",
+    "edition_title": "CSS 2026",
+    "edition_url": "https://ctf42.online/ctfs/css/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "custom-vm",
+      "obfuscation"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/css__2026__prince_walk.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/css-ctf-2026-return-of-nexus/tree/main/rev/prince-walk"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/CSS/2026/rev/prince_walk"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/css/2026/prince_walk/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Kelpie",
+    "url": "https://ctf42.online/ctfs/cryovault/2026-quals/kelpie/",
+    "edition_title": "Cryovault 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/cryovault/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "custom-vm",
+      "openssl"
+    ],
+    "event_id": "CTF-3441",
+    "event_title": "Cryovault 2026 Quals",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/cryovault__2026-quals__kelpie.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/Cryovault-2026-Quals/tree/main/rev/kelpie"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Cryovault/2026/Quals/rev/Kelpie"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/cryovault/2026-quals/kelpie/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "rime_scrub",
+    "url": "https://ctf42.online/ctfs/cryovault/2026-quals/rime_scrub/",
+    "edition_title": "Cryovault 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/cryovault/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "hexagon",
+      "fault-injection",
+      "ecc-side-channel"
+    ],
+    "event_id": "CTF-3441",
+    "event_title": "Cryovault 2026 Quals",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/cryovault__2026-quals__rime_scrub.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/Cryovault-2026-Quals/tree/main/rev/rime-scrub"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Cryovault/2026/Quals/rev/rime_scrub"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/cryovault/2026-quals/rime_scrub/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "thaw_ladder",
+    "url": "https://ctf42.online/ctfs/cryovault/2026-quals/thaw_ladder/",
+    "edition_title": "Cryovault 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/cryovault/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "custom-vm",
+      "signedness-bug",
+      "oob-write"
+    ],
+    "event_id": "CTF-3441",
+    "event_title": "Cryovault 2026 Quals",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/cryovault__2026-quals__thaw_ladder.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/Cryovault-2026-Quals/tree/main/pwn/thaw-ladder"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Cryovault/2026/Quals/pwn/thaw_ladder"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/cryovault/2026-quals/thaw_ladder/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Automaton",
+    "url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/automaton/",
+    "edition_title": "Haruulzangi 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "wasm",
+      "reversible-transformations",
+      "custom-vm"
+    ],
+    "event_id": "CTF-3379",
+    "event_title": "Haruulzangi CTF 2026 Qualifier",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/haruulzangi__2026-quals__automaton.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/rev/automaton"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/rev/Automaton"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/haruulzangi/2026-quals/automaton/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Cabinet",
+    "url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/cabinet/",
+    "edition_title": "Haruulzangi 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "oob-write",
+      "function-pointer-overwrite",
+      "game-replay"
+    ],
+    "event_id": "CTF-3379",
+    "event_title": "Haruulzangi CTF 2026 Qualifier",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/haruulzangi__2026-quals__cabinet.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/pwn/cabinet"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/pwn/Cabinet"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/haruulzangi/2026-quals/cabinet/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Ehlel",
+    "url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/ehlel/",
+    "edition_title": "Haruulzangi 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "protocol-reversing",
+      "utp",
+      "dht",
+      "big-endian"
+    ],
+    "event_id": "CTF-3379",
+    "event_title": "Haruulzangi CTF 2026 Qualifier",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/haruulzangi__2026-quals__ehlel.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/rev/ehlel"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/rev/Ehlel"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/haruulzangi/2026-quals/ehlel/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Formality",
+    "url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/formality/",
+    "edition_title": "Haruulzangi 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "uninitialized-memory",
+      "heap-overflow"
+    ],
+    "event_id": "CTF-3379",
+    "event_title": "Haruulzangi CTF 2026 Qualifier",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/haruulzangi__2026-quals__formality.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/pwn/formality"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/pwn/Formality"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/haruulzangi/2026-quals/formality/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Furnace",
+    "url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/furnace/",
+    "edition_title": "Haruulzangi 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "java-reversing",
+      "jni",
+      "minecraft-mod"
+    ],
+    "event_id": "CTF-3379",
+    "event_title": "Haruulzangi CTF 2026 Qualifier",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/haruulzangi__2026-quals__furnace.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/rev/furnace"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/rev/Furnace"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/haruulzangi/2026-quals/furnace/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Made_In_Mongolia",
+    "url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/made_in_mongolia/",
+    "edition_title": "Haruulzangi 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "jit-bug",
+      "type-confusion",
+      "waf-bypass"
+    ],
+    "event_id": "CTF-3379",
+    "event_title": "Haruulzangi CTF 2026 Qualifier",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/haruulzangi__2026-quals__made_in_mongolia.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/pwn/made-in-mongolia"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/pwn/Made_In_Mongolia"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/haruulzangi/2026-quals/made_in_mongolia/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Payphone",
+    "url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/payphone/",
+    "edition_title": "Haruulzangi 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "path-traversal",
+      "lfi (local-file-inclusion)",
+      "proc-environ"
+    ],
+    "event_id": "CTF-3379",
+    "event_title": "Haruulzangi CTF 2026 Qualifier",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/haruulzangi__2026-quals__payphone.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/pwn/payphone"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/pwn/Payphone"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/haruulzangi/2026-quals/payphone/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Tenure",
+    "url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/tenure/",
+    "edition_title": "Haruulzangi 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "use-after-free (uaf)",
+      "tcache-poisoning"
+    ],
+    "event_id": "CTF-3379",
+    "event_title": "Haruulzangi CTF 2026 Qualifier",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/haruulzangi__2026-quals__tenure.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/pwn/tenure"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/pwn/Tenure"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/haruulzangi/2026-quals/tenure/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Trace",
+    "url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/trace/",
+    "edition_title": "Haruulzangi 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "signal-handler",
+      "self-decrypting-binary",
+      "fnv-1a"
+    ],
+    "event_id": "CTF-3379",
+    "event_title": "Haruulzangi CTF 2026 Qualifier",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/haruulzangi__2026-quals__trace.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/rev/trace"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/rev/Trace"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/haruulzangi/2026-quals/trace/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Most_Secure_Bank_Of_Endia",
+    "url": "https://ctf42.online/ctfs/kbxac/2026/most_secure_bank_of_endia/",
+    "edition_title": "KBxAc 2026",
+    "edition_url": "https://ctf42.online/ctfs/kbxac/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "utf-8-length-mismatch",
+      "buffer-overflow",
+      "checksum"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/kbxac__2026__most_secure_bank_of_endia.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/pwn/most-secure-bank-of-endia"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/pwn/Most_Secure_Bank_Of_Endia"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/kbxac/2026/most_secure_bank_of_endia/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Original_Unlimited_Codex_100_Free",
+    "url": "https://ctf42.online/ctfs/kbxac/2026/original_unlimited_codex_100_free/",
+    "edition_title": "KBxAc 2026",
+    "edition_url": "https://ctf42.online/ctfs/kbxac/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "null-byte-poisoning",
+      "unsafe-unlink",
+      "heap-exploitation"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/kbxac__2026__original_unlimited_codex_100_free.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/pwn/original-unlimited-codex-100-free"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/pwn/Original_Unlimited_Codex_100_Free"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/kbxac/2026/original_unlimited_codex_100_free/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Patcher_1",
+    "url": "https://ctf42.online/ctfs/kbxac/2026/patcher_1/",
+    "edition_title": "KBxAc 2026",
+    "edition_url": "https://ctf42.online/ctfs/kbxac/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "binary-patching"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/kbxac__2026__patcher_1.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/rev/patcher-1"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/Patcher_1"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/kbxac/2026/patcher_1/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Patcher_2",
+    "url": "https://ctf42.online/ctfs/kbxac/2026/patcher_2/",
+    "edition_title": "KBxAc 2026",
+    "edition_url": "https://ctf42.online/ctfs/kbxac/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "binary-patching"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/kbxac__2026__patcher_2.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/rev/patcher-2"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/Patcher_2"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/kbxac/2026/patcher_2/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Shherrr",
+    "url": "https://ctf42.online/ctfs/kbxac/2026/shherrr/",
+    "edition_title": "KBxAc 2026",
+    "edition_url": "https://ctf42.online/ctfs/kbxac/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "raku",
+      "xor"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/kbxac__2026__shherrr.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/rev/shherrr"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/Shherrr"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/kbxac/2026/shherrr/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "lets_get_to_library",
+    "url": "https://ctf42.online/ctfs/kbxac/2026/lets_get_to_library/",
+    "edition_title": "KBxAc 2026",
+    "edition_url": "https://ctf42.online/ctfs/kbxac/2026/",
+    "original_category": "Pwn",
+    "tags": [
+      "gets",
+      "stack-buffer-overflow",
+      "ret2libc"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/kbxac__2026__lets_get_to_library.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/pwn/lets-get-to-library"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/pwn/lets_get_to_library"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/kbxac/2026/lets_get_to_library/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "simphell",
+    "url": "https://ctf42.online/ctfs/kbxac/2026/simphell/",
+    "edition_title": "KBxAc 2026",
+    "edition_url": "https://ctf42.online/ctfs/kbxac/2026/",
+    "original_category": "Reverse",
+    "tags": [
+      "haskell-reversing",
+      "xor"
+    ],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/kbxac__2026__simphell.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/rev/simphell"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/rev/simphell"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/kbxac/2026/simphell/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "refraction",
+    "url": "https://ctf42.online/ctfs/la/2026/refraction/",
+    "edition_title": "LA 2026",
+    "edition_url": "https://ctf42.online/ctfs/la/2026/",
+    "original_category": "Pwn",
+    "tags": [],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/la__2026__refraction.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40660"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LA/2026/pwn/refraction"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/la/2026/refraction/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Snaking_Revenge",
+    "url": "https://ctf42.online/ctfs/sas/2026-quals/snaking_revenge/",
+    "edition_title": "SAS 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/sas/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "pyjnius",
+      "type-confusion",
+      "jni"
+    ],
+    "event_id": "CTF-3109",
+    "event_title": "SAS CTF 2026 Quals",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/sas__2026-quals__snaking_revenge.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40862"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SAS/2026/Quals/pwn/Snaking_Revenge"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/sas/2026-quals/snaking_revenge/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "ppp",
+    "url": "https://ctf42.online/ctfs/sekaictf/2026/ppp/",
+    "edition_title": "SekaiCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/sekaictf/2026/",
+    "original_category": "Pwn",
+    "tags": [],
+    "event_id": "CTF-3113",
+    "event_title": "SekaiCTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/sekaictf__2026__ppp.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40955"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/pwn/ppp"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/sekaictf/2026/ppp/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Firefly_Complete_Combustion",
+    "url": "https://ctf42.online/ctfs/uiuctf/2026/firefly_complete_combustion/",
+    "edition_title": "UIUCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/uiuctf/2026/",
+    "original_category": "Pwn",
+    "tags": [],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/uiuctf__2026__firefly_complete_combustion.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41118"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/pwn/Firefly_Complete_Combustion"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/uiuctf/2026/firefly_complete_combustion/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "GODMODE_999",
+    "url": "https://ctf42.online/ctfs/uiuctf/2026/godmode_999/",
+    "edition_title": "UIUCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/uiuctf/2026/",
+    "original_category": "Reverse",
+    "tags": [],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/uiuctf__2026__godmode_999.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41114"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/rev/GODMODE_999"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/uiuctf/2026/godmode_999/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Sparxie_Vanishing_Encore",
+    "url": "https://ctf42.online/ctfs/uiuctf/2026/sparxie_vanishing_encore/",
+    "edition_title": "UIUCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/uiuctf/2026/",
+    "original_category": "Pwn",
+    "tags": [],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/uiuctf__2026__sparxie_vanishing_encore.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41119"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/pwn/Sparxie_Vanishing_Encore"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/uiuctf/2026/sparxie_vanishing_encore/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Veil_of_Evernight",
+    "url": "https://ctf42.online/ctfs/uiuctf/2026/veil_of_evernight/",
+    "edition_title": "UIUCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/uiuctf/2026/",
+    "original_category": "Reverse",
+    "tags": [],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/uiuctf__2026__veil_of_evernight.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41115"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/rev/Veil_of_Evernight"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/uiuctf/2026/veil_of_evernight/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "glyphs",
+    "url": "https://ctf42.online/ctfs/uiuctf/2026/glyphs/",
+    "edition_title": "UIUCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/uiuctf/2026/",
+    "original_category": "Reverse",
+    "tags": [],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/uiuctf__2026__glyphs.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41116"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/rev/glyphs"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/uiuctf/2026/glyphs/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "vector_cache",
+    "url": "https://ctf42.online/ctfs/uiuctf/2026/vector_cache/",
+    "edition_title": "UIUCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/uiuctf/2026/",
+    "original_category": "Reverse",
+    "tags": [],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/uiuctf__2026__vector_cache.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/41113"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/rev/vector_cache"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/uiuctf/2026/vector_cache/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "nuclear_codes",
+    "url": "https://ctf42.online/ctfs/umdctf/2026/nuclear_codes/",
+    "edition_title": "UMDCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/umdctf/2026/",
+    "original_category": "Reverse",
+    "tags": [],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/umdctf__2026__nuclear_codes.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40709"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/nuclear_codes"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/umdctf/2026/nuclear_codes/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Vision",
+    "url": "https://ctf42.online/ctfs/volgactf/2026-quals/vision/",
+    "edition_title": "VolgaCTF 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/volgactf/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [],
+    "event_id": "CTF-3045",
+    "event_title": "VolgaCTF 2026 Qualifier",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/volgactf__2026-quals__vision.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40686"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/VolgaCTF/2026/Quals/rev/Vision"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/volgactf/2026-quals/vision/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Black_Tide_Survey",
+    "url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/black_tide_survey/",
+    "edition_title": "Z0d1ak 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "file-format-reversing",
+      "sonar",
+      "image-reconstruction"
+    ],
+    "event_id": "CTF-3370",
+    "event_title": "z0d1ak CTF Qualifiers",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/z0d1ak__2026-quals__black_tide_survey.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/rev/black-tide-survey"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/rev/Black_Tide_Survey"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/z0d1ak/2026-quals/black_tide_survey/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "House_XIII",
+    "url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/house_xiii/",
+    "edition_title": "Z0d1ak 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "heap-exploitation",
+      "type-confusion",
+      "use-after-free (uaf)",
+      "custom-vm"
+    ],
+    "event_id": "CTF-3370",
+    "event_title": "z0d1ak CTF Qualifiers",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/z0d1ak__2026-quals__house_xiii.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/pwn/house-xiii"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/pwn/House_XIII"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/z0d1ak/2026-quals/house_xiii/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Salvage_Protocol",
+    "url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/salvage_protocol/",
+    "edition_title": "Z0d1ak 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "request-smuggling",
+      "length-mismatch",
+      "custom-vm"
+    ],
+    "event_id": "CTF-3370",
+    "event_title": "z0d1ak CTF Qualifiers",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/z0d1ak__2026-quals__salvage_protocol.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/pwn/salvage-protocol"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/pwn/Salvage_Protocol"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/z0d1ak/2026-quals/salvage_protocol/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "paperweight",
+    "url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/paperweight/",
+    "edition_title": "Z0d1ak 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "poppler",
+      "pdf",
+      "heap-overflow",
+      "cet",
+      "stack-pivot"
+    ],
+    "event_id": "CTF-3370",
+    "event_title": "z0d1ak CTF Qualifiers",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/z0d1ak__2026-quals__paperweight.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/pwn/paperweight"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/pwn/paperweight"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/z0d1ak/2026-quals/paperweight/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "pekpek_stadium_64",
+    "url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/pekpek_stadium_64/",
+    "edition_title": "Z0d1ak 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "n64-rom",
+      "crc32",
+      "decoy-flag"
+    ],
+    "event_id": "CTF-3370",
+    "event_title": "z0d1ak CTF Qualifiers",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/z0d1ak__2026-quals__pekpek_stadium_64.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/rev/pekpek-stadium-64"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/rev/pekpek_stadium_64"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/z0d1ak/2026-quals/pekpek_stadium_64/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "rapture",
+    "url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/rapture/",
+    "edition_title": "Z0d1ak 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+    "original_category": "Pwn",
+    "tags": [
+      "use-after-free (uaf)",
+      "shallow-copy",
+      "heap-exploitation"
+    ],
+    "event_id": "CTF-3370",
+    "event_title": "z0d1ak CTF Qualifiers",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/z0d1ak__2026-quals__rapture.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/pwn/rapture"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/pwn/rapture"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/z0d1ak/2026-quals/rapture/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "rival_battle",
+    "url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/rival_battle/",
+    "edition_title": "Z0d1ak 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "prng",
+      "deterministic-simulation",
+      "route-search"
+    ],
+    "event_id": "CTF-3370",
+    "event_title": "z0d1ak CTF Qualifiers",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/z0d1ak__2026-quals__rival_battle.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/rev/rival-battle"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/rev/rival_battle"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/z0d1ak/2026-quals/rival_battle/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "stars_below",
+    "url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/stars_below/",
+    "edition_title": "Z0d1ak 2026 Quals",
+    "edition_url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+    "original_category": "Reverse",
+    "tags": [
+      "plt-relocation-trap",
+      "custom-vm",
+      "base32"
+    ],
+    "event_id": "CTF-3370",
+    "event_title": "z0d1ak CTF Qualifiers",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/z0d1ak__2026-quals__stars_below.html",
+    "writeup_urls": [
+      "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/rev/stars-below"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/rev/stars_below"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/z0d1ak/2026-quals/stars_below/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Banned_Bytes",
+    "url": "https://ctf42.online/ctfs/tracebash/2026/banned_bytes/",
+    "edition_title": "TraceBash 2026",
+    "edition_url": "https://ctf42.online/ctfs/tracebash/2026/",
+    "original_category": "Pwn",
+    "tags": [],
+    "event_id": "CTF-3323",
+    "event_title": "TraceBash CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/tracebash__2026__banned_bytes.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40947"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TraceBash/2026/pwn/Banned_Bytes"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/tracebash/2026/banned_bytes/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "Legacy_Ledger",
+    "url": "https://ctf42.online/ctfs/tracebash/2026/legacy_ledger/",
+    "edition_title": "TraceBash 2026",
+    "edition_url": "https://ctf42.online/ctfs/tracebash/2026/",
+    "original_category": "Pwn",
+    "tags": [],
+    "event_id": "CTF-3323",
+    "event_title": "TraceBash CTF 2026",
+    "event_status": "赛程已过",
+    "detail_snapshot": "sources/ctf42_details/tracebash__2026__legacy_ledger.html",
+    "writeup_urls": [
+      "https://ctftime.org/writeup/40948"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TraceBash/2026/pwn/Legacy_Ledger"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/tracebash/2026/legacy_ledger/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  },
+  {
+    "title": "vellum",
+    "url": "https://ctf42.online/ctfs/wreckctf/2026/vellum/",
+    "edition_title": "WRECKCTF 2026",
+    "edition_url": "https://ctf42.online/ctfs/wreckctf/2026/",
+    "original_category": "Pwn",
+    "tags": [],
+    "event_match": "unresolved: []",
+    "detail_snapshot": "sources/ctf42_details/wreckctf__2026__vellum.html",
+    "writeup_urls": [
+      "https://github.com/sajjadium/ctf-archives/blob/main/ctfs/WRECKCTF/2026/pwn/vellum/honest_solver.py"
+    ],
+    "handout_urls": [
+      "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/WRECKCTF/2026/pwn/vellum"
+    ],
+    "download_urls": [
+      "https://ctf42.online/ctfs/wreckctf/2026/vellum/folder.zip?kind=files"
+    ],
+    "status": "indexed"
+  }
+]

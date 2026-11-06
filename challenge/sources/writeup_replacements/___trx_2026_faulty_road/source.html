@@ -1,0 +1,771 @@
+<!doctype html><html lang=en><head><title>faulty-road - TRX CTF Quals 2026 &ndash; kqx</title>
+<meta name=description content="kernel pwn and browser exploitation"><meta name=viewport content="width=device-width,initial-scale=1"><meta charset=UTF-8><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin=anonymous referrerpolicy=no-referrer><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin=anonymous referrerpolicy=no-referrer><link rel=stylesheet href=https://kqx.io/css/palettes/base16-dark.css><link rel=stylesheet href=https://kqx.io/css/risotto.css><link rel=icon href=https://kqx.io/images/favicon.ico><meta property="og:title" content="faulty-road - TRX CTF Quals 2026 &ndash; kqx"><meta property="og:url" content="https://kqx.io/writeups/faulty_road/"><meta property="og:type" content="website"><meta property="og:description" content="rev challenge that I wrote for TRX CTF Quals 2026"><meta property="og:image" content="https://kqx.io/images/banner.jpg"></head><body><div class=page><header class=page__header><nav class="page__nav main-nav"><ul><li class=nomarker><h1 class=page__logo><a href=https://kqx.io/ class=page__logo-inner>kqx</a></h1></li><li class=main-nav__item><a class=nav-main-item href=https://kqx.io/about/ title>about</a></li><li class=main-nav__item><a class=nav-main-item href=https://kqx.io/post/ title>posts</a></li><li class=main-nav__item><a class=nav-main-item href=https://kqx.io/writeups/ title>writeups</a></li></ul></nav></header><section class=page__body><header><h1>faulty-road - TRX CTF Quals 2026</h1></header><div><h2 id=description>Description</h2><p>playing games in kernelspace is fun, but I hope faults don&rsquo;t get in the way</p><h2 id=challenge-overview>Challenge Overview</h2><p>The challenge is a custom kernel driver, shipped without source, with the objective of forcing it to print the flag, which sits in a root-owned file.<br></p><p>The <code>ioctl</code> has two paths:</p><ul><li><code>0x10</code>: copy to userland a small struct;</li><li>any other value: install the &ldquo;backdoor&rdquo; to set up the actual challenge logic on top of a user-controlled mapping.</li></ul><p>The struct copied by <code>0x10</code> is:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=display:flex><span><span style=color:#66d9ef>struct</span> entities {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> wolf;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> goat;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> cabbage;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>union</span> {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> side;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> empty;
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> mmio_data {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>struct</span> entities addr;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>struct</span> entities regs;
+</span></span><span style=display:flex><span>};
+</span></span></code></pre></div><h2 id=the-backdoor>The backdoor</h2><p>The flow of the backdoor is:</p><ul><li>copy four pages from userland into a static kernel buffer;</li><li>walk the current process pagetables until the user <strong>PTE</strong> is reached;</li><li>clear that <strong>PTE</strong> and <strong>invlpg</strong> the address;</li><li>fault the page back in with a <strong>read</strong> through <code>copy_from_user</code>;</li><li>resolve the <strong>PTE</strong> again and extract the PFN;</li><li><code>vmap</code> that PFN and the next 3 physical pages;</li><li>scribble over them with some pseudo-random garbage.</li></ul><p>What&rsquo;s the point of refaulting the page with a read?<br>The answer is <strong>zero_pfn</strong>: on a read fault the kernel does not need a fresh anonymous page yet, so it can temporarily map the zero page instead of allocating usable memory. I wrote more about this trick <a href=https://kqx.io/post/fetipop>here</a>.<br></p><p>This is the main decoy of the challenge. At first glance it looks like some sort of &ldquo;free page and reclaim something interesting&rdquo; primitive, but it is not. The PFN recovered after the refault is just the PFN of the <code>empty_zero_page</code>.</p><p>Once the driver has that PFN, it maps four consecutive physical pages starting from there which aren&rsquo;t random:</p><ul><li><strong>zero_pfn</strong>;</li><li><strong>IDT</strong>;</li><li>two <strong>espfix</strong>-related page table mappings.</li></ul><p>If you look at the <code>vmmap</code> through gdb after the backdoor is installed the result looks like shit, because of the writes on the <strong>espfix</strong> page tables.<br></p><p><img src=/images/faulty_road/vmmap.png alt=vmmap></p><p>The write over those four pages is intentionally ugly. The driver alternates two small RNG states, uses an <strong>LCG</strong>, xors blocks with a rolling key and seeds the whole thing with the low 32 bits of two internal functions.<br>You do not actually need to understand the generator: the only relevant result is that two specific <strong>IDT</strong> entries end up pointing to custom handlers:</p><ul><li><code>rsh</code>, the rescheduling handler;</li><li><code>pfh</code>, the page fault handler.</li></ul><p>Note: there&rsquo;s another entry that must stay unmodified: interrupt #40, which appears to be related to IRQs and gets yielded consistently, corrupting its descriptor will generate a double fault.<br></p><p><img src=/images/faulty_road/idt.png alt=idt></p><p>The <strong>LCG</strong> is mostly camouflage. Everything else is there to make the memory dump look cursed. The two extra <strong>espfix</strong> pages are pagetables and not part of the intended interaction.</p><h2 id=the-actual-game>The actual game</h2><h3 id=rsh>rsh</h3><p><code>rsh</code> is the game loop. It is hooked on the rescheduling interrupt, so it gets executed automatically every tick, roughly every millisecond.<br></p><p>The state itself is just the classic <a href=https://en.wikipedia.org/wiki/Wolf,_goat_and_cabbage_problem>wolf, goat and cabbage</a> puzzle. Each entity is stored as a bit and so is the boat side.<br>Every time <code>rsh</code> runs, it first re-randomizes the <strong>mmio</strong> struct and then checks the puzzle state.</p><p>If the state is losing, the challenge doesn&rsquo;t kill the process: it just zeroes the state and rerandomizes <strong>mmio</strong> again.<br>If the state is winning, the handler prints the flag to <strong>COM1</strong>.<br>In both cases it then jumps to the real rescheduling handler so the kernel can keep its intended behaviour.</p><h3 id=pfh>pfh</h3><p><code>pfh</code> is the input handler. It turns page faults into game moves.<br></p><p>The technical step here is how it checks the register ID. The handler doesn&rsquo;t get the register state from some explicit argument: it reconstructs it by reading it back from <strong>sp0</strong>.<br></p><p>Since the page fault comes from ring 3, the CPU enters the kernel using the <strong>sp0</strong> stack. The custom handler then immediately runs <code>SAVE_CONTEXT()</code>, which pushes the user registers. Because the stack grows downward, after the last push the current <strong>rsp</strong> points to the saved <strong>r15</strong>, so the saved block is indexed as:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=display:flex><span><span style=color:#66d9ef>enum</span> reg_id {
+</span></span><span style=display:flex><span>    REG_R15 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>,
+</span></span><span style=display:flex><span>    REG_R14,
+</span></span><span style=display:flex><span>    REG_R13,
+</span></span><span style=display:flex><span>    REG_R12,
+</span></span><span style=display:flex><span>    REG_R11,
+</span></span><span style=display:flex><span>    REG_R10,
+</span></span><span style=display:flex><span>    REG_R9,
+</span></span><span style=display:flex><span>    REG_R8,
+</span></span><span style=display:flex><span>    REG_RSI,
+</span></span><span style=display:flex><span>    REG_RDI,
+</span></span><span style=display:flex><span>    REG_RDX,
+</span></span><span style=display:flex><span>    REG_RCX,
+</span></span><span style=display:flex><span>    REG_RBX,
+</span></span><span style=display:flex><span>    REG_RAX,
+</span></span><span style=display:flex><span>};
+</span></span></code></pre></div><p>The handler recovers that address with <strong>sgdt</strong>. More precisely, it uses <strong>sgdt</strong> to retrieve the base address of the current CPU&rsquo;s <strong>GDT</strong>, and from there it derives the address on <strong>sp0</strong> where the saved register frame starts:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=display:flex><span><span style=color:#66d9ef>asm</span> <span style=color:#a6e22e>volatile</span> (<span style=color:#e6db74>&#34;sgdt (%0)&#34; :: &#34;</span>r<span style=color:#e6db74>&#34; (&amp;gdt) )</span>;
+</span></span><span style=display:flex><span>uregs <span style=color:#f92672>=</span> (user_regs) ((<span style=color:#f92672>*</span>(<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span><span style=color:#f92672>*</span>) <span style=color:#f92672>&amp;</span>gdt[<span style=color:#ae81ff>2</span>]) <span style=color:#f92672>+</span> <span style=color:#ae81ff>0x1f58</span>);
+</span></span></code></pre></div><p>In linux, <strong>GDT</strong> and <strong>sp0</strong> live in the same <strong>cpu_entry_area</strong>, at a fixed offset from each other, so <code>gdt_base + 0x1f58</code> lands exactly on the register block previously pushed by <code>SAVE_CONTEXT()</code>.<br></p><p>At that point the actual check is trivial: read <strong>CR2</strong>, see whether it matches one of the four addresses in <code>mmio.addr</code>, and then verify that <code>uregs[mmio.regs.&lt;entity>] == cr2</code>.<br></p><p>There is one more annoying check: among the accepted registers, the faulting address must appear exactly once<br></p><p>If the checks pass, <code>pfh</code> updates the puzzle state by moving <code>wolf</code>, <code>goat</code>, <code>cabbage</code> or <code>empty</code>. If they don&rsquo;t, it just resets everything.<br>After the custom logic it jumps to the real page fault handler, so userland can keep running and try again.</p><p>So the whole gimmick is: the puzzle input is encoded as <code>(faulting address, faulting register)</code>.</p><h2 id=solving>Solving</h2><p>The driver itself gives us the current controls through <code>0x10</code>, and the page fault handler consumes those controls as input.<br>So the exploit is simply:</p><ul><li>trigger the backdoor once;</li><li>read <code>mmio</code>;</li><li>fault on the right address with the right register;</li><li>repeat with the standard wolf-goat-cabbage solution.</li></ul><p>The winning sequence is:</p><ul><li>goat;</li><li>empty;</li><li>wolf;</li><li>goat;</li><li>cabbage;</li><li>empty;</li><li>goat.</li></ul><p>The only ugly part is the register check. Normal C is not enough because the compiler is free to choose whichever register it wants for the memory operand, and <code>pfh</code> rejects the move if the target address appears in more than one saved register.<br></p><p>So the solver uses a naked asm helper which:</p><ul><li>saves the register state;</li><li>zeroes all candidate registers;</li><li>copies the target address into exactly one register;</li><li>performs the faulting read through that register;</li><li>restores everything.</li></ul><h3 id=beating-the-randomization>Beating the randomization</h3><p>The only real race is between reading <strong>mmio</strong> and making the address fault. If you read the struct and only then try to <code>mmap</code> the needed page, you are already too slow and <code>rsh</code> has rerolled everything.<br></p><p>Fortunately <strong>mmio</strong> addresses only consist of 4 bytes, so all the targets live in the low 32-bit range. An easy solution is to pre-map basically the whole low 4 GB before starting.<br></p><p>After each move the solver also <code>munmap()</code>s and <code>mmap()</code>s the touched page again, so the next access faults once more instead of hitting a present mapping.</p><p>So in the end the exploit is just the winning sequence looped forever. Since a bad move only resets the state instead of killing the process, brute forcing time by repetition is perfectly fine.</p><h2 id=source-code>Source code</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;linux/miscdevice.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;linux/mm.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;linux/vmalloc.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;linux/random.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;asm/io.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#define COM1 				0x3f8
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define REGN				14					</span><span style=color:#75715e>// RSP, RBP are excluded
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#define NPAGES				4
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define BUFF_SIZE			NPAGES*PAGE_SIZE
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#define GET_MMIO			0x10
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#define PRESERVE_CONTEXT 	&#34;rax&#34;, &#34;rbx&#34;, &#34;rcx&#34;, &#34;rdx&#34;, &#34;rdi&#34;, &#34;rsi&#34;, &#34;r8&#34;, &#34;r9&#34;, &#34;r10&#34;, &#34;r11&#34;, &#34;r12&#34;, &#34;r13&#34;, &#34;r14&#34;, &#34;r15&#34;, &#34;rbp&#34;
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define INVLPG(addr) 		asm volatile(&#34;invlpg (%0)&#34; :: &#34;r&#34;(addr) : &#34;memory&#34;)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#define BLOCK_SZ 			0x10
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define BLOCK_N				(BUFF_SIZE / sizeof(unsigned short)) / BLOCK_SZ
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#define LCG_A 				13					</span><span style=color:#75715e>// Xn+1 = (aXn + c) mod 256
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#75715e>#define LCG_C 				7
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>typedef</span> <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> <span style=color:#f92672>*</span>user_regs;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> entities {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> wolf;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> goat;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> cabbage;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>union</span> {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> side;
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> empty;
+</span></span><span style=display:flex><span>	};
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> mmio_data {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> entities addr;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> entities regs;
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> rng {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>int</span> seed;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>char</span> target[<span style=color:#ae81ff>6</span>];
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>char</span> junk[<span style=color:#ae81ff>6</span>];
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>char</span> key;
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>char</span> flag[] <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;TRX{p463f4u17_45_mm10}&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>char</span> buff[BUFF_SIZE];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>struct</span> entities state;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>struct</span> mmio_data mmio;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>char</span> rnd <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>pfh</span>(<span style=color:#66d9ef>void</span>);				<span style=color:#75715e>// pagefault_handler
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>rsh</span>(<span style=color:#66d9ef>void</span>);				<span style=color:#75715e>// resched_handler
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>__attribute__</span>((always_inline))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>inline</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>gen_mmio</span>(<span style=color:#66d9ef>void</span>) {
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>get_random_bytes</span>(<span style=color:#f92672>&amp;</span>mmio.addr.wolf, <span style=color:#ae81ff>4</span>);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>get_random_bytes</span>(<span style=color:#f92672>&amp;</span>mmio.addr.goat, <span style=color:#ae81ff>4</span>);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>get_random_bytes</span>(<span style=color:#f92672>&amp;</span>mmio.addr.cabbage, <span style=color:#ae81ff>4</span>);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>get_random_bytes</span>(<span style=color:#f92672>&amp;</span>mmio.addr.empty, <span style=color:#ae81ff>4</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	mmio.regs.wolf <span style=color:#f92672>=</span> <span style=color:#a6e22e>get_random_u32_below</span>(REGN);
+</span></span><span style=display:flex><span>	mmio.regs.goat <span style=color:#f92672>=</span> <span style=color:#a6e22e>get_random_u32_below</span>(REGN);
+</span></span><span style=display:flex><span>	mmio.regs.cabbage <span style=color:#f92672>=</span> <span style=color:#a6e22e>get_random_u32_below</span>(REGN);
+</span></span><span style=display:flex><span>	mmio.regs.empty <span style=color:#f92672>=</span> <span style=color:#a6e22e>get_random_u32_below</span>(REGN);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>__attribute__</span>((always_inline))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>inline</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>die</span>(<span style=color:#66d9ef>void</span>) {
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>memset</span>(<span style=color:#f92672>&amp;</span>state, <span style=color:#ae81ff>0</span>, <span style=color:#66d9ef>sizeof</span>(state));
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>gen_mmio</span>();
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>__attribute__</span>((always_inline))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>inline</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>check_status</span>(<span style=color:#66d9ef>void</span>) {
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>gen_mmio</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> ((state.wolf <span style=color:#f92672>==</span> state.goat <span style=color:#f92672>&amp;&amp;</span> state.goat <span style=color:#f92672>!=</span> state.side) <span style=color:#f92672>||</span> (state.goat <span style=color:#f92672>==</span> state.cabbage <span style=color:#f92672>&amp;&amp;</span> state.goat <span style=color:#f92672>!=</span> state.side))
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>die</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (state.wolf <span style=color:#f92672>+</span> state.goat <span style=color:#f92672>+</span> state.cabbage <span style=color:#f92672>==</span> <span style=color:#ae81ff>3</span>) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>; i<span style=color:#f92672>&lt;</span><span style=color:#a6e22e>strlen</span>(flag); i<span style=color:#f92672>++</span>)
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>outb</span>(flag[i], COM1);
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// put them as global cuz the compiler optimizes it and doesnt set up correctly the stack frame
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> cr2;
+</span></span><span style=display:flex><span>user_regs uregs;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>char</span> gdt[<span style=color:#ae81ff>10</span>];
+</span></span><span style=display:flex><span><span style=color:#66d9ef>int</span> count;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>__attribute__</span>((always_inline))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>inline</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>move</span>(<span style=color:#66d9ef>void</span>) {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>asm</span> <span style=color:#66d9ef>volatile</span>(<span style=color:#e6db74>&#34;mov %%cr2,%0&#34;</span> <span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;=r&#34;</span> (cr2));
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>asm</span> <span style=color:#a6e22e>volatile</span> (<span style=color:#e6db74>&#34;sgdt (%0)&#34; :: &#34;</span>r<span style=color:#e6db74>&#34; (&amp;gdt) )</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	uregs <span style=color:#f92672>=</span> (user_regs) ((<span style=color:#f92672>*</span>(<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span><span style=color:#f92672>*</span>) <span style=color:#f92672>&amp;</span>gdt[<span style=color:#ae81ff>2</span>]) <span style=color:#f92672>+</span> <span style=color:#ae81ff>0x1f58</span>);
+</span></span><span style=display:flex><span>	count <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (cr2 <span style=color:#f92672>==</span> mmio.addr.wolf) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (uregs[mmio.regs.wolf] <span style=color:#f92672>!=</span> cr2)
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>goto</span> bad;
+</span></span><span style=display:flex><span>		
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>; i<span style=color:#f92672>&lt;</span>REGN; i<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>if</span> (uregs[i] <span style=color:#f92672>==</span> cr2)
+</span></span><span style=display:flex><span>				count<span style=color:#f92672>++</span>;
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (count <span style=color:#f92672>!=</span> <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>goto</span> bad; 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (state.side <span style=color:#f92672>!=</span> state.wolf)
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>goto</span> bad;
+</span></span><span style=display:flex><span>		
+</span></span><span style=display:flex><span>		state.side <span style=color:#f92672>^=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>		state.wolf <span style=color:#f92672>^=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	} <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (cr2 <span style=color:#f92672>==</span> mmio.addr.goat) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (uregs[mmio.regs.goat] <span style=color:#f92672>!=</span> cr2)
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>goto</span> bad;
+</span></span><span style=display:flex><span>		
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>; i<span style=color:#f92672>&lt;</span>REGN; i<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>if</span> (uregs[i] <span style=color:#f92672>==</span> cr2)
+</span></span><span style=display:flex><span>				count<span style=color:#f92672>++</span>;
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (count <span style=color:#f92672>!=</span> <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>goto</span> bad; 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (state.side <span style=color:#f92672>!=</span> state.goat)
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>goto</span> bad;
+</span></span><span style=display:flex><span>		
+</span></span><span style=display:flex><span>		state.side <span style=color:#f92672>^=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>		state.goat <span style=color:#f92672>^=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> 	} <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (cr2 <span style=color:#f92672>==</span> mmio.addr.cabbage) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (uregs[mmio.regs.cabbage] <span style=color:#f92672>!=</span> cr2)
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>goto</span> bad;
+</span></span><span style=display:flex><span>		
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>; i<span style=color:#f92672>&lt;</span>REGN; i<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>if</span> (uregs[i] <span style=color:#f92672>==</span> cr2)
+</span></span><span style=display:flex><span>				count<span style=color:#f92672>++</span>;
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (count <span style=color:#f92672>!=</span> <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>goto</span> bad; 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (state.side <span style=color:#f92672>!=</span> state.cabbage)
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>goto</span> bad;
+</span></span><span style=display:flex><span>		
+</span></span><span style=display:flex><span>		state.side <span style=color:#f92672>^=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>		state.cabbage <span style=color:#f92672>^=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	}  <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (cr2 <span style=color:#f92672>==</span> mmio.addr.empty) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (uregs[mmio.regs.empty] <span style=color:#f92672>!=</span> cr2)
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>goto</span> bad;
+</span></span><span style=display:flex><span>		
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>; i<span style=color:#f92672>&lt;</span>REGN; i<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>if</span> (uregs[i] <span style=color:#f92672>==</span> cr2)
+</span></span><span style=display:flex><span>				count<span style=color:#f92672>++</span>;
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (count <span style=color:#f92672>!=</span> <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>goto</span> bad; 
+</span></span><span style=display:flex><span>		
+</span></span><span style=display:flex><span>		state.side <span style=color:#f92672>^=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>	} <span style=color:#66d9ef>else</span> 
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>goto</span> bad;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>bad:
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>die</span>();
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#define SAVE_CONTEXT()										\
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	asm volatile(											\
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;.intel_syntax noprefix\n&#34;                          \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;cld\n&#34;                                             \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;clac\n&#34;	                                        \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;push rbp\n&#34;                                        \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;push rax\n&#34;										\
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;push rbx\n&#34;                                        \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;push rcx\n&#34;                                        \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;push rdx\n&#34;                                        \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;push rdi\n&#34;                                        \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;push rsi\n&#34;                                        \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;push r8\n&#34;                                         \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;push r9\n&#34;                                         \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;push r10\n&#34;                                        \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;push r11\n&#34;                                        \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;push r12\n&#34;                                        \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;push r13\n&#34;                                        \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;push r14\n&#34;                                        \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;push r15\n&#34;                                        \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;mov rax, 0xfffffe0000000000\n&#34;						\
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;cmp rax, rsp\n&#34;									\
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;ja 1f\n&#34;											\
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;swapgs\n&#34;		                                 	\
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;1:\n&#34;												\
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;.att_syntax prefix\n&#34;                              \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		:                                                   \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		:                                                   \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		: PRESERVE_CONTEXT                                  \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#define POP_CONTEXT() 										\
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	asm volatile(											\
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;.intel_syntax noprefix\n&#34;                          \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;mov rax, 0xfffffe0000000000\n&#34;						\
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;cmp rax, rsp\n&#34;									\
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;ja 1f\n&#34;											\
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;swapgs\n&#34;		                                 	\
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;1:\n&#34;												\
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;pop r15\n&#34;                                         \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;pop r14\n&#34;                                         \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;pop r13\n&#34;                                         \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;pop r12\n&#34;                                         \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;pop r11\n&#34;                                         \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;pop r10\n&#34;                                         \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;pop r9\n&#34;                                          \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;pop r8\n&#34;                                          \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;pop rsi\n&#34;                                         \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;pop rdi\n&#34;                                         \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;pop rdx\n&#34;                               	        \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;pop rcx\n&#34;                                         \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;pop rbx\n&#34;                                         \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;pop rax\n&#34;                                         \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;pop rbp\n&#34;                                         \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		&#34;.att_syntax prefix\n&#34;                              \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		:                                                   \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		:                                                   \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>		: PRESERVE_CONTEXT                                  \
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>__attribute__</span>((<span style=color:#66d9ef>naked</span>))
+</span></span><span style=display:flex><span><span style=color:#a6e22e>__attribute__</span>((no_stack_protector))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>pfh</span>(<span style=color:#66d9ef>void</span>) {
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>SAVE_CONTEXT</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>move</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>POP_CONTEXT</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>asm</span> <span style=color:#a6e22e>volatile</span>(<span style=color:#e6db74>&#34;jmp 0xffffffff81001280</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>__builtin_unreachable</span>();
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>__attribute__</span>((<span style=color:#66d9ef>naked</span>))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>rsh</span>(<span style=color:#66d9ef>void</span>) {
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>SAVE_CONTEXT</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>check_status</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>POP_CONTEXT</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>asm</span> <span style=color:#a6e22e>volatile</span>(<span style=color:#e6db74>&#34;jmp 0xffffffff81001470&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>__builtin_unreachable</span>();
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>__attribute__</span>((always_inline))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>inline</span> <span style=color:#66d9ef>pte_t</span><span style=color:#f92672>*</span> <span style=color:#a6e22e>v2p</span>(<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> virtual) {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> mm_struct <span style=color:#f92672>*</span>mm <span style=color:#f92672>=</span> current<span style=color:#f92672>-&gt;</span>mm;;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>pgd_t</span> <span style=color:#f92672>*</span>pgd;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>p4d_t</span> <span style=color:#f92672>*</span>p4d;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>pud_t</span> <span style=color:#f92672>*</span>pud;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>pmd_t</span> <span style=color:#f92672>*</span>pmd;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>down_read</span>(<span style=color:#f92672>&amp;</span>mm<span style=color:#f92672>-&gt;</span>mmap_lock);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	pgd <span style=color:#f92672>=</span> <span style=color:#a6e22e>pgd_offset</span>(mm, virtual);
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>pgd_none</span>(<span style=color:#f92672>*</span>pgd) <span style=color:#f92672>||</span> <span style=color:#a6e22e>pgd_bad</span>(<span style=color:#f92672>*</span>pgd))
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>goto</span> bad;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	p4d <span style=color:#f92672>=</span> <span style=color:#a6e22e>p4d_offset</span>(pgd, virtual);	
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>p4d_none</span>(<span style=color:#f92672>*</span>p4d) <span style=color:#f92672>||</span> <span style=color:#a6e22e>p4d_bad</span>(<span style=color:#f92672>*</span>p4d))
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>goto</span> bad;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	pud <span style=color:#f92672>=</span> <span style=color:#a6e22e>pud_offset</span>(p4d, virtual);
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>pud_none</span>(<span style=color:#f92672>*</span>pud) <span style=color:#f92672>||</span> <span style=color:#a6e22e>pud_bad</span>(<span style=color:#f92672>*</span>pud))
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>goto</span> bad;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	pmd <span style=color:#f92672>=</span> <span style=color:#a6e22e>pmd_offset</span>(pud, virtual);
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>pmd_none</span>(<span style=color:#f92672>*</span>pmd) <span style=color:#f92672>||</span> <span style=color:#a6e22e>pmd_bad</span>(<span style=color:#f92672>*</span>pmd)){
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>goto</span> bad;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>up_read</span>(<span style=color:#f92672>&amp;</span>mm<span style=color:#f92672>-&gt;</span>mmap_lock);
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> <span style=color:#a6e22e>pte_offset_kernel</span>(pmd, virtual);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>bad:
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>up_read</span>(<span style=color:#f92672>&amp;</span>mm<span style=color:#f92672>-&gt;</span>mmap_lock);
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> NULL;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>__attribute__</span>((always_inline))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>inline</span> <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> <span style=color:#a6e22e>get_zero_pfn</span>(<span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> arg, <span style=color:#66d9ef>int</span> len) {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>pte_t</span><span style=color:#f92672>*</span> user_pte <span style=color:#f92672>=</span> <span style=color:#a6e22e>v2p</span>((<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span>) arg);
+</span></span><span style=display:flex><span>	<span style=color:#f92672>*</span>(<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span><span style=color:#f92672>*</span>) user_pte <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>INVLPG</span>(arg);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>copy_from_user</span>(<span style=color:#f92672>&amp;</span>buff[len], arg, BUFF_SIZE<span style=color:#f92672>-</span>len))
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span>EINVAL;
+</span></span><span style=display:flex><span>	
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> (<span style=color:#f92672>*</span>(<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span><span style=color:#f92672>*</span>) <span style=color:#a6e22e>v2p</span>((<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span>) arg) <span style=color:#f92672>&gt;&gt;</span> <span style=color:#ae81ff>12</span>) <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xffffffff</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>char</span> <span style=color:#a6e22e>next_lcg</span>(<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> lcg) {
+</span></span><span style=display:flex><span>	<span style=color:#f92672>*</span>lcg <span style=color:#f92672>=</span> (<span style=color:#f92672>*</span>lcg <span style=color:#f92672>*</span> LCG_A <span style=color:#f92672>+</span> LCG_C);
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> <span style=color:#f92672>*</span>lcg;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>block</span>(<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>short</span><span style=color:#f92672>*</span> pages, <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>int</span> offset, <span style=color:#66d9ef>struct</span> rng<span style=color:#f92672>*</span> r) {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (offset <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0x3f</span>) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>; i<span style=color:#f92672>&lt;</span><span style=color:#ae81ff>6</span>; i<span style=color:#f92672>+=</span><span style=color:#ae81ff>2</span>) {
+</span></span><span style=display:flex><span>			pages[offset <span style=color:#f92672>+</span> r<span style=color:#f92672>-&gt;</span>target[i]] <span style=color:#f92672>=</span> r<span style=color:#f92672>-&gt;</span>seed <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xffff</span>;
+</span></span><span style=display:flex><span>			pages[offset <span style=color:#f92672>+</span> r<span style=color:#f92672>-&gt;</span>target[i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>]] <span style=color:#f92672>=</span> (r<span style=color:#f92672>-&gt;</span>seed <span style=color:#f92672>&gt;&gt;</span> <span style=color:#ae81ff>16</span>) <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xffff</span>;
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>		
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>; i<span style=color:#f92672>&lt;</span><span style=color:#ae81ff>6</span>; i<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>			((<span style=color:#66d9ef>char</span><span style=color:#f92672>*</span>) <span style=color:#f92672>&amp;</span>pages[offset <span style=color:#f92672>+</span> r<span style=color:#f92672>-&gt;</span>junk[i]])[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>next_lcg</span>(<span style=color:#f92672>&amp;</span>rnd);
+</span></span><span style=display:flex><span>			((<span style=color:#66d9ef>char</span><span style=color:#f92672>*</span>) <span style=color:#f92672>&amp;</span>pages[offset <span style=color:#f92672>+</span> r<span style=color:#f92672>-&gt;</span>junk[i]])[<span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>next_lcg</span>(<span style=color:#f92672>&amp;</span>rnd);
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>; i<span style=color:#f92672>&lt;</span>BLOCK_SZ<span style=color:#f92672>*</span><span style=color:#ae81ff>2</span>; i<span style=color:#f92672>++</span>)
+</span></span><span style=display:flex><span>		((<span style=color:#66d9ef>char</span><span style=color:#f92672>*</span>) <span style=color:#f92672>&amp;</span>pages[offset])[i] <span style=color:#f92672>^=</span> r<span style=color:#f92672>-&gt;</span>key;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>next_lcg</span>(<span style=color:#f92672>&amp;</span>r<span style=color:#f92672>-&gt;</span>key);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>; i<span style=color:#f92672>&lt;</span><span style=color:#ae81ff>6</span>; i<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>		r<span style=color:#f92672>-&gt;</span>target[i] <span style=color:#f92672>=</span> (r<span style=color:#f92672>-&gt;</span>target[i] <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>) <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xf</span>;
+</span></span><span style=display:flex><span>		r<span style=color:#f92672>-&gt;</span>junk[i] <span style=color:#f92672>=</span> (r<span style=color:#f92672>-&gt;</span>junk[i] <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>) <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xf</span>;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>not_rng</span>(<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>short</span><span style=color:#f92672>*</span> pages) {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> rng rs <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>		.seed <span style=color:#f92672>=</span> (<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>int</span>) ((<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span>) <span style=color:#f92672>&amp;</span>rsh <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xffffffff</span>),
+</span></span><span style=display:flex><span>		.target <span style=color:#f92672>=</span> {<span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>14</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>4</span>},
+</span></span><span style=display:flex><span>		.junk <span style=color:#f92672>=</span> {<span style=color:#ae81ff>11</span>, <span style=color:#ae81ff>12</span>, <span style=color:#ae81ff>13</span>, <span style=color:#ae81ff>15</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>},
+</span></span><span style=display:flex><span>		.key <span style=color:#f92672>=</span> <span style=color:#ae81ff>139</span>,
+</span></span><span style=display:flex><span>	};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> rng pf <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>		.seed <span style=color:#f92672>=</span> (<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>int</span>) ((<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span>) <span style=color:#f92672>&amp;</span>pfh <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xffffffff</span>),
+</span></span><span style=display:flex><span>		.target <span style=color:#f92672>=</span> {<span style=color:#ae81ff>13</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>9</span>, <span style=color:#ae81ff>12</span>},
+</span></span><span style=display:flex><span>		.junk <span style=color:#f92672>=</span> {<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>11</span>},
+</span></span><span style=display:flex><span>		.key <span style=color:#f92672>=</span> <span style=color:#ae81ff>3</span>,
+</span></span><span style=display:flex><span>	};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> bn<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>; bn<span style=color:#f92672>&lt;</span>BLOCK_N; bn<span style=color:#f92672>+=</span><span style=color:#ae81ff>2</span>) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>int</span> offset <span style=color:#f92672>=</span>  bn <span style=color:#f92672>*</span> BLOCK_SZ;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>block</span>(pages, offset, <span style=color:#f92672>&amp;</span>rs);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		offset <span style=color:#f92672>+=</span> BLOCK_SZ;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>block</span>(pages, offset, <span style=color:#f92672>&amp;</span>pf);
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>long</span> <span style=color:#a6e22e>dev_ioctl</span>(<span style=color:#66d9ef>struct</span> file <span style=color:#f92672>*</span>file, <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>int</span> cmd, <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> arg) {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (cmd <span style=color:#f92672>==</span> GET_MMIO) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>copy_to_user</span>((<span style=color:#66d9ef>void</span><span style=color:#f92672>*</span>) arg, (<span style=color:#66d9ef>void</span><span style=color:#f92672>*</span>) <span style=color:#f92672>&amp;</span>mmio, <span style=color:#66d9ef>sizeof</span>(mmio)))
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span>EINVAL;
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>	
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>copy_from_user</span>(<span style=color:#f92672>&amp;</span>buff, (<span style=color:#66d9ef>void</span><span style=color:#f92672>*</span>) arg, BUFF_SIZE<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>))
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span>EINVAL;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> zero_pfn <span style=color:#f92672>=</span> <span style=color:#a6e22e>get_zero_pfn</span>((<span style=color:#66d9ef>char</span><span style=color:#f92672>*</span>) arg, <span style=color:#a6e22e>strlen</span>(buff));
+</span></span><span style=display:flex><span>	
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> page<span style=color:#f92672>**</span> pg <span style=color:#f92672>=</span> <span style=color:#a6e22e>kvmalloc_array</span>(NPAGES, <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>struct</span> page<span style=color:#f92672>*</span>), __GFP_ZERO);
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>; i<span style=color:#f92672>&lt;</span>NPAGES; i<span style=color:#f92672>++</span>)
+</span></span><span style=display:flex><span>		pg[i] <span style=color:#f92672>=</span> <span style=color:#a6e22e>pfn_to_page</span>(zero_pfn<span style=color:#f92672>+</span>i);
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>short</span><span style=color:#f92672>*</span> pages <span style=color:#f92672>=</span> (<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>short</span><span style=color:#f92672>*</span>) <span style=color:#a6e22e>vmap</span>(pg, NPAGES, VM_MAP, PAGE_KERNEL);
+</span></span><span style=display:flex><span>	
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>not_rng</span>(pages);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>dev_open</span>(<span style=color:#66d9ef>struct</span> inode <span style=color:#f92672>*</span>inode, <span style=color:#66d9ef>struct</span> file <span style=color:#f92672>*</span>file) {
+</span></span><span style=display:flex><span>	file<span style=color:#f92672>-&gt;</span>private_data <span style=color:#f92672>=</span> NULL;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>dev_release</span>(<span style=color:#66d9ef>struct</span> inode <span style=color:#f92672>*</span>inode, <span style=color:#66d9ef>struct</span> file <span style=color:#f92672>*</span>file) {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>struct</span> file_operations chall_fops <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>	.open <span style=color:#f92672>=</span> dev_open,
+</span></span><span style=display:flex><span>	.release <span style=color:#f92672>=</span> dev_release,
+</span></span><span style=display:flex><span>	.unlocked_ioctl <span style=color:#f92672>=</span> dev_ioctl
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> miscdevice chall_dev <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>	.minor <span style=color:#f92672>=</span> MISC_DYNAMIC_MINOR,
+</span></span><span style=display:flex><span>	.name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;faulty_road&#34;</span>,
+</span></span><span style=display:flex><span>	.fops <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>chall_fops,
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>int</span> __init <span style=color:#a6e22e>init_dev</span>(<span style=color:#66d9ef>void</span>) {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>misc_register</span>(<span style=color:#f92672>&amp;</span>chall_dev) <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>printk</span>(KERN_INFO <span style=color:#e6db74>&#34;[CHALL] [ERR] Failed to register device</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> __exit <span style=color:#a6e22e>exit_dev</span>(<span style=color:#66d9ef>void</span>) {
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>misc_deregister</span>(<span style=color:#f92672>&amp;</span>chall_dev);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>module_init</span>(init_dev);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>module_exit</span>(exit_dev);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>MODULE_AUTHOR</span>(<span style=color:#e6db74>&#34;leave&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>MODULE_LICENSE</span>(<span style=color:#e6db74>&#34;GPL&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>MODULE_DESCRIPTION</span>(<span style=color:#e6db74>&#34;TRXCTF 2026&#34;</span>);
+</span></span></code></pre></div><h2 id=final-solver>Final solver</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdlib.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;fcntl.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;sys/ioctl.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;sys/mman.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#define PAGE_SIZE 			0x1000
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define GET_MMIO 			0x10
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define PRESERVE_CONTEXT 	&#34;rax&#34;, &#34;rbx&#34;, &#34;rcx&#34;, &#34;rdx&#34;, &#34;rdi&#34;, &#34;rsi&#34;, &#34;r8&#34;, &#34;r9&#34;, &#34;r10&#34;, &#34;r11&#34;, &#34;r12&#34;, &#34;r13&#34;, &#34;r14&#34;, &#34;r15&#34; 
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> entities {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> wolf;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> goat;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> cabbage;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>union</span> {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> side;
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> empty;
+</span></span><span style=display:flex><span>	};
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> mmio_data {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> entities addr;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> entities regs;
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>struct</span> mmio_data mmio;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>int</span> fd;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>__attribute__</span>((always_inline))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>inline</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>prepare</span>(<span style=color:#66d9ef>void</span>) {
+</span></span><span style=display:flex><span>    __asm__ <span style=color:#66d9ef>volatile</span>(
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;push %%rax</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;push %%rbx</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;push %%rcx</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;push %%rdx</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;push %%rbp</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;push %%rdi</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;push %%rsi</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;push %%r8</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;push %%r9</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;push %%r10</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;push %%r11</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;push %%r12</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;push %%r13</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;push %%r14</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;push %%r15</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;xor %%rax, %%rax</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;xor %%rbx, %%rbx</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;xor %%rcx, %%rcx</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;xor %%rdx, %%rdx</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;xor %%rbp, %%rbp</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;xor %%r8,  %%r8</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;xor %%r9,  %%r9</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;xor %%r10, %%r10</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;xor %%r11, %%r11</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;xor %%r12, %%r12</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;xor %%r13, %%r13</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;xor %%r14, %%r14</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;xor %%r15, %%r15</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;memory&#34;</span>, <span style=color:#e6db74>&#34;cc&#34;</span>
+</span></span><span style=display:flex><span>    );
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>__attribute__</span>((always_inline))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>inline</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>restore</span>(<span style=color:#66d9ef>void</span>) {
+</span></span><span style=display:flex><span>    __asm__ <span style=color:#66d9ef>volatile</span>(
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;pop %%r15</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;pop %%r14</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;pop %%r13</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;pop %%r12</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;pop %%r11</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;pop %%r10</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;pop %%r9</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;pop %%r8</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;pop %%rsi</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;pop %%rdi</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;pop %%rbp</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;pop %%rdx</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;pop %%rcx</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;pop %%rbx</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;pop %%rax</span><span style=color:#ae81ff>\n\t</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;memory&#34;</span>, <span style=color:#e6db74>&#34;cc&#34;</span>
+</span></span><span style=display:flex><span>    );
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>__attribute__</span>((<span style=color:#66d9ef>naked</span>))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>move</span>(<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> addr, <span style=color:#66d9ef>int</span> reg) {
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>prepare</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>asm</span> <span style=color:#a6e22e>volatile</span>(
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;.intel_syntax noprefix</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;cmp rsi, 13</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;ja  1f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;cmp rsi, 0</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>    <span style=color:#75715e>/* r15 */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;je  2f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;cmp rsi, 1</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>    <span style=color:#75715e>/* r14 */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;je  3f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;cmp rsi, 2</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>    <span style=color:#75715e>/* r13 */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;je  4f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;cmp rsi, 3</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>    <span style=color:#75715e>/* r12 */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;je  5f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;cmp rsi, 4</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>    <span style=color:#75715e>/* r11 */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;je  6f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;cmp rsi, 5</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>    <span style=color:#75715e>/* r10 */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;je  7f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;cmp rsi, 6</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>    <span style=color:#75715e>/* r9 */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;je  8f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;cmp rsi, 7</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>    <span style=color:#75715e>/* r8 */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;je  9f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;cmp rsi, 8</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>    <span style=color:#75715e>/* rsi */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;je  10f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;cmp rsi, 9</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>    <span style=color:#75715e>/* rdi */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;je  11f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;cmp rsi, 10</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>   <span style=color:#75715e>/* rdx */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;je  12f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;cmp rsi, 11</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>   <span style=color:#75715e>/* rcx */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;je  13f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;cmp rsi, 12</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>   <span style=color:#75715e>/* rbx */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;je  14f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;cmp rsi, 13</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>   <span style=color:#75715e>/* rax */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;je  15f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;1:</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;jmp 16f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;2:</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>   <span style=color:#75715e>/* r15 */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;push r15</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov r15, rdi</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rdi, 0</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov r15, qword ptr [r15]</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;pop r15</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;jmp 16f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;3:</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>   <span style=color:#75715e>/* r14 */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;push r14</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov r14, rdi</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rdi, 0</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov r14, qword ptr [r14]</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;pop r14</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;jmp 16f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;4:</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>   <span style=color:#75715e>/* r13 */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;push r13</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov r13, rdi</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rdi, 0</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov r13, qword ptr [r13]</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;pop r13</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;jmp 16f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;5:</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>   <span style=color:#75715e>/* r12 */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;push r12</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov r12, rdi</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rdi, 0</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov r12, qword ptr [r12]</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;pop r12</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;jmp 16f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;6:</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>   <span style=color:#75715e>/* r11 */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;push r11</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov r11, rdi</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rdi, 0</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov r11, qword ptr [r11]</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;pop r11</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;jmp 16f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;7:</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>   <span style=color:#75715e>/* r10 */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;push r10</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov r10, rdi</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rdi, 0</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov r10, qword ptr [r10]</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;pop r10</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;jmp 16f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;8:</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>   <span style=color:#75715e>/* r9 */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;push r9</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov r9, rdi</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rdi, 0</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov r9, qword ptr [r9]</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;pop r9</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;jmp 16f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;9:</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>   <span style=color:#75715e>/* r8 */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;push r8</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov r8, rdi</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rdi, 0</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov r8, qword ptr [r8]</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;pop r8</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;jmp 16f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;10:</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>  <span style=color:#75715e>/* rsi */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;push rsi</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rsi, rdi</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rdi, 0</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rsi, qword ptr [rsi]</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;pop rsi</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;jmp 16f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;11:</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>  <span style=color:#75715e>/* rdi */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;push rdi</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rdi, qword ptr [rdi]</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;pop rdi</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;jmp 16f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;12:</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>  <span style=color:#75715e>/* rdx */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;push rdx</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rdx, rdi</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rdi, 0</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rdx, qword ptr [rdx]</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;pop rdx</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;jmp 16f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;13:</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>  <span style=color:#75715e>/* rcx */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;push rcx</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rcx, rdi</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rdi, 0</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rcx, qword ptr [rcx]</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;pop rcx</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;jmp 16f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;14:</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>  <span style=color:#75715e>/* rbx */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;push rbx</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rbx, rdi</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rdi, 0</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rbx, qword ptr [rbx]</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;pop rbx</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;jmp 16f</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;15:</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>  <span style=color:#75715e>/* rax */</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;push rax</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rax, rdi</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rdi, 0</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;mov rax, qword ptr [rax]</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;pop rax</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;16:</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;nop</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#e6db74>&#34;.att_syntax prefix</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#f92672>:</span>
+</span></span><span style=display:flex><span>		<span style=color:#f92672>:</span>
+</span></span><span style=display:flex><span>		<span style=color:#f92672>:</span> PRESERVE_CONTEXT
+</span></span><span style=display:flex><span>	);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>restore</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>asm</span>(<span style=color:#e6db74>&#34;ret&#34;</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>wolf</span>() {
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>ioctl</span>(fd, GET_MMIO, <span style=color:#f92672>&amp;</span>mmio);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>move</span>(mmio.addr.wolf, mmio.regs.wolf);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>munmap</span>((<span style=color:#66d9ef>void</span><span style=color:#f92672>*</span>) (mmio.addr.wolf <span style=color:#f92672>&amp;</span> (<span style=color:#f92672>~</span><span style=color:#ae81ff>0xfff</span>)), PAGE_SIZE);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>mmap</span>((<span style=color:#66d9ef>void</span><span style=color:#f92672>*</span>) (mmio.addr.wolf <span style=color:#f92672>&amp;</span> (<span style=color:#f92672>~</span><span style=color:#ae81ff>0xfff</span>)), PAGE_SIZE, PROT_READ <span style=color:#f92672>|</span> PROT_WRITE, MAP_PRIVATE <span style=color:#f92672>|</span> MAP_ANON, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>goat</span>() {
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>ioctl</span>(fd, GET_MMIO, <span style=color:#f92672>&amp;</span>mmio);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>move</span>(mmio.addr.goat, mmio.regs.goat);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>munmap</span>((<span style=color:#66d9ef>void</span><span style=color:#f92672>*</span>) (mmio.addr.goat <span style=color:#f92672>&amp;</span> (<span style=color:#f92672>~</span><span style=color:#ae81ff>0xfff</span>)), PAGE_SIZE);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>mmap</span>((<span style=color:#66d9ef>void</span><span style=color:#f92672>*</span>) (mmio.addr.goat <span style=color:#f92672>&amp;</span> (<span style=color:#f92672>~</span><span style=color:#ae81ff>0xfff</span>)), PAGE_SIZE, PROT_READ <span style=color:#f92672>|</span> PROT_WRITE, MAP_PRIVATE <span style=color:#f92672>|</span> MAP_ANON, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>cabbage</span>() {
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>ioctl</span>(fd, GET_MMIO, <span style=color:#f92672>&amp;</span>mmio);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>move</span>(mmio.addr.cabbage, mmio.regs.cabbage);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>munmap</span>((<span style=color:#66d9ef>void</span><span style=color:#f92672>*</span>) (mmio.addr.cabbage <span style=color:#f92672>&amp;</span> (<span style=color:#f92672>~</span><span style=color:#ae81ff>0xfff</span>)), PAGE_SIZE);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>mmap</span>((<span style=color:#66d9ef>void</span><span style=color:#f92672>*</span>) (mmio.addr.cabbage <span style=color:#f92672>&amp;</span> (<span style=color:#f92672>~</span><span style=color:#ae81ff>0xfff</span>)), PAGE_SIZE, PROT_READ <span style=color:#f92672>|</span> PROT_WRITE, MAP_PRIVATE <span style=color:#f92672>|</span> MAP_ANON, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>empty</span>() {
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>ioctl</span>(fd, GET_MMIO, <span style=color:#f92672>&amp;</span>mmio);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>move</span>(mmio.addr.empty, mmio.regs.empty);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>munmap</span>((<span style=color:#66d9ef>void</span><span style=color:#f92672>*</span>) (mmio.addr.empty <span style=color:#f92672>&amp;</span> (<span style=color:#f92672>~</span><span style=color:#ae81ff>0xfff</span>)), PAGE_SIZE);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>mmap</span>((<span style=color:#66d9ef>void</span><span style=color:#f92672>*</span>) (mmio.addr.empty <span style=color:#f92672>&amp;</span> (<span style=color:#f92672>~</span><span style=color:#ae81ff>0xfff</span>)), PAGE_SIZE, PROT_READ <span style=color:#f92672>|</span> PROT_WRITE, MAP_PRIVATE <span style=color:#f92672>|</span> MAP_ANON, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+</span></span><span style=display:flex><span>	fd <span style=color:#f92672>=</span> <span style=color:#a6e22e>open</span>(<span style=color:#e6db74>&#34;/dev/faulty_road&#34;</span>, O_RDONLY);
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>void</span><span style=color:#f92672>*</span> ptr <span style=color:#f92672>=</span> <span style=color:#a6e22e>mmap</span>(NULL, PAGE_SIZE<span style=color:#f92672>*</span><span style=color:#ae81ff>4</span>, PROT_READ <span style=color:#f92672>|</span> PROT_WRITE, MAP_PRIVATE <span style=color:#f92672>|</span> MAP_ANON <span style=color:#f92672>|</span> MAP_POPULATE, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>ioctl</span>(fd, <span style=color:#ae81ff>0</span>, ptr);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>; i<span style=color:#f92672>&lt;</span><span style=color:#ae81ff>0x100</span>; i<span style=color:#f92672>++</span>) 
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>mmap</span>((<span style=color:#66d9ef>void</span><span style=color:#f92672>*</span>) (<span style=color:#ae81ff>0x10000ul</span><span style=color:#f92672>*</span>i), <span style=color:#ae81ff>0x10000</span>, PROT_READ <span style=color:#f92672>|</span> PROT_WRITE, MAP_PRIVATE <span style=color:#f92672>|</span> MAP_ANON, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>);	
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>; i<span style=color:#f92672>&lt;</span><span style=color:#ae81ff>0x100</span>; i<span style=color:#f92672>++</span>)
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>mmap</span>((<span style=color:#66d9ef>void</span><span style=color:#f92672>*</span>) (<span style=color:#ae81ff>0x1000000ul</span><span style=color:#f92672>*</span>i), <span style=color:#ae81ff>0x1000000</span>, PROT_READ <span style=color:#f92672>|</span> PROT_WRITE, MAP_PRIVATE <span style=color:#f92672>|</span> MAP_ANON, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>while</span>(<span style=color:#ae81ff>1</span>) {
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>goat</span>();
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>empty</span>();	
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>wolf</span>();
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>goat</span>();		
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>cabbage</span>();
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>empty</span>();
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>goat</span>();
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></section><section class=page__aside><div><p>rev challenge that I wrote for TRX CTF Quals 2026</p><p>By leave,
+2026-04-29</p><hr>On this page:<section><nav id=TableOfContents><ol><li><a href=#description>Description</a></li><li><a href=#challenge-overview>Challenge Overview</a></li><li><a href=#the-backdoor>The backdoor</a></li><li><a href=#the-actual-game>The actual game</a><ol><li><a href=#rsh>rsh</a></li><li><a href=#pfh>pfh</a></li></ol></li><li><a href=#solving>Solving</a><ol><li><a href=#beating-the-randomization>Beating the randomization</a></li></ol></li><li><a href=#source-code>Source code</a></li><li><a href=#final-solver>Final solver</a></li></ol></nav></section></div></section><footer class=page__footer><p></p><br><br><p>Made with love by <strong>@Erge</strong>, <strong>@leave</strong> and <strong>@prosti</strong>.</p></footer></div></body></html>

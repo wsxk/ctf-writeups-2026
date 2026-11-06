@@ -1,0 +1,620 @@
+{
+  "虚拟化/apoorvctf_2026/Draw_Me": {
+    "goal": "从 PNG 字节码和 GLSL 解释器恢复最终绘制的 flag 图像。",
+    "mechanism": "关键是重建顺序执行的 VM：GPU 每帧只保留最后一次写入，导致自修改代码及显存输出丢失；空画面不能说明字节码没有有效结果。",
+    "steps": [
+      "将 256×256 纹理划分为寄存器行 0、程序行 1–127、显存行 128–255；RGBA 四字节对应 opcode 和三个参数。这样程序和像素输出不会混读。",
+      "按着色器实现 10 类指令和状态更新，特别是 STORE 写回程序区、VRAM-write 写回显示区；每次写立即生效。",
+      "先处理 4080 条解密指令，以密钥 90 将常量 90/165 解为 0/255，修补绘图区 510 条 SET r4 指令。",
+      "再执行 2040 条绘图指令，每组依次装入颜色、x、y并写像素；保存完整显存为图像。逐帧只保留最后一次写会丢失四次中的三次绘制。"
+    ],
+    "validation": "原文报告图像文本 APOORVCTF{GL5L_15_7UR1NG_C0MPL373}，提交形式为 apoorvctf{GL5L_15_7UR1NG_C0MPL373}。验证时检查所有补丁均生效、510 个像素写入均被保留，再核对大小写及 0/O。",
+    "limitations": "本地原文引用 solve.py，但 writeups 目录未随文附该脚本；不能把示意注释当作可运行实现。需要从实际着色器补齐十类指令精确定义。像素字体中的 O/0 需结合题目格式确认。"
+  },
+  "虚拟化/asis_2026-quals/ASIS_Arch": {
+    "goal": "恢复 44 字节输入，使自定义 CPU 内的校验程序接受。",
+    "mechanism": "PC 相关指令混淆还原后，校验等价于 22 个 16 位字的十轮可逆变换；可选取每个输出字等于目标的充分条件，逐轮逆运算。",
+    "steps": [
+      "解析 AARQ ROM 的 0x20 字节头，把 payload 映射到客户机地址 0；记录 64 KiB 内存、8 个 16 位寄存器、SP=0xfff0 和四字节指令。",
+      "按 key=(((pc^0x9e37)*0x1039)+0x79b9)&0xffff 恢复字节排列及字段；目标寄存器变换 f(x)=((5*x)^3)&7 连做两次，不能漏第二次。",
+      "从解码后的十轮展开代码提取常量，从 0x2160 读取 S-box，从 0x7cdb 非对齐表恢复 22 个目标字；按小端拆分输入。",
+      "倒序处理轮 9→0，先撤销旋转/XOR扩散，再撤销前向原地加法链，最后去常量并查逆 S-box。原地更新的撤销必须按索引 21→0，所有算术保留 16 位。"
+    ],
+    "validation": "原文报告 ASIS{M1ddL3_3nd14n_N1bbL35_M4k3_Q3MU_D122y!} 并展示 Access Granted。复现应先用已知测试输入逐指令对拍解释器，再正向计算目标和运行原程序。最终“差值和模 2^16 为零”并不逻辑等价于逐字相等；这里选择逐字相等来构造有效解。",
+    "limitations": "原文提及 solve.py/recover.py，但本地 writeups 仅有 README。需补齐完整 ISA 与扩散逆函数；不能凭十轮描述直接宣称脚本齐全。地址和校验常量只对应收录构建。"
+  },
+  "虚拟化/asis_2026-quals/Revenant_buddy": {
+    "goal": "提交通过 verifier 的 VM 程序，在不知道随机 capability 的情况下完成 capability 校验。",
+    "mechanism": "0xD9 的执行器可复制受保护值，但 verifier 将结果标为 ordinary，造成抽象类型与运行时值不一致。两次类型洗白即可同时提供 capability 和 mix(capability)。",
+    "steps": [
+      "定位 worker 中程序解码和 verifier；输入为至多 64 个四字节字的十六进制串，解码首字必须是 0xefc6ab35。",
+      "利用 r0=0、r7=capability，执行 D9 将 r7 复制到 r1；8D 计算 r2=mix(r7)；再次 D9 把 r2 复制到 r3。于是 r1/r3 的值正确而类型均为普通。",
+      "依次使用解码字 efc6ab35、000239d9、00003a8d、000213d9、0000199e、000000dc；9E 校验 r1/r3，DC 在成功后结束并读取 flag。",
+      "从文件偏移 0x93A60、0x93B60 提取混淆表，按 raw=ror32(decoded^0x7824F328,(i%29)+1)^mask[i]^xor_table[i] 编码，再封装 RUN 协议。"
+    ],
+    "validation": "原文给出的编码串为 4285cfe9c40257076ac2e0b0dafabec8ad3e5f973bcb81d3，报告返回 OK ASIS{8bf2fd2a3f7eecec5f5fab1861e51c579975ba45}。验证重点是每条指令的运行值和 verifier 类型同时跟踪，不能仅验证 payload 长度。",
+    "limitations": "混淆表偏移和编码串依赖 worker 构建；新进程的随机秘密无须猜测，因为程序直接引用它。原文 solve.py 未作为单独文件收录，网络结果仅为作者报告。"
+  },
+  "虚拟化/b01lers_2026/piano": {
+    "goal": "将 SIGBUS/ptrace 驱动的链表 VM 化简为约束，恢复输入字符。",
+    "mechanism": "36 条链表的长度表示输入字节；INSERT/DELETE 表示加减，93 种 BULK 函数是仿射变换。完整建模后可用线性方程求解，避免逐节点执行大量信号。",
+    "steps": [
+      "确认 memfd_create 后 mmap 未 ftruncate，r15 区域访问引发 SIGBUS；父进程按故障指令 bytes[bytes[0]%len(bytes)] 的 bit2 选 INSERT/DELETE。注意分发器存在 call 下一条地址的二次执行结构。",
+      "扫描 main 所有调用并跟踪参数对应的链表索引；作者统计 297 次操作：84 ADD、83 SUB、1 INIT30、129 BULK。INIT30 给索引30长度加218。",
+      "逐个分析93个 BULK，得到 new_len=a*old_len+b；可用两点求系数并用第三点对拍，但最终仍需确认循环语义和非负约束。",
+      "将36个初始长度设为未知字符，按297次操作传播仿射表达式；分析每个终结检查的净变化和最小前缀长度，加入最终清空且中途不下溢约束。",
+      "结合已知格式求线性系统，将候选回代全部操作与36个检查；不要以“全部可打印”代替程序接受。"
+    ],
+    "validation": "原文报告36字节候选 bctf{b#fqQZ*OEQAZKTDAYyl6VPRomVPRom}，长度与36个输入变量一致。验证时需把该候选回代全部297次操作并检查36个终结状态和中间非负约束。原文展示的vals片段含“...wait”，不能当完整运行日志。",
+    "limitations": "本地只有README，parse.py、emulate_bulk.py、bulk_coeffs.json等未随文收录。原文明确未用最终候选跑原二进制；需要重新提取全体约束并做正向验证。"
+  },
+  "虚拟化/b01lers_CTF_2026/favorite_potato": {
+    "goal": "根据6502程序执行后的三个8位寄存器值，恢复初始 A、X、Y，完成连续20轮挑战。",
+    "mechanism": "程序将10000轮可逆ARX完全展开；识别PHP/PLP包围的栈原语后，可提取常量并从尾到头求逆，无须枚举24位状态。",
+    "steps": [
+      "以9字节测试程序核对寄存器和8位环绕：A+=0x2a、X+=1、Y-=2。真实程序长5820001字节，末尾RTS，每轮582字节。",
+      "按PHP至PLP拆出交换、加法、循环右移、异或等9类原语；工具若限制64KiB，应分块反汇编，不得截断整份展开代码。",
+      "对单轮按反序撤销：A^=Y^k5；Y=rol(Y,r3)；X^=A^k4；A=rol(A,r2)；Y-=A+k3；Y^=X^k2；X=rol(X,r1)；A-=X+k1。减法均模256。",
+      "从第9999轮到第0轮应用逆变换，得到原始三元组；对应 sol.py/sol2.py 是两种解析实现，sol+check.py 以 py65 分100块做正向校验。",
+      "在同一挑战交互中逐轮读输出、逆推并答复，共完成20轮；读写格式以脚本和服务源码为准。"
+    ],
+    "validation": "必要验证是任取输入经正向程序得到输出，再逆推恢复原输入，覆盖0/255和所有旋转量；最终20轮均通过才算成功。README没有给出固定flag，最终应以服务返回为准。",
+    "limitations": "作者称 Motorola 6502，但架构名称本身不影响指令语义；必须以实际6502实现为准。code.bin.gz 位于解答目录且仅18字节，不能未经检查就把它当5820001字节真题程序。环境与完整输入文件须按附件核对。"
+  },
+  "虚拟化/b01lers_CTF_2026/indirect-memory-access": {
+    "goal": "恢复可通过逻辑电路检查的128位输入，并转换为游戏按键。",
+    "mechanism": "官方sol.py把DMA源地址对应的重叠数据窗口还原为13种二输入逻辑门，再将整段检查转为Z3布尔约束。",
+    "steps": [
+      "先枚举truth(offset,a,b)的四种输入，核对truth_lookups中13个门的真值表；DMA3SAD选择门，索引为(DMA3SAD-0x08008B7C)//2。",
+      "创建dat_0至dat_127布尔变量，按照原始赋值顺序传播uVar表达式，不能按变量名称排序，因为uVar1被反复更新。",
+      "加入最终条件iVar197为真并求SAT；模型中的每一位转换为F/T字符串，T是分隔标记。",
+      "对bitvec.split(\"T\")得到的每段F长度，索引字符串absSRLUDrl；再按keymap映射为x/z/Back/Enter/方向键/s/a。"
+    ],
+    "validation": "先验证13组真值表完全相同，再将模型代入最终表达式确认真，最后在对应模拟器输入生成按键并观察接受。solver仅打印按键序列，没有在源码中提供固定flag。",
+    "limitations": "仅有solver说明，布尔位与游戏事件的完整映射背景需要结合附件。代码以str(m[dat[i]])判True，未赋值变量会落到F；复现时应检查模型完整性，并确认每段长度小于10。"
+  },
+  "虚拟化/b01lers_CTF_2026/kyotoprotocol": {
+    "goal": "恢复Bash与二进制协作执行的隐藏棋盘约束，给出合法坐标密码。",
+    "mechanism": "二进制不断改写运行中的Bash脚本形成VM；JUMP/NEXT/EXPORT传递参数和环境变量。去虚拟化后是9×9扫雷与每行、列、宫各3颗雷的组合约束。",
+    "steps": [
+      "阅读dump.py、parse.py与vm.py，先把dumped_c.zip中的反编译文本转换为parsed.json；函数ID是指令标识，$LINENO参与脚本写回位置。",
+      "对照原文轨迹确认参数传播与env读取；输入字符限1–9，每两字符组成坐标，先减49再计算9*x+y。被标记格的导出值模7为3。",
+      "从相邻偏移-10/-9/-8/-1/+1/+8/+9/+10恢复扫雷计数，注意边界，不能跨行环绕。目标g_8694=1820085546、g_4968=1410707190转换为11进制并仅取各最后7位得到14条线索。",
+      "加入线索格不得布雷，以及每行、每列、每个3×3宫各3雷：对应g_7965、g_1829、g_2184均为333333333。",
+      "以全部约束解出坐标，并编码为111314212629363839424448535558616467727577828385969799；对拍VM后再验证原挑战。"
+    ],
+    "validation": "原文报告该输入通过并可读flag.txt，但未给出flag正文。核验应同时检查14条邻接约束、禁放线索格和27条行列宫约束，仅满足普通扫雷不足以通过。",
+    "limitations": "原文说明初始化变量中有一处模7恰为3的题目错误；应以实际VM行为为准。图像clues.png/solved.png仅作辅助，约束应从代码提取。Bash会修改脚本，复现需使用副本。"
+  },
+  "虚拟化/bdsec_2026/Borrowed_Memory": {
+    "goal": "恢复12个十六进制地址输入，使偏移VM通过并解密flag。",
+    "mechanism": "输入实际是0x4000加表内偏移。2048字节伪随机表经过补丁成为指令带；逐步校验和可作为模拟器正确性的检查点。",
+    "steps": [
+      "仅阅读合集第3节Borrowed Memory，不混用Easy RE或Night Shift的flag。以seed=0x91e10da5、增量0x045d9f3b和xorshift 13/17/5生成0x800字节表，随后应用所有二进制补丁。",
+      "首偏移由table[0x20]的字0x7d95异或0x7c31得到0x1a4，用户首输入为0x41a4。",
+      "实现0xc0至0xc3四种转移；每步保存输出字节、32位状态并核对current+8/+9的校验和，失败时停在第一处差异。",
+      "按序输入41a4、42f0、4143、436c、421d、44a8、40f6、455b、4317、468c、425a、473d（均十六进制）；第12步下一偏移应为0xffff。",
+      "解密0x2220处40字节：逐字节异或(0x1d*i)&255、output[(5*i+1)%12]、state[i%12]相应字节、input[(7*i+3)%12]&255。"
+    ],
+    "validation": "原文报告 BDSEC{p01nt3rs_l13_bUt_0ffs3ts_r3m3mb3r}。需要12步校验全部通过、终结哨兵正确、完整解密输出一致，不能从合集中搜索第一个BDSEC字符串作为结果。",
+    "limitations": "原文没有完整列出所有表补丁及4个opcode公式，必须从附件补齐；solve.py引用未单独收录。地址是所述构建的静态定位信息，PIE运行时地址另加加载基址。"
+  },
+  "虚拟化/BYUCTF_2026/mixed_signals": {
+    "goal": "恢复信号驱动VM的输入校验，并验证候选flag。",
+    "mechanism": "mixed_signals保存输入状态，program发送信号作为VM操作码；两个进程共同完成恒定时间校验，单独启动其中一个不足以验证。",
+    "steps": [
+      "从附件定位signal/sigaction注册与handler，建立信号编号到状态变化的映射；记录输入缓冲区与比较位置。",
+      "阅读program的发送顺序及目标进程定位方式，还原VM程序，保持信号交互的顺序语义。",
+      "沿输入字节到最终比较的数据流恢复约束；原文未列出opcode和求解过程，需在继续分析时补足这些证据。",
+      "复现时按原文先启动mixed_signals并传候选，再在另一终端启动program，观察最终检查结果。"
+    ],
+    "validation": "作者给出 byuctf{l3ft_bl1nk3r_5c9125be}。这只是原文候选，完整验证需两个程序正确交互并接受；程序等待信号不代表失败。",
+    "limitations": "原始README很短，并明确没有solve脚本；因此本文只能确定整体机制和验证入口，不能补造具体算法或宣称独立推导出flag。恒定时间不支持直接套用逐字节时序猜测。"
+  },
+  "虚拟化/cryovault_2026-quals/Kelpie": {
+    "goal": "逆推出isfcr{32位十六进制}格式的16字节激活值。",
+    "mechanism": "两层可逆VM之间由HMAC-SHA256派生AES-256-GCM密钥；有效解法依赖官方hint提供派生密钥。没有hint时，第一层可逆性本身无法约束输入。",
+    "steps": [
+      "从本构建提取stage1字节码（偏移0x23c0，长0x4d1）及S-box/置换表；按3字节(op,a,b)实现8位状态机并用counter向量自测。",
+      "从原文完整代码块取hint密钥，结合0x28b4的IV、0x28c0的tag、0x28d4的924字节密文做GCM认证解密，得到stage2程序。",
+      "读取16条0x71比较的终态4c9a3fe619eab4efa7efd87a5c49e4d8，逆执行前面的291条变换，得到b0dd9edc83f370dad4f5399447579076。",
+      "以0x28a4处16字节HMAC key重新派生密钥，应等于hint；再逆stage1，奇数乘法用模256逆元，置换用逆表，字节旋转方向相反。"
+    ],
+    "validation": "原文给出 isfcr{5b2d4c7961307f588d9dd95bada5647b}。验证链为自测一致→GCM认证成功→派生密钥一致→正向VM比较全为零→原程序Unlocked。",
+    "limitations": "README引用的独立solve.py未收录；完整hint应从原文读取而非猜测。文件偏移=VA-0x400000只是作者针对该ELF布局的结论，通用实现应查PT_LOAD映射，non-PIE并不普遍保证该公式。"
+  },
+  "虚拟化/cryovault_2026-quals/thaw_ladder": {
+    "goal": "利用FROSTLANG 7.3行为恢复32字节profile并通过4轮ATT解冻。",
+    "mechanism": "SEAL有int16有符号边界缺陷；工作量计数可经余数对齐变成前缀匹配oracle；比较地址又经过洗牌，必须分别恢复字节与地址。",
+    "steps": [
+      "在同一会话校准HALT/NOP;HALT的work量化模型，求q、固定开销与余数；将余数对齐q-1，使额外一次比较产生可见跳变。",
+      "选择SEAL 0x8000，通过有符号检查并将32格比较映射到可写RAM。逐候选填满RAM，恢复已知地址，再执行SEAL；命中后重新确定余数。",
+      "每恢复一字节再二分其RAM地址，约15次探测；候选为0时用非零污染并反转判定。保持每plan少于65536指令。",
+      "最后一字节不能用比较次数区分，改用门控oracle：尝试写0x8200处CONT、HALT进入特权续执行，再执行ATT，根据FAULT/SETTLED区分。",
+      "按地址排序得到ATT所需线性profile，而非比较顺序；最终plan先恢复散布数据并SEAL，再写0x1000的fold表，最后CONT和4轮ATT。"
+    ],
+    "validation": "原文报告 isfcr{pod_seven_bb3a_woke_1a161ac6_in_bay_c}，用7158个plan完成，少于16384会话上限。验证分别记录q/余数、32组地址-值、门控成功与4轮THAWED结果。",
+    "limitations": "本地7.2参考模型与原文7.3远端不同；新连接会重置随机状态，不能复用旧profile。三份引用solver未单独收录，文中片段不足以无修改运行；远程可用性本次未验证。"
+  },
+  "虚拟化/css_2026/prince_walk": {
+    "goal": "直接恢复目的地消息，而非实际发送约两百万次移动。",
+    "mechanism": "目标坐标999999,999999为16寄存器VM的密钥种子，8320条加密指令重建128字节输出；最终长度和FNV-1a给出独立校验。",
+    "steps": [
+      "定位目的地事件sub_4029ca与消息函数sub_402c52，区分普通目的地响应与真正步行计数条件。",
+      "从文件偏移0x4a80读0x2080组两个32位字，按j=(i*0xd9+0xcd6)%0x2080取指，用X=Y=999999初始化寄存器与state。",
+      "按每步动态state解密word/imm并执行8类opcode，尤其0x83会散布写输出字节；保持32位截断和状态更新顺序。",
+      "输出首字节为长度，之后是正文，再后四字节为FNV-1a；提取正文中的CSSCTF格式字符串。"
+    ],
+    "validation": "作者报告消息长72字节，FNV-1a=0x763cc96c且与内嵌值相符；完整flag见原文Flag代码块。独立验证应确认128位置均已赋值和checksum匹配。",
+    "limitations": "本地只有README，未收录引用的solve.py；种子初始化和8类opcode完整公式仍需从附件/原文代码补全。目的地坐标是计算参数，不应仅patch坐标后忽略事件状态。"
+  },
+  "虚拟化/dicectf_2026-quals/locked_in": {
+    "goal": "恢复经过16线程VM和网格状态机的30字节输入。",
+    "mechanism": "并发逻辑可归约为逐字符变换及有限状态搜索；关键在逆序字节、EPERM返回值和障碍判定方向，不能按表面汇编常量直接建模。",
+    "steps": [
+      "恢复32类栈opcode和通道四槽位语义；从5420个uint64值组成的flag_verifier.bin重建4276条指令。",
+      "跟踪线程13读输入、线程15按位置XOR，顺序为索引29→0；记录unlock_pi在未持有互斥锁时返回EPERM=1对scramble的影响。",
+      "每字节执行XOR0x5a→ROL1→XOR0x5a→bitmangle→XOR0x5a；bitmangle偶数用(v^254)&255，奇数用((2*v)&255)^v，再拆4个最低位优先的四进制数字。",
+      "从(high=4,low=0x20000)开始按数字变更：0高减1、1高加1、2低乘2、3低除2。lookup[high]&low为0才接受移动，否则回滚。",
+      "按位置BFS尝试可打印字符并去重相同状态，利用格式限制24个未知字节；120次移动后目标为(high=14,low=2)。"
+    ],
+    "validation": "作者报告 dice{y0u_w3r3_v3rY_l0Ck3d_1n!}。验证必须恢复全部30个scramble与16个lookup值，并在真实VM检查最终0xE00000002。",
+    "limitations": "solve11.py未收录；原文bitmangle为经验公式，需用全部256输入或相应字节码核实。给出的flag为30字节，与长度条件一致。"
+  },
+  "虚拟化/DiceCTF_Quals_2026/garden": {
+    "goal": "在封闭堆VM中构造任意读写并完成原挑战控制流劫持。",
+    "mechanism": "GC将空引用误当作4字节对象参与压缩，破坏只向低地址移动的假设；逐对象memmove覆盖相邻对象头，可在普通数组和off-heap数组之间制造类型混淆。",
+    "steps": [
+      "先区分普通数值数组、引用数组和off-heap数组结构；从未初始化引用数组取null并作为根参与GC，确认本构建是否包含原文描述的mark_reachable差异。",
+      "安排相邻数组[a]和[w,x,y,z]，用额外null对象使压缩向右偏4字节，让a覆盖后对象的length/mark_word。",
+      "把后对象标为off-heap，使w/x/y/z被解释为data指针和size，得到宿主任意读写；反向转换可将真实off-heap指针当作整数泄露。",
+      "申请大off-heap对象取得mmap相关地址，按本地libc布局算基址，再读environ得到栈指针，定位保存返回地址；原文示例environ偏移0x20ad58，栈差-0x160。",
+      "因为运行期没有普通交互输入，将泄露、指针运算、ROP构造和退出都编译到同一VM字节码；community/solve.py提供另一解法的具体实现。"
+    ],
+    "validation": "逐阶段验证GC后的头部、读写原语、libc与栈指针，再检查退出后的目标行为。原文同时记录alloc_off_heap大小整数溢出的非预期路线；两条根因不要混写为同一个漏洞。",
+    "limitations": "官方README部分措辞是条件性描述“if mark_reachable is changed”，需核对实际源码而非直接认定所有构建可用。libc和栈偏移是环境相关值。目录的另一garden副本应链接到本条，不重复算题。"
+  },
+  "虚拟化/haruulzangi_2026-quals/Automaton": {
+    "goal": "逆转gate.wasm的字节变换，得到check(len)=1的42字节token。",
+    "mechanism": "211字节数据段包括42字节目标、9字节密钥生成程序、160字节加密主程序；RC4仅用于KSA生成S-box，主变换可逐步求逆。",
+    "steps": [
+      "从WASM导出get_input/check和data段核对布局，输入地址为1048787，先确认长度检查。",
+      "从初值109执行小VM12轮，生成key=3a88c6adf6fd92edb25349da，再运行RC4 KSA构造S与逆S；不要误加RC4 PRGA。",
+      "按output=state^enc、newstate=(enc-75*oldstate+59)&255解码160字节程序，解析114条指令；递推需使用旧state。",
+      "从42字节目标倒序执行指令逆运算：加减互换、左右旋互换、S-box换逆表、奇数乘法模256求逆；前缀/后缀原地链按相反索引方向撤销。"
+    ],
+    "validation": "作者报告 HZ{TF98xY04_byt3c0d3_c0unt3rp4rt_L3XH5QDC}。应正向回算全部目标字节，再用runner.mjs或网页调用check确认返回1；格式匹配仅是初筛。",
+    "limitations": "本地README引用solve.py但未收录该脚本，需补全14类opcode的操作数宽度与语义。给出的候选为42字节，与目标长度一致。"
+  },
+  "虚拟化/NCTF_2026/VM Encryptor": {
+    "goal": "从栈VM中识别魔改Base64编码并恢复原始输入。",
+    "mechanism": "官方PDF第76–79页给出VM结构、指令枚举和逆算法；校验是24位循环移位/XOR后的Base64，再逐字节异或0x63。",
+    "steps": [
+      "只提取PDF的VM Encryptor节，忽略前面的Hook My Secret和后续Misc。VM有0x10000字节内存和0x1000个32位栈项；反汇编必须按PUSH_BYTE/PUSH_DWORD不同操作数宽度推进PC。",
+      "由入口确认0x1000处42字节输入先转为0x102B处56字节编码，再转换至0x1064并与0x109D比较，避免把中间缓冲区当flag。",
+      "将第78页TARGET_BYTES全部异或0x63，按标准Base64字符表反查6位值，每4个拼成24位chunk。",
+      "对轮移位(5,11,20)倒序执行chunk=ror24(chunk^0x55757D,shift)，最后按高、中、低三个字节恢复明文。"
+    ],
+    "validation": "原文给出 NCTF{1578be15-ad09-4859-9193-5d52585eb485}。正向重做三轮ROL/XOR、Base64与最终XOR，应逐字节等于56字节TARGET_BYTES；再验证原VM成功分支。",
+    "limitations": "PDF提取文本有分页行号、控制字符和断行，不能整段直接复制运行。题目目标数据和官方脚本在PDF中完整给出，本次仅静态转写；不要把邻题的Java脚本误关联本题。",
+    "sources": [
+      "writeups/NCTF_2026_Official_Writeup.pdf",
+      "../../../sources/NCTF_2026_Official_Writeup_text.txt"
+    ]
+  },
+  "虚拟化/LA_CTF_2026/helm-hell": {
+    "goal": "恢复使Helm模板渲染结果为true的输入。",
+    "mechanism": "652KB辅助模板把Brainfuck的纸带、指针与递归循环映射为Go模板操作；字符期望值隐藏在计数与循环中。",
+    "steps": [
+      "将$sea识别为纸带、$helm为指针、$provisions为输入、$logbook为位置、$cargo为输出，分别对应八种BF操作。",
+      "化简add126再sub125等恒等算式，按递归调用恢复232个函数的循环结构；不要简单按源码行数计数指令。",
+      "逐次输入读取处追踪期望单元的构造：循环乘法、循环后的增量和相减比较；恢复实际消费的输入长度与各字符约束。",
+      "结合community/solve.py核对提取流程，再以候选进行helm template渲染并检查true。"
+    ],
+    "validation": "原文给出 lactf{t4k1ng_7h3_h3lm_0f_h31m_73mp14t3s}；但标题自称LACTF 2025，目录为2026，且文中声称41次输入与候选长度需独立核对，结果不能直接视为当前附件已验证。",
+    "limitations": "这是社区材料的年份/长度疑点，须优先按附件模板和solver实际常量校正。不要部署Kubernetes，题目验证仅需模板渲染。"
+  },
+  "虚拟化/LA_CTF_2026/reflection": {
+    "goal": "恢复Rust panic展开期间隐藏的DWARF校验输入。",
+    "mechanism": "主程序只panic，真正的检查在.eh_frame的DW_CFA_val_expression中；115字节预检查决定是否进入12888字节表达式VM。",
+    "steps": [
+      "区分CFI规则与DW_OP表达式；定位异常大的RIP表达式，完整处理DW_OP_GNU_encoded_addr的funcrel/ULEB128等编码，readelf的Unknown不等于数据无效。",
+      "原文提供GDB提取脚本：在execute_stack_op读取op_ptr/op_end及上下文，区分两次展开阶段并保存实际使用的寄存器；先用满足预检查的47字节输入触达主表达式。",
+      "预检查通过Rust内部ARGC/ARGV取argv[1]，恢复argc=2、长度、尾字符及前8字节lactf{si的条件。",
+      "将主表达式解码为9195条指令，识别38组块、152次eq：31组约束单字节连续1位段长度，7组约束跨字节位模式。用R8撤销比较常量混淆。",
+      "使用原文solve.py与vm_emulator.c的约束搜索/加速器，先筛每字节候选再满足交叉约束，最后把候选传给原程序确认正确展开路径。"
+    ],
+    "validation": "验证应覆盖全部38块和152次比较，并确认进入catch_unwind后的正常终止路径。普通panic输出可能在成功前也出现，不能仅凭“打印panic”判失败。最终flag在HTML正文代码块中，本文不把示例lactf{siAAAA…}当答案。",
+    "limitations": "只有HTML，脚本内嵌于页面且有语法高亮/行号；需从pre/code提取后复核。libgcc内部符号和结构布局依赖运行库，原文关于全部表达式执行两次是该观察路径而非所有unwind的普遍保证。"
+  },
+  "虚拟化/l3akctf_2026/LattiaVM": {
+    "goal": "在栈VM中构造不依赖输出泄露的宿主ROP。",
+    "mechanism": "push无上界，DUP在sp=256时第二次push写到别名sp字段，使可控值变成原生栈索引；SWAP可据此读写保存返回地址。",
+    "steps": [
+      "先确认vm_t中int32 stack[256]紧接sp；DUP执行pop/push/push，最后sp变成x+1。按本构建核对256为sp、258/259为canary、262/263为返回地址。",
+      "用重复DUP快速增深至256，再将sp设为270；保留canary，复用栈上libc+0x29f75的返回指针。",
+      "在VM内部对低32位加差值构造pop rax、system、mov rdi,rsp;call rax三个地址，保留高32位；检查跨32位边界的进位假设是否成立。",
+      "在调用者栈拼接ROP和命令pr f*，HALT触发返回；stdin被重定向/dev/null，因此验证输出采用非交互命令。"
+    ],
+    "validation": "作者给出 L3AK{h3ll000_c4ll1ng_fr0m_50-47714-5-1000_4ny0n3_7h3r3}；共同payload为128字节、489条VM指令，须同时满足长度和执行预算。完成标志是返回链实际打印题目flag，单纯HALT正常退出不足以证明成功。",
+    "limitations": "第一版解码输入限128字节，执行限512条。 合集包含7题，需只读本题章节。libc/loader及栈布局依赖附件；独立solver未随该博客单独收录。"
+  },
+  "虚拟化/l3akctf_2026/LattiaVM_2": {
+    "goal": "在栈VM中构造不依赖输出泄露的宿主ROP。",
+    "mechanism": "push无上界，DUP在sp=256时第二次push写到别名sp字段，使可控值变成原生栈索引；SWAP可据此读写保存返回地址。",
+    "steps": [
+      "先确认vm_t中int32 stack[256]紧接sp；DUP执行pop/push/push，最后sp变成x+1。按本构建核对256为sp、258/259为canary、262/263为返回地址。",
+      "用重复DUP快速增深至256，再将sp设为270；保留canary，复用栈上libc+0x29f75的返回指针。",
+      "在VM内部对低32位加差值构造pop rax、system、mov rdi,rsp;call rax三个地址，保留高32位；检查跨32位边界的进位假设是否成立。",
+      "在调用者栈拼接ROP和命令pr f*，HALT触发返回；stdin被重定向/dev/null，因此验证输出采用非交互命令。"
+    ],
+    "validation": "作者给出 L3AK{ty_f0r_50-47714-5-1000_2_m4ll0ctr1c_str1ng1f4l00}；共同payload为128字节、489条VM指令，须同时满足长度和执行预算。完成标志是返回链实际打印题目flag，单纯HALT正常退出不足以证明成功。",
+    "limitations": "第二版程序缓冲移到malloc且输入增至256字节，但VM状态仍在宿主栈；sp未显式初始化，作者报告本环境起始为0，应先核验。 合集包含7题，需只读本题章节。libc/loader及栈布局依赖附件；独立solver未随该博客单独收录。"
+  },
+  "虚拟化/NepCTF 2026/36_ColorfulArray": {
+    "goal": "从Windows壳后的校验/状态演化恢复输入flag。",
+    "mechanism": "原文短叙述称图游走/PRNG，实际附带脚本是带掩码的16位状态约束DFS：必须以代码数据流解释，而不是照抄模糊叙述。",
+    "steps": [
+      "定位NRV2E风格壳及约0x140003ca0的OEP，取得脚本需要的目标表和常量，保留脱壳来源。",
+      "枚举5轮写表顺序，ti=s9%25、buf_idx=s10+2，记录每个表项最后一次写入；仅mask未屏蔽的项形成最终强制约束。",
+      "固定NepCTF{、末尾}及原脚本已知Real片段；正文前10字节在缓冲中先异或位置索引，超出有效输入部分补0。",
+      "DFS逐步更新state；遇到最后写入约束时枚举a2∈[0,255]反求可行字节，并限制未知正文可打印。每次回溯撤销临时赋值。",
+      "对首个完整候选重跑全部写表逻辑，逐项检查所有未屏蔽目标，再输出原始正文。"
+    ],
+    "validation": "原文报告 NepCTF{G0tTheTru3RealCu7eNeuro!^}。该候选为33字节，与脚本25字节正文及8字节封装一致；仍须核对已知Real片段来源及目标表来源，再用原PE检查；仅DFS找到第一个解不证明唯一。",
+    "limitations": "脚本中的work/36路径不是本地现有目录，需替换为本题附件；部分已知字符被直接写入脚本而原文没解释推导，需把它们列为作者提供的先验。本次未运行。"
+  },
+  "虚拟化/NepCTF 2026/42_T.A.S P.W.N": {
+    "goal": "重建演示影片，使指定模拟器中的游戏输入触发宿主计算器PoC。",
+    "mechanism": "原文复用bluescreen影片的guest链及XOR keystream，将184字节HIMITSU宿主body的调用目标改为WinExec(calc)，flag由主办验收签发。",
+    "steps": [
+      "固定BizHawk2.9.1、Mupen64Plus与日版ROM SHA1=B9CCA3FF260B9FF427D981626B82F96DE73586D3；缺少原始bk2影片不能单靠本文生成完整PoC。",
+      "按原脚本parse_line/pack12解析55293至55343的51帧，重组612字节流；HOST_OFF=312、HOST_END=516，body偏移16、长184，魔数HIMITSU!。",
+      "保留原resolver与guest解密链，以原body密文异或已知明文恢复keystream；逻辑x64字节先整体反转再按原keystream加密回填，避免把逻辑执行顺序当存储顺序。",
+      "将WinExec与calc字符串及调用位移写入body，保留长度、头尾、控制器同步位；重新打包Input Log和bk2结构。"
+    ],
+    "validation": "原文报告约55345帧出现计算器即通过演示，最终flag由主办签发。这里的成功条件是宿主可见PoC行为与环境一致，并非远程读flag；本次仅分析脚本，未播放影片。",
+    "limitations": "强依赖原影片、ROM版本、模拟器和keystream；不保证换版本可复现。原文完整代码含历史蓝屏payload作为恢复keystream的数据，应明确其用途而非运行它。"
+  },
+  "虚拟化/PascalCTF_2026/StrangeVM": {
+    "goal": "从code.pascal和解释器恢复40字节校验目标的逆变换。",
+    "mechanism": "可确认的思路是按奇偶索引撤销加减，但原文本身存在多处矛盾：奇数位正向文字写input-1，逆代码却写target+i，且展示flag长度并非40。",
+    "steps": [
+      "先解析vm指令格式并反汇编code.pascal，定位逐字符处理和真正比较目标，而不是仅在Congratulations附近猜40字节表。",
+      "分别记录奇数位与偶数位的实际算式和截断宽度；偶数位原文一致为target=input+i，逆为target-i。",
+      "对奇数位同时检验两种假设：若input-1则逆加1，若input-i则逆加i；以字节码及正向回代作判断。",
+      "原文给出40字节target_hex和solver，提取后检查生成字节、长度及目标一致性；无法匹配时记录失败，不把声称的pascalCTF字符串替换为计算结果。"
+    ],
+    "validation": "原文声称 pascalCTF{VMs_4r3_d14bol1c4l_3n0ugh_d0nt_y0u_th1nk}。它与40字节流程的关系未被原文建立，属于待核验结果。有效标准是完整输入通过实际VM，或全部字节正向变换与真实目标相等。",
+    "limitations": "仅HTML短文，无独立反汇编器和solver文件；原文脚本可以抽取但不是已验证可用解法。不要擅自修正一处文字后宣称所有矛盾解决。"
+  },
+  "虚拟化/pwnsec_2026/ICX_Confusion": {
+    "goal": "利用过期View改写Job能力字段，让guest读取并输出/flag。",
+    "mechanism": "pack将Note变为Job但保留旧View，导致类型混淆；认证值是可重算的23位算法，攻击者可修改token和manifest并重新封装。",
+    "steps": [
+      "先建立16槽对象地址和View偏移，所有字运算mask=0x7fffff；六位十六进制显示不代表24位。",
+      "在pack之前创建View5指向将来的Job头，View6指向附带Note请求区；pack之后确认旧引用仍可编辑新结构。",
+      "peek泄露d[0..7]，按slot/generation/d4/d5还原seal，选择guest中读flag能力token；修改d0、manifest d3并重新计算d6/d7认证。",
+      "使用version=1使run从request[1..]复制可控字段；先以5字段描述符把/flag读入VM缓冲，再改为console-write能力和2字段描述符打印该缓冲。"
+    ],
+    "validation": "原文报告 pwnsec{bd50223d7bac573d}。验证应分开确认Job认证通过、读入缓冲成功、终端输出；输出后服务报告失败不自动否定先前已经输出的字节。",
+    "limitations": "本地仅README，引用的job_auth、完整能力token及工具需从原文代码块/附件恢复，不能替换为24位算术。对象地址0x110461/0x110481等属于特定guest布局。"
+  },
+  "虚拟化/pwnsec_2026/ICX_Regulate": {
+    "goal": "向合法portal请求移植kernel mark，绕过/flag读取权限。",
+    "mechanism": "GMI检查器跳过低字节为ff/00的某些分支目标，可将禁用OCTPACK藏在LDI立即数再跳入执行；该指令能传播来源mark而不改变请求数值。",
+    "steps": [
+      "恢复23位ISA、GMI校验和及guest runtime地址；准备位于地址低字节ff的隐藏OCTPACK(0x52)，先证明镜像被接受而运行时确实执行该字。",
+      "注册portal并制造成功终端响应，从metadata[5]计算(slot-1)%23，定位0x6ffc05+slot*8的kernel-marked zero；不要假定ring索引从0开始。",
+      "用shadow context/metadata调用原read producer，构造合法5字段读请求，但只更新影子producer，使内核暂未消费。请求word0地址为0x6ffb00+(producer%23)*10。",
+      "POP保持mark，再用OCTPACK把marked zero写到word0第1字节；参数计数5的高字节本来为0，因此数值不变、来源mark改变。",
+      "发布shadow metadata、fence并按原ABI敲doorbell；后接NOP避免异步中断把LDI立即数当恢复PC，最后等待响应并打印FLAGBUF。"
+    ],
+    "validation": "原文报告 pwnsec{10f7636384e74c19}。本地Docker假flag仅验证读路径；有效验证需分别检查镜像验证、mark传播、请求认证与实际读取。",
+    "limitations": "README提到exploit.gmi、/tmp/sandbox_text.u32及多份工具，但本地writeups仅README，不能假定已具备最终镜像。ABI、guest例程地址与标记传播均须对应同一构建。"
+  },
+  "虚拟化/pwnsec_2026/PwnSec_Support": {
+    "goal": "从工单站的guest权限链读出L3afVM数据区flag。",
+    "mechanism": "工单ID拼接SQL允许堆叠语句创建管理员session，admin Lua的note_save提供guest任意32位写；修补ticks返回类型将写原语转为字符串读。",
+    "steps": [
+      "解析ctf_sql.l3af的十六进制DATA模块，恢复/ticket与/admin源码，确认session表及root user_id=1；先明确注入和验证token的字段。",
+      "在/ticket?id中结束查询并INSERT自选session，再带token进入admin Lua；这一步仅获得guest Lua执行。",
+      "按加载器从0x10000开始、DATA四字节对齐、代码16字节对齐且前置两条指令的规则计算符号地址。",
+      "用tostring(ticks)泄露remote embedded_ticks地址，减本地符号得到code slide；FLAGPAD大小变化会平移代码，不能硬编码本地地址。",
+      "以note_save把ticks中的CALL改为LC R0,address，并把lua_pushinteger目标改为lua_pushstring；在remote代码段前512字节内读NUL结尾字符串，定位pwnsec格式flag。"
+    ],
+    "validation": "原文报告 pwnsec{fa6fa484ff74c09a}。验证链应留存session认证、函数地址差、补丁前后指令和最终返回字符串；guest内存读不等于宿主逃逸。",
+    "limitations": "本地只有README，独立solve.py未收录；完整SQL语法与指令布局以原文代码块和附件为准。改变本地监听8081是作者环境调整，不是利用必需条件。"
+  },
+  "虚拟化/pwnsec_2026/Zigerions": {
+    "goal": "逐层提取真正承载密钥和密文的svchost数据容器并解密。",
+    "mechanism": "ELF→PyInstaller PE→VMProtect PE→落地文件；GameBoy ROM中的巨型VM是不可达诱饵，真实结果来自畸形ELF中的AES密钥与48字节密文。",
+    "steps": [
+      "从外层ELF的payload符号切取update.exe，使用节映射将VA换为文件偏移；无需执行外层下载/写入逻辑。",
+      "提取PyInstaller的stub，根据marker、LE长度、重复XOR key和整体反转恢复layer2.exe。",
+      "原作者通过Wine文件跟踪发现AURA.gb和5624字节svchost；若需重现该步仅在隔离副本观察，当前改写未执行任何落地程序。",
+      "检查ROM在0x0af2是RET，验证VM表不可达；转向svchost的key/symbol/data，按原文AES-128-ECB解密48字节并去PKCS#7。"
+    ],
+    "validation": "原文声称平台接受 ctf{U_sh0u1dvebeen_@_g@m3r_0rHighIQ!}，同时称解密正文前缀为psctf，须区分原始明文和平台提交形式。末尾9个0x09只支持该候选解密，不单独构成算法证明。",
+    "limitations": "没有IV只能提示ECB，不能普遍证明ECB；应以解密代码和完整明文确认。引用extract_layers.py/watch.c/solve.py未单独收录，且所需中间落地文件须先核对附件。"
+  },
+  "虚拟化/SCTF_2026/babel_furnace": {
+    "goal": "合并四层验证材料并逆转384位置换，恢复48字节flag。",
+    "mechanism": "Host、Python code object、bridge.pyd、Rust engine各持有部分share；单独分析engine会得到不完整opcode/立即数。组合后640条micro-op归约为6个uint64的14轮可逆变换。",
+    "steps": [
+      "从Host的320个0x800片段按bootstrap key/tag/next链恢复模块，跟踪每片派生的新key并验证tag；Host API仍提供运行期share。",
+      "从carrier的co_exceptiontable取80块token/immediate，co_linetable取16页key share，co_name取block permutation，co_qualname取bootstrap/input share。",
+      "还原bridge的48字节长度检查、三方input permutation/mask及engine_resume状态机；遇到page/block请求时补齐packet字段并核对SplitMix64 packet tag。",
+      "每页5块、每块8条；页key由四方share异或后派生，真实immediate同样合并四方。将640条micro-op与14轮高层算法对拍。",
+      "从合并后的target倒序撤销word permutation、加法混合、nibble S-box、旋转和邻接XOR、round key，最后撤销input映射。"
+    ],
+    "validation": "本地exp/solve.py提供实际恢复实现。验证标准是16页tag及80块状态一致、正向14轮回到target、48字节候选让Host输出Correct.；仅engine局部满足不足以证明完整链成功。",
+    "limitations": "不能遗漏Host share或把最多192次resume当192个VM块。脚本依赖的文件路径与模块提取必须先核对；原WP未直接写出最终flag，本次不从其他文本猜测。"
+  },
+  "虚拟化/SCTF_2026/BrainfOok": {
+    "goal": "按阶段恢复25指令语言的校验约束，解出32字节正文。",
+    "mechanism": "Python负索引、独立跳转栈、原地修改和数十亿次低层操作使直接迁移/全量trace容易失真；应保存状态分段推进，保留跳转覆盖区后去冗余。",
+    "steps": [
+      "建立4寄存器、96槽内存、2个32位bit memory及两套跳转栈的精确语义；普通整数不自动截断，负索引按Python处理。",
+      "去外层字符画/编码/AES后过滤无效字符，识别对称操作、无效位运算、重复内存操作。每次删除前记录#()偏移覆盖区，防止改变控制流。",
+      "保存PC、所有寄存器、内存、两个栈与标志位作检查点，先解前置约束，再续跑触达下一段；错误输入可能死循环，不能把耗时直接当字符正确性oracle。",
+      "按原文约束分组求解：0–3及28–31的变体TEA、4/12/18/21/26的下划线、5–11矩阵、13–17与27链式XOR、19–25乘积/大小关系。s在多个TEA阶段间连续传播，不要每段重置。",
+      "用原文最后的assert脚本对原始正文逐条验证，尤其链式XOR是原地循环，最后一步使用的元素可能已更新。"
+    ],
+    "validation": "原文约束示例正文为 Th1s_e50l4nG_Mak35_m3_F3e1_D1zZy。需确认题目外层flag封装，不凭正文自动添加赛事前缀。所有assert及原VM接受才算验证完成。",
+    "limitations": "本地提供完整长文与代码，但非单一开箱即用自动恢复脚本。原文称无法一步恢复是针对其分析路径，不是数学上的不可能性证明；本次仅静态重构其方法。"
+  },
+  "虚拟化/SekaiCTF_2026/3in1": {
+    "goal": "梳理Ladybird→guest提权→QEMU逃逸链，明确可读脚本与不透明二进制边界。",
+    "mechanism": "可读JS利用Set.intersection回调中clear/GC引发悬空元素，再伪造对象和ArrayBuffer数据指针获得进程读写；后续两个QEMU阶段以Base64 ELF嵌入，原作者文章缓存仅有简介。",
+    "steps": [
+      "读fakeobj/leak_ptr_try_for：在other.has中清空Set，用0xb0字节分配或WeakMap占位，利用intersection返回旧元素作为NaN-boxed对象/指针泄露。",
+      "用MapIterator内存和可控bucket伪造对象，按MAP_ENTRIES_BUCKETS_OFFSET=104与MASK_OFFSET=120定位存储；保持真实对象引用避免被GC回收。",
+      "改写victim ArrayBuffer的+64数据指针，通过DataView实现read64/write64，每次访问后恢复原指针。检查0x1122334455667788哨兵，再由vtable、free GOT、environ推导LibJS/libc/栈。",
+      "将ROP放入victim backing store，扫描可疑返回地址并安装pop rsp pivot；ROP执行/bin/sh -c，由DROPPER_COMMAND解码本JS的SEKAI_SOLVE_B64区间并运行ELF。",
+      "后续LPE/escape必须另做ELF反汇编和对应QEMU源码核验；本地仅可见嵌入payload及其诊断字符串，不能把字符串当完整漏洞证明。"
+    ],
+    "validation": "JS提供SEKAI_PRIMITIVE_TEST开关，可只检验进程读写原语；完整成功需分别证明JS进程控制、guest提权和宿主逃逸，不能将stage1 shell等同全链。此处没有经验证flag。",
+    "limitations": "作者writeup.txt仅620字节，HTML离线副本未含完整三个组件说明；代码含编译后ELF但无对应C源码。所有LibJS/libc偏移和对象布局针对题目构建，随机堆布局可能使重试失败。"
+  },
+  "虚拟化/SekaiCTF_2026/MTE": {
+    "goal": "通过Binder身份、MTE/PAC门控和驱动UAF获得内核读，再读页缓存flag。",
+    "mechanism": "核心原语不是任意写，而是在保留24字节canary的kmalloc-96对象+0x40写固定值2；以unix_vertex.scc_index为目标诱发AF_UNIX GC和悬空oob_skb，升级为任意地址单字节读取。",
+    "steps": [
+      "在exec可信/bin/client前打开Binder并用SCM_RIGHTS保留fd，借opening task身份获得真实mte_driver fd；CLONE_VM sleeper保持映射。",
+      "从泄露的16个MTE tag恢复小PRNG种子并生成0x100个tag；PAC因qemu_pauth.patch固定部分参数而可重放，分别通过验证IOCTL。",
+      "IOCTL_FREE制造悬空对象，安排unix_vertex重占且+0x48至+0x5f canary不变；IOCTL_CHECK写+0x40=2，使GC误清活socket并留下oob_skb。",
+      "用pipe页占回sk_buff，伪造len=1和head/data=target，经recv(MSG_OOB|MSG_PEEK)读取；先读linux_banner的L，再改偏移读i定位命中的pipe。",
+      "依据原文页缓存遍历链定位/root/flag.txt的page，将struct page转换direct-map地址逐字节读取，无须root shell。"
+    ],
+    "validation": "验证分层记录driver fd、MTE/PAC门控、悬空skb读L→i和最终页内容。community_writeup.md含作者结果；本地solution/solver为已编译二进制，本次未执行。",
+    "limitations": "原文引用solve.c/qemu_pauth.patch，但本题writeups仅社区说明和二进制solver，完整源码需从附件核对。QEMU补丁、内核布局、slab回收策略和kmsg泄露可用性都是必要前提，不能推广到默认MTE/PAC环境。"
+  },
+  "虚拟化/squ1rrel_2026/squ1rrel_o_tron_2": {
+    "goal": "在5秒限时内回答20000个相互依赖的mix挑战。",
+    "mechanism": "PDF JavaScript的VM又运行组合子解释器，逐层模拟太慢；抽取等价16位轮函数可将大量解释步骤化简为每输入12轮。",
+    "steps": [
+      "从PDF的JS资源提取31寄存器、65536个32位内存槽和16个opcode，建立慢速oracle；原文测试mix(\"0000aaaaaaaa\")=90aa。",
+      "跟踪compile与execute阶段的乘法/XOR/移位，识别固定S-box [8,e,c,7,f,4,5,2,6,a,b,0,3,9,1,d] 与周期key [8e87,4524,b745,9e51]（十六进制）。",
+      "等价轮为mul=(i==0?0x3a2a:state)，accum=uint16(ord(input[i])*mul)，state=rol16(sbox4(accum^key[i%4]),5)，共12字符，输出四位十六进制。",
+      "批量接收CHALLENGES至END的20000行；prev初始0000，每次input=prev+8字符challenge，按顺序计算并更新prev，再批量发送答案减少往返。"
+    ],
+    "validation": "先对多个输入将高层函数与VM对拍，再验证链式prev和四位补零格式。作者报告 squ1rrel{c0mp1l1ng_t0_c0mb1n4t0rs_1s_s0_r3tr0}，但性能数值仅原报告。",
+    "limitations": "原文一处写每次5.7ms，后又写5700ms，速度倍数矛盾，本文不沿用。独立mix_fast.c/solve.py未收录，README有核心函数但网络端需核对server.py实际计时方式。"
+  },
+  "虚拟化/srdnlen_2026-quals/Dantes_Trial": {
+    "goal": "恢复GBA ROM输入，使自定义64位散列达到目标。",
+    "mechanism": "169字节字节码封装读字符和散列循环，真正难点是正确模拟ARM移位加法链后再穷举短输入。",
+    "steps": [
+      "定位ROM偏移0x22654的程序，恢复16类置换/XOR opcode，确认主循环读字符→hash→重复。",
+      "重现逐字符XOR、FNV乘法、索引混合、S-box与golden-ratio混合；finalize包含FNV_PRIME=0x100000001B3及fmix64。",
+      "核对Thumb的lsls r0,r6,#0x1f为左移31位，不是右移；用原作者提到的Unicorn逐状态对拍，确认每个64位截断。",
+      "固定hash=0x73f3ebcbd9b4cd93，搜索长度1–6可打印串，复用部分hash状态并并行外层；将命中串重新正向计算。"
+    ],
+    "validation": "作者报告长度1–5无解、长度6得到W1H31l，提交 srdnlen{W1H31l}。必须以正确散列及ROM接受双重验证，较小长度无解结论仅限作者搜索范围。",
+    "limitations": "原文引用brute2.c、solve_correct.py和vm_emu2.py但本地仅README。缺失S-box/具体混合公式需从ROM补齐；不要对错误hash实现进行无界暴力。"
+  },
+  "虚拟化/Srdnlen_CTF_2026_Quals/Cornflake v3.5": {
+    "goal": "还原loader门槛和payload.dll中VM约束，恢复password.txt内容。",
+    "mechanism": "RC4用户名门槛只是第一层；第二层栈VM以CMP结果自修改下一条失败opcode，所有成功路径可表达为输入算式约束。",
+    "steps": [
+      "用key=s3cr3t_k3y_v1解密目标46f5289437bc009c17817e997ae82bfbd065545d，原文得到用户名super_powerful_admin；先检查是否已提供本地payload.dll，无需重新请求题目域名。",
+      "恢复VM的eax/ebx/ecx、栈与取指语义，特别是MOD_NEXT执行bytecode[i+1]+=eax：CMP匹配时将FALSE5变为6以继续。",
+      "符号化READ_ABS及算术模板，提取直接字符、(a+3)^(b-2)、(a-b)^c、(a//4)^b+c、批量和等约束。",
+      "处理间接索引flag[22]-48再索引输入的依赖，不能把索引当常量；求得候选后在可修改字节码副本中正向执行。"
+    ],
+    "validation": "作者给出 srdnlen{r3v_c4N_l0ok_l1K3_mAlw4r3}，并提醒可能存在多个有效flag。需记录每处FALSE是否被正确修改及最终接受，不能宣称解唯一。",
+    "limitations": "本地短文未列全量字节码或求解器；正文个别伪码的寄存器注释与opcode表不同，精确语义需以DLL为准。原站载荷是否仍可下载不在本次验证范围。"
+  },
+  "虚拟化/SUCTF_2026/SU_Lock": {
+    "goal": "从驱动VM提取加密参数和目标密文，逆解锁屏程序输入。",
+    "mechanism": "Rust安装载荷用RC4(SUCTF2026)解出用户态PE与驱动；IOCTL0x222004返回XXTEA变体参数，0x222008检查密文，驱动VM仅包装常量写出和相等判断。",
+    "steps": [
+      "从安装包/运行期文件定位Locksetup.exe，沿RC4数据流离线解密嵌入PE和驱动；不需要在当前系统安装驱动。",
+      "对g_VmCode_GetSecrets解析MOV_IMM32和STORE_OUT，得到delta=0x9e376a8e，key=[deadbeef,cafebabe,1337c0de,0badf00d]（十六进制）。",
+      "对g_VmCode_Verify提取R2比较常量，按10个小端uint32组成40字节密文；注意脚本只是提取器，LOAD_IN/ASSERT_EQ分支仅打印，并未真正实现验证。",
+      "按exp.py的btea_decrypt_variant撤销6+52//10=11轮，保留32位环绕，使用移位4/3/2/5的变体MX而非标准XXTEA库。",
+      "将10个解密字小端序列化，核对UTF-8/填充，再正向重加密比对完整目标。"
+    ],
+    "validation": "验证至少要求VM输出的5个参数一致和40字节正向密文完全相等；若再用原程序确认解锁，应使用隔离副本。脚本未硬编码最终flag，本次未运行输出。",
+    "limitations": "源码提取常量完整，但原文截图里的地址仍需匹配具体构建。不能仅看到解密字节可打印便认定成功；禁止把模拟VM读取常量的脚本描述为已完整模拟驱动。"
+  },
+  "虚拟化/SUCTF_2026/SU_MvsicPlayer": {
+    "goal": "恢复ddd.su_mv_enc对应WAV文件，并计算题目要求的MD5。",
+    "mechanism": "真正路径在Electron native vm_encryptor.node；SVM4头后是64字节块的四轮Feistel/Speck混合，每块密钥由前一密文两半异或派生，非CBC。",
+    "steps": [
+      "解开app.asar并从main.js→native-bridge→napi_register_module_v1定位加密入口，区分JS的SVE4备用算法与真实SVM4格式。",
+      "核对WAV RIFF/fmt/data检查及16位PCM路径；用原文trace识别64字节块，将状态拆16个大端uint32、左右各8字。",
+      "初始key=bytes(range(32))，DELTA=0x70336364；按exp.py扩展4轮key，倒序恢复Feistel前态，再撤销Speck pair（ALPHA=8、BETA=3）。",
+      "去4字节SVM4头后逐64字节解密；下一key始终从本块原密文前32B XOR后32B得到，不可用恢复明文派生。",
+      "校验并去PKCS#7填充，保留恢复WAV的全部原字节，检查RIFF长度与音频块，再计算MD5并封装SUCTF{md5(wav file)}。"
+    ],
+    "validation": "本地exp/exp.py含加解密两方向，可用于回环和重加密比对；正确结果应重加密得到原SVM4主体，最终MD5对象为WAV而不是.su_mv封装，官方说明已划去旧格式。",
+    "limitations": "exp以当前目录读取ddd.su_mv_enc并写ddd.wav，使用前需明确目录。播放器关闭会归档并删原文件，文档分析无需启动它。本文未计算MD5，也未声称已恢复音频。"
+  },
+  "虚拟化/SUCTF_2026/SU_West": {
+    "goal": "按实际顺序求81层输入并恢复40字节flag缓冲。",
+    "mechanism": "NOR VM是模板化的ARX约束载体，每轮64位输入经Feistel和组合器映射到该层target；层间s0和flag解密状态相连，不能把81层独立乱序求解。",
+    "steps": [
+      "提取ORDER、TARGETS及81份表常量，按constants.txt与原文TableObj的字节/字字段布局读取；所有集合长度应为81。",
+      "第rnd轮选择layer=ORDER[rnd]，为x建立64位BitVec并加入原文MIN_INPUT/MAX_INPUT无符号范围。",
+      "按sub_12480_sym→sub_12630_sym→sub_12940_sym计算并约束等于TARGETS[layer]，只用对应层的常量和当前s0。",
+      "求解后以整数版本重算v5/v8/v9/v18，用sub_12c00_i更新flag，再用sub_12ca0_i更新s0，进入下一轮；旋转及截断必须一致。",
+      "输出81个输入和最后40字节flag，使用每轮target回代定位最早差异。"
+    ],
+    "validation": "原文结果 SUCTF{y0u_h4v3_0v3rc0m3_81_d1ff1cu1t135}。验证必须81层全部SAT且整数回算一致，不可仅最后字符串可打印；如果某层有多个模型，还需确认其后续状态能成功。",
+    "limitations": "原文exp内EMBEDDED_TABLES等常量需要与constants.txt配套，不要把省略/外部表当默认空值。s0、seed flag buffer和输入范围均为题目参数，本次未运行Z3。"
+  },
+  "虚拟化/sunshinectf_2026/IntMod": {
+    "goal": "从信号执行轨迹提取明文VM操作，解线性终态再逆混合。",
+    "mechanism": "SIGTRAP/SIGILL/SIGFPE通过ucontext改真实寄存器；90条可逆混合后用40个模65521的多项式约束检查40字节状态。",
+    "steps": [
+      "建立40字节/5个u64状态和正常执行信号语义，定位executor0x400ae0与unsealer0x4020e0；原文主张长度33+7字节padding。",
+      "在解封装输出层收集完整逻辑指令，同时记录handler ucontext前后状态；仅hook普通executor会漏trap/JIT路径。",
+      "回放每条解密op并对比下一状态，区分13个未取指诱饵；将op5/op6配成sum(F[j]*b^j)=target+c mod65521。",
+      "在GF(65521)高斯消元求40个终态字节，检查值小于256；逆序撤销90条add/xor/odd-multiply/rotate/swap，乘法模2^64求逆。",
+      "检查恢复的尾部填充，再把有效输入送原程序验证Correct。"
+    ],
+    "validation": "作者报告 sun{I_L0v3_Int3rrupts&SelfMod!!!} 和七个0x07填充，该候选为33字节，与输入条件一致。只有完整状态对拍、线性系统残差为0和原程序接受才建立正确性。",
+    "limitations": "本地仅README，hook*.c/analyze.py/solve.py等未收录。原文称GDB无用属于作者经验，不能当一般限制；可用受控信号调试但需避免改变程序语义。"
+  },
+  "虚拟化/Thryve_CTF_2026/chimera-mirrors": {
+    "goal": "恢复双层加密VM接受的48字节输入。",
+    "mechanism": "外层228条指令调度88个真检查器，前48个分别只依赖一个输入字节，所以每个检查尝试256值即可；其余40个联合检查用于验证。",
+    "steps": [
+      "从0x20c0解密0x720字节外层程序，恢复8寄存器与8字节指令；正常ptrace返回值对应debug_value=0，调试器引入的扰动不能带入模型。",
+      "按0x27e0/0x29c0/0x2ac0/0x2bc0处seed、长度、偏移和blob解密内层程序；虽然有116份元数据，外层只执行0–87。",
+      "按solve.py实现8寄存器32位语义，初态取0x53f0常量并混入check编号和外层源寄存器；有效路径上的r0为1。",
+      "对检查0–47分别枚举0–255，收集通过相等比较的字节；拼好后执行全部88项而不是只跑前48项。"
+    ],
+    "validation": "作者报告 Thryve{d0ubl3_VM_1n_4_m1rr0r_0pc0d35_n3v3r_5t4y}。接受需原始长度条件和88检查都成立。该候选为48字节，与入口长度条件一致。",
+    "limitations": "本地有solve.py，但在导入时就读取当前目录chimera_mirror，需调整附件路径。原作者说每字节有解并不自动保证唯一，复现时应记录候选数。"
+  },
+  "虚拟化/Thryve_CTF_2026/parallax": {
+    "goal": "解出动态opcode映射VM的全部字符约束。",
+    "mechanism": "phase在每条指令后随状态变化，错误占位符会使后续字节被错误解码；逐条满足三字符断言并从头重放比一次性反汇编可靠。",
+    "steps": [
+      "用初始64位state=0xdd44d5bae067208d的xorshift解密0x20c0处0x2c7c字节；核对完整性0x60b315e5是在最后一次乘法之前的值。",
+      "读取0x4ea0四份opcode映射与0x4d40的S-box；每步按当前phase解码并按照实际PC/r0/r3更新phase，模拟正常TracerPid=0路径。",
+      "遇到第一个失败ASSERT时，抽取13指令模板的三输入位置与常量；逆MIX的右移XOR和奇数乘法，再撤销末尾加法。",
+      "预计算第三字符乘积表，枚举前两字符（可打印最多95²），匹配第三字符；固定已知Thryve{和}以缩小候选。",
+      "将新字符填回并从头重跑，直到181条断言全部通过且VM无错误，再交原程序验证。"
+    ],
+    "validation": "作者报告 Thryve{Man_Am_1_n0t_th2_b2st_auth0r?_NotSaad}。strings中的static_strings_are_a_trap等为诱饵，不能作为结果。对拍重点是每次phase与取指边界，给出候选为45字节，与长度条件一致。",
+    "limitations": "本地完整solve.py读取当前目录parallax；修改路径即可定位附件，但本次未运行。若某三元组多解应回溯，不能无条件取第一个后仍声称唯一。"
+  },
+  "虚拟化/Thryve_CTF_2026/soul": {
+    "goal": "恢复16字节密钥，使VM校验通过且密文解出合理flag。",
+    "mechanism": "复杂八轮key检查最终仅压缩为一个字节，ACCESS GRANTED不保证解密正确。真正可利用的信息是51字节密文的16字节重复密钥XOR及已知格式。",
+    "steps": [
+      "按solve.py从0x3060解密0x819字节bytecode，恢复16个8位寄存器、512字节内存和15种opcode；密钥在0x000，S-box在0x020，密文在0x120。",
+      "确认最终输出为cipher[i]^key[i%16]，从文件0x3020提取51字节密文；不要把复杂key检查错误视为强唯一性约束。",
+      "以Thryve{恢复key[0..6]，用末尾}交叉检查key[2]；对剩余9个key位置枚举使同列明文均在候选字符集内的值。",
+      "将可读语义作为筛选假设，再通过真实八轮VM确认；原文候选key=4ba317f09c2e886135d47a0fc1563be9。"
+    ],
+    "validation": "作者报告 Thryve{0n3_7h1n9_4b0u7_m3_15_1_h47e_vm_d15p47ch3r5}。需同时验证该key经VM通过且重复XOR还原完整正文；一个字节检查可能接受许多乱码key。",
+    "limitations": "已收录solve.py实际上主要解密并反汇编字节码，并非自动恢复key的完整solver；原文通过语义选择剩余候选，不能宣称字符集约束保证唯一。固定soul_dist路径需调整。"
+  },
+  "虚拟化/trx_2026/1+1": {
+    "goal": "组合哈希分块候选与SPN逆变换，恢复128字节输入。",
+    "mechanism": "官方C程序对相邻哈希状态枚举4字节原像，Python脚本以固定seed重建S/P盒并逆SPN，再用可打印性筛选候选。",
+    "steps": [
+      "读取official_brute_fnv.c的blocks数组，初始seed=0x0a1b2c3d，逐字节h=(h*0x01013255)^c，均为uint32；这与标准FNV-1a常量/顺序不同。",
+      "每相邻blocks[i]→blocks[i+1]枚举四字节，保留所有碰撞候选。原C循环i<数组长度会在最后读越界，实际应仅处理长度减1个转移。",
+      "按Python random.seed(0x1337)依次shuffle 256元素box、128元素pbox，box2[i]=box[box[i]]；随机调用顺序和版本行为必须匹配原表。",
+      "inv_spn先反转、异或0x67、查逆box2，撤销7次P置换，再逐字节减1并逆box，最后反转。对每块候选投影到明文，筛选可打印位置。",
+      "对完整候选重新正向SPN及全部32段hash验证，不能仅使用replace(0xeb,空格)后的展示字符串作为flag。"
+    ],
+    "validation": "源码仅打印逐步候选，无硬编码最终flag。正确标准是128字节原文正向生成全部32个目标状态；fnv_brute_res还包含编号32，但Python仅消费0–31，要隔离越界循环产生的无效候选。",
+    "limitations": "原文无完整文字WP；枚举2^32每块代价很高。Python按可打印性选择首个候选是启发式，需全局回代确认；C存在数组越界，不能原样当可靠验证器运行。"
+  },
+  "虚拟化/trx_2026/wandering": {
+    "goal": "构造带两个固定皇后的256皇后排列并编码为坐标序列。",
+    "mechanism": "收录的官方替代solver采用随机最小冲突交换搜索，保证行列唯一，只迭代修复对角线；它没有解释题目为何归为VM，因此不补造虚拟机漏洞。",
+    "steps": [
+      "固定(row,col)=(127,129),(23,45)，把剩余列随机分配给剩余行，得到一行一皇后且列互异的初态。",
+      "维护d1[row-col+255]和d2[row+col]计数；选择有冲突的自由行r1，尝试与所有其他自由行交换列，并以交换后两位置的对角冲突评分选最佳。",
+      "每次交换前后同步增减计数，不移动固定皇后；最多200000轮失败后重新初始化，直到所有自由行无冲突。",
+      "独立检查全部256行（含固定行）、列及两条对角线均唯一；发送非固定行的254个col,row行，注意网络格式与内部row,col相反。"
+    ],
+    "validation": "只有收到实际服务接受及TRX格式结果才完成；脚本仅以响应包含TRX判断，复现应核验完整成功内容。固定棋盘验证可在纯数据层完成。",
+    "limitations": "原文件HOST = 127.0.0.1缺引号，是Python语法错误；还存在无上限网络重试和未使用args。需先改为字符串并配置授权靶场，不能把当前文件宣称可直接运行；缺少VM机制说明。"
+  },
+  "虚拟化/UofTCTF_2026/Bring Your Own Program": {
+    "goal": "利用属性重排后未失效的inline cache调用受限方法读取题目文件。",
+    "mechanism": "GETMETH缓存对象槽位，OPTIMIZE按keyId重排存储却未更新缓存版本；第二次经过同一取方法位置，旧槽位被解释为另一方法，形成能力检查绕过。",
+    "steps": [
+      "读取compile中的字节格式：8寄存器、3常量，c0=caps、c1=double1.0、c2=/flag.txt；整数和浮点常量宽度不可混淆。",
+      "LDG与GETOWN取得caps.io，在代码偏移13的GETMETH缓存KEY_READ_PUBLIC=10对应函数及receiver。",
+      "首次r5为假，执行OPTIMIZE重排caps.io；ADD将r5设为2，再JMP-19回同一GETMETH位置，确保使用相同IC site。",
+      "第二次r5为真，JNZ跳至偏移32，CALL使用缓存返回的函数/receiver和/flag.txt参数，再RET返回结果。",
+      "以十六进制行提交编译字节；本地源码/附件应核实重排后的旧槽位到底对应哪种特权方法。"
+    ],
+    "validation": "官方solver展示完整payload构造但未硬编码flag。验证应记录OPTIMIZE前后keyId→slot映射、缓存版本是否不变，以及CALL实际目标和返回内容。",
+    "limitations": "“重排未bump”依据solver注释及利用路径静态推断；需与题目VM源码核对后才能确定完整根因。HOST/PORT为本地默认，运行期服务并未验证。"
+  },
+  "虚拟化/umdctf_2026/gnalekcip": {
+    "goal": "理解共享memo的pickle VM，并核验原作者给出的候选。",
+    "mechanism": "BINPERSID递归解析嵌套pickle且共享memo，形成寄存器文件和子程序；原文最终答案依赖题名/部分转录猜测，未提供可独立重做的完整hash逆解。",
+    "steps": [
+      "先静态读取pickelang.py的find_class白名单和persistent_load，不对未知pickle直接反序列化；识别input/add/getitem/pack/unpack调用。",
+      "用pickletools静态分解736字节reader、299字节hash和637/707字节比较片段，追踪共享memo状态；原文提取51组(lo,hi)目标，首组(49047,22542)。",
+      "还原输入分词及END终止条件。原文同时说逐词、逐字符且示例只有8个词，与51组目标不一致，应以reader真实消费方式核对。",
+      "若复现oracle，区分C Unpickler与纯Python实现差异；MemoryError和耗时不能自动判断字符对错。",
+      "将题名反转、部分转录与十六进制尾段仅作为候选生成依据，再用全部目标比较及最终Correct验证。"
+    ],
+    "validation": "原文候选 UMDCTF{pick3l_or_elkcIP_wh1cH_0ne_1s_i7_504f4c4c5554414e54}。尾段按作者保留十六进制字面；本次没有验证其满足51组hash。",
+    "limitations": "原文从“无法逆hash”跳到语义拼接答案，缺少关键求解证据；不能把猜谜叙述改写成已证明算法。共享memo大小也应按具体opcode核对，Python pickle并非天然只支持256槽。"
+  },
+  "虚拟化/umdctf_2026/roulette": {
+    "goal": "按确定的前向状态链计算校验所需的27个小端uint32。",
+    "mechanism": "CRT与VM输出只依赖已知索引、查表和前轮状态，每轮input_word=VM_output XOR target，因此无需逆散列。",
+    "steps": [
+      "按真实输入长度检查定位主验证，原文声称106字节拆为27字，末两字节来自NUL/零初始化；先核对读取函数的终止和补零行为。",
+      "从0x499ee0/0x499e60/0x499de0/0x499d60提取表，用CRT组合当前两组余数和模数，记录r15/rbx更新公式。",
+      "解释0x499be1处VM：8字节slot先做隐含R[dst]=R[src]；opcode2–9还从下一slot取操作数，实际消耗16字节，NOP只8字节。",
+      "以R0=CRT结果、R1=rbx、R2=i、其他0执行，取R6并XOR目标得到下一个输入word，再推进运行状态。",
+      "完成27轮后检查rbx=0x6286239c，小端串接并按真实长度截取，回代原程序。"
+    ],
+    "validation": "原文报告 UMDCTF{I_R3ALLY-want-to-pl4y-the-p0werball,+but-my-d4d-said-no-so-im-b3tting-ill-win-on-POLYMARKETinstead}。该候选为106字节，与长度检查一致；仍需逐字节正向回代。",
+    "limitations": "本地仅README，完整四表和循环公式需从代码块/附件提取；原文把某些常量笼统叫MurmurHash，应保留实际VM而非替换为标准库hash。106/108字节边界也不能凭假设补零。"
+  },
+  "虚拟化/z0d1ak_2026-quals/House_XIII": {
+    "goal": "通过堆对象类型混淆与比较oracle到达预置fd13的sendfile回调。",
+    "mechanism": "两类对象同为0x180大小，转换释放重分配却保留旧槽；VM可向后读头部，旧类型写入口可修改新类型callback字段。随机secret又被<比较暴露。",
+    "steps": [
+      "STARGMTR数据区在+0x60；opcode0x19加有符号0xa0(-0x60)退至对象头，0x2d逐字节读出generation、heap地址及PIE+0x2060指针。",
+      "choice5转换为ORBITAL后确认stargmtr和orbital槽别名；choice2只查非NULL，仍可从+0x60写入新类型敏感字段。",
+      "通过choice6的<与>=响应对64位secret作最多64次二分，在同一进程保留泄露与secret。",
+      "将目标设为回调表项PIE+0x4cf0，encoded=rol64(slot^secret,17)，link=generation^(generation+1)，用原文credential函数重算+0x68校验。",
+      "写入encoded/credential及fd=13、gate=13后触发choice7，走既有sendfile(1,13,...)路径；不选择打印诱饵的PIE+0x4cf8表项。"
+    ],
+    "validation": "作者报告 zdk{0p3r470r_53ss10n_4cc3p73d}。本地应在fd13预置自选哨兵文件，输出哨兵才能证明是真实读取而非静态诱饵。",
+    "limitations": "完整credential算式见原文代码，独立solve.py未收录。fd13依赖launcher预打开；对象偏移与glibc同尺寸复用须匹配本构建，secret跨进程不可复用。"
+  },
+  "虚拟化/z0d1ak_2026-quals/Salvage_Protocol": {
+    "goal": "利用代理VM的长度错配走私两条请求，并借失败AUTH遗留权限读取vault记录。",
+    "mechanism": "reclaimd分离保存真实body长度与声明长度，vaultd按声明长度解析多个请求；AUTH在校验token前更新connection_clearance且失败不回滚。",
+    "steps": [
+      "先恢复外层4字节大端帧长度，以及内层action(1)|name_len(2BE)|name|data_len(2BE)|data结构，区分两个长度层。",
+      "构造bad AUTH vault/flag及随后GET vault/flag，AUTH所需body长0x400但不必知道前四字节token；错误认证仍写入权限状态。",
+      "通过VM0x02选择合法scrap/0，0x11逐字节追加真实走私body，0x10把声明data_len设为0，0x30发送，再0x00停止。",
+      "vaultd在同一帧/连接解析成GET scrap/0→失败AUTH→受保护GET；不能拆到独立连接，否则clearance不共享。"
+    ],
+    "validation": "原文报告 zdk{sa1VAG3d_thrOugh_7HE_53Am}。本地FLAG_NOT_PROVISIONED仅证明访问受保护读路径，不是真实flag；应记录两种AUTH结果和后续GET结果以验证状态缺陷。",
+    "limitations": "0x20单次替换body限255字节，完整0x400 AUTH不能简单塞一个指令，原代码采用逐字节构造。独立solve.py未收录；二进制硬化弱不是本题利用根因。"
+  },
+  "虚拟化/z0d1ak_2026-quals/stars_below": {
+    "goal": "恢复route、callsign和自定义Base32 ticket，通过双VM终态检查。",
+    "mechanism": "导入重定位被洗牌并配合LD_BIND_NOT使PLT标签误导；真实算法为8!路线搜索、BLAKE2s派生、两个可逆ARX VM及短MAC。",
+    "steps": [
+      "按每个PLT stub压入的重定位索引解析.rela.plt，重新标真实函数名；避免把伪strstr/SDL调用当作业务语义。",
+      "枚举01234567的40320排列，复现32位route hash目标0xf06f770b，作者得到16403752；按AP9GLSEO索引得到PELAGOS9。",
+      "按原文含终止NUL的domain separator派生name_hash和VM key；route参数是小端hash值0xf06f770b而非十进制16403752。",
+      "解密并验证VM A，再将其程序hash纳入VM B key；从B目标倒退19轮，撤销桥b[i]=ROL(name_word[i],i+1)^a[perm[i]]，perm=[0,2,6,3,5,1,4,7]，再倒退A的24轮。",
+      "每轮使用各自寄存器置换，得到8个小端u32的32B payload，附前4字节keyed BLAKE2s MAC，再以87RJF2ACZLVUMXB3D6GH9WNSYP5QK4ET编码58字符ticket。"
+    ],
+    "validation": "作者报告 zdk{TH3_Lo4d3R_Dr34MS_IN_pA63_8ouNd4rIEs}。正向双VM、name guard及ticket MAC均需匹配，最后在--headless模式用三参数验证；自写正逆互逆不足以证明与原VM一致。",
+    "limitations": "本地只有README，引用solve_invariant.py/vm.py及分析blob未单独收录；需核对附件可提取情况。末字节Base32填充位和domain NUL容易出错，所有盐和调度常量必须从同一版本提取。"
+  }
+}

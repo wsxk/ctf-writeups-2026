@@ -1,0 +1,25 @@
+{
+  "event_id": "CTF-3276",
+  "event_title": "NDIAS Automotive/IoT CTF",
+  "category": "车联网",
+  "title": "Real KeeLoq Garage - Normal Learn",
+  "source_urls": [
+    "https://ctftime.org/event/3276/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/kn1cht/kn1cht-zenn-contents/main/articles/ndias-automotive-iot-ctf-2026-kn1cht.md"
+  ],
+  "attachment_urls": [],
+  "writeup_status": "downloaded",
+  "attachment_status": "missing",
+  "notes": "已保存公开解答。原平台 https://ctf.ndias.jp/ 本次请求出现 TLS EOF；已检查公开 CTF 归档 https://github.com/sajjadium/ctf-archives/tree/main/ctfs/NDIASAutomotiveIoT/2026 ，未找到本题原始附件。没有将 writeup 插图或解题脚本冒充题目附件。",
+  "files": [
+    {
+      "path": "writeups/kn1cht_full_writeup.md",
+      "url": "https://raw.githubusercontent.com/kn1cht/kn1cht-zenn-contents/main/articles/ndias-automotive-iot-ctf-2026-kn1cht.md",
+      "bytes": 46095,
+      "sha256": "4025658a884a4a358503e058f162159597cce433d18bf2e113c75d99ea3ae080"
+    }
+  ],
+  "errors": []
+}

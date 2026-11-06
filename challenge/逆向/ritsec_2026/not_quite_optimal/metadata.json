@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3096",
+  "event_title": "RITSEC CTF 2026",
+  "title": "not_quite_optimal",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "gmp",
+    "tetration",
+    "power-tower"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/ritsec/2026/not_quite_optimal/",
+    "https://ctf42.online/ctfs/ritsec/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/not_quite_optimal"
+  ],
+  "writeup_urls": [
+    "https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-2-not-quite-optimal/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/not_quite_optimal",
+    "https://ctf42.online/ctfs/ritsec/2026/not_quite_optimal/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/ritsec_2026/not_quite_optimal/writeups/1_writeup.html",
+      "url": "https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-2-not-quite-optimal/",
+      "bytes": 42792,
+      "sha256": "5bcea9720bee3c30b8e56daab2d42e74c82309238bae3344b4550416c47fb5bc",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/ritsec_2026/not_quite_optimal/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/RITSEC/2026/rev/not_quite_optimal/README.md",
+      "bytes": 78,
+      "sha256": "a221fd528896679f06a4dcc95db8d17bc45cd5fc1ac4f725f9191ac6f34f5ff7",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/ritsec_2026/not_quite_optimal/attachments/upstream/not_quite_optimal",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/RITSEC/2026/rev/not_quite_optimal/not_quite_optimal",
+      "bytes": 14472,
+      "sha256": "b5a97b6b437f0f39c7022cffc2414720e96aaa7988e0c2395057e5d3e8cb2324",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/ritsec/2026/not_quite_optimal/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/ritsec/2026/not_quite_optimal/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

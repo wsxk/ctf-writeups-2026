@@ -1,0 +1,91 @@
+{
+  "event_id": "CTF-3330",
+  "event_title": "Thryve CTF 2026",
+  "category": "逆向",
+  "title": "black-blood",
+  "dirname": "Thryve_CTF_2026",
+  "source_urls": [
+    "https://github.com/hax1ng/thryve-ctf-2026-writeups/tree/HEAD/rev/black-blood"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/README.md",
+      "local": "writeups/README.md",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 8928,
+      "sha256": "41737e5808c421acab4ca691cf4153cafefba37f1428f29f5482b312a3462e14"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/angr_concrete.py",
+      "local": "writeups/angr_concrete.py",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 870,
+      "sha256": "29db7aa5c212ff5df54df7e50809d7787d98da3d78c8a79c81e891bd158f4362"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/angr_solve_q0.py",
+      "local": "writeups/angr_solve_q0.py",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 1108,
+      "sha256": "92f892879ba339153b76d8ffdd5f952bf4cb06517f214a257da246f4c2831917"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/final.c.txt",
+      "local": "writeups/final.c.txt",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 8976,
+      "sha256": "e75e1daaead397bfc6ff598608d1c169388de904b13e20eb21aaf3ebc8a98a1d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/hook.c",
+      "local": "writeups/hook.c",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 563,
+      "sha256": "052534951730c64f64f5a4f774b5f35f4041b58c1161f8be2b6977063b8e56cf"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/pekaboo",
+      "local": "attachments/pekaboo",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 84104,
+      "sha256": "26cf06d1e43748abeaa4ac857bcb4a7a78981f76346070c462ad734612f0c793"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/solve.py",
+      "local": "writeups/solve.py",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 6006,
+      "sha256": "6441b4619d438b63b75e0d50cfde246eba8478aad8eeb821f21d07c67e0d7f1e"
+    }
+  ],
+  "notes": "参赛者hax1ng公开仓库，保留文章、solver及其提供的比赛原始二进制/7z包；解法未运行验证。",
+  "directory": "逆向/Thryve_CTF_2026/black-blood",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/README.md",
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/angr_concrete.py",
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/angr_solve_q0.py",
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/final.c.txt",
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/hook.c",
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/HEAD/rev/black-blood/pekaboo"
+  ],
+  "attachment_status": "downloaded"
+}

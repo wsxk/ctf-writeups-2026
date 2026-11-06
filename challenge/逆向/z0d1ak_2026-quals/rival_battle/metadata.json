@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3370",
+  "event_title": "z0d1ak CTF Qualifiers",
+  "title": "rival_battle",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "prng",
+    "deterministic-simulation",
+    "route-search"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/rival_battle/",
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/rev/rival_battle"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/rev/rival-battle"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/rev/rival_battle",
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/rival_battle/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/z0d1ak_2026-quals/rival_battle/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/z0d1ak-ctf-qualifiers-2026/main/rev/rival-battle/README.md",
+      "bytes": 4836,
+      "sha256": "318c95d7dfeb9f90806836b6dfb63e4ca421a49ad6e3447a75654e8c173fdd71",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/z0d1ak_2026-quals/rival_battle/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Z0d1ak/2026/Quals/rev/rival_battle/README.md",
+      "bytes": 184,
+      "sha256": "b338f85d45c147364c7eb86a8ba82c886c902ba9f935b6cf43c75ec938cfd2e5",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/z0d1ak_2026-quals/rival_battle/attachments/upstream/rev_rival_battle.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Z0d1ak/2026/Quals/rev/rival_battle/rev_rival_battle.zip",
+      "bytes": 7349,
+      "sha256": "d470b9a0f7fe0ed06d5097009fbadb7372a44207336aecc932fc4a3eaceffed2",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/rival_battle/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/z0d1ak/2026-quals/rival_battle/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

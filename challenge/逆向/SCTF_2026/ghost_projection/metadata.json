@@ -1,0 +1,171 @@
+{
+  "event_id": "CTF-3314",
+  "event_title": "SCTF 2026",
+  "category": "逆向",
+  "title": "ghost_projection",
+  "dirname": "SCTF_2026",
+  "source_urls": [
+    "https://github.com/SycloverTeam/SCTF-2026/tree/HEAD/Reverse/ghost_projection"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/README.md",
+      "local": "attachments/README.md",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 1512,
+      "sha256": "cc55be37d23ca3fe46eb7a6c805da800da1b6e5d81f0a4c8253901fe06d9ae72"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/exp/fix_outer_payload.py",
+      "local": "writeups/exp/fix_outer_payload.py",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 5994,
+      "sha256": "579901111c4a6144b3bf4d9faafadfa4f2264227407a9f759508904c4ea0b531"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/exp/recover_flag_patch_oracle.py",
+      "local": "writeups/exp/recover_flag_patch_oracle.py",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 7334,
+      "sha256": "d1f860c9203b6eaaafad4c06028533a99d1b42dd37a94f652efa0d296f302bbf"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/generate_packed_player.sh",
+      "local": "attachments/src/generate_packed_player.sh",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 523,
+      "sha256": "20b473e5b83d7cd8673d39a3a20ac77156ce983d0be640da212c62750fbb7218"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/writeup/ghost_projection.md",
+      "local": "writeups/writeup/ghost_projection.md",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 46060,
+      "sha256": "69f129292eda6a1827e22dbcc80d254506aa6eca70aa6234448e066d42224f57"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/assets/prime_mov.o",
+      "local": "attachments/src/assets/prime_mov.o",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 70884,
+      "sha256": "542ae5a2ef8778e353bd70896b276f72933241d7ac00cc6fcc500997d768e1fb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/player/Dockerfile",
+      "local": "attachments/src/player/Dockerfile",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 166,
+      "sha256": "f833d3dde8ab3e9cd292769799f8fe356811eac6c912d1e80a24cab15bb2beac"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/player/README.md",
+      "local": "attachments/src/player/README.md",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 381,
+      "sha256": "5ccac8815d182c79afddbcbf8e7329061a2d3fc8366d4806bb7c955a12d5fba4"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/player/ghost_abyss_hardened",
+      "local": "attachments/src/player/ghost_abyss_hardened",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 270352,
+      "sha256": "f6bd79a7ef072a977e04804e7dbbc77a373d825cdce1cf66327db97796f77265"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/scripts/build_hidden_oracle_traces.py",
+      "local": "attachments/src/scripts/build_hidden_oracle_traces.py",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 5192,
+      "sha256": "42c345d4b1c329daa1559b3fe8c343d6e561546302b6513aecbedde84b00b0f5"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/scripts/pack_ghost_abyss_author.py",
+      "local": "attachments/src/scripts/pack_ghost_abyss_author.py",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 28387,
+      "sha256": "44cec348953746a51db2567960fc892134b9f40ae0621a579f54e11c10fdd6b7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/build.sh",
+      "local": "attachments/src/source/build.sh",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 927,
+      "sha256": "db30176b9c9679effc29833b3f99143b98bf2c78702c36707edc9b6c3e44d575"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/ghost_abyss_hardened_step40_route_projection.c",
+      "local": "attachments/src/source/ghost_abyss_hardened_step40_route_projection.c",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 478493,
+      "sha256": "5a5524d5d76ecaa486e6420584db3deb7e4173e0fc82e8d034ba05c195e1de5a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/ghost_step30_generated.h",
+      "local": "attachments/src/source/ghost_step30_generated.h",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 5190,
+      "sha256": "9cf8d5908ed21eef9979eb15e420bf9b5db9ffddc0897953d3feb1c82bbec194"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/ghost_step30_manifest.json",
+      "local": "attachments/src/source/ghost_step30_manifest.json",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 679,
+      "sha256": "7c2ea169af0ff3be499786bddc182d7abe974aa10e1f2df7a0edd229b94b418f"
+    }
+  ],
+  "notes": "官方2026仓库题目附件和完整writeup。按题目实际内容归类：GuardMaster为APK；BrainfOok及babel_furnace使用自定义VM。",
+  "directory": "逆向/SCTF_2026/ghost_projection",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/exp/fix_outer_payload.py",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/exp/recover_flag_patch_oracle.py",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/writeup/ghost_projection.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/README.md",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/generate_packed_player.sh",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/assets/prime_mov.o",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/player/Dockerfile",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/player/README.md",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/player/ghost_abyss_hardened",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/scripts/build_hidden_oracle_traces.py",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/scripts/pack_ghost_abyss_author.py",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/build.sh",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/ghost_abyss_hardened_step40_route_projection.c",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/ghost_step30_generated.h",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/ghost_projection/src/source/ghost_step30_manifest.json"
+  ],
+  "attachment_status": "downloaded"
+}

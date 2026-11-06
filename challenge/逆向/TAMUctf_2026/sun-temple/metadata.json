@@ -1,0 +1,149 @@
+{
+  "event_id": "CTF-3095",
+  "event_title": "TAMUctf 2026",
+  "category": "逆向",
+  "title": "sun-temple",
+  "dirname": "TAMUctf_2026",
+  "source_urls": [
+    "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/rev/sun-temple",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TAMUctf/2026/rev/Sun_Temple"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/Dockerfile",
+      "local": "attachments/Dockerfile",
+      "size_expected": 773,
+      "git_blob_sha": "8d115a3cd30e287235385cd3e2760ff4b3614df5",
+      "status": "downloaded",
+      "bytes": 773,
+      "sha256": "b76d3f22555961f51d613d92e9499ab44d95bcebcd257ac565018f827f2676e3"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/Makefile",
+      "local": "attachments/Makefile",
+      "size_expected": 2188,
+      "git_blob_sha": "8cabee29a3a43643fa233dfece9f29bea00e9010",
+      "status": "downloaded",
+      "bytes": 2188,
+      "sha256": "dc49f6b4d3f00d468a46aa6851585ab6a28827f4cd6ec99d68f250353e2e9152"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/README.md",
+      "local": "attachments/README.md",
+      "size_expected": 376,
+      "git_blob_sha": "bb57f233b46b2ad88ccc7905a3148ac636ed7bd4",
+      "status": "downloaded",
+      "bytes": 376,
+      "sha256": "8fd4772e5f0617108cfc8a295989cce69583adadffef8b9800acd3a03b89fce6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/config.toml",
+      "local": "attachments/config.toml",
+      "size_expected": 1220,
+      "git_blob_sha": "c2bd7a2b80e7da69239ae45a647cf3bdfec95f88",
+      "status": "downloaded",
+      "bytes": 1220,
+      "sha256": "8282e48b2df0bc176a45c1db7e6ed2c8b395ebf59077c1c9cef622dabbc74231"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/flag.txt",
+      "local": "attachments/flag.txt",
+      "size_expected": 40,
+      "git_blob_sha": "e8ce5f429cce5bae83a28fbbf90be5914de8545f",
+      "status": "downloaded",
+      "bytes": 40,
+      "sha256": "41751c7f496922b27e76c15243291bb1828a590d495238e9d60ae3285f11504a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/scripts/find_solution.py",
+      "local": "writeups/scripts/find_solution.py",
+      "size_expected": 6961,
+      "git_blob_sha": "437b08d411f16059e342dd9d7be33d53e149aee7",
+      "status": "downloaded",
+      "bytes": 6961,
+      "sha256": "76811ec051609820331e5916935e40ac85fab31aa6e97122671a9e2175fcf3bb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/scripts/find_solution_fast.py",
+      "local": "writeups/scripts/find_solution_fast.py",
+      "size_expected": 8866,
+      "git_blob_sha": "f00c849ea47e5854fea93c234c7442eea93de12b",
+      "status": "downloaded",
+      "bytes": 8866,
+      "sha256": "850fe3801c8579d191ecc91fd213472fd34d9f04a1f2b4618aa9b1074b04973b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/scripts/gen_chamber.py",
+      "local": "attachments/scripts/gen_chamber.py",
+      "size_expected": 1385,
+      "git_blob_sha": "12eb99e19150e029d4cc8d546e78166c7e1af150",
+      "status": "downloaded",
+      "bytes": 1385,
+      "sha256": "5a5a816ef35b0fed307948dc1836b2ad523bde346ba4864e9cdf75ba28a6db45"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/solver-template.py",
+      "local": "attachments/solver-template.py",
+      "size_expected": 111,
+      "git_blob_sha": "1823dd12074375f6111d47684007719fa6662594",
+      "status": "downloaded",
+      "bytes": 111,
+      "sha256": "eb90a7d6fcfbe776a4061e7b531746dd514592001b30f070878a350d091817f5"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/src/generated_chamber.h",
+      "local": "attachments/src/generated_chamber.h",
+      "size_expected": 17089,
+      "git_blob_sha": "252ba2de6dc394973958c5b8f9e4a1f54252c3ca",
+      "status": "downloaded",
+      "bytes": 17089,
+      "sha256": "b74cb9f92aea7943ded2ed41ac1886af5eaed96b8415db5512973eca5d9c262b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/src/sun-temple.c",
+      "local": "attachments/src/sun-temple.c",
+      "size_expected": 10529,
+      "git_blob_sha": "fc657189a3ec5f23cde4fb1ff10c6205a6514860",
+      "status": "downloaded",
+      "bytes": 10529,
+      "sha256": "326b9039d20b29030645148c7501b8c3168c738e5698374eeac38a5ec3f08042"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/Sun_Temple/README.md",
+      "local": "attachments/archived_handout/README.md",
+      "status": "downloaded",
+      "bytes": 63,
+      "sha256": "5efdef3951ea3ea6f0d4793d48ff7a84cab19cb88ef9ee31185d7da3837fb9c4"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/Sun_Temple/sun-temple.tar.gz",
+      "local": "attachments/archived_handout/sun-temple.tar.gz",
+      "status": "downloaded",
+      "bytes": 11351,
+      "sha256": "d120e857c1dad7ce8d404c0cf66354a446453eb904d4e9ba08a17c4da7daa5cc"
+    }
+  ],
+  "notes": "官方仓库源码/构建材料及求解脚本，另从sajjadium/ctf-archives的2026目录配对下载原始题包（archived_handout）。未构建或执行。",
+  "attachment_kind": "original_package_and_official_source",
+  "directory": "逆向/TAMUctf_2026/sun-temple",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/scripts/find_solution.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/scripts/find_solution_fast.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/Dockerfile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/Makefile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/README.md",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/config.toml",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/flag.txt",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/scripts/gen_chamber.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/solver-template.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/src/generated_chamber.h",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/sun-temple/src/sun-temple.c",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/Sun_Temple/README.md",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/Sun_Temple/sun-temple.tar.gz"
+  ],
+  "attachment_status": "downloaded"
+}

@@ -1,0 +1,70 @@
+{
+  "event_id": "CTF-3056",
+  "event_title": "UMDCTF 2026",
+  "title": "gnalekcip",
+  "category": "虚拟化",
+  "original_category": "Reverse",
+  "tags": [
+    "pickle-vm",
+    "custom-vm"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/umdctf/2026/gnalekcip/",
+    "https://ctf42.online/ctfs/umdctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/gnalekcip"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/UMDCTF-2026/tree/main/UMDCTF-2026/rev/gnalekcip"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/gnalekcip",
+    "https://ctf42.online/ctfs/umdctf/2026/gnalekcip/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/umdctf_2026/gnalekcip/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/UMDCTF-2026/main/UMDCTF-2026/rev/gnalekcip/README.md",
+      "bytes": 12116,
+      "sha256": "778532615f55ae92abc576ce902097181664e62b2027c28e388a0f0f7f508190",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/umdctf_2026/gnalekcip/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMDCTF/2026/rev/gnalekcip/README.md",
+      "bytes": 63,
+      "sha256": "116d9e47616a5eaa548162f9d43806f3911d416ec409dddf939ec8d1c6179c56",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/umdctf_2026/gnalekcip/attachments/upstream/pickelang.py",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMDCTF/2026/rev/gnalekcip/pickelang.py",
+      "bytes": 625,
+      "sha256": "40d3329f45b3306f1e449b863897384d94cad5016300e1b124d4a7e6b37db7e0",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/umdctf_2026/gnalekcip/attachments/upstream/pickle.pkl",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMDCTF/2026/rev/gnalekcip/pickle.pkl",
+      "bytes": 89300,
+      "sha256": "07952d6352624b9c437755e412feaffc2996e35b9872abb69b58a87901d2511d",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/umdctf/2026/gnalekcip/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/umdctf/2026/gnalekcip/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

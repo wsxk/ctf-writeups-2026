@@ -1,0 +1,166 @@
+{
+  "event_id": "CTF-2969",
+  "event_title": "UofTCTF 2026",
+  "category": "pwn",
+  "title": "uprobe",
+  "source_urls": [
+    "https://github.com/UofTCTF/uoftctf-2026-chals-public/tree/HEAD/uprobe",
+    "https://ctftime.org/event/2969/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/solve/writeup.txt"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/.gitattributes",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/Dockerfile",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/bzImage",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/challenge.yml",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/dist/uprobe.zip",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/initramfs.cpio.gz",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/start-qemu.sh",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/startup.args",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/uprobe-runner",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/uprobe-runner.go",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/uprobe.bpf.c"
+  ],
+  "writeup_status": "已下载正文",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "UofTCTF/uoftctf-2026-chals-public",
+  "repository_tree_sha": "8519e2bb29b3e49b0e48a2078728f9fc6e6cb0ac",
+  "artifacts": [
+    {
+      "path": "attachments/.gitattributes",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/.gitattributes",
+      "bytes": 52,
+      "sha256": "1cb4d10870fde4240395edf4f3ad74a4956bf70bb232d140b6aa04e52be46074",
+      "git_blob_sha1": "ddd4285ceda70bd22eca752d621b003629bcc57e",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/Dockerfile",
+      "bytes": 547,
+      "sha256": "fe29ad3eb72b548d7da1a6dd11c61edff58e0597613aa6a289153759ba125f7c",
+      "git_blob_sha1": "65257fcc2dcc2f52531366ee318969189b43c1ee",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/bzImage",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/bzImage",
+      "bytes": 7480320,
+      "sha256": "402dd4f1683fe7677a499739c64fd8c50660c031bcceaaf50bb27956dc16fef8",
+      "git_blob_sha1": "9304f048976b0585771e61953b3c3c98e72df9e6",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge.yml",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/challenge.yml",
+      "bytes": 434,
+      "sha256": "b53ef7a4b5cf1ce087a3bff50af291dc87bd0a85fae59b62b05302ca7df62180",
+      "git_blob_sha1": "7a909cfe2e8f5ea4434d6b89016ab1c2fc7db7ca",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/dist/uprobe.zip",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/dist/uprobe.zip",
+      "bytes": 16047668,
+      "sha256": "06fe89cc00c35ac296e1ec2ece8416fd88c3123f0fcc4187ac0cb148b574bff5",
+      "git_blob_sha1": "4e381ada045cc1c93128ef7a683b2d046ea5630b",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/initramfs.cpio.gz",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/initramfs.cpio.gz",
+      "bytes": 5660395,
+      "sha256": "fa96f7546b9306b480554ea099b5d185003febbbb4fb94ac8f7a1fd656e309e3",
+      "git_blob_sha1": "40d9c720d4da6be38bcc800cf2f9a9ca00377cdc",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/writeup.txt",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/solve/writeup.txt",
+      "bytes": 533,
+      "sha256": "7d9da8a9baaa91efedf3141e46669adc85464767bcd45ee87314720c38f4f329",
+      "git_blob_sha1": "27f3f2312b66c500229156460f6c1fd61eea19e8",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/start-qemu.sh",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/start-qemu.sh",
+      "bytes": 267,
+      "sha256": "f0d3ef27ce5ac73e1266f9334cd61274c2baf6b1b429ea2697b1fa139728d5ff",
+      "git_blob_sha1": "590e6d19fc8599b47c520bdb769134be9f4b6665",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/startup.args",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/startup.args",
+      "bytes": 25,
+      "sha256": "c63e10f218ae0cd877528a2efadad959d551e42312e83f87e3e982fe5fad2b7e",
+      "git_blob_sha1": "e89dd886d4780a02dca131ee0952ed74b2ec1fdb",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/uprobe-runner",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/uprobe-runner",
+      "bytes": 5248937,
+      "sha256": "831568628bf25c7092f7070a2069e158311f3508492c8ee885abb91e1b4e87a0",
+      "git_blob_sha1": "2ef6344c4ac15586c04ab93c24f5ed542934f958",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/uprobe-runner.go",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/uprobe-runner.go",
+      "bytes": 2266,
+      "sha256": "ce9bd8935238e5788a44c70c0c95e6cba891a828afb7c34ded898afdba87093f",
+      "git_blob_sha1": "1ab0a210270441c7fe647feddded772f7a35154d",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/uprobe.bpf.c",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/uprobe/uprobe.bpf.c",
+      "bytes": 481,
+      "sha256": "70e83e2ed8e28f86d16e765ab5d955d488e73daec026bef7701b05f88355ee6a",
+      "git_blob_sha1": "560c2a8e9ec5ee602b7f26f4915f9211686b1157",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/solve/writeup.txt"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

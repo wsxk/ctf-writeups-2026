@@ -1,0 +1,64 @@
+{
+  "event_id": "CTF-3349",
+  "event_title": "BDSec CTF 2026",
+  "title": "Phantom_Device",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "use-after-free (uaf)",
+    "refcount-mismatch",
+    "tcache-grooming",
+    "role-forgery"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/bdsec/2026/phantom_device/",
+    "https://ctf42.online/ctfs/bdsec/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/pwn/Phantom_Device"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/bdsec-ctf-2026-pwn-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/pwn/Phantom_Device",
+    "https://ctf42.online/ctfs/bdsec/2026/phantom_device/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/bdsec_2026/Phantom_Device/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/bdsec-ctf-2026-pwn-writeup/",
+      "bytes": 140479,
+      "sha256": "24f16e2a8883901dbba4b12e62382239df2fa92dfaae4f24e9f430d55caed8ab",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/bdsec_2026/Phantom_Device/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/BDSec/2026/pwn/Phantom_Device/README.md",
+      "bytes": 109,
+      "sha256": "0d72a22d153f0e35bd7dd6aa5b2c821685b5658aae5bf77f72b5c24f856e903b",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/bdsec_2026/Phantom_Device/attachments/upstream/phantom_device",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/BDSec/2026/pwn/Phantom_Device/phantom_device",
+      "bytes": 14384,
+      "sha256": "61a713269f89082469371b7d0aa1226119f3dd49c963960dcf737fcc5a1e107f",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/bdsec/2026/phantom_device/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/bdsec/2026/phantom_device/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

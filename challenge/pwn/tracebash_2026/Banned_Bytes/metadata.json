@@ -1,0 +1,59 @@
+{
+  "event_id": "CTF-3323",
+  "event_title": "TraceBash CTF 2026",
+  "title": "Banned_Bytes",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [],
+  "source_urls": [
+    "https://ctf42.online/ctfs/tracebash/2026/banned_bytes/",
+    "https://ctf42.online/ctfs/tracebash/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TraceBash/2026/pwn/Banned_Bytes"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/tracebash-ctf-2026-pwn-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TraceBash/2026/pwn/Banned_Bytes",
+    "https://ctf42.online/ctfs/tracebash/2026/banned_bytes/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/tracebash_2026/Banned_Bytes/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/tracebash-ctf-2026-pwn-writeup/",
+      "bytes": 127359,
+      "sha256": "8edd07f0102af3861bcedcdad07497f180e773d53e9f03430b95c14e18a96c69",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/tracebash_2026/Banned_Bytes/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TraceBash/2026/pwn/Banned_Bytes/README.md",
+      "bytes": 90,
+      "sha256": "7440ed151d316a00c158a18dd122637ed1c79a71d2ec24fe94039f5c9920ed03",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/tracebash_2026/Banned_Bytes/attachments/upstream/banned_bytes.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TraceBash/2026/pwn/Banned_Bytes/banned_bytes.zip",
+      "bytes": 6244,
+      "sha256": "883bbbf1323463972dea9973b975281f40b1f5fbf99a6910055cc3f89527b0aa",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/tracebash/2026/banned_bytes/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/tracebash/2026/banned_bytes/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

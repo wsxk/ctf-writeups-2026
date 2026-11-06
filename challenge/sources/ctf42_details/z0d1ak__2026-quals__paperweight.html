@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>paperweight · Z0d1ak 2026 Quals (pwn) writeup · ctf42</title>
+  
+
+<meta name="description" content="paperweight: Pwn challenge from Z0d1ak 2026 Quals. Techniques: poppler, pdf, heap-overflow, cet. by afish Binary Exploitation Every record sent to the…">
+<link rel="canonical" href="https://ctf42.online/ctfs/z0d1ak/2026-quals/paperweight/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/z0d1ak/2026-quals/paperweight/">
+<meta property="og:title" content="paperweight">
+<meta property="og:description" content="paperweight: Pwn challenge from Z0d1ak 2026 Quals. Techniques: poppler, pdf, heap-overflow, cet. by afish Binary Exploitation Every record sent to the…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/z0d1ak/">Z0d1ak</a> / <a href="/ctfs/z0d1ak/2026-quals/">2026 Quals</a> / paperweight</nav>
+
+
+<div class="challenge-head">
+  <h1>paperweight
+    </h1>
+  <div class="badges">
+    <a class="cat cat-pwn" href="/category/pwn/">Pwn</a>
+    
+    
+    <span class="chip">weight 25.00</span>
+    <a class="tag" href="/techniques/poppler/">#poppler</a><a class="tag" href="/techniques/pdf/">#pdf</a><a class="tag" href="/techniques/heap-overflow/">#heap-overflow</a><a class="tag" href="/techniques/cet/">#cet</a><a class="tag" href="/techniques/stack-pivot/">#stack-pivot</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/z0d1ak/2026-quals/paperweight/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/z0d1ak/2026-quals/paperweight/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  <p class="meta">Author: afish</p>
+  
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>by afish
+Binary Exploitation
+Every record sent to the Pelagic Archive sinks into cold storage.</p>
+<p>Its new chart plotter is rated for any pressure. Send a logbook below crush depth and recover what the tide brings back.</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>paperweight — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/pwn/paperweight" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/pwn/paperweight</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/z0d1ak/2026-quals/paperweight/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/squ1rrel/2026/gaem/">gaem</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/heap-overflow/">#heap-overflow</a><a class="tag tag-sm" href="/techniques/function-pointer-overwrite/">#function-pointer-overwrite</a><a class="tag tag-sm" href="/techniques/format-string/">#format-string</a><a class="tag tag-sm" href="/techniques/stack-pivot/">#stack-pivot</a><a class="tag tag-sm" href="/techniques/ibt/">#ibt</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/squ1rrel/2026/">squ1rrel 2026</a></td>
+        <td class="num">32.47</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/aero/2021/housebuilder/">HouseBuilder</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/heap-overflow/">#heap-overflow</a><a class="tag tag-sm" href="/techniques/stack-pivot/">#stack-pivot</a><a class="tag tag-sm" href="/techniques/rop/">#rop</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/aero/2021/">Aero 2021</a></td>
+        <td class="num">35.17</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/sunshinectf/2026/code_breaker/">Code_Breaker</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/use-after-free/">#use-after-free (uaf)</a><a class="tag tag-sm" href="/techniques/refcount-bug/">#refcount-bug</a><a class="tag tag-sm" href="/techniques/tcache-poisoning/">#tcache-poisoning</a><a class="tag tag-sm" href="/techniques/cet/">#cet</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/sunshinectf/2026/">SunshineCTF 2026</a></td>
+        <td class="num">51.63</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/ritsec/2026/domonkeysswim/">doMonkeysSwim</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/static-rop/">#static-rop</a><a class="tag tag-sm" href="/techniques/stack-buffer-overflow/">#stack-buffer-overflow</a><a class="tag tag-sm" href="/techniques/stack-pivot/">#stack-pivot</a><a class="tag tag-sm" href="/techniques/syscall/">#syscall</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/ritsec/2026/">RITSEC 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/css/2026/maintenance_log/">Maintenance_Log</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/off-by-one/">#off-by-one</a><a class="tag tag-sm" href="/techniques/rbp-overwrite/">#rbp-overwrite</a><a class="tag tag-sm" href="/techniques/stack-pivot/">#stack-pivot</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/css/2026/">CSS 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/tsg/2024/piercing_misty_mountain/">piercing_misty_mountain</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/stack-pivot/">#stack-pivot</a><a class="tag tag-sm" href="/techniques/rop/">#rop</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/tsg/2024/">TSG 2024</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;3</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/poppler/">#poppler</a> · <a href="/techniques/pdf/">#pdf</a> · <a href="/techniques/heap-overflow/">#heap-overflow</a> · <a href="/techniques/cet/">#cet</a> · <a href="/techniques/stack-pivot/">#stack-pivot</a>
+          · <a href="/category/pwn/">all Pwn</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/pwn/paperweight" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/z0d1ak/2026-quals/paperweight/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from Z0d1ak 2026 Quals</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/z0d1ak/2026-quals/you_have_not_seen_my_colors/">You_Have_Not_Seen_My_Colors</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/z0d1ak/2026-quals/cyclotomic_echo/">cyclotomic_echo</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/z0d1ak/2026-quals/siren/">siren</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/z0d1ak/2026-quals/black_box/">Black_Box</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/z0d1ak/2026-quals/dead_current/">Dead_Current</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/z0d1ak/2026-quals/dead_letter_wake/">Dead_Letter_Wake</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/z0d1ak/2026-quals/ghost_in_the_gpu/">Ghost_in_the_GPU</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/z0d1ak/2026-quals/hydra_fc/">Hydra_FC</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/z0d1ak/2026-quals/unrotated/">Unrotated</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/z0d1ak/2026-quals/acoustic/">acoustic</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/z0d1ak/2026-quals/layer_eight/">layer_eight</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/z0d1ak/2026-quals/mermaids_last_song/">mermaids_last_song</a> <span class="cat cat-forensics cat-xs">Forensics</span></li>
+      </ul>
+      <a class="small" href="/ctfs/z0d1ak/2026-quals/">All Z0d1ak 2026 Quals challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+{
+  "event_id": "CTF-2969",
+  "event_title": "UofTCTF 2026",
+  "category": "逆向",
+  "title": "Baby (Obfuscated) Flag Checker",
+  "dirname": "UofTCTF_2026",
+  "source_urls": [
+    "https://github.com/UofTCTF/uoftctf-2026-chals-public/tree/HEAD/baby-flag-checker"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/baby-flag-checker/challenge.yml",
+      "local": "attachments/challenge.yml",
+      "size_expected": 816,
+      "git_blob_sha": "f65f72e5af587e901c3731bcddcb0c077a42e873",
+      "status": "downloaded",
+      "bytes": 816,
+      "sha256": "d3bcd16fddfa157b0602c1374ad5019fa95f9fe7cb476a6586866f7cc1e7ea9e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/baby-flag-checker/dist/baby.py",
+      "local": "attachments/dist/baby.py",
+      "size_expected": 296440,
+      "git_blob_sha": "9828157d945e78374f173b4f7c686c357556b9e4",
+      "status": "downloaded",
+      "bytes": 296440,
+      "sha256": "d95afe74cb4363cbdbbcf1369baf6cd034dbfdd3158518efd207f2cdca204ed7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/baby-flag-checker/solve/baby.py",
+      "local": "writeups/solve/baby.py",
+      "size_expected": 296440,
+      "git_blob_sha": "9828157d945e78374f173b4f7c686c357556b9e4",
+      "status": "downloaded",
+      "bytes": 296440,
+      "sha256": "d95afe74cb4363cbdbbcf1369baf6cd034dbfdd3158518efd207f2cdca204ed7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/baby-flag-checker/solve/flag.txt",
+      "local": "writeups/solve/flag.txt",
+      "size_expected": 74,
+      "git_blob_sha": "9cf9c32be148577dc7416fc274b99339faa64bfe",
+      "status": "downloaded",
+      "bytes": 74,
+      "sha256": "3eb8c30f5f924018be7bf41ef12338a2afda6ffd86180c8997e8508abda961ca"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/baby-flag-checker/solve/solve.py",
+      "local": "writeups/solve/solve.py",
+      "size_expected": 1209,
+      "git_blob_sha": "efc52639fa7796ad739b3b2495a0cd09d5a2239a",
+      "status": "downloaded",
+      "bytes": 1209,
+      "sha256": "47865fa395e4451e948d86a1749cba09b7ea8cf7f667a48c287e89a58b1d615a"
+    }
+  ],
+  "notes": "官方赛后仓库。writeups 中保留官方求解脚本；不保证每题都有叙述型解题文章。",
+  "directory": "逆向/UofTCTF_2026/Baby (Obfuscated) Flag Checker",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/baby-flag-checker/solve/baby.py",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/baby-flag-checker/solve/flag.txt",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/baby-flag-checker/solve/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/baby-flag-checker/challenge.yml",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/baby-flag-checker/dist/baby.py"
+  ],
+  "attachment_status": "downloaded"
+}

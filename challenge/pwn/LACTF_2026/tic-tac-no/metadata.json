@@ -1,0 +1,99 @@
+{
+  "event_id": "CTF-3015",
+  "event_title": "LA CTF 2026",
+  "category": "pwn",
+  "title": "tic-tac-no",
+  "source_urls": [
+    "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/pwn/tic-tac-no",
+    "https://ctftime.org/event/3015/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tic-tac-no/solve.txt"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tic-tac-no/Dockerfile",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tic-tac-no/chall",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tic-tac-no/chall.c",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tic-tac-no/challenge.yaml",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tic-tac-no/flag.txt"
+  ],
+  "writeup_status": "已下载官方解题输入（solve.txt，非长篇正文）",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。",
+    "官方solve.txt给出两行完整解题输入；不是独立文字长文。"
+  ],
+  "repository": "uclaacm/lactf-archive",
+  "repository_tree_sha": "3379d4a7b36680764a34e7dc817cc3c94c244764",
+  "artifacts": [
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tic-tac-no/Dockerfile",
+      "bytes": 200,
+      "sha256": "3349a11daef3e971b0413cc8ecd42eb887e82dd746cd2af85c684f5d3bfb1d02",
+      "git_blob_sha1": "e3ecc73c58d6520cb24048a099ae40e9762473a1",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tic-tac-no/chall",
+      "bytes": 16688,
+      "sha256": "df61599371d5c80a3ba9bfe8a60b247b8462e5096d737e79a9eff4ee55c4f335",
+      "git_blob_sha1": "e1023e0125a58795f18100a8cb172d544ea50e5c",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall.c",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tic-tac-no/chall.c",
+      "bytes": 4161,
+      "sha256": "e2895004ed0f7bd64344c6e2cd3ab7cff24c501a9d9aefd61fe2a7ffeb6c0b8c",
+      "git_blob_sha1": "19524138fd9ceca4bfb08ded3ffe0e98f706ea0e",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge.yaml",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tic-tac-no/challenge.yaml",
+      "bytes": 421,
+      "sha256": "bc1562860631ccbf47a9c0138f4830b110d94dc5f2ee31685c9da2e43e37302a",
+      "git_blob_sha1": "86b32be9685c65cbcc3657a993e3ac2db6608206",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flag.txt",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tic-tac-no/flag.txt",
+      "bytes": 39,
+      "sha256": "7b1cded51a2f2f04d93abd9e543055a555a6bee4e05fc86ebde7dafd498fe37b",
+      "git_blob_sha1": "b7dce6756693e9a0b6fb3dbc77480a04037d6b88",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve.txt",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/tic-tac-no/solve.txt",
+      "bytes": 10,
+      "sha256": "3b15b503edf0225b24e959e666224a96e88483842f14c21c46cffebcec7351c1",
+      "git_blob_sha1": "35bc02c9c1f5e73e84a252aa0f5b5a666e1fcc8b",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

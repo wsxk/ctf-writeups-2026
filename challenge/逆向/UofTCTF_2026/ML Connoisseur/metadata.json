@@ -1,0 +1,101 @@
+{
+  "event_id": "CTF-2969",
+  "event_title": "UofTCTF 2026",
+  "category": "逆向",
+  "title": "ML Connoisseur",
+  "dirname": "UofTCTF_2026",
+  "source_urls": [
+    "https://github.com/UofTCTF/uoftctf-2026-chals-public/tree/HEAD/ml-connoisseur"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/challenge.yml",
+      "local": "attachments/challenge.yml",
+      "size_expected": 761,
+      "git_blob_sha": "767d8a9b79ea883e006787e6982cc020f5bb7060",
+      "status": "downloaded",
+      "bytes": 761,
+      "sha256": "99475db1b8867a9d3855420bd669bc7fb30b125fa7d20490dd3e1070ab3ffab1"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/dist/ml-connoisseur.zip",
+      "local": "attachments/dist/ml-connoisseur.zip",
+      "size_expected": 93219822,
+      "git_blob_sha": "3ecdfce7a47fcbea1809238124940b9b2f2196b6",
+      "status": "downloaded",
+      "bytes": 93219822,
+      "sha256": "d2b80fcf2533986a63ff75638f6fb4b821e5b5ebed33764d56f5676d67840e53"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/solve/deobbed_model.py",
+      "local": "writeups/solve/deobbed_model.py",
+      "size_expected": 10978,
+      "git_blob_sha": "a352dceb3cb30ed72d2f0607e1e03fbe033a0bb7",
+      "status": "downloaded",
+      "bytes": 10978,
+      "sha256": "d31e69c17fa93aa51b3c9e73ac5931e7e508a992d673a588e099c446502592cf"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/solve/deobfuscate.py",
+      "local": "writeups/solve/deobfuscate.py",
+      "size_expected": 25005,
+      "git_blob_sha": "4ca0bb7f47d998be7c1d80e1630c2d3f5c876d02",
+      "status": "downloaded",
+      "bytes": 25005,
+      "sha256": "aea5608dc10bfa2c607fe09650cafb0cd505c9b2a0f8a43c50e3849d12ec3df6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/solve/flag.png",
+      "local": "writeups/solve/flag.png",
+      "size_expected": 101878,
+      "git_blob_sha": "9f298d3e17f6be34281845da317c1cc8e6f73306",
+      "status": "downloaded",
+      "bytes": 101878,
+      "sha256": "d412def2b2cb2bfdaf0da9e32f0cc96c8cbc0278a8598edb8c534b2a414e8215"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/solve/obf_map.json",
+      "local": "writeups/solve/obf_map.json",
+      "size_expected": 1802,
+      "git_blob_sha": "259af40f31fb6177825c7e4f2870633de041b3c5",
+      "status": "downloaded",
+      "bytes": 1802,
+      "sha256": "689c699417b54a3a908c777992b3dbcb4ba4115d47de2dedf83e49f86d883f84"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/solve/original.py",
+      "local": "writeups/solve/original.py",
+      "size_expected": 8250,
+      "git_blob_sha": "74e5271de81da43c563d3e5294c0ab161956369a",
+      "status": "downloaded",
+      "bytes": 8250,
+      "sha256": "6e4301ef3ba7db44a06ac496dbb63408f2a5f78c2e2983107e729cef7bf15d1d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/solve/solve.py",
+      "local": "writeups/solve/solve.py",
+      "size_expected": 8410,
+      "git_blob_sha": "79c6306edf439853dccd71edd3b702b4fa5a2f16",
+      "status": "downloaded",
+      "bytes": 8410,
+      "sha256": "060ef4042f5a478d4d798f634bab1d667f29b8a9e1180652ca2717f09609071e"
+    }
+  ],
+  "notes": "官方赛后仓库。writeups 中保留官方求解脚本；不保证每题都有叙述型解题文章。",
+  "directory": "逆向/UofTCTF_2026/ML Connoisseur",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/solve/deobbed_model.py",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/solve/deobfuscate.py",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/solve/flag.png",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/solve/obf_map.json",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/solve/original.py",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/solve/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/challenge.yml",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/ml-connoisseur/dist/ml-connoisseur.zip"
+  ],
+  "attachment_status": "downloaded"
+}

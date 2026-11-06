@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Gateway - Administration</title>
+    <style>
+        :root {
+            --bg-color: #121826;
+            --panel-bg: #1f2937;
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+            --border-color: #374151;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at top right, #1e3a8a 0%, transparent 40%),
+                radial-gradient(circle at bottom left, #1e3a8a 0%, transparent 40%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-main);
+        }
+
+        .login-container {
+            background-color: var(--panel-bg);
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 380px;
+            border: 1px solid var(--border-color);
+        }
+
+        .logo-area {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-area svg {
+            width: 48px;
+            height: 48px;
+            fill: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .logo-area h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .logo-area p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-main);
+            font-size: 15px;
+            box-sizing: border-box;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .footer {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+        <div class="logo-area">
+            <!-- 简单的网络节点图标 SVG -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 19.93C17.06 19.43 20 15.93 20 12C20 11.66 19.96 11.33 19.9 11H17.47C17.14 13.8 15.11 16.03 12.44 16.8L13 19.93ZM11 19.93L10.45 16.8C7.79 16.03 5.76 13.8 5.43 11H3.01C2.95 11.33 2.91 11.66 2.91 12C2.91 15.93 5.85 19.43 9.91 19.93C10.27 19.97 10.63 20 11 20V19.93ZM12 15C10.34 15 9 13.66 9 12C9 10.34 10.34 9 12 9C13.66 9 15 10.34 15 12C15 13.66 13.66 15 12 15ZM16.33 9H19.54C18.66 6.33 16.48 4.28 13.78 3.51L14.47 6.43C15.34 7.15 16 8.19 16.33 9ZM9.44 6.43L10.13 3.51C7.43 4.28 5.25 6.33 4.37 9H7.58C7.91 8.19 8.57 7.15 9.44 6.43Z">
+                </path>
+            </svg>
+            <h1>路由器后台管理系统</h1>
+        </div>
+
+        <!-- 表单提交到你的 login.cgi -->
+        <form action="/cgi-bin/login.cgi" method="POST">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <!-- name属性对应你的cgi里解析的字段: username -->
+                <input type="text" id="username" name="username" required autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <!-- name属性对应你的cgi里解析的字段: password -->
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Login</button>
+        </form>
+
+        <div class="footer">
+            &copy; 2024 System Administration. All rights reserved.
+        </div>
+    </div>
+</body>
+
+</html>

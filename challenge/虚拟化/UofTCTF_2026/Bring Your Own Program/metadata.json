@@ -1,0 +1,51 @@
+{
+  "event_id": "CTF-2969",
+  "event_title": "UofTCTF 2026",
+  "category": "虚拟化",
+  "title": "Bring Your Own Program",
+  "dirname": "UofTCTF_2026",
+  "source_urls": [
+    "https://github.com/UofTCTF/uoftctf-2026-chals-public/tree/HEAD/bring-your-own-program"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/bring-your-own-program/challenge.yml",
+      "local": "attachments/challenge.yml",
+      "size_expected": 579,
+      "git_blob_sha": "3ea3cb1c154eadca7e66d8f1e01b7a209aa18a69",
+      "status": "downloaded",
+      "bytes": 579,
+      "sha256": "dc97000790763145850726eec6f4f9fb14122d8831f906b3bd34baf38dac9129"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/bring-your-own-program/dist/byop.zip",
+      "local": "attachments/dist/byop.zip",
+      "size_expected": 6028,
+      "git_blob_sha": "b2229a28902a1387902db9dff948ba7912a7a211",
+      "status": "downloaded",
+      "bytes": 6028,
+      "sha256": "685cca861874e3925488981355fc8829b11270f117dccdc46648f08b68af9178"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/bring-your-own-program/solve/solve.py",
+      "local": "writeups/solve/solve.py",
+      "size_expected": 1867,
+      "git_blob_sha": "07bfa2708eba574293e7e3586e304f61de8190a9",
+      "status": "downloaded",
+      "bytes": 1867,
+      "sha256": "3a172711e418413fcd85c291bd233395325f78e8d9ad188bcd79b242b54fc3b3"
+    }
+  ],
+  "notes": "官方赛后仓库。writeups 中保留官方求解脚本；不保证每题都有叙述型解题文章。 官方题目描述明确为未知架构模拟器。",
+  "directory": "虚拟化/UofTCTF_2026/Bring Your Own Program",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/bring-your-own-program/solve/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/bring-your-own-program/challenge.yml",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/bring-your-own-program/dist/byop.zip"
+  ],
+  "attachment_status": "downloaded"
+}

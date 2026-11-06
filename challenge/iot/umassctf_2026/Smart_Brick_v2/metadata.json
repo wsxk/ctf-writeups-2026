@@ -1,0 +1,64 @@
+{
+  "event_id": "CTF-2937",
+  "event_title": "UMassCTF 2026",
+  "title": "Smart_Brick_v2",
+  "category": "iot",
+  "original_category": "Hardware",
+  "tags": [
+    "pcb-reversing",
+    "kicad",
+    "logic-simulation"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/umassctf/2026/smart_brick_v2/",
+    "https://ctf42.online/ctfs/umassctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMassCTF/2026/hw/Smart_Brick_v2"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/UMASSCTF-2026-writeups/tree/main/UMASSCTF-2026-writeups/hardware/smart-brick-v2"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMassCTF/2026/hw/Smart_Brick_v2",
+    "https://ctf42.online/ctfs/umassctf/2026/smart_brick_v2/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "按嵌入式硬件、无线协议或PCB分析归入IoT相关题；赛事原分类为Hardware。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "iot/umassctf_2026/Smart_Brick_v2/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/UMASSCTF-2026-writeups/main/UMASSCTF-2026-writeups/hardware/smart-brick-v2/README.md",
+      "bytes": 9399,
+      "sha256": "f49a33e7066dcd8a980019644a26c6ba1835b1d36abcdfbfadbe8adbf0abed00",
+      "kind": "writeup"
+    },
+    {
+      "path": "iot/umassctf_2026/Smart_Brick_v2/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMassCTF/2026/hw/Smart_Brick_v2/README.md",
+      "bytes": 244,
+      "sha256": "76fa45d2bc71e1620a7454e4545cb5ae49a7b7155c166b7504b543e16b349050",
+      "kind": "attachment"
+    },
+    {
+      "path": "iot/umassctf_2026/Smart_Brick_v2/attachments/upstream/smart-brick-v2.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMassCTF/2026/hw/Smart_Brick_v2/smart-brick-v2.zip",
+      "bytes": 725586,
+      "sha256": "b44d63ef835dc338136315d93cdbb6bf7bd320e2a4d9e5834d0d20fa18ffe1a1",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/umassctf/2026/smart_brick_v2/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/umassctf/2026/smart_brick_v2/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

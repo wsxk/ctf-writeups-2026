@@ -1,0 +1,627 @@
+{
+  "0": [
+    "尾部NUL越界清除下一块size低字节，形成Einherjar堆重叠。",
+    "从largebin残留指针恢复堆位置；伪造A内chunk并触发B向后合并，取得重叠块；泄漏unsorted bk计算libc，再用两组tcache投毒依次读取environ和覆盖栈返回地址；seccomp禁止execve，最终用open/read/write读取flag.txt。",
+    "依赖glibc 2.42及UNSORTED_BK_OFF、RET_FROM_ENVIRON等构建相关偏移。"
+  ],
+  "1": [
+    "三次任意位翻转可先修改有符号循环计数器，扩展为大量翻转。",
+    "解析main/system/address/sbrk四种泄漏；在&address-1翻转bit7，让计数变负；将全局FILE指针改成stdin，再将&address+0x18的返回地址bit3翻转至cmd+1；恢复计数符号退出循环，由命令处理器读取输入。",
+    "f=sbrk-0x20cf0、全局f=PIE+0x4050依赖原构建；cmd+1用于跳过push rbp。"
+  ],
+  "2": [
+    "32位gets栈溢出，固定PLT地址组成ret2libc。",
+    "选菜单2进入欢迎语输入；填充0x30字节至返回地址；依次放system@plt=0x080490a0、exit@plt=0x080490b0、/bin/sh=0x0804a09a；函数返回后确认shell再读取题目flag。",
+    "仅适用于原32位非PIE二进制；NX使栈shellcode方案不适用。"
+  ],
+  "3": [
+    "驱动释放物理页却保留用户mmap，形成页级UAF；多份来源还记录了不同本地flag包装。",
+    "ALLOC后mmap并FREE，保留悬空映射；选phantom_pwn方案促使物理页复用为PMD并设置2MB页映射，得到物理内存读写；扫描当前modprobe_path字符串并写为辅助程序路径，触发模块加载读取flag；cred覆盖是另一条分支，须保留引用计数。",
+    "来源对initramfs是否含真实flag有冲突，静态解包路径不能替代远端利用证明；页复用和cred喷射存在不稳定性，日志含成功后内核崩溃。"
+  ],
+  "4": [
+    "Python AST黑名单与openat路径前缀检查同时存在语义缺口。",
+    "动态拼接双下划线并用getattr遍历类/函数globals恢复真实builtins；取得os后打开/获得dirfd；向openat传相对flag路径，使监控器看到的字符串不含被禁绝对前缀；读取结果并检查0xfun格式。",
+    "原作者只验证jail.py逃逸，未完整验证原生warden；不得写成已完成全部沙箱逃逸。"
+  ],
+  "5": [
+    "一次任意地址写覆盖可写GOT，随后必经puts触发win。",
+    "确定No PIE和No RELRO；向题目输入目的地址0x403430与值0x401236的十进制形式；等待Goodbye对应puts调用，验证控制流进入win。",
+    "地址对应原附件；原本地验证使用虚拟flag。"
+  ],
+  "6": [
+    "cancel_order未清指针造成UAF读写，投毒0x30 tcache取得计数对象。",
+    "释放一个0x28订单并读取safe-linking值恢复堆；再释放另一订单，把fd编码成target XOR (pos>>12)；申请两次取得chimichanga_count所在内存；写0xcafebabe并调用领奖检查。",
+    "glibc 2.35；目标和订单必须同为malloc(0x28)。"
+  ],
+  "7": [
+    "ROLLBACK恢复类型元数据却不恢复payload，造成跨快照类型混淆。",
+    "JOB后SNAP，再DROP并以空BUF复用槽，VIEW泄漏旧job字段；逆转SplitMix混合并验证hash/MAC，恢复会话密钥；PATCH shell类型0x4153b0d8及/bin/sh并重算校验；ROLLBACK后用新epoch重建句柄RUN，从继承memfd读flag。",
+    "旧句柄epoch失效；必须同时重算作业校验与新句柄，不能直接RUN旧handle。"
+  ],
+  "8": [
+    "取消队列只扫描环形数组尾段，回绕后遗留指向已释放槽的有效队列项。",
+    "执行5个无害任务令head=tail=5，再排队dummy和target造成回绕；取消target并把同槽重分配为未审批的112字节任务，dispatch两次；用隐藏VM 0x92泄漏worker secret并安装认证token；伪造0xad附件指令通过遗留队列读取flag。",
+    "全部步骤须在同一连接；CRC32帧校验、票据generation与worker队列槽号是不同概念。"
+  ],
+  "9": [
+    "QuickJS customFilter跨回调保存失效数组指针，且以首元素类型决定全部引用计数。",
+    "构造悬空字符串并让ArrayBuffer复用，分别泄漏PIE与堆；喷射伪造JSValue，通过回调交付伪造对象；构造JSArrayBuffer任意读并沿真实对象链找到JSContext；伪造指向js_os_exec的原生函数执行/readflag。",
+    "JSValue为16字节，tag和引用计数必须匹配；block:true避免辅助程序输出前GC破坏伪造对象。"
+  ],
+  "10": [
+    "bookmark只核对generation低8位，结合可逆seal及SIGALRM检查点实现受保护frame篡改。",
+    "NOTE并建bookmark，再DROP和127轮NEW/DROP及最终NEW让generation增加256；READ 192字节frame，逆转fmix恢复两个seal密钥；同时发送TIMER/RUN捕获检查点；设selector=0x5352858a及/flag，按依赖顺序重算两seal和checksum，再WRITE、RESTORE。",
+    "512命令配额及信号时间窗口是硬约束；必须先形成checkpoint。"
+  ],
+  "11": [
+    "MicroPython __build_class__把恶意__new__返回的小整数误作cell，构造任意写。",
+    "利用tagged int与cell+8布局编写write64；改bytes数据指针得到任意读，并由id(str)及strlen指针恢复程序和加载器基址；伪造type的attr slot与函数指针，覆盖evil对象类型；访问evil.gg触发gadget调用system。",
+    "偶数地址写入通过addr-1和值左移8实现；SYSTEM+2、type布局均为题目版本专用。"
+  ],
+  "12": [
+    "内核multifiles解法通过对象越界与slab布局操纵取得页表重叠，再修改core_pattern。",
+    "阅读solve.c的设备ioctl和TAIL_VULN_SEEK_OFFSET=56，建立相邻slab与freelist控制；按代码进行页表喷射并验证PTE重叠，构造物理内存窗口；扫描内核文本签名计算core_pattern物理位置，写辅助命令；触发崩溃处理路径并检查flag输出。",
+    "这是基于官方C solver的静态重建，需同版内核；上传脚本不是漏洞本体，NUM_TRIES/喷射次数影响稳定性。"
+  ],
+  "13": [
+    "edit固定写32字节而最短字符串分配块仅32字节，覆盖邻块size后制造堆重叠。",
+    "用字典序控制最小堆删除顺序，填满字符串让peek越界泄漏next；将相邻chunk size由0x21改0x31并释放重分配；借重叠写第三块tcache next到flag邻近位置；重复分配后peek读取flag。",
+    "该libc 2.31未启用safe-linking；原文称2.31首次引入tcache不准确，不作为推理前提。"
+  ],
+  "14": [
+    "Forth forget释放word但其他已编译word仍保存指针，形成UAF函数指针调用。",
+    "定义A引用B再forget B；按0x90与0x30大小类安排新word名称占据旧param和word；旧param放/bin/sh，旧word的code偏移24写已泄漏dosys；执行A调用悬空B，使code(param)成为命令执行。",
+    "要跟踪名称、word、param、dict四类分配，不能仅把forget当独立删除。"
+  ],
+  "15": [
+    "fw_del_rule存在UAF，可重占为pipe_buffer并改变合并标志。",
+    "按exp.c创建并删除防火墙规则保留悬空引用；喷射pipe使目标对象复用；将pipe标志改为可合并并让写入落入/etc/passwd页缓存；用修改后的凭据切换root读取flag。",
+    "Dirty Pipe式路径依赖文件页缓存和精确pipe_buffer布局；仅适用于题目内核环境。"
+  ],
+  "16": [
+    "代码段可写的一次字节修改先改ret为nop，转为可重复自修改。",
+    "把chall末尾ret改0x90，让CPU落入紧随其后的main循环；把jnl的相对位移0x14改0，绕过写入范围检查；在main返回区逐字节写shellcode；最后恢复ret=0xc3，使函数返回到已写代码。",
+    "索引仍为unsigned byte，只能覆盖向前256字节；写入阶段不能破坏每轮必经指令。"
+  ],
+  "17": [
+    "ROUTE的验证和JIT执行语义不一致，可跳入SIGNAL的8字节立即数执行原生指令。",
+    "识别WAIT=0x10、SIGNAL=0x20、ROUTE=0x30、END=0x40、FREEDOM=0xf0；验证器线性扫描且拒绝FREEDOM，但不沿ROUTE走控制流；JIT把SIGNAL变为eb08加8字节字面，把ROUTE变为e9 rel32；输入300220b8b01b4000ffd0c340，通过验证后ROUTE+2进入b8b01b4000ffd0c3，即mov eax,0x401bb0;call rax;ret，调用题目flag打印器。",
+    "12字节payload及0x401bb0针对本题非PIE构建；应分别验证字节码边界与机器码跳转落点，原作者报告BDSEC{mukt1r_5h0ngk3t_r34ch3d_th3_f13ld}。"
+  ],
+  "18": [
+    "duplicate新增设备句柄却未增加引用计数，release使另一句柄悬空。",
+    "分配并复制设备，释放其中一个句柄；申请同大小session复用设备内存；通过旧设备句柄改session的权限角色并重算两个checksum；调用Request privileged data读取flag。",
+    "这是用户态设备模拟器，不是Linux内核驱动；必须保持session结构及校验一致。"
+  ],
+  "19": [
+    "关卡负坐标导致栈上world数组下溢，可覆盖load_level返回地址。",
+    "导出bmb.c源码并开启上上下下左右左右Enter开发者模式，读取world地址；本地确定world到保存RIP的偏移；把读取flag的机器码写入关卡，并用负坐标把返回地址改为world内代码；经zlib和base64打包后导入。",
+    "clear会清空关卡，patch用于选择性写；地址随会话变化，需重新读开发者泄漏。"
+  ],
+  "20": [
+    "官方Ruby solver利用输出文件中的单字节泄漏逐位恢复程序口令。",
+    "以aaaa作试探口令并填写title/artist/album；依次提交11111至1111111111及-1111111111，保存test.out；读取hexdump偏移0x80行末字符并拼成7字节口令；重新运行并提交恢复口令检查flag。",
+    "来自solve.rb静态行为；长度/整数变化如何越界仍需结合附件源码确认，不能把猜测当已证根因。"
+  ],
+  "21": [
+    "memfd未设置CLOEXEC，system子进程继承含flag的文件描述符。",
+    "解析服务提示的FD编号；在命令中用引号拆开proc与fd，使原始字符串检查看不到禁词；shell解析后形成/proc/self/fd/编号并读取。",
+    "不需要内存破坏；必须使用实际继承FD，不能固定假设4。"
+  ],
+  "22": [
+    "DNS压缩指针反复展开造成栈溢出，原solver分散ROP于多个question数据段。",
+    "构造8个question，利用0x78实际label长度、0x7d跳转长度与C00D/C00E压缩指针多次复制越界；把data1/2/3中的14/14/13个64位项组成ROP，用多pop gadget跨过DNS字段；先UDP发送恶意包，再发flag_path给sys_read(0,0x4a7400,64)，随后open/read/write读取64字节。",
+    "这是栈溢出而非泄漏题；open返回fd假定6，gadget从静态二进制检索且需pop rdx;pop rbx;ret。Ruby依赖的../metadata.yml、../challenge及tools目录与当前归档不同，需重建布局/改路径。"
+  ],
+  "23": [
+    "虽无w命令，h分支对data[256]的无限长memcpy可用任意读源实现逐字节栈覆盖。",
+    "r读取strtol GOT算libc，再从__environ下方1024字节找落在libc、且前两字节为FF D0的保存返回地址；h读取已知100字节样本并在栈搜索，确定data到ret偏移；读取libc前64KiB作为字节字典，从ROP末字节倒序构造：h的源末字节选目标值，长度=ret_offset+i+1，覆盖前缀而保住已写后缀；写完ORW(/home/ctf/flag.txt)链后用空命令退出main。",
+    "不能归为纯任意读题；h是实际写原语，最终read fd假设5。需要原libc及完整调用布局；Ruby元数据/二进制相对路径和libronsolve tools依赖须重新配置。"
+  ],
+  "24": [
+    "r/w协议允许直接覆盖保存返回地址，secret_function是现成读flag入口。",
+    "以r读strtol GOT求libc，再读__environ下方栈，扫描libc地址且前指令为FF D0定位main返回槽；w按命令、地址HEX、长度HEX、原始bytes协议，直接将返回槽写为二进制secret_function符号地址；空命令返回后由secret_function读flag.txt并打印。",
+    "需使用本题真实符号和栈扫描条件；不是修改任意控制字段即可生效。Ruby上游目录依赖未保持，不能在当前目录原样运行。"
+  ],
+  "25": [
+    "secret_function已移除，但任意r/w足以改栈为libc ORW链。",
+    "按strtol GOT→libc→__environ→FF D0前序调用的返回槽寻找流程定位ret；在ret-0x10000写NUL结尾flag路径；用w把pop rdi/rsi/rdx及open/read/write/exit链写ret，原gadget偏移分别0x277e5、0x28f99、0xfdefd；空命令退出main触发，read fd5至scratch+100、长度100，write至fd1并exit69。",
+    "不能沿用readwritecallme的secret_function。固定fd、scratch是否映射和libc gadget偏移均需核对；Ruby../metadata.yml等路径与归档布局不同。"
+  ],
+  "26": [
+    "RugDoctor JIT的分支距离溢出让控制流落入ADD立即数字节，实现JIT喷射。",
+    "构造足够多ADD让IF跳转长度溢出；把各立即数布局为短机器指令与jmp+3链，先mmap可执行页；逐字节写第二阶段shellcode，再call保存的映射地址；EOF结束提交，读取flag。",
+    "立即数每段只有4字节可控；写入循环用inc al依赖页对齐且shellcode小于256字节。"
+  ],
+  "27": [
+    "切换ROM不重置寄存器和PC，复用Life计数器例程越界读取WRAM。",
+    "加载life并在UGEN断点停住；切换其他ROM推进PC以跳过SET 9,mR及SET 57,gB；切回life让计数器向后遍历并下溢；从屏幕/计数更新恢复WRAM 0xF0起的flag字节。",
+    "reset/INIT会重建内存；部分游戏初始化会覆盖flag，切换顺序须按原文。"
+  ],
+  "28": [
+    "错误hex长度计数泄漏复用栈缓冲区内HMAC密钥；AEAD认证失败返回值又被忽略。",
+    "用末尾非法hex和递减输入长度逐字节泄漏32字节hmacKey；修改ChaCha密文开头使解密前缀不再为ctf；用恢复密钥重算外层HMAC，保留可失败的Poly1305标签；提交并读取未检查解密结果中的flag主体。",
+    "不是破解ChaCha或HMAC；依赖本题WolfSSL错误时仍产生明文及程序忽略返回码。"
+  ],
+  "29": [
+    "无限长scanf堆覆盖C++对象vptr，换成WinnerButton虚表。",
+    "按solve.py按钮创建顺序让vector分配复用对应槽；用名称溢出覆盖目标按钮vptr为WinnerButton vtable；触发push虚调用进入/bin/sh路径。",
+    "对象布局、vector临时分配和虚表地址均需原二进制；不是覆盖普通函数返回地址。"
+  ],
+  "30": [
+    "转换表负索引写越过数组起点，覆盖exit GOT为win。",
+    "从solve.py确定表基址与索引步长；计算exit GOT对应负下标；写win地址后走退出路径，检查flag输出。",
+    "依赖可写GOT及固定目标布局，索引按元素而非字节计算。"
+  ],
+  "31": [
+    "非终止字符串输出泄漏相邻保存的flag。",
+    "依据README向输入发送32个A；观察返回内容是否越过输入显示flag；以完整flag边界确认结果。",
+    "原解答仅一句操作说明，具体终止符/缓冲区布局未给出；不扩写为未经证实的任意读。"
+  ],
+  "32": [
+    "输入直接作为格式串，通过泄漏main/栈地址和三次半字写改保存返回地址至win。",
+    "先发送%39$p泄漏main，再用%37$p泄漏栈值（代码注释本地或为%32$p）；本脚本令ret=stack_leak-288、win=main_leak-0x8c；第一轮用%24$hn和%25$hn写win低32位到ret/ret+2，填充至8字节对齐后附两个地址；第二轮用%22$hn写win的第32至47位到ret+4，再发送A触发返回。",
+    "这是保存RIP覆盖，不是GOT覆盖；参数序号和-288偏移依赖目标环境，脚本含旧的-40注释，不能混用。来源末尾给出byuctf{%p_yourself}，本次未运行。"
+  ],
+  "33": [
+    "AArch64设备CREATE按对象总长校验却写入64字节content，72字节输入覆盖send_func；VIEW缺索引边界。",
+    "先用VIEW越界索引泄漏模块/内核相关指针；用CREATE的第64到71字节设置send_func，保留x0指向对象内容；依原文内核调用链完成权限变化或读取受保护块设备；SEND触发并确认flag。",
+    "内核与模块分别随机化；/flag.txt指向/dev/vda，不能按普通可读文件假设处理。"
+  ],
+  "34": [
+    "CLUSTER NODES未限制slot索引，形成从node+0x54起向前写固定字节1；两次伪大块重叠最终伪造hiredis析构回调。",
+    "保持首个CLUSTER NODES回复907字节；用slot21132/21172改F0 ip和flags，37717/71253把两个0x41 chunk size伪为0x141（本地2.42布局）；F0失败释放后由F1的0x130回复重占，泄漏heap并指向unsorted残留泄漏libc；第二次F2释放、F3回复重占，伪造redisContext的privdata=命令和free_privdata=system；畸形回复触发redisFree回调，输出经存活socket fd5送出。",
+    "远端MALLOC=libc且glibc2.43，偏移不同；stdout/stderr重定向使本地日志泄漏链不可直接远用，远端改从DBSIZE获得数据并频率投票找arena。不可把Partial/Full RELRO混淆，本题Full RELRO下不覆盖GOT。"
+  ],
+  "35": [
+    "cancel不清active_ticket，edit可覆盖票据+0x20处回调。",
+    "逐提示执行create、cancel；edit发送32字节填充及p64(0x40125f)；use触发open_gate。",
+    "scanf与read混用会提前缓存流水输入；必须等待菜单提示；目标是函数入口不是0x401271。"
+  ],
+  "36": [
+    "operator的0x21字节读仅改保存RBP低字节，结合report栈泄漏迁移到可控缓冲区。",
+    "解析report buffer地址，在0x50范围放伪帧和ROP；选与原saved_rbp同256字节窗口的pivot；发送0x20填充及pivot最低字节；通过leave/ret进入链，设置EDI=deadbeef、ESI=cafebabe调用0x401268。",
+    "不触碰canary；若目标不在相同256字节窗口需重选落点；附件flag为诱饵。"
+  ],
+  "37": [
+    "crush_string按步长跨越NUL导致栈字节泄漏，gets反馈溢出负责控制流。",
+    "16次试用内分别以rate73到79读出canary字节1到7；继续采样代码指针确定PIE；构造保留canary的反馈溢出并返回admin_portal；检查flag。",
+    "CET标志是否实际启用须运行环境确认；泄漏次数受16轮限制。"
+  ],
+  "38": [
+    "颜色索引越界把函数表调用转为memcpy，复制0x1000字节到栈。",
+    "设置颜色3356选择memcpy GOT；构造完全合法UTF-8的4096字节输入，在返回偏移0x60布置SROP引导；sigreturn帧设execve及BUFFER+0x178字符串；用相邻r15字节E0拼接rdi的B0 9F，使跨字段编码合法。",
+    "任何非法UTF-8会进入Cow::Owned转换并破坏payload；必须检查整块而非仅ROP区域。"
+  ],
+  "39": [
+    "Frida inline hook安装/卸载成为可控代码写，LIFO trampoline复用决定rel32中的目标字节。",
+    "按原文布局填满trampoline池；为目标X和值b选择使rel32第二字节等于b的槽并释放；在X-2安装generator、在X安装saver，再依序卸载/补池保存目标字节；只在隔离短指令处施加最终控制流补丁。",
+    "相邻NOP残留限制连续补丁；原文14次字节写及池分配公式须保持同版Frida。"
+  ],
+  "40": [
+    "Python大图长度与quirc 32位像素索引不一致，越界标记破坏mmap chunk size，使free连带解除libc元数据映射。",
+    "上传时设置station=kitchen选择native路径，串接3个PNG帧，利用全零行稀疏文件保持物理体积小；第1帧26827×160101的像素标记写image[-6]，令size从0x100010002变0x100030002；第2帧1×1触发free/munmap额外0x20000；第3帧28622×150065重占缺口，填原libc动态元数据仅改dynsym[puts].st_value为system，并嵌入内容/read_flag的有效QR；首次lazy绑定puts时变为system执行题目助手。",
+    "触发像素必须0x01，0xff被当已标记区域跳过；必须Partial RELRO、puts尚未解析且使用精确libc/映射布局。原文缺独立solve.py，不能仅从图像尺寸保证利用可重现。"
+  ],
+  "41": [
+    "踩怪一次删1加2，边界判断使第6次生成第12号越界实体覆盖帧hook。",
+    "先踩x=56/60/68/72/76五只，保留x64；回到x64并右移0x18fe个细步；第6次踩踏把16.16定点坐标0x4018fe写到hook；下一game_step调用attest_human。",
+    "每次踩踏后需零输入帧产生新上升沿；本地stub只证明函数到达。"
+  ],
+  "42": [
+    "WRITE只检查临时输入缓冲长度，堆越界可伪造top；REQUEST信任新malloc的未初始化字节。",
+    "ADD一个0x100 note；写0x138字节保持中间0x20小块header并伪造top size=0x101d1；在note+0x130放!K_RAELC；REQUEST分配0x100后命中旧字节，内部flag socket返回结果。",
+    "glibc 2.31日志分配会插入0x20 chunk；换系统libc会改变布局。"
+  ],
+  "43": [
+    "SFEX JIT参数数目不一致泄漏ABI残留值，符号碰撞保留旧IR使下次编译接受伪对象指针。",
+    "81参函数调用100次触发JIT后以10参调用泄漏指针；把f64原始位恢复为整数并在JIT常量内布置短跳shellcode；制造A_B.C与A.B_C符号冲突，再编译继承旧Set的函数；用80字节参数块伪造Arc/RwLock/HashMap，把返回地址写向JIT+0x122。",
+    "重复定义报错是预期步骤；输入需低于12KiB，符号/IR生命周期与Rust布局都依赖指定版本。"
+  ],
+  "44": [
+    "录音路径穿越读取临时拨号进程环境和映射，配合无canary消息栈溢出。",
+    "保持拨号连接未完成并由录音名获得PID；LFI读取environ取得包密码并解密附件；在长度读等待时取maps/syscall确定libc及buf；发送大端2字节长度和偏移0x398覆盖RIP的ROP，重新建立第二回连执行/flag。",
+    "首连接发送ACK后关闭，必须监听第二连接；不能把旧socket用作输出。"
+  ],
+  "45": [
+    "FREE不清present/data形成Rust封装下的glibc UAF，目标是启动时分配的回调表。",
+    "用0x30 tcache释放链泄漏堆并定位dispatch_table；改明文next并分配回调表；读取noop后加0xf0得到request_flag_op；写table[0]并STATUS触发flag dispenser。",
+    "glibc 2.31无safe-linking；本地/托管堆距离0x4070/0x42e0不同，先验证[noop,0,noop,noop]。"
+  ],
+  "46": [
+    "缺少pop rdi时复用main的rbp-0x80读入片段，实现指定地址写和多次栈迁移。",
+    "gets溢出控制rbp及返回地址0x4011a5；在高处BSS搭伪帧，向低处GOT定向写，把gets改成printf；再次调用产生格式串libc泄漏；构造匹配glibc2.39的system链读取flag。",
+    "调用栈需留足可写空间，不能直接贴近GOT向下耗栈；精确libc可能未下载。"
+  ],
+  "47": [
+    "Flask限制Unicode字符数，C端按UTF-8字节处理，导致校验字段被可控超长字节覆盖。",
+    "构造15字符60字节用户名使分隔符位于60；密码多字节字符尾字节与BCZ拼成偏移72处88 42 43 5a；枚举65536个4位hex字符串满足FNV1a低16位XOR1998自引用校验，原解为d174；提交/api/vault/auth。",
+    "目标frame是80字节，Python字符数和UTF-8字节数必须分别验证；不是SQL注入。"
+  ],
+  "48": [
+    "bind别名UAF读、额外32字节越界读与amend尾NUL组合成Einherjar和tcache投毒。",
+    "创建别名后burn原块，从残留元数据泄漏堆/libc；构造邻块size低字节清零和反向合并得到重叠；投毒读environ再投毒覆盖main保存返回地址；seccomp环境用openat/read/write读取flag.txt。",
+    "依赖glibc 2.43；execve不在允许列表，不能以system替代ORW。"
+  ],
+  "49": [
+    "一次RWX模块字节写会自禁用；修改自禁用行为及store指令可把它扩展为重复dword写。",
+    "把不可见模块当字节写oracle定位行为；先中和写后自禁用，再改opcode扩展写宽；原子替换musl stdout->write回调，借正常输出触发并恢复原回调约定。",
+    "原附件缺部分私有模块，须保留oracle依赖；分字节写正在使用的回调可能提前崩溃。"
+  ],
+  "50": [
+    "Piet的up/down可使数据栈别名到stack_depth，把合法运算转为原生栈寻址。",
+    "由色块宽度构造set_depth(N)；利用深度控制访问原生帧并对已知libc返回指针作差值运算，生成无需外部泄漏的ROP；以终止色块让解释器正常返回触发链。",
+    "32位有符号运算回绕参与地址合成；终止形状需保证八个出口均失败，避免继续执行垃圾。"
+  ],
+  "51": [
+    "Piet 2的roll未要求d<=stack_depth，可轮转未初始化原生栈数据并破坏保存RBP。",
+    "按原文roll序列取得栈/返回地址的既有值；以算术重构伪帧地址并覆盖saved rbp；通过解释器返回的leave流程迁移到伪帧ROP。",
+    "该版本已修补Piet 1的up/down直接写，不能复用旧set_depth路径；数据来自未初始化栈。"
+  ],
+  "52": [
+    "scanf溢出先修改product_bignum_len，让大整数打印器泄漏栈。",
+    "以嵌入NUL的输入保持数字解析可控，同时扩大长度；解析十进制大整数输出恢复canary与代码指针；再次输入保留canary、改返回到win并使计算循环结束。",
+    "buf大小0x1000；字符串终止、scanf空白终止和大整数实际长度需分别处理。"
+  ],
+  "53": [
+    "seccomp通知监督器模拟I/O的offset+count无符号回绕，令沙箱子进程读写父进程内存。",
+    "用回绕的范围绕过边界检查建立parent任意读写；从父进程内存恢复堆/libc/PIE；覆盖可写GOT并调用system(/readflag)。",
+    "攻击目标是监督器而非子进程；需要精确模拟协议和Partial RELRO。"
+  ],
+  "54": [
+    "地图物品位置编码main指针；密码溢出结合history数组实现BSS栈迁移。",
+    "S形扫描16x16地图，逆向8个地址字节的碰撞放置规则；用main地址计算PIE，并把每次移动历史填成ROP；grab输入16字节填充及伪rbp/leave，先泄漏puts并回main；第二条history链满足rax/rbx约束后进入one_gadget。",
+    "移动预算300，地址每项仅发送低6字节；libc偏移与one_gadget约束依赖原包。"
+  ],
+  "55": [
+    "不初始化sinfo指针使重分配student引用旧数据，结合伪chunk形成重叠与tcache投毒。",
+    "删除后不填资料再SHOW，泄漏safe-linking堆值；填满0x110 tcache使目标进入unsorted泄漏libc；利用旧指针与伪size重叠后投毒stdout；写_IO_wfile_jumps及wide_data/codecvt组合触发system。",
+    "伪FILE须保留有效lock及字段约束；使用solve.py主路径，attempt_hob为尝试稿。"
+  ],
+  "56": [
+    "构造异常展开的EH_FRAME/CIE/FDE与LSDA，利用DWARF表达式改恢复寄存器。",
+    "由f/g/main和__GNU_EH_FRAME_HDR计算相对函数范围；构造CFA=rsp+16、RIP=*(rsp+8)-0x6a等表达式；按solver拼接两组CIE/FDE与LSDA后提交，观察异常展开落点。",
+    "只有solver，无独立文字解释；偏移0x6a/0xdaa与编码字节是该ELF特定，需原始异常路径核验。"
+  ],
+  "57": [
+    "时间种子的rand决定字节手牌，可通过可预测换牌拼成14字节read shellcode。",
+    "比较界面初始14字节与本地libc srand(time)，尝试前后1至2秒；预测每次rand选择需要的牌，其他值消耗在待修复牌上；在0x13370000执行14字节read到board+14；发送完整第二阶段代码并检查输出。",
+    "需同libc PRNG；第一阶段恰好14字节，第二阶段不能被前一轮读取提前吞掉。"
+  ],
+  "58": [
+    "超量note数据覆盖邻块size，伪大块释放泄漏libc，再投毒libc内部strlen槽。",
+    "循环伪造0x201 chunk填满tcache，第8次进入unsorted；read泄漏libc及safe-linking掩码并修复元数据；新0x30 bin投毒到libc+0x21a090，写system；读取含/bin/sh的note触发被改strlen。",
+    "必须保留top size及下块PREV_INUSE；libc内部GOT地址并非主程序GOT。"
+  ],
+  "59": [
+    "官方solver通过半字写重入和随机输出恢复运行时指针，再写one_gadget。",
+    "写索引10为0x532f并索引154为0以取得第二组reads；继续重入尝试150至159栈偏移；将两组数字交给附件bf恢复leak，计算leak-0xcf420+0x4c139；索引18/19分别写目标低/高16位。",
+    "依赖外部bf程序，solver自述未精确确定栈偏移；不能宣称无重试或完整解释PRNG算法。"
+  ],
+  "60": [
+    "官方解答只给两行坐标，第一行含负索引。",
+    "原样输入1 -22；再输入1 1；观察胜利/flag输出，结合附件索引检查确认负值写入位置。",
+    "仅10字节solve.txt，缺根因及内存布局证明；不凭两行输入推断具体返回地址劫持。"
+  ],
+  "61": [
+    "signed长度-1通过<=0x50校验，截断为byte后变255，导致栈溢出。",
+    "输入-1扩大read长度；第一链puts(puts@GOT)并返回main，恢复libc；第二链设置/bin/sh参数调用system。",
+    "原缓冲区0xa0；需要匹配libc和栈对齐，附件flag是诱饵。"
+  ],
+  "62": [
+    "note管理off-by-one/UAF与safe-linking组合取得全局表任意读写。",
+    "泄漏safe-linking掩码及unsorted libc；用双节点tcache投毒取得栈扫描能力，从.rodata指针恢复PIE；覆盖notes表构造可复用读写并扫描saved RIP；覆盖为system(/bin/sh) ROP。",
+    "glibc2.39；fgets遇编码指针中的换行会截断，原文使用新布局重试。"
+  ],
+  "63": [
+    "64字节栈缓冲接受256字节，无canary且无PIE，可直接ret2win。",
+    "填充72字节到RIP；放一个ret用于对齐，再放win=0x4011b6；等待win读取flag.txt的输出。",
+    "本地flag为诱饵；固定地址仅对应原ELF。"
+  ],
+  "64": [
+    "3次任意读和1次任意写配合ld泄漏，覆盖经过指针加密的exit handler。",
+    "由ld基址及任意读恢复libc和initial exit列表；读取编码_dl_fini，计算key=ror(encoded,17) XOR real；写rol(win XOR key,17)到exit_funcs+0x18；程序exit自动调用win。",
+    "Full RELRO不可改GOT；exit_funcs偏移0x1e8fe0及_dl_fini偏移23552须匹配原加载器。"
+  ],
+  "65": [
+    "Hexagon/DSP6非PIE程序的栈覆盖用于枢转到BSS，再以该架构保存帧执行openat/read/write。",
+    "菜单3的note先送s0=48字节填充+BSS+0x30+READ_REL+8填充，BSS=0x4be00、READ_REL=0x215b8；送64字节s1将后续0x200字节读到STAGE=0x4bf00，以DEALLOC=0x2120c枢转；s2按0x28字节帧链调用SYSCALL=0x21200，系统调用号56/63/64，PATH=STAGE+0x100为/flag，缓冲=STAGE+0x120，openat AT_FDCWD后读fd3写fd1。",
+    "无附件，帧ABI依据内嵌exp；假设openat返回3，必须核验。脚本local创建相对flag但ROP开绝对/flag，原样本地复现可能读错路径；早期纯栈G_SYSCALL路径不可靠。"
+  ],
+  "66": [
+    "自定义freelist允许修改释放节点next，经stdout COPY重定位泄漏PIE并取得slot table；FSOP向父进程通知管道写Nepnep，由父进程读flag绕开子进程无open限制。",
+    "从gift printf求libc；add0/free0/poke0(libc+0x202e20)，add1/2/3沿链取得PIE+0x5020并show3算PIE；free1/poke1(PIE+0x5060)，add4/5取得slot table；write5将slot0指向真实stdout，设置flags和write_base/write_ptr指向内置Nepnep六字节；再把slot0指向FILE+0x70写fileno=6，利用slot3恢复PIE的stdout/stdin/stderr COPY指针；trigger4经fflush发出父进程通知。",
+    "优先首个exp_remote.py纯六槽路径，预算6 adds/2 pokes/1 show/1 trigger；后续exp_local.py含失败试验和/proc捷径，不能混为最终链。偏移、FILE、fd6依赖glibc2.39及父子协议，无本地附件。"
+  ],
+  "67": [
+    "SIGSEGV handler的大读覆盖ucontext，以rt_sigreturn恢复攻击者寄存器。",
+    "由gift中的stdout计算libc；在信号帧设置__restore_rt作为restorer；首阶段sigreturn执行read到BSS；迁移后用ORW读取/flag。",
+    "信号帧布局及__restore_rt来自同版libc；仅覆盖RIP而不构造ucontext不足以完成链。"
+  ],
+  "68": [
+    "官方solver通过相邻对象溢出伪造0x71大小并重分配，写入胜利魔数。",
+    "创建5个对象，第3号name为39个a、message为32个b加0x71；删除4号并以size32重建；message写四个0xdeadbeefcafebabe；选菜单5读取结果。",
+    "README仅TODO，依据checker与solve.py；精确对象边界需原程序验证。"
+  ],
+  "69": [
+    "自制git checkout信任分支/提交中的路径，允许多级目录穿越复制/flag。",
+    "建立仓库与伪refs/heads分支；提交对象files字段指向多级../flag，并指定输出文件；checkout穿越到伪分支，再读取产出的文件。",
+    "checker使用已知admin SSH凭据，仅证明该认证前提下的路径遍历，不代表得到凭据的方法。"
+  ],
+  "70": [
+    "quantity*price的32位有符号计算回绕，绕过余额检查并增加余额。",
+    "初始100购买3份十亿价格的第10饮品，成本3,000,000,000按32位变负；余额扣负值后足够，再买1份第10饮品；读取其描述中的flag。",
+    "索引9对应菜单第10项；按二进制32位行为解释，不能概括为所有C有符号溢出都保证回绕。"
+  ],
+  "71": [
+    "32字节无终止名称泄漏win_host；日志把1024字节消息strcpy到512字节字段。",
+    "填满名称让返回字符串泄漏win_host指针；在MALLOC_ARENA_MAX=1下安排主/记录线程共享arena；发送大于512字节消息覆盖日志邻接结构；按solver伪造网络连接，使router连接隐藏win host。",
+    "跨线程分配与同步是关键；heap overflow不允许内嵌NUL，须保持字符串复制约束。"
+  ],
+  "72": [
+    "note输出格式串先泄漏printf，再以%hn覆盖__malloc_hook为one_gadget。",
+    "写%9$sAAAA和0x601fb0，读6字节减0x55810求libc；以参数偏移8构造short写，把libc+0x3c4b10写为libc+0xf03a4；按菜单删除/显示触发malloc并读flag。",
+    "旧libc需存在__malloc_hook；one_gadget执行条件需同环境检查。"
+  ],
+  "73": [
+    "浮点乘法溢出到infinity扩大索引上界，指针数组越界形成任意读写。",
+    "view(-11)泄漏PIE；累计分配超过512MiB虚拟内存通过calibration；1e308*1e308触发无限范围，布置伪指针表；读GOT和environ，覆盖栈ROP到system。",
+    "两输入有限不保证结果有限；总量是虚拟分配而非必须写满物理内存，flag文件随机命名。"
+  ],
+  "74": [
+    "JSC bailout重建数组时对象类型和Butterfly布局不一致，破坏相邻数组length。",
+    "触发优化消除数组及having a bad time后的去优化；从超长数组建立boxed/unboxed重叠和addrof；构造任意读写定位同一个hello!!!的字符数据指针；两次callback依次改指针使其读为pwned!!!和world!!!。",
+    "win保存同一JSString，不能简单换传参变量；固定WebKit revision及GC布局影响成功。"
+  ],
+  "75": [
+    "disable_functions不覆盖Pdo\\Sqlite方法，允许上传后加载原生SQLite扩展。",
+    "构建注册readflag SQL函数的.so；multipart上传使库落在允许的/tmp；同请求创建内存数据库并loadExtension($_FILES临时路径)；SELECT readflag()执行/readflag并返回结果。",
+    "无需PHP内存破坏；要求该PDO驱动和loadExtension可用，上传文件须在请求结束清理前加载。"
+  ],
+  "76": [
+    "最终版本是无PIE静态程序，可用游戏输入溢出搭直接syscall ROP。",
+    "先辨认附件是否比赛更新后的静态版本；按原文确定game覆盖RIP偏移；将/bin/sh写入可写段，设置execve系统调用参数并syscall；检查shell输出。",
+    "早期动态libc利用不适用于更新后的二进制；静态版本中没有现成/bin/sh字符串。"
+  ],
+  "77": [
+    "pyjnius对PythonJavaClass转Java参数缺类型核验，攻击者JAR可用FakeProxy访问真实Proxy内部字段。",
+    "代理URL带user:pass使proxyAuthenticator收到PythonJavaClass；通过假字段读写NativeInvocationHandler.ptr并扫描DirectByteBuffer.address；在直接缓冲区伪造PyObject/PyTypeObject，将tp_getattro设为已泄漏libc.system；触发toString造成invoke属性查找。",
+    "Revenge需更宽堆扫描和额外buffer标签；原文同时有snaking初版，不能混用旧sandbox接口。"
+  ],
+  "78": [
+    "Content-Length=-1转size_t后+1回绕，malloc(0)却继续大长度读取，造成跨线程堆溢出。",
+    "喷射超过8个worker迫使arena复用；保留0x800 POST并让其他线程溢出重叠Worker/dtv，再完成echo泄漏堆/libc/TLS；按原文继续恢复tcache等利用状态并构造最终控制流。",
+    "初始tcache关闭且guard_region随机PROT_NONE；此链依赖时序并需要重试，不应报告确定一次成功。"
+  ],
+  "79": [
+    "Binder身份混淆、可预测MTE/PAC门禁和kmalloc-96固定值UAF写形成跨层链。",
+    "先开Binder并传fd后exec setuid client，使服务交付驱动fd；按QEMU补丁重放PAC并从tag恢复MTE种子；回收悬空对象为unix_vertex，把+0x40的scc_index改2；借GC误释放继续构造内核利用。",
+    "这是重复归档题，主分类为虚拟化；固定写2不是最初就有任意写。"
+  ],
+  "80": [
+    "afc_receive_data的this_length超过entire_length造成堆溢出，复用释放list vector并覆盖可写puts GOT。",
+    "原配置禁用ASLR，libc基址0x7ffff7d65000，system偏移0x52290；第一次ls /安排0x110接收块和两个目录名字，释放后准备0x20 tcache；mkdir /x的AFC回复声明分配0x110却读取0x118，8字节越界把释放list-vector next改0x4040a0；第三次ls /令字符串/列表分配命中puts GOT前8字节，写system，并把首目录项设为/readflag sekai ppp #后接填充，打印目录时触发。",
+    "AFC头40字节且长度截到32位；此来源方案依赖固定libc，无须假设safe-linking泄漏。后续第二项执行或free可能崩溃，应以此前完整flag输出验证；作者报告SEKAI{du_bist_gut_genuggggggggggggg}。"
+  ],
+  "81": [
+    "rename溢出宠物回调到printf，再用格式串字节写改返回地址实现两级栈迁移。",
+    "名称32字节后写_IO_printf，talk成为格式串；利用rename_buf作为格式参数，对saved RIP写b8与18转到0x4018b8；pop rsp迁移到宠物对象，再leave迁移到BSS；执行ORW读取flag。",
+    "间接调用目标需endbr64满足IBT；返回链与真正SHSTK启用状态需区分。"
+  ],
+  "82": [
+    "uint16累加offset影响邻近文件索引，第二次写把索引越界到栈指针。",
+    "首次在合法缓冲区准备伪Elf符号/重定位结构；累加使低8位offset仍小于32而索引进位；越界写覆盖返回地址和一个qword；进入动态链接resolver解析system，无需先泄漏libc。",
+    "只能第二写触发进位且栈链仅约16字节；不能假设ret2main或leave gadget存在。"
+  ],
+  "83": [
+    "输入off-by-one先改相邻8位长度，再用扩展写泄漏canary和libc。",
+    "首次改长度为更大值；覆盖canary首NUL并让echo输出余下字节；继续读取main返回指针确定libc；恢复完整canary并写system(/bin/sh) ROP。",
+    "原文libc候选最终为Ubuntu2.39；仅低12位返回地址不足以唯一确认版本。"
+  ],
+  "84": [
+    "正则无限长捕获复制到固定0x40大小类chunk，形成堆越界；两轮safe-linking tcache投毒泄漏environ并覆盖栈返回地址。",
+    "启动时先放0x20字节shellcode并记录地址；以src长0x48、dst长0x38越界输出regexec结构泄漏heap（示例减0x2830）；按solver unlink序列塑造unsorted残留再泄漏main_arena+0x60；第一次投毒z fd=(heap+0x6170)>>12 XOR(environ-0x38)，分配后读栈指针；重新布局后投毒qq fd，目标environ_leak-0x158，最终写saved rbp及shellcode+1到返回区域。",
+    "glibc2.42；必须保留精确链接/删除次序，目标16字节对齐且输入不能含NUL，solver裁去高零字节。源码展示的是栈返回路线，不是作者提及但未展开的printf表/FSOP分支。"
+  ],
+  "85": [
+    "仅允许寄存器push/pop的汇编检查仍允许把代码当数据，借RSP变化构造自修改。",
+    "从合法指令字节取得0x0f等常量；用16位/64位push-pop改变RSP并保存地址，生成所需字节；把受验证代码改成read syscall加载第二阶段；执行未验证的完整代码。",
+    "初始普通寄存器清零，RSP指向RWX起点；不能把FS/GS可作为字节材料等同于随意执行pop段寄存器。"
+  ],
+  "86": [
+    "J2V8捆绑V8 9.3.345.11且未指针压缩，旧hole leak漏洞可造成Map混淆。",
+    "识别jar中的J2V8及版本/编译参数；泄漏hole后利用map.delete(leak_hole)建立越界与任意读写；在poc.js中定位WASM/JIT对象，改执行入口指向可控代码；由Java宿主执行JS触发。",
+    "V8 sandbox尚未引入，不能套新版本间接指针布局；poc.js是本地关键证据。"
+  ],
+  "87": [
+    "DETACH_FILE切换为LOCAL但不清sync_view，COMMIT_SYNC仍写原只读文件page cache。",
+    "用AVX masked-load时序候选扫描±32MiB并以2MiB步长试基址，计算kfree相关cookie；注册缓冲并以只读方式绑定/tmp/job，ENABLE_SYNC后DETACH；UPDATE本地内容再COMMIT写入旧page cache；等待root任务执行并读取输出。",
+    "cookie=rol64((kfree>>21) XOR 0x9e3779b97f4a7c15,17) XOR session_idx；时序候选不是直接_text地址。"
+  ],
+  "88": [
+    "同Chronos Ring生命周期错配，Ring1目录另提供可审阅的exp.c。",
+    "按exp.c校准KASLR侧信道并通过cookie gate；建立/tmp/job同步视图再detach保留旧指针；更新local_ring并commit覆盖只读缓存；等待root循环执行。",
+    "两目录正文相同但本目录有C利用与上传器，实际环境偏移仍需对照各自附件。"
+  ],
+  "89": [
+    "gethostname未初始化栈泄漏与inet_pton遇NUL截断组合，溢出user_buf覆盖bev。",
+    "先读取hostname残留恢复地址；构造NUL前合法IP、NUL后超长数据通过校验；覆盖s->bev指向多层伪bufferevent以满足检查；在add_reference回调控制函数执行并栈迁移ROP。",
+    "inet_pton接受的字符串长度与后续拷贝长度不同；伪造对象需通过各层check。"
+  ],
+  "90": [
+    "未初始化VFS块泄漏地址，off-by-null合并重叠后largebin修改tcache配置，再FSOP。",
+    "0x500块释放重用泄漏libc/heap；准备J/Y/R/B和fake chunk，尾NUL使反向unlink产生重叠；改bk_nextsize攻击tcache_bin再投毒stdout；伪FILE调用setcontext+61至mprotect，第一段列目录找到随机flag名，第二段读文件。",
+    "写命令需文件名hash；不是固定/flag，libc偏移0x210f50等依赖原版本。"
+  ],
+  "91": [
+    "Transfer释放源ledger后把悬空指针交给目标，Withdraw/Deposit提供UAF读写。",
+    "填7个tcache后Transfer大块至unsorted泄漏libc；单节点0x90 bin泄漏堆page key；双节点投毒固定wallets=0x4040c0；伪wallet把ledger指向free GOT，写system并关闭/bin/sh钱包。",
+    "A/B需同页才能共用key；calloc struct与ledger分配分开跟踪。"
+  ],
+  "92": [
+    "协议密钥由公开R和自选C派生，LINK/DELETE错误引用计数造成UAF。",
+    "提取ELF SBOX并完成握手，分别维护双向流计数；INFO泄漏callback求PIE；LINK后DELETE和GET泄漏safe-linking，再UPDATE投毒callback；写system@plt并EXEC。",
+    "两字节大端帧长与加密计数必须同步；回调跳转需考虑IBT目标。"
+  ],
+  "93": [
+    "命令2复制count+1字节，把CRC写入capacity低字节，升级为栈泄漏和大溢出。",
+    "用0x1337c35f解锁；发送256字节且CRC=ff把capacity从0100改01ff；命令3读511字节恢复canary和PIE；第二次copy保留canary布ROP，命令4返回触发。",
+    "255个A加0x49对应原CRC多项式0x2f；二进制包不能当行文本发送。"
+  ],
+  "94": [
+    "自制printf的%w不是%n，而是将下一参数qword直接写到本参数指针。",
+    "以%8$s和write GOT=0x404000泄漏libc；在NUL后放arg8/9，%8$w写/bin/sh到BSS；再写strlen GOT=0x404008为system；用%s指向BSS触发。",
+    "格式串首16字节与arg位置相关；普通fmtstr工具不理解自定义%w。"
+  ],
+  "95": [
+    "父进程SUBMIT栈控制与子记录服务负句柄组合，跨socketpair读取受保护system记录。",
+    "先用1字节write逐字节泄漏父进程0x405060的XOR key；构造03 00 04 00 fc ff ff ff请求并掩码；经NOTE缓冲和ROP分段写至fd3；使用伪栈维持菜单，读取子进程返回。",
+    "目标句柄-4；空格/换行受NOTE限制，须从已有字符串取字节，子stdout被丢弃。"
+  ],
+  "96": [
+    "静态小程序栈溢出配read返回值15触发sigreturn，无需libc或可执行栈。",
+    "解析泄漏L定位信号帧与/bin/sh；溢出0x80字节后重入big_read=0x40104f并接syscall=0x401014；单独发送15字节设rax=15；伪frame恢复execve寄存器，第二次syscall执行。",
+    "664字节主payload与15字节必须分开读；合包会破坏rax。"
+  ],
+  "97": [
+    "数字数组接受负索引，读取栈/PIE并写返回控制，复用自制libc函数片段构造任意写。",
+    "用0xfffffffe和ffffffff泄漏栈/PIE；input_num+1控制rax/rbp，print_expression+172读exit GOT得到libbye-libc；input_num+12把长链写PIE+0x4800并迁移；读入59后执行pop rdi/rsi/rdx与syscall。",
+    "不是系统glibc；solver含交互input暂停，自动复现前应处理。"
+  ],
+  "98": [
+    "MIPS大端先格式串泄漏，再命令栈溢出控制s0/ra调用libc gadget。",
+    "发送40个%p取栈指针及puts泄漏；buf=sp-144，恢复libc.system和/bin/sh；payload头放system/字符串指针，128字节后放s0=buf及返回gadget；gadget从s0加载t9/a0并跳转。",
+    "大端p32；生产版fork与本地版不同，gadget为原MIPS libc专用。"
+  ],
+  "99": [
+    "ARM64 channel关闭后draft指针悬空，编辑截断使tcache链可投毒至auth块。",
+    "View status读取堆与PIE；Close保留draft并通过editor错误长度修改释放块；按safe-linking要求编码auth目标并重分配draft；改认证字段后Transmit report输出flag。",
+    "本机非ARM时QEMU路径与原生seccomp不同；需对应ARM64对象布局。"
+  ],
+  "100": [
+    "任务链表指针覆盖结合释放复用，逐步泄漏堆/栈/canary/libc并将分配导向栈。",
+    "输入name后用80字节任务溢出next泄漏堆；伪next指向栈并分段打印canary/libc；填充并释放10次使tcache饱和，利用fastbin/伪块复用；把保留canary的system链写到返回槽，Exit触发。",
+    "原solver含input暂停；不是仅double-free即可绕过全部检查，须按顺序保持布局。"
+  ],
+  "101": [
+    "Zag指针偏移检查不完整，且数组栈空间按初始化项数而非声明长度分配。",
+    "声明大数组但只初始化3项，使[128]u32实际相对RBP仅12字节；通过地址与偏移操作越界读写栈；先调用无操作字符串函数留下/bin/sh参数；以solve.zag布置libc system控制流。",
+    "必须用题目Zag编译器和server.py；现代语言语法不提供额外内存安全。"
+  ],
+  "102": [
+    "别名保活、retire状态升级和merge权限组合绕过能力系统，oracle帮助解码指针后可任意内核读写。",
+    "保留alias再retire原handle；merge取得高权限并查询oracle恢复编码参数；rebind至目标内核地址；定位当前task，把cred/real_cred替换为init进程凭据后正常读/flag。",
+    "本地bzImage与模块ABI不匹配，patch-local.py只是测试适配；不能把补丁算漏洞利用步骤。"
+  ],
+  "103": [
+    "vector<void*>混放raw config和AnimeStream，URL更新与play缺类型核验。",
+    "创建真AnimeStream并Export泄漏vtable；创建raw config，vptr取泄漏表+0x18；把该对象当AnimeStream更新URL为/bin/sh；play经错位虚表调用execute_stream。",
+    "不需libc基址；vtable+0x18关系须该构建，raw对象大小需容纳URL字段。"
+  ],
+  "104": [
+    "栈溢出受坏字符过滤且服务使用PTY，需同时编码文件名与转义传输控制字节。",
+    "用XOR2编码flag.txt放BSS；ROP逐字节xor [r15],r14b还原；调用print_file@plt；线上发送每个控制字节前加Ctrl-V literal-next。",
+    "禁字节x/g/a/点作用于整payload；终端转义与程序过滤是两层不同约束。"
+  ],
+  "105": [
+    "启动泄漏buf与balance，deposit/withdraw格式串可%hn写saved RIP，栈可执行。",
+    "由buf计算saved RIP=buf+0x418及shellcode地址；把目标低6字节拆为三个半字并安排累计打印宽度；把shellcode放输入buffer，写返回地址后发送exit；验证返回进入代码。",
+    "NX关闭由-z execstack决定；ASLR地址必须每连接重新解析。"
+  ],
+  "106": [
+    "实模式分配器把size表放到不可写硬件映射区，使尺寸记录错误并导致越界。",
+    "按段大小布局将sizes落入upper memory；溢出cached serial port为0x92并写0关闭A20；再次越界通过20位地址回绕覆盖IVT中断8；中断转入输入机器码，以int13读磁盘第2扇区并串口输出。",
+    "段地址乘0x10；该路径依赖x86实模式/A20和只读硬件区，不能用常规用户态堆模型解释。"
+  ],
+  "107": [
+    "无输出的UAF/copy堆题用smallbin stashing unlink避开safe-linking泄漏要求。",
+    "填满tcache让目标进smallbin，再安排第6节点bk指向固定admin区；用copy与可写链支点满足伪chunk的bk/fd要求；触发stashing让admin=0x1337000进入tcache并分配；写0xdeadbeefdeadcafe再win。",
+    "copy至少16字节会连带改key；空admin没有有效bk，不能省略原文构造可解引用指针的准备步骤。"
+  ],
+  "108": [
+    "workqueue延迟copy_to_user未绑定请求者地址空间，可能借用特权进程mm写入其内存。",
+    "先把FSOP数据写进内核缓冲区；排队多条目标为busybox stdout=0x657440的延迟read请求；频繁触发modprobe争取worker借用其mm；伪FILE调用system(/tmp/e)，由root辅助程序复制flag。",
+    "这是地址空间/时序混淆，非无锁竞态；静态busybox的vtable检查特性和调度决定成功率。"
+  ],
+  "109": [
+    "修改后的Maglev类型检查缺陷用于建立V8沙箱内读写，再改变同一String通过三轮比较。",
+    "阅读triforce.patch中的优化检查改动并按原文构造addrof/读写；定位Power字符串实际对象；以Worker在一秒间隔内改成Wisdom再Courage；triforce三次StringEquals通过后返回flag。",
+    "本题目标只到V8 sandbox内部；外部代理对象不能冒充真实String，不要混入第二部分sbx逃逸。"
+  ],
+  "110": [
+    "Lua FORLOOP未检验tag，仅改payload的chgivalue造成字符串/表/C函数类型混淆。",
+    "使用同版luac编译后修改三条FORLOOP；构造任意TString读、Table写并把print指针变为loadfile；将fclose GOT改fflush，调用loadfile(/flag.txt)后保留解析失败的stdio缓冲；扫描堆并匹配uiuctf%b{}。",
+    "必须Lua5.5.0二进制字节码；不是Lua源码层可直接执行loadfile。"
+  ],
+  "111": [
+    "Spotlight Pass的BLAKE2s未覆盖route，结合重复clip迁移留下的旧studio页引用取得draft池视图。",
+    "保留原seal仅改16字节route把archive pass变relay permit；制造duplicate clip relocation，旧page被queue复用；利用完整lens读写静态draft对象池，计算Lua版BLAKE2s witness；调用宿主sparxie_redeem。",
+    "输入为SPX2包中的Lua源码，目标是WASM宿主接口，不能套原生Lua GOT链。"
+  ],
+  "112": [
+    "32位printf(user_input)结合可写GOT，可先读libc再把printf改system。",
+    "输入首放GOT地址并用%4$s泄漏已解析函数；由匹配libc求system；按半字写修改printf GOT；下一轮输入命令由system执行。",
+    "按32位参数栈布局处理；No RELRO是写GOT前提，输出长度需计入地址前缀。"
+  ],
+  "113": [
+    "Ledger.view暴露native buf，recycle释放后旧ArrayBuffer仍可访问，复用为Wire。",
+    "建0x30 Ledger并view后recycle；mintWire复用旧chunk，DataView读resolver泄漏PIE；用data_ptr-0x18定位global_resolver并改Wire目标指针；通过Wire写后门地址，触发market resolved YES。",
+    "来源含ipv4等其他题，本文只采用bookmaker段；CET显示不等于所有路径运行时都受保护。"
+  ],
+  "114": [
+    "Vulkan descriptor索引未校验，在mesa22.3固定host_arena布局下越界覆盖clearing SSBO描述符。",
+    "创建可审计account缓冲与market并open exchange；quote的dstArrayElement设32778，描述符以32字节步长落到settlement_book；使clearing指向account；dispatch结算再audit读取oracle复制出的flag。",
+    "依赖Mesa22.3.6及关闭validation layer；不是跨GPU通用偏移。"
+  ],
+  "115": [
+    "自制AEAD标签更新可伪造加长密文，引发长度越界与堆重叠，再走FSOP。",
+    "把0x178字节标签按位长差异修正为0x179并追加字节，解密释放后读取堆残留；按solver多轮decrypt布局top，利用同页safe-linking解码；构造AES预像使解密结果成为堆元数据与目标指针；最终写stdout伪FILE调用system。",
+    "算法是题目自制GHASH流程，不能泛称标准AES-GCM可如此伪造；需匹配libc与密文约束。"
+  ],
+  "116": [
+    "最短solver以24字节前缀覆盖保存返回地址至0x4011fb。",
+    "发送16个NUL、p64(0)、p64(0x4011fb)；等待目标函数输出或交互；对照ELF确认0x4011fb含义。",
+    "仅114字节solver，未记录架构保护与函数名；不能未经附件证明将目标命名为win。"
+  ],
+  "117": [
+    "计算表达式和reset序列造成堆元数据重用泄漏，投毒stdin后扩大输入范围覆盖stdout。",
+    "按重复长数字乘法表达式泄漏safe-linking和libc；reset后以大整数写编码stdin+0x40指针；扩大stdin读范围，构造包含quit、有效lock/wide_data/vtable的输入；跨0xc00间隔写stdout伪FILE，宽字符路径调用system。",
+    "只有solver；包含人工input暂停，表达式具体根因需原解析器核验，不能直接称任意整数溢出。"
+  ],
+  "118": [
+    "eBPF ARSH范围分析与实际执行不一致，验证器认为偏移0而运行得到1。",
+    "通过map值控制移位，生成乘0xc9且多次累加的隐藏越界；写victim max_entries/index_mask为ffffffff；越界lookup泄漏array_map_ops及map地址；伪map ops与STACK类型获得写，改modprobe_path=/tmp/x并触发加载。",
+    "exp.c明确验证器/运行时差异；内核静态地址需由泄漏重定位，原型函数调用约束不能省略。"
+  ],
+  "119": [
+    "uprobe允许在指令中间插入0xcc，修改libc读取passwd的lea位移。",
+    "按题目libc偏移0x141f35注册uprobe；使路径引用由绝对/etc/passwd变为可控相对services；创建含root空口令条目的services；su读取该文件后切换root并读/flag。",
+    "0xcc是被利用的指令字节变化，不是正常插桩边界；偏移只适用于题目libc。"
+  ],
+  "120": [
+    "已下载文件是未完成starter skeleton，只接收动态ELF和显示符号，尚无完整利用。",
+    "解析VARIANT:的base64取得当前ELF；从break_seal反汇编恢复sigil并定位seal；第一轮folio计划泄漏栈参数/PIE，第二轮计划格式串写seal；以上后两步是待实现方案，源码TODO并未完成。",
+    "资料不足：无payload、格式参数偏移、sigil提取实现或成功记录；不把catalog的has_writeup等同于可复现解答。"
+  ],
+  "121": [
+    "Poppler tile位图按目标几何分配、按源图尺寸写入，CTM失配产生大幅堆越界。",
+    "以负x缩放和2^22的y缩放构造0x2900字节反向行覆盖约0x200位图；堆布局让Folio位移0x1c70字段可改，首dive读DiveAnchor泄漏PIE/heap；第二dive相对读write GOT得libc；第三dive按原文构造控制流。",
+    "ASCIIHexDecode允许NUL；每dive一次覆盖一次读，必须保留各轮目标偏移与原文第三阶段细节。"
+  ],
+  "122": [
+    "snapshot浅复制data及读写票据，释放一份后另一份继续UAF并刷新操作次数。",
+    "9个0x408块中填满7个tcache，留guard并通过alias泄漏unsorted；单节点读取safe-linking掩码后建立双节点投毒；任意分配到environ读栈，扫描已知main返回站点libc+0x29d90；目标选saved_rip-8满足16字节对齐，写ROP后退出。",
+    "tcache计数与fd链分开维护，单节点投毒不足；malloc取伪块清key会临时清零RIP。"
+  ],
+  "123": [
+    "OpenSSL三个回调共用指针/长度，PSK数据指针与SNI长度混搭导致日志栈溢出。",
+    "构造magic加NUL但identity_len很长的PSK identity，并用SNI设置g_len68；触发alert调用log_error，memcpy把PSK内容按SNI长度写到0x50栈缓冲；利用fork子进程共享canary及明文error侧信道恢复保护值；按原文TLS包和ROP完成读取。",
+    "SNI最大255且不能含NUL；PSK strlen只约束前33字节，不等于identity_len；fork父进程重启会改变canary。"
+  ],
+  "124": [
+    "MIPS64大端MQTT的长度截断、news UAF和16位广播分配溢出组合，劫持entry表取得任意写。",
+    "单字节Q通过strncmp长度认证；news回声泄漏heap，按原环境heap-0x22000求PIE；payload_len65520使分配截断为2字节却复制64KiB，伪smallbin双pop覆盖entry；伪chunk释放回显泄漏uClibc，改__libc_free GOT为system并grow含/bin/sh的缓冲。",
+    "大端与uClibc1.0.32 dlmalloc，不使用glibc safe-linking；远程堆较模拟器偏0x70，栈大read路径受分段限制被弃用。"
+  ]
+}

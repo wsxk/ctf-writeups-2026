@@ -1,0 +1,61 @@
+{
+  "event_id": "CTF-3096",
+  "event_title": "RITSEC CTF 2026",
+  "title": "T_reasure_Chest",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "xtea"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/ritsec/2026/t_reasure_chest/",
+    "https://ctf42.online/ctfs/ritsec/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/T_reasure_Chest"
+  ],
+  "writeup_urls": [
+    "https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-1-t-reasure-chest/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/RITSEC/2026/rev/T_reasure_Chest",
+    "https://ctf42.online/ctfs/ritsec/2026/t_reasure_chest/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/ritsec_2026/T_reasure_Chest/writeups/1_writeup.html",
+      "url": "https://pnasis.gitlab.io/posts/ritsec-ctf-2026-reversing-writeups-part-1-t-reasure-chest/",
+      "bytes": 29766,
+      "sha256": "126e3e4222ceeccfb2f1d93b1a924d2d66d7d42b10f3fb6fbbfc0ca5b9320fa7",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/ritsec_2026/T_reasure_Chest/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/RITSEC/2026/rev/T_reasure_Chest/README.md",
+      "bytes": 157,
+      "sha256": "e2f67942efb2e15cacab48d6354cb9cd4d31931e6b99b313fd4717d735210acf",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/ritsec_2026/T_reasure_Chest/attachments/upstream/treasure",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/RITSEC/2026/rev/T_reasure_Chest/treasure",
+      "bytes": 14504,
+      "sha256": "ab4478f0a415e27ccca0ebdceb674880ebad88f24d3ee44c94e34199432bd4e2",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/ritsec/2026/t_reasure_chest/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/ritsec/2026/t_reasure_chest/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

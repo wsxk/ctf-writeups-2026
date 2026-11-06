@@ -1,0 +1,50 @@
+{
+  "event_id": "CTF-3033",
+  "event_title": "ASIS CTF Quals 2026",
+  "title": "OutOfPhase",
+  "category": "iot",
+  "original_category": "Hardware",
+  "tags": [
+    "ofdm",
+    "signal-processing",
+    "phase-encoding"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/asis/2026-quals/outofphase/",
+    "https://ctf42.online/ctfs/asis/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/hw/OutOfPhase"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/hardware/out-of-phase"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/hw/OutOfPhase",
+    "https://ctf42.online/ctfs/asis/2026-quals/outofphase/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "按嵌入式硬件、无线协议或PCB分析归入IoT相关题；赛事原分类为Hardware。"
+  ],
+  "artifacts": [
+    {
+      "path": "iot/asis_2026-quals/OutOfPhase/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/ASIS-CTF-Quals-2026/main/hardware/out-of-phase/README.md",
+      "bytes": 6293,
+      "sha256": "5fe8022a7a7c214ba8935e81277476b788f11228a8a0db66a7f3886b62fd1215",
+      "kind": "writeup"
+    },
+    {
+      "path": "iot/asis_2026-quals/OutOfPhase/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/asis/2026-quals/outofphase/folder.zip?kind=files",
+      "bytes": 928360,
+      "sha256": "347e0abbc5a147e7a4960c7fdf457386cf0b3c240348296d62dcbc853776fcdd",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

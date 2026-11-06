@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JavaScript_After_Core · PwnSec 2026 (pwn) writeup · ctf42</title>
+  
+
+<meta name="description" content="JavaScript_After_Core: Pwn challenge from PwnSec 2026. Techniques: javascriptcore, jit, ftl, osr-exit. javascript-after-core.md We pinned JavaScriptCore…">
+<link rel="canonical" href="https://ctf42.online/ctfs/pwnsec/2026/javascript_after_core/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/pwnsec/2026/javascript_after_core/">
+<meta property="og:title" content="JavaScript_After_Core">
+<meta property="og:description" content="JavaScript_After_Core: Pwn challenge from PwnSec 2026. Techniques: javascriptcore, jit, ftl, osr-exit. javascript-after-core.md We pinned JavaScriptCore…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/pwnsec/">PwnSec</a> / <a href="/ctfs/pwnsec/2026/">2026</a> / JavaScript_After_Core</nav>
+
+
+<div class="challenge-head">
+  <h1>JavaScript_After_Core
+    </h1>
+  <div class="badges">
+    <a class="cat cat-pwn" href="/category/pwn/">Pwn</a>
+    
+    
+    <span class="chip">weight 33.89</span>
+    <a class="tag" href="/techniques/javascriptcore/">#javascriptcore</a><a class="tag" href="/techniques/jit/">#jit</a><a class="tag" href="/techniques/ftl/">#ftl</a><a class="tag" href="/techniques/osr-exit/">#osr-exit</a><a class="tag" href="/techniques/browser-exploitation/">#browser-exploitation</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/pwnsec/2026/javascript_after_core/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/pwnsec/2026/javascript_after_core/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  
+  <p class="meta">Flag format: <code class="flag-format">PWNSEC{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>javascript-after-core.md
+We pinned JavaScriptCore to a WebKit revision from just before a certain fix landed, stripped every convenience the jsc shell hands a would-be exploiter, and bolted a single door onto it.</p>
+<p>win(str, callback) is that door. It takes the string hello!!! and your callback, and calls the callback twice. Between the two calls the string must read pwned!!!; after the second it must read world!!!. Strings in JavaScript are immutable, so the language says this is impossible. Do it anyway and the server prints the flag.</p>
+<p>What is left in the shell: print, quit, gc, fullGC, edenGC, gcHeapSize. What is gone: addressOf, describe, describeArray, read, readFile, write, load, run, runString, createGlobalObject, createNonRopeNonAtomString, transferArrayBuffer, jscOptions, $ and $262. No debug build, no JIT flags, no leaked addresses.</p>
+<p>Send one JavaScript program. It runs once, then the connection closes.</p>
+<p>The archive contains the exact patch applied to the shell, the pinned revision, and the Dockerfile that builds it, so you can reproduce the target locally. It is x86-64.</p>
+<p>@m411k</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>JavaScript_After_Core — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/pwn/javascript-after-core" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/pwn/javascript-after-core</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/pwnsec/2026/javascript_after_core/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/nexhunt/2025/vowbreaker/">VowBreaker</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/v8/">#v8</a><a class="tag tag-sm" href="/techniques/type-confusion/">#type-confusion</a><a class="tag tag-sm" href="/techniques/browser-exploitation/">#browser-exploitation</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/nexhunt/2025/">NexHunt 2025</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/thecyberjawarainternational/2024/babybrowser/">Babybrowser</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/v8/">#v8</a><a class="tag tag-sm" href="/techniques/browser-exploitation/">#browser-exploitation</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/thecyberjawarainternational/2024/">TheCyberJawaraInternational 2024</a></td>
+        <td class="num">23.62</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/plaidctf/2021/the_false_promise/">The_False_Promise</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/v8/">#v8</a><a class="tag tag-sm" href="/techniques/type-confusion/">#type-confusion</a><a class="tag tag-sm" href="/techniques/promise/">#promise</a><a class="tag tag-sm" href="/techniques/browser-exploitation/">#browser-exploitation</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/plaidctf/2021/">PlaidCTF 2021</a></td>
+        <td class="num">99.64</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/0ctf/2020-quals/chromium_fullchain/">chromium_fullchain</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/v8/">#v8</a><a class="tag tag-sm" href="/techniques/browser-exploitation/">#browser-exploitation</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/0ctf/2020-quals/">0CTF 2020 Quals</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/plaidctf/2020/back_to_the_future/">back_to_the_future</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/netscape/">#netscape</a><a class="tag tag-sm" href="/techniques/sscanf-stack-overflow/">#sscanf-stack-overflow</a><a class="tag tag-sm" href="/techniques/browser-exploitation/">#browser-exploitation</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/plaidctf/2020/">PlaidCTF 2020</a></td>
+        <td class="num">93.15</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/trx/2026/triforce/">triforce</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/v8-exploitation/">#v8-exploitation</a><a class="tag tag-sm" href="/techniques/jit/">#jit</a><a class="tag tag-sm" href="/techniques/type-confusion/">#type-confusion</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/trx/2026/">TRX 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/javascriptcore/">#javascriptcore</a> · <a href="/techniques/jit/">#jit</a> · <a href="/techniques/ftl/">#ftl</a> · <a href="/techniques/osr-exit/">#osr-exit</a> · <a href="/techniques/browser-exploitation/">#browser-exploitation</a>
+          · <a href="/category/pwn/">all Pwn</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/pwn/JavaScript_After_Core" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/pwnsec/2026/javascript_after_core/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from PwnSec 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/pwnsec/2026/cusp_of_no_return/">Cusp_of_No_Return</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/gap_gap/">Gap_Gap</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/hashbrown/">Hashbrown</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/the_one_hit_wonder/">The_One_Hit_Wonder</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/the_odyssey/">The_odyssey</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/skill_issue_aaelmo/">skill_issue_aaelmo</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/tap_tap/">tap_tap</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/meridian/">Meridian</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/pwnsec/2026/jailincpython/">jailincpython</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/pwnsec/2026/ycc/">ycc</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/pwnsec/2026/death_ops/">Death_Ops</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/pwnsec/2026/freal_world_manipulation/">Freal_World_Manipulation</a> <span class="cat cat-pwn cat-xs">Pwn</span></li>
+      </ul>
+      <a class="small" href="/ctfs/pwnsec/2026/">All PwnSec 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

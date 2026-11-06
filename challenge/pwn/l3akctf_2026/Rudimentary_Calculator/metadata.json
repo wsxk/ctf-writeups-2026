@@ -1,0 +1,61 @@
+{
+  "event_id": "CTF-3061",
+  "event_title": "L3akCTF 2026",
+  "title": "Rudimentary_Calculator",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "null-byte-stack-leak"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/l3akctf/2026/rudimentary_calculator/",
+    "https://ctf42.online/ctfs/l3akctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/L3akCTF/2026/pwn/Rudimentary_Calculator"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/l3akctf-2026-pwn-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/L3akCTF/2026/pwn/Rudimentary_Calculator",
+    "https://ctf42.online/ctfs/l3akctf/2026/rudimentary_calculator/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/l3akctf_2026/Rudimentary_Calculator/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/l3akctf-2026-pwn-writeup/",
+      "bytes": 111343,
+      "sha256": "c91ea0518c27b5b7da1ee3a7aa954b8d0b0ea75f114065ac8de99614bab2a824",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/l3akctf_2026/Rudimentary_Calculator/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/L3akCTF/2026/pwn/Rudimentary_Calculator/README.md",
+      "bytes": 154,
+      "sha256": "dba335940cbd97af08c73282e3c0c14f73a3cf358fb80a5d0b284b7af5ed2fdb",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/l3akctf_2026/Rudimentary_Calculator/attachments/upstream/pwn_rudimentary-calculator.tar.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/L3akCTF/2026/pwn/Rudimentary_Calculator/pwn_rudimentary-calculator.tar.gz",
+      "bytes": 5304,
+      "sha256": "00c9719873a0631136d6c22b357688d0947c600eb974290fad830c47efaa4ba8",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/l3akctf/2026/rudimentary_calculator/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/l3akctf/2026/rudimentary_calculator/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

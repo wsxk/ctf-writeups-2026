@@ -1,0 +1,39 @@
+services:
+  challenge:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      FLAG: ${FLAG:-dice{e2e_test_flag}}
+      NSEGMENTS: ${NSEGMENTS:-512}
+      HTTP_PORT: 8000
+      TOKEN_PORT: 31337
+      PACK_NAME: instance
+      BINARY_ROUTE: /binary
+      BINARY_FILENAME: another_onion
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          python3 -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/', timeout=3).read(1)"
+      interval: 2s
+      timeout: 4s
+      retries: 180
+      start_period: 2s
+
+  solver:
+    build:
+      context: .
+      dockerfile: Dockerfile.solver
+    depends_on:
+      challenge:
+        condition: service_healthy
+    environment:
+      CHALLENGE_HOST: challenge
+      CHALLENGE_HTTP_PORT: 8000
+      CHALLENGE_TOKEN_PORT: 31337
+      CHALLENGE_BINARY_ROUTE: /binary
+      NSEGMENTS: ${NSEGMENTS:-512}
+    command:
+      - python3
+      - solution/e2e_solver_submit.py

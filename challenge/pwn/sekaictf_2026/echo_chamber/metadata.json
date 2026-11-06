@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3113",
+  "event_title": "SekaiCTF 2026",
+  "title": "echo_chamber",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "integer-overflow",
+    "content-length",
+    "heap-overflow"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/sekaictf/2026/echo_chamber/",
+    "https://ctf42.online/ctfs/sekaictf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/pwn/echo_chamber"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/Sekai-CTF-2026/tree/main/pwn/echo-chamber"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/pwn/echo_chamber",
+    "https://ctf42.online/ctfs/sekaictf/2026/echo_chamber/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/sekaictf_2026/echo_chamber/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/Sekai-CTF-2026/main/pwn/echo-chamber/README.md",
+      "bytes": 7310,
+      "sha256": "dce1304b18ad6ddb12c0ed5e452310dce262963994f92ffb8d89cdb164727a66",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/sekaictf_2026/echo_chamber/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SekaiCTF/2026/pwn/echo_chamber/README.md",
+      "bytes": 125,
+      "sha256": "709cfee6f89241444693b19b872134ab0eba7eb501d566dae1d858a5e1081360",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/sekaictf_2026/echo_chamber/attachments/upstream/pwn_echo-chamber.tar.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SekaiCTF/2026/pwn/echo_chamber/pwn_echo-chamber.tar.gz",
+      "bytes": 8243470,
+      "sha256": "4a08b5837cb89521ff556bc5870b3d5dd176bc435c63924bf38b066ab01620b3",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/sekaictf/2026/echo_chamber/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/sekaictf/2026/echo_chamber/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

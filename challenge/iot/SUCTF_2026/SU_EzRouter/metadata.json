@@ -1,0 +1,366 @@
+{
+  "event_id": "CTF-3161",
+  "event_title": "SUCTF 2026",
+  "category": "iot",
+  "title": "SU_EzRouter",
+  "source_urls": [
+    "https://ctftime.org/event/3161/",
+    "https://github.com/team-su/SUCTF-2026/tree/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/exp/exp.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/flag",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/css/fonts/Inter-Regular.woff2",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/css/fonts/Inter-Regular.woff2",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/Dockerfile",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/README.md",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/cgi-bin/download.cgi",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/FILE",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/http",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/lib/libutils.so",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/mainproc",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/start.sh",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/cgi-bin/ping.cgi",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/cgi-bin/list.cgi",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/cgi-bin/login.cgi",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/cgi-bin/vpn.cgi",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/cgi-bin/wifi.cgi",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/cgi-bin/restart.sh",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/css/dashboard.css",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/css/fonts/inter.css",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/cgi/download.c",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/control.html",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/css/fontawesome/css/all.min.css",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/index.html",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/cgi/list.c",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/cgi/restart.sh",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/js/dashboard.js",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/cgi/ping.c",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/cgi/%E6%A0%BC%E5%BC%8F%E5%AE%9E%E4%BE%8B.txt",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/cgi/wifi.c",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/cgi/vpn.c",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/lib/libutils.c",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/css/fonts/inter.css",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/lib/libutils.so",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/index.html",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/lib/libutils.h",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/auth.h",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/http.h",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/http.c",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/css/dashboard.css",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/mainproc.c",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/css/fontawesome/css/all.min.css",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/control.html",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/webfonts/fa-solid-900.ttf",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/replace_icons.py",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/%E6%A1%86%E6%9E%B6.txt",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/webfonts/fa-solid-900.woff2",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/js/dashboard.js",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/login.c"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": "模拟路由器，含 HTTP/CGI 服务、IPC 后端和二进制利用；原赛题类别 pwn，按题材归入 iot。原始源码、环境和官方 exp 全部保存。",
+  "files": [
+    {
+      "path": "attachments/env/flag",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/flag",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Git tree confirms this is an intentional empty upstream file"
+    },
+    {
+      "path": "attachments/env/www/css/fonts/Inter-Regular.woff2",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/css/fonts/Inter-Regular.woff2",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Git tree confirms this is an intentional empty upstream file"
+    },
+    {
+      "path": "attachments/sourcecode/www/css/fonts/Inter-Regular.woff2",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/css/fonts/Inter-Regular.woff2",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Git tree confirms this is an intentional empty upstream file"
+    },
+    {
+      "path": "attachments/env/Dockerfile",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/Dockerfile",
+      "bytes": 416,
+      "sha256": "d8a696f2ad7e5b727be5e8db23dd8c56bbdc57300ae807d62d6e3bb06ab17f20"
+    },
+    {
+      "path": "attachments/README.md",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/README.md",
+      "bytes": 367,
+      "sha256": "b33832f301873bdb63e56273dd0117e847a1a915f3292d7fe25861e2945ff328"
+    },
+    {
+      "path": "attachments/env/www/cgi-bin/download.cgi",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/cgi-bin/download.cgi",
+      "bytes": 16544,
+      "sha256": "544083d982fa0eafa11650e7ea08cf8735bdffc1de6a29b5ddc6247501ae3d35"
+    },
+    {
+      "path": "attachments/env/FILE",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/FILE",
+      "bytes": 93805,
+      "sha256": "b03fa7b25a4c2fd3fb483318d1821cdb618d28bb7293b572c06b3d6826c0f2d4"
+    },
+    {
+      "path": "attachments/env/http",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/http",
+      "bytes": 31136,
+      "sha256": "a3c212f2e6703576e72b32876922b07dbf8662504268225e19ae86485d1b34d8"
+    },
+    {
+      "path": "attachments/env/lib/libutils.so",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/lib/libutils.so",
+      "bytes": 16392,
+      "sha256": "9f888a4ccbd8bccd13ff9cdb0f743855f6801e9a674d6df23bd2fda450f78bc7"
+    },
+    {
+      "path": "attachments/env/mainproc",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/mainproc",
+      "bytes": 17296,
+      "sha256": "61c0c854238753e1e2af747b11c5c577172c704ca00602b223f84628f8beab2d"
+    },
+    {
+      "path": "attachments/env/start.sh",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/start.sh",
+      "bytes": 351,
+      "sha256": "a1383e678624a59253bbfa9389a1b8b51729a780c052bc7f780628e124ceb01f"
+    },
+    {
+      "path": "attachments/env/www/cgi-bin/ping.cgi",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/cgi-bin/ping.cgi",
+      "bytes": 21280,
+      "sha256": "c820e008ebaad24c60db0b7e1ef1fb6b3964a1e04e3d03dda20f2af84de98528"
+    },
+    {
+      "path": "attachments/env/www/cgi-bin/list.cgi",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/cgi-bin/list.cgi",
+      "bytes": 21632,
+      "sha256": "6cfb7915089d664468ead4c6c574ec66d37cc280131cb543273689e5330ec5a9"
+    },
+    {
+      "path": "attachments/env/www/cgi-bin/login.cgi",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/cgi-bin/login.cgi",
+      "bytes": 16472,
+      "sha256": "87074a505683c902970bbae9cc595e9f08cf9b902585e995cd30ab1886c17e62"
+    },
+    {
+      "path": "attachments/env/www/cgi-bin/vpn.cgi",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/cgi-bin/vpn.cgi",
+      "bytes": 21008,
+      "sha256": "e5d261f5589b873c4fe6eeeb7971d26243ae317c86ef2ccda5207fc484d4675d"
+    },
+    {
+      "path": "attachments/env/www/cgi-bin/wifi.cgi",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/cgi-bin/wifi.cgi",
+      "bytes": 21632,
+      "sha256": "89aa70afcb5161077c0925c14987f2740e9b4b2045ed780ac0b4ac8982ed5959"
+    },
+    {
+      "path": "attachments/env/www/cgi-bin/restart.sh",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/cgi-bin/restart.sh",
+      "bytes": 1384,
+      "sha256": "b66be973d3f8b76970acc15a6b6fb4b39a82f8a24b837b10ca2226a95d80d7be"
+    },
+    {
+      "path": "attachments/env/www/css/dashboard.css",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/css/dashboard.css",
+      "bytes": 11087,
+      "sha256": "c03667130ebb3022d915cbda2f64c4a8fff3ea7732da881e28deee397b8c6fa4"
+    },
+    {
+      "path": "attachments/env/www/css/fonts/inter.css",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/css/fonts/inter.css",
+      "bytes": 684,
+      "sha256": "62e099c9dd47fa4960d0a2ce60b91fe09c25d6a037e0f60d582aea965ef91ca8"
+    },
+    {
+      "path": "attachments/sourcecode/cgi/download.c",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/cgi/download.c",
+      "bytes": 1889,
+      "sha256": "6779ab29f4a66156824954a3a89a19179f64cea964c3b5a2ed9bfd0a4223937f"
+    },
+    {
+      "path": "attachments/env/www/control.html",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/control.html",
+      "bytes": 48766,
+      "sha256": "0483f94b83bda4c1e113ccf14d4dd744c47fad74de37860ad76b0b52d6744056"
+    },
+    {
+      "path": "writeups/exp/exp.py",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/exp/exp.py",
+      "bytes": 4324,
+      "sha256": "a103e2a9336b4700c75630aa636aefd890a1682a78f3b564071da21130af3a98"
+    },
+    {
+      "path": "attachments/env/www/css/fontawesome/css/all.min.css",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/css/fontawesome/css/all.min.css",
+      "bytes": 102025,
+      "sha256": "1edb1725a9ea8ca4dcf2f5508cee183218aa1685e47c1b23056717f754f58ebf"
+    },
+    {
+      "path": "attachments/env/www/index.html",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/index.html",
+      "bytes": 5393,
+      "sha256": "9b855de5e17397fd9188d54f8879ff1901f138fdc922a2dc8e38badb2e7f1e9c"
+    },
+    {
+      "path": "attachments/sourcecode/cgi/list.c",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/cgi/list.c",
+      "bytes": 6016,
+      "sha256": "c53e99e9d3955b960ffbbe797e9616e0bb9ef49a31aec32ba533d842cb58c964"
+    },
+    {
+      "path": "attachments/sourcecode/cgi/restart.sh",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/cgi/restart.sh",
+      "bytes": 1058,
+      "sha256": "fad2348684851053e4191c1eacefa4b6eb4533b8764b8acfa493a3c4b408b669"
+    },
+    {
+      "path": "attachments/env/www/js/dashboard.js",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/env/www/js/dashboard.js",
+      "bytes": 18298,
+      "sha256": "834a1a5a68c019706c749794e00199bf01c7be9093148bfb0541acb6aa2f08f8"
+    },
+    {
+      "path": "attachments/sourcecode/cgi/ping.c",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/cgi/ping.c",
+      "bytes": 3441,
+      "sha256": "00e4f77ce52aa57999cf51be538fbebebdf9d76da968e7b06cd22ee38b22cae1"
+    },
+    {
+      "path": "attachments/sourcecode/cgi/格式实例.txt",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/cgi/%E6%A0%BC%E5%BC%8F%E5%AE%9E%E4%BE%8B.txt",
+      "bytes": 860,
+      "sha256": "45bd71618be38b547e2de4a9230fc543e25717d4b4fbb74d2052bfb21e4ca883"
+    },
+    {
+      "path": "attachments/sourcecode/cgi/wifi.c",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/cgi/wifi.c",
+      "bytes": 2503,
+      "sha256": "d7360dda771daee1a6931bcfeab0f984ce309ee205f137a23a884ab2f8738ef6"
+    },
+    {
+      "path": "attachments/sourcecode/cgi/vpn.c",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/cgi/vpn.c",
+      "bytes": 7872,
+      "sha256": "84d190cc806f968bb2be3e299bd6cc79977e99e33abefbad9b933d25210aedcc"
+    },
+    {
+      "path": "attachments/sourcecode/lib/libutils.c",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/lib/libutils.c",
+      "bytes": 4930,
+      "sha256": "e2acc5b7b737b19627f7459be948e35faa19a0bafc03f1909d0514df10cf7c5a"
+    },
+    {
+      "path": "attachments/sourcecode/www/css/fonts/inter.css",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/css/fonts/inter.css",
+      "bytes": 684,
+      "sha256": "62e099c9dd47fa4960d0a2ce60b91fe09c25d6a037e0f60d582aea965ef91ca8"
+    },
+    {
+      "path": "attachments/sourcecode/lib/libutils.so",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/lib/libutils.so",
+      "bytes": 16608,
+      "sha256": "0f91a9834be64865cbe1f673d4963bb9d7e077740683e9a1f000d18b2c9bfcf8"
+    },
+    {
+      "path": "attachments/sourcecode/www/index.html",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/index.html",
+      "bytes": 5393,
+      "sha256": "9b855de5e17397fd9188d54f8879ff1901f138fdc922a2dc8e38badb2e7f1e9c"
+    },
+    {
+      "path": "attachments/sourcecode/lib/libutils.h",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/lib/libutils.h",
+      "bytes": 1018,
+      "sha256": "e0b0769481be5b802cd2e81da524de77b84057d0abb2975f7ad48c9d04af6fcd"
+    },
+    {
+      "path": "attachments/sourcecode/www/auth.h",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/auth.h",
+      "bytes": 1681,
+      "sha256": "f544ef63900049b094f9545fec9c7bb9e34c014c1c459a67af0866b9ca9dc44c"
+    },
+    {
+      "path": "attachments/sourcecode/www/http.h",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/http.h",
+      "bytes": 14897,
+      "sha256": "5a8840ceaf110e4e34c8ab13fda4953eeaeab78d0f1a4934fc1d3736b9179aa3"
+    },
+    {
+      "path": "attachments/sourcecode/www/http.c",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/http.c",
+      "bytes": 1983,
+      "sha256": "b898a44151ed0bdace954bfca8c64672a30a5fe460404943f0cf63f3f2606a7a"
+    },
+    {
+      "path": "attachments/sourcecode/www/css/dashboard.css",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/css/dashboard.css",
+      "bytes": 11357,
+      "sha256": "75081ce32d4e6f124b7edf951d55df56f3e1c89b600e08e9d6462dc1f9b34f4c"
+    },
+    {
+      "path": "attachments/sourcecode/www/mainproc.c",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/mainproc.c",
+      "bytes": 7726,
+      "sha256": "9ea7cb2ff7c6efaa7b715fa2ea3a6de48d1b9642cb2035cdde07d2a38c918b01"
+    },
+    {
+      "path": "attachments/sourcecode/www/css/fontawesome/css/all.min.css",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/css/fontawesome/css/all.min.css",
+      "bytes": 102025,
+      "sha256": "1edb1725a9ea8ca4dcf2f5508cee183218aa1685e47c1b23056717f754f58ebf"
+    },
+    {
+      "path": "attachments/sourcecode/www/control.html",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/control.html",
+      "bytes": 48774,
+      "sha256": "49dff4775890afdda7577aa8a0acb4355286b5360955571bd52c318ce80c69be"
+    },
+    {
+      "path": "attachments/sourcecode/www/webfonts/fa-solid-900.ttf",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/webfonts/fa-solid-900.ttf",
+      "bytes": 394628,
+      "sha256": "67a65763c7f80903d81603bbeb9049fc2bf28508479b83ed011fe24c71fa950a"
+    },
+    {
+      "path": "attachments/sourcecode/www/replace_icons.py",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/replace_icons.py",
+      "bytes": 12509,
+      "sha256": "434e7049ee1d4e52ae1a86a385180052dc56e66be2ffbb4c72e86adb438d0d38"
+    },
+    {
+      "path": "attachments/sourcecode/框架.txt",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/%E6%A1%86%E6%9E%B6.txt",
+      "bytes": 2140,
+      "sha256": "9b56b14f2c1d02c22ccc99af6428a9279c44ef2faea23bcb9676b3c3c44de306"
+    },
+    {
+      "path": "attachments/sourcecode/www/webfonts/fa-solid-900.woff2",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/webfonts/fa-solid-900.woff2",
+      "bytes": 150124,
+      "sha256": "7152a6933ee3d690ec2af3d09da9d701723d16aa3410a6d80f28ff8866f3b880"
+    },
+    {
+      "path": "attachments/sourcecode/www/js/dashboard.js",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/js/dashboard.js",
+      "bytes": 18084,
+      "sha256": "597d8c87fae4c128156dd74d4ea10fb2f7daf18f057cf74e3c9c02d9fd8e7043"
+    },
+    {
+      "path": "attachments/sourcecode/www/login.c",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/f52d0aec9aa6c7575795edeb317dcfd130d04d99/pwn/SU_EzRouter/sourcecode/www/login.c",
+      "bytes": 3048,
+      "sha256": "1e140acac99e762d0626fd3bafed8f62de37df89dd7b1a823e77cf9c73d1a81f"
+    }
+  ],
+  "errors": []
+}

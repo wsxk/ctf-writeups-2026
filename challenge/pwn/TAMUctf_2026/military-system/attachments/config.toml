@@ -1,0 +1,15 @@
+[settings]
+deploy = true
+containers = true
+
+[ctfd]
+points = 500
+
+[services]
+[services.pwn]
+port = 9001
+type = "stream"
+
+[nginx]
+balance_method = "least_conn"
+instances = 5

@@ -1,0 +1,64 @@
+{
+  "event_id": "CTF-3056",
+  "event_title": "UMDCTF 2026",
+  "title": "roulette",
+  "category": "虚拟化",
+  "original_category": "Reverse",
+  "tags": [
+    "custom-vm",
+    "crt",
+    "forward-computation"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/umdctf/2026/roulette/",
+    "https://ctf42.online/ctfs/umdctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/roulette"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/UMDCTF-2026/tree/main/UMDCTF-2026/rev/roulette"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/roulette",
+    "https://ctf42.online/ctfs/umdctf/2026/roulette/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/umdctf_2026/roulette/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/UMDCTF-2026/main/UMDCTF-2026/rev/roulette/README.md",
+      "bytes": 11820,
+      "sha256": "57165133927e8c8f23428f218ddc91dfb5f1d7c29ab33be1390b71b7896a4b88",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/umdctf_2026/roulette/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMDCTF/2026/rev/roulette/README.md",
+      "bytes": 75,
+      "sha256": "9045ced2c945958a79d986b90091fe207a7d3d304e37c796870615a1f5f784a8",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/umdctf_2026/roulette/attachments/upstream/roulette",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMDCTF/2026/rev/roulette/roulette",
+      "bytes": 827856,
+      "sha256": "8309cb47de4a34b8f779707d59ba287256d62b9b749226502d6d89ec5c0291b5",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/umdctf/2026/roulette/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/umdctf/2026/roulette/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

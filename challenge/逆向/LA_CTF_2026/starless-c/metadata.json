@@ -1,0 +1,107 @@
+{
+  "event_id": "CTF-3015",
+  "event_title": "LA CTF 2026",
+  "category": "逆向",
+  "title": "starless-c",
+  "dirname": "LA_CTF_2026",
+  "source_urls": [
+    "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/rev/starless-c"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/Dockerfile",
+      "local": "attachments/Dockerfile",
+      "size_expected": 147,
+      "git_blob_sha": "d78e9cf9ff52c7e186b39174c905d0dd7e1de7cc",
+      "status": "downloaded",
+      "bytes": 147,
+      "sha256": "03c9a6885207bdbc0bc89ecac09bd1d04f4618d7c12f11fada7e84746604d86a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/challenge.yaml",
+      "local": "attachments/challenge.yaml",
+      "size_expected": 361,
+      "git_blob_sha": "ff8c4eb070a5a6d90c6d48b46e8f97b111b0bd26",
+      "status": "downloaded",
+      "bytes": 361,
+      "sha256": "bd8042bf872f1695cfff718b6ee0f69e16b09870686bdf607732267ae0750d3e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/flag.txt",
+      "local": "attachments/flag.txt",
+      "size_expected": 42,
+      "git_blob_sha": "30f8145a6bb7207fcd28864c072f93d683aea212",
+      "status": "downloaded",
+      "bytes": 42,
+      "sha256": "9079a48c743da7d2ea802de500d3caa4932654e65de225e9f3a7a12935874e1a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/gen.py",
+      "local": "attachments/gen.py",
+      "size_expected": 6808,
+      "git_blob_sha": "f6e6cbf386ac2807e1e290dd37c603dd4acec778",
+      "status": "downloaded",
+      "bytes": 6808,
+      "sha256": "5bcdadbe2c369c9e3f7355fb591ba1e4ae2e1a5fa6cd38314770b227f1cff86c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/sim.py",
+      "local": "attachments/sim.py",
+      "size_expected": 1171,
+      "git_blob_sha": "aefaca437cc5fcf099d1fd6f0273a2fd15044869",
+      "status": "downloaded",
+      "bytes": 1171,
+      "sha256": "da9262b28b4dd2c228f8dd11594211dbb472ef69c662ed23b0c6893a7b76150c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/solve.txt",
+      "local": "writeups/official/solve.txt",
+      "size_expected": 180,
+      "git_blob_sha": "492d03df7799d6ab97dfed5e967b32b599172910",
+      "status": "downloaded",
+      "bytes": 180,
+      "sha256": "945a470be1757ea75887eaa2355b1004a3e8eefe563ab33f7756b28b882d7304"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/starless_c",
+      "local": "attachments/starless_c",
+      "size_expected": 106496,
+      "git_blob_sha": "6dae954887a888b31770884afe13034b32e9980b",
+      "status": "downloaded",
+      "bytes": 106496,
+      "sha256": "b6a57c4b3ae25cf72081b11cdedf8036ee2a41238745472fc380539bbc6c1641"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/starless_c/README.md",
+      "local": "writeups/community/README.md",
+      "status": "downloaded",
+      "bytes": 6217,
+      "sha256": "45f7fed5fb981e019896aa251a325e199af0b046a867d11f360b8e637e5e15eb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/starless_c/solve.py",
+      "local": "writeups/community/solve.py",
+      "status": "downloaded",
+      "bytes": 6916,
+      "sha256": "8486dba9a58a7977bbe000e9c3b61224ea067398d32de1b92127ae51744a4e86"
+    }
+  ],
+  "notes": "官方题目附件，配官方 solver（若有）及参赛者 hax1ng 的文章/脚本。社区文章部分标题误写2025，但本题与官方2026目录的描述和flag一致，已逐题核对（ooo使用Unicode NFC比较）；保留原文。reflection另归虚拟化。",
+  "directory": "逆向/LA_CTF_2026/starless-c",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/solve.txt",
+    "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/starless_c/README.md",
+    "https://raw.githubusercontent.com/hax1ng/LACTF2026/HEAD/rev/starless_c/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/Dockerfile",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/challenge.yaml",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/flag.txt",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/gen.py",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/sim.py",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/starless-c/starless_c"
+  ],
+  "attachment_status": "downloaded"
+}

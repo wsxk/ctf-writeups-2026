@@ -1,0 +1,51 @@
+{
+  "event_id": "CTF-3446",
+  "event_title": "KubSTU CTF",
+  "title": "RISC_V.",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "feistel-key-inversion"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/kubstu/2026/risc_v/",
+    "https://ctf42.online/ctfs/kubstu/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KubSTU/2026/rev/RISC_V.",
+    "https://ctftime.org/event/3446/tasks/"
+  ],
+  "writeup_urls": [
+    "https://ctftime.org/writeup/41128",
+    "https://raw.githubusercontent.com/hax1ng/KubSTU-CTF-2026/main/rev/risc-v/README.md"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KubSTU/2026/rev/RISC_V.",
+    "https://ctf42.online/ctfs/kubstu/2026/risc_v/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "已核对CTFtime秋季赛题表；聚合站的春季赛3177关联错误，改为3446（2026-10-10至11）。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/kubstu_2026/RISC_V/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/kubstu/2026/risc_v/folder.zip?kind=files",
+      "bytes": 16895,
+      "sha256": "c908bbd9f744ebf2151e08cae73547fec1c3c5123f4760df2eae6ce89406993b",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/kubstu_2026/RISC_V/writeups/replacement_source.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/KubSTU-CTF-2026/main/rev/risc-v/README.md",
+      "bytes": 4844,
+      "sha256": "05c66e49c7840eb4bd540f22052b23b98afc6702b696f9053c43addbae591ec8",
+      "kind": "writeup"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "writeup_kind": "prose"
+}

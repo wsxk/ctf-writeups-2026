@@ -1,0 +1,64 @@
+{
+  "event_id": "CTF-3043",
+  "event_title": "Srdnlen CTF 2026 Quals",
+  "title": "Dantes_Trial",
+  "category": "虚拟化",
+  "original_category": "Reverse",
+  "tags": [
+    "gba-rom",
+    "custom-vm",
+    "fnv-1a"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/srdnlen/2026-quals/dantes_trial/",
+    "https://ctf42.online/ctfs/srdnlen/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Srdnlen/2026/Quals/rev/Dantes_Trial"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/srdnlen-CTF-2026/blob/main/rev/dantes-trial.md"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Srdnlen/2026/Quals/rev/Dantes_Trial",
+    "https://ctf42.online/ctfs/srdnlen/2026-quals/dantes_trial/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/srdnlen_2026-quals/Dantes_Trial/writeups/1_dantes-trial.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/srdnlen-CTF-2026/main/rev/dantes-trial.md",
+      "bytes": 2456,
+      "sha256": "3ec31ff4c182375939bea843543d31a9a1adb4f1acb3fe215d1e3fe2596e0fd9",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/srdnlen_2026-quals/Dantes_Trial/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Srdnlen/2026/Quals/rev/Dantes_Trial/README.md",
+      "bytes": 147,
+      "sha256": "c5fb694459ca8f98d1ffc933c70a2fb167d080505f45430ac78842a5d5ae7ef1",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/srdnlen_2026-quals/Dantes_Trial/attachments/upstream/dantestrial.gba",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Srdnlen/2026/Quals/rev/Dantes_Trial/dantestrial.gba",
+      "bytes": 157912,
+      "sha256": "8dc52de75fdf04a95b8d427a50d628ff286340ea36218b8628cc8e1c77f4ddb7",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/srdnlen/2026-quals/dantes_trial/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/srdnlen/2026-quals/dantes_trial/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

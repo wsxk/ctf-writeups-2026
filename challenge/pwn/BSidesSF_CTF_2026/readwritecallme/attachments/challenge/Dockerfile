@@ -1,0 +1,46 @@
+FROM debian:bookworm@sha256:34e7f0ae7c10a61bfbef6e1b2ed205d9b47bb12e90c50696f729a5c7a01cf1f2
+
+RUN apt-get update -y && \
+    apt-get install -y socat
+
+# DEBUG
+RUN apt-get install -y gdb strace ncat
+
+# The current user
+RUN useradd -r ctf -u 1000
+
+# This is where everything lives
+ENV APP_HOME=/home/ctf
+
+# The binary name
+ENV BIN_NAME=readwritecallme
+
+# Set up the directory
+RUN mkdir $APP_HOME
+RUN chown ctf:ctf $APP_HOME
+WORKDIR $APP_HOME
+
+# Copy up the binary
+COPY src/$BIN_NAME $APP_HOME/$BIN_NAME
+RUN chown root:root $APP_HOME/$BIN_NAME
+RUN chmod 0755 $APP_HOME/$BIN_NAME
+
+# Copy up the flag
+COPY flag.txt $APP_HOME/flag.txt
+RUN chown root:root $APP_HOME/flag.txt
+RUN chmod 0444 $APP_HOME/flag.txt
+
+# Switch to our user
+USER 1000
+
+EXPOSE 4444
+
+# Start server
+# ENTRYPOINT ["socat", "TCP-LISTEN:4444,reuseaddr,fork", "EXEC:'/home/ctf/readwritecallme',stderr,setsid,sane"]
+ENTRYPOINT ["socat", "TCP-LISTEN:4444,reuseaddr,fork", "EXEC:'/home/ctf/readwritecallme'"]
+
+# You can build and start a testing copy of this container with something like:
+# docker buildx build . --progress=plain -t test && docker run --rm -it -p 4444:4444 test
+
+# Once built and started, you can connect to the service to test with something like:
+# socat STDIO,raw,echo=0,escape=0x03 TCP:localhost:4444

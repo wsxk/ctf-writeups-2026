@@ -1,0 +1,337 @@
+; snake.les -- simple wrapped snake for LES
+;
+; WRAM layout:
+; 0 head_x
+; 1 head_y
+; 2 dir      (0=R,1=D,2=L,3=U)
+; 3 length
+; 4 food_x
+; 5 food_y
+; 6 grow     (0/1)
+; 7 tail_idx (0..31)
+; 8 head_idx (0..31)
+; 10..41  snake_x ring buffer (32)
+; 42..73  snake_y ring buffer (32)
+; 80..89  "GAME OVER\0"
+
+INIT
+CALL <RESET_GAME>
+
+MAIN:
+INPUT
+CALL <UPDATE_DIR>
+CALL <STEP_SNAKE>
+CMP gA, 1
+JMPNE <ALIVE>
+CALL <SHOW_DEAD>
+CALL <RESET_GAME>
+ALIVE:
+CALL <RENDER>
+SLEEP 80
+JMP <MAIN>
+
+; --- setup/reset ---
+
+RESET_GAME:
+CLEAR
+
+; direction right, length 4, indices tail=0 head=3
+SET 0, gA
+SET 2, mW
+STORE gA
+SET 4, gA
+SET 3, mW
+STORE gA
+SET 0, gA
+SET 7, mW
+STORE gA
+SET 3, gA
+SET 8, mW
+STORE gA
+SET 0, gA
+SET 6, mW
+STORE gA
+
+; y=16, head x=16
+SET 16, gA
+SET 1, mW
+STORE gA
+SET 16, gA
+SET 0, mW
+STORE gA
+
+; initial snake segments at y=16: x=13,14,15,16
+SET 16, gA
+SET 42, mW
+STORE gA
+INC mW
+STORE gA
+INC mW
+STORE gA
+INC mW
+STORE gA
+
+SET 13, gA
+SET 10, mW
+STORE gA
+INC mW
+INC gA
+STORE gA
+INC mW
+INC gA
+STORE gA
+INC mW
+INC gA
+STORE gA
+
+; text: GAME OVER
+SET 80, mW
+SET 71, gA ; G
+STORE gA
+INC mW
+SET 65, gA ; A
+STORE gA
+INC mW
+SET 77, gA ; M
+STORE gA
+INC mW
+SET 69, gA ; E
+STORE gA
+INC mW
+SET 32, gA ; space
+STORE gA
+INC mW
+SET 79, gA ; O
+STORE gA
+INC mW
+SET 86, gA ; V
+STORE gA
+INC mW
+SET 69, gA ; E
+STORE gA
+INC mW
+SET 82, gA ; R
+STORE gA
+INC mW
+SET 0, gA
+STORE gA
+
+CALL <PLACE_FOOD>
+CALL <RENDER>
+RET
+
+SHOW_DEAD:
+SET 80, mR
+PRINT
+SLEEP 700
+RET
+
+; --- input/movement ---
+
+UPDATE_DIR:
+SET 2, mR
+LOAD gA
+
+; U if not opposite (D)
+CMP iU, 0
+JMPE <UD_CHK_D>
+CMP gA, 1
+JMPE <UD_CHK_D>
+SET 3, gA
+
+UD_CHK_D:
+CMP iD, 0
+JMPE <UD_CHK_L>
+CMP gA, 3
+JMPE <UD_CHK_L>
+SET 1, gA
+
+UD_CHK_L:
+CMP iL, 0
+JMPE <UD_CHK_R>
+CMP gA, 0
+JMPE <UD_CHK_R>
+SET 2, gA
+
+UD_CHK_R:
+CMP iR, 0
+JMPE <UD_SAVE>
+CMP gA, 2
+JMPE <UD_SAVE>
+SET 0, gA
+
+UD_SAVE:
+SET 2, mW
+STORE gA
+RET
+
+STEP_SNAKE:
+; return gA = 1 on collision, 0 otherwise
+SET 0, gA
+
+; load head and dir
+SET 0, mR
+LOAD gB      ; head x
+SET 1, mR
+LOAD gC      ; head y
+SET 2, mR
+LOAD gD      ; dir
+
+; apply movement
+CMP gD, 0
+JMPNE <SS_D1>
+INC gB
+JMP <SS_WRAP>
+SS_D1:
+CMP gD, 1
+JMPNE <SS_D2>
+INC gC
+JMP <SS_WRAP>
+SS_D2:
+CMP gD, 2
+JMPNE <SS_D3>
+DEC gB
+JMP <SS_WRAP>
+SS_D3:
+DEC gC
+
+SS_WRAP:
+AND gB, 31, gB
+AND gC, 31, gC
+
+; ate food?
+SET 4, mR
+LOAD pA
+SET 5, mR
+LOAD pB
+SET 0, gD
+CMP gB, pA
+JMPNE <SS_ATE_SAVE>
+CMP gC, pB
+JMPNE <SS_ATE_SAVE>
+SET 1, gD
+SS_ATE_SAVE:
+SET 6, mW
+STORE gD
+
+; collision check from current displayed frame
+; if ate=1, this pixel is food and allowed
+CMP gD, 1
+JMPE <SS_NO_COLLIDE_CHECK>
+DUPE gB, cX1
+DUPE gC, cY1
+GETP 1, pA
+CMP pA, 0
+JMPE <SS_NO_COLLIDE_CHECK>
+SET 1, gA
+RET
+
+SS_NO_COLLIDE_CHECK:
+; advance head index
+SET 8, mR
+LOAD gD
+INC gD
+AND gD, 31, gD
+SET 8, mW
+STORE gD
+
+; write new head into ring buffers
+ADD gD, 10, mW
+STORE gB
+ADD gD, 42, mW
+STORE gC
+
+; update head coords
+SET 0, mW
+STORE gB
+SET 1, mW
+STORE gC
+
+; if grew: length++ and place new food
+SET 6, mR
+LOAD pA
+CMP pA, 0
+JMPE <SS_NO_GROW>
+SET 3, mR
+LOAD pB
+INC pB
+CMP pB, 32
+JMPLT <SS_LEN_OK>
+SET 32, pB
+SS_LEN_OK:
+SET 3, mW
+STORE pB
+CALL <PLACE_FOOD>
+JMP <SS_DONE>
+
+SS_NO_GROW:
+; move tail forward
+SET 7, mR
+LOAD pB
+INC pB
+AND pB, 31, pB
+SET 7, mW
+STORE pB
+
+SS_DONE:
+RET
+
+; --- food ---
+
+PLACE_FOOD:
+PF_LOOP:
+RND gB
+AND gB, 31, gB
+RND gC
+AND gC, 31, gC
+
+DUPE gB, cX1
+DUPE gC, cY1
+GETP 1, pA
+CMP pA, 0
+JMPNE <PF_LOOP>
+
+SET 4, mW
+STORE gB
+SET 5, mW
+STORE gC
+RET
+
+; --- render ---
+
+RENDER:
+CLEAR
+SET 1, pA
+
+; draw food
+SET 4, mR
+LOAD cX1
+SET 5, mR
+LOAD cY1
+SETP 1, pA
+
+; draw snake from tail for length entries
+SET 7, mR
+LOAD gB      ; base tail idx
+SET 3, mR
+LOAD gC      ; length
+SET 0, gD    ; count
+
+R_LOOP:
+CMP gD, gC
+JMPGE <R_DONE>
+ADD gB, gD, pB
+AND pB, 31, pB
+
+ADD pB, 10, mR
+LOAD cX1
+ADD pB, 42, mR
+LOAD cY1
+SETP 1, pA
+
+INC gD
+JMP <R_LOOP>
+
+R_DONE:
+DRAW
+RET

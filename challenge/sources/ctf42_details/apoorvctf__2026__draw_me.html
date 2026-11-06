@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Draw_Me · ApoorvCTF 2026 (reverse) writeup · ctf42</title>
+  
+
+<meta name="description" content="Draw_Me: Reverse challenge from ApoorvCTF 2026. Techniques: webgl, shader-vm, custom-vm. Draw me, just draw me”. The bat has been watching. Across…">
+<link rel="canonical" href="https://ctf42.online/ctfs/apoorvctf/2026/draw_me/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/apoorvctf/2026/draw_me/">
+<meta property="og:title" content="Draw_Me">
+<meta property="og:description" content="Draw_Me: Reverse challenge from ApoorvCTF 2026. Techniques: webgl, shader-vm, custom-vm. Draw me, just draw me”. The bat has been watching. Across…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/apoorvctf/">ApoorvCTF</a> / <a href="/ctfs/apoorvctf/2026/">2026</a> / Draw_Me</nav>
+
+
+<div class="challenge-head">
+  <h1>Draw_Me
+    </h1>
+  <div class="badges">
+    <a class="cat cat-rev" href="/category/rev/">Reverse</a>
+    
+    
+    <span class="chip">weight 24.10</span>
+    <a class="tag" href="/techniques/webgl/">#webgl</a><a class="tag" href="/techniques/shader-vm/">#shader-vm</a><a class="tag" href="/techniques/custom-vm/">#custom-vm</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/apoorvctf/2026/draw_me/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/apoorvctf/2026/draw_me/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  <p class="meta">Author: makeki</p>
+  <p class="meta">Flag format: <code class="flag-format">apoorvctf{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>Draw me, just draw me”. The bat has been watching. Across centuries, across wars, across history, it always shows up. And now it's left you something: a cryptic shader program and a black image. Nothing renders. Nothing makes sense. The bat is in there somewhere, waiting to be drawn.</p>
+<p>Author : makeki</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>Draw_Me — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/apoorvctf2026/tree/main/rev/draw-me" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/apoorvctf2026/tree/main/rev/draw-me</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/apoorvctf/2026/draw_me/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/z0d1ak/2026-quals/stars_below/">stars_below</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/plt-relocation-trap/">#plt-relocation-trap</a><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a><a class="tag tag-sm" href="/techniques/base32/">#base32</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/z0d1ak/2026-quals/">Z0d1ak 2026 Quals</a></td>
+        <td class="num">25.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/srdnlen/2026-quals/dantes_trial/">Dantes_Trial</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/gba-rom/">#gba-rom</a><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a><a class="tag tag-sm" href="/techniques/fnv-1a/">#fnv-1a</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/srdnlen/2026-quals/">Srdnlen 2026 Quals</a></td>
+        <td class="num">34.76</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/haruulzangi/2026-quals/automaton/">Automaton</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/wasm/">#wasm</a><a class="tag tag-sm" href="/techniques/reversible-transformations/">#reversible-transformations</a><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/haruulzangi/2026-quals/">Haruulzangi 2026 Quals</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/dicectf/2026-quals/locked_in/">locked_in</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a><a class="tag tag-sm" href="/techniques/multithreading/">#multithreading</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/dicectf/2026-quals/">DiceCTF 2026 Quals</a></td>
+        <td class="num">100.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/cryovault/2026-quals/kelpie/">Kelpie</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a><a class="tag tag-sm" href="/techniques/openssl/">#openssl</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/cryovault/2026-quals/">Cryovault 2026 Quals</a></td>
+        <td class="num">25.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/asis/2026-quals/asis_arch/">ASIS_Arch</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/custom-vm/">#custom-vm</a><a class="tag tag-sm" href="/techniques/emulator-reversing/">#emulator-reversing</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/asis/2026-quals/">ASIS 2026 Quals</a></td>
+        <td class="num">90.53</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/webgl/">#webgl</a> · <a href="/techniques/shader-vm/">#shader-vm</a> · <a href="/techniques/custom-vm/">#custom-vm</a>
+          · <a href="/category/rev/">all Reverse</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ApoorvCTF/2026/rev/Draw_Me" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/apoorvctf/2026/draw_me/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from ApoorvCTF 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/apoorvctf/2026/cables_temporal_loop/">Cables_Temporal_Loop</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/apoorvctf/2026/the_domino_effect/">The_Domino_Effect</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/apoorvctf/2026/the_riddler_s_cipher_delight/">The_Riddler_s_Cipher_Delight</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/apoorvctf/2026/author_on_the_run/">Author_on_the_Run</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/apoorvctf/2026/beneath_the_armor/">Beneath_the_Armor</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/apoorvctf/2026/routine_checks/">Routine_Checks</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/apoorvctf/2026/the_engravers_fault/">The_Engravers_fault</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/apoorvctf/2026/the_gotham_files/">The_Gotham_Files</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/apoorvctf/2026/operation_redwave/">Operation_Redwave</a> <span class="cat cat-hardware cat-xs">Hardware</span></li><li>
+<a href="/ctfs/apoorvctf/2026/qbitflipper/">QBitFlipper</a> <span class="cat cat-hardware cat-xs">Hardware</span></li><li>
+<a href="/ctfs/apoorvctf/2026/resonance_lock_the_harmonic_multiplier/">Resonance_Lock_The_Harmonic_Multiplier</a> <span class="cat cat-hardware cat-xs">Hardware</span></li><li>
+<a href="/ctfs/apoorvctf/2026/shake_it_to_the_max/">Shake_It_To_The_Max</a> <span class="cat cat-hardware cat-xs">Hardware</span></li>
+      </ul>
+      <a class="small" href="/ctfs/apoorvctf/2026/">All ApoorvCTF 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

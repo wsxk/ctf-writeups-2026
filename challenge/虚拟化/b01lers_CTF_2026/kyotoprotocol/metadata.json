@@ -1,0 +1,131 @@
+{
+  "event_id": "CTF-3153",
+  "event_title": "b01lers CTF 2026",
+  "category": "虚拟化",
+  "title": "kyotoprotocol",
+  "dirname": "b01lers_CTF_2026",
+  "source_urls": [
+    "https://github.com/b01lers/b01lers-ctf-2026-public/tree/HEAD/src/rev/kyotoprotocol"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/chal.json",
+      "local": "attachments/chal.json",
+      "size_expected": 231,
+      "git_blob_sha": "17a11cf77d38a1d9bca74e415f6a9a06b145f2e2",
+      "status": "downloaded",
+      "bytes": 231,
+      "sha256": "59c021364979c8e735677c1bd22f702d8e44eb1df8aff116a33427be5c27f481"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/dist/kyoto.zip",
+      "local": "attachments/dist/kyoto.zip",
+      "size_expected": 270721,
+      "git_blob_sha": "2e856a0e529379495d39540bb184a50d91782486",
+      "status": "downloaded",
+      "bytes": 270721,
+      "sha256": "d707a1b3ce23560a9207e630654419114bf6814368fc9bcff6b0565a4f2f04e4"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/solve/clues.png",
+      "local": "writeups/solve/clues.png",
+      "size_expected": 65376,
+      "git_blob_sha": "2f62e6f382ac4750a99917e95559eba4e5a05e60",
+      "status": "downloaded",
+      "bytes": 65376,
+      "sha256": "61a7645f3f06596ca3bdab152c0755bbccefdb9a667c3d888d7a71bd6f7463e8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/solve/dump.py",
+      "local": "writeups/solve/dump.py",
+      "size_expected": 782,
+      "git_blob_sha": "2adedcd0d67d8ad6e00420d95b93f337c487e019",
+      "status": "downloaded",
+      "bytes": 782,
+      "sha256": "7cdfbe25f58d425d9435d5f3d0a34a26dfaa7e6f473c8cbdcb8580835fa51b26"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/solve/dumped_c.zip",
+      "local": "writeups/solve/dumped_c.zip",
+      "size_expected": 640949,
+      "git_blob_sha": "27a38fbf7a6cd88964904a05fce4319fda981bc4",
+      "status": "downloaded",
+      "bytes": 640949,
+      "sha256": "25f3ae215187858c57538496f5f9982309f64d1029f431837a86cfb2817819d5"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/solve/dumps.txt",
+      "local": "writeups/solve/dumps.txt",
+      "size_expected": 2599,
+      "git_blob_sha": "4c00eea6afa0306f7512c5b41107d05cfc760ed3",
+      "status": "downloaded",
+      "bytes": 2599,
+      "sha256": "3894ce7abed62e590441486e457852c9c9e0f2a009248a16ddc0444cd017e61a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/solve/parse.py",
+      "local": "writeups/solve/parse.py",
+      "size_expected": 21797,
+      "git_blob_sha": "9491c49fda16c7726e7e05f69e4229a72ef341b6",
+      "status": "downloaded",
+      "bytes": 21797,
+      "sha256": "9a320c90259cfd6c26a6c2b797afcf3b3c6df6b21c4ab45a3a85307adc24bf02"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/solve/parsed.json",
+      "local": "writeups/solve/parsed.json",
+      "size_expected": 376344,
+      "git_blob_sha": "41774a4a344f98c119720d6e9c445c8617253d46",
+      "status": "downloaded",
+      "bytes": 376344,
+      "sha256": "4c6416a944bf2bb25e59237f3a57c4f94000b56159ffea8349711a5be3598595"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/solve/solve.md",
+      "local": "writeups/solve/solve.md",
+      "size_expected": 25516,
+      "git_blob_sha": "8194d19790d02bdfae268dca9add4f8eea51abfc",
+      "status": "downloaded",
+      "bytes": 25516,
+      "sha256": "a5b839633a20a24f5ce6246eebb2de3bc6d973e86a4df0eba48e43ed78ad1d9c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/solve/solved.png",
+      "local": "writeups/solve/solved.png",
+      "size_expected": 57448,
+      "git_blob_sha": "7099a8ac3e570e632b8805b2adfbba7c53ab0964",
+      "status": "downloaded",
+      "bytes": 57448,
+      "sha256": "0c24bf91376288fae0dba51bede4068629f668236b9d45e528e8a6ce225740a7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/solve/vm.py",
+      "local": "writeups/solve/vm.py",
+      "size_expected": 7063,
+      "git_blob_sha": "7fb4c482cf2fb1759d63d96d013c84f211b11c6b",
+      "status": "downloaded",
+      "bytes": 7063,
+      "sha256": "e5bee06a28431e5b2f228e0161e64aeb82ca885487075ee1e9645387b829188a"
+    }
+  ],
+  "notes": "官方原分类Reverse，模拟执行/解释器或GBA模拟器相关，归入虚拟化专题。完整官方附件和求解文件。",
+  "directory": "虚拟化/b01lers_CTF_2026/kyotoprotocol",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/solve/clues.png",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/solve/dump.py",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/solve/dumped_c.zip",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/solve/dumps.txt",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/solve/parse.py",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/solve/parsed.json",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/solve/solve.md",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/solve/solved.png",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/solve/vm.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/chal.json",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/rev/kyotoprotocol/dist/kyoto.zip"
+  ],
+  "attachment_status": "downloaded"
+}

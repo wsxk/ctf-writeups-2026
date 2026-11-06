@@ -1,0 +1,73 @@
+{
+  "event_id": "CTF-3240",
+  "event_title": "WRECKCTF 2026",
+  "title": "vellum",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [],
+  "source_urls": [
+    "https://ctf42.online/ctfs/wreckctf/2026/vellum/",
+    "https://ctf42.online/ctfs/wreckctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/WRECKCTF/2026/pwn/vellum"
+  ],
+  "writeup_urls": [
+    "https://github.com/sajjadium/ctf-archives/blob/main/ctfs/WRECKCTF/2026/pwn/vellum/honest_solver.py"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/WRECKCTF/2026/pwn/vellum",
+    "https://ctf42.online/ctfs/wreckctf/2026/vellum/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/wreckctf_2026/vellum/writeups/1_honest_solver.py",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/WRECKCTF/2026/pwn/vellum/honest_solver.py",
+      "bytes": 2528,
+      "sha256": "09bb02f56be9de61d5960ffd35c918712d5ea31df70ab07a14c89d8b1f343f56",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/wreckctf_2026/vellum/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/WRECKCTF/2026/pwn/vellum/README.md",
+      "bytes": 24,
+      "sha256": "7c6b287fa2404a0b78125e1a67e918c6492ce729366cbfeda03a640528d80502",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/wreckctf_2026/vellum/attachments/upstream/honest_solver.py",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/WRECKCTF/2026/pwn/vellum/honest_solver.py",
+      "bytes": 2528,
+      "sha256": "09bb02f56be9de61d5960ffd35c918712d5ea31df70ab07a14c89d8b1f343f56",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/wreckctf_2026/vellum/attachments/upstream/sample_variant",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/WRECKCTF/2026/pwn/vellum/sample_variant",
+      "bytes": 16568,
+      "sha256": "02e62a77c9f5aefc06db5c88c333002a39d0aec2fe5af30024136b322f460eae",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/wreckctf_2026/vellum/attachments/upstream/sample_variant.c",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/WRECKCTF/2026/pwn/vellum/sample_variant.c",
+      "bytes": 1343,
+      "sha256": "fff3838f19d1dc681ce66162fc3f1a81ad8541e40751007aa7d98b22a3d3cf68",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/wreckctf/2026/vellum/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/wreckctf/2026/vellum/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

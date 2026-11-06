@@ -1,0 +1,453 @@
+{
+  "snapshot_date": "2026-11-06",
+  "collection": "specialized",
+  "records": [
+    {
+      "event_id": "CTF-3108",
+      "event_title": "BSidesSF CTF 2026",
+      "title": "doremi",
+      "category": "android",
+      "path": "android\\BSidesSF CTF 2026\\doremi",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3108",
+      "event_title": "BSidesSF CTF 2026",
+      "title": "vinyl-drop",
+      "category": "android",
+      "path": "android\\BSidesSF CTF 2026\\vinyl-drop",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3247",
+      "event_title": "BYUCTF 2026",
+      "title": "back_and_forth",
+      "category": "android",
+      "path": "android\\BYUCTF 2026\\back_and_forth",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3201",
+      "event_title": "D^3CTF 2026",
+      "title": "d3llvm",
+      "category": "android",
+      "path": "android\\D^3CTF 2026\\d3llvm",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3161",
+      "event_title": "SUCTF 2026",
+      "title": "SU_flumel",
+      "category": "android",
+      "path": "android\\SUCTF_2026\\SU_flumel",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3364",
+      "event_title": "Securinets CTF Quals 2026",
+      "title": "Backdrop",
+      "category": "android",
+      "path": "android\\Securinets CTF Quals 2026\\Backdrop",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3113",
+      "event_title": "SekaiCTF 2026",
+      "title": "SekaiID",
+      "category": "android",
+      "path": "android\\SekaiCTF_2026\\SekaiID",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3113",
+      "event_title": "SekaiCTF 2026",
+      "title": "ufo",
+      "category": "android",
+      "path": "android\\SekaiCTF_2026\\ufo",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3081",
+      "event_title": "0xFUN CTF 2026",
+      "title": "UART",
+      "category": "iot",
+      "path": "iot\\0xFUN_2026\\UART",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "D's Signpost",
+      "category": "iot",
+      "path": "iot\\NDIAS_2026\\D's Signpost",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "Suspicious device 1",
+      "category": "iot",
+      "path": "iot\\NDIAS_2026\\Suspicious device 1",
+      "writeup_status": "downloaded",
+      "attachment_status": "partial",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "Suspicious device 2",
+      "category": "iot",
+      "path": "iot\\NDIAS_2026\\Suspicious device 2",
+      "writeup_status": "downloaded",
+      "attachment_status": "partial",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "Suspicious device 3",
+      "category": "iot",
+      "path": "iot\\NDIAS_2026\\Suspicious device 3",
+      "writeup_status": "downloaded",
+      "attachment_status": "partial",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "Tiny crackme",
+      "category": "iot",
+      "path": "iot\\NDIAS_2026\\Tiny crackme",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3161",
+      "event_title": "SUCTF 2026",
+      "title": "SU_EzRouter",
+      "category": "iot",
+      "path": "iot\\SUCTF_2026\\SU_EzRouter",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3161",
+      "event_title": "SUCTF 2026",
+      "title": "SU_老年固件",
+      "category": "iot",
+      "path": "iot\\SUCTF_2026\\SU_老年固件",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3113",
+      "event_title": "SekaiCTF 2026",
+      "title": "3in1",
+      "category": "虚拟化",
+      "path": "虚拟化\\SekaiCTF_2026\\3in1",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "writeup_kind": "official_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3113",
+      "event_title": "SekaiCTF 2026",
+      "title": "MTE",
+      "category": "虚拟化",
+      "path": "虚拟化\\SekaiCTF_2026\\MTE",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "writeup_kind": "official_solver_binary_and_community_writeup",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "AGL 1",
+      "category": "车联网",
+      "path": "车联网\\NDIAS_2026\\AGL 1",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "AGL 2",
+      "category": "车联网",
+      "path": "车联网\\NDIAS_2026\\AGL 2",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "AGL 3",
+      "category": "车联网",
+      "path": "车联网\\NDIAS_2026\\AGL 3",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "AGL 4",
+      "category": "车联网",
+      "path": "车联网\\NDIAS_2026\\AGL 4",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "AGL 5",
+      "category": "车联网",
+      "path": "车联网\\NDIAS_2026\\AGL 5",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "Classic KeeLoq Garage - Find the Key",
+      "category": "车联网",
+      "path": "车联网\\NDIAS_2026\\Classic KeeLoq Garage - Find the Key",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "Classic KeeLoq Garage - Next HOP",
+      "category": "车联网",
+      "path": "车联网\\NDIAS_2026\\Classic KeeLoq Garage - Next HOP",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "Gateway Gremlins",
+      "category": "车联网",
+      "path": "车联网\\NDIAS_2026\\Gateway Gremlins",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "I Saw Our Time Pass",
+      "category": "车联网",
+      "path": "车联网\\NDIAS_2026\\I Saw Our Time Pass",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "Next Counter",
+      "category": "车联网",
+      "path": "车联网\\NDIAS_2026\\Next Counter",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "Parking Lot Whisper",
+      "category": "车联网",
+      "path": "车联网\\NDIAS_2026\\Parking Lot Whisper",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "Predict Next UNLOCK",
+      "category": "车联网",
+      "path": "车联网\\NDIAS_2026\\Predict Next UNLOCK",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "RAMN ECU D",
+      "category": "车联网",
+      "path": "车联网\\NDIAS_2026\\RAMN ECU D",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "Read the simple fob",
+      "category": "车联网",
+      "path": "车联网\\NDIAS_2026\\Read the simple fob",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "Real KeeLoq Garage - Next HOP",
+      "category": "车联网",
+      "path": "车联网\\NDIAS_2026\\Real KeeLoq Garage - Next HOP",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "Real KeeLoq Garage - Normal Learn",
+      "category": "车联网",
+      "path": "车联网\\NDIAS_2026\\Real KeeLoq Garage - Normal Learn",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "Seed-Key Leak",
+      "category": "车联网",
+      "path": "车联网\\NDIAS_2026\\Seed-Key Leak",
+      "writeup_status": "downloaded",
+      "attachment_status": "partial",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3276",
+      "event_title": "NDIAS Automotive/IoT CTF",
+      "title": "VIN Hunter",
+      "category": "车联网",
+      "path": "车联网\\NDIAS_2026\\VIN Hunter",
+      "writeup_status": "downloaded",
+      "attachment_status": "partial",
+      "writeup_kind": "text_or_solver_source",
+      "errors": []
+    }
+  ],
+  "totals": {
+    "questions": 36,
+    "events": 8,
+    "categories": {
+      "android": 8,
+      "iot": 8,
+      "虚拟化": 2,
+      "车联网": 18
+    },
+    "attachment_status": {
+      "downloaded": 15,
+      "missing": 16,
+      "partial": 5
+    },
+    "writeup_status": {
+      "downloaded": 36
+    }
+  },
+  "validation": {
+    "hashes_checked": 388,
+    "bytes_checked": 1178081467,
+    "unique_zip_apk_crc_checks": 15,
+    "errors": []
+  },
+  "limitations": [
+    "本专项记录不是416场比赛逐场检索覆盖声明；整体覆盖由根目录总索引记录。",
+    "MTE为QEMU MTE/PAC仿真实现相关问题和guest内核提权；3in1含guest-to-host逃逸。",
+    "未运行题目附件、solver、连接脚本或归档中的AGENTS.md指令。",
+    "车联网的18题来自NDIAS2026，其中部分只取得writeup，缺失/部分附件逐题标明。",
+    "D3CTF d3llvm原APK未取得，官方中英文writeup和参赛者solver已保存。",
+    "排除不在目标比赛清单的2026极氪、Kaspersky CTF、BUET CTF。",
+    "Cryovault Mirror Garden及BKISC Boring APK交由根索引收集，未在本专项重复计数。"
+  ],
+  "queries": [
+    "CTF 2026 android writeup github",
+    "CTF 2026 qemu escape writeup",
+    "CTF 2026 IoT hardware writeup",
+    "2026 CTF 车联网 writeup",
+    "NDIAS 2026 writeup github",
+    "NDIAS capture_c1c2.bin",
+    "NDIAS suspicious_device.zip",
+    "KnightCTF 2026 Android",
+    "0xFUN 2026 hardware writeup",
+    "BKISC CTF 2026 Boring APK",
+    "SekaiCTF 2026 ufo SekaiID MTE 3in1",
+    "SUCTF 2026 SU_EzRouter SU_flumel SU_老年固件",
+    "BYUCTF 2026 back_and_forth",
+    "Securinets 2026 Backdrop",
+    "BSidesSF 2026 doremi vinyl-drop",
+    "D3CTF 2026 d3llvm"
+  ]
+}

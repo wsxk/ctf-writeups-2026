@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3379",
+  "event_title": "Haruulzangi CTF 2026 Qualifier",
+  "title": "Payphone",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "path-traversal",
+    "lfi (local-file-inclusion)",
+    "proc-environ"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/haruulzangi/2026-quals/payphone/",
+    "https://ctf42.online/ctfs/haruulzangi/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/pwn/Payphone"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/tree/main/pwn/payphone"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Haruulzangi/2026/Quals/pwn/Payphone",
+    "https://ctf42.online/ctfs/haruulzangi/2026-quals/payphone/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/haruulzangi_2026-quals/Payphone/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/Haruulzangi-CTF-2026-Qualifier/main/pwn/payphone/README.md",
+      "bytes": 4292,
+      "sha256": "1cae9f8a5208a37a84144a851af3c5f1f1b40eac1918daa0fe520ed422e9efa4",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/haruulzangi_2026-quals/Payphone/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Haruulzangi/2026/Quals/pwn/Payphone/README.md",
+      "bytes": 284,
+      "sha256": "82fa1d3af4f3bb734984eb668a7b2044068b3826453c5b780a81d3b56582bcb5",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/haruulzangi_2026-quals/Payphone/attachments/upstream/pwn_payphone.tar.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Haruulzangi/2026/Quals/pwn/Payphone/pwn_payphone.tar.gz",
+      "bytes": 874632,
+      "sha256": "e46ba0370dcc28c8ac4d669936d866e83bd86e423d3eb98a4fe98338c4b2924f",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/haruulzangi/2026-quals/payphone/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/haruulzangi/2026-quals/payphone/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

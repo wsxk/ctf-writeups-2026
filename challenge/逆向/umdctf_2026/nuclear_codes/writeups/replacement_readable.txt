@@ -1,0 +1,283 @@
+Source: https://medium.com/@mazenmagdy1598/nuclear-codes-umdctf-135f0fa30c3d
+
+Reverse Engineering
+G4mra
+Ctf
+Ctf Writeup
+Ctf Walkthrough
+nuclear_codes | UMDCTF
+Z4faran
+8 min read
+·
+Apr 28, 2026
+--
+Listen
+Share
+Challenge Info
+Name:
+nuclear_codes
+Category:
+Reverse Engineering
+Difficulty:
+Hard (conceptual, not brute force)
+Remote:
+nc challs.umdctf.io 30301
+Press enter or click to view image in full size
+Output
+enter positive integers a,b,c; one per line:
+We test simple values:
+printf "8\n5\n2\n" | ./main
+Extracting Important Strings
+strings -tx ./main | grep -E 'enter|positive|incorrect|flag'
+I used
+strings
+to extract readable text from the binary in order to quickly identify important program messages such as input prompts, error messages, and potential flag-related strings.
+The
+-tx
+flag was used to display offsets, which can be useful later during static analysis.
+Result:
+The following relevant strings were identified:
+enter positive integers a,b,c; one per line:
+inputs should be positive integers
+incorrect
+flag.txt
+flag: %s
+These strings indicate that the program:
+expects three positive integers as input,
+prints
+incorrect
+on failure,
+and attempts to read the flag from a local file (
+flag.txt
+) upon success.
+This confirms that the actual flag is not embedded inside the binary and is instead retrieved at runtime. Therefore, patching the binary locally would not yield the real flag, and the correct approach is to find valid inputs that trigger the success condition on the remote service.
+Disassemble the Binary
+Command
+objdump -d -M intel ./main > main.asm
+Why?
+This converts the binary into assembly.
+-M intel
+makes the syntax easier to read.
+Saving it to
+main.asm
+lets us search through it.
+Press enter or click to view image in full size
+This snippet shows that the program verifies the input is positive.
+The instruction
+test ebx, ebx
+checks whether the value is zero or negative, and the
+jg
+(jump if greater) ensures that execution continues only if the value is greater than zero.
+This confirms that each input must be a positive integer.
+From this logic, we can infer that the program enforces a strict ordering constraint between the inputs.
+This leads to the condition:
+a > b > c
+Press enter or click to view image in full size
+This section shows additional validation logic applied to the inputs.
+The presence of multiple
+cmp
+instructions indicates that the program enforces specific conditions on the values before continuing execution.
+This confirms that the inputs are not only read, but also strictly validated against predefined constraints.
+Initial Assumption — Big Integer Representation
+At an early stage of the analysis, I assumed that the program was using a standard big integer representation.
+This assumption was based on observing values such as
+0x2710
+, which corresponds to
+10000
+in decimal. This suggested a possible base-10000 chunked representation, which is a common approach in some big integer implementations.
+Additionally, certain memory structures appeared to resemble segmented numeric storage, reinforcing the idea that the program was operating on big integers split into chunks.
+However, this assumption turned out to be incomplete.
+Further analysis revealed that the program was not performing simple integer arithmetic. Instead, it was using high-precision mathematical operations provided by specialized libraries.
+This explains why interpreting the data as standard big integers did not lead to correct results, and why a different approach was required to understand the underlying logic.
+Dynamic Analysis
+Press enter or click to view image in full size
+PIE Protection
+The binary was compiled with PIE enabled. This means that addresses shown in static disassembly, such as
+0x491b
+or
+0xfe70
+, are only offsets and not the real runtime addresses.
+Because of this, breakpoints cannot be set directly using static offsets. The binary base address must be found first, then added to the target offset.
+Press enter or click to view image in full size
+Finding the Binary Base Address
+Inside GDB, I disabled randomization and started the program at the first instruction.
+Then I used
+info proc mappings
+to list the loaded memory mappings. From this output, I located the mapping that belongs to
+./main
+.
+This base address is required because the binary uses PIE, so static offsets must be converted into runtime addresses.
+Converting Static Offsets to Runtime Addresses
+After finding the PIE base address, I converted the important static offsets into runtime addresses.
+The formula is:
+runtime address = base address + static offset
+For example:
+final compare call = base +
+0x491b
+compare function = base +
+0xfe70
+success path = base +
+0x4928
+This step was necessary to place accurate breakpoints in GDB and avoid analyzing the wrong code location.
+Press enter or click to view image in full size
+Press enter or click to view image in full size
+Wrong Breakpoint Due to PIE
+At first, I set a breakpoint at a runtime address that I assumed was the final comparison function.
+However, because the binary was compiled with PIE, the address calculation was wrong. I ended up stopping inside an internal comparison path instead of the actual final check.
+The register values, such as
+rdx
+and
+rcx
+, looked meaningful at first, but they were not part of the final success condition.
+This was a reminder that PIE offsets must always be converted using the correct binary base address.
+Real Final Check
+Press enter or click to view image in full size
+After going back to the static control flow, I found the real final comparison.
+The program calls the comparison function, then checks the returned value in
+eax
+.
+If
+eax
+is non-negative, the program jumps to the
+incorrect
+path. Therefore, the success condition is that the comparison result must be negative.
+This gives the final condition:
+compare(left, right) < 0
+MPFR / MPC Discovery
+I checked the dynamic symbols and linked libraries to see whether the binary directly exposed MPFR, MPC, or GMP symbols.
+However, no useful MPFR/MPC symbols appeared through
+ldd
+,
+objdump -T
+, or
+nm -D
+. This suggests that the binary either hides these details, uses statically linked code, or does not expose the relevant function names through dynamic symbols.
+Because of that, I continued the analysis through behavior and control flow instead of relying only on symbol names.
+Final Comparison Behavior
+Even though the useful math symbols were not exposed, the final control flow still showed that the program calls a comparison-like function and checks its return value.
+The important logic was:
+call 0xfe70
+test eax, eax
+jns incorrect
+This means the program succeeds only when the comparison result is negative.
+Later analysis showed that this comparison behaves like an absolute-value comparison, meaning the real goal is:
+abs(left) < abs(right)
+Operation Function Analysis
+During the analysis, the function located at offset
+0xfd60
+, which we initially referred to as
+operation
+, was examined more closely.
+It turned out that this function does not perform simple arithmetic. Instead, it behaves approximately like:
+dest = exp(x) - log(y)
+This was an unexpected twist. Rather than working with plain integers, the program constructs a high-precision mathematical expression using exponential and logarithmic functions.
+This explains why earlier assumptions about simple integer or BigInt operations did not lead to correct results.
+Failed Brute Force Attempts
+At one stage, I attempted to brute force the inputs using various ordered values such as:
+10 9 8
+1000 10 1
+1000000 100 1
+99999999 10000000 1
+However, all of these attempts failed.
+Why Brute Force Failed
+From the final comparison logic, the condition can be interpreted as:
+abs(left) < tiny_constant
+Where the value on the right-hand side is extremely small, approximately:
+2^-4096
+This is an incredibly small number.
+Even values such as:
+0.0006
+0.0027
+are still far too large compared to this threshold.
+Key Insight
+Because of this, simply making
+left
+“small” is not sufficient.
+The only reliable solution is to make:
+left = 0
+exactly, or extremely close to zero with very high precision.
+In practice, the correct approach is to construct inputs that make the expression evaluate to exactly zero.
+Failed Candidates
+Some tested candidates produced values close to zero, but not close enough:
+35 30 29 -> left ≈ -0.0027777777777777779
+70 69 58 -> left ≈ 0.00060858981046774477
+These values still fail the condition because they are many orders of magnitude larger than
+2^-4096
+.
+Conclusion
+At this point, the problem shifts from trying random inputs to solving the underlying mathematical expression.
+Instead of minimizing the value, the correct strategy is:
+force the expression to be exactly zero
+This insight leads directly to solving the equation and finding valid inputs.
+Deriving the Final Expression
+After following the sequence of operations and simplifying the overall computation, the final expression can be reduced to:
+left = -N / ((a - c)(2a - b)(a + b - c))
+Where:
+N = 8a³ + 7a²b - 19a²c - 7ab² - abc + 10ac² + 8b²c - 8bc² + c³
+Sign Analysis
+From earlier analysis, the program enforces:
+a > b > c
+This gives us important information about the denominator:
+(a - c) > 0
+(2a - b) > 0
+(a + b - c) > 0
+Therefore, the denominator is strictly positive for valid inputs.
+Key Insight
+The final condition required by the program is:
+abs(left) < tiny_constant
+Where
+tiny_constant
+is extremely small.
+Instead of trying to make
+left
+“small”, the most reliable approach is to make it exactly zero.
+Since the denominator is non-zero and positive, the only way to achieve:
+left = 0
+is to force:
+N = 0
+Final Strategy
+By solving the equation:
+N = 0
+we guarantee that:
+left = 0
+abs(left) = 0
+And since zero is smaller than any positive value, the condition:
+abs(left) < tiny_constant
+is always satisfied.
+Verifying the Solution
+a = int("20260869859883222379931520298326390700152988332214525711323500132179943287700005601210288797153868533207131302477269470450828233936557")
+b = int("18010545837870538513045093836383895889011788247293302492861532754591378810083784833420656539795346580764081488677557084083204307965110")
+c = int("16792202595167632657252829598515092665938697948983181195334779924033054964579874761568657321835642556483381729386998074921169204991087")
+N = (
+8*a**3 + 7*a*a*b - 19*a*a*c
+- 7*a*b*b - a*b*c + 10*a*c*c
++ 8*b*b*c - 8*b*c*c + c**3
+)
+print("a > b > c:", a > b > c)
+print("N == 0:", N == 0)
+print("N:", N)
+To confirm the correctness of the derived equation, I tested the candidate values using a Python script.
+The script verifies two conditions:
+The ordering constraint:
+a > b > c
+The mathematical condition:
+N = 0
+The output shows:
+a > b > c: True
+N == 0: True
+This confirms that the chosen values satisfy both the structural constraints and the core equation.
+Local Execution
+Press enter or click to view image in full size
+I tested the solution locally by providing the computed values to the binary.
+The program did not print
+incorrect
+, which indicates that the validation checks were successfully passed.
+Although the local binary may not display the actual flag, reaching this stage confirms that the inputs satisfy the required conditions.
+Remote Exploit (Flag)
+Press enter or click to view image in full size
+Retrieving the Flag
+Finally, I sent the validated inputs to the remote service.
+The program accepted the values and returned the flag:
+UMDCTF{ok_i_got_the_nuclear_codes_now_where_do_i_enter_them????}
+This confirms that the solution fully satisfies the challenge requirements.
+#umdctf #ctf #rev #math #G4mra

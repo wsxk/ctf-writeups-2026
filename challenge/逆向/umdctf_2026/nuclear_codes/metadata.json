@@ -1,0 +1,68 @@
+{
+  "event_id": "CTF-3056",
+  "event_title": "UMDCTF 2026",
+  "title": "nuclear_codes",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [],
+  "source_urls": [
+    "https://ctf42.online/ctfs/umdctf/2026/nuclear_codes/",
+    "https://ctf42.online/ctfs/umdctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/nuclear_codes"
+  ],
+  "writeup_urls": [
+    "https://blog.rawpayload.com/blog/umd-ctf-2026-nuclear-codes-writeup",
+    "https://medium.com/@mazenmagdy1598/nuclear-codes-umdctf-135f0fa30c3d"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/nuclear_codes",
+    "https://ctf42.online/ctfs/umdctf/2026/nuclear_codes/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/umdctf_2026/nuclear_codes/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMDCTF/2026/rev/nuclear_codes/README.md",
+      "bytes": 142,
+      "sha256": "76e35cbc38a99281d7d31656b5c6ee864ab6cf0cd5812c1d60f94b2a8dee7898",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/umdctf_2026/nuclear_codes/attachments/upstream/main",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMDCTF/2026/rev/nuclear_codes/main",
+      "bytes": 481664,
+      "sha256": "1241300ffbe895279a7ad84e046ed6bdae76ae077363e7d469c1ec8a7d4dd07f",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/umdctf_2026/nuclear_codes/writeups/replacement_source.html",
+      "url": "https://medium.com/@mazenmagdy1598/nuclear-codes-umdctf-135f0fa30c3d",
+      "bytes": 295713,
+      "sha256": "dec562409b51526dfe0c9d94e4c3bb09faec9f33bbb867d1a7c695d2ea89ea38",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/umdctf_2026/nuclear_codes/writeups/replacement_readable.txt",
+      "url": "https://medium.com/@mazenmagdy1598/nuclear-codes-umdctf-135f0fa30c3d",
+      "bytes": 11619,
+      "sha256": "0ab4d9b6917aa9c253616b14608fcdaaf623ea2f840395b569d9f88d0e63ba59",
+      "kind": "writeup"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/umdctf/2026/nuclear_codes/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/umdctf/2026/nuclear_codes/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files",
+  "writeup_kind": "prose"
+}

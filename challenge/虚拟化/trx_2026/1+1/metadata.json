@@ -1,0 +1,73 @@
+{
+  "event_id": "CTF-3141",
+  "event_title": "TRX CTF 2026",
+  "title": "1+1",
+  "category": "虚拟化",
+  "original_category": "Reverse",
+  "tags": [
+    "reversing",
+    "vm"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/trx/2026/11/",
+    "https://ctf42.online/ctfs/trx/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/rev/1%2B1"
+  ],
+  "writeup_urls": [
+    "https://blog.rawpayload.com/blog/trx-ctf-2026-1-plus-1-writeup",
+    "https://github.com/TheRomanXpl0it/TRX-CTF-2026/tree/main/rev/1%2B1/solve"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/rev/1%2B1",
+    "https://ctf42.online/ctfs/trx/2026/11/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。",
+    "官方求解代码solve.py及brute_fnv.c；非独立叙述性writeup。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/trx_2026/1+1/attachments/upstream/1+1.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TRX/2026/rev/1%2B1/1%2B1.zip",
+      "bytes": 1817011,
+      "sha256": "95691b23541bcee1629608059907214bc4e63c947f574dd1dc29e5b850b675f8",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/trx_2026/1+1/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/TRX/2026/rev/1%2B1/README.md",
+      "bytes": 136,
+      "sha256": "94e0e49bd50511a6c9bcd7e59a533e0066837c1d7259aa05b9589d51ec2955e6",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/trx_2026/1+1/writeups/official_solve.py",
+      "url": "https://raw.githubusercontent.com/TheRomanXpl0it/TRX-CTF-2026/main/rev/1%2B1/solve/solve.py",
+      "bytes": 2633,
+      "sha256": "417c405a2057258146d55e9118edc1e7d1cb538cb29e0110fb76bc6145d2677c",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/trx_2026/1+1/writeups/official_brute_fnv.c",
+      "url": "https://raw.githubusercontent.com/TheRomanXpl0it/TRX-CTF-2026/main/rev/1%2B1/solve/brute_fnv.c",
+      "bytes": 1115,
+      "sha256": "900e445351b3c408778545facbf10fe54f41f2a12889aaefdd35c88ef201d7d4",
+      "kind": "writeup"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/trx/2026/11/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/trx/2026/11/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files",
+  "writeup_kind": "solver"
+}

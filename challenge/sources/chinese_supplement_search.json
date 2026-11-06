@@ -1,0 +1,153 @@
+{
+  "snapshot_date": "2026-11-06",
+  "records": [
+    {
+      "event_id": "CAL-004",
+      "category": "逆向",
+      "title": "compile_me_maybe",
+      "path": "逆向\\NepCTF 2026\\19_compile_me_maybe",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "errors": []
+    },
+    {
+      "event_id": "CAL-004",
+      "category": "iot",
+      "title": "虚验室制取稀硫酸",
+      "path": "iot\\NepCTF 2026\\23_虚验室制取稀硫酸",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "errors": []
+    },
+    {
+      "event_id": "CAL-004",
+      "category": "iot",
+      "title": "赛博心情电梯",
+      "path": "iot\\NepCTF 2026\\24_赛博心情电梯",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "errors": []
+    },
+    {
+      "event_id": "CAL-004",
+      "category": "虚拟化",
+      "title": "ColorfulArray",
+      "path": "虚拟化\\NepCTF 2026\\36_ColorfulArray",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "errors": []
+    },
+    {
+      "event_id": "CAL-004",
+      "category": "iot",
+      "title": "UnknownFirmware",
+      "path": "iot\\NepCTF 2026\\37_UnknownFirmware",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "errors": []
+    },
+    {
+      "event_id": "CAL-004",
+      "category": "虚拟化",
+      "title": "T.A.S P.W.N",
+      "path": "虚拟化\\NepCTF 2026\\42_T.A.S P.W.N",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "errors": []
+    },
+    {
+      "event_id": "CAL-004",
+      "category": "iot",
+      "title": "谁引闪了我的灯",
+      "path": "iot\\NepCTF 2026\\46_谁引闪了我的灯",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "errors": []
+    },
+    {
+      "event_id": "CAL-004",
+      "category": "pwn",
+      "title": "different_ROP",
+      "path": "pwn\\NepCTF 2026\\47_different_ROP",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "errors": []
+    },
+    {
+      "event_id": "CAL-004",
+      "category": "pwn",
+      "title": "onlyone",
+      "path": "pwn\\NepCTF 2026\\48_onlyone",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "errors": []
+    },
+    {
+      "event_id": "CAL-004",
+      "category": "pwn",
+      "title": "shadow_signal",
+      "path": "pwn\\NepCTF 2026\\51_shadow_signal",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "errors": []
+    },
+    {
+      "event_id": "CAL-004",
+      "category": "逆向",
+      "title": "【Game】共生（本地）",
+      "path": "逆向\\NepCTF 2026\\70_【Game】共生（本地）",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "errors": []
+    },
+    {
+      "event_id": "CAL-004",
+      "category": "逆向",
+      "title": "【Game】共生（联机）",
+      "path": "逆向\\NepCTF 2026\\72_【Game】共生（联机）",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "errors": []
+    },
+    {
+      "event_id": "CN-001",
+      "category": "pwn",
+      "title": "Easytl",
+      "path": "pwn\\第十届“强网杯”全国网络安全挑战赛·线上赛\\Easytl",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "errors": []
+    },
+    {
+      "event_id": "CN-001",
+      "category": "pwn",
+      "title": "Oldsvr",
+      "path": "pwn\\第十届“强网杯”全国网络安全挑战赛·线上赛\\Oldsvr",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "errors": []
+    },
+    {
+      "event_id": "CN-001",
+      "category": "逆向",
+      "title": "ELFStudy",
+      "path": "逆向\\第十届“强网杯”全国网络安全挑战赛·线上赛\\ELFStudy",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "errors": []
+    }
+  ],
+  "source_files": [
+    "sources\\nepctf2026_full_writeup.md",
+    "sources\\qiangwang_lufer.html"
+  ],
+  "source_urls": [
+    "https://github.com/fjh1997/nepctf2026-writeup",
+    "https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/"
+  ],
+  "limitations": [
+    "15题均取得实际解答；原题附件均未取得，明确missing。",
+    "只提取已下载资料，未运行题目/solver/远程连接。",
+    "公开作者的成功声明未在本次独立复现。"
+  ]
+}

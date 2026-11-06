@@ -1,0 +1,46 @@
+{
+  "checked_on": "2026-11-06",
+  "overrides": [
+    {
+      "ctftime_id": 2981,
+      "corrected_start": "2026-01-09T17:00:00+00:00",
+      "corrected_end": "2026-01-12T05:00:00+00:00",
+      "notes": "主办方在赛事说明中明确纠正时间：1月9日12PM EST至1月12日12AM EST；按EST=UTC−5换算。API旧时间保留在JSON的original_start/original_end中。",
+      "source_url": "https://ctftime.org/event/2981/"
+    },
+    {
+      "ctftime_id": 3136,
+      "notes": "时间存在冲突：表内保留CTFtime的UTC时间；主办方说明写5月23日14:00 IST至24日14:00 IST，并注明CTFtime时间错误。若IST指印度标准时间，则北京时间应为两日16:30；未把该时区解释当作已核实修正。",
+      "source_url": "https://ctftime.org/event/3136/"
+    },
+    {
+      "ctftime_id": 3222,
+      "status_override": "延期，日期待定",
+      "notes": "赛事说明明确宣布延期。表内日期是原计划，不代表实际举办日期。",
+      "source_url": "https://ctftime.org/event/3222/"
+    },
+    {
+      "ctftime_id": 3246,
+      "status_override": "延期／届次待核",
+      "notes": "CTFtime标题标延期，说明提及7月3日；表内日期为6月旧计划，不作为有效赛期。",
+      "source_url": "https://ctftime.org/event/3246/"
+    },
+    {
+      "ctftime_id": 3112,
+      "status_override": "已取消",
+      "notes": "赛事标题与说明均明确2026届取消；表内日期仅保留原计划。",
+      "source_url": "https://ctftime.org/event/3112/"
+    },
+    {
+      "ctftime_id": 3303,
+      "status_override": "延期，日期待定",
+      "notes": "赛事标题明确POSTPONED；表内日期是原计划，未查得已确认的新赛期。",
+      "source_url": "https://ctftime.org/event/3303/"
+    },
+    {
+      "ctftime_id": 3049,
+      "notes": "主办方说明赛事已延期至11月；本表采用当前11月13日至15日UTC的更新赛期。",
+      "source_url": "https://ctftime.org/event/3049/"
+    }
+  ]
+}

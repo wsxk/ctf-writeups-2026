@@ -1,0 +1,111 @@
+{
+  "event_id": "CTF-3247",
+  "event_title": "BYUCTF 2026",
+  "category": "逆向",
+  "title": "angr_management",
+  "dirname": "BYUCTF_2026",
+  "source_urls": [
+    "https://github.com/BYU-CSA/BYUCTF-2026/tree/HEAD/rev/angr_management"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/Dockerfile",
+      "local": "attachments/Dockerfile",
+      "size_expected": 288,
+      "git_blob_sha": "1d0aa7e027611a0ef1b42f9e8e8df64b71c244dc",
+      "status": "downloaded",
+      "bytes": 288,
+      "sha256": "c732c08a12683c21227915f33872fb6148d239345a506cd834d4885643e0129b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/angr_management",
+      "local": "attachments/angr_management",
+      "size_expected": 69712,
+      "git_blob_sha": "52e09e9dd13226832328459dcdbc64b106430108",
+      "status": "downloaded",
+      "bytes": 69712,
+      "sha256": "be53442cd2865d1ac4856524ccdf8b9a6f6900a29d05c8c6f3a5c88f5541180a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/challenge.zip",
+      "local": "attachments/challenge.zip",
+      "size_expected": 24675,
+      "git_blob_sha": "aa3d23ff5757a19a1d6414bd5fa77ee045ab27f3",
+      "status": "downloaded",
+      "bytes": 24675,
+      "sha256": "acd622996f4b4ebedaa7746fe2979776ccf5d6babcbe5562af93992b4b3972b5"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/description.txt",
+      "local": "attachments/description.txt",
+      "size_expected": 156,
+      "git_blob_sha": "50f0814f862665272fc1c041b305269c82ee4e5c",
+      "status": "downloaded",
+      "bytes": 156,
+      "sha256": "e07b926a8048f674b6c48e3bc8439af5500c0fa3d9f216867ab99d72f9692503"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/docker-compose.yml",
+      "local": "attachments/docker-compose.yml",
+      "size_expected": 166,
+      "git_blob_sha": "b4af40066e214628dc09d7ff364db6e420340612",
+      "status": "downloaded",
+      "bytes": 166,
+      "sha256": "ab584dc785b900f086ebc8f5c6bdf6ec6316829ebf4ac6ccfb96560a3cf89110"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/maze_ans.txt",
+      "local": "attachments/maze_ans.txt",
+      "size_expected": 277,
+      "git_blob_sha": "b80f88dc0c8b084477d9dab06278cd56992a14a6",
+      "status": "downloaded",
+      "bytes": 277,
+      "sha256": "91ef253fbebed98b8c3254aff66423d7807ce205969741cc05fcf976733ec711"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/notes.md",
+      "local": "attachments/notes.md",
+      "size_expected": 80,
+      "git_blob_sha": "46cd07f4d5bcb20bc9b2bda344d03fe2f59910a6",
+      "status": "downloaded",
+      "bytes": 80,
+      "sha256": "a208cf75a8bdc71cc9fc5d43c7dd70cb4b42f673324ee1ba68dae46a0e76efb5"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/solve.py",
+      "local": "writeups/solve.py",
+      "size_expected": 2911,
+      "git_blob_sha": "d6e417272fa1a6218d779ab8a6fa22af0aa30f3f",
+      "status": "downloaded",
+      "bytes": 2911,
+      "sha256": "3c2755ffed59686812b3a48685b45415eaa40571b09c416fff575e4fcca13708"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/writeup.md",
+      "local": "writeups/writeup.md",
+      "size_expected": 3742,
+      "git_blob_sha": "a9baa821376f44063874597e907aae9dcc00091e",
+      "status": "downloaded",
+      "bytes": 3742,
+      "sha256": "7e0ff905c2d2fc68b4b3ddf7ddc5d4a5fa8c7d9d11dcff71fe2f5c79a8c23fb3"
+    }
+  ],
+  "notes": "官方比赛仓库，README包含Solve章节；保留官方解题脚本及附件。",
+  "directory": "逆向/BYUCTF_2026/angr_management",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/solve.py",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/writeup.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/Dockerfile",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/angr_management",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/challenge.zip",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/description.txt",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/docker-compose.yml",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/maze_ans.txt",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/rev/angr_management/notes.md"
+  ],
+  "attachment_status": "downloaded"
+}

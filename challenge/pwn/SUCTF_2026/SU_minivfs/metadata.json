@@ -1,0 +1,200 @@
+{
+  "event_id": "CTF-3161",
+  "event_title": "SUCTF 2026",
+  "category": "pwn",
+  "title": "SU_minivfs",
+  "source_urls": [
+    "https://github.com/team-su/SUCTF-2026/tree/HEAD/pwn/SU_minivfs",
+    "https://ctftime.org/event/3161/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/README.md",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/env/README.md",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/exp/exp.py",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/writeup/writeup.md"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/attachments/libc.so.6",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/attachments/mini_vfs",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/env/Dockerfile",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/env/bin/flag",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/env/bin/ld-linux-x86-64.so.2",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/env/bin/libc.so.6",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/env/bin/mini_vfs",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/env/ctf.xinetd",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/env/start.sh",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/sourcecode/mini_vfs.c",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/sourcecode/seccomp-bpf.h"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "team-su/SUCTF-2026",
+  "repository_tree_sha": "f52d0aec9aa6c7575795edeb317dcfd130d04d99",
+  "artifacts": [
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/README.md",
+      "bytes": 281,
+      "sha256": "353ce736e0c0ad6d00879d2bd48c32af916bb9ab257fcc4f20dcfd4fbe724166",
+      "git_blob_sha1": "5c34b73e264a065ad62a06669c02aab067ee77de",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/attachments/libc.so.6",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/attachments/libc.so.6",
+      "bytes": 2178688,
+      "sha256": "1b839cf653ce393601ab7cc2910d6b9f8e91d421ebf41c277147cf88f19b0afe",
+      "git_blob_sha1": "06a42ebfdd69752c0d5216ee472ed686f1292b05",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/attachments/mini_vfs",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/attachments/mini_vfs",
+      "bytes": 18568,
+      "sha256": "ee71412f789a5460ac1244d2292b948cea56e60c7db5e719c1baf7c967c45903",
+      "git_blob_sha1": "fd0e2ce7b065c7df1d74b754267e34056924eefd",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/Dockerfile",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/env/Dockerfile",
+      "bytes": 1272,
+      "sha256": "df7a70820f97295fe7c5b145867bd5a285207d51740bb437f3e7efd9369e6df2",
+      "git_blob_sha1": "017297536d5a9df4f5c8da86cfae7aca1387b2d2",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/env/README.md",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/env/README.md",
+      "bytes": 149,
+      "sha256": "a32a7db433a659de4cf7b15d6f7602a46f67f8cbf8e461432d2bf5c1bd72c417",
+      "git_blob_sha1": "cf46996a3878c04019d7f5c33eb3e56b520a11a5",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/bin/flag",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/env/bin/flag",
+      "bytes": 60,
+      "sha256": "f97b948e83d78463f8e0a17b4e7680f02fe6aa89994d2f26df1fffc32320d424",
+      "git_blob_sha1": "7b26f0dae1773b4430486c2457cd69ed57c661e6",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/bin/ld-linux-x86-64.so.2",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/env/bin/ld-linux-x86-64.so.2",
+      "bytes": 251544,
+      "sha256": "a826fda57dc7fd530cf31ca3fc82944999cf57fce099c0dfc308d16ac1aebc3c",
+      "git_blob_sha1": "b8e5edc9848a81b8442ef7a0aebe9356858ed6b3",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/bin/libc.so.6",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/env/bin/libc.so.6",
+      "bytes": 2178688,
+      "sha256": "1b839cf653ce393601ab7cc2910d6b9f8e91d421ebf41c277147cf88f19b0afe",
+      "git_blob_sha1": "06a42ebfdd69752c0d5216ee472ed686f1292b05",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/bin/mini_vfs",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/env/bin/mini_vfs",
+      "bytes": 18568,
+      "sha256": "ee71412f789a5460ac1244d2292b948cea56e60c7db5e719c1baf7c967c45903",
+      "git_blob_sha1": "fd0e2ce7b065c7df1d74b754267e34056924eefd",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/ctf.xinetd",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/env/ctf.xinetd",
+      "bytes": 672,
+      "sha256": "8d42e4ff688f277615d4a0023eba73ad6b0e0642453079aff58b9f3004ac9901",
+      "git_blob_sha1": "4f3f600848fc048dd089e94a146d19fd714568b5",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/start.sh",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/env/start.sh",
+      "bytes": 95,
+      "sha256": "9019d9bc74771519b802a69cca956500bf66518b219f7efe7d32d24150aab60d",
+      "git_blob_sha1": "89b58c15439e63b377ad8d7c8efc1da33c46e338",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/exp/exp.py",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/exp/exp.py",
+      "bytes": 6105,
+      "sha256": "547f52b12d798d44eaae77e32b8d1c66cdf1d6ba2dc5c969bd2d8b64e4d858e3",
+      "git_blob_sha1": "f01d2a94af6d4029610c5385f73591dcd397578a",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/sourcecode/mini_vfs.c",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/sourcecode/mini_vfs.c",
+      "bytes": 14335,
+      "sha256": "91463f573c5723fb3a915551f2877ae611058f572024944b1645072171e33ca2",
+      "git_blob_sha1": "60940c137acfc05da2a8782b36cd2cac4055359c",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/sourcecode/seccomp-bpf.h",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/sourcecode/seccomp-bpf.h",
+      "bytes": 2218,
+      "sha256": "b056315f9bb306f6683432d81a10300c2b982b7faf5fbb960c689a4bd8674d9b",
+      "git_blob_sha1": "72a1bd01eb30e7a2f6e4a976590b398b73d39c81",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/writeup.md",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_minivfs/writeup/writeup.md",
+      "bytes": 272,
+      "sha256": "d30d38b58ad4e1ff44e80c4ee4fb467f6110b465e44b3fc06a29b2cb492d497f",
+      "git_blob_sha1": "8f56869ec72bbfb475804829f47d2abb1bd1821b",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/README.md",
+    "writeups/writeup/writeup.md"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

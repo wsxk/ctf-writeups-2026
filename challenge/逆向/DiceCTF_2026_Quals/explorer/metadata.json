@@ -1,0 +1,149 @@
+{
+  "event_id": "CTF-3110",
+  "event_title": "DiceCTF 2026 Quals",
+  "category": "逆向",
+  "title": "explorer",
+  "dirname": "DiceCTF_2026_Quals",
+  "source_urls": [
+    "https://github.com/dicegang/dicectf-quals-2026-challenges/tree/HEAD/rev/explorer"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/.gitignore",
+      "local": "attachments/.gitignore",
+      "size_expected": 18,
+      "git_blob_sha": "c1328db1cffbe231390476fbe6e49776b6d17b66",
+      "status": "downloaded",
+      "bytes": 18,
+      "sha256": "d7f7f47b62913c5937bf3c98752743cdd9fcef8e42f7036faddb54ff8cd3b2c7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/Dockerfile",
+      "local": "attachments/Dockerfile",
+      "size_expected": 5245,
+      "git_blob_sha": "82f44fc1bd69dabfe6c6ef9aeb5354cbeacb55e2",
+      "status": "downloaded",
+      "bytes": 5245,
+      "sha256": "652a3a37e0aa6b150f787ef2733d3d4a1d4c04910a8ac221721f4ab3037dbf97"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/Makefile",
+      "local": "attachments/Makefile",
+      "size_expected": 2788,
+      "git_blob_sha": "48783de8d5b755661b5ff3da4070898b72946b1d",
+      "status": "downloaded",
+      "bytes": 2788,
+      "sha256": "cdf907d90717944db8f6679695cefa7509e07a995157f01d4cff1d0a430372a9"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/README.md",
+      "local": "attachments/README.md",
+      "size_expected": 937,
+      "git_blob_sha": "6ffa888ed2b8b5647ce0f882e3a55f4937524ece",
+      "status": "downloaded",
+      "bytes": 937,
+      "sha256": "a2b72c400fd8b374494f2bcaf6a14a60daa8c68f48a6289d6ca7457ff7df6f5b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/challenge.rs",
+      "local": "attachments/challenge.rs",
+      "size_expected": 14975,
+      "git_blob_sha": "09f5d283e32b693a6ea99cb0791be316f16207a5",
+      "status": "downloaded",
+      "bytes": 14975,
+      "sha256": "d78c41fc53bfc563025a8f0fd1c0af463a972c753b8f929ee1dfc5e404fe1827"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/dist/bzImage",
+      "local": "attachments/dist/bzImage",
+      "size_expected": 1340416,
+      "git_blob_sha": "3cb04130cac8614c815e9654753cb6abb8d216b8",
+      "status": "downloaded",
+      "bytes": 1340416,
+      "sha256": "af788ed95d23d6c457bb056262e6f0132816c9130b6060e3db1192de84488c71"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/dist/initramfs.cpio.gz",
+      "local": "attachments/dist/initramfs.cpio.gz",
+      "size_expected": 746098,
+      "git_blob_sha": "15c61493d265822e0c9bd6f964e8458f1f9a2dc4",
+      "status": "downloaded",
+      "bytes": 746098,
+      "sha256": "25d0cbed74ae37ff8ded6d89a9e85ccf5c632eb7ba7dfdfdad611a4fcf565543"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/kona.yaml",
+      "local": "attachments/kona.yaml",
+      "size_expected": 1646,
+      "git_blob_sha": "9d97be0762573978f8df2f26244ea5c73dc5bca6",
+      "status": "downloaded",
+      "bytes": 1646,
+      "sha256": "a191c40945263dd53abb62d1d6b7967d9128b73b2833c99bf3fb04905716ccc1"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/rootfs/init",
+      "local": "attachments/rootfs/init",
+      "size_expected": 343,
+      "git_blob_sha": "bde647bc62ffe4742b8f1e2d7a5fe29e463a5990",
+      "status": "downloaded",
+      "bytes": 343,
+      "sha256": "500251f0ec15f5f6bdcd59b9415ffa5043a909a3a28a514ce4dd4ab9440ed5f5"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/rootfs/user.c",
+      "local": "attachments/rootfs/user.c",
+      "size_expected": 10793,
+      "git_blob_sha": "618d526e2807fdbf9b43ef5f5a5c006ae167eede",
+      "status": "downloaded",
+      "bytes": 10793,
+      "sha256": "ef789b3b2f4c2dbd85320d166d1ae1f0aa97b4a432aeeac22fd20a98fb0e7eae"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/scripts/maze_viz.py",
+      "local": "attachments/scripts/maze_viz.py",
+      "size_expected": 10382,
+      "git_blob_sha": "521e7677b90d7848d2d34382a369a1d9a4cd994d",
+      "status": "downloaded",
+      "bytes": 10382,
+      "sha256": "c24a5cb9f24ae912f1c8ccf9f18aa0ca60e265033548067dc1e4545133f85156"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/scripts/upload_solver.py",
+      "local": "attachments/scripts/upload_solver.py",
+      "size_expected": 2142,
+      "git_blob_sha": "2a1ec9cb3b55da64b2f3ddcfd273e3c96d7565fb",
+      "status": "downloaded",
+      "bytes": 2142,
+      "sha256": "9c3fa84a545c093e494a8b1789c148f6964457809a70e2fdbe198878322e4e99"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/dicectf2026-writeups/HEAD/rev/explorer/README.md",
+      "local": "writeups/community/README.md",
+      "status": "downloaded",
+      "bytes": 2955,
+      "sha256": "d9dcb59b6e868af6ddb4dc4018e0ad386a46e3ae8dbdf15563ddd6527c200427"
+    }
+  ],
+  "notes": "官方题目附件；参赛者 hax1ng 的解题文章；another-onion 另有官方多组解法。",
+  "directory": "逆向/DiceCTF_2026_Quals/explorer",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/hax1ng/dicectf2026-writeups/HEAD/rev/explorer/README.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/.gitignore",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/Dockerfile",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/Makefile",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/README.md",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/challenge.rs",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/dist/bzImage",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/dist/initramfs.cpio.gz",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/kona.yaml",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/rootfs/init",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/rootfs/user.c",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/scripts/maze_viz.py",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/explorer/scripts/upload_solver.py"
+  ],
+  "attachment_status": "downloaded"
+}

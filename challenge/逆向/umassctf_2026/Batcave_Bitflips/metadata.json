@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-2937",
+  "event_title": "UMassCTF 2026",
+  "title": "Batcave_Bitflips",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "bitflip-repair",
+    "xor",
+    "sbox"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/umassctf/2026/batcave_bitflips/",
+    "https://ctf42.online/ctfs/umassctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMassCTF/2026/rev/Batcave_Bitflips"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/UMASSCTF-2026-writeups/tree/main/UMASSCTF-2026-writeups/rev/batcave-bitflips"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMassCTF/2026/rev/Batcave_Bitflips",
+    "https://ctf42.online/ctfs/umassctf/2026/batcave_bitflips/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/umassctf_2026/Batcave_Bitflips/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/UMASSCTF-2026-writeups/main/UMASSCTF-2026-writeups/rev/batcave-bitflips/README.md",
+      "bytes": 6461,
+      "sha256": "ba65299631abcf9e4a6042bd7fd0e9939bfd6b608e4b29e38a832e05c6b160cf",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/umassctf_2026/Batcave_Bitflips/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMassCTF/2026/rev/Batcave_Bitflips/README.md",
+      "bytes": 253,
+      "sha256": "c154acaf63870a879bbc90f300f21613b7125c43654bca12a3e45d5080e83b98",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/umassctf_2026/Batcave_Bitflips/attachments/upstream/batcave-bitflips.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMassCTF/2026/rev/Batcave_Bitflips/batcave-bitflips.zip",
+      "bytes": 4332,
+      "sha256": "e81ceedc99b64ba0a222d579ea92ddc097f6696495f957a2fe3991984a92d3e3",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/umassctf/2026/batcave_bitflips/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/umassctf/2026/batcave_bitflips/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3434",
+  "event_title": "CSS CTF 2026: Return of Nexus",
+  "title": "Maintenance_Log",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "off-by-one",
+    "rbp-overwrite",
+    "stack-pivot"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/css/2026/maintenance_log/",
+    "https://ctf42.online/ctfs/css/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/CSS/2026/pwn/Maintenance_Log"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/css-ctf-2026-return-of-nexus/tree/main/pwn/maintenance-log"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/CSS/2026/pwn/Maintenance_Log",
+    "https://ctf42.online/ctfs/css/2026/maintenance_log/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/css_2026/Maintenance_Log/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/css-ctf-2026-return-of-nexus/main/pwn/maintenance-log/README.md",
+      "bytes": 5161,
+      "sha256": "568bbc14e0fbf01f0ab550e8285ee6acdc9eb7390f93b96bc0442c7a6518464c",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/css_2026/Maintenance_Log/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/CSS/2026/pwn/Maintenance_Log/README.md",
+      "bytes": 315,
+      "sha256": "2d97d8ee477a89f787013e872ad3b106448f924fbcf15ab6805b79de848eced2",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/css_2026/Maintenance_Log/attachments/upstream/sector01_handout.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/CSS/2026/pwn/Maintenance_Log/sector01_handout.zip",
+      "bytes": 3493,
+      "sha256": "568a486bb55aec5c8ce0e34b009ba0a404a7e11446ee9f0d97baa11684e8cc5d",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/css/2026/maintenance_log/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/css/2026/maintenance_log/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

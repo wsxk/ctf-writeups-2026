@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IntMod · SunshineCTF 2026 (reverse) writeup · ctf42</title>
+  
+
+<meta name="description" content="IntMod: Reverse challenge from SunshineCTF 2026. Techniques: signal-driven-vm, anti-debugging, self-decrypting-code. &quot;IntMod?? Do you mean integer…">
+<link rel="canonical" href="https://ctf42.online/ctfs/sunshinectf/2026/intmod/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/sunshinectf/2026/intmod/">
+<meta property="og:title" content="IntMod">
+<meta property="og:description" content="IntMod: Reverse challenge from SunshineCTF 2026. Techniques: signal-driven-vm, anti-debugging, self-decrypting-code. &quot;IntMod?? Do you mean integer…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/sunshinectf/">SunshineCTF</a> / <a href="/ctfs/sunshinectf/2026/">2026</a> / IntMod</nav>
+
+
+<div class="challenge-head">
+  <h1>IntMod
+    </h1>
+  <div class="badges">
+    <a class="cat cat-rev" href="/category/rev/">Reverse</a>
+    
+    
+    <span class="chip">weight 51.63</span>
+    <a class="tag" href="/techniques/signal-driven-vm/">#signal-driven-vm</a><a class="tag" href="/techniques/anti-debugging/">#anti-debugging</a><a class="tag" href="/techniques/self-decrypting-code/">#self-decrypting-code</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/sunshinectf/2026/intmod/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/sunshinectf/2026/intmod/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  <p class="meta">Author: Bradley Fernandez</p>
+  <p class="meta">Flag format: <code class="flag-format">sun{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>"IntMod?? Do you mean integer modulus??" "No. I do not mean that." "Then what, pretell, could it mean?" "Just put the agent on the ghidra dawg"</p>
+<p>Author: Bradley Fernandez</p>
+<p>Flag format: sun{flag_content}</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>IntMod — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/SunshineCTF-2026/tree/main/rev/intmod" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/SunshineCTF-2026/tree/main/rev/intmod</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/sunshinectf/2026/intmod/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/trx/2025/molly/">molly</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/anti-debugging/">#anti-debugging</a><a class="tag tag-sm" href="/techniques/instrumentation-callback/">#instrumentation-callback</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/trx/2025/">TRX 2025</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/volgactf/2024-quals/tridea/">Tridea</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/meet-in-the-middle/">#meet-in-the-middle (mitm)</a><a class="tag tag-sm" href="/techniques/block-cipher/">#block-cipher</a><a class="tag tag-sm" href="/techniques/anti-debugging/">#anti-debugging</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/volgactf/2024-quals/">VolgaCTF 2024 Quals</a></td>
+        <td class="num">35.91</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/wanictf/2024/home/">home</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/anti-debugging/">#anti-debugging</a><a class="tag tag-sm" href="/techniques/obfuscation/">#obfuscation</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/wanictf/2024/">WaniCTF 2024</a></td>
+        <td class="num">24.99</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/tamuctf/2024/resistant/">Resistant</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/anti-debugging/">#anti-debugging</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/tamuctf/2024/">TAMUctf 2024</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/l3akctf/2024/anti/">Anti</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/anti-debugging/">#anti-debugging</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/l3akctf/2024/">L3akCTF 2024</a></td>
+        <td class="num">24.43</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/byuctf/2023/sassie/">Sassie</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/anti-debugging/">#anti-debugging</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/byuctf/2023/">BYUCTF 2023</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/signal-driven-vm/">#signal-driven-vm</a> · <a href="/techniques/anti-debugging/">#anti-debugging</a> · <a href="/techniques/self-decrypting-code/">#self-decrypting-code</a>
+          · <a href="/category/rev/">all Reverse</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/rev/IntMod" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/sunshinectf/2026/intmod/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from SunshineCTF 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/sunshinectf/2026/nas_coal/">NAS_coal</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/sunshinectf/2026/welcome_call/">Welcome_Call</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/sunshinectf/2026/ghost_in_the_thread_1_start_here/">ghost_in_the_thread_1_start_here</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/sunshinectf/2026/ghost_in_the_thread_2/">ghost_in_the_thread_2</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/sunshinectf/2026/ghost_in_the_thread_3/">ghost_in_the_thread_3</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/sunshinectf/2026/ghost_in_the_thread_4/">ghost_in_the_thread_4</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/sunshinectf/2026/my_eyes_burn/">my_eyes_burn</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/sunshinectf/2026/suntrail/">suntrail</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/sunshinectf/2026/you_cut_me_off/">you_cut_me_off</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/sunshinectf/2026/cache_money/">Cache_Money</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/sunshinectf/2026/code_breaker/">Code_Breaker</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/sunshinectf/2026/homemaker/">Homemaker</a> <span class="cat cat-pwn cat-xs">Pwn</span></li>
+      </ul>
+      <a class="small" href="/ctfs/sunshinectf/2026/">All SunshineCTF 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

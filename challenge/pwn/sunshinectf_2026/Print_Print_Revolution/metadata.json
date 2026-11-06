@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3399",
+  "event_title": "SunshineCTF 2026",
+  "title": "Print_Print_Revolution",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "custom-printf",
+    "format-string",
+    "arbitrary-write"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/sunshinectf/2026/print_print_revolution/",
+    "https://ctf42.online/ctfs/sunshinectf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Print_Print_Revolution"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/SunshineCTF-2026/tree/main/pwn/print-print-revolution"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Print_Print_Revolution",
+    "https://ctf42.online/ctfs/sunshinectf/2026/print_print_revolution/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/sunshinectf_2026/Print_Print_Revolution/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/SunshineCTF-2026/main/pwn/print-print-revolution/README.md",
+      "bytes": 3444,
+      "sha256": "51ffd0fd28f0af4c474b223563089c71ac06933af815ac84528536a72eab51ef",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/sunshinectf_2026/Print_Print_Revolution/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SunshineCTF/2026/pwn/Print_Print_Revolution/README.md",
+      "bytes": 147,
+      "sha256": "c2643bbcbcccb3d7f164becbe7951c35f7b9f95f9cafc2cc03c1b6e7c42b829c",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/sunshinectf_2026/Print_Print_Revolution/attachments/upstream/revolution",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SunshineCTF/2026/pwn/Print_Print_Revolution/revolution",
+      "bytes": 14520,
+      "sha256": "918483831ef0b27d0cfb8afa9e0341f38d0a296931ccc5f73ef80f5d610f8fa5",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/sunshinectf/2026/print_print_revolution/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/sunshinectf/2026/print_print_revolution/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

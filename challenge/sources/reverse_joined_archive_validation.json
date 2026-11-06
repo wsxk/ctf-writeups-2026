@@ -1,0 +1,14 @@
+{
+  "local": "attachments/attachments/SU_MusicPlayer.zip",
+  "status": "assembled_and_verified",
+  "bytes": 115523790,
+  "sha256": "60bf41e9b77c417668be4d38566c8f8cdb1c1c87614aebc6aae356d7f19418ec",
+  "source_files": [
+    "attachments/attachments/SU_MusicPlayer.zip.part-aa",
+    "attachments/attachments/SU_MusicPlayer.zip.part-ab",
+    "attachments/attachments/SU_MusicPlayer.zip.part-ac"
+  ],
+  "official_sha256_matches": true,
+  "zip_members": 3,
+  "zip_crc_ok": true
+}

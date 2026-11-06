@@ -1,0 +1,60 @@
+# Reference: https://github.com/project-sekai-ctf/konata
+challenges:
+  - category: rev
+    name: explorer
+    author: clubby
+    sort_weight: 89
+    description: |
+      the future is now
+    attachments:
+      files:
+        - "dist/bzImage"
+        - "dist/initramfs.cpio.gz"
+    flags:
+      rctf: dice{twisty_rusty_kernel_maze}
+    endpoints:
+      - type: nc
+        endpoint: "{{ challenge.name }}.{{ config.domains['kctf'] }}"
+        port: 1337
+
+deployment:
+  images:
+    - path: .
+      name: "{{ challenges[0].name }}"
+      tag: latest
+      registry_name: challenges
+      platform: linux/amd64
+
+  kubernetes_inline_manifests:
+    - cluster_name: main
+      documents:
+        - apiVersion: kctf.dev/v1
+          kind: Challenge
+          metadata:
+            name: "{{ challenges[0].name }}"
+          spec:
+            deployed: true
+            image: "{{ images[challenges[0].name] }}"
+            network:
+              public: true
+              ports:
+                - protocol: "TCP"
+                  port: 1337
+                  targetPort: 5000
+            healthcheck:
+              enabled: false
+            # horizontalPodAutoscalerSpec:
+            #   maxReplicas: 4
+            #   minReplicas: 1
+            #   targetCPUUtilizationPercentage: 80
+            podTemplate:
+              template:
+                spec:
+                  containers:
+                    - name: challenge
+                      resources:
+                        requests:
+                          cpu: "500m"
+                          memory: "250Mi"
+                      securityContext:
+                        privileged: true

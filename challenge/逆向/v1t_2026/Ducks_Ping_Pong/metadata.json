@@ -1,0 +1,70 @@
+{
+  "event_id": "CTF-3249",
+  "event_title": "V1T CTF 2026",
+  "title": "Ducks_Ping_Pong",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "windows-driver-reversing",
+    "ioctl",
+    "veh"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/v1t/2026/ducks_ping_pong/",
+    "https://ctf42.online/ctfs/v1t/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/V1T/2026/rev/Ducks_Ping_Pong"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/v1t-ctf-2026-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/V1T/2026/rev/Ducks_Ping_Pong",
+    "https://ctf42.online/ctfs/v1t/2026/ducks_ping_pong/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/v1t_2026/Ducks_Ping_Pong/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/v1t-ctf-2026-writeup/",
+      "bytes": 189106,
+      "sha256": "37ec064f3c3f06751df9903e58eeaaecc197f896d7f121938da215d2b72cc48d",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/v1t_2026/Ducks_Ping_Pong/attachments/upstream/DucksKD.sys",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/V1T/2026/rev/Ducks_Ping_Pong/DucksKD.sys",
+      "bytes": 13600,
+      "sha256": "eb4b06a0f5120ca52e2c18d77fc0abea9a71aaec7dbd01c319da2e7f9c1644ac",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/v1t_2026/Ducks_Ping_Pong/attachments/upstream/Ducks_Ping-Pong.exe.xz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/V1T/2026/rev/Ducks_Ping_Pong/Ducks_Ping-Pong.exe.xz",
+      "bytes": 7444,
+      "sha256": "ef6e6db81e5d5f995fd152c3a0ca6d6bc1dfb4bc70ad18cb2cae6362ad8f5c30",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/v1t_2026/Ducks_Ping_Pong/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/V1T/2026/rev/Ducks_Ping_Pong/README.md",
+      "bytes": 44,
+      "sha256": "a87664e474848a74fb134ddef14abe8ab5505f23ce4a89505044bf488c4b802a",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/v1t/2026/ducks_ping_pong/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/v1t/2026/ducks_ping_pong/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

@@ -1,0 +1,33 @@
+{
+  "event_id": "CTF-3081",
+  "event_title": "0xFUN CTF 2026",
+  "category": "iot",
+  "title": "UART",
+  "source_urls": [
+    "https://ctftime.org/event/3081/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/RobinVA-UIT/robinva-uit.github.io/main/_posts/CTF_tournament/0xFun%20CTF%202026/UART/2026-02-14-UART.md"
+  ],
+  "attachment_urls": [
+    "https://github.com/RobinVA-UIT/robinva-uit.github.io/releases/download/v1.0/0xFunCTF2026_UART.zip"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": "UART 串口信号分析，原类别 Misc/Hardware；按嵌入式通信归入 iot。附件镜像由 writeup 作者提供。",
+  "files": [
+    {
+      "path": "writeups/RobinVA.md",
+      "url": "https://raw.githubusercontent.com/RobinVA-UIT/robinva-uit.github.io/main/_posts/CTF_tournament/0xFun%20CTF%202026/UART/2026-02-14-UART.md",
+      "bytes": 5793,
+      "sha256": "213feabbc5beb53074592e496e22d816acd1e1c1acf9770bed4fc94e77c672fc"
+    },
+    {
+      "path": "attachments/0xFunCTF2026_UART.zip",
+      "url": "https://github.com/RobinVA-UIT/robinva-uit.github.io/releases/download/v1.0/0xFunCTF2026_UART.zip",
+      "bytes": 497,
+      "sha256": "1be9fd338069ec3e62e2859e1323b893911b3ec11b0dfe155113aef933cba886"
+    }
+  ],
+  "errors": []
+}

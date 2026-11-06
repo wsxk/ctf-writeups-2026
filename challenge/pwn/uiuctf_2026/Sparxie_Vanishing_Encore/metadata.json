@@ -1,0 +1,59 @@
+{
+  "event_id": "CTF-3148",
+  "event_title": "UIUCTF 2026",
+  "title": "Sparxie_Vanishing_Encore",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [],
+  "source_urls": [
+    "https://ctf42.online/ctfs/uiuctf/2026/sparxie_vanishing_encore/",
+    "https://ctf42.online/ctfs/uiuctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/pwn/Sparxie_Vanishing_Encore"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/uiuctf-2026-pwn-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/pwn/Sparxie_Vanishing_Encore",
+    "https://ctf42.online/ctfs/uiuctf/2026/sparxie_vanishing_encore/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/uiuctf_2026/Sparxie_Vanishing_Encore/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/uiuctf-2026-pwn-writeup/",
+      "bytes": 163124,
+      "sha256": "538612a33189604565c4deca9da556ef391bedf60cf652030c1acc68a017cdb1",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/uiuctf_2026/Sparxie_Vanishing_Encore/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UIUCTF/2026/pwn/Sparxie_Vanishing_Encore/README.md",
+      "bytes": 299,
+      "sha256": "de594035a960505fbb0a15ba1207a0f1b9b6c356f5bd56a17c9445d602c76a4c",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/uiuctf_2026/Sparxie_Vanishing_Encore/attachments/upstream/sparxie-vanishing-encore.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UIUCTF/2026/pwn/Sparxie_Vanishing_Encore/sparxie-vanishing-encore.zip",
+      "bytes": 160448,
+      "sha256": "8726be9266e5a4d77bd29103028c2c996abba178c857a7b1717c9e228e1721a9",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/uiuctf/2026/sparxie_vanishing_encore/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/uiuctf/2026/sparxie_vanishing_encore/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

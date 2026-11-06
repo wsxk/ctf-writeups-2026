@@ -1,0 +1,153 @@
+{
+  "event_id": "CTF-3095",
+  "event_title": "TAMUctf 2026",
+  "category": "pwn",
+  "title": "goodbye-libc",
+  "source_urls": [
+    "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/pwn/goodbye-libc",
+    "https://ctftime.org/event/3095/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/README.md",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/solve.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/solver-template.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/Dockerfile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/Makefile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/bye-libc.c",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/bye-libc.h",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/config.toml",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/flag.txt",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/goodbye-libc.c",
+    "https://media.githubusercontent.com/media/ACM-VIT/z0d1ak-writeups/HEAD/TAMUctf%202026/pwn/Goodbye%20libc/goodbye-libc.tar.gz"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。",
+    "补充的 original_distribution/*.tar.gz 是参赛队保存的原分发包镜像，LFS SHA-256已校验。"
+  ],
+  "repository": "tamuctf/tamuctf-2026",
+  "repository_tree_sha": "c25f8b673b2a24b5316d164666be8b84d8f02d6b",
+  "artifacts": [
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/Dockerfile",
+      "bytes": 664,
+      "sha256": "99bfc21dd903ad160d9633aa1da66c131c9f6bcc63c4f15c7e7d6603870ed1e2",
+      "git_blob_sha1": "e5f380736109faf98e8f53719d6f046b0a2c026f",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/Makefile",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/Makefile",
+      "bytes": 2594,
+      "sha256": "2249fb6ec99906f4672dec7a7d3b374fb197b5593fb5861f7ae280f76e26a2e9",
+      "git_blob_sha1": "84d0ae00f0b738def4d2f58d954084722073b8db",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/README.md",
+      "bytes": 398,
+      "sha256": "f1557dbdb697637e0f92db213f9f0e474aaa7a308e26c4fabbcc997fbfaddc8a",
+      "git_blob_sha1": "b108c84af307a3e85e59fe1d56f2bc70a09af82c",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/bye-libc.c",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/bye-libc.c",
+      "bytes": 812,
+      "sha256": "a42f20cbb697a74e84797bbe5ff338de180fe23170a0b901fc78f6f870ab1948",
+      "git_blob_sha1": "b934d0ed7d7cdd47e8013d55d4d9ccc75a3b6861",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/bye-libc.h",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/bye-libc.h",
+      "bytes": 137,
+      "sha256": "d507615476a842a182d963feee6c5000a6fac7f6c1dbdcc3294e8e2e4893a75c",
+      "git_blob_sha1": "8310103ef0b4ef1fe7c5d9207279222a87e99dad",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/config.toml",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/config.toml",
+      "bytes": 1102,
+      "sha256": "fff5843730ec72345c06fa6745c54ff8822f3c7e9b4cc9dc62f9b201d094bd3f",
+      "git_blob_sha1": "70e8f97124eae01b92b4bdaf710e19b71e63e4be",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flag.txt",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/flag.txt",
+      "bytes": 53,
+      "sha256": "6d313d6a939033fa17d2f156c86b81ab4eb6b2fa0fac966dd52ee849ec3de425",
+      "git_blob_sha1": "3dbfc6ae87e20783455e47e2ebaa0f1e5fbd701e",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/goodbye-libc.c",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/goodbye-libc.c",
+      "bytes": 5410,
+      "sha256": "d35b89e7c12ac9702f81e3aaaadd96a9ff44fc513183353fb4eff12c7db87517",
+      "git_blob_sha1": "5f28b079c062a9aacb867bff844d75378f9eb926",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve.py",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/solve.py",
+      "bytes": 4776,
+      "sha256": "4b30ea34eb6b7a03fd506ff886ea38b8718d0aa1473ba53f7bffe58d3cdf28a2",
+      "git_blob_sha1": "9d439fb94c5599a446a4312d431ca2f71d23789b",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solver-template.py",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/goodbye-libc/solver-template.py",
+      "bytes": 143,
+      "sha256": "2a5c5c4c0755f890f7d01787098cd8e48a0199f6077f08dfd8321541d54010f5",
+      "git_blob_sha1": "20d5d4a144cfadc2b388f17a9dbedf8f613ebba5",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/original_distribution/goodbye-libc.tar.gz",
+      "url": "https://media.githubusercontent.com/media/ACM-VIT/z0d1ak-writeups/HEAD/TAMUctf%202026/pwn/Goodbye%20libc/goodbye-libc.tar.gz",
+      "bytes": 110449,
+      "sha256": "ed237e0b8a55812d08d69c97dc382d1c059fb43ef79d5d0f55fa2a05850e3509",
+      "kind": "attachments"
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/README.md"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

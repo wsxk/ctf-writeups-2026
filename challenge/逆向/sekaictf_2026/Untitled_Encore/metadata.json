@@ -1,0 +1,62 @@
+{
+  "event_id": "CTF-3113",
+  "event_title": "SekaiCTF 2026",
+  "title": "Untitled_Encore",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "reversing",
+    "constraint-solving"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/sekaictf/2026/untitled_encore/",
+    "https://ctf42.online/ctfs/sekaictf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/rev/Untitled_Encore"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/sekai-ctf-2026-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/rev/Untitled_Encore",
+    "https://ctf42.online/ctfs/sekaictf/2026/untitled_encore/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/sekaictf_2026/Untitled_Encore/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/sekai-ctf-2026-writeup/",
+      "bytes": 233313,
+      "sha256": "593efaa221c450ccd0906799e1a083812b8f7897dd4e455939d88e5c36566d46",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/sekaictf_2026/Untitled_Encore/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SekaiCTF/2026/rev/Untitled_Encore/README.md",
+      "bytes": 187,
+      "sha256": "5560a34f54b697ef055d8f79e3cb51677b241bf0d2e82828a1d2e93b09716a94",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/sekaictf_2026/Untitled_Encore/attachments/upstream/rev_untitled-encore.tar.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SekaiCTF/2026/rev/Untitled_Encore/rev_untitled-encore.tar.gz",
+      "bytes": 38572,
+      "sha256": "4b564f52c758adcb57916a926ff3125f960a61bb9eb8119a9e279e6bcd55bd40",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/sekaictf/2026/untitled_encore/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/sekaictf/2026/untitled_encore/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

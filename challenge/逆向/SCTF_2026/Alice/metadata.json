@@ -1,0 +1,51 @@
+{
+  "event_id": "CTF-3314",
+  "event_title": "SCTF 2026",
+  "category": "逆向",
+  "title": "Alice",
+  "dirname": "SCTF_2026",
+  "source_urls": [
+    "https://github.com/SycloverTeam/SCTF-2026/tree/HEAD/Reverse/Alice"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Alice/Alice.zip",
+      "local": "attachments/Alice.zip",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 468789,
+      "sha256": "00a5b3043f7d93d89d617abd1c131543311c385e33fd339708da7e65ed85b9cc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Alice/README.md",
+      "local": "attachments/README.md",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 225,
+      "sha256": "292a9dc1563866d89203c26ba5ec9bb6a1eafee8cbd0b1414eda24a668a851b9"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Alice/writeup/writeup.md",
+      "local": "writeups/writeup/writeup.md",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 10485,
+      "sha256": "888c15f8aa413b63b7382c949026ee82e2fdbfb97afd331c9796145ee27e16bd"
+    }
+  ],
+  "notes": "官方2026仓库题目附件和完整writeup。按题目实际内容归类：GuardMaster为APK；BrainfOok及babel_furnace使用自定义VM。",
+  "directory": "逆向/SCTF_2026/Alice",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Alice/writeup/writeup.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Alice/Alice.zip",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Alice/README.md"
+  ],
+  "attachment_status": "downloaded"
+}

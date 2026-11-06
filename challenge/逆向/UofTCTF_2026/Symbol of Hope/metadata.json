@@ -1,0 +1,51 @@
+{
+  "event_id": "CTF-2969",
+  "event_title": "UofTCTF 2026",
+  "category": "逆向",
+  "title": "Symbol of Hope",
+  "dirname": "UofTCTF_2026",
+  "source_urls": [
+    "https://github.com/UofTCTF/uoftctf-2026-chals-public/tree/HEAD/symbol-of-hope"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/symbol-of-hope/challenge.yml",
+      "local": "attachments/challenge.yml",
+      "size_expected": 517,
+      "git_blob_sha": "f6d2fadca64c80fd0ef7904a5dba4bcbeee296b4",
+      "status": "downloaded",
+      "bytes": 517,
+      "sha256": "b9ee3ae92b2a8859aa5683d65b8203b12548229667428e9405d48143508965a0"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/symbol-of-hope/dist/checker",
+      "local": "attachments/dist/checker",
+      "size_expected": 117368,
+      "git_blob_sha": "44e0037a22ea263ea0bbd022f1e7ced68d0fbbfb",
+      "status": "downloaded",
+      "bytes": 117368,
+      "sha256": "a97ae06f01cdf445b11842a35f51b2254c85c9d80f139dff154caa107bf241f5"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/symbol-of-hope/solve/solve.py",
+      "local": "writeups/solve/solve.py",
+      "size_expected": 1095,
+      "git_blob_sha": "6f328e41722796b36df7dbb36ca893dffb094d97",
+      "status": "downloaded",
+      "bytes": 1095,
+      "sha256": "23d6aa3bbadbb9db1f1fb987fb0e9f2482870e2b666874414eecafef3ce64f93"
+    }
+  ],
+  "notes": "官方赛后仓库。writeups 中保留官方求解脚本；不保证每题都有叙述型解题文章。",
+  "directory": "逆向/UofTCTF_2026/Symbol of Hope",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/symbol-of-hope/solve/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/symbol-of-hope/challenge.yml",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/symbol-of-hope/dist/checker"
+  ],
+  "attachment_status": "downloaded"
+}

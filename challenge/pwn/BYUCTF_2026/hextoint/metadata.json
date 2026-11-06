@@ -1,0 +1,133 @@
+{
+  "event_id": "CTF-3247",
+  "event_title": "BYUCTF 2026",
+  "category": "pwn",
+  "title": "hextoint",
+  "source_urls": [
+    "https://github.com/BYU-CSA/BYUCTF-2026/tree/HEAD/pwn/hextoint",
+    "https://ctftime.org/event/3247/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/hextoint/README.md",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/hextoint/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/hextoint/.gdb_history",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/hextoint/Dockerfile",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/hextoint/dist/hex_to_int2",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/hextoint/docker-compose.yml",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/hextoint/main.c",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/hextoint/src/flag.txt",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/hextoint/src/hex_to_int2"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "BYU-CSA/BYUCTF-2026",
+  "repository_tree_sha": "51a8050d89cc1bc0265d5b5035157edec64286e1",
+  "artifacts": [
+    {
+      "path": "attachments/.gdb_history",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/hextoint/.gdb_history",
+      "bytes": 50,
+      "sha256": "6689b92d39c69009cc91caf40a33780bc6186c19fb6e61a340afbca98b0006f1",
+      "git_blob_sha1": "5e3216733231f9dd67192b4017eae2c9f57484dd",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/hextoint/Dockerfile",
+      "bytes": 165,
+      "sha256": "6bf2721ab7d03a8b538af52291d450e227b9d6d5cab62addd3a9a3a23a1a8e63",
+      "git_blob_sha1": "bae7c789d1cfb0b505c4409f2821307395590bcc",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/hextoint/README.md",
+      "bytes": 443,
+      "sha256": "1a40aeef8e1f27e5d9f19a91f0677da9e11635838b30e0014eab5ccb37b9c6ca",
+      "git_blob_sha1": "bb7653f773e01bd0138dcf72a4938b940d0c20fe",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/dist/hex_to_int2",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/hextoint/dist/hex_to_int2",
+      "bytes": 279248,
+      "sha256": "cc159eec275cea2d5ff667556e029397f3980fce937bec499d0c04d8a7803361",
+      "git_blob_sha1": "13249e7b57b70fe6f0392f0bb03f1c08ce4bc8c5",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/docker-compose.yml",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/hextoint/docker-compose.yml",
+      "bytes": 162,
+      "sha256": "1fd969ddce9a522bcf180707ff8ee41dc0c8094ae75d8b705878122b04293633",
+      "git_blob_sha1": "21bdb206115672bec9d7713544f5ee071aa25db8",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/main.c",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/hextoint/main.c",
+      "bytes": 2393,
+      "sha256": "ae7ec93d296d57cb80e86936ffd09ae59c2e15a1377aceb79957fb1ec1e81f4a",
+      "git_blob_sha1": "9d7fb8e8c0af75daf726a8a519e60fa9cdc90e8d",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve.py",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/hextoint/solve.py",
+      "bytes": 774,
+      "sha256": "a79dc94bd1562292094380848ff305f5ec74361de4e8a842dbaa1c980fc2f759",
+      "git_blob_sha1": "1ecc7233b3841c8e1ddb7e1108a6a29ec5135769",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/flag.txt",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/hextoint/src/flag.txt",
+      "bytes": 33,
+      "sha256": "872af7592d82ef121587fccf373d8db0d105bf3e89d4e36451ab8a7d0c2a1ad6",
+      "git_blob_sha1": "2edfe55252763d2405ed05495077456af888a66b",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/hex_to_int2",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/hextoint/src/hex_to_int2",
+      "bytes": 279248,
+      "sha256": "cc159eec275cea2d5ff667556e029397f3980fce937bec499d0c04d8a7803361",
+      "git_blob_sha1": "13249e7b57b70fe6f0392f0bb03f1c08ce4bc8c5",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/README.md"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

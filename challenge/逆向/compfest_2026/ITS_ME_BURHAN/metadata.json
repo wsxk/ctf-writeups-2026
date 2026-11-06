@@ -1,0 +1,61 @@
+{
+  "event_id": "CTF-3290",
+  "event_title": "COMPFEST CTF 2026",
+  "title": "ITS_ME_BURHAN",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "deterministic-password-generation"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/compfest/2026/its_me_burhan/",
+    "https://ctf42.online/ctfs/compfest/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/COMPFEST/2026/rev/ITS_ME_BURHAN"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/compfest-ctf-2026/tree/main/rev/its-me-burhan"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/COMPFEST/2026/rev/ITS_ME_BURHAN",
+    "https://ctf42.online/ctfs/compfest/2026/its_me_burhan/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/compfest_2026/ITS_ME_BURHAN/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/compfest-ctf-2026/main/rev/its-me-burhan/README.md",
+      "bytes": 11800,
+      "sha256": "ba94218209bcf8023b81fdd371f1598446ecd63397a925140348bd90c0ee2527",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/compfest_2026/ITS_ME_BURHAN/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/COMPFEST/2026/rev/ITS_ME_BURHAN/README.md",
+      "bytes": 432,
+      "sha256": "e1008a47eef8b0b1cf7d8cf6b2fecbe4c800f7ef9e1102ba7f93bee99bee91c6",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/compfest_2026/ITS_ME_BURHAN/attachments/upstream/burhanquest.jar",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/COMPFEST/2026/rev/ITS_ME_BURHAN/burhanquest.jar",
+      "bytes": 98020,
+      "sha256": "81e313cf78452ccb4388660fff6cc8ea84d0d948cd4246707028b22ec78e73aa",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/compfest/2026/its_me_burhan/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/compfest/2026/its_me_burhan/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

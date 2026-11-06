@@ -1,0 +1,71 @@
+{
+  "event_id": "CTF-3234",
+  "event_title": "squ1rrel CTF 2026",
+  "title": "squ1rrel_o_tron_2",
+  "category": "虚拟化",
+  "original_category": "Reverse",
+  "tags": [
+    "pdf-javascript",
+    "custom-vm",
+    "algorithm-identification"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/squ1rrel/2026/squ1rrel_o_tron_2/",
+    "https://ctf42.online/ctfs/squ1rrel/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/squ1rrel/2026/rev/squ1rrel_o_tron_2"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/squ1rrel-CTF-2026-Writeups/tree/main/rev/squ1rrel-o-tron-2"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/squ1rrel/2026/rev/squ1rrel_o_tron_2",
+    "https://ctf42.online/ctfs/squ1rrel/2026/squ1rrel_o_tron_2/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/squ1rrel_2026/squ1rrel_o_tron_2/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/squ1rrel-CTF-2026-Writeups/main/rev/squ1rrel-o-tron-2/README.md",
+      "bytes": 9986,
+      "sha256": "3180b60321bcdffe0cf749045c9a344a20257b32a7b29bb3cd13f04e93e8b3ca",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/squ1rrel_2026/squ1rrel_o_tron_2/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/squ1rrel/2026/rev/squ1rrel_o_tron_2/README.md",
+      "bytes": 122,
+      "sha256": "8c53133af86f6d39594d51309cd6c7af80bdfaf46ca00070f548455be35811e1",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/squ1rrel_2026/squ1rrel_o_tron_2/attachments/upstream/chall.pdf",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/squ1rrel/2026/rev/squ1rrel_o_tron_2/chall.pdf",
+      "bytes": 269171,
+      "sha256": "676eae66311e62cc3f896592bf59ff9cd19e0546989868500b2351b1bdb4f124",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/squ1rrel_2026/squ1rrel_o_tron_2/attachments/upstream/server.py",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/squ1rrel/2026/rev/squ1rrel_o_tron_2/server.py",
+      "bytes": 2664,
+      "sha256": "a2fd71ebdd888738da078a925bd3cd0476f411b2c134f15ac7229fa810a03f4c",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/squ1rrel/2026/squ1rrel_o_tron_2/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/squ1rrel/2026/squ1rrel_o_tron_2/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

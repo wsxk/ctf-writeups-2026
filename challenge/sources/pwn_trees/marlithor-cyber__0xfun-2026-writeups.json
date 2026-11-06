@@ -1,0 +1,432 @@
+{
+  "sha": "9ec1cdacb3ee3f8494e89968f47b20878f30f2a5",
+  "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/trees/9ec1cdacb3ee3f8494e89968f47b20878f30f2a5",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "93ffec6b0838a04e8b4be1e7b1bdb0d6bee31451",
+      "size": 1612,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/93ffec6b0838a04e8b4be1e7b1bdb0d6bee31451"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca1ddb8cc06982020ed87698ccdcf975d59de24c",
+      "size": 610,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/ca1ddb8cc06982020ed87698ccdcf975d59de24c"
+    },
+    {
+      "path": "crypto",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "30dbfba582b986127d08fb9cb013767191f748af",
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/trees/30dbfba582b986127d08fb9cb013767191f748af"
+    },
+    {
+      "path": "crypto/90",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "97789c68086700a9b39c70803b5ad8c07518ec9f",
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/trees/97789c68086700a9b39c70803b5ad8c07518ec9f"
+    },
+    {
+      "path": "crypto/90/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee7f9d872e06a5bbea48b2f6d8f93e076d142661",
+      "size": 969,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/ee7f9d872e06a5bbea48b2f6d8f93e076d142661"
+    },
+    {
+      "path": "crypto/90/cipher.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1a13ddc171eb7f01cff5e1da8bebc1dd6023fa80",
+      "size": 43,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/1a13ddc171eb7f01cff5e1da8bebc1dd6023fa80"
+    },
+    {
+      "path": "crypto/90/solve.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "321e0753d5ed7e05bdcf74b55f7de2fe9c87c26f",
+      "size": 33006,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/321e0753d5ed7e05bdcf74b55f7de2fe9c87c26f"
+    },
+    {
+      "path": "crypto/90/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d7a3b4e6ba9a757089c4e997c2d0bfa06912fa9",
+      "size": 822,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/2d7a3b4e6ba9a757089c4e997c2d0bfa06912fa9"
+    },
+    {
+      "path": "crypto/BitStorm",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "64d5665a27b335bd2760e8c1dc74665c25f97e6f",
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/trees/64d5665a27b335bd2760e8c1dc74665c25f97e6f"
+    },
+    {
+      "path": "crypto/BitStorm/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d73c3b55108eea5e498184be923310c21f5c8d92",
+      "size": 1604,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/d73c3b55108eea5e498184be923310c21f5c8d92"
+    },
+    {
+      "path": "crypto/BitStorm/output.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4cfb4d3f059b56e61a2e15df816b8b431560a7f3",
+      "size": 1304,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/4cfb4d3f059b56e61a2e15df816b8b431560a7f3"
+    },
+    {
+      "path": "crypto/BitStorm/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b06d0ad661ffd1d2f3b6a511ce10e89707eb76a",
+      "size": 3408,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/1b06d0ad661ffd1d2f3b6a511ce10e89707eb76a"
+    },
+    {
+      "path": "crypto/Hawk_II",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "121bae30650daeef8700d593099664acbc609382",
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/trees/121bae30650daeef8700d593099664acbc609382"
+    },
+    {
+      "path": "crypto/Hawk_II/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2dbe1034f0b97cc5c9bbb2a6075f26d9a553f74",
+      "size": 773,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/f2dbe1034f0b97cc5c9bbb2a6075f26d9a553f74"
+    },
+    {
+      "path": "crypto/Hawk_II/output.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f30625d4ee811f5eb9822217086b1022d9d0ea92",
+      "size": 20549,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/f30625d4ee811f5eb9822217086b1022d9d0ea92"
+    },
+    {
+      "path": "crypto/Hawk_II/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "779869058dcaa4c7c2134be9b96763e60b40a359",
+      "size": 710,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/779869058dcaa4c7c2134be9b96763e60b40a359"
+    },
+    {
+      "path": "crypto/fortune",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f1f4435b44ecb444b83118833dc4262878f3c52f",
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/trees/f1f4435b44ecb444b83118833dc4262878f3c52f"
+    },
+    {
+      "path": "crypto/fortune/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "097244f9388aceca35870f8e9e4c83d0f2cd6155",
+      "size": 2154,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/097244f9388aceca35870f8e9e4c83d0f2cd6155"
+    },
+    {
+      "path": "crypto/fortune/solve.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9809b4ad06494c14f2348c7d9e648285a47779a5",
+      "size": 3126,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/9809b4ad06494c14f2348c7d9e648285a47779a5"
+    },
+    {
+      "path": "crypto/fortune_revenge",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7adc154a70b726227ce648bd4f633a86835162bc",
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/trees/7adc154a70b726227ce648bd4f633a86835162bc"
+    },
+    {
+      "path": "crypto/fortune_revenge/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "120fc27ecd7414ee3c33ba78b6c1dac3438be615",
+      "size": 1992,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/120fc27ecd7414ee3c33ba78b6c1dac3438be615"
+    },
+    {
+      "path": "crypto/fortune_revenge/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23796adf851c578a093c5be460b6357b684f1d20",
+      "size": 2110,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/23796adf851c578a093c5be460b6357b684f1d20"
+    },
+    {
+      "path": "crypto/meowel",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ef7ecf33423b483c77edc78f48851bba7ecd39e8",
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/trees/ef7ecf33423b483c77edc78f48851bba7ecd39e8"
+    },
+    {
+      "path": "crypto/meowel/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae9667002b3e50fc0182694282b074d6dab94ab6",
+      "size": 1250,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/ae9667002b3e50fc0182694282b074d6dab94ab6"
+    },
+    {
+      "path": "crypto/meowel/output.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "051dc73b8d19c5ba3cb6bd2e701b8b407b2bbb03",
+      "size": 887,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/051dc73b8d19c5ba3cb6bd2e701b8b407b2bbb03"
+    },
+    {
+      "path": "crypto/meowel/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e6f6ce8967e56e517b4774b15b77e6ee9843390",
+      "size": 2848,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/7e6f6ce8967e56e517b4774b15b77e6ee9843390"
+    },
+    {
+      "path": "pwn",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d1cfbd61fafb7a3be4418b1a68a797be44fe7ada",
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/trees/d1cfbd61fafb7a3be4418b1a68a797be44fe7ada"
+    },
+    {
+      "path": "pwn/67_revenge",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f22bd79926fd7b5f12199f10f2781d1366df4f8a",
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/trees/f22bd79926fd7b5f12199f10f2781d1366df4f8a"
+    },
+    {
+      "path": "pwn/67_revenge/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a702fd2cee3998965f8fbf4786a917f5650fd17",
+      "size": 2433,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/6a702fd2cee3998965f8fbf4786a917f5650fd17"
+    },
+    {
+      "path": "pwn/67_revenge/output.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "30749d965e24ff7bdb8b4f5266dd39928da6ec73",
+      "size": 330,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/30749d965e24ff7bdb8b4f5266dd39928da6ec73"
+    },
+    {
+      "path": "pwn/67_revenge/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a335050de0236d9f825516caa61a79715affd8e7",
+      "size": 6947,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/a335050de0236d9f825516caa61a79715affd8e7"
+    },
+    {
+      "path": "pwn/Warden",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0687f87fbf8cd3ec1adb629ee24362c9b46001f7",
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/trees/0687f87fbf8cd3ec1adb629ee24362c9b46001f7"
+    },
+    {
+      "path": "pwn/Warden/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bb9e143c3fd649a142e90ad238dff159d09d0e81",
+      "size": 3553,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/bb9e143c3fd649a142e90ad238dff159d09d0e81"
+    },
+    {
+      "path": "pwn/Warden/output.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c73e708748c176a0708e8a632d51606039d04a7b",
+      "size": 659,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/c73e708748c176a0708e8a632d51606039d04a7b"
+    },
+    {
+      "path": "pwn/Warden/send.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6cea10d1089d400932d2dc5cd5eeb0d82e84d98",
+      "size": 1022,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/e6cea10d1089d400932d2dc5cd5eeb0d82e84d98"
+    },
+    {
+      "path": "pwn/Warden/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba0d3df0d16f7a59d5fa2bcbb2e55b114049f456",
+      "size": 2625,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/ba0d3df0d16f7a59d5fa2bcbb2e55b114049f456"
+    },
+    {
+      "path": "pwn/bit_flips",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "71302d897624282e1c800c78d81b6c2147617e82",
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/trees/71302d897624282e1c800c78d81b6c2147617e82"
+    },
+    {
+      "path": "pwn/bit_flips/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7e2b27d819516249481583f6e277507666967ed",
+      "size": 2779,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/b7e2b27d819516249481583f6e277507666967ed"
+    },
+    {
+      "path": "pwn/bit_flips/output.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff186b4f0a02da00d3429ee3661fcb038ce8952d",
+      "size": 118,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/ff186b4f0a02da00d3429ee3661fcb038ce8952d"
+    },
+    {
+      "path": "pwn/bit_flips/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31f8625ac8c5d3a08f034d0bff0af1cecb2128ec",
+      "size": 3213,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/31f8625ac8c5d3a08f034d0bff0af1cecb2128ec"
+    },
+    {
+      "path": "pwn/fridge",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1d7a23eab2483982604860dc215558e472c4a732",
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/trees/1d7a23eab2483982604860dc215558e472c4a732"
+    },
+    {
+      "path": "pwn/fridge/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "060f020fffd8e3c9d4cf7a311cfb8f616dbc4da8",
+      "size": 1588,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/060f020fffd8e3c9d4cf7a311cfb8f616dbc4da8"
+    },
+    {
+      "path": "pwn/fridge/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "296ecc9290408f468c402fd74ac6bda5499b9298",
+      "size": 2175,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/296ecc9290408f468c402fd74ac6bda5499b9298"
+    },
+    {
+      "path": "pwn/phantom",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "05b36b9df421ba05809703d0086243e87887cfac",
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/trees/05b36b9df421ba05809703d0086243e87887cfac"
+    },
+    {
+      "path": "pwn/phantom/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dda65470fd055bdf6fec122223132a6e737e59bc",
+      "size": 932,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/dda65470fd055bdf6fec122223132a6e737e59bc"
+    },
+    {
+      "path": "pwn/phantom/output.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ba5c9a32bd6496eedcac0c535a8ccd00252d4d8",
+      "size": 136,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/1ba5c9a32bd6496eedcac0c535a8ccd00252d4d8"
+    },
+    {
+      "path": "pwn/phantom/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6240e7ca8c6a429811a16c8ed3f172f3d85b758c",
+      "size": 674,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/6240e7ca8c6a429811a16c8ed3f172f3d85b758c"
+    },
+    {
+      "path": "pwn/phantom_pwn",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dbdefae80736e431ce2f89450778887139714967",
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/trees/dbdefae80736e431ce2f89450778887139714967"
+    },
+    {
+      "path": "pwn/phantom_pwn/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ca27127be5d3ca8a9dbdf4499bb21c383af90f5",
+      "size": 2789,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/2ca27127be5d3ca8a9dbdf4499bb21c383af90f5"
+    },
+    {
+      "path": "pwn/phantom_pwn/exploit.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9fe18d002c3ba841e9a8dbe48a1dcb959169a6d0",
+      "size": 13140,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/9fe18d002c3ba841e9a8dbe48a1dcb959169a6d0"
+    },
+    {
+      "path": "pwn/phantom_pwn/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "299bf9a3ed3cb756d7823b06fbb7aa5ea6d36bde",
+      "size": 7303,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/299bf9a3ed3cb756d7823b06fbb7aa5ea6d36bde"
+    },
+    {
+      "path": "pwn/what",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "787dbb9c6f040ee05de7fe767d844b941edfc1ae",
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/trees/787dbb9c6f040ee05de7fe767d844b941edfc1ae"
+    },
+    {
+      "path": "pwn/what/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea1522cba12427256f48177b2eae7be9e33296cd",
+      "size": 1460,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/ea1522cba12427256f48177b2eae7be9e33296cd"
+    },
+    {
+      "path": "pwn/what/output.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "288e616f60d99df85c40001f7ec0bcc0fea2ff58",
+      "size": 307,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/288e616f60d99df85c40001f7ec0bcc0fea2ff58"
+    },
+    {
+      "path": "pwn/what/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "39f59d95434aab23e7e40729cc9ae98d907efe5b",
+      "size": 1166,
+      "url": "https://api.github.com/repos/marlithor-cyber/0xfun-2026-writeups/git/blobs/39f59d95434aab23e7e40729cc9ae98d907efe5b"
+    }
+  ],
+  "truncated": false
+}

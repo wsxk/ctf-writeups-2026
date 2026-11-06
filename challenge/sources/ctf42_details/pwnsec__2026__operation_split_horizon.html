@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Operation_Split_Horizon · PwnSec 2026 (reverse) writeup · ctf42</title>
+  
+
+<meta name="description" content="Operation_Split_Horizon: Reverse challenge from PwnSec 2026. Techniques: pcap-analysis, malware-analysis, exfiltration. CategoryReverse Engineering…">
+<link rel="canonical" href="https://ctf42.online/ctfs/pwnsec/2026/operation_split_horizon/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/pwnsec/2026/operation_split_horizon/">
+<meta property="og:title" content="Operation_Split_Horizon">
+<meta property="og:description" content="Operation_Split_Horizon: Reverse challenge from PwnSec 2026. Techniques: pcap-analysis, malware-analysis, exfiltration. CategoryReverse Engineering…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/pwnsec/">PwnSec</a> / <a href="/ctfs/pwnsec/2026/">2026</a> / Operation_Split_Horizon</nav>
+
+
+<div class="challenge-head">
+  <h1>Operation_Split_Horizon
+    </h1>
+  <div class="badges">
+    <a class="cat cat-rev" href="/category/rev/">Reverse</a>
+    
+    
+    <span class="chip">weight 33.89</span>
+    <a class="tag" href="/techniques/pcap-analysis/">#pcap-analysis</a><a class="tag" href="/techniques/malware-analysis/">#malware-analysis</a><a class="tag" href="/techniques/exfiltration/">#exfiltration</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/pwnsec/2026/operation_split_horizon/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/pwnsec/2026/operation_split_horizon/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  
+  <p class="meta">Flag format: <code class="flag-format">PWNSEC{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>CategoryReverse Engineering</p>
+<p>operation-split-horizon.md
+From:    soc-lead@corptech.local
+To:      ir-team@corptech.local
+Subject: URGENT: IT does not distribute Shawarma via email
+Bad news: The promised "Free Double Meat Shawarma" was a lie. Worse news: Braa clicked it anyway.</p>
+<p>Instead of extra garlic sauce, his workstation received a payload. The attacker rooted around, found something shiny, and exfiltrated it. Attached is the network capture of Braa's poor life choices and the lure page itself.</p>
+<p>Please figure out what the attacker took so I know whether to fix it or just update my resume.</p>
+<p>@Nyx</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>Operation_Split_Horizon — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/rev/operation-split-horizon" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/rev/operation-split-horizon</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/pwnsec/2026/operation_split_horizon/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/seetf/2022/susware/">susware</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/malware-analysis/">#malware-analysis</a><a class="tag tag-sm" href="/techniques/unpacking/">#unpacking</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/seetf/2022/">SEETF 2022</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/defcamp/2022/malwy/">malwy</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/malware-analysis/">#malware-analysis</a><a class="tag tag-sm" href="/techniques/reversing/">#reversing</a><a class="tag tag-sm" href="/techniques/ida/">#ida</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/defcamp/2022/">Defcamp 2022</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/sekaictf/2024/sekai_licensing/">Sekai_Licensing</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/pcap-analysis/">#pcap-analysis</a><a class="tag tag-sm" href="/techniques/binary-patching/">#binary-patching</a><a class="tag tag-sm" href="/techniques/license-check/">#license-check</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/sekaictf/2024/">SekaiCTF 2024</a></td>
+        <td class="num">36.96</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/dawgctf/2021/nstftp/">NSTFTP</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/network-protocol-reversing/">#network-protocol-reversing</a><a class="tag tag-sm" href="/techniques/pcap-analysis/">#pcap-analysis</a><a class="tag tag-sm" href="/techniques/custom-ftp/">#custom-ftp</a><a class="tag tag-sm" href="/techniques/backdoor/">#backdoor</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/dawgctf/2021/">DawgCTF 2021</a></td>
+        <td class="num">23.29</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/pcap-analysis/">#pcap-analysis</a> · <a href="/techniques/malware-analysis/">#malware-analysis</a> · <a href="/techniques/exfiltration/">#exfiltration</a>
+          · <a href="/category/rev/">all Reverse</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/rev/Operation_Split_Horizon" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/pwnsec/2026/operation_split_horizon/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from PwnSec 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/pwnsec/2026/cusp_of_no_return/">Cusp_of_No_Return</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/gap_gap/">Gap_Gap</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/hashbrown/">Hashbrown</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/the_one_hit_wonder/">The_One_Hit_Wonder</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/the_odyssey/">The_odyssey</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/skill_issue_aaelmo/">skill_issue_aaelmo</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/tap_tap/">tap_tap</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/pwnsec/2026/meridian/">Meridian</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/pwnsec/2026/jailincpython/">jailincpython</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/pwnsec/2026/ycc/">ycc</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/pwnsec/2026/death_ops/">Death_Ops</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/pwnsec/2026/freal_world_manipulation/">Freal_World_Manipulation</a> <span class="cat cat-pwn cat-xs">Pwn</span></li>
+      </ul>
+      <a class="small" href="/ctfs/pwnsec/2026/">All PwnSec 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

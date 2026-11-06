@@ -1,0 +1,186 @@
+{
+  "event_id": "CTF-2969",
+  "event_title": "UofTCTF 2026",
+  "category": "pwn",
+  "title": "eebpf",
+  "source_urls": [
+    "https://github.com/UofTCTF/uoftctf-2026-chals-public/tree/HEAD/eebpf",
+    "https://ctftime.org/event/2969/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/solve/Makefile",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/solve/bpf_insn.h",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/solve/exp",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/solve/exp.c",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/solve/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/.gitattributes",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/Dockerfile",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/bzImage",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/chall.patch",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/challenge.yml",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/dist/eebpf.zip",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/initramfs.cpio.gz",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/start-qemu.sh",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/startup.args"
+  ],
+  "writeup_status": "已下载官方解题脚本（独立文字writeup未提供）",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "UofTCTF/uoftctf-2026-chals-public",
+  "repository_tree_sha": "8519e2bb29b3e49b0e48a2078728f9fc6e6cb0ac",
+  "artifacts": [
+    {
+      "path": "attachments/.gitattributes",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/.gitattributes",
+      "bytes": 52,
+      "sha256": "1cb4d10870fde4240395edf4f3ad74a4956bf70bb232d140b6aa04e52be46074",
+      "git_blob_sha1": "ddd4285ceda70bd22eca752d621b003629bcc57e",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/Dockerfile",
+      "bytes": 547,
+      "sha256": "fe29ad3eb72b548d7da1a6dd11c61edff58e0597613aa6a289153759ba125f7c",
+      "git_blob_sha1": "65257fcc2dcc2f52531366ee318969189b43c1ee",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/bzImage",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/bzImage",
+      "bytes": 7480320,
+      "sha256": "f2990a446e7f024a5305941b26deec1df509c2be847436d4ef06aa3b928a0449",
+      "git_blob_sha1": "a2412de2ccc2a63a0c6f34f3aa8754ee38451c58",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall.patch",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/chall.patch",
+      "bytes": 798,
+      "sha256": "a84c8604fd487aff3602c9e5feb5b710886b1dbe670a5b22efb9b1db7c1044c5",
+      "git_blob_sha1": "d26e00a129b6fce4b15bae19206d4fd3540c6be7",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge.yml",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/challenge.yml",
+      "bytes": 482,
+      "sha256": "ceb255492c1ee1bf7b610914d9c3bc3075d60aba4b16080d522a752eb45001d8",
+      "git_blob_sha1": "e2e5a21576779c51251e8bb7888fb2b2e116c1c8",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/dist/eebpf.zip",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/dist/eebpf.zip",
+      "bytes": 10051387,
+      "sha256": "83210f5b5f4879b5532337a846c594f453b06f27d205c15cae18212dfbbe2775",
+      "git_blob_sha1": "39f67bb2076c1dbe9f6314fc33a85b9b80b57ed7",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/initramfs.cpio.gz",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/initramfs.cpio.gz",
+      "bytes": 2665896,
+      "sha256": "e3a39eee104951ed3cc45f207c6c6ff78f37753e08ff4331b8483371b2685f6f",
+      "git_blob_sha1": "4d546232b3d096d233471f0ee0b429938cb88d64",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/Makefile",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/solve/Makefile",
+      "bytes": 55,
+      "sha256": "7334178ebe4bef043a26c942a724137f6e1af68a1261fed7b1bbe1088213d769",
+      "git_blob_sha1": "083e6e724dc78d39070c8546de437df202c41a14",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/bpf_insn.h",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/solve/bpf_insn.h",
+      "bytes": 5718,
+      "sha256": "f251f47ea7bd3882ceeb0acbea82a40dc87e7d8c8c2c74aa017f3d9b74500d37",
+      "git_blob_sha1": "fa640f7618e23ba73c5f56d40060f794d73066b6",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/exp",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/solve/exp",
+      "bytes": 46784,
+      "sha256": "aff66a379f2b716ab0cfabf56faec5976ce51f299e1c096bf3a2d3c2eb1198fa",
+      "git_blob_sha1": "59f8bdab6ae2735c0473293e251ad99accf8b66d",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/exp.c",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/solve/exp.c",
+      "bytes": 8460,
+      "sha256": "891316fee802390210bde8b83c8b2212e9ea6d48e110b65e6d3935220b3faf84",
+      "git_blob_sha1": "50388b85d274ccc1503e3ded6a5ba8e3255ed0de",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/solve.py",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/solve/solve.py",
+      "bytes": 504,
+      "sha256": "0b1de652614532825bb35e39b48f42a1cb00a9401db47f6a5e2bd989abfba023",
+      "git_blob_sha1": "01f3be3b9ed18096a30231127b9e3b5442e785c8",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/start-qemu.sh",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/start-qemu.sh",
+      "bytes": 267,
+      "sha256": "f0d3ef27ce5ac73e1266f9334cd61274c2baf6b1b429ea2697b1fa139728d5ff",
+      "git_blob_sha1": "590e6d19fc8599b47c520bdb769134be9f4b6665",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/startup.args",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/eebpf/startup.args",
+      "bytes": 25,
+      "sha256": "c63e10f218ae0cd877528a2efadad959d551e42312e83f87e3e982fe5fad2b7e",
+      "git_blob_sha1": "e89dd886d4780a02dca131ee0952ed74b2ec1fdb",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

@@ -1,0 +1,39 @@
+{
+  "event_id": "CTF-3206",
+  "event_title": "NCTF 2026",
+  "category": "逆向",
+  "title": "鸡爪流高手",
+  "dirname": "NCTF_2026",
+  "source_urls": [
+    "https://github.com/X1cT34m/NCTF2026/tree/HEAD/Reverse/chicken-feet-master"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/X1cT34m/NCTF2026/HEAD/Reverse/chicken-feet-master/server",
+      "local": "attachments/server",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 1457832,
+      "sha256": "b773669a7bdc5b20731616d867d994fb44f6a03060a431d65b1dca0f9936244d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/X1cT34m/NCTF2026/main/NCTF%202026%20Official%20Writeup.pdf",
+      "local": "writeups/NCTF_2026_Official_Writeup.pdf",
+      "status": "downloaded",
+      "bytes": 3769458,
+      "sha256": "ce86aa9f1e908adea309519cf73e58f2fc7e0463a73a238b7153b6bc3de48726"
+    }
+  ],
+  "notes": "官方仓库附件，配整场官方解答PDF；请在PDF目录中定位本题。PDF为原始文件，未重新排版。",
+  "directory": "逆向/NCTF_2026/鸡爪流高手",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/X1cT34m/NCTF2026/main/NCTF%202026%20Official%20Writeup.pdf"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/X1cT34m/NCTF2026/HEAD/Reverse/chicken-feet-master/server"
+  ],
+  "attachment_status": "downloaded"
+}

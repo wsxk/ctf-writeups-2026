@@ -1,0 +1,120 @@
+{
+  "event_id": "CTF-2969",
+  "event_title": "UofTCTF 2026",
+  "category": "pwn",
+  "title": "calculator",
+  "source_urls": [
+    "https://github.com/UofTCTF/uoftctf-2026-chals-public/tree/HEAD/calculator",
+    "https://ctftime.org/event/2969/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/calculator/solve/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/calculator/Dockerfile",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/calculator/chall",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/calculator/chall.cpp",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/calculator/challenge.yml",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/calculator/dist/calc.zip",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/calculator/flag.txt",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/calculator/startup.args"
+  ],
+  "writeup_status": "已下载官方解题脚本（独立文字writeup未提供）",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "UofTCTF/uoftctf-2026-chals-public",
+  "repository_tree_sha": "8519e2bb29b3e49b0e48a2078728f9fc6e6cb0ac",
+  "artifacts": [
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/calculator/Dockerfile",
+      "bytes": 245,
+      "sha256": "f761d8e716b08397d185e94ba8842a31fb15fdc87b018d567338bb91325f348d",
+      "git_blob_sha1": "035fca1bd578c9f2a7f81275b9955400bd5f3852",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/calculator/chall",
+      "bytes": 101320,
+      "sha256": "eb88c004e9cddac6aad0ee2a05345d05a8078fde6baff4c3c084863d736c3dc2",
+      "git_blob_sha1": "69c0e87d55bb4e72ff16e0bd84323ff60ebb23f1",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall.cpp",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/calculator/chall.cpp",
+      "bytes": 3625,
+      "sha256": "485fe7668e0c8db51b8b75ecef2c418297f6a68c1514b1a6d2473a53eaf63577",
+      "git_blob_sha1": "6c85521230340cb897076d2e9986a3ed7c52816f",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge.yml",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/calculator/challenge.yml",
+      "bytes": 477,
+      "sha256": "e388e1df8b5119cde63c1776ab221b5fe09b64771947987d07f50a1d6dbcb92f",
+      "git_blob_sha1": "90cbc2b9d950cf295f5d5523cbf8cbe45cdde4ca",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/dist/calc.zip",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/calculator/dist/calc.zip",
+      "bytes": 23874,
+      "sha256": "dd06804164c489f9936af34e01c2bb69a626dbf989e5ccfd9b8858e6f1f460f0",
+      "git_blob_sha1": "2fc0ce2829cd6b5fe5f2728fcfb3d5703ed09834",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flag.txt",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/calculator/flag.txt",
+      "bytes": 42,
+      "sha256": "9dd4b1c5f7bf16b32c81fb5da91b0300b35c25a8aa1481082214bbca0c209ca7",
+      "git_blob_sha1": "1160727904b62af50cc246cf0a7cf52fc2013c39",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/solve.py",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/calculator/solve/solve.py",
+      "bytes": 2159,
+      "sha256": "4372cb9dd4a69916906f860d9afd979bb249d5c8c171255a8e272269a469f38b",
+      "git_blob_sha1": "500922fe1fcd265ea299b1d82818e23537c73e2b",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/startup.args",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/calculator/startup.args",
+      "bytes": 25,
+      "sha256": "c63e10f218ae0cd877528a2efadad959d551e42312e83f87e3e982fe5fad2b7e",
+      "git_blob_sha1": "e89dd886d4780a02dca131ee0952ed74b2ec1fdb",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

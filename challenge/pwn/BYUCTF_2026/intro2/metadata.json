@@ -1,0 +1,188 @@
+{
+  "event_id": "CTF-3247",
+  "event_title": "BYUCTF 2026",
+  "category": "pwn",
+  "title": "intro2",
+  "source_urls": [
+    "https://github.com/BYU-CSA/BYUCTF-2026/tree/HEAD/pwn/intro2",
+    "https://ctftime.org/event/3247/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/README.md",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/solve/intro",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/solve/intro_patched",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/solve/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/Dockerfile",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/dist.zip",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/docker-compose.yml",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/files/Dockerfile",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/files/docker-compose.yml",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/files/intro",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/intro",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/src/flag.txt",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/src/intro",
+    "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/src/start.sh"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "BYU-CSA/BYUCTF-2026",
+  "repository_tree_sha": "51a8050d89cc1bc0265d5b5035157edec64286e1",
+  "artifacts": [
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/Dockerfile",
+      "bytes": 155,
+      "sha256": "5c2155e865173b30d5bcc60253971209ab825c32f07aab986a15f73c9b658fc2",
+      "git_blob_sha1": "cf29fcdf6da851c438ff8ebafdd5d3710519f52d",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/README.md",
+      "bytes": 372,
+      "sha256": "53ab5d516da3f6171d62b6ec91307b64aeb60e534a247f8db87948aeb63255ac",
+      "git_blob_sha1": "870c1392aa48081a8c14e31b74194a57f76d3072",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/dist.zip",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/dist.zip",
+      "bytes": 4317,
+      "sha256": "af80e68053eaaf59239c58d492988e9947c9822ccdee3524e71f6527a3bd0e9e",
+      "git_blob_sha1": "fbc2289cc63083876b111c00fca9689feabaae12",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/docker-compose.yml",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/docker-compose.yml",
+      "bytes": 157,
+      "sha256": "d2511f26dfd340c8374e4c7911e1a349e3a498ee2e3fbd54b4ed11065648b35c",
+      "git_blob_sha1": "ab51c7b4c55506d16586e05372835839be5051f6",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/files/Dockerfile",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/files/Dockerfile",
+      "bytes": 158,
+      "sha256": "1552626b21570d33d53533990d87c4950debf9013112064493c5278c9fccb392",
+      "git_blob_sha1": "79df03aa10556ff3f410f64099aeac1e46336503",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/files/docker-compose.yml",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/files/docker-compose.yml",
+      "bytes": 158,
+      "sha256": "de39a93b002be077f735a7adaad3422bfda0d23b8b58bb33a2607ec9e63c2664",
+      "git_blob_sha1": "a57212405cea394d7b726db819d21773b77eb452",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/files/intro",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/files/intro",
+      "bytes": 13312,
+      "sha256": "0a34037fdeeddc9e6eb711cc80ab5b37641c81dce20487e90964758974701fc6",
+      "git_blob_sha1": "6649872ec4cd24d7d502bb7e32801985632330d0",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/intro",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/intro",
+      "bytes": 13312,
+      "sha256": "0a34037fdeeddc9e6eb711cc80ab5b37641c81dce20487e90964758974701fc6",
+      "git_blob_sha1": "6649872ec4cd24d7d502bb7e32801985632330d0",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/intro",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/solve/intro",
+      "bytes": 13312,
+      "sha256": "0a34037fdeeddc9e6eb711cc80ab5b37641c81dce20487e90964758974701fc6",
+      "git_blob_sha1": "6649872ec4cd24d7d502bb7e32801985632330d0",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/intro_patched",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/solve/intro_patched",
+      "bytes": 13312,
+      "sha256": "0a34037fdeeddc9e6eb711cc80ab5b37641c81dce20487e90964758974701fc6",
+      "git_blob_sha1": "6649872ec4cd24d7d502bb7e32801985632330d0",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/solve.py",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/solve/solve.py",
+      "bytes": 3697,
+      "sha256": "62457e92ed1bbe10ea53a46a46cefdd51d419282cf0aceba113e75c8ce65273b",
+      "git_blob_sha1": "ec6619d9f4b83dfa43d26f529ac5adac89dde51b",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/flag.txt",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/src/flag.txt",
+      "bytes": 20,
+      "sha256": "0628a03adbe32c8d75c99fd7c5d2a46a2ff68d1c67a46a4780b32430f6dde9d1",
+      "git_blob_sha1": "effadb0a275802aa786aa02322994827976bf035",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/intro",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/src/intro",
+      "bytes": 13312,
+      "sha256": "0a34037fdeeddc9e6eb711cc80ab5b37641c81dce20487e90964758974701fc6",
+      "git_blob_sha1": "6649872ec4cd24d7d502bb7e32801985632330d0",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/start.sh",
+      "url": "https://raw.githubusercontent.com/BYU-CSA/BYUCTF-2026/HEAD/pwn/intro2/src/start.sh",
+      "bytes": 15,
+      "sha256": "0e7bedf82ae0933d8818476dd4f602e00f4665c8dcbb98f39c1bda2cd546d8e6",
+      "git_blob_sha1": "b5bb4f578b315f13e9d979c1ffceaa91b0d00ab8",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/README.md"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

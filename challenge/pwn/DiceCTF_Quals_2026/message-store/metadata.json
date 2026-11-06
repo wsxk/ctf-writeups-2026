@@ -1,0 +1,160 @@
+{
+  "event_id": "CTF-3110",
+  "event_title": "DiceCTF 2026 Quals",
+  "category": "pwn",
+  "title": "message-store",
+  "source_urls": [
+    "https://github.com/dicegang/dicectf-quals-2026-challenges/tree/HEAD/pwn/message-store",
+    "https://ctftime.org/event/3110/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/solve.py",
+    "https://raw.githubusercontent.com/hax1ng/dicectf2026-writeups/HEAD/pwn/message-store/README.md",
+    "https://raw.githubusercontent.com/hax1ng/dicectf2026-writeups/HEAD/pwn/message-store/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/Dockerfile",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/challenge",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/flag.txt",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/kona.yml",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/source/.cargo/config.toml",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/source/.gitignore",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/source/Cargo.lock",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/source/Cargo.toml",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/source/src/main.rs"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "dicegang/dicectf-quals-2026-challenges",
+  "repository_tree_sha": "308891d205d5d16329b0c0e888f430f73b35d54b",
+  "artifacts": [
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/Dockerfile",
+      "bytes": 184,
+      "sha256": "006ae7c8c06dd0da5556a3e794f51c736b6b947ef500066d97c6c6490ddf4e3e",
+      "git_blob_sha1": "19800c52459480eb1ee47cf9a1c01c977b7f262f",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge",
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/challenge",
+      "bytes": 5308368,
+      "sha256": "855e8eb6b07dd2f6c20873f99f56b27ecc5975fbcb8e20f1734d91377c272ee7",
+      "git_blob_sha1": "d534cf83deca1fd1aa3eed53245730b236ae8055",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flag.txt",
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/flag.txt",
+      "bytes": 29,
+      "sha256": "466d3042c309a720ed642be915b6d5b115871f482ecca4522fe24f6ae9e81053",
+      "git_blob_sha1": "7ad25702dfb426e9719d3fc07fc11783d88a95f1",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/kona.yml",
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/kona.yml",
+      "bytes": 1762,
+      "sha256": "d5903822ae3a78257f3058ec0a8f19660adfa885f7abf285518632b58b5008f9",
+      "git_blob_sha1": "7e425aab93239365804ec444517a1a90a451b84f",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve.py",
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/solve.py",
+      "bytes": 1885,
+      "sha256": "7cd3fba45e875819c248218a01a0308e6ef26f36b766d36feee471fc5c2d36e4",
+      "git_blob_sha1": "59920ec79c7221079d9422fb2ed80dffce67fd96",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/source/.cargo/config.toml",
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/source/.cargo/config.toml",
+      "bytes": 64,
+      "sha256": "6943ca69be02dd1c6c8ce394a3f915b477094e044e8bd2ed3eda198ad2032883",
+      "git_blob_sha1": "f7e1da1cae71b79406146b0a4bd164a3644d49d1",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/source/.gitignore",
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/source/.gitignore",
+      "bytes": 8,
+      "sha256": "b53ee26e6ff1da219b0563333a76d2c9ec19eec713d6ee54e11a1edacb0e9f3d",
+      "git_blob_sha1": "2f7896d1d1365eafb0da03d9fe456fac81408487",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/source/Cargo.lock",
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/source/Cargo.lock",
+      "bytes": 1037,
+      "sha256": "f93451617621196baa5110981b26d6b6c6bcd01b5f285ad50fce7f3a0594eec5",
+      "git_blob_sha1": "5a12ded7f3effcb69e33813b313e98a78aa88b42",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/source/Cargo.toml",
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/source/Cargo.toml",
+      "bytes": 188,
+      "sha256": "0df6daac30f851abc3944947c33b362e11057d41b5db129fc7643927494d8361",
+      "git_blob_sha1": "3a41bc8dae365b9c3f3731aa4d504faa3cba872c",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/source/src/main.rs",
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/pwn/message-store/source/src/main.rs",
+      "bytes": 4194,
+      "sha256": "b3c3a7e1972f370fd604d2eab0ad177f790c312c4cbc118ff6c58cbf88646efd",
+      "git_blob_sha1": "f25754dc613958883d79ea8fad22693e430b36c7",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/community/README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/dicectf2026-writeups/HEAD/pwn/message-store/README.md",
+      "bytes": 2749,
+      "sha256": "cb226ca26a8eef4b4622a7ac8c75c6360ce139ef7bd7dbff10be94f0a6963b6c",
+      "kind": "writeups"
+    },
+    {
+      "path": "writeups/community/solve.py",
+      "url": "https://raw.githubusercontent.com/hax1ng/dicectf2026-writeups/HEAD/pwn/message-store/solve.py",
+      "bytes": 3328,
+      "sha256": "a5474967b5f2cb1257a02ecc287e94a76d40c55454c66cdda5da47df7d8b6856",
+      "kind": "writeups"
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/community/README.md"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

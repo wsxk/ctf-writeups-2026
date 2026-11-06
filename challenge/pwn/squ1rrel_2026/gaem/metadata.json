@@ -1,0 +1,65 @@
+{
+  "event_id": "CTF-3234",
+  "event_title": "squ1rrel CTF 2026",
+  "title": "gaem",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "heap-overflow",
+    "function-pointer-overwrite",
+    "format-string",
+    "stack-pivot",
+    "ibt"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/squ1rrel/2026/gaem/",
+    "https://ctf42.online/ctfs/squ1rrel/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/squ1rrel/2026/pwn/gaem"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/squ1rrel-CTF-2026-Writeups/tree/main/pwn/Gaem"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/squ1rrel/2026/pwn/gaem",
+    "https://ctf42.online/ctfs/squ1rrel/2026/gaem/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/squ1rrel_2026/gaem/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/squ1rrel-CTF-2026-Writeups/main/pwn/Gaem/README.md",
+      "bytes": 14560,
+      "sha256": "7a8d021975bd0954c32af0cbffb4c8ebe7f7e679cbaeb7fc8a75da53352a235a",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/squ1rrel_2026/gaem/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/squ1rrel/2026/pwn/gaem/README.md",
+      "bytes": 71,
+      "sha256": "2d4529203c48883d618cbfd86888b12ff318474944b81b542d10abea48a8d1d4",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/squ1rrel_2026/gaem/attachments/upstream/gaem",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/squ1rrel/2026/pwn/gaem/gaem",
+      "bytes": 923640,
+      "sha256": "b2360982f53fbebd0ddc85d8ae36fd79b4445cc7446c45204d5f501d7bc85783",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/squ1rrel/2026/gaem/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/squ1rrel/2026/gaem/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

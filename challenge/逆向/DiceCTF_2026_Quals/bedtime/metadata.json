@@ -1,0 +1,49 @@
+{
+  "event_id": "CTF-3110",
+  "event_title": "DiceCTF 2026 Quals",
+  "category": "逆向",
+  "title": "bedtime",
+  "dirname": "DiceCTF_2026_Quals",
+  "source_urls": [
+    "https://github.com/dicegang/dicectf-quals-2026-challenges/tree/HEAD/rev/bedtime"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/bedtime/bedtime",
+      "local": "attachments/bedtime",
+      "size_expected": 586408,
+      "git_blob_sha": "3061427e430537f05c0ace604153e4fff2f76252",
+      "status": "downloaded",
+      "bytes": 586408,
+      "sha256": "c839288fff518078b57b535adaad37df9c406305cb502b22952571016a0bc1ce"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/bedtime/kona.yaml",
+      "local": "attachments/kona.yaml",
+      "size_expected": 255,
+      "git_blob_sha": "6c677d19d5dcb48a73d27a94a60b33eb7bb4a5b5",
+      "status": "downloaded",
+      "bytes": 255,
+      "sha256": "c23885263c61ec1f5c2f312e36f8ab37f029956624ef68395a5354b9a665b933"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hax1ng/dicectf2026-writeups/HEAD/rev/bedtime/README.md",
+      "local": "writeups/community/README.md",
+      "status": "downloaded",
+      "bytes": 3762,
+      "sha256": "1d81ab57f7e14377ddbbdbfa575c29d784bcf3fce102d8c0eb1b5ad0e081526e"
+    }
+  ],
+  "notes": "官方题目附件；参赛者 hax1ng 的解题文章；another-onion 另有官方多组解法。",
+  "directory": "逆向/DiceCTF_2026_Quals/bedtime",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/hax1ng/dicectf2026-writeups/HEAD/rev/bedtime/README.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/bedtime/bedtime",
+    "https://raw.githubusercontent.com/dicegang/dicectf-quals-2026-challenges/HEAD/rev/bedtime/kona.yaml"
+  ],
+  "attachment_status": "downloaded"
+}

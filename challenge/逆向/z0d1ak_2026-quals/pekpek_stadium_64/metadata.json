@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3370",
+  "event_title": "z0d1ak CTF Qualifiers",
+  "title": "pekpek_stadium_64",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "n64-rom",
+    "crc32",
+    "decoy-flag"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/pekpek_stadium_64/",
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/rev/pekpek_stadium_64"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/z0d1ak-ctf-qualifiers-2026/tree/main/rev/pekpek-stadium-64"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Z0d1ak/2026/Quals/rev/pekpek_stadium_64",
+    "https://ctf42.online/ctfs/z0d1ak/2026-quals/pekpek_stadium_64/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/z0d1ak_2026-quals/pekpek_stadium_64/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/z0d1ak-ctf-qualifiers-2026/main/rev/pekpek-stadium-64/README.md",
+      "bytes": 4446,
+      "sha256": "2ed38f804986bfc40cf7bf251b562fe54677234eef06efe52c8120e99919cf2c",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/z0d1ak_2026-quals/pekpek_stadium_64/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Z0d1ak/2026/Quals/rev/pekpek_stadium_64/README.md",
+      "bytes": 91,
+      "sha256": "1a76f3dafff76fdac2585140139f47c4365197d23b763e9c0303f5aee82186b0",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/z0d1ak_2026-quals/pekpek_stadium_64/attachments/upstream/rev_pekpek_stadium_64.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Z0d1ak/2026/Quals/rev/pekpek_stadium_64/rev_pekpek_stadium_64.zip",
+      "bytes": 245077,
+      "sha256": "b2005055f4c21e9f891f1804c80a2917e7f23b645301ab98aeb3b26067644272",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/z0d1ak/2026-quals/pekpek_stadium_64/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/z0d1ak/2026-quals/pekpek_stadium_64/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

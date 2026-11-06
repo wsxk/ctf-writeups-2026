@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3399",
+  "event_title": "SunshineCTF 2026",
+  "title": "Homemaker",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "off-by-one",
+    "length-field-overwrite",
+    "crc"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/sunshinectf/2026/homemaker/",
+    "https://ctf42.online/ctfs/sunshinectf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Homemaker"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/SunshineCTF-2026/tree/main/pwn/homemaker"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Homemaker",
+    "https://ctf42.online/ctfs/sunshinectf/2026/homemaker/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/sunshinectf_2026/Homemaker/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/SunshineCTF-2026/main/pwn/homemaker/README.md",
+      "bytes": 3798,
+      "sha256": "ad369bab9666b5e454f04e16f055b9aefb2ae1145b1c75f5d51ca2f6e8d6b69d",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/sunshinectf_2026/Homemaker/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SunshineCTF/2026/pwn/Homemaker/README.md",
+      "bytes": 268,
+      "sha256": "0b6a625e4409264831d2a21b615a188d201e2b6167ab3c3af093d87bdbfbc46a",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/sunshinectf_2026/Homemaker/attachments/upstream/homemaker",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SunshineCTF/2026/pwn/Homemaker/homemaker",
+      "bytes": 14472,
+      "sha256": "a1e9c187ae8f8521eb179d562b0c3a50e8391cd41fa30c8083b2d47d809774e4",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/sunshinectf/2026/homemaker/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/sunshinectf/2026/homemaker/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

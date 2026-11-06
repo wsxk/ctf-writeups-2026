@@ -1,0 +1,197 @@
+{
+  "event_id": "CTF-2969",
+  "event_title": "UofTCTF 2026",
+  "category": "pwn",
+  "title": "aes-aead",
+  "source_urls": [
+    "https://github.com/UofTCTF/uoftctf-2026-chals-public/tree/HEAD/aes-aead",
+    "https://ctftime.org/event/2969/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/solve/aes_aead.py",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/solve/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/.gitattributes",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/Dockerfile",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/Makefile",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/aes-gcm.c",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/aes-gcm.h",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/aes.c",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/aes.h",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/chall",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/chall.c",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/challenge.yml",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/dist/aes-aead.zip",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/flag.txt",
+    "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/startup.args"
+  ],
+  "writeup_status": "已下载官方解题脚本（独立文字writeup未提供）",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "UofTCTF/uoftctf-2026-chals-public",
+  "repository_tree_sha": "8519e2bb29b3e49b0e48a2078728f9fc6e6cb0ac",
+  "artifacts": [
+    {
+      "path": "attachments/.gitattributes",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/.gitattributes",
+      "bytes": 52,
+      "sha256": "1cb4d10870fde4240395edf4f3ad74a4956bf70bb232d140b6aa04e52be46074",
+      "git_blob_sha1": "ddd4285ceda70bd22eca752d621b003629bcc57e",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/Dockerfile",
+      "bytes": 245,
+      "sha256": "f761d8e716b08397d185e94ba8842a31fb15fdc87b018d567338bb91325f348d",
+      "git_blob_sha1": "035fca1bd578c9f2a7f81275b9955400bd5f3852",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/Makefile",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/Makefile",
+      "bytes": 170,
+      "sha256": "b834ae6434a4be8788c3adbb38c34ad0fc4486a0bb6703959f4cb13b0cc80ea9",
+      "git_blob_sha1": "0f2560ba553085b72a8c24e1c67776ee0e6e3b47",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/aes-gcm.c",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/aes-gcm.c",
+      "bytes": 7369,
+      "sha256": "8180ace48e900458f9f703a4c7e33b0d8bc3b2ab2a6420c7bbc8e5be1f966d77",
+      "git_blob_sha1": "477c6ac565879d63b0e4c3be99f28305850f791c",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/aes-gcm.h",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/aes-gcm.h",
+      "bytes": 444,
+      "sha256": "d2fbc159afa48d13b6ad3e9c7a658975a56cda4c665cc968baa1893030d461a3",
+      "git_blob_sha1": "3fb6ed8f49f4078dfc04cd5a0999cff0cebabcb3",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/aes.c",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/aes.c",
+      "bytes": 17243,
+      "sha256": "0c79b8115531d54df90e12589b21efc4404fe7c30e12134275b6d75f165b309b",
+      "git_blob_sha1": "cdac7fbdb87db38c649851cabf72980ac17b082f",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/aes.h",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/aes.h",
+      "bytes": 289,
+      "sha256": "7d938b46e5d6044331e4f3f37ea87804960794bbdf2f5adc45254a5cbf69aa3d",
+      "git_blob_sha1": "3d4884133c202b9ce287671d90b8fd0fe4088001",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/chall",
+      "bytes": 30856,
+      "sha256": "4de041802eed3772c0408a12d5941cd6b890d361fab82b40237ff5b795642bd7",
+      "git_blob_sha1": "9f64206c74458a5f860f42622cf2f5872aafaf14",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall.c",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/chall.c",
+      "bytes": 6303,
+      "sha256": "c77f08c20b2f4bb1f4fe856ef623bcaf76cc259b6bd9f736a57793c48f6b3807",
+      "git_blob_sha1": "8e12c2c5de09ee28742966f1b1b4acaff99b7579",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge.yml",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/challenge.yml",
+      "bytes": 471,
+      "sha256": "a5de360a5c6d95f254dfd079d84b25cd12d06cb79379ed753bef01fde1400849",
+      "git_blob_sha1": "3ef1f5228a0fbac571ff327c1f8765017234e935",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/dist/aes-aead.zip",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/dist/aes-aead.zip",
+      "bytes": 13183,
+      "sha256": "090a9a06f7f6771810e2157f1cae2dc6cb55b36ba94d21c1f152d888be3b07e6",
+      "git_blob_sha1": "c65d2b2145f42615a708369a9f560ba59c1f3ead",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flag.txt",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/flag.txt",
+      "bytes": 40,
+      "sha256": "8daecb160b6856409008d72facc0405f8db617348b2c4f2e1f2de675a644351c",
+      "git_blob_sha1": "60e3e52bb0debc9a80c1922a231f15a2afec0c1a",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/aes_aead.py",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/solve/aes_aead.py",
+      "bytes": 2992,
+      "sha256": "0855c011eac86fb3f19c0dc57c55bc0ac88b0559d8cbe2ea98a98cd406302987",
+      "git_blob_sha1": "411d33aa8a822625ab0eaf309991d96cac66c0b2",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/solve.py",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/solve/solve.py",
+      "bytes": 3842,
+      "sha256": "5377563cca3ac2fcde99fe163fc9cf6e1fa7d1c73eda123d59cc85396dc5a2cc",
+      "git_blob_sha1": "450659184637ed435e372b5bedab17ab5174270d",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/startup.args",
+      "url": "https://raw.githubusercontent.com/UofTCTF/uoftctf-2026-chals-public/HEAD/aes-aead/startup.args",
+      "bytes": 25,
+      "sha256": "c63e10f218ae0cd877528a2efadad959d551e42312e83f87e3e982fe5fad2b7e",
+      "git_blob_sha1": "e89dd886d4780a02dca131ee0952ed74b2ec1fdb",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

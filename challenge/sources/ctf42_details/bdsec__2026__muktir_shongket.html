@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Muktir_Shongket · BDSec 2026 (pwn) writeup · ctf42</title>
+  
+
+<meta name="description" content="Muktir_Shongket: Pwn challenge from BDSec 2026. Techniques: jit-bytecode-verifier-executor-mismatch, jmp-into-literal, shellcode. Author NomanProdhan…">
+<link rel="canonical" href="https://ctf42.online/ctfs/bdsec/2026/muktir_shongket/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/bdsec/2026/muktir_shongket/">
+<meta property="og:title" content="Muktir_Shongket">
+<meta property="og:description" content="Muktir_Shongket: Pwn challenge from BDSec 2026. Techniques: jit-bytecode-verifier-executor-mismatch, jmp-into-literal, shellcode. Author NomanProdhan…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/bdsec/">BDSec</a> / <a href="/ctfs/bdsec/2026/">2026</a> / Muktir_Shongket</nav>
+
+
+<div class="challenge-head">
+  <h1>Muktir_Shongket
+    </h1>
+  <div class="badges">
+    <a class="cat cat-pwn" href="/category/pwn/">Pwn</a>
+    
+    
+    <span class="chip">weight 15.62</span>
+    <a class="tag" href="/techniques/jit-bytecode-verifier-executor-mismatch/">#jit-bytecode-verifier-executor-mismatch</a><a class="tag" href="/techniques/jmp-into-literal/">#jmp-into-literal</a><a class="tag" href="/techniques/shellcode/">#shellcode</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/bdsec/2026/muktir_shongket/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/bdsec/2026/muktir_shongket/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  <p class="meta">Author: NomanProdhan</p>
+  <p class="meta">Flag format: <code class="flag-format">BDSEC{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>Author
+NomanProdhan</p>
+<p>During Bangladesh's Liberation War, field operatives relied on coded transmissions to coordinate their resistance against the Pakistani military.</p>
+<p>A recovered communication terminal still accepts operational orders and verifies every transmission before execution.</p>
+<p>The verification unit and the field engine may not agree on the route.</p>
+<p>Flag Format : BDSEC{s0mething_here}</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>Muktir Shongket — writeup</b>
+    
+    
+    <span class="muted">by Abdelkader</span>
+  </header>
+  <p><a href="https://ctftime.org/writeup/41044" rel="noopener nofollow ugc" target="_blank">https://ctftime.org/writeup/41044</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/bdsec/2026/muktir_shongket/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/srdnlen/2026-quals/linx/">Linx</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/heap-overflow/">#heap-overflow</a><a class="tag tag-sm" href="/techniques/regex/">#regex</a><a class="tag tag-sm" href="/techniques/tcache-poisoning/">#tcache-poisoning</a><a class="tag tag-sm" href="/techniques/shellcode/">#shellcode</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/srdnlen/2026-quals/">Srdnlen 2026 Quals</a></td>
+        <td class="num">34.76</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/cr3/2024/randomness_revenge/">randomness_revenge</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/shellcode/">#shellcode</a><a class="tag tag-sm" href="/techniques/xor/">#xor</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/cr3/2024/">cr3 2024</a></td>
+        <td class="num">23.96</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/cr3/2024/randomness/">randomness</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/srand-seed/">#srand-seed</a><a class="tag tag-sm" href="/techniques/shellcode/">#shellcode</a><a class="tag tag-sm" href="/techniques/orw/">#orw</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/cr3/2024/">cr3 2024</a></td>
+        <td class="num">23.96</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/b01lers/2024/zero_to_hero/">Zero_to_Hero</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/shellcode/">#shellcode</a><a class="tag tag-sm" href="/techniques/seccomp/">#seccomp</a><a class="tag tag-sm" href="/techniques/exit-code-side-channel/">#exit-code-side-channel</a><a class="tag tag-sm" href="/techniques/xmm-leak/">#xmm-leak</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/b01lers/2024/">b01lers 2024</a></td>
+        <td class="num">30.80</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/uoftctf/2024/baby_shellcode/">baby_shellcode</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/shellcode/">#shellcode</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/uoftctf/2024/">UofTCTF 2024</a></td>
+        <td class="num">23.90</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/uiuctf/2024/syscalls/">Syscalls</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/seccomp/">#seccomp</a><a class="tag tag-sm" href="/techniques/shellcode/">#shellcode</a><a class="tag tag-sm" href="/techniques/orw/">#orw</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/uiuctf/2024/">UIUCTF 2024</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/jit-bytecode-verifier-executor-mismatch/">#jit-bytecode-verifier-executor-mismatch</a> · <a href="/techniques/jmp-into-literal/">#jmp-into-literal</a> · <a href="/techniques/shellcode/">#shellcode</a>
+          · <a href="/category/pwn/">all Pwn</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/pwn/Muktir_Shongket" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/bdsec/2026/muktir_shongket/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from BDSec 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/bdsec/2026/inside_job/">Inside_Job</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/bdsec/2026/cordination_password/">Cordination_password</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/bdsec/2026/ekusher_shobdo/">Ekusher_Shobdo</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/bdsec/2026/phantom_device/">Phantom_Device</a> <span class="cat cat-pwn cat-xs">Pwn</span></li><li>
+<a href="/ctfs/bdsec/2026/borrowed_memory/">Borrowed_Memory</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/bdsec/2026/broken_printer/">Broken_Printer</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/bdsec/2026/cold_start/">Cold_Start</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/bdsec/2026/crack_me_vault/">Crack_Me_Vault</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/bdsec/2026/easy_re_challenge/">Easy_RE_Challenge</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/bdsec/2026/four_registers/">Four_Registers</a> <span class="cat cat-rev cat-xs">Reverse</span></li><li>
+<a href="/ctfs/bdsec/2026/night_shift/">Night_Shift</a> <span class="cat cat-rev cat-xs">Reverse</span></li>
+      </ul>
+      <a class="small" href="/ctfs/bdsec/2026/">All BDSec 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

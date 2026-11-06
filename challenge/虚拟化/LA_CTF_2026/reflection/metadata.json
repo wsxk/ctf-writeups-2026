@@ -1,0 +1,49 @@
+{
+  "event_id": "CTF-3015",
+  "event_title": "LA CTF 2026",
+  "category": "虚拟化",
+  "title": "reflection",
+  "dirname": "LA_CTF_2026",
+  "source_urls": [
+    "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/rev/reflection"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/reflection/challenge.yaml",
+      "local": "attachments/challenge.yaml",
+      "size_expected": 243,
+      "git_blob_sha": "97294278d96754830947bf2364d49a8a48e38d88",
+      "status": "downloaded",
+      "bytes": 243,
+      "sha256": "9210e2144b7511d2aa7df593f397e8e43f560b3832ecc46e4bd3f6ff2fb3880a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/reflection/reflection",
+      "local": "attachments/reflection",
+      "size_expected": 414160,
+      "git_blob_sha": "baec491360601de3d99d92b607d25af49c035ad4",
+      "status": "downloaded",
+      "bytes": 414160,
+      "sha256": "48df9e4ed1de7265666f9c901b52fd8bbf566f77af755c0faaac2a533fdb3b66"
+    },
+    {
+      "url": "https://ma4the.github.io/en/posts/rev-reflection-lactf2026/",
+      "local": "writeups/ma4the.html",
+      "status": "downloaded",
+      "bytes": 808642,
+      "sha256": "80e136e418d90a545a4498603d12b1221ce701a39f61a02dffd3f5e908a87399"
+    }
+  ],
+  "notes": "官方题目二进制，配参赛者ma4the的完整HTML解题文章，题目利用DWARF expression VM。",
+  "directory": "虚拟化/LA_CTF_2026/reflection",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://ma4the.github.io/en/posts/rev-reflection-lactf2026/"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/reflection/challenge.yaml",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/rev/reflection/reflection"
+  ],
+  "attachment_status": "downloaded"
+}

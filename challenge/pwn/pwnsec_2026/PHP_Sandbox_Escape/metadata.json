@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3159",
+  "event_title": "PwnSec CTF 2026",
+  "title": "PHP_Sandbox_Escape",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "php-sandbox-escape",
+    "pdo-sqlite",
+    "load-extension"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/pwnsec/2026/php_sandbox_escape/",
+    "https://ctf42.online/ctfs/pwnsec/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/pwn/PHP_Sandbox_Escape"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/pwnsec-ctf-2026/tree/main/pwn/php-sandbox-escape"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/PwnSec/2026/pwn/PHP_Sandbox_Escape",
+    "https://ctf42.online/ctfs/pwnsec/2026/php_sandbox_escape/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/pwnsec_2026/PHP_Sandbox_Escape/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/pwnsec-ctf-2026/main/pwn/php-sandbox-escape/README.md",
+      "bytes": 8837,
+      "sha256": "f8fb26fdc5d597af19c5f1e3f4308a02323fe9eb0003b8d4a092f7d86826f939",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/pwnsec_2026/PHP_Sandbox_Escape/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/PwnSec/2026/pwn/PHP_Sandbox_Escape/README.md",
+      "bytes": 471,
+      "sha256": "37ed90620784dce6421c1cf4875fcc7c245b0dda1de93b5aa4a8dbc647d71e46",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/pwnsec_2026/PHP_Sandbox_Escape/attachments/upstream/public.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/PwnSec/2026/pwn/PHP_Sandbox_Escape/public.zip",
+      "bytes": 9346,
+      "sha256": "4cb98c42514e5f1925ace170d8762c1f663b4328fdb34f0f7c8b0b5068e63778",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/pwnsec/2026/php_sandbox_escape/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/pwnsec/2026/php_sandbox_escape/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

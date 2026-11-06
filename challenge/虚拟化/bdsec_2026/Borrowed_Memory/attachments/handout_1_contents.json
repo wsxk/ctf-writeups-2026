@@ -1,0 +1,12 @@
+[
+  {
+    "name": "README.md",
+    "bytes": 90,
+    "crc32": "0x7c922178"
+  },
+  {
+    "name": "borrowed_memory.bdsec",
+    "bytes": 14536,
+    "crc32": "0xcce20cdc"
+  }
+]

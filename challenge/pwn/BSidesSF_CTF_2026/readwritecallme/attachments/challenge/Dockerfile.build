@@ -1,0 +1,12 @@
+FROM debian:bookworm@sha256:34e7f0ae7c10a61bfbef6e1b2ed205d9b47bb12e90c50696f729a5c7a01cf1f2
+LABEL org.opencontainers.image.authors="Ron Bowes"
+
+# Install all the tools
+RUN apt update
+RUN apt install -y make gcc
+
+# We're going to mount the source here
+RUN mkdir /src
+WORKDIR /src
+
+CMD ["make", "indocker"]

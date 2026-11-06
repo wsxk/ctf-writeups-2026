@@ -1,0 +1,2225 @@
+{
+  "sha": "51a8050d89cc1bc0265d5b5035157edec64286e1",
+  "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/51a8050d89cc1bc0265d5b5035157edec64286e1",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c18dd8d83ceed1806b50b0aaa46beb7e335fff13",
+      "size": 13,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/c18dd8d83ceed1806b50b0aaa46beb7e335fff13"
+    },
+    {
+      "path": "Gitastic-Containerized",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8d1bb86062fb2ca757ce1fd9e9ada19c7a636d4d",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/8d1bb86062fb2ca757ce1fd9e9ada19c7a636d4d"
+    },
+    {
+      "path": "Gitastic-Containerized/Gitastic-Containerized.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "94c66937e1722e71ac4b46b3c8b6795d0365317d",
+      "size": 2540749,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/94c66937e1722e71ac4b46b3c8b6795d0365317d"
+    },
+    {
+      "path": "Gitastic-Containerized/Gitastic-Solutions",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fa6009928630f10ab554fe766bace7f51eaef2d3",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/fa6009928630f10ab554fe766bace7f51eaef2d3"
+    },
+    {
+      "path": "Gitastic-Containerized/Gitastic-Solutions/Gitastic1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d624a1060b22664454d3820756bb47f05e1caef1",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/d624a1060b22664454d3820756bb47f05e1caef1"
+    },
+    {
+      "path": "Gitastic-Containerized/Gitastic-Solutions/Gitastic1/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0dc59bd15055e127c67c186bb060bbcad23871ca",
+      "size": 605,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/0dc59bd15055e127c67c186bb060bbcad23871ca"
+    },
+    {
+      "path": "Gitastic-Containerized/Gitastic-Solutions/Gitastic2",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "78aba48b745eeebac4ecf33fc26c5e0ea75c7acb",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/78aba48b745eeebac4ecf33fc26c5e0ea75c7acb"
+    },
+    {
+      "path": "Gitastic-Containerized/Gitastic-Solutions/Gitastic2/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0fc0796f7a4ede7e1832ca64a7d80e28b5929584",
+      "size": 386,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/0fc0796f7a4ede7e1832ca64a7d80e28b5929584"
+    },
+    {
+      "path": "Gitastic-Containerized/Gitastic-Solutions/Gitastic3",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "559fb180951431d9a2d8000928f456ba577fe266",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/559fb180951431d9a2d8000928f456ba577fe266"
+    },
+    {
+      "path": "Gitastic-Containerized/Gitastic-Solutions/Gitastic3/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64f505982653fc63db2af1bc60b7cc7364c82cea",
+      "size": 527,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/64f505982653fc63db2af1bc60b7cc7364c82cea"
+    },
+    {
+      "path": "Gitastic-Containerized/Gitastic-Solutions/Gitastic4",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ee253963cc9ba57169f10b7532286e67e659b129",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/ee253963cc9ba57169f10b7532286e67e659b129"
+    },
+    {
+      "path": "Gitastic-Containerized/Gitastic-Solutions/Gitastic4/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "500c9d4904d6c430ff110fc3db69b8259b3b2f3d",
+      "size": 751,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/500c9d4904d6c430ff110fc3db69b8259b3b2f3d"
+    },
+    {
+      "path": "Gitastic-Containerized/Gitastic-Solutions/Gitastic5",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4da1ae3819f0c59a796631b812d871cd5462596f",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/4da1ae3819f0c59a796631b812d871cd5462596f"
+    },
+    {
+      "path": "Gitastic-Containerized/Gitastic-Solutions/Gitastic5/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0eae2cf527112d80d3229e61e013c876d68d62af",
+      "size": 1256,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/0eae2cf527112d80d3229e61e013c876d68d62af"
+    },
+    {
+      "path": "OSINT",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ea9dca245e2e9eaa16006b171f460586c4050626",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/ea9dca245e2e9eaa16006b171f460586c4050626"
+    },
+    {
+      "path": "OSINT/Hometown_Hero",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3f85e720371010a93488b0da1e6ea3217bcabeab",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/3f85e720371010a93488b0da1e6ea3217bcabeab"
+    },
+    {
+      "path": "OSINT/Hometown_Hero/Hometown_Hero_1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d3a05366935268d756ad1c96e7443b50dada88e5",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/d3a05366935268d756ad1c96e7443b50dada88e5"
+    },
+    {
+      "path": "OSINT/Hometown_Hero/Hometown_Hero_1/challenge.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7231470cc5684550d73b6035a6e55bd800360bb5",
+      "size": 364,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/7231470cc5684550d73b6035a6e55bd800360bb5"
+    },
+    {
+      "path": "OSINT/Hometown_Hero/Hometown_Hero_1/writeup.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "967c162d9e3cecfdc65996e50c9b692f2650aff2",
+      "size": 35,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/967c162d9e3cecfdc65996e50c9b692f2650aff2"
+    },
+    {
+      "path": "OSINT/Hometown_Hero/Hometown_Hero_2",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "70b869c103da36bdfdb1ce865b159af501221fbf",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/70b869c103da36bdfdb1ce865b159af501221fbf"
+    },
+    {
+      "path": "OSINT/Hometown_Hero/Hometown_Hero_2/challenge.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "92e474477856f3885ef1587d5de37c89a89e3294",
+      "size": 330,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/92e474477856f3885ef1587d5de37c89a89e3294"
+    },
+    {
+      "path": "OSINT/Hometown_Hero/Hometown_Hero_2/writeup.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b4808072bbcd97b16343def640934f9f53ee8c3",
+      "size": 464,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/0b4808072bbcd97b16343def640934f9f53ee8c3"
+    },
+    {
+      "path": "OSINT/Hometown_Hero/Hometown_Hero_3",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "76ba1551af6879a43f37f3af172dbfa0feff05d9",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/76ba1551af6879a43f37f3af172dbfa0feff05d9"
+    },
+    {
+      "path": "OSINT/Hometown_Hero/Hometown_Hero_3/challenge.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77ac9d49855799fa552321506b563352f6f524c2",
+      "size": 435,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/77ac9d49855799fa552321506b563352f6f524c2"
+    },
+    {
+      "path": "OSINT/Hometown_Hero/Hometown_Hero_3/writeup.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bd8b0af4ed18bd5b3c9cde77d7c1cf24f6df8c66",
+      "size": 1164,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/bd8b0af4ed18bd5b3c9cde77d7c1cf24f6df8c66"
+    },
+    {
+      "path": "OSINT/Hometown_Hero/Hometown_Hero_4",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "caabbe7e57ff4e7cb058070cb5ea3dff8630ef86",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/caabbe7e57ff4e7cb058070cb5ea3dff8630ef86"
+    },
+    {
+      "path": "OSINT/Hometown_Hero/Hometown_Hero_4/challenge.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2ef812b3de9980e60ac0245abfe7e19ed92316b",
+      "size": 382,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/a2ef812b3de9980e60ac0245abfe7e19ed92316b"
+    },
+    {
+      "path": "OSINT/Hometown_Hero/Hometown_Hero_4/writeup.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96100b023d8754ed6a25bb724f6fe8061d6aaea0",
+      "size": 264,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/96100b023d8754ed6a25bb724f6fe8061d6aaea0"
+    },
+    {
+      "path": "OSINT/Hometown_Hero/Hometown_Hero_5",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d899f26ccd0219fefe8fd7574419aba6c386e6f8",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/d899f26ccd0219fefe8fd7574419aba6c386e6f8"
+    },
+    {
+      "path": "OSINT/Hometown_Hero/Hometown_Hero_5/challenge.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec3263224353774fdbc0e1dc2fe3051c4320e7f2",
+      "size": 254,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/ec3263224353774fdbc0e1dc2fe3051c4320e7f2"
+    },
+    {
+      "path": "OSINT/Hometown_Hero/Hometown_Hero_5/writeup.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1665cf841ada9542474a0791354830a952d949c5",
+      "size": 231,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/1665cf841ada9542474a0791354830a952d949c5"
+    },
+    {
+      "path": "OSINT/LegoClones",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "161ad86db4adcce2d1426532379259c52df59a78",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/161ad86db4adcce2d1426532379259c52df59a78"
+    },
+    {
+      "path": "OSINT/LegoClones/challenge.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1d351aaed8e05fd3758bec3c58d5d49f31f5daa9",
+      "size": 287,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/1d351aaed8e05fd3758bec3c58d5d49f31f5daa9"
+    },
+    {
+      "path": "OSINT/LegoClones/image.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dbc36f050effdab09d7977c39465d8203e7d421f",
+      "size": 3111625,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/dbc36f050effdab09d7977c39465d8203e7d421f"
+    },
+    {
+      "path": "OSINT/LegoClones/writeup.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d33f451d1d02a1b84f4fa6cd4224c1b3fbf9f80",
+      "size": 402,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/6d33f451d1d02a1b84f4fa6cd4224c1b3fbf9f80"
+    },
+    {
+      "path": "OSINT/Scott_Dourque",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "daebc5392970a23c22bd8619a923b64186e19249",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/daebc5392970a23c22bd8619a923b64186e19249"
+    },
+    {
+      "path": "OSINT/Scott_Dourque/challenge.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b27c4404ce90117fb79161abd7cc636cd228c94",
+      "size": 491,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/3b27c4404ce90117fb79161abd7cc636cd228c94"
+    },
+    {
+      "path": "OSINT/Scott_Dourque/writeup.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b48b89cd7d710eb52319336a761c43f1ae1ed42",
+      "size": 905,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/7b48b89cd7d710eb52319336a761c43f1ae1ed42"
+    },
+    {
+      "path": "OSINT/Scott_Dourque_2",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a99c58dc29da0f5fc0047487e037bf4293c33965",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/a99c58dc29da0f5fc0047487e037bf4293c33965"
+    },
+    {
+      "path": "OSINT/Scott_Dourque_2/challenge.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "273e29671257372de47a7d4a28919edf1c4f356f",
+      "size": 339,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/273e29671257372de47a7d4a28919edf1c4f356f"
+    },
+    {
+      "path": "OSINT/Scott_Dourque_2/writeup.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7eb03703f3233ca0b12118eb908e50463b995bf9",
+      "size": 246,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/7eb03703f3233ca0b12118eb908e50463b995bf9"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d07b8ca6e3fa22e492b868223a1181ca121c0b8",
+      "size": 2410,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/0d07b8ca6e3fa22e492b868223a1181ca121c0b8"
+    },
+    {
+      "path": "crypto",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "908a6a82747e1ecc8786017b2bef633ddfb55791",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/908a6a82747e1ecc8786017b2bef633ddfb55791"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "588fe1126df2005c98fb64fe6dcbc7a360b64bbe",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/588fe1126df2005c98fb64fe6dcbc7a360b64bbe"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3/.env",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "3a45f8fdee83b3a0a5b33109c7b6a7eb82be7312",
+      "size": 81,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/3a45f8fdee83b3a0a5b33109c7b6a7eb82be7312"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3/Cargo.lock",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "950ed36ff4a613d84e5091128a2364d547667c05",
+      "size": 51232,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/950ed36ff4a613d84e5091128a2364d547667c05"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3/Cargo.toml",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "209f6d201a67abb4222e1af8c153cabadf1cde8e",
+      "size": 352,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/209f6d201a67abb4222e1af8c153cabadf1cde8e"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3/Dockerfile",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "ce34bf58520442785aeb556aec77a840822667b5",
+      "size": 415,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/ce34bf58520442785aeb556aec77a840822667b5"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48e74e130ce1c212da8fe274d0de423f35ed4d1e",
+      "size": 1188,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/48e74e130ce1c212da8fe274d0de423f35ed4d1e"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3/aes-scissor-co-3.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2f685605d9699dbd7a5cb914df91b7a4be65317",
+      "size": 6721,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/d2f685605d9699dbd7a5cb914df91b7a4be65317"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3/docker-compose.yml",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "ba0588efc784a495437a74c6e648d21f1bd11d46",
+      "size": 171,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/ba0588efc784a495437a74c6e648d21f1bd11d46"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ccaa1832d2b186a1e9642f5a4fbe178b45199f97",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/ccaa1832d2b186a1e9642f5a4fbe178b45199f97"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3/solve/solve.sage",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0251bee7dba6c0b45e78ca8da8b6601bb4af8eb3",
+      "size": 7472,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/0251bee7dba6c0b45e78ca8da8b6601bb4af8eb3"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3/solve/solve.sage.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ba93e8fb347d496ea70dc40f579c7afdee8bff4",
+      "size": 8383,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/7ba93e8fb347d496ea70dc40f579c7afdee8bff4"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5ac13babbd889df0bcf02b49965c31a2cfd291d6",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/5ac13babbd889df0bcf02b49965c31a2cfd291d6"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3/src/main.rs",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "f34d54697b8c09fdbc518052525bb80548a19092",
+      "size": 5514,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/f34d54697b8c09fdbc518052525bb80548a19092"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3/src/static",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "23e15512a51a128f96508540d75728a3af4e943a",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/23e15512a51a128f96508540d75728a3af4e943a"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3/src/static/admin.html",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "4fe98e65409bed39c9b1d704fc23c8005f3757f1",
+      "size": 31,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/4fe98e65409bed39c9b1d704fc23c8005f3757f1"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3/src/static/error.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74437db88314a47c1e9396a8e81aa350aeab8783",
+      "size": 2621,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/74437db88314a47c1e9396a8e81aa350aeab8783"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3/src/static/index.html",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "71e041f75e6be3021346d6de061ba13b9e2eec6c",
+      "size": 2042,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/71e041f75e6be3021346d6de061ba13b9e2eec6c"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3/src/static/login.html",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "082049634be0c059cfc88cde68d167584172eb52",
+      "size": 1638,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/082049634be0c059cfc88cde68d167584172eb52"
+    },
+    {
+      "path": "crypto/aes-scissor-co-3/src/static/register.html",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "0bd316d35d379e9798eac2a0067baf3423587a10",
+      "size": 1662,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/0bd316d35d379e9798eac2a0067baf3423587a10"
+    },
+    {
+      "path": "crypto/hurtful",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4c4f460977be312433b711cd4d6222fb2eded315",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/4c4f460977be312433b711cd4d6222fb2eded315"
+    },
+    {
+      "path": "crypto/hurtful/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0b3e01a581bd6ef37b5abaf2877027548ea3e5a",
+      "size": 668,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/e0b3e01a581bd6ef37b5abaf2877027548ea3e5a"
+    },
+    {
+      "path": "crypto/hurtful/enc.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "90a0015d7b11e17b98f897b38d6da5835e8ede96",
+      "size": 355,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/90a0015d7b11e17b98f897b38d6da5835e8ede96"
+    },
+    {
+      "path": "crypto/hurtful/flag.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "456d99d63b73a14c0dfd5c5095bc01bcf6c7bb72",
+      "size": 45,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/456d99d63b73a14c0dfd5c5095bc01bcf6c7bb72"
+    },
+    {
+      "path": "crypto/hurtful/output.txt",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "9c270e957dcd9f582ffa28ff714bb3eb5e85d4b8",
+      "size": 1249,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/9c270e957dcd9f582ffa28ff714bb3eb5e85d4b8"
+    },
+    {
+      "path": "crypto/hurtful/solve.sage",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "2d5bc268bcb785855cb317e047cbc0eacd4a084a",
+      "size": 2991,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/2d5bc268bcb785855cb317e047cbc0eacd4a084a"
+    },
+    {
+      "path": "crypto/power_tower",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "31130f405ac31fc33c6cd7b8b82da0ccdc9dba38",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/31130f405ac31fc33c6cd7b8b82da0ccdc9dba38"
+    },
+    {
+      "path": "crypto/power_tower/challenge_files",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bd9a33b731819a7b871c9584ec9fb5cce6f9614e",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/bd9a33b731819a7b871c9584ec9fb5cce6f9614e"
+    },
+    {
+      "path": "crypto/power_tower/challenge_files/chall_modified.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bcc598fc42118866670214adf45bb20f65f237da",
+      "size": 1864,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/bcc598fc42118866670214adf45bb20f65f237da"
+    },
+    {
+      "path": "crypto/power_tower/challenge_files/description.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40b45a2956a645009a9ebfeb5f6b3ce6757a5b65",
+      "size": 247,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/40b45a2956a645009a9ebfeb5f6b3ce6757a5b65"
+    },
+    {
+      "path": "crypto/power_tower/challenge_files/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73da910c87ef90e939eb86ae2d5f61d6cbe614b1",
+      "size": 18,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/73da910c87ef90e939eb86ae2d5f61d6cbe614b1"
+    },
+    {
+      "path": "crypto/power_tower/server_files",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9595a91c9447c5d5ca3382ccc0d9c06684e02d71",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/9595a91c9447c5d5ca3382ccc0d9c06684e02d71"
+    },
+    {
+      "path": "crypto/power_tower/server_files/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b00ed409c186a7c9f2331b7a77fc3390ddfe577",
+      "size": 428,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/3b00ed409c186a7c9f2331b7a77fc3390ddfe577"
+    },
+    {
+      "path": "crypto/power_tower/server_files/chall.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "b01c858000445cc5177af9e480f6c52ba61808d0",
+      "size": 2326,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/b01c858000445cc5177af9e480f6c52ba61808d0"
+    },
+    {
+      "path": "crypto/power_tower/server_files/docker-compose.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e607089f20da4be92876da2a7bbf373522289337",
+      "size": 162,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/e607089f20da4be92876da2a7bbf373522289337"
+    },
+    {
+      "path": "crypto/power_tower/server_files/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5836bfbac56f68d663efe46898e48f3b10e15d93",
+      "size": 48,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/5836bfbac56f68d663efe46898e48f3b10e15d93"
+    },
+    {
+      "path": "crypto/power_tower/server_files/requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77c42ff15b5b38a4009f861290104cbc5a548bf3",
+      "size": 21,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/77c42ff15b5b38a4009f861290104cbc5a548bf3"
+    },
+    {
+      "path": "crypto/power_tower/server_files/utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b8dfe9ffb3f8f187b8c1bafe5bd6dbc2b113ecd9",
+      "size": 2217,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/b8dfe9ffb3f8f187b8c1bafe5bd6dbc2b113ecd9"
+    },
+    {
+      "path": "crypto/power_tower/solve_files",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d2015f53767b582f755408f89e7627f8f5ebff52",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/d2015f53767b582f755408f89e7627f8f5ebff52"
+    },
+    {
+      "path": "crypto/power_tower/solve_files/Writeup.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a715d861eb078f696ee3b608c29ea3ff20beb5c6",
+      "size": 487,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/a715d861eb078f696ee3b608c29ea3ff20beb5c6"
+    },
+    {
+      "path": "crypto/power_tower/solve_files/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "233019d857501c7c367b531c5cce8e7e9145f46a",
+      "size": 802,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/233019d857501c7c367b531c5cce8e7e9145f46a"
+    },
+    {
+      "path": "crypto/power_tower/solve_files/utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b8dfe9ffb3f8f187b8c1bafe5bd6dbc2b113ecd9",
+      "size": 2217,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/b8dfe9ffb3f8f187b8c1bafe5bd6dbc2b113ecd9"
+    },
+    {
+      "path": "crypto/rsa_dreams",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a6fefe762b2f6be119999b0cf2dcd193e5ad5432",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/a6fefe762b2f6be119999b0cf2dcd193e5ad5432"
+    },
+    {
+      "path": "crypto/rsa_dreams/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "561d07d2faf89b034543d535a23fe22d6691dcdb",
+      "size": 303,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/561d07d2faf89b034543d535a23fe22d6691dcdb"
+    },
+    {
+      "path": "crypto/rsa_dreams/encrypt.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1c7c5804ef8e0b3ca005b90f436a45ccc741ddd1",
+      "size": 290,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/1c7c5804ef8e0b3ca005b90f436a45ccc741ddd1"
+    },
+    {
+      "path": "crypto/rsa_dreams/output.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c7c14a3e81e3ade50d8fb61bd0347d606e50566f",
+      "size": 414,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/c7c14a3e81e3ade50d8fb61bd0347d606e50566f"
+    },
+    {
+      "path": "crypto/rsa_dreams/rsa_dreams_dist.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89a3c1d14f06cac578e7580d8793803663f9782a",
+      "size": 719,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/89a3c1d14f06cac578e7580d8793803663f9782a"
+    },
+    {
+      "path": "crypto/rsa_dreams/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a9963e65f534e6c0ed7980c0b93aeeefa1e66bd",
+      "size": 841,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/7a9963e65f534e6c0ed7980c0b93aeeefa1e66bd"
+    },
+    {
+      "path": "crypto/sus-box",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e234a81d7d624e33fbb962e07df105c972876441",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/e234a81d7d624e33fbb962e07df105c972876441"
+    },
+    {
+      "path": "crypto/sus-box/custom_cipher.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0f92e41cfc22246f06079dc0fe3a8c7f003ff38",
+      "size": 2626,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/c0f92e41cfc22246f06079dc0fe3a8c7f003ff38"
+    },
+    {
+      "path": "crypto/sus-box/description.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc5474a219615e219f81909185e26f5f3d0457a3",
+      "size": 61,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/bc5474a219615e219f81909185e26f5f3d0457a3"
+    },
+    {
+      "path": "crypto/sus-box/output.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1710999ae2ebb190471102094cd1ef475499fbb5",
+      "size": 1425,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/1710999ae2ebb190471102094cd1ef475499fbb5"
+    },
+    {
+      "path": "crypto/sus-box/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "098a0457218a044040884f002e831a899d04d69f",
+      "size": 3401,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/098a0457218a044040884f002e831a899d04d69f"
+    },
+    {
+      "path": "crypto/sus-box/writeup.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3836418d597290d5e40a71c7c86e441fd4c019b",
+      "size": 1560,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/d3836418d597290d5e40a71c7c86e441fd4c019b"
+    },
+    {
+      "path": "forensics",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "744c7a4cc89a7700b3c05624178ba6351b73714e",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/744c7a4cc89a7700b3c05624178ba6351b73714e"
+    },
+    {
+      "path": "forensics/alright_paradox_time",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1dbf1bc855f2dae539fa6b14241aafd4f5ee4612",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/1dbf1bc855f2dae539fa6b14241aafd4f5ee4612"
+    },
+    {
+      "path": "forensics/alright_paradox_time/AlrightParadoxTime.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e188713c947a3e2a201fd2770df5a0b05200ee74",
+      "size": 4900,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/e188713c947a3e2a201fd2770df5a0b05200ee74"
+    },
+    {
+      "path": "forensics/alright_paradox_time/images",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d1a14660ddc5d4ba6a1cb03f51b4bad6bbd3d123",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/d1a14660ddc5d4ba6a1cb03f51b4bad6bbd3d123"
+    },
+    {
+      "path": "forensics/alright_paradox_time/images/NTPTimestamps.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a52de81d0f76e59a78d7690be83fae4e9ae2ca6",
+      "size": 100177,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/5a52de81d0f76e59a78d7690be83fae4e9ae2ca6"
+    },
+    {
+      "path": "forensics/are_you_still_there",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "076722dd26dff3ade4502d89e647ae2d2c68d28d",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/076722dd26dff3ade4502d89e647ae2d2c68d28d"
+    },
+    {
+      "path": "forensics/are_you_still_there/AreYouStillThere.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4700313accc83b82ab9e1e8064f2136d6803f96",
+      "size": 4724,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/f4700313accc83b82ab9e1e8064f2136d6803f96"
+    },
+    {
+      "path": "forensics/are_you_still_there/images",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "865b03d51b5299c440cede72926ae391b4899996",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/865b03d51b5299c440cede72926ae391b4899996"
+    },
+    {
+      "path": "forensics/are_you_still_there/images/PINGData.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee74924bf8526ab657f1b7ec4c64f4b28f5a0aad",
+      "size": 94880,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/ee74924bf8526ab657f1b7ec4c64f4b28f5a0aad"
+    },
+    {
+      "path": "forensics/corrupted_cores",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a43f97c44e1e4091e476eeaa5510a912c4306392",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/a43f97c44e1e4091e476eeaa5510a912c4306392"
+    },
+    {
+      "path": "forensics/corrupted_cores/CorruptedCores.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc4ccd5bf5a9d6e47e796a457cc291a5a1a49967",
+      "size": 3649,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/cc4ccd5bf5a9d6e47e796a457cc291a5a1a49967"
+    },
+    {
+      "path": "forensics/corrupted_cores/images",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "93ecc660118093e8ed5933bd115f34c2f01330d8",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/93ecc660118093e8ed5933bd115f34c2f01330d8"
+    },
+    {
+      "path": "forensics/corrupted_cores/images/PINGIP.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54fa6dca085c2730f19e1daf7995e634e405b841",
+      "size": 87877,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/54fa6dca085c2730f19e1daf7995e634e405b841"
+    },
+    {
+      "path": "forensics/there_will_be_cake",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "073135fbb8734daf3c0b7c4c55d4d74989a797a6",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/073135fbb8734daf3c0b7c4c55d4d74989a797a6"
+    },
+    {
+      "path": "forensics/there_will_be_cake/GLaDOS_Network.pcapng",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2be77f73c7adb7c8037efa5e5dee611938df85c9",
+      "size": 5496,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/2be77f73c7adb7c8037efa5e5dee611938df85c9"
+    },
+    {
+      "path": "forensics/there_will_be_cake/ThereWillBeCake.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bec3fb29fb6f935ceed50eeb12a919dae09c6aed",
+      "size": 1431,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/bec3fb29fb6f935ceed50eeb12a919dae09c6aed"
+    },
+    {
+      "path": "forensics/there_will_be_cake/images",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c1a6983422391c3c15fdeef1c2562fe094be833f",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/c1a6983422391c3c15fdeef1c2562fe094be833f"
+    },
+    {
+      "path": "forensics/there_will_be_cake/images/HTTPCookie.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d076a6c4105219b66177a774c03c098886c15bab",
+      "size": 79999,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/d076a6c4105219b66177a774c03c098886c15bab"
+    },
+    {
+      "path": "misc",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "64360f76eefd311f0435ad9d3ba8c9792b2747c0",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/64360f76eefd311f0435ad9d3ba8c9792b2747c0"
+    },
+    {
+      "path": "misc/chromatic",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8e440bded076880a9a14b029f1e56ca0d44ee69e",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/8e440bded076880a9a14b029f1e56ca0d44ee69e"
+    },
+    {
+      "path": "misc/chromatic/challenge.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f552c70418617be6da6f0de96c9f9a367f79ca4",
+      "size": 56,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/2f552c70418617be6da6f0de96c9f9a367f79ca4"
+    },
+    {
+      "path": "misc/chromatic/chromatic.mp4",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "88eb61ed1c0827fb3eb4e51054a92e3ca04edbf4",
+      "size": 98254,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/88eb61ed1c0827fb3eb4e51054a92e3ca04edbf4"
+    },
+    {
+      "path": "misc/chromatic/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc8e34a5e753379b86b6b04f90afc48415a55668",
+      "size": 1973,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/cc8e34a5e753379b86b6b04f90afc48415a55668"
+    },
+    {
+      "path": "misc/chromatic/writeup.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fbceb8f7b6302a16bb11dda4d3cbe0190a79373c",
+      "size": 1006,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/fbceb8f7b6302a16bb11dda4d3cbe0190a79373c"
+    },
+    {
+      "path": "misc/easy",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d1c186ce2c6d0058fb6e70e829899d2b28f4f62a",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/d1c186ce2c6d0058fb6e70e829899d2b28f4f62a"
+    },
+    {
+      "path": "misc/easy/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf5d115d40a3ba2ac59042942d21cc9d9d94dd73",
+      "size": 243,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/cf5d115d40a3ba2ac59042942d21cc9d9d94dd73"
+    },
+    {
+      "path": "misc/easy/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5bfb169bf172d618ae1f12d9ee91e33af2b599dd",
+      "size": 214,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/5bfb169bf172d618ae1f12d9ee91e33af2b599dd"
+    },
+    {
+      "path": "misc/easy/docker-compose.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f56ff259a7c4c9f94965eed2edefb957c4ad1b32",
+      "size": 160,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/f56ff259a7c4c9f94965eed2edefb957c4ad1b32"
+    },
+    {
+      "path": "misc/easy/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d7bb61c8b29aebd9cd0ed6ff28f6c482522019dd",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/d7bb61c8b29aebd9cd0ed6ff28f6c482522019dd"
+    },
+    {
+      "path": "misc/easy/src/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d515f03e35ea384c3f8189bc7aa5287902fc763",
+      "size": 26,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/8d515f03e35ea384c3f8189bc7aa5287902fc763"
+    },
+    {
+      "path": "misc/easy/src/jail.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "9439725d9691755c37869554ab6dab67ce4df01e",
+      "size": 849,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/9439725d9691755c37869554ab6dab67ce4df01e"
+    },
+    {
+      "path": "misc/inception",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "82010ff298555f6d3430c9d5509aed03c18390b1",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/82010ff298555f6d3430c9d5509aed03c18390b1"
+    },
+    {
+      "path": "misc/inception/challenge.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab589e56f8c80d88274ea4e5e5cd75125973fae0",
+      "size": 137,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/ab589e56f8c80d88274ea4e5e5cd75125973fae0"
+    },
+    {
+      "path": "misc/inception/inception",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d59d401be8d331a7d6145551e63110ff22ecaa1f",
+      "size": 1623,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/d59d401be8d331a7d6145551e63110ff22ecaa1f"
+    },
+    {
+      "path": "misc/inception/writeup.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16267cd268f46589b109c152e3788fb373254ae6",
+      "size": 2154,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/16267cd268f46589b109c152e3788fb373254ae6"
+    },
+    {
+      "path": "misc/skull",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "aa799d6df186d8eda7d7de6fec31a48f7702c585",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/aa799d6df186d8eda7d7de6fec31a48f7702c585"
+    },
+    {
+      "path": "misc/skull/Dockerfile",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "521d298b5c3e3de63596b80bdd502cfd52654e74",
+      "size": 772,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/521d298b5c3e3de63596b80bdd502cfd52654e74"
+    },
+    {
+      "path": "misc/skull/README.md",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "8f5d1154b5e8c52bcca0e2f7f933e4988db9daba",
+      "size": 299,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/8f5d1154b5e8c52bcca0e2f7f933e4988db9daba"
+    },
+    {
+      "path": "misc/skull/ctf.xinetd",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "ede9c850d20865b0e01a7dcbf4dc64ab95f3adb8",
+      "size": 562,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/ede9c850d20865b0e01a7dcbf4dc64ab95f3adb8"
+    },
+    {
+      "path": "misc/skull/docker-compose.yml",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "99b13c056b4bdfcffa5797267f0951b2ac0571c9",
+      "size": 160,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/99b13c056b4bdfcffa5797267f0951b2ac0571c9"
+    },
+    {
+      "path": "misc/skull/main.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9226c745a428afac6cc8a8f7702ad7772ff95260",
+      "size": 105,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/9226c745a428afac6cc8a8f7702ad7772ff95260"
+    },
+    {
+      "path": "misc/skull/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "029a8bb37f5208c9cc3d4c150921da90f9269ff9",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/029a8bb37f5208c9cc3d4c150921da90f9269ff9"
+    },
+    {
+      "path": "misc/skull/src/flag",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "f7238aa50d2d2e5ecd0722c008f274d82b5e941e",
+      "size": 12520,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/f7238aa50d2d2e5ecd0722c008f274d82b5e941e"
+    },
+    {
+      "path": "misc/skull/src/jail.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "f27d1a7b05f311dcb5f4bcdd6d2aa9a4e3ecba3a",
+      "size": 1023,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/f27d1a7b05f311dcb5f4bcdd6d2aa9a4e3ecba3a"
+    },
+    {
+      "path": "pwn",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "49e3a618bb6c8c82585e57f434ca5e16c64b396b",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/49e3a618bb6c8c82585e57f434ca5e16c64b396b"
+    },
+    {
+      "path": "pwn/bytecoin",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a794dc7962b20b16709db464c5e7b0ebc7cdd8ad",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/a794dc7962b20b16709db464c5e7b0ebc7cdd8ad"
+    },
+    {
+      "path": "pwn/bytecoin/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a889546af276da0091a3bd1e49c62206eb2403ab",
+      "size": 57,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/a889546af276da0091a3bd1e49c62206eb2403ab"
+    },
+    {
+      "path": "pwn/bytecoin/challenge_files",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "14cf3d9f1810ab4ea0e3027b8ede057ecff5dad7",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/14cf3d9f1810ab4ea0e3027b8ede057ecff5dad7"
+    },
+    {
+      "path": "pwn/bytecoin/challenge_files/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b1d6427d4598b4ab51f7f6bb41de48831bc08f3",
+      "size": 584,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/6b1d6427d4598b4ab51f7f6bb41de48831bc08f3"
+    },
+    {
+      "path": "pwn/bytecoin/challenge_files/bytecoin.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a4bac44a2b38a7bf2d7dffcc48b833db2cb9c5a",
+      "size": 5997,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/5a4bac44a2b38a7bf2d7dffcc48b833db2cb9c5a"
+    },
+    {
+      "path": "pwn/bytecoin/challenge_files/challenge",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "83dddb6e364b7a8f476a16d5c58ffc2ea25f3fb2",
+      "size": 17440,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/83dddb6e364b7a8f476a16d5c58ffc2ea25f3fb2"
+    },
+    {
+      "path": "pwn/bytecoin/challenge_files/docker-compose.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c8c5eceb6a3ff789308c67b6c24f8602dac32a61",
+      "size": 158,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/c8c5eceb6a3ff789308c67b6c24f8602dac32a61"
+    },
+    {
+      "path": "pwn/bytecoin/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "78514f126516ea6dc8a4e084087c67e5a0a84ab5",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/78514f126516ea6dc8a4e084087c67e5a0a84ab5"
+    },
+    {
+      "path": "pwn/bytecoin/solve/bytecoin.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5007df212c2da7b7b41a552f9c1f035fc6bab156",
+      "size": 5307,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/5007df212c2da7b7b41a552f9c1f035fc6bab156"
+    },
+    {
+      "path": "pwn/bytecoin/solve/challenge.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "00549ae5e499bcf108ea54db4b749b8b0b6a8d92",
+      "size": 6516,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/00549ae5e499bcf108ea54db4b749b8b0b6a8d92"
+    },
+    {
+      "path": "pwn/bytecoin/solve/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d00bd60aa32e40d1b27ce66dce36aa8c6600f27a",
+      "size": 3142,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/d00bd60aa32e40d1b27ce66dce36aa8c6600f27a"
+    },
+    {
+      "path": "pwn/bytecoin/source_files",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "168b38ac9c103d5bc9a790a7baf21a9d203be8b1",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/168b38ac9c103d5bc9a790a7baf21a9d203be8b1"
+    },
+    {
+      "path": "pwn/bytecoin/source_files/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b1d6427d4598b4ab51f7f6bb41de48831bc08f3",
+      "size": 584,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/6b1d6427d4598b4ab51f7f6bb41de48831bc08f3"
+    },
+    {
+      "path": "pwn/bytecoin/source_files/challenge",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "83dddb6e364b7a8f476a16d5c58ffc2ea25f3fb2",
+      "size": 17440,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/83dddb6e364b7a8f476a16d5c58ffc2ea25f3fb2"
+    },
+    {
+      "path": "pwn/bytecoin/source_files/docker-compose.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5aa045297144beb09de5161d6e27b75f18968394",
+      "size": 158,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/5aa045297144beb09de5161d6e27b75f18968394"
+    },
+    {
+      "path": "pwn/bytecoin/source_files/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f96507646f821a6f8e25ed03294444dcbf865a1b",
+      "size": 31,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/f96507646f821a6f8e25ed03294444dcbf865a1b"
+    },
+    {
+      "path": "pwn/heap2win",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9f203f659f539660a158eb2db1b6398b2a716809",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/9f203f659f539660a158eb2db1b6398b2a716809"
+    },
+    {
+      "path": "pwn/heap2win/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "79df03aa10556ff3f410f64099aeac1e46336503",
+      "size": 158,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/79df03aa10556ff3f410f64099aeac1e46336503"
+    },
+    {
+      "path": "pwn/heap2win/Makefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51e253caccde7ba977a08b414cf8b0ef5aac3c1c",
+      "size": 138,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/51e253caccde7ba977a08b414cf8b0ef5aac3c1c"
+    },
+    {
+      "path": "pwn/heap2win/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e5d4a6c2f73bd1a1a712ecc737a2499e59e511e",
+      "size": 1366,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/2e5d4a6c2f73bd1a1a712ecc737a2499e59e511e"
+    },
+    {
+      "path": "pwn/heap2win/docker-compose.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b23e7bb7789e5a8ce216c23df2dad96d8df5006",
+      "size": 159,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/4b23e7bb7789e5a8ce216c23df2dad96d8df5006"
+    },
+    {
+      "path": "pwn/heap2win/heap2win.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "596b2c872c58ab68d400c6f2c3dbd1389f054330",
+      "size": 11060,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/596b2c872c58ab68d400c6f2c3dbd1389f054330"
+    },
+    {
+      "path": "pwn/heap2win/main.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c6758d4a6bec92da4c68c89cefa938ab2eeab11b",
+      "size": 4996,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/c6758d4a6bec92da4c68c89cefa938ab2eeab11b"
+    },
+    {
+      "path": "pwn/heap2win/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb5256902074466c5d5e1ebc38649ac02b67d047",
+      "size": 978,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/eb5256902074466c5d5e1ebc38649ac02b67d047"
+    },
+    {
+      "path": "pwn/heap2win/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "415f374923279d4bdd330bf55467ed6327b5f705",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/415f374923279d4bdd330bf55467ed6327b5f705"
+    },
+    {
+      "path": "pwn/heap2win/src/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2bb7fc78aac8b8c1b6c885decdfcbecbaf495b4",
+      "size": 30,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/d2bb7fc78aac8b8c1b6c885decdfcbecbaf495b4"
+    },
+    {
+      "path": "pwn/heap2win/src/heap2win",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "51b7d56d094722f8b3ba21413eab17c0a90cd271",
+      "size": 31752,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/51b7d56d094722f8b3ba21413eab17c0a90cd271"
+    },
+    {
+      "path": "pwn/heap2win/src/start.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cdea8cf026fcf5444ddca9d7b05dda3341d9eef4",
+      "size": 18,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/cdea8cf026fcf5444ddca9d7b05dda3341d9eef4"
+    },
+    {
+      "path": "pwn/hextoint",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "04bf9f0440fc7c326d6bfef9330bf516bbea3d7d",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/04bf9f0440fc7c326d6bfef9330bf516bbea3d7d"
+    },
+    {
+      "path": "pwn/hextoint/.gdb_history",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5e3216733231f9dd67192b4017eae2c9f57484dd",
+      "size": 50,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/5e3216733231f9dd67192b4017eae2c9f57484dd"
+    },
+    {
+      "path": "pwn/hextoint/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bae7c789d1cfb0b505c4409f2821307395590bcc",
+      "size": 165,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/bae7c789d1cfb0b505c4409f2821307395590bcc"
+    },
+    {
+      "path": "pwn/hextoint/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bb7653f773e01bd0138dcf72a4938b940d0c20fe",
+      "size": 443,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/bb7653f773e01bd0138dcf72a4938b940d0c20fe"
+    },
+    {
+      "path": "pwn/hextoint/dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "318ebfe08b45a51969f0d327ea7bbf0e73057172",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/318ebfe08b45a51969f0d327ea7bbf0e73057172"
+    },
+    {
+      "path": "pwn/hextoint/dist/hex_to_int2",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "13249e7b57b70fe6f0392f0bb03f1c08ce4bc8c5",
+      "size": 279248,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/13249e7b57b70fe6f0392f0bb03f1c08ce4bc8c5"
+    },
+    {
+      "path": "pwn/hextoint/docker-compose.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21bdb206115672bec9d7713544f5ee071aa25db8",
+      "size": 162,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/21bdb206115672bec9d7713544f5ee071aa25db8"
+    },
+    {
+      "path": "pwn/hextoint/main.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d7fb8e8c0af75daf726a8a519e60fa9cdc90e8d",
+      "size": 2393,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/9d7fb8e8c0af75daf726a8a519e60fa9cdc90e8d"
+    },
+    {
+      "path": "pwn/hextoint/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ecc7233b3841c8e1ddb7e1108a6a29ec5135769",
+      "size": 774,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/1ecc7233b3841c8e1ddb7e1108a6a29ec5135769"
+    },
+    {
+      "path": "pwn/hextoint/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "41121170166fbfde3470cc8ae6f9427cd80a2693",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/41121170166fbfde3470cc8ae6f9427cd80a2693"
+    },
+    {
+      "path": "pwn/hextoint/src/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2edfe55252763d2405ed05495077456af888a66b",
+      "size": 33,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/2edfe55252763d2405ed05495077456af888a66b"
+    },
+    {
+      "path": "pwn/hextoint/src/hex_to_int2",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "13249e7b57b70fe6f0392f0bb03f1c08ce4bc8c5",
+      "size": 279248,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/13249e7b57b70fe6f0392f0bb03f1c08ce4bc8c5"
+    },
+    {
+      "path": "pwn/incontinent",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c10e8a83ede24190f57aa13c892e6003775afe21",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/c10e8a83ede24190f57aa13c892e6003775afe21"
+    },
+    {
+      "path": "pwn/incontinent/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "90d6f50c2a603bfc926799d3af3634d04b4f1a14",
+      "size": 143,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/90d6f50c2a603bfc926799d3af3634d04b4f1a14"
+    },
+    {
+      "path": "pwn/incontinent/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e33b2dc2a6c8f3a5de72a0af0862b8b1fdb95b68",
+      "size": 290,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/e33b2dc2a6c8f3a5de72a0af0862b8b1fdb95b68"
+    },
+    {
+      "path": "pwn/incontinent/docker-compose.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b736dc337872456702ae99d6e9aeef3d160c581",
+      "size": 162,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/0b736dc337872456702ae99d6e9aeef3d160c581"
+    },
+    {
+      "path": "pwn/incontinent/incontinent_dist",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "09d62a7f3a709e493a6f36378535b82404609a27",
+      "size": 12880,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/09d62a7f3a709e493a6f36378535b82404609a27"
+    },
+    {
+      "path": "pwn/incontinent/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "71546064577723a77bf636472e87ebd76aa70d35",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/71546064577723a77bf636472e87ebd76aa70d35"
+    },
+    {
+      "path": "pwn/incontinent/src/remote_server",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "2940e61a3346727c4cdf44a7950b35e7d75319ef",
+      "size": 12880,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/2940e61a3346727c4cdf44a7950b35e7d75319ef"
+    },
+    {
+      "path": "pwn/incontinent/src/start.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3585600385d774ae31020dcec8739b8c586604c6",
+      "size": 23,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/3585600385d774ae31020dcec8739b8c586604c6"
+    },
+    {
+      "path": "pwn/intro2",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "87504b3e2af5ffebf1aa6fe83393ede763a75b8c",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/87504b3e2af5ffebf1aa6fe83393ede763a75b8c"
+    },
+    {
+      "path": "pwn/intro2/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf29fcdf6da851c438ff8ebafdd5d3710519f52d",
+      "size": 155,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/cf29fcdf6da851c438ff8ebafdd5d3710519f52d"
+    },
+    {
+      "path": "pwn/intro2/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "870c1392aa48081a8c14e31b74194a57f76d3072",
+      "size": 372,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/870c1392aa48081a8c14e31b74194a57f76d3072"
+    },
+    {
+      "path": "pwn/intro2/dist.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fbc2289cc63083876b111c00fca9689feabaae12",
+      "size": 4317,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/fbc2289cc63083876b111c00fca9689feabaae12"
+    },
+    {
+      "path": "pwn/intro2/docker-compose.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab51c7b4c55506d16586e05372835839be5051f6",
+      "size": 157,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/ab51c7b4c55506d16586e05372835839be5051f6"
+    },
+    {
+      "path": "pwn/intro2/files",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7703f67fa7ff9490116e8baf0fba8e0a65e67b0f",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/7703f67fa7ff9490116e8baf0fba8e0a65e67b0f"
+    },
+    {
+      "path": "pwn/intro2/files/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "79df03aa10556ff3f410f64099aeac1e46336503",
+      "size": 158,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/79df03aa10556ff3f410f64099aeac1e46336503"
+    },
+    {
+      "path": "pwn/intro2/files/docker-compose.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a57212405cea394d7b726db819d21773b77eb452",
+      "size": 158,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/a57212405cea394d7b726db819d21773b77eb452"
+    },
+    {
+      "path": "pwn/intro2/files/intro",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "6649872ec4cd24d7d502bb7e32801985632330d0",
+      "size": 13312,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/6649872ec4cd24d7d502bb7e32801985632330d0"
+    },
+    {
+      "path": "pwn/intro2/intro",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "6649872ec4cd24d7d502bb7e32801985632330d0",
+      "size": 13312,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/6649872ec4cd24d7d502bb7e32801985632330d0"
+    },
+    {
+      "path": "pwn/intro2/solve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1ad5cc534e8ed42dcf50105d06a5825f79b26b2c",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/1ad5cc534e8ed42dcf50105d06a5825f79b26b2c"
+    },
+    {
+      "path": "pwn/intro2/solve/intro",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "6649872ec4cd24d7d502bb7e32801985632330d0",
+      "size": 13312,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/6649872ec4cd24d7d502bb7e32801985632330d0"
+    },
+    {
+      "path": "pwn/intro2/solve/intro_patched",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "6649872ec4cd24d7d502bb7e32801985632330d0",
+      "size": 13312,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/6649872ec4cd24d7d502bb7e32801985632330d0"
+    },
+    {
+      "path": "pwn/intro2/solve/solve.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "ec6619d9f4b83dfa43d26f529ac5adac89dde51b",
+      "size": 3697,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/ec6619d9f4b83dfa43d26f529ac5adac89dde51b"
+    },
+    {
+      "path": "pwn/intro2/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "14ff6ca94135a23014b6a15964093823c27bf9d4",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/14ff6ca94135a23014b6a15964093823c27bf9d4"
+    },
+    {
+      "path": "pwn/intro2/src/flag.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "effadb0a275802aa786aa02322994827976bf035",
+      "size": 20,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/effadb0a275802aa786aa02322994827976bf035"
+    },
+    {
+      "path": "pwn/intro2/src/intro",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "6649872ec4cd24d7d502bb7e32801985632330d0",
+      "size": 13312,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/6649872ec4cd24d7d502bb7e32801985632330d0"
+    },
+    {
+      "path": "pwn/intro2/src/start.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5bb4f578b315f13e9d979c1ffceaa91b0d00ab8",
+      "size": 15,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/b5bb4f578b315f13e9d979c1ffceaa91b0d00ab8"
+    },
+    {
+      "path": "rev",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "509052699e6184ab09c6ff007d2454cb94aaf191",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/509052699e6184ab09c6ff007d2454cb94aaf191"
+    },
+    {
+      "path": "rev/angr_management",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c7dabfa491ef6bb347e41db5f22bfe27e22889ca",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/c7dabfa491ef6bb347e41db5f22bfe27e22889ca"
+    },
+    {
+      "path": "rev/angr_management/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1d0aa7e027611a0ef1b42f9e8e8df64b71c244dc",
+      "size": 288,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/1d0aa7e027611a0ef1b42f9e8e8df64b71c244dc"
+    },
+    {
+      "path": "rev/angr_management/angr_management",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "52e09e9dd13226832328459dcdbc64b106430108",
+      "size": 69712,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/52e09e9dd13226832328459dcdbc64b106430108"
+    },
+    {
+      "path": "rev/angr_management/angr_management_test",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "019c0273e1de3fdef7e8eac077e59cb63cd263cd",
+      "size": 69712,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/019c0273e1de3fdef7e8eac077e59cb63cd263cd"
+    },
+    {
+      "path": "rev/angr_management/challenge.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa3d23ff5757a19a1d6414bd5fa77ee045ab27f3",
+      "size": 24675,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/aa3d23ff5757a19a1d6414bd5fa77ee045ab27f3"
+    },
+    {
+      "path": "rev/angr_management/description.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "50f0814f862665272fc1c041b305269c82ee4e5c",
+      "size": 156,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/50f0814f862665272fc1c041b305269c82ee4e5c"
+    },
+    {
+      "path": "rev/angr_management/docker-compose.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b4af40066e214628dc09d7ff364db6e420340612",
+      "size": 166,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/b4af40066e214628dc09d7ff364db6e420340612"
+    },
+    {
+      "path": "rev/angr_management/maze_ans.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b80f88dc0c8b084477d9dab06278cd56992a14a6",
+      "size": 277,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/b80f88dc0c8b084477d9dab06278cd56992a14a6"
+    },
+    {
+      "path": "rev/angr_management/notes.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46cd07f4d5bcb20bc9b2bda344d03fe2f59910a6",
+      "size": 80,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/46cd07f4d5bcb20bc9b2bda344d03fe2f59910a6"
+    },
+    {
+      "path": "rev/angr_management/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6e417272fa1a6218d779ab8a6fa22af0aa30f3f",
+      "size": 2911,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/d6e417272fa1a6218d779ab8a6fa22af0aa30f3f"
+    },
+    {
+      "path": "rev/angr_management/writeup.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a9baa821376f44063874597e907aae9dcc00091e",
+      "size": 3742,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/a9baa821376f44063874597e907aae9dcc00091e"
+    },
+    {
+      "path": "rev/back_and_forth",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "313bb08c1d5870bc5d3b8e19cb73c15d47d7e46c",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/313bb08c1d5870bc5d3b8e19cb73c15d47d7e46c"
+    },
+    {
+      "path": "rev/back_and_forth/Main.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "460ffdd3f539a66d66127b3fb6d7d5c7743599f3",
+      "size": 583,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/460ffdd3f539a66d66127b3fb6d7d5c7743599f3"
+    },
+    {
+      "path": "rev/back_and_forth/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c00ced17cd91673181164ccea865270b8891d91c",
+      "size": 22763,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/c00ced17cd91673181164ccea865270b8891d91c"
+    },
+    {
+      "path": "rev/back_and_forth/bk_n_forth.apk",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5417854c76eb24e838154f910418426a89c3c0a0",
+      "size": 10910343,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/5417854c76eb24e838154f910418426a89c3c0a0"
+    },
+    {
+      "path": "rev/back_and_forth/brute.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f53a0bf478c5492bb313784ba660fc34bead5e3c",
+      "size": 530,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/f53a0bf478c5492bb313784ba660fc34bead5e3c"
+    },
+    {
+      "path": "rev/back_and_forth/gen_bytes.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "50c5b1fdf631761ab1fa34626d16b95eaff8caa8",
+      "size": 678,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/50c5b1fdf631761ab1fa34626d16b95eaff8caa8"
+    },
+    {
+      "path": "rev/back_and_forth/image.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "826d438a989fe4139aa65d01716f3f1abb5a745d",
+      "size": 19607,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/826d438a989fe4139aa65d01716f3f1abb5a745d"
+    },
+    {
+      "path": "rev/mixed_signals",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "496d1321a4c8128b2596eb7cb694165a6c7d0285",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/496d1321a4c8128b2596eb7cb694165a6c7d0285"
+    },
+    {
+      "path": "rev/mixed_signals/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e683e63cb9d650ee17089178b5b8c9bb639a15fb",
+      "size": 764,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/e683e63cb9d650ee17089178b5b8c9bb639a15fb"
+    },
+    {
+      "path": "rev/mixed_signals/mixed_signals",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "4f15d5776b69dc0ecc635df608ec5302799a01e4",
+      "size": 2349136,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/4f15d5776b69dc0ecc635df608ec5302799a01e4"
+    },
+    {
+      "path": "rev/mixed_signals/program",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "1685894e52b278db80923c1b6ea8abfcd4c865e6",
+      "size": 3178069,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/1685894e52b278db80923c1b6ea8abfcd4c865e6"
+    },
+    {
+      "path": "rev/picklerick",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8358cd00a3b4bcc581e42a4ea76a57a9338623d7",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/8358cd00a3b4bcc581e42a4ea76a57a9338623d7"
+    },
+    {
+      "path": "rev/picklerick/pickled.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "626765a072bae53dbef0fa2a4b3fa8d643559a29",
+      "size": 424867,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/626765a072bae53dbef0fa2a4b3fa8d643559a29"
+    },
+    {
+      "path": "rev/picklerick/readme.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f55127fe05179071ea10ff5e0d6ae8f3b00e04ce",
+      "size": 185,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/f55127fe05179071ea10ff5e0d6ae8f3b00e04ce"
+    },
+    {
+      "path": "rev/picklerick/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7448912d7f6c701c700d63ef2da2162bcf33df14",
+      "size": 371,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/7448912d7f6c701c700d63ef2da2162bcf33df14"
+    },
+    {
+      "path": "rev/rcaas",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4df280dc5ffe9173a01acbc80e277503220b4e83",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/4df280dc5ffe9173a01acbc80e277503220b4e83"
+    },
+    {
+      "path": "rev/rcaas/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf14ce0ca3184cc1d453865a9b31b501b744f418",
+      "size": 631,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/bf14ce0ca3184cc1d453865a9b31b501b744f418"
+    },
+    {
+      "path": "rev/rcaas/rcaas",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "7ab210facc7096cfd5df0e7a36cd1917cbe88cc7",
+      "size": 7994444,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/7ab210facc7096cfd5df0e7a36cd1917cbe88cc7"
+    },
+    {
+      "path": "rev/rcaas/solve.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "997247b5bd64e7f6e29030571c2d9fdcb8821e60",
+      "size": 1833,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/997247b5bd64e7f6e29030571c2d9fdcb8821e60"
+    },
+    {
+      "path": "rev/yara",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "410463083af0f6e8d23facebaf942016d5531a08",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/410463083af0f6e8d23facebaf942016d5531a08"
+    },
+    {
+      "path": "rev/yara/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bba863fb634b16aac6def340a4c47f5d4a62a0bb",
+      "size": 595,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/bba863fb634b16aac6def340a4c47f5d4a62a0bb"
+    },
+    {
+      "path": "rev/yara/rule.yar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4db95a875a157c0dad8db0e2ba40c26166f1dac6",
+      "size": 802,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/4db95a875a157c0dad8db0e2ba40c26166f1dac6"
+    },
+    {
+      "path": "web",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7c90de578c4ca1f4a78c5d2e6637f28ef81601a2",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/7c90de578c4ca1f4a78c5d2e6637f28ef81601a2"
+    },
+    {
+      "path": "web/baby",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2afe2194ed3ff162cdaeab546afc0375f2691e1a",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/2afe2194ed3ff162cdaeab546afc0375f2691e1a"
+    },
+    {
+      "path": "web/baby/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "97549338b3ce12d400c870384f3cd81b99412a96",
+      "size": 1143,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/97549338b3ce12d400c870384f3cd81b99412a96"
+    },
+    {
+      "path": "web/baby/admin_bot.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7697e291cfa3192d3fe6e0d087a43ae2c4c06c4",
+      "size": 2342,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/d7697e291cfa3192d3fe6e0d087a43ae2c4c06c4"
+    },
+    {
+      "path": "web/baby/app.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b78837f2cea1387c0ec4425d3562e1a6717c040",
+      "size": 12175,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/3b78837f2cea1387c0ec4425d3562e1a6717c040"
+    },
+    {
+      "path": "web/baby/challenge.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de49ed01191eff867368f65a9a775239e0e42e40",
+      "size": 236,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/de49ed01191eff867368f65a9a775239e0e42e40"
+    },
+    {
+      "path": "web/baby/docker-compose.baby.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cad700b9c5aecd8f3aeb480eabe36b0230be938c",
+      "size": 137,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/cad700b9c5aecd8f3aeb480eabe36b0230be938c"
+    },
+    {
+      "path": "web/baby/start.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "efbccb904ac734efc69aee3b5eb645d0f9aecbd6",
+      "size": 136,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/efbccb904ac734efc69aee3b5eb645d0f9aecbd6"
+    },
+    {
+      "path": "web/baby/writeup.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3cb771b9055231f79053839b36e06cf6f30754ca",
+      "size": 433,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/3cb771b9055231f79053839b36e06cf6f30754ca"
+    },
+    {
+      "path": "web/my-cat-website",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c4fefef1034d20dec94da60572519afcd50cb914",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/c4fefef1034d20dec94da60572519afcd50cb914"
+    },
+    {
+      "path": "web/my-cat-website/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "385161d1c9b69f7a34c5c86e9673ed45490baa46",
+      "size": 401,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/385161d1c9b69f7a34c5c86e9673ed45490baa46"
+    },
+    {
+      "path": "web/my-cat-website/app.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89536927a8db34484653012e0f2ba3119117faa0",
+      "size": 2480,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/89536927a8db34484653012e0f2ba3119117faa0"
+    },
+    {
+      "path": "web/my-cat-website/dist.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7030d6a0e75feec533a20dabc56d75b75d94042f",
+      "size": 2998,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/7030d6a0e75feec533a20dabc56d75b75d94042f"
+    },
+    {
+      "path": "web/my-cat-website/docker-compose.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6718c2a7ea3e63699ccd5809c3e8e9707d1398e4",
+      "size": 144,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/6718c2a7ea3e63699ccd5809c3e8e9707d1398e4"
+    },
+    {
+      "path": "web/my-cat-website/solve.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9101b6e00a32a5fbf6ab5fcc0ee322d6b677e22",
+      "size": 280,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/f9101b6e00a32a5fbf6ab5fcc0ee322d6b677e22"
+    },
+    {
+      "path": "web/my-cat-website/templates",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d4ee8fd0830a56f52c170833253993ac8d34a00f",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/d4ee8fd0830a56f52c170833253993ac8d34a00f"
+    },
+    {
+      "path": "web/my-cat-website/templates/cat.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13a696e410485397609beae24b46ac63dbc87cf9",
+      "size": 1193,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/13a696e410485397609beae24b46ac63dbc87cf9"
+    },
+    {
+      "path": "web/my-cat-website/templates/cat_form.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee0317264b03a3dfaf40992a8e73e41886124b94",
+      "size": 2570,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/ee0317264b03a3dfaf40992a8e73e41886124b94"
+    },
+    {
+      "path": "web/my-cat-website/templates/flag.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ab8e6f156e66f021b6fe121cf0f1996f045b187",
+      "size": 29,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/4ab8e6f156e66f021b6fe121cf0f1996f045b187"
+    },
+    {
+      "path": "web/onpoint",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8c1895643946d8ee3adb850e86ea26427ec238e3",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/8c1895643946d8ee3adb850e86ea26427ec238e3"
+    },
+    {
+      "path": "web/onpoint/Dockerfile.adminbot",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9225bc761a17c56b1f8b4bdda3c1d48c38f15068",
+      "size": 548,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/9225bc761a17c56b1f8b4bdda3c1d48c38f15068"
+    },
+    {
+      "path": "web/onpoint/Dockerfile.app",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7815216980afbaa3b9f1c8f655b255bc7ab8a1ce",
+      "size": 293,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/7815216980afbaa3b9f1c8f655b255bc7ab8a1ce"
+    },
+    {
+      "path": "web/onpoint/admin-bot",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ae919611ab6402aeaa8339daecafe2d7983870db",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/ae919611ab6402aeaa8339daecafe2d7983870db"
+    },
+    {
+      "path": "web/onpoint/admin-bot/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d59c1dd7696e36a894853f0facf3b61d1dc41156",
+      "size": 112,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/d59c1dd7696e36a894853f0facf3b61d1dc41156"
+    },
+    {
+      "path": "web/onpoint/admin-bot/bot",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "aac2ccf78478341bf3d52fceecd99341e3e13da7",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/aac2ccf78478341bf3d52fceecd99341e3e13da7"
+    },
+    {
+      "path": "web/onpoint/admin-bot/bot/bot.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59dd9aac24f8e74c75d2e515f3ad8ff2bd5048ec",
+      "size": 1348,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/59dd9aac24f8e74c75d2e515f3ad8ff2bd5048ec"
+    },
+    {
+      "path": "web/onpoint/admin-bot/bot/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "27673f02656131cd39e486dffddc8ed78fe28962",
+      "size": 164,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/27673f02656131cd39e486dffddc8ed78fe28962"
+    },
+    {
+      "path": "web/onpoint/admin-bot/bot/public",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e1e9c49781bc262deb552025d607ac0a5c24578f",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/e1e9c49781bc262deb552025d607ac0a5c24578f"
+    },
+    {
+      "path": "web/onpoint/admin-bot/bot/public/index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d23d2b089a20fd9ed2f851eb930b141038b18b38",
+      "size": 3372,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/d23d2b089a20fd9ed2f851eb930b141038b18b38"
+    },
+    {
+      "path": "web/onpoint/admin-bot/bot/public/response.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47212d4021231492ad670d4723d21a503a5aadff",
+      "size": 2495,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/47212d4021231492ad670d4723d21a503a5aadff"
+    },
+    {
+      "path": "web/onpoint/admin-bot/bot/public/style.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4417659e473ad88f604edd6aea8e7f48bd83397d",
+      "size": 860,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/4417659e473ad88f604edd6aea8e7f48bd83397d"
+    },
+    {
+      "path": "web/onpoint/app.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "99509e2a00ffc9a9d4151c893f6029150dd1e6b9",
+      "size": 13476,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/99509e2a00ffc9a9d4151c893f6029150dd1e6b9"
+    },
+    {
+      "path": "web/onpoint/challenge.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7545a7f3e18b4b1fb182bbf1313c8fb0c7dd8360",
+      "size": 421,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/7545a7f3e18b4b1fb182bbf1313c8fb0c7dd8360"
+    },
+    {
+      "path": "web/onpoint/docker-compose.adminbot.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b14993a30e96e941b50baf0a582fd5645cc6c6ab",
+      "size": 186,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/b14993a30e96e941b50baf0a582fd5645cc6c6ab"
+    },
+    {
+      "path": "web/onpoint/docker-compose.app.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06f66cab40066a870d5b506f1c7e9fd6a1329c2b",
+      "size": 169,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/06f66cab40066a870d5b506f1c7e9fd6a1329c2b"
+    },
+    {
+      "path": "web/onpoint/for_participants",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4534fc0badad42aab4276fae3badb3124c52fdde",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/4534fc0badad42aab4276fae3badb3124c52fdde"
+    },
+    {
+      "path": "web/onpoint/for_participants/app.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "99509e2a00ffc9a9d4151c893f6029150dd1e6b9",
+      "size": 13476,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/99509e2a00ffc9a9d4151c893f6029150dd1e6b9"
+    },
+    {
+      "path": "web/onpoint/for_participants/bot.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "84debbcd21a5d3132de84e4f768b679e8fc874d5",
+      "size": 1314,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/84debbcd21a5d3132de84e4f768b679e8fc874d5"
+    },
+    {
+      "path": "web/onpoint/local.db",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3aeec388cfc331640978e7478fead35d9e0a2c12",
+      "size": 8192,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/3aeec388cfc331640978e7478fead35d9e0a2c12"
+    },
+    {
+      "path": "web/onpoint/requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "047e9501aa8bb9d2ae546e6858b14eba6214e498",
+      "size": 13,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/047e9501aa8bb9d2ae546e6858b14eba6214e498"
+    },
+    {
+      "path": "web/onpoint/secret_key.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49afa3fb252834cb99742033e3a230200d31eba8",
+      "size": 48,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/49afa3fb252834cb99742033e3a230200d31eba8"
+    },
+    {
+      "path": "web/onpoint/start.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "efbccb904ac734efc69aee3b5eb645d0f9aecbd6",
+      "size": 136,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/efbccb904ac734efc69aee3b5eb645d0f9aecbd6"
+    },
+    {
+      "path": "web/onpoint/templates",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "65618e42f1533993b85d2123732940386290e447",
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/trees/65618e42f1533993b85d2123732940386290e447"
+    },
+    {
+      "path": "web/onpoint/templates/error.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "63233723357af2a07fc77a56fe31a8ab4fb0b9f6",
+      "size": 3242,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/63233723357af2a07fc77a56fe31a8ab4fb0b9f6"
+    },
+    {
+      "path": "web/onpoint/templates/new.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02fd6ad2df0ec3da6a8eff4dffb5b703c22faeb7",
+      "size": 3805,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/02fd6ad2df0ec3da6a8eff4dffb5b703c22faeb7"
+    },
+    {
+      "path": "web/onpoint/writeup.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1a67686bd32c886ddc287b55686c263a49709a40",
+      "size": 440,
+      "url": "https://api.github.com/repos/BYU-CSA/BYUCTF-2026/git/blobs/1a67686bd32c886ddc287b55686c263a49709a40"
+    }
+  ],
+  "truncated": false
+}

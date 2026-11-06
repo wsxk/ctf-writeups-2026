@@ -1,0 +1,9 @@
+services:
+  intro2:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "41343:5000"
+    privileged: true

@@ -1,0 +1,67 @@
+{
+  "event_id": "CTF-3081",
+  "event_title": "0xFUN CTF 2026",
+  "category": "pwn",
+  "title": "bit_flips",
+  "source_urls": [
+    "https://github.com/marlithor-cyber/0xfun-2026-writeups/tree/main/pwn/bit_flips",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/0xFUN/2026/pwn/bit_flips",
+    "https://ctftime.org/event/3081/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/bit_flips/README.md",
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/bit_flips/output.txt",
+    "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/bit_flips/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/bit_flips/README.md",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/bit_flips/bitflips_files.zip"
+  ],
+  "writeup_status": "已下载参赛者正文及解题脚本",
+  "attachment_status": "已下载题目镜像附件",
+  "notes": [
+    "writeup来自解题者原始仓库；附件来自CTF Archives镜像。只保存文件，未执行。"
+  ],
+  "artifacts": [
+    {
+      "path": "writeups/bit_flips/README.md",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/bit_flips/README.md",
+      "bytes": 2779,
+      "sha256": "dac5b8eceacc350f3cb818c383acfafe96907bffdbe547444835b737e96671dc",
+      "kind": "writeups"
+    },
+    {
+      "path": "writeups/bit_flips/output.txt",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/bit_flips/output.txt",
+      "bytes": 118,
+      "sha256": "fba0fd6cb2b41c7b4fab418239d05d24a9fecb2421721e43cf0800776362c907",
+      "kind": "writeups"
+    },
+    {
+      "path": "writeups/bit_flips/solve.py",
+      "url": "https://raw.githubusercontent.com/marlithor-cyber/0xfun-2026-writeups/HEAD/pwn/bit_flips/solve.py",
+      "bytes": 3213,
+      "sha256": "89dec3bb6f3d43b293415d993fc8f95f41f2f7698f3fe4acc22393b9b4a9a06f",
+      "kind": "writeups"
+    },
+    {
+      "path": "attachments/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/bit_flips/README.md",
+      "bytes": 41,
+      "sha256": "80e6efc0686e38d07a1eac3bef668359dbd259b6a15de4ed749576c6951376ab",
+      "kind": "attachments"
+    },
+    {
+      "path": "attachments/bitflips_files.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/HEAD/ctfs/0xFUN/2026/pwn/bit_flips/bitflips_files.zip",
+      "bytes": 1032557,
+      "sha256": "9099d01fd763d6878d0f9ebcd7f3d1750e1bf63581f4519a94c13d0cbdd8ef6c",
+      "kind": "attachments"
+    }
+  ],
+  "download_errors": [],
+  "has_verified_solution": true,
+  "attachment_complete": true,
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06"
+}

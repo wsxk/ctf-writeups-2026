@@ -1,0 +1,3746 @@
+[
+  {
+    "event_id": "CTF-2981",
+    "event_title": "Scarlet CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_000.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-2969",
+    "event_title": "UofTCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_000.json",
+    "collected": 10,
+    "complete": 10
+  },
+  {
+    "event_id": "CTF-3064",
+    "event_title": "SCPCTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_000.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3021",
+    "event_title": "New Year CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_000.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-2916",
+    "event_title": "2026 Embedded Capture the Flag",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_001.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3089",
+    "event_title": "CyberCup Indian Ocean",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_001.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-2986",
+    "event_title": "SWIMMER OSINT CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_001.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-003",
+    "event_title": "SparkCTF v26 高校寒假联谊赛·训练赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_001.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3053",
+    "event_title": "KnightCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_002.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3079",
+    "event_title": "MetaCTF January 2026 Flash CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_002.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3024",
+    "event_title": "0xL4ugh CTF v5",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_002.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3038",
+    "event_title": "HackDay 2026 - Qualifications",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_002.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-2945",
+    "event_title": "Säkerhets-SM Quals 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_003.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3025",
+    "event_title": "Dreamhack Invitational Quals 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_003.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3071",
+    "event_title": "LilacCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_003.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3060",
+    "event_title": "VSL CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_003.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3087",
+    "event_title": "Fluid Attacks' CTF 2026-1",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_004.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3080",
+    "event_title": "CyberQuest 26",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_004.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3083",
+    "event_title": "Hack for a Change 2026 January: UN SDG 15",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_004.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3099",
+    "event_title": "ASCF CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_004.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-2941",
+    "event_title": "Jeanne d'Hack CTF 2026 | 3ème Édition",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_005.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3068",
+    "event_title": "ATC Winter Vibes Community CTF 2.0",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_005.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3114",
+    "event_title": "RCS CTF 26",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_005.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3072",
+    "event_title": "Eschaton CTF 2026 Quals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_005.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-2767",
+    "event_title": "PascalCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_006.json",
+    "collected": 7,
+    "complete": 7
+  },
+  {
+    "event_id": "CTF-3058",
+    "event_title": "Pragyan CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_006.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3015",
+    "event_title": "LA CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_006.json",
+    "collected": 15,
+    "complete": 15
+  },
+  {
+    "event_id": "CTF-3066",
+    "event_title": "Nullcon Goa HackIM 2026 CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_006.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3067",
+    "event_title": "DUCKERZ CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_007.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3074",
+    "event_title": "EncipherX CTF 4.0",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_007.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "INT-002",
+    "event_title": "Snyk Fetch the Flag 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_007.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3081",
+    "event_title": "0xFUN CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_007.json",
+    "collected": 7,
+    "complete": 7
+  },
+  {
+    "event_id": "CTF-3014",
+    "event_title": "Crackmes.one Reverse Engineering CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_008.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3075",
+    "event_title": "Breach Point CTF - Siege Of Troy(Online Round)",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_008.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3086",
+    "event_title": "TaipanByte’s Chart CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_008.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3135",
+    "event_title": "RamadanCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_008.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3122",
+    "event_title": "BITSCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_009.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3088",
+    "event_title": "THJCC CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_009.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3098",
+    "event_title": "Batman's Kitchen CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_009.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3078",
+    "event_title": "Eschaton CTF 2026 Finals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_009.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3076",
+    "event_title": "EPIHACK CTF: L'arène numérique",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_010.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3046",
+    "event_title": "BearcatCTF 2026 - Setting Sail",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_010.json",
+    "collected": 3,
+    "complete": 3
+  },
+  {
+    "event_id": "CTF-3092",
+    "event_title": "UniVsThreats 26 Quals CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_010.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3127",
+    "event_title": "EHAX CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_010.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3107",
+    "event_title": "SECCON CTF 14 Domestic Finals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_011.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3106",
+    "event_title": "SECCON CTF 14 International Finals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_011.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3123",
+    "event_title": "CREST CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_011.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3043",
+    "event_title": "Srdnlen CTF 2026 Quals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_011.json",
+    "collected": 8,
+    "complete": 8
+  },
+  {
+    "event_id": "CTF-3142",
+    "event_title": "CyberGame 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_012.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3160",
+    "event_title": "Winja CTF | Nullcon Goa 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_012.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-2907",
+    "event_title": "CSCG 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_012.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3167",
+    "event_title": "KI CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_012.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3152",
+    "event_title": "ARA 7.0 CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_013.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3185",
+    "event_title": "CryptoNite CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_013.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3172",
+    "event_title": "UNbreakable International 2026 - Team Phase",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_013.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3176",
+    "event_title": "APort Vault CTF - Can You Move the Money?",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_013.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-004",
+    "event_title": "SparkCTF v26 高校寒假联谊赛·决赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_014.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3171",
+    "event_title": "ApoorvCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_014.json",
+    "collected": 2,
+    "complete": 1
+  },
+  {
+    "event_id": "CTF-3129",
+    "event_title": "AxiomCTF 2026 Quals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_014.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3073",
+    "event_title": "upCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_014.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3027",
+    "event_title": "@Hack 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_015.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3101",
+    "event_title": "CodeVinci CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_015.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3110",
+    "event_title": "DiceCTF 2026 Quals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_015.json",
+    "collected": 7,
+    "complete": 7
+  },
+  {
+    "event_id": "CTF-3170",
+    "event_title": "ShellCTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_015.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "INT-003",
+    "event_title": "picoCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_016.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3179",
+    "event_title": "Espilon CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_016.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3133",
+    "event_title": "UTCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_016.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3191",
+    "event_title": "RedShift.ZeroPlusCTF-3",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_016.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3166",
+    "event_title": "PsychCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_017.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3105",
+    "event_title": "Midnight Flag CTF - EXECUTION",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_017.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3134",
+    "event_title": "Goldrush Gauntlet 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_017.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3161",
+    "event_title": "SUCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_017.json",
+    "collected": 14,
+    "complete": 14
+  },
+  {
+    "event_id": "CTF-3091",
+    "event_title": "tkbctf5",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_018.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3182",
+    "event_title": "Dark ctf",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_018.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3162",
+    "event_title": "MIPT CTF Quals 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_018.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3165",
+    "event_title": "Lag N Crash 6.0",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_018.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3189",
+    "event_title": "CyberCup Indian Ocean 2026 – Team Edition | Step2",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_019.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3196",
+    "event_title": "m0leCon CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_019.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3146",
+    "event_title": "Insomni'hack 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_019.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3095",
+    "event_title": "TAMUctf 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_019.json",
+    "collected": 13,
+    "complete": 13
+  },
+  {
+    "event_id": "CTF-3108",
+    "event_title": "BSidesSF CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_020.json",
+    "collected": 11,
+    "complete": 11
+  },
+  {
+    "event_id": "CTF-3203",
+    "event_title": "PolyPwnCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_020.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3063",
+    "event_title": "ZeroDays CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_020.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-2987",
+    "event_title": "Undutmaning 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_020.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3163",
+    "event_title": "Redfox CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_021.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-021",
+    "event_title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）暨第三届“长城杯”网数智安全大赛（防护赛）·半决赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_021.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3204",
+    "event_title": "AITU CTF 2026 Quals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_021.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3188",
+    "event_title": "Stranger's CTF - Techtrix '26",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_021.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3130",
+    "event_title": "TexSAW 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_022.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-2983",
+    "event_title": "KalmarCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_022.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3039",
+    "event_title": "HackDay 2026 - Finals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_022.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3131",
+    "event_title": "Codegate CTF 2026 Preliminary",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_022.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3200",
+    "event_title": "NovruzCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_023.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3084",
+    "event_title": "Flag Wars",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_023.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3183",
+    "event_title": "KAALCHAKRA CTF Qualifiers",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_023.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3045",
+    "event_title": "VolgaCTF 2026 Qualifier",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_023.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3223",
+    "event_title": "MythX: An Endgame Protocol CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_024.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3155",
+    "event_title": "CU school CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_024.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3057",
+    "event_title": "GLOBAL CYBER GAMES: Women's Attack and Defense Edition @Wicked6",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_024.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3184",
+    "event_title": "Hack for a Change 2026 March: UN SDG 3",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_024.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3227",
+    "event_title": "gryphCTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_025.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3197",
+    "event_title": "VishwaCTF'2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_025.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3150",
+    "event_title": "Kashi CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_025.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3096",
+    "event_title": "RITSEC CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_025.json",
+    "collected": 5,
+    "complete": 5
+  },
+  {
+    "event_id": "CTF-3175",
+    "event_title": "CITEFLAG QUALS 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_026.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3206",
+    "event_title": "NCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_026.json",
+    "collected": 5,
+    "complete": 5
+  },
+  {
+    "event_id": "CTF-3226",
+    "event_title": "THE UNI6CTF 1.0",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_026.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3212",
+    "event_title": "CRACK-IN 2.0",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_026.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3042",
+    "event_title": "SillyCTF 2",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_027.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3257",
+    "event_title": "MIPT CTF Finals 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_027.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3187",
+    "event_title": "Triada CTF '26",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_027.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3026",
+    "event_title": "Dreamhack Invitational 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_027.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3211",
+    "event_title": "Pàlcam Cybergames 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_028.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3102",
+    "event_title": "DawgCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_028.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-2937",
+    "event_title": "UMassCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_028.json",
+    "collected": 4,
+    "complete": 4
+  },
+  {
+    "event_id": "CTF-3190",
+    "event_title": "Cybersplash 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_028.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3230",
+    "event_title": "KAALCHAKRA CTF Finals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_029.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3202",
+    "event_title": "PUTCyberDays CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_029.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3225",
+    "event_title": "Incognito 7.0",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_029.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3240",
+    "event_title": "WRECKCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_029.json",
+    "collected": 1,
+    "complete": 1
+  },
+  {
+    "event_id": "CTF-3252",
+    "event_title": "ZeroSecure CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_030.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3253",
+    "event_title": "47CON CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_030.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3077",
+    "event_title": "CPCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_030.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3156",
+    "event_title": "CTF@CIT 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_030.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3235",
+    "event_title": "BlueHens CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_031.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3234",
+    "event_title": "squ1rrel CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_031.json",
+    "collected": 4,
+    "complete": 4
+  },
+  {
+    "event_id": "CTF-3153",
+    "event_title": "b01lers CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_031.json",
+    "collected": 12,
+    "complete": 12
+  },
+  {
+    "event_id": "CTF-3147",
+    "event_title": "pingCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_031.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3143",
+    "event_title": "K!nd4SUS CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_032.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3233",
+    "event_title": "HiveCTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_032.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3117",
+    "event_title": "JerseyCTF VI",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_032.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-022",
+    "event_title": "第四届上海理工大学信息安全竞赛暨校队选拔赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_032.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3213",
+    "event_title": "CyberNSK-Finals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_033.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3141",
+    "event_title": "TRX CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_033.json",
+    "collected": 7,
+    "complete": 7
+  },
+  {
+    "event_id": "CTF-3056",
+    "event_title": "UMDCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_033.json",
+    "collected": 7,
+    "complete": 7
+  },
+  {
+    "event_id": "CTF-3199",
+    "event_title": "HACKTHEON SEJONG 2026 Qualifier",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_033.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3250",
+    "event_title": "Alfa CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_034.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3192",
+    "event_title": "CTF@AC26 - Quals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_034.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-025",
+    "event_title": "重庆科技大学第一届“薪火计划”工控互联网安全竞赛·CTF赛段",
+    "event_status": "见赛期说明",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_034.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-022",
+    "event_title": "第三届“长城杯”网数智安全大赛（防护赛）·总决赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_034.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3168",
+    "event_title": "MCTF 5.0",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_035.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3177",
+    "event_title": "KubSTU CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_035.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3295",
+    "event_title": "LakeCTF Finals 25-26",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_035.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3244",
+    "event_title": "UniVsThreats 26 Finals CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_035.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3241",
+    "event_title": "RAZER CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_036.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "INT-004",
+    "event_title": "Google SecOps CTF @ O3C Oslo 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_036.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3186",
+    "event_title": "THCon 2K26 CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_036.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3018",
+    "event_title": "PHONIX VIPER NOVA CTF#2",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_036.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3137",
+    "event_title": "Break The Syntax CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_037.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3090",
+    "event_title": "plfanzen CFT 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_037.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-020",
+    "event_title": "ISCC 2026 破阵夺旗赛·区域赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_037.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-2927",
+    "event_title": "BKISC CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_037.json",
+    "collected": 1,
+    "complete": 1
+  },
+  {
+    "event_id": "CTF-3111",
+    "event_title": "From Dusk Till Dawn Quals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_038.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3267",
+    "event_title": "Maltego Community OSINT CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_038.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3256",
+    "event_title": "Hack2Dawn 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_038.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3266",
+    "event_title": "Azure Assassin Alliance CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_038.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3283",
+    "event_title": "RAMunchers CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_039.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-2773",
+    "event_title": "Midnight Sun CTF 2026 Quals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_039.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-026",
+    "event_title": "四川化工职业技术学院第三届“极客杯”CTF网络安全挑战赛·决赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_039.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3258",
+    "event_title": "NorthSec 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_039.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3276",
+    "event_title": "NDIAS Automotive/IoT CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_040.json",
+    "collected": 23,
+    "complete": 3
+  },
+  {
+    "event_id": "INT-005",
+    "event_title": "HTB Global Cyber Skills Benchmark CTF 2026: Project Nightfall",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_040.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3306",
+    "event_title": "SamaraCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_040.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3195",
+    "event_title": "TJCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_040.json",
+    "collected": 1,
+    "complete": 1
+  },
+  {
+    "event_id": "CN-021",
+    "event_title": "ISCC 2026 破阵夺旗赛·全国总决赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_041.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3132",
+    "event_title": "DaVinciCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_041.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3214",
+    "event_title": "UralCUP 2026 // Quals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_041.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3269",
+    "event_title": "0xV01D CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_041.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3277",
+    "event_title": "Hack for a Change 2026 May: UN SDG 1",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_042.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-020",
+    "event_title": "南阳工艺美术职业学院御网杯校内选拔赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_042.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3205",
+    "event_title": "DEF CON CTF Qualifier 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_042.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3298",
+    "event_title": "ZeroDayTM CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_042.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3284",
+    "event_title": "Hack4Krak CTF 2026 - High School Edition",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_043.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3264",
+    "event_title": "Panther CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_043.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3136",
+    "event_title": "SecLeaf Q2 CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_043.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3271",
+    "event_title": "ZEROBREACH CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_043.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-023",
+    "event_title": "重庆工程学院网络工程与信息安全系教师CTF竞赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_044.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-024",
+    "event_title": "南京邮电大学通达学院计算机工程学院CTF网络安全竞赛",
+    "event_status": "见赛期说明",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_044.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3270",
+    "event_title": "Hackअस्त्र",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_044.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3301",
+    "event_title": "HASBLCTF26",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_044.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3174",
+    "event_title": "Hardwear.io USA 2026 Hardware CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_045.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3209",
+    "event_title": "THEM?!CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_045.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3247",
+    "event_title": "BYUCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_045.json",
+    "collected": 11,
+    "complete": 11
+  },
+  {
+    "event_id": "CTF-3178",
+    "event_title": "Grey Cat The Flag 2026 Qualifiers",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_045.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3313",
+    "event_title": "HSE CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_046.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3220",
+    "event_title": "Pwn2Play Open CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_046.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3243",
+    "event_title": "WhiteHats TrojanCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_046.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3302",
+    "event_title": "bhackari CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_046.json",
+    "collected": 2,
+    "complete": 2
+  },
+  {
+    "event_id": "CTF-3041",
+    "event_title": "GPN CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_047.json",
+    "collected": 2,
+    "complete": 2
+  },
+  {
+    "event_id": "CTF-3278",
+    "event_title": "RPCA CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_047.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3308",
+    "event_title": "ZeroDay Heist 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_047.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3109",
+    "event_title": "SAS CTF 2026 Quals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_047.json",
+    "collected": 1,
+    "complete": 1
+  },
+  {
+    "event_id": "CTF-3320",
+    "event_title": "DalCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_048.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3332",
+    "event_title": "CyberSibir2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_048.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3309",
+    "event_title": "boroCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_048.json",
+    "collected": 1,
+    "complete": 1
+  },
+  {
+    "event_id": "CTF-3272",
+    "event_title": "Anti-Slop CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_048.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3125",
+    "event_title": "CyberSci Nationals 2025-2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_049.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3327",
+    "event_title": "Operation Heist CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_049.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3314",
+    "event_title": "SCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_049.json",
+    "collected": 6,
+    "complete": 6
+  },
+  {
+    "event_id": "CTF-3299",
+    "event_title": "Sieberrsec CTF 7.0",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_049.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3246",
+    "event_title": "BCACTF 7.0 [postponed]",
+    "event_status": "延期／官网取消公告届次待核",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3297",
+    "event_title": "RIFFHACK: Black Market Break-In",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_050.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3222",
+    "event_title": "Google Capture The Flag 2026",
+    "event_status": "延期；公开资格赛新日期未核实",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-027",
+    "event_title": "第二届“长江青锋杯”高校网络安全技能竞赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_050.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3323",
+    "event_title": "TraceBash CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_050.json",
+    "collected": 2,
+    "complete": 2
+  },
+  {
+    "event_id": "CTF-3173",
+    "event_title": "Grey Cat The Flag 2026 Finals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_050.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3249",
+    "event_title": "V1T CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_051.json",
+    "collected": 2,
+    "complete": 2
+  },
+  {
+    "event_id": "CTF-3113",
+    "event_title": "SekaiCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_051.json",
+    "collected": 8,
+    "complete": 8
+  },
+  {
+    "event_id": "CTF-3282",
+    "event_title": "MntcrlCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_051.json",
+    "collected": 1,
+    "complete": 1
+  },
+  {
+    "event_id": "CN-034",
+    "event_title": "2026“黄鹤杯”网络安全人才创新大赛·线上初赛",
+    "event_status": "见赛期说明",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_051.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3315",
+    "event_title": "MindBreak 2026 by ESGI",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_052.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3180",
+    "event_title": "No Hack No CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_052.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3149",
+    "event_title": "R3CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_052.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3325",
+    "event_title": "Fluid Attacks' CTF 2026-2",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_052.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3280",
+    "event_title": "LYKNCTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_053.json",
+    "collected": 8,
+    "complete": 8
+  },
+  {
+    "event_id": "CTF-3335",
+    "event_title": "Junior.Crypt.2026 CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_053.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3144",
+    "event_title": "BroncoCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_053.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3368",
+    "event_title": "Clash of Cybers I",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_053.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3353",
+    "event_title": "EYCC CTF 2026 Qualifiers",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_054.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-004",
+    "event_title": "NepCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_054.json",
+    "collected": 12,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3104",
+    "event_title": "OmniCTF 2026 Quals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_054.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3112",
+    "event_title": "DownUnderCTF 2026 - CANCELLED",
+    "event_status": "已取消",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3366",
+    "event_title": "ATHENA CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_054.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3357",
+    "event_title": "AxiomCTF 2026 Finals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_055.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3362",
+    "event_title": "HoneyBadger CTF AvitoTech",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_055.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3324",
+    "event_title": "ENOWARS 10",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_055.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3349",
+    "event_title": "BDSec CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_055.json",
+    "collected": 5,
+    "complete": 5
+  },
+  {
+    "event_id": "CTF-3292",
+    "event_title": "Codegate CTF 2026 Finals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_056.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "INT-006",
+    "event_title": "HTB Cyber Apocalypse CTF 2026: The Salt Crown",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_056.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3286",
+    "event_title": "jailCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_056.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3268",
+    "event_title": "DIVER OSINT CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_056.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3201",
+    "event_title": "D^3CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_057.json",
+    "collected": 1,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-028",
+    "event_title": "第六届极客少年挑战赛·线上初赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_057.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-019",
+    "event_title": "2026 SWPU-NSSCTF 秋季招新入门训练赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_057.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3372",
+    "event_title": "BushBash CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_057.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3303",
+    "event_title": "DeadSec CTF 2026 - POSTPONED",
+    "event_status": "延期，日期待定",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3061",
+    "event_title": "L3akCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_058.json",
+    "collected": 7,
+    "complete": 7
+  },
+  {
+    "event_id": "CTF-3311",
+    "event_title": "VuwCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_058.json",
+    "collected": 2,
+    "complete": 2
+  },
+  {
+    "event_id": "CTF-3237",
+    "event_title": "Universal CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_058.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3373",
+    "event_title": "Lexington Informatics Tournament CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_058.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3383",
+    "event_title": "SCAN 2026 Online Qualifier",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_059.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3328",
+    "event_title": "Kali Team - CTF 26",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_059.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3342",
+    "event_title": "AEROSPACE VILLAGE STARPWN CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_059.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3305",
+    "event_title": "RoboHack AI CTF (Robotic Hacking Community at DEFCON 34)",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_059.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-005",
+    "event_title": "宁波市第九届网络安全大赛（初赛）",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_060.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3322",
+    "event_title": "DEF CON CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_060.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3148",
+    "event_title": "UIUCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_060.json",
+    "collected": 6,
+    "complete": 6
+  },
+  {
+    "event_id": "CTF-3052",
+    "event_title": "scriptCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_060.json",
+    "collected": 1,
+    "complete": 1
+  },
+  {
+    "event_id": "CTF-3382",
+    "event_title": "The heart of Sysola",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_061.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-001",
+    "event_title": "MoeCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_061.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-006",
+    "event_title": "第七届“蒙古马杯”学生组网络安全竞赛（预赛）",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_061.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3405",
+    "event_title": "EYCC CTF 2026 Finals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_061.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3330",
+    "event_title": "Thryve CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_062.json",
+    "collected": 8,
+    "complete": 7
+  },
+  {
+    "event_id": "CTF-3181",
+    "event_title": "gaslightCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_062.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3318",
+    "event_title": "HackHowl 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_062.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3343",
+    "event_title": "THJCC CTF 2026 summer",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_062.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3391",
+    "event_title": "Trace Athena OSINT CTF ",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_063.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3387",
+    "event_title": "0xV01D CTF 2026 V2",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_063.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3402",
+    "event_title": "CTFZone 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_063.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-007",
+    "event_title": "第九届西湖论剑·中国杭州网络安全技能大赛（初赛）",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_063.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3065",
+    "event_title": "BrunnerCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_064.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3370",
+    "event_title": "z0d1ak CTF Qualifiers",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_064.json",
+    "collected": 8,
+    "complete": 8
+  },
+  {
+    "event_id": "CTF-3379",
+    "event_title": "Haruulzangi CTF 2026 Qualifier",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_064.json",
+    "collected": 9,
+    "complete": 9
+  },
+  {
+    "event_id": "CTF-3397",
+    "event_title": "$N1PH€RS 3.0 CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_064.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3400",
+    "event_title": "E0F CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_065.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3394",
+    "event_title": "TallDwarf Hosting: Hosting Takeover",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_065.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-008",
+    "event_title": "第六届极客少年挑战赛（决赛）",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_065.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3411",
+    "event_title": "PECAN+ CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_065.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-010",
+    "event_title": "第七届“蒙古马杯”学生组网络安全竞赛（决赛）",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_066.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-009",
+    "event_title": "宁波市第九届网络安全大赛（决赛）",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_066.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3290",
+    "event_title": "COMPFEST CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_066.json",
+    "collected": 3,
+    "complete": 3
+  },
+  {
+    "event_id": "CAL-023",
+    "event_title": "第十九届全国大学生信息安全竞赛（创新实践能力赛）·全国总决赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_066.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3385",
+    "event_title": "BlackHat MEA CTF Qualification 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_067.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3033",
+    "event_title": "ASIS CTF Quals 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_067.json",
+    "collected": 15,
+    "complete": 15
+  },
+  {
+    "event_id": "CTF-3347",
+    "event_title": "UND CyberHawks National CTF Competition 2026 Qualifiers",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_067.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3416",
+    "event_title": "DiceCTF 2026 Finals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_067.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-006",
+    "event_title": "合肥师范学院 NUCTF 2026 新生赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_068.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-011",
+    "event_title": "第二届“湾区杯”网络安全大赛（初赛）",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_068.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3097",
+    "event_title": "NNS CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_068.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3344",
+    "event_title": "TFC CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_068.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3389",
+    "event_title": "SUNCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_069.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3145",
+    "event_title": "K17 CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_069.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3360",
+    "event_title": "CAT CTF 26",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_069.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3159",
+    "event_title": "PwnSec CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_069.json",
+    "collected": 9,
+    "complete": 9
+  },
+  {
+    "event_id": "CN-019",
+    "event_title": "2026京津冀大学生信息安全网络攻防大赛·线上初赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_070.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-024",
+    "event_title": "第六届“长城杯”网络安全大赛暨京津冀蒙网络安全技能竞赛·初赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_070.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-029",
+    "event_title": "第二届“湾区杯”网络安全大赛·决赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_070.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-018",
+    "event_title": "KPCTF 2026 第五届 “鲲鹏杯”网络攻防大赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_070.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-016",
+    "event_title": "第二届“正中”杯淄博师专网络安全竞赛 ZSCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_071.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3265",
+    "event_title": "VolgaCTF 2026 Final",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_071.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-017",
+    "event_title": "KPCTF 2026 第五届 “鲲鹏杯”网络攻防大赛(决赛)",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_071.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "INT-007",
+    "event_title": "HTB Holmes CTF 2026: The Reichenbach Directive",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_071.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-025",
+    "event_title": "第六届“长城杯”网络安全大赛暨京津冀蒙网络安全技能竞赛·决赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_072.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3346",
+    "event_title": "NullOrigin CTF Qualifiers",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_072.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3392",
+    "event_title": "DefCamp Capture the Flag (D-CTF) 2026 Quals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_072.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3355",
+    "event_title": "CSAW CTF Qualification Round 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_072.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3412",
+    "event_title": "Cyber League 2026 - Major",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_073.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3431",
+    "event_title": "Haruulzangi CTF 2026 Semi-Final",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_073.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3326",
+    "event_title": "WATCHLIST",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_073.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3428",
+    "event_title": "z0d1ak CTF Finals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_073.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3401",
+    "event_title": "OmniCTF 2026 Finals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_074.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3365",
+    "event_title": "07CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_074.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-036",
+    "event_title": "东华理工大学“核动力杯”网络安全大赛·CTF夺旗赛道",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_074.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3435",
+    "event_title": "LUN4R CTF Quals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_074.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-008",
+    "event_title": "SUSCTF 2026·新生赛道",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_075.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-016",
+    "event_title": "第五届中国研究生网络安全创新大赛-实网对抗校赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_075.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "INT-008",
+    "event_title": "FLARE-On 13 (2026)",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_075.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3451",
+    "event_title": "BreachPoint 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_075.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3454",
+    "event_title": "Null Origin CTF 2026: Grand finale ",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_076.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3449",
+    "event_title": "NileCTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_076.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3422",
+    "event_title": "FlightPath2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_076.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3374",
+    "event_title": "BCS CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_076.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3093",
+    "event_title": "H7CTF 2026 Quals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_077.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3312",
+    "event_title": "FAUST CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_077.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3399",
+    "event_title": "SunshineCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_077.json",
+    "collected": 7,
+    "complete": 7
+  },
+  {
+    "event_id": "CTF-3020",
+    "event_title": "Pointer Overflow CTF - 2026",
+    "event_status": "赛程内",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_077.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3417",
+    "event_title": "SCAN 2026 Final",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_078.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-005",
+    "event_title": "Spark CTF 2026 网络安全大赛·校内个人赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_078.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3434",
+    "event_title": "CSS CTF 2026: Return of Nexus",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_078.json",
+    "collected": 4,
+    "complete": 4
+  },
+  {
+    "event_id": "CN-035",
+    "event_title": "2026“黄鹤杯”网络安全人才创新大赛·线下决赛",
+    "event_status": "见赛期说明",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_078.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "INT-009",
+    "event_title": "Huntress CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_079.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3380",
+    "event_title": "Hacker's Gambit 2026 (Round 1 – Online Qualifier)",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_079.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3465",
+    "event_title": "Lun4R CTF Final",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_079.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3352",
+    "event_title": "CubeCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_079.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3293",
+    "event_title": "CDCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_080.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3432",
+    "event_title": "AltayCTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_080.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3462",
+    "event_title": "Africa battleCTF 2026 Qualifier",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_080.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3438",
+    "event_title": "ByteMe CTF 26",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_080.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3440",
+    "event_title": "FortID CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_081.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3456",
+    "event_title": "kBxAc CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_081.json",
+    "collected": 7,
+    "complete": 7
+  },
+  {
+    "event_id": "CN-011",
+    "event_title": "暨南大学珠海校区第六届“日月盾杯”·线上赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_081.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3441",
+    "event_title": "Cryovault 2026 Quals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_081.json",
+    "collected": 3,
+    "complete": 2
+  },
+  {
+    "event_id": "CTF-3445",
+    "event_title": "FooBar CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_082.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3446",
+    "event_title": "KubSTU CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_082.json",
+    "collected": 2,
+    "complete": 2
+  },
+  {
+    "event_id": "CTF-3437",
+    "event_title": "Narxoz CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_082.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3354",
+    "event_title": "GaianSpace CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_082.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-032",
+    "event_title": "第二届 OpenHarmony CTF 智能漏洞挖掘赛·决赛线上提交",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_083.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-007",
+    "event_title": "SUSCTF 2026·主赛道（东南大学虎踞龙蟠杯）",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_083.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-014",
+    "event_title": "内蒙古工业大学2026网络安全技能竞赛·初赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_083.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-026",
+    "event_title": "2026年“羊城杯”网络安全大赛·线上初赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_083.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3471",
+    "event_title": "SOLAR CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_084.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3364",
+    "event_title": "Securinets CTF Quals 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_084.json",
+    "collected": 1,
+    "complete": 1
+  },
+  {
+    "event_id": "CTF-3279",
+    "event_title": "DEADFACE CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_084.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-015",
+    "event_title": "内蒙古工业大学2026网络安全技能竞赛·决赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_084.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3409",
+    "event_title": "SAS CTF 2026 Finals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_085.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3369",
+    "event_title": "cruXipher 2026 - ATMoS '26, BITS Hyderabad",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_085.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3477",
+    "event_title": "CREST CTF 2.0",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_085.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3340",
+    "event_title": "HITCON CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_085.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-030",
+    "event_title": "“华为杯”第五届中国研究生网络安全创新大赛·实网对抗初赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_086.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3377",
+    "event_title": "RSTCON 2026 CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_086.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3207",
+    "event_title": "Hack.lu CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_086.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-014",
+    "event_title": "2026年NSSCTF秋季招新赛（公开赛道）",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_086.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-015",
+    "event_title": "2026年NSSCTF秋季招新赛（校内赛道）",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_087.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-002",
+    "event_title": "BITs2CTF 2026（初赛）",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_087.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3442",
+    "event_title": "Cryovault 2026 Finals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_087.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3094",
+    "event_title": "H7CTF 2026 Finals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_087.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3473",
+    "event_title": "BSides Peoria CTF 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_088.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-012",
+    "event_title": "暨南大学珠海校区第六届“日月盾杯”·线下赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_088.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3443",
+    "event_title": "Sudocrypt v16.0",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_088.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3444",
+    "event_title": "Srdnlen CTF 2026 Finals (Sardinia Cyber Camp)",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_088.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "INT-010",
+    "event_title": "Google Cloud × HTB: Operation Cymbal: Cold Room",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_089.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3381",
+    "event_title": "Hacker's Gambit 2026 (Round 2 – Grand Finale)",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_089.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3463",
+    "event_title": "CTF@AC26 - Finals",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_089.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3460",
+    "event_title": "HI Cyber Con 2026 CTF",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_089.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-027",
+    "event_title": "2026年“羊城杯”网络安全大赛·线下决赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_090.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-001",
+    "event_title": "第十届“强网杯”全国网络安全挑战赛·线上赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_090.json",
+    "collected": 3,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3459",
+    "event_title": "2026 Qiangwang Challenge on Cyber Mimic Defense Qualification",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_090.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3491",
+    "event_title": "HAM-DEFCON",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_090.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-013",
+    "event_title": "成都大学第九届\"玄武杯\"信息安全比赛",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_091.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-012",
+    "event_title": "2026年NSSCTF秋季招新赛（线下）",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_091.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3469",
+    "event_title": "Russian CTF Cup X Qualifier",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_091.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3482",
+    "event_title": "StealthCup 2026",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_091.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-018",
+    "event_title": "第四届湖北大学网络安全创新大赛·CTF解题赛",
+    "event_status": "见赛期说明",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_092.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CAL-003",
+    "event_title": "BITs2CTF 2026（决赛）",
+    "event_status": "赛程已过",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_092.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3418",
+    "event_title": "HKCERT CTF 2026 (Qualifying Round)",
+    "event_status": "赛程内",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_092.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3331",
+    "event_title": "PINK+ CTF 2026",
+    "event_status": "赛程内",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_092.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3333",
+    "event_title": "CSCTF 2026",
+    "event_status": "赛程内",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_093.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-028",
+    "event_title": "第九届浙江省大学生网络与信息安全竞赛·创新实践挑战赛预赛",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3339",
+    "event_title": "SpookyCTF 2026",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3242",
+    "event_title": "BlackAlps CTF 2026",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3455",
+    "event_title": "Mimic",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-009",
+    "event_title": "XSWCTF 2026 联合招新赛 / 华南师范大学第十届网络安全技术竞赛·线上赛",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-013",
+    "event_title": "天津商业大学第一届网络安全夺旗赛",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3410",
+    "event_title": "CSAW CTF Final Round 2026",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3486",
+    "event_title": "TVX CTF 2026",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-029",
+    "event_title": "第九届浙江省大学生网络与信息安全竞赛·创新实践挑战赛决赛",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3082",
+    "event_title": "Platypwn 2026",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3049",
+    "event_title": "WolvCTF 2026",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3467",
+    "event_title": "InIt CTF",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3464",
+    "event_title": "h4ckc0n 2026",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-037",
+    "event_title": "TPCTF 2026 · 京华杯·北大校内赛·人机协同赛段",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-038",
+    "event_title": "TPCTF 2026 · 京华杯·清华校内赛·人机协同赛段",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-039",
+    "event_title": "TPCTF 2026 · 人机协同团队赛道",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-040",
+    "event_title": "TPCTF 2026 · 智能体团队赛道",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3419",
+    "event_title": "EyesOpenCTF 7th edition",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3337",
+    "event_title": "GlacierCTF 2026",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3425",
+    "event_title": "Outback Overflow",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3408",
+    "event_title": "Seize da Flaq",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3336",
+    "event_title": "Crate-CTF 2026",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3436",
+    "event_title": "CyberSci Regional Qualifiers 2026-27",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-017",
+    "event_title": "中南民族大学2026研究生网络安全创新大赛校内赛·实网对抗",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-010",
+    "event_title": "华南师范大学第十届网络安全技术竞赛新生赛·线下决赛",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-002",
+    "event_title": "第十届“强网杯”全国网络安全挑战赛·线下赛",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3474",
+    "event_title": "LakeCTF Quals 26-27",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3485",
+    "event_title": "L3m0n CTF 2026 (Quals)",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3489",
+    "event_title": "CyberNSK2027-Qualifier",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-033",
+    "event_title": "第二届 OpenHarmony CTF 智能漏洞挖掘赛·现场决赛",
+    "event_status": "见赛期说明",
+    "search_status": "已做首轮网页检索",
+    "search_log": "sources/event_search/batch_093.json",
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3386",
+    "event_title": "BlackHat MEA CTF Final 2026",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3450",
+    "event_title": "x3CTF 2026",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3480",
+    "event_title": "bi0sCTF 2026",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3493",
+    "event_title": "OTERIA Cyber Cup #4",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3367",
+    "event_title": "niteCTF 2026",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3475",
+    "event_title": "BSides Algiers 2026",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3472",
+    "event_title": "BackdoorCTF 2026",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CN-031",
+    "event_title": "“华为杯”第五届中国研究生网络安全创新大赛·实网对抗决赛",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  },
+  {
+    "event_id": "CTF-3062",
+    "event_title": "ASIS CTF Finals 2026",
+    "event_status": "待开始",
+    "search_status": "按赛期状态暂不采集",
+    "search_log": null,
+    "collected": 0,
+    "complete": 0
+  }
+]

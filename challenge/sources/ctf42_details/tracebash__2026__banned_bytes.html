@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Banned_Bytes · TraceBash 2026 (pwn) writeup · ctf42</title>
+  
+
+<meta name="description" content="Banned_Bytes: Pwn challenge from TraceBash 2026. Some bytes are banned. The filter watches. Can you still read the flag? Author: S31ZUR3">
+<link rel="canonical" href="https://ctf42.online/ctfs/tracebash/2026/banned_bytes/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/tracebash/2026/banned_bytes/">
+<meta property="og:title" content="Banned_Bytes">
+<meta property="og:description" content="Banned_Bytes: Pwn challenge from TraceBash 2026. Some bytes are banned. The filter watches. Can you still read the flag? Author: S31ZUR3">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/tracebash/">TraceBash</a> / <a href="/ctfs/tracebash/2026/">2026</a> / Banned_Bytes</nav>
+
+
+<div class="challenge-head">
+  <h1>Banned_Bytes
+    </h1>
+  <div class="badges">
+    <a class="cat cat-pwn" href="/category/pwn/">Pwn</a>
+    
+    
+    <span class="chip">weight 25.00</span>
+    
+      <span class="empty">No technique tags yet.</span>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/tracebash/2026/banned_bytes/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/tracebash/2026/banned_bytes/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  <p class="meta">Author: S31ZUR3</p>
+  
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>Some bytes are banned. The filter watches.</p>
+<p>Can you still read the flag?</p>
+<p>Author: S31ZUR3</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>Banned Bytes — writeup</b>
+    
+    
+    <span class="muted">by Abdelkader</span>
+  </header>
+  <p><a href="https://ctftime.org/writeup/40947" rel="noopener nofollow ugc" target="_blank">https://ctftime.org/writeup/40947</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/tracebash/2026/banned_bytes/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TraceBash/2026/pwn/Banned_Bytes" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/tracebash/2026/banned_bytes/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from TraceBash 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/tracebash/2026/broken_trust_protocol/">Broken_Trust_Protocol</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/tracebash/2026/harmonic_cipher/">Harmonic_Cipher</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/tracebash/2026/quantum_echo/">Quantum_Echo</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/tracebash/2026/state_desync/">State_Desync</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/tracebash/2026/bespoke_superblock/">Bespoke_Superblock</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/tracebash/2026/frequency_trap/">Frequency_Trap</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/tracebash/2026/phase_shift/">Phase_Shift</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/tracebash/2026/the_silent_echo/">The_Silent_Echo</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/tracebash/2026/ai_approved/">AI_Approved</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/tracebash/2026/follow_the_yellow/">Follow_The_Yellow</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/tracebash/2026/her_last_pic/">Her_Last_Pic</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/tracebash/2026/nash_jail/">Nash_Jail</a> <span class="cat cat-misc cat-xs">Misc</span></li>
+      </ul>
+      <a class="small" href="/ctfs/tracebash/2026/">All TraceBash 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,62 @@
+{
+  "event_id": "CTF-3046",
+  "event_title": "BearcatCTF 2026 - Setting Sail",
+  "title": "Missing_One_Piece",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "environment-checks",
+    "argv0"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/bearcat/2026/missing_one_piece/",
+    "https://ctf42.online/ctfs/bearcat/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bearcat/2026/rev/Missing_One_Piece"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/bearcatctf2026/tree/main/rev/missing-one-piece"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bearcat/2026/rev/Missing_One_Piece",
+    "https://ctf42.online/ctfs/bearcat/2026/missing_one_piece/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/bearcat_2026/Missing_One_Piece/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/bearcatctf2026/main/rev/missing-one-piece/README.md",
+      "bytes": 1702,
+      "sha256": "42690867d607b22bd21e8898a256b70c8ad25cda749194a2e760905eb7e480d9",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/bearcat_2026/Missing_One_Piece/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Bearcat/2026/rev/Missing_One_Piece/README.md",
+      "bytes": 239,
+      "sha256": "b64236f9ac2bde53ba12fb02cd65c1d9efc64fed330ec394b9c7710215f8816d",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/bearcat_2026/Missing_One_Piece/attachments/upstream/missing_one_piece",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Bearcat/2026/rev/Missing_One_Piece/missing_one_piece",
+      "bytes": 16320,
+      "sha256": "80d300f4adb7a412e0da431995e1d50fcb3a78ceb76771696f6258af53296ef4",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/bearcat/2026/missing_one_piece/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/bearcat/2026/missing_one_piece/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

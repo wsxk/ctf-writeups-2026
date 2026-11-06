@@ -1,0 +1,199 @@
+{
+  "event_id": "CTF-3161",
+  "event_title": "SUCTF 2026",
+  "category": "pwn",
+  "title": "SU_Box",
+  "source_urls": [
+    "https://github.com/team-su/SUCTF-2026/tree/HEAD/pwn/SU_Box",
+    "https://ctftime.org/event/3161/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/exp/exploit.py",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/exp/poc.js",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/writeup/README.md",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/writeup/images/IMG-20260316213838345.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/writeup/images/IMG-20260316213838364.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/writeup/images/IMG-20260316213838383.png",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/writeup/images/README.md"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/env/pwn_deploy/App.java",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/env/pwn_deploy/Dockerfile",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/env/pwn_deploy/ctf.xinetd",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/env/pwn_deploy/docker-compose.yml",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/env/pwn_deploy/linux-x86_64.jar",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/env/pwn_deploy/run.sh",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/env/pwn_deploy/start.sh",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/sourcecode/sourcecode.zip"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "team-su/SUCTF-2026",
+  "repository_tree_sha": "f52d0aec9aa6c7575795edeb317dcfd130d04d99",
+  "artifacts": [
+    {
+      "path": "attachments/env/pwn_deploy/App.java",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/env/pwn_deploy/App.java",
+      "bytes": 2373,
+      "sha256": "475b27334870ae660dffdc13ec55759525e8a1071c7607c6ede9fbc30e622d0d",
+      "git_blob_sha1": "9db3b28dd8ba613011b52aa034fd070ac9519db1",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/pwn_deploy/Dockerfile",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/env/pwn_deploy/Dockerfile",
+      "bytes": 598,
+      "sha256": "691bb1aa96f014046ef57108c245c232c90cf3a1e36222a7d000768c345ebf82",
+      "git_blob_sha1": "dcc676c7a6dc969f72377b79c767cf38695cd353",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/pwn_deploy/ctf.xinetd",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/env/pwn_deploy/ctf.xinetd",
+      "bytes": 308,
+      "sha256": "653cd5c5e50802e624be3fc19fe88017b264490c4f071736bc316519afc52517",
+      "git_blob_sha1": "98aece1c250fc458ef88be17ed3ef8099bc2679c",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/pwn_deploy/docker-compose.yml",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/env/pwn_deploy/docker-compose.yml",
+      "bytes": 174,
+      "sha256": "6d07161b4d4a1af2829b7569395add9b97d757bd2e039e9ae28da9b16b9f30e4",
+      "git_blob_sha1": "5849ccd13db33fad3b22ab0439f5a65ff85b74be",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/pwn_deploy/linux-x86_64.jar",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/env/pwn_deploy/linux-x86_64.jar",
+      "bytes": 8400509,
+      "sha256": "e454c61f456ab12f32a64b91678af099e53c08afeaa88cd42ed6a1250f00317c",
+      "git_blob_sha1": "7ffec7c8c80c1d30687377df94300f2c0060ccc0",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/pwn_deploy/run.sh",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/env/pwn_deploy/run.sh",
+      "bytes": 69,
+      "sha256": "1cfbab569bf1a7922040d3ade5f072aa4509012aeecd419b0f5adcfcb09be2c7",
+      "git_blob_sha1": "e83ef6f5794295e1056347e2b8031b23df8b0eed",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/pwn_deploy/start.sh",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/env/pwn_deploy/start.sh",
+      "bytes": 50,
+      "sha256": "45efd569a85bf878aaf3c941e57ac64b5cac670f423e17428d94e1f8547d50b9",
+      "git_blob_sha1": "6d3e76add6e2e7ad3a97cdcadecb4f1deafaedda",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/exp/exploit.py",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/exp/exploit.py",
+      "bytes": 401,
+      "sha256": "6af99c3c284316a7f19ab580722eefb01e3e08890021ea5b0a032189c252211f",
+      "git_blob_sha1": "c1af17e7ddb97a76e56633107e08b5684e4f2d98",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/exp/poc.js",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/exp/poc.js",
+      "bytes": 2063,
+      "sha256": "fb4a4bbce07e2e81fce22c56da340f7e7d04e3804a5f0873165c6f9429828872",
+      "git_blob_sha1": "db626866254dbb2dffa506da4de3589b529d2baa",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/sourcecode/sourcecode.zip",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/sourcecode/sourcecode.zip",
+      "bytes": 13928514,
+      "sha256": "d7b285907d47e95d39baf15687a58e1a51f957b8b70b09f6bb55dbf004ba7999",
+      "git_blob_sha1": "d7a8f5f1ad4eb6ce4ded35a8e5a6ff4397e8e1f3",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/README.md",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/writeup/README.md",
+      "bytes": 5460,
+      "sha256": "c5694c7905c0f4ff2271a9ca267673357e1bc3f695f4f80e6b3c4369da50a942",
+      "git_blob_sha1": "538f8d87d61c1c91bdbf0d2484d9c98b59f09e4a",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/images/IMG-20260316213838345.png",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/writeup/images/IMG-20260316213838345.png",
+      "bytes": 26557,
+      "sha256": "46ee453ccde6d01422a781dc8c55a5850a765dbd7986ca4e4c10b6ce8c69f67e",
+      "git_blob_sha1": "2aa9e8f7f73239c7fe23abfe8d754c615ea9c227",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/images/IMG-20260316213838364.png",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/writeup/images/IMG-20260316213838364.png",
+      "bytes": 104964,
+      "sha256": "14b070919b42d8eb9d51e106ba4bc0a0e38dccfaa238a4cf4b851bace6b138dc",
+      "git_blob_sha1": "7c68804b6bdf8cb4ae8e0ec02e75f31c5b0aedf1",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/images/IMG-20260316213838383.png",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/writeup/images/IMG-20260316213838383.png",
+      "bytes": 27251,
+      "sha256": "bf49bcaf24aaf4aafdb7376048fdbb9283b75bb310bc95c925c5076a74aa8cb6",
+      "git_blob_sha1": "2fec8ecce890b3ad24977db44d79c78f4d4c06bb",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/images/README.md",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Box/writeup/images/README.md",
+      "bytes": 295,
+      "sha256": "40a0d4743929278545a517107141edf31e8791b284819bc31c6ef3f5fb381624",
+      "git_blob_sha1": "e65b43056b63b1ccff3a24649f8db1a657d3db5c",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/writeup/README.md"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

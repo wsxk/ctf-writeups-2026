@@ -1,0 +1,142 @@
+{
+  "event_id": "CTF-3015",
+  "event_title": "LA CTF 2026",
+  "category": "pwn",
+  "title": "adventure",
+  "source_urls": [
+    "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/pwn/adventure",
+    "https://ctftime.org/event/3015/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/Dockerfile",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/Makefile",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/chall",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/chall.c",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/chall_patched",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/challenge.yaml",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/flag.txt",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/ld-linux-x86-64.so.2",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/libc.so.6"
+  ],
+  "writeup_status": "已下载官方解题脚本（独立文字writeup未提供）",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "uclaacm/lactf-archive",
+  "repository_tree_sha": "3379d4a7b36680764a34e7dc817cc3c94c244764",
+  "artifacts": [
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/Dockerfile",
+      "bytes": 134,
+      "sha256": "00543675005ceae7c3bda77b5986ccff8da61d7135e3fffcdb09212b7a0eda61",
+      "git_blob_sha1": "90ff48e93d1c097c17088c33a4f17ce8790c4b46",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/Makefile",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/Makefile",
+      "bytes": 515,
+      "sha256": "ac5f3949c857ee9a17035e039d54af9214025dfb6b0a8b19eb4423d3b20c35e1",
+      "git_blob_sha1": "26e2e45cfb092bb78f5690623ef037127bd4927c",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/chall",
+      "bytes": 17088,
+      "sha256": "0700cd2e7f6819fc1c4998c0055f128ccd22c05d986f3bc0efae8165e93afa89",
+      "git_blob_sha1": "348bf50619ef00b1091d87fa69dc1b05cc493d42",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall.c",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/chall.c",
+      "bytes": 7808,
+      "sha256": "b0fa11113e3bdbd325c45b12505142b5b81abe1555ffd5d78aa63b238c652001",
+      "git_blob_sha1": "7cbc026b589167dbf54893b90db566dbf8374679",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chall_patched",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/chall_patched",
+      "bytes": 24601,
+      "sha256": "ea4951f947eefae93a4fdf1516cb9940b60d7f9887685f0d75e64407911a008a",
+      "git_blob_sha1": "0c163fcf35688b72637b62abd4e2ee2a68fd22c6",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge.yaml",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/challenge.yaml",
+      "bytes": 375,
+      "sha256": "c5b763376da880f51e932e070dd8d8298e918f2702de66afd38f0c038695a79b",
+      "git_blob_sha1": "c6ef84131a51d4cdb6b32b7b1ed6dee5dae31ef2",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flag.txt",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/flag.txt",
+      "bytes": 37,
+      "sha256": "be50c28f6eacf4f82cd3251f9baeab07b68973d0fb7aca47851a8d9494f44b6b",
+      "git_blob_sha1": "60084b13ae07ce97a9774e1a4db59c8652be67ee",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/ld-linux-x86-64.so.2",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/ld-linux-x86-64.so.2",
+      "bytes": 236616,
+      "sha256": "6222a16be7f2d458d6870efe6e715fc0c8d45766fb79cf7dcc3125538d703e28",
+      "git_blob_sha1": "5660c3c9771f517c416c6d854456c593fe27c512",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/libc.so.6",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/libc.so.6",
+      "bytes": 6229360,
+      "sha256": "c9c0341f9282bfaa1250e05ca8d5553e6ff6590cb1e1d1b195d40a407a150b3c",
+      "git_blob_sha1": "bd251514cc5f1308897c50f646ededd1ac69e327",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve.py",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/adventure/solve.py",
+      "bytes": 7629,
+      "sha256": "b43f2f8ed75934c8dd6ea28330eb177ed289e4cb0750918d1b91b1d9163aab94",
+      "git_blob_sha1": "4fd38746d879452c10e794c4d0b154dac91844a8",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

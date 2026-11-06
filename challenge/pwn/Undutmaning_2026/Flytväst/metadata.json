@@ -1,0 +1,54 @@
+{
+  "event_id": "CTF-2987",
+  "event_title": "Undutmaning 2026",
+  "category": "pwn",
+  "title": "Flytväst",
+  "source_urls": [
+    "https://github.com/ACM-VIT/z0d1ak-writeups/tree/HEAD/Undutmaning%202026/pwn/Flytv%C3%A4st",
+    "https://ctftime.org/event/2987/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/ACM-VIT/z0d1ak-writeups/HEAD/Undutmaning%202026/pwn/Flytv%C3%A4st/README.md"
+  ],
+  "attachment_urls": [
+    "https://media.githubusercontent.com/media/ACM-VIT/z0d1ak-writeups/HEAD/Undutmaning%202026/pwn/Flytv%C3%A4st/flytvast"
+  ],
+  "writeup_status": "未取得有效writeup：上游解答为空占位/模板",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "ACM-VIT/z0d1ak-writeups",
+  "repository_tree_sha": "52613ef9352d65fc7b07f004b2c51138f193fefe",
+  "artifacts": [
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/ACM-VIT/z0d1ak-writeups/HEAD/Undutmaning%202026/pwn/Flytv%C3%A4st/README.md",
+      "bytes": 1178,
+      "sha256": "9f4186aa434c0e7099ba74680a80abb6a268c053dda45f937d390b2356a4a574",
+      "git_blob_sha1": "ea8424db9d7224f10311b5cd4d83dad611726817",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flytvast",
+      "url": "https://media.githubusercontent.com/media/ACM-VIT/z0d1ak-writeups/HEAD/Undutmaning%202026/pwn/Flytv%C3%A4st/flytvast",
+      "bytes": 16736,
+      "sha256": "86a7b6f174e7262459f640956c539c88b7bfff07363c7986ed7ba66f07afda12",
+      "git_blob_sha1": "9790de062b26f979ead6def3aab10b675b3bad28",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": true
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": false,
+  "prose_files": [],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": false
+}

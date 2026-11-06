@@ -1,0 +1,366 @@
+; pong.les -- LES pong with subpixel puck and refactored subroutines
+;
+; WRAM layout:
+; 0 puck_x_sub (0..255)
+; 1 puck_y_sub (0..255)
+; 2 puck_vx_mag
+; 3 puck_vy_mag
+; 4 puck_vx_dir (0=right, 1=left)
+; 5 puck_vy_dir (0=down, 1=up)
+; 6 player_paddle_y (top, 1..28)
+; 7 cpu_paddle_y (top, 1..28)
+
+INIT
+
+; Initial paddles
+SET 14, gA
+SET 6, mW
+STORE gA
+SET 7, mW
+STORE gA
+
+CALL <RANDOMIZE_PUCK>
+CALL <DRAW_FRAME>
+
+MAIN:
+INPUT
+CALL <MOVE_PLAYER_PADDLE>
+CALL <MOVE_CPU_PADDLE>
+CALL <UPDATE_PUCK_SUBPIXEL>
+CALL <HANDLE_COLLISIONS>
+CALL <DRAW_FRAME>
+SLEEP 20
+JMP <MAIN>
+
+; --- game update subroutines ---
+
+MOVE_PLAYER_PADDLE:
+SET 6, mR
+LOAD gA
+CMP iU, 0
+JMPE <MP_DOWN_CHECK>
+CMP gA, 1
+JMPLE <MP_DOWN_CHECK>
+DEC gA
+MP_DOWN_CHECK:
+CMP iD, 0
+JMPE <MP_SAVE>
+CMP gA, 28
+JMPGE <MP_SAVE>
+INC gA
+MP_SAVE:
+SET 6, mW
+STORE gA
+RET
+
+MOVE_CPU_PADDLE:
+CALL <GET_PUCK_SCREEN>
+SET 7, mR
+LOAD gC
+CMP gC, gB
+JMPGE <MC_UP_CHECK>
+CMP gC, 28
+JMPGE <MC_SAVE>
+INC gC
+JMP <MC_SAVE>
+MC_UP_CHECK:
+CMP gC, gB
+JMPLE <MC_SAVE>
+CMP gC, 1
+JMPLE <MC_SAVE>
+DEC gC
+MC_SAVE:
+SET 7, mW
+STORE gC
+RET
+
+UPDATE_PUCK_SUBPIXEL:
+; X subpixel update
+SET 0, mR
+LOAD gA
+SET 2, mR
+LOAD gB
+SET 4, mR
+LOAD gC
+CMP gC, 0
+JMPE <UPS_X_ADD>
+SUB gA, gB, gA
+JMP <UPS_X_SAVE>
+UPS_X_ADD:
+ADD gA, gB, gA
+UPS_X_SAVE:
+SET 0, mW
+STORE gA
+
+; Y subpixel update
+SET 1, mR
+LOAD gA
+SET 3, mR
+LOAD gB
+SET 5, mR
+LOAD gC
+CMP gC, 0
+JMPE <UPS_Y_ADD>
+SUB gA, gB, gA
+JMP <UPS_Y_SAVE>
+UPS_Y_ADD:
+ADD gA, gB, gA
+UPS_Y_SAVE:
+SET 1, mW
+STORE gA
+RET
+
+HANDLE_COLLISIONS:
+CALL <GET_PUCK_SCREEN>
+CALL <HANDLE_TOP_BOTTOM>
+CALL <HANDLE_PADDLES>
+CALL <HANDLE_EDGES>
+RET
+
+GET_PUCK_SCREEN:
+SET 0, mR
+LOAD gA
+SHIFTR gA, 3, gA
+SET 1, mR
+LOAD gB
+SHIFTR gB, 3, gB
+RET
+
+HANDLE_TOP_BOTTOM:
+CMP gB, 0
+JMPNE <HTB_BOTTOM>
+SET 0, gC
+SET 5, mW
+STORE gC
+HTB_BOTTOM:
+CMP gB, 31
+JMPNE <HTB_DONE>
+SET 1, gC
+SET 5, mW
+STORE gC
+HTB_DONE:
+RET
+
+HANDLE_PADDLES:
+CALL <HANDLE_LEFT_PADDLE>
+CALL <HANDLE_RIGHT_PADDLE>
+RET
+
+HANDLE_LEFT_PADDLE:
+; Check one column before paddle x=1
+CMP gA, 2
+JMPNE <HLP_DONE>
+SET 4, mR
+LOAD gC
+CMP gC, 1
+JMPNE <HLP_DONE>
+
+SET 6, mR
+LOAD gD
+CMP gB, gD
+JMPLT <HLP_DONE>
+SET 2, gC
+ADD gD, gC, gC
+CMP gB, gC
+JMPGT <HLP_DONE>
+
+; Bounce right
+SET 0, gC
+SET 4, mW
+STORE gC
+
+; Angle tweak by segment
+CMP gB, gD
+JMPE <HLP_TOP>
+CMP gB, gC
+JMPE <HLP_BOTTOM>
+JMP <HLP_DONE>
+HLP_TOP:
+SET 1, gC
+SET 5, mW
+STORE gC
+JMP <HLP_DONE>
+HLP_BOTTOM:
+SET 0, gC
+SET 5, mW
+STORE gC
+HLP_DONE:
+RET
+
+HANDLE_RIGHT_PADDLE:
+; Check one column before paddle x=30
+CMP gA, 29
+JMPNE <HRP_DONE>
+SET 4, mR
+LOAD gC
+CMP gC, 0
+JMPNE <HRP_DONE>
+
+SET 7, mR
+LOAD gD
+CMP gB, gD
+JMPLT <HRP_DONE>
+SET 2, gC
+ADD gD, gC, gC
+CMP gB, gC
+JMPGT <HRP_DONE>
+
+; Bounce left
+SET 1, gC
+SET 4, mW
+STORE gC
+
+; Angle tweak by segment
+CMP gB, gD
+JMPE <HRP_TOP>
+CMP gB, gC
+JMPE <HRP_BOTTOM>
+JMP <HRP_DONE>
+HRP_TOP:
+SET 1, gC
+SET 5, mW
+STORE gC
+JMP <HRP_DONE>
+HRP_BOTTOM:
+SET 0, gC
+SET 5, mW
+STORE gC
+HRP_DONE:
+RET
+
+HANDLE_EDGES:
+; Round ends only at true edges
+CMP gA, 0
+JMPNE <HE_RIGHT>
+CALL <DRAW_FRAME>
+SLEEP 1000
+CALL <RESET_RIGHT>
+RET
+
+HE_RIGHT:
+CMP gA, 31
+JMPNE <HE_DONE>
+CALL <DRAW_FRAME>
+SLEEP 1000
+CALL <RESET_LEFT>
+HE_DONE:
+RET
+
+; --- reset/randomization ---
+
+RESET_RIGHT:
+CALL <RANDOMIZE_PUCK>
+SET 0, gA
+SET 4, mW
+STORE gA
+RET
+
+RESET_LEFT:
+CALL <RANDOMIZE_PUCK>
+SET 1, gA
+SET 4, mW
+STORE gA
+RET
+
+RANDOMIZE_PUCK:
+; X near center: 96..159 subpixel
+RND gA
+SHIFTR gA, 2, gA
+ADD gA, 96, gA
+SET 0, mW
+STORE gA
+
+; Y near center: 96..159 subpixel
+RND gA
+SHIFTR gA, 2, gA
+ADD gA, 96, gA
+SET 1, mW
+STORE gA
+
+; vx magnitude: 1..4
+RND gA
+SHIFTR gA, 6, gA
+INC gA
+SET 2, mW
+STORE gA
+
+; vy magnitude: 1..2
+RND gA
+SHIFTR gA, 7, gA
+INC gA
+SET 3, mW
+STORE gA
+
+; vy direction random 0/1
+RND gA
+AND gA, 1, gA
+SET 5, mW
+STORE gA
+RET
+
+; --- drawing ---
+
+DRAW_FRAME:
+CLEAR
+CALL <DRAW_BUMPERS>
+CALL <DRAW_PADDLES>
+CALL <DRAW_PUCK>
+DRAW
+RET
+
+DRAW_BUMPERS:
+SET 1, pA
+
+; Top row y=0
+SET 0, cY1
+SET 0, cX1
+DB_TOP_LOOP:
+SETP 1, pA
+INC cX1
+CMP cX1, 0
+JMPNE <DB_TOP_LOOP>
+
+; Bottom row y=31
+SET 31, cY1
+SET 0, cX1
+DB_BOT_LOOP:
+SETP 1, pA
+INC cX1
+CMP cX1, 0
+JMPNE <DB_BOT_LOOP>
+RET
+
+DRAW_PADDLES:
+SET 1, pA
+
+; Player paddle at x=1, height=3
+SET 1, cX1
+SET 6, mR
+LOAD cY1
+SETP 1, pA
+INC cY1
+SETP 1, pA
+INC cY1
+SETP 1, pA
+
+; CPU paddle at x=30, height=3
+SET 30, cX1
+SET 7, mR
+LOAD cY1
+SETP 1, pA
+INC cY1
+SETP 1, pA
+INC cY1
+SETP 1, pA
+RET
+
+DRAW_PUCK:
+SET 1, pA
+SET 0, mR
+LOAD gA
+SHIFTR gA, 3, cX1
+SET 1, mR
+LOAD gA
+SHIFTR gA, 3, cY1
+SETP 1, pA
+RET

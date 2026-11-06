@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Batcave_Bitflips · UMassCTF 2026 (reverse) writeup · ctf42</title>
+  
+
+<meta name="description" content="Batcave_Bitflips: Reverse challenge from UMassCTF 2026. Techniques: bitflip-repair, xor, sbox. rev medium gregt114 (Greg) Batman&#x27;s new state-of-the-art AI…">
+<link rel="canonical" href="https://ctf42.online/ctfs/umassctf/2026/batcave_bitflips/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/umassctf/2026/batcave_bitflips/">
+<meta property="og:title" content="Batcave_Bitflips">
+<meta property="og:description" content="Batcave_Bitflips: Reverse challenge from UMassCTF 2026. Techniques: bitflip-repair, xor, sbox. rev medium gregt114 (Greg) Batman&#x27;s new state-of-the-art AI…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/umassctf/">UMassCTF</a> / <a href="/ctfs/umassctf/2026/">2026</a> / Batcave_Bitflips</nav>
+
+
+<div class="challenge-head">
+  <h1>Batcave_Bitflips
+    </h1>
+  <div class="badges">
+    <a class="cat cat-rev" href="/category/rev/">Reverse</a>
+    
+    
+    <span class="chip">weight 65.95</span>
+    <a class="tag" href="/techniques/bitflip-repair/">#bitflip-repair</a><a class="tag" href="/techniques/xor/">#xor</a><a class="tag" href="/techniques/sbox/">#sbox</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/umassctf/2026/batcave_bitflips/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/umassctf/2026/batcave_bitflips/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  
+  <p class="meta">Flag format: <code class="flag-format">UMASS{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>rev medium
+gregt114 (Greg)</p>
+<p>Batman's new state-of-the-art AI agent has deleted all of the source code to the Batcave license verification program! There's an old debug version lying around, but that thing has been hit by more cosmic rays than Superman!</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>Batcave_Bitflips — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/UMASSCTF-2026-writeups/tree/main/UMASSCTF-2026-writeups/rev/batcave-bitflips" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/UMASSCTF-2026-writeups/tree/main/UMASSCTF-2026-writeups/rev/batcave-bitflips</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/umassctf/2026/batcave_bitflips/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/vuwctf/2026/ilikewords/">ilikewords</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/xor/">#xor</a><a class="tag tag-sm" href="/techniques/kaprekar-constant/">#kaprekar-constant</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/vuwctf/2026/">VuwCTF 2026</a></td>
+        <td class="num">25.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/vuwctf/2026/dotsbedashing/">dotsbedashing</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/morse-code/">#morse-code</a><a class="tag tag-sm" href="/techniques/xor/">#xor</a><a class="tag tag-sm" href="/techniques/bit-rotation/">#bit-rotation</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/vuwctf/2026/">VuwCTF 2026</a></td>
+        <td class="num">25.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/uoftctf/2026/baby_obfuscated_flag_checker/">Baby_Obfuscated_Flag_Checker</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/python-obfuscation/">#python-obfuscation</a><a class="tag tag-sm" href="/techniques/xor/">#xor</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/uoftctf/2026/">UofTCTF 2026</a></td>
+        <td class="num">33.49</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/ritsec/2026/obfpyscated/">obfpyscated</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/python-obfuscation/">#python-obfuscation</a><a class="tag tag-sm" href="/techniques/xor/">#xor</a><a class="tag tag-sm" href="/techniques/aes/">#aes</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/ritsec/2026/">RITSEC 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/ritsec/2026/buried_treasure/">Buried_Treasure</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/multi-stage-unpacking/">#multi-stage-unpacking</a><a class="tag tag-sm" href="/techniques/memfd-create/">#memfd-create</a><a class="tag tag-sm" href="/techniques/xor/">#xor</a><a class="tag tag-sm" href="/techniques/strace-dump/">#strace-dump</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/ritsec/2026/">RITSEC 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/kbxac/2026/simphell/">simphell</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/haskell-reversing/">#haskell-reversing</a><a class="tag tag-sm" href="/techniques/xor/">#xor</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/kbxac/2026/">KBxAc 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/bitflip-repair/">#bitflip-repair</a> · <a href="/techniques/xor/">#xor</a> · <a href="/techniques/sbox/">#sbox</a>
+          · <a href="/category/rev/">all Reverse</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMassCTF/2026/rev/Batcave_Bitflips" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/umassctf/2026/batcave_bitflips/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from UMassCTF 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/umassctf/2026/finished_ninjago_game/">Finished_Ninjago_Game</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/umassctf/2026/hens_and_roosters/">Hens_and_Roosters</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/umassctf/2026/the_accursed_lego_bin/">The_Accursed_Lego_Bin</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/umassctf/2026/unfinished_ninjago_game/">Unfinished_Ninjago_Game</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/umassctf/2026/click_here_for_free_bricks/">Click_Here_For_Free_Bricks</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/umassctf/2026/doomed_demo/">Doomed_Demo</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/umassctf/2026/lost_and_found/">Lost_and_Found</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/umassctf/2026/ninja_nerds/">Ninja_Nerds</a> <span class="cat cat-forensics cat-xs">Forensics</span></li><li>
+<a href="/ctfs/umassctf/2026/brick_by_brick/">Brick_by_Brick</a> <span class="cat cat-hardware cat-xs">Hardware</span></li><li>
+<a href="/ctfs/umassctf/2026/smart_brick_v2/">Smart_Brick_v2</a> <span class="cat cat-hardware cat-xs">Hardware</span></li><li>
+<a href="/ctfs/umassctf/2026/blink_of_an_eye/">Blink_of_an_Eye</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/umassctf/2026/brick_road/">Brick_Road</a> <span class="cat cat-misc cat-xs">Misc</span></li>
+      </ul>
+      <a class="small" href="/ctfs/umassctf/2026/">All UMassCTF 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

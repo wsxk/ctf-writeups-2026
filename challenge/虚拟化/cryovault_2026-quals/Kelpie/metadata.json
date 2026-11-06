@@ -1,0 +1,54 @@
+{
+  "event_id": "CTF-3441",
+  "event_title": "Cryovault 2026 Quals",
+  "title": "Kelpie",
+  "category": "虚拟化",
+  "original_category": "Reverse",
+  "tags": [
+    "custom-vm",
+    "openssl"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/cryovault/2026-quals/kelpie/",
+    "https://ctf42.online/ctfs/cryovault/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Cryovault/2026/Quals/rev/Kelpie"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/Cryovault-2026-Quals/tree/main/rev/kelpie"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Cryovault/2026/Quals/rev/Kelpie",
+    "https://ctf42.online/ctfs/cryovault/2026-quals/kelpie/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "unavailable",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/cryovault_2026-quals/Kelpie/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/Cryovault-2026-Quals/main/rev/kelpie/README.md",
+      "bytes": 7987,
+      "sha256": "f52ac78970bdcb787dbddf1e8f93d31092ce75f9110d715d949460e906d1fe13",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/cryovault_2026-quals/Kelpie/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Cryovault/2026/Quals/rev/Kelpie/README.md",
+      "bytes": 773,
+      "sha256": "210caafdb6be09cb74bfcbd47f789038aa025cf2e2863ed43509388d7c78cbbd",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/cryovault/2026-quals/kelpie/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/cryovault/2026-quals/kelpie/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

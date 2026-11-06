@@ -1,0 +1,62 @@
+{
+  "event_id": "CTF-3302",
+  "event_title": "bhackari CTF 2026",
+  "title": "Dont_unpack_me",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "rc4",
+    "pe-unpacking"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/bhackari/2026/dont_unpack_me/",
+    "https://ctf42.online/ctfs/bhackari/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bhackari/2026/rev/Dont_unpack_me"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/bhackari-ctf-2026-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/Bhackari/2026/rev/Dont_unpack_me",
+    "https://ctf42.online/ctfs/bhackari/2026/dont_unpack_me/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/bhackari_2026/Dont_unpack_me/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/bhackari-ctf-2026-writeup/",
+      "bytes": 190273,
+      "sha256": "096e42e3e77f3b347c405829d52ee8878c9f48da163544a66c1f1479e60138c3",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/bhackari_2026/Dont_unpack_me/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Bhackari/2026/rev/Dont_unpack_me/README.md",
+      "bytes": 209,
+      "sha256": "94be4ba44c6c24eacc7fc6e3f17c33cde1d36b04f21ce29b4a01302182494095",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/bhackari_2026/Dont_unpack_me/attachments/upstream/dont_unpack_me.zip",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/Bhackari/2026/rev/Dont_unpack_me/dont_unpack_me.zip",
+      "bytes": 2177,
+      "sha256": "5dd0fa80db173f30ebe4c79183167d217815ae4cff9ebac50a28bf51313f2976",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/bhackari/2026/dont_unpack_me/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/bhackari/2026/dont_unpack_me/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

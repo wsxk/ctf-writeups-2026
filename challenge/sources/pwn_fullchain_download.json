@@ -1,0 +1,13 @@
+{
+  "status": "stopped_out_of_scope_no_writeup",
+  "content_type": "application/octet-stream",
+  "response_length_bytes": 26374590293,
+  "total_expected_bytes": 26374590293,
+  "free_disk_bytes": 171807944704,
+  "source_url": "https://drive.google.com/uc?export=download&id=11VEeW4RE1fLuppTl5M0qms8pmntZx2Av",
+  "final_url": "https://drive.usercontent.google.com/download?id=11VEeW4RE1fLuppTl5M0qms8pmntZx2Av&export=download&confirm=t&uuid=0c25184d-271f-4c71-8647-794608ca9287",
+  "path": "pwn\\SUCTF_2026\\SU_fullchian\\attachments\\attachment.7z",
+  "bytes_downloaded": 65011712,
+  "bytes_per_second": 1387234,
+  "partial_cleanup_status": "自动审批拒绝删除：blocked by policy，未重试"
+}

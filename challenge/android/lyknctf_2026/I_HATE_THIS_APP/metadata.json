@@ -1,0 +1,47 @@
+{
+  "event_id": "CTF-3280",
+  "event_title": "LYKNCTF",
+  "title": "I_HATE_THIS_APP",
+  "category": "android",
+  "original_category": "Reverse",
+  "tags": [
+    "static-string-analysis"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/lyknctf/2026/i_hate_this_app/",
+    "https://ctf42.online/ctfs/lyknctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/rev/I_HATE_THIS_APP"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/lyknctf-2026-crack-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/LYKNCTF/2026/rev/I_HATE_THIS_APP",
+    "https://ctf42.online/ctfs/lyknctf/2026/i_hate_this_app/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "android/lyknctf_2026/I_HATE_THIS_APP/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/lyknctf-2026-crack-writeup/",
+      "bytes": 191749,
+      "sha256": "f02a02fdd80978b430aad844816bcf2d2ec8cd752985e6af9c86ae490997fc9e",
+      "kind": "writeup"
+    },
+    {
+      "path": "android/lyknctf_2026/I_HATE_THIS_APP/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/lyknctf/2026/i_hate_this_app/folder.zip?kind=files",
+      "bytes": 5040586,
+      "sha256": "a812a9e5093ef0c4aca3dde01ac15e37180e184faab4759cf8c7139c4d640c84",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

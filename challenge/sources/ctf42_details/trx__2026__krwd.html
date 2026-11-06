@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>krwd · TRX 2026 (pwn) writeup · ctf42</title>
+  
+
+<meta name="description" content="krwd: Pwn challenge from TRX 2026. Techniques: kernel-exploitation. By prosti Challenge details and submission form Description The solution to all your…">
+<link rel="canonical" href="https://ctf42.online/ctfs/trx/2026/krwd/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/trx/2026/krwd/">
+<meta property="og:title" content="krwd">
+<meta property="og:description" content="krwd: Pwn challenge from TRX 2026. Techniques: kernel-exploitation. By prosti Challenge details and submission form Description The solution to all your…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/trx/">TRX</a> / <a href="/ctfs/trx/2026/">2026</a> / krwd</nav>
+
+
+<div class="challenge-head">
+  <h1>krwd
+    </h1>
+  <div class="badges">
+    <a class="cat cat-pwn" href="/category/pwn/">Pwn</a>
+    
+    
+    
+    <a class="tag" href="/techniques/kernel-exploitation/">#kernel-exploitation</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/trx/2026/krwd/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/trx/2026/krwd/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  <p class="meta">Author: prosti</p>
+  <p class="meta">Flag format: <code class="flag-format">TRX{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>By prosti
+Challenge details and submission form
+Description
+The solution to all your problems is right here -&gt; https://kqx.io</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>krwd — writeup</b>
+    
+    
+    <span class="muted">by rawpayload</span>
+  </header>
+  <p><a href="https://ctftime.org/writeup/40711" rel="noopener nofollow ugc" target="_blank">https://ctftime.org/writeup/40711</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/trx/2026/krwd/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/b01lers/2026/throughthewall/">throughthewall</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/kernel-exploitation/">#kernel-exploitation</a><a class="tag tag-sm" href="/techniques/oob-write/">#oob-write</a><a class="tag tag-sm" href="/techniques/pipe-buffer/">#pipe-buffer</a><a class="tag tag-sm" href="/techniques/kernel-rop/">#kernel-rop</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/b01lers/2026/">b01lers 2026</a></td>
+        <td class="num">66.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/sekaictf/2026/mte/">MTE</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/kernel-exploitation/">#kernel-exploitation</a><a class="tag tag-sm" href="/techniques/arm-mte/">#arm-mte</a><a class="tag tag-sm" href="/techniques/pointer-authentication/">#pointer-authentication</a><a class="tag tag-sm" href="/techniques/use-after-free/">#use-after-free (uaf)</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/sekaictf/2026/">SekaiCTF 2026</a></td>
+        <td class="num">79.25</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/compfest/2026/menfess/">menfess</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/kernel-exploitation/">#kernel-exploitation</a><a class="tag tag-sm" href="/techniques/function-pointer-overwrite/">#function-pointer-overwrite</a><a class="tag tag-sm" href="/techniques/heap-overflow/">#heap-overflow</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/compfest/2026/">COMPFEST 2026</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/hxp/2025/h_wix_p/">h_wix_p</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/kernel-exploitation/">#kernel-exploitation</a><a class="tag tag-sm" href="/techniques/missing-access-check/">#missing-access-check</a><a class="tag tag-sm" href="/techniques/arbitrary-read-write/">#arbitrary-read-write</a><a class="tag tag-sm" href="/techniques/cred-overwrite/">#cred-overwrite</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/hxp/2025/">hxp 2025</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/corctf/2025/zenerational_aura/">zenerational_aura</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/retbleed/">#retbleed</a><a class="tag tag-sm" href="/techniques/kernel-exploitation/">#kernel-exploitation</a><a class="tag tag-sm" href="/techniques/speculative-execution/">#speculative-execution</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/corctf/2025/">corCTF 2025</a></td>
+        <td class="num">82.00</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/uiuctf/2025/baby_kernel/">Baby_Kernel</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/kernel-exploitation/">#kernel-exploitation</a><a class="tag tag-sm" href="/techniques/use-after-free/">#use-after-free (uaf)</a><a class="tag tag-sm" href="/techniques/jop/">#jop</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/uiuctf/2025/">UIUCTF 2025</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;2</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/kernel-exploitation/">#kernel-exploitation</a>
+          · <a href="/category/pwn/">all Pwn</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TRX/2026/pwn/krwd" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/trx/2026/krwd/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from TRX 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/trx/2026/hbkg/">HBKG</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/trx/2026/ote/">OTE</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/trx/2026/rsss/">RSSS</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/trx/2026/what_the_hecc_2/">What_the_HECC_2</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/trx/2026/quantum_cipher/">quantum_cipher</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/trx/2026/quantum_cipher_final_showdown/">quantum_cipher_final_showdown</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/trx/2026/quantum_cipher_revenge/">quantum_cipher_revenge</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/trx/2026/babel/">Babel</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/trx/2026/no_whales_face_with_raised_eyebrow/">No_Whales_face_with_raised_eyebrow</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/trx/2026/procrustes/">Procrustes</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/trx/2026/trx_gambling_house/">TRX_gambling_house</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/trx/2026/gogolf/">gogolf</a> <span class="cat cat-misc cat-xs">Misc</span></li>
+      </ul>
+      <a class="small" href="/ctfs/trx/2026/">All TRX 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

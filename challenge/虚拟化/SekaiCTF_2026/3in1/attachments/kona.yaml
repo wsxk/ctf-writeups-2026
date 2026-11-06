@@ -1,0 +1,78 @@
+# Reference: https://github.com/project-sekai-ctf/konata
+challenges:
+  - category: pwn
+    name: 3in1
+    author: Qyn
+    description: |
+      Pwn pwn pwn!
+
+      > [!NOTE]
+      > This is a 0day challenge and we are hoping you keep th{is|ese} 0day{|s} to yourself until the vulnerabilit{y|ies} {is|are} patched.
+    tags:
+      - ⭐⭐⭐⭐⭐
+      - 0day
+    attachments:
+      files:
+        - "challenge/"
+      exclude:
+        - "challenge/flag.txt"
+      additional:
+        - path: flag.txt
+          strContent: "SEKAI{dummy_flag}"
+      stripComponents: 1
+    flags:
+      rctf:
+        file: challenge/flag.txt
+    endpoints:
+      - type: nc
+        endpoint: "{{ challenge.name | lower }}.{{ config.domains['static'] }}"
+        port: 1337
+
+deployment:
+  images:
+    - path: challenge
+      dockerfile: Dockerfile.run
+      name: "{{ challenges[0].name | lower }}"
+      tag: latest
+      registryName: challenges
+      platform: linux/amd64
+
+  kubernetesInlineManifests:
+    - clusterName: main
+      documents:
+        - apiVersion: v1
+          kind: Namespace
+          metadata:
+            name: '{{ challenges[0].name | lower }}'
+        - apiVersion: sctf.es3n1n.io/v1alpha1
+          kind: Challenge
+          metadata:
+            name: "{{ challenges[0].name | lower }}"
+            namespace: "{{ challenges[0].name | lower }}"
+          spec:
+            releaseTime: "2026-06-27T08:00:00Z"
+            pods:
+              - name: challenge
+                replicas: 1
+                spec:
+                  containers:
+                    - name: challenge
+                      image: "{{ images[challenges[0].name | lower] }}"
+                      env:
+                        - name: JAIL_PROXY_PROTOCOL
+                          value: "true"
+                        - name: JAIL_CPU
+                          value: "1000"
+                      ports:
+                        - containerPort: 5000
+                      resources:
+                        requests: { cpu: 250m, memory: 1Gi }
+                        limits: { cpu: 6, memory: 6Gi }
+                      securityContext:
+                        privileged: true
+                exposed:
+                  - protocol: TCP
+                    subdomain: "{{ challenges[0].name | lower }}"
+                    port: 1337
+                    targetPort: 5000
+                    proxyProtocol: true

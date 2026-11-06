@@ -1,0 +1,241 @@
+{
+  "event_id": "CTF-3095",
+  "event_title": "TAMUctf 2026",
+  "category": "pwn",
+  "title": "meep",
+  "source_urls": [
+    "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/pwn/meep",
+    "https://ctftime.org/event/3095/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/README.md",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/solve/solve.py",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/solver-template.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/Dockerfile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/Dockerfile.builder",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/Makefile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/Makefile.debug",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/config.toml",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/entrypoint.sh",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/fake-flag.txt",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/flag.txt",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/lib-mips/ld.so.1",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/lib-mips/libc.so",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/lib-mips/libc.so.6",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/lib-mips/libgcc_s.so.1",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/lib-mips/libm.so.6",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/meep.c",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/meep_prod.c",
+    "https://media.githubusercontent.com/media/ACM-VIT/z0d1ak-writeups/HEAD/TAMUctf%202026/pwn/meep/meep.tar.gz"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。",
+    "补充的 original_distribution/*.tar.gz 是参赛队保存的原分发包镜像，LFS SHA-256已校验。"
+  ],
+  "repository": "tamuctf/tamuctf-2026",
+  "repository_tree_sha": "c25f8b673b2a24b5316d164666be8b84d8f02d6b",
+  "artifacts": [
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/Dockerfile",
+      "bytes": 445,
+      "sha256": "f92f9789ab96b5fd25b11eddb2dbcc114968a022d2a0a5a122f0c5f028d41b36",
+      "git_blob_sha1": "cbb0773d6586ce8e8946b0cddc554569e22f3e52",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/Dockerfile.builder",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/Dockerfile.builder",
+      "bytes": 224,
+      "sha256": "b82454560150aa31c662b65afbf1d518948fb413be94b3f2cbd36ed6be2ee82e",
+      "git_blob_sha1": "eaf5ce0394712917d944334074adbed33525a22a",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/Makefile",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/Makefile",
+      "bytes": 1826,
+      "sha256": "9f9ea5e4bf303bb7fc631d86ef5b2acf1f27781341d36187327d62e1c3dabbd9",
+      "git_blob_sha1": "ddbe31637c52231c67895f4cd126bdc4a1662c2f",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/Makefile.debug",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/Makefile.debug",
+      "bytes": 498,
+      "sha256": "2c677cac605c671daa60e3f7a09bd90e95f5821ac8b0f288582789d581678bae",
+      "git_blob_sha1": "ab070dc487adb066a783d67887f4bc005406cbd9",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/README.md",
+      "bytes": 814,
+      "sha256": "5c24d4807a623e1416543b6ab38a500c2656b6936299b1ac988e7a67aba0bfe6",
+      "git_blob_sha1": "dbb0c88ee58da9a44b4fb2e0f784f16c7b780d1e",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/config.toml",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/config.toml",
+      "bytes": 1101,
+      "sha256": "fead8ac97260bae4ac9f416a65492a01fe8c329c05d6c8ac0d96f9b64b004a31",
+      "git_blob_sha1": "00ef24f55fe53544d2fa89d9b6d90f3ab9feed19",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/entrypoint.sh",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/entrypoint.sh",
+      "bytes": 331,
+      "sha256": "044954a4662bb0e6eead539f4f5468d1c09a13197c2b6b2f6c6e584033e3ecca",
+      "git_blob_sha1": "eb25014bfe1027dbbf804bdac8adad741d127194",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/fake-flag.txt",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/fake-flag.txt",
+      "bytes": 19,
+      "sha256": "d586d3c576dcde6af5575ac7f67c305f555313ca03b231bb8bb3512c74c7089d",
+      "git_blob_sha1": "1c47d855ad6926dbd351eeccbb9b8892d91eca0c",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flag.txt",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/flag.txt",
+      "bytes": 28,
+      "sha256": "19e0b80660f681e32a6ae38387ffe70630ce14284cca94e9ec6f4a480892fccd",
+      "git_blob_sha1": "709979a28f725bafefe1452b643f530da39ec220",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/lib-mips/ld.so.1",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/lib-mips/ld.so.1",
+      "bytes": 211296,
+      "sha256": "2aadea993fca61cf1d7c60044480ef4e3b18f7b4b469f993c11fb583a6e3fb91",
+      "git_blob_sha1": "a7118572067f08871c9bda0db1cbf257b6c5e63b",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/lib-mips/libc.so",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/lib-mips/libc.so",
+      "bytes": 292,
+      "sha256": "8fb7b67473b09a7bb18a4618bc4df73205ca7e59f26ee79033afda7248420dd9",
+      "git_blob_sha1": "4fd50b8ac5f28f0330610f67f7d9d888804046a3",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/lib-mips/libc.so.6",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/lib-mips/libc.so.6",
+      "bytes": 2103704,
+      "sha256": "aa68c60c7fa4129ad49dd755563a45886aadf6b668cf9236698435d49a879e92",
+      "git_blob_sha1": "aa0dc77447a9b9ece9d4f5939d5e4b252ed5c550",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/lib-mips/libgcc_s.so.1",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/lib-mips/libgcc_s.so.1",
+      "bytes": 240600,
+      "sha256": "25aca753bb07c0cdb4df35a3f19428c27ba6866272debfda7614e9c6df78657e",
+      "git_blob_sha1": "2d2b25b873de907192161d543e1572d39d2c8080",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/lib-mips/libm.so.6",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/lib-mips/libm.so.6",
+      "bytes": 408692,
+      "sha256": "c9d1c8a20988bd99c1ecb15aab51eaf9cd19ca90834b030ee927dc1d73cbd497",
+      "git_blob_sha1": "c39a9ae516cbcb3ff8c07c000ea65eeafaff77fd",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/meep.c",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/meep.c",
+      "bytes": 1948,
+      "sha256": "54d3b944cbf4d724409c93ce2439e3a519e3359f35c07967517d3eea17a0ff2e",
+      "git_blob_sha1": "11be0b1112ce53a7927157260428d2558c0cff13",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/meep_prod.c",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/meep_prod.c",
+      "bytes": 2338,
+      "sha256": "47734a9e0f9426daee3dfdae6086129a889c7c99fd1418db9c0181d42ae7ee2d",
+      "git_blob_sha1": "e643971de49ea02ba328b4d9ee96b55bb2a86102",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/solve.py",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/solve/solve.py",
+      "bytes": 2166,
+      "sha256": "c564eb5fdff2bace5bd94f59da8cfbc91cdcb77c19920d6498eafa45cc5323a1",
+      "git_blob_sha1": "f8416bee40bf5127622ee0db4b656356979423b3",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solver-template.py",
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/pwn/meep/solver-template.py",
+      "bytes": 134,
+      "sha256": "874e08a7019c8779ed9dd163c802069838131e2355de1f5119f6334417d1decc",
+      "git_blob_sha1": "5360eeae1afb6bfe2c07da72259a0ab2ec98dc9c",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/original_distribution/meep.tar.gz",
+      "url": "https://media.githubusercontent.com/media/ACM-VIT/z0d1ak-writeups/HEAD/TAMUctf%202026/pwn/meep/meep.tar.gz",
+      "bytes": 1251366,
+      "sha256": "4948c0238966504391d4700e375ab03ff40bbf5d94893b278e5a4ac010a187e2",
+      "kind": "attachments"
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/README.md"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

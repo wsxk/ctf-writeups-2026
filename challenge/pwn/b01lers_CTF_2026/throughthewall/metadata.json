@@ -1,0 +1,353 @@
+{
+  "event_id": "CTF-3153",
+  "event_title": "b01lers CTF 2026",
+  "category": "pwn",
+  "title": "throughthewall",
+  "source_urls": [
+    "https://github.com/b01lers/b01lers-ctf-2026-public/tree/HEAD/src/pwn/throughthewall",
+    "https://ctftime.org/event/3153/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/README.md",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/solve/README.md",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/solve/exp",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/solve/exp.c",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/solve/xp.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/DEPLOYMENT.md",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/build_out/initramfs.cpio.gz",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/chal.json",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/deploy/Dockerfile",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/deploy/Dockerfile_build",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/deploy/bzImage",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/deploy/docker-compose.prod.yml",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/deploy/docker-compose.yml",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/deploy/initramfs.cpio.gz",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/deploy/run",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/deploy/start_prod.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/deploy/wrapper.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/dev.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/dist/bzImage",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/dist/initramfs.cpio.gz",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/dist/start.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/flag.txt",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/pwn_build.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/run.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/src/Makefile",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/src/build.sh",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/src/firewall.c",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/src/firewall.ko",
+    "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/src/gen_initramfs.sh"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "b01lers/b01lers-ctf-2026-public",
+  "repository_tree_sha": "6890cf1035a9e2c3dd4817d11204619bfd0259b4",
+  "artifacts": [
+    {
+      "path": "attachments/DEPLOYMENT.md",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/DEPLOYMENT.md",
+      "bytes": 3976,
+      "sha256": "c9f2493d7a55b430091903f527a4d699d032985b3d7b21482e6d54dca9292343",
+      "git_blob_sha1": "d98be708ce1de407f10b065ad9c18c3ee32afb5c",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/README.md",
+      "bytes": 3092,
+      "sha256": "b5a1df3839613374fc8e0375948056064daeeeb023a14f65dff6f9a309517961",
+      "git_blob_sha1": "f426446a8c24bde890ce190d3358df795b47442f",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/build_out/initramfs.cpio.gz",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/build_out/initramfs.cpio.gz",
+      "bytes": 1366697,
+      "sha256": "41793d87f6cbed52bab1d5d58f543d48e1f48f6ec74dad791410247091f254b8",
+      "git_blob_sha1": "8ef4a0a9da527b27edd03c34c4a98621cd1b57d8",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/chal.json",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/chal.json",
+      "bytes": 338,
+      "sha256": "12ff07cafae3cbcf5630387d44d9be7d8b70335c8b4b63cbfa80d9ab992f9b08",
+      "git_blob_sha1": "8d139da8ff5492f48bdd3daa8fd977e96a5f8d6e",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/Dockerfile",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/deploy/Dockerfile",
+      "bytes": 2227,
+      "sha256": "db2dcf629660e7c285e9a801b84bfcd77725e221a9bef889884ade7fe185f2b3",
+      "git_blob_sha1": "03d0373f56ee125e86527366d4d8fbd2d0c10f97",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/Dockerfile_build",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/deploy/Dockerfile_build",
+      "bytes": 686,
+      "sha256": "1f807f78da1a05da2a301e3d730545bbb0f47177df69780bdb4ee399fe6c197b",
+      "git_blob_sha1": "b992b3316e75822111bb01ed185dbeaca00fe3f2",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/bzImage",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/deploy/bzImage",
+      "bytes": 10480192,
+      "sha256": "cab142cbe8dbd97b78b4a22eef94e11672358697785367d7534095341fe545b6",
+      "git_blob_sha1": "453009693c1be7a2fbfae53bb06562b11f1a9792",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/docker-compose.prod.yml",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/deploy/docker-compose.prod.yml",
+      "bytes": 172,
+      "sha256": "554d392be47d5eda7fc6dcf2d024ff95a9a8a824b4bf88fb6c08f4789a77a67b",
+      "git_blob_sha1": "1910fd4ba9bb390c6cf648b71640f1bf85bb8c8d",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/docker-compose.yml",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/deploy/docker-compose.yml",
+      "bytes": 1250,
+      "sha256": "304b10ccb7e2ee25bce68c6b6c4e5968a607804b87e536dcb76c25331561dffa",
+      "git_blob_sha1": "8eb0dc1cdc4de1ddff6e53dc9b118cac4e59db3e",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/initramfs.cpio.gz",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/deploy/initramfs.cpio.gz",
+      "bytes": 1460929,
+      "sha256": "68303d775a2eabb188eb9158c7c24a60852f9ad7830eb64fa7b01c17d4b6216f",
+      "git_blob_sha1": "e258522d45bb5bdc0f31f0eabb605d733e9b9979",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/run",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/deploy/run",
+      "bytes": 323,
+      "sha256": "76ffff6bb5b357d72f6d3154364aaeac85bfb33712f0cad39d0416641f3f0a7a",
+      "git_blob_sha1": "be4ce9c35145168d55d4c5166370ee4eda15aa10",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/start_prod.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/deploy/start_prod.sh",
+      "bytes": 357,
+      "sha256": "da9ebeb74d35b00afe449ad2e2763ebf23023ee65dcecf1831b68a9c1d3ebfdd",
+      "git_blob_sha1": "ec301c7b7de8ad999372ec415cb6729206657be8",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/deploy/wrapper.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/deploy/wrapper.sh",
+      "bytes": 213,
+      "sha256": "16fe8c39fce7f8d8776136d6de6d103895a4d7782a28f1624ee36650920982a1",
+      "git_blob_sha1": "3810937b1f0690e8e77dff1e4310f1e8d5f6e5a9",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/dev.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/dev.sh",
+      "bytes": 336,
+      "sha256": "20e8a526908102050201f9e35192fc959dc7b94d86fe446fb296bfba64ee567a",
+      "git_blob_sha1": "bf86bf9b7605a193c792f498d905153763008112",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/dist/bzImage",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/dist/bzImage",
+      "bytes": 10480192,
+      "sha256": "cab142cbe8dbd97b78b4a22eef94e11672358697785367d7534095341fe545b6",
+      "git_blob_sha1": "453009693c1be7a2fbfae53bb06562b11f1a9792",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/dist/initramfs.cpio.gz",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/dist/initramfs.cpio.gz",
+      "bytes": 1460966,
+      "sha256": "5d948139a168db91eef2a9906b5a905ac518cfa2f0c2451071894ad68d6485e3",
+      "git_blob_sha1": "cf7289013d1bf694f8fad323699cf4ff707240a3",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/dist/start.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/dist/start.sh",
+      "bytes": 323,
+      "sha256": "b6a1f57011420acdfbb4af116fa067b0ce3f70c4729ac515829bfa4c6df735c9",
+      "git_blob_sha1": "821ca039a4aebc76fd794fcabd66b7b1afb44817",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flag.txt",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/flag.txt",
+      "bytes": 29,
+      "sha256": "82e8e3145e348dce04751ad7ab350b5e6e6d33dbf6d16e3034a2cd23fd068ba7",
+      "git_blob_sha1": "1a84d5d87012a5f78525ad1a48780d7edcd7a734",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/pwn_build.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/pwn_build.sh",
+      "bytes": 383,
+      "sha256": "411e8b4aa3daabc15d7bb9f1edbbb52db6c594dc085bdfce7db7418e821d79e5",
+      "git_blob_sha1": "31c4c25d035eb796a4bf718a209da7237ee52aa6",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/run.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/run.sh",
+      "bytes": 521,
+      "sha256": "614c322868a34ae6bf6dfa004a196de47d1795697d272ba935b6bf4be8317973",
+      "git_blob_sha1": "7c2a12d38bff9b0cde3c132f8fe542b080e7e33b",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/README.md",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/solve/README.md",
+      "bytes": 1141,
+      "sha256": "1d7da37f5c4718523f1489c76f0049a685187acdb54bd289140ab2e88c80d50e",
+      "git_blob_sha1": "f3162ea95b735b715ec8f6d7e4313418ece65551",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/exp",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/solve/exp",
+      "bytes": 909568,
+      "sha256": "28bccada2c78595e5e97ebdf65a24263a60be30a00adbce22ee100b28058a49c",
+      "git_blob_sha1": "67cc9f31ff879423a94b8ece48d1335226e89203",
+      "git_mode": "100755",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/exp.c",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/solve/exp.c",
+      "bytes": 2431,
+      "sha256": "0a03050be8650daacabf6fdcdae10b0490c8ca4eec1b691fcdd2252de866a1f0",
+      "git_blob_sha1": "7a77da33177e465a041f59364a5422115c4bb249",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve/xp.py",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/solve/xp.py",
+      "bytes": 1939,
+      "sha256": "195a9c8bebf0196801700c4a871000be27c4cb89799dd3f51179d065d45415f9",
+      "git_blob_sha1": "4696670e4f226e7a3146462cc98660e114e73109",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/Makefile",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/src/Makefile",
+      "bytes": 146,
+      "sha256": "3887d7ca12e5c323bc715848e6be2e1ed79922d0bde82c01a1f6fc6e2454730e",
+      "git_blob_sha1": "045d0a0caf9abe0b2f9101b5eb9d65dde6f9e3be",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/build.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/src/build.sh",
+      "bytes": 534,
+      "sha256": "6c53ae47b6935b18092385c203ee182a8130acd90269e1beda4ad9280b37c1ab",
+      "git_blob_sha1": "cbb8020d1bf9d4ef6b183ee060825873e7776a50",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/firewall.c",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/src/firewall.c",
+      "bytes": 6602,
+      "sha256": "0368ad810e0b8cd5682707bb30eb66334e739d279443b94e50ab55699f692eef",
+      "git_blob_sha1": "e23e051436d66886436162441b509b68c26f577d",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/firewall.ko",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/src/firewall.ko",
+      "bytes": 12328,
+      "sha256": "804377925d3cfa7a6aa8126e743e177dd62674228a8cdf707c0988168ccf4c2f",
+      "git_blob_sha1": "e5e837f02b64b451f3b146ea881c01ffd3a4fe68",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/src/gen_initramfs.sh",
+      "url": "https://raw.githubusercontent.com/b01lers/b01lers-ctf-2026-public/HEAD/src/pwn/throughthewall/src/gen_initramfs.sh",
+      "bytes": 2677,
+      "sha256": "c43dad8a53d79548893535a858667cc81e4b066249e6f3aaccc35cd484c32aed",
+      "git_blob_sha1": "1a815245d30251dfb8c9c5b770b8f8ac910548a5",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/solve/README.md"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

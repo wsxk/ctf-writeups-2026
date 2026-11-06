@@ -1,0 +1,181 @@
+{
+  "event_id": "CTF-3043",
+  "event_title": "Srdnlen CTF 2026 Quals",
+  "category": "虚拟化",
+  "title": "Cornflake v3.5",
+  "dirname": "Srdnlen_CTF_2026_Quals",
+  "source_urls": [
+    "https://github.com/srdnlen/srdnlenctf-2026_public/tree/HEAD/rev_cornflake_v3-5"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/attachments/malware.exe",
+      "local": "attachments/attachments/malware.exe",
+      "size_expected": 1064448,
+      "git_blob_sha": "5dbb010fcb2fbdc38bddb731e84462e488b1a674",
+      "status": "downloaded",
+      "bytes": 1064448,
+      "sha256": "ce41ec4f0c1ad220035e862fc9d6bc2d228472b79c937d6a572b4a38ace70dc7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/authors.txt",
+      "local": "attachments/authors.txt",
+      "size_expected": 21,
+      "git_blob_sha": "77fa647c5a2eb33585712f8ae7ff477b0f8d5837",
+      "status": "downloaded",
+      "bytes": 21,
+      "sha256": "3f76d0f03f3050b8a6e0ac779a178c5fe600862c089eff1e69f3c01a25395efc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/description.md",
+      "local": "attachments/description.md",
+      "size_expected": 34,
+      "git_blob_sha": "ee0e2bbb2e92a05a3a0988aecc1eb9b9a9580e44",
+      "status": "downloaded",
+      "bytes": 34,
+      "sha256": "eb7672d97bd295bc85a9e3d34fe1e357dbf80b7bd2a1788d508a64da87bcdfa8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/Dockerfile",
+      "local": "attachments/src/Dockerfile",
+      "size_expected": 418,
+      "git_blob_sha": "447fe4140cbdaae1ba340f6a4d5c2ac2022fa091",
+      "status": "downloaded",
+      "bytes": 418,
+      "sha256": "766d0113d2fd6946a931a16b38b1bc7647aedcbf9cde23c21c4eeddec467bec1"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/build_bytecode.py",
+      "local": "attachments/src/build_bytecode.py",
+      "size_expected": 9039,
+      "git_blob_sha": "4cb8facb20519524219a2ebb9805fd72c28927a9",
+      "status": "downloaded",
+      "bytes": 9039,
+      "sha256": "b1c5605240af5877c003926c4a02747ef690c07ee031595613d1e41c8a7782d7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/c2_server.py",
+      "local": "attachments/src/c2_server.py",
+      "size_expected": 2739,
+      "git_blob_sha": "e2aee4a414ec0776686d66a4f5dd011474680b48",
+      "status": "downloaded",
+      "bytes": 2739,
+      "sha256": "1f3b3ec3fb985e73d06e4620d6958cdb22a665f4a02047a6fbdff15bac3cfc1e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/compile.txt",
+      "local": "attachments/src/compile.txt",
+      "size_expected": 269,
+      "git_blob_sha": "1a9d100e5a5eb180c1aff0be96322738747a062c",
+      "status": "downloaded",
+      "bytes": 269,
+      "sha256": "d101eb3dd2f188d88a98ebfba0cca8071caacb7402f501e37bb5bb3696525c4d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/docker-compose.yml",
+      "local": "attachments/src/docker-compose.yml",
+      "size_expected": 87,
+      "git_blob_sha": "4b1b87d0f3ea0b649bd0efa28ac13a8691de8853",
+      "status": "downloaded",
+      "bytes": 87,
+      "sha256": "0045c2aaf9cbf3ea8373482eb16115247a1c0ca9899d0d486fc83b711bfcb6cc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/encuser.py",
+      "local": "attachments/src/encuser.py",
+      "size_expected": 1206,
+      "git_blob_sha": "3400fe02a2452bbbccf26512085fec47b79c9fd6",
+      "status": "downloaded",
+      "bytes": 1206,
+      "sha256": "8e7c75b18e9c96f0f4f7fbd92e37ffe4e5d2e7734be4e006f59afd2a9fd4c6b3"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/malware.c%2B%2B",
+      "local": "attachments/src/malware.c++",
+      "size_expected": 8335,
+      "git_blob_sha": "941f48a2b4715681a39cd31623ed94b7a25871a9",
+      "status": "downloaded",
+      "bytes": 8335,
+      "sha256": "073ae96c3994754ffc2db099a7b5b4aeac40e92ce4140e74562c7218f8da9e38"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/malware.exe",
+      "local": "attachments/src/malware.exe",
+      "size_expected": 1064448,
+      "git_blob_sha": "5dbb010fcb2fbdc38bddb731e84462e488b1a674",
+      "status": "downloaded",
+      "bytes": 1064448,
+      "sha256": "ce41ec4f0c1ad220035e862fc9d6bc2d228472b79c937d6a572b4a38ace70dc7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/malware_test.exe",
+      "local": "attachments/src/malware_test.exe",
+      "size_expected": 1063936,
+      "git_blob_sha": "a5f1d863c107bc56ecfbf4ce995acbda237caa8b",
+      "status": "downloaded",
+      "bytes": 1063936,
+      "sha256": "d35e98da63c8c91b04010d27e49f730c8a9da9fed6a4429674303e1a5f8e179f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/payload.c%2B%2B",
+      "local": "attachments/src/payload.c++",
+      "size_expected": 6165,
+      "git_blob_sha": "4728db9d02941d27e221360ee625c932ddd17201",
+      "status": "downloaded",
+      "bytes": 6165,
+      "sha256": "9faa0bf1867a6496124785e6da2f55207d8759ecb4d20bae145580fc8af6c5c3"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/payload.dll",
+      "local": "attachments/src/payload.dll",
+      "size_expected": 1017344,
+      "git_blob_sha": "ee2c138beae5d94f689bb3076fcc232493bce7f0",
+      "status": "downloaded",
+      "bytes": 1017344,
+      "sha256": "4bc2dd4d781affad52c1b3e06c410468c87014d36a529a41ecdbc12d745efce6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/title.txt",
+      "local": "attachments/title.txt",
+      "size_expected": 15,
+      "git_blob_sha": "30f1bff87bd6a4a60a41646749a0082b9571cba8",
+      "status": "downloaded",
+      "bytes": 15,
+      "sha256": "4ee0a383e0d84a7b7d887508d3da6db9c309065ee2537443ce14c61d3225aac4"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/writeup.md",
+      "local": "writeups/writeup.md",
+      "size_expected": 3141,
+      "git_blob_sha": "48f55cc8fcf12fde1aad618b1767c4a64eb14515",
+      "status": "downloaded",
+      "bytes": 3141,
+      "sha256": "8778064e1f7a9043286d63d9348d83e50ac279fdb56784c6188f88636c32e097"
+    }
+  ],
+  "notes": "官方原分类Reverse；VM字节码解密与仿真恶意软件题。题目文件名malware.exe，为CTF样本，仅下载未执行。",
+  "directory": "虚拟化/Srdnlen_CTF_2026_Quals/Cornflake v3.5",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/writeup.md"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/attachments/malware.exe",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/authors.txt",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/description.md",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/Dockerfile",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/build_bytecode.py",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/c2_server.py",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/compile.txt",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/docker-compose.yml",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/encuser.py",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/malware.c%2B%2B",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/malware.exe",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/malware_test.exe",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/payload.c%2B%2B",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/src/payload.dll",
+    "https://raw.githubusercontent.com/srdnlen/srdnlenctf-2026_public/HEAD/rev_cornflake_v3-5/title.txt"
+  ],
+  "attachment_status": "downloaded"
+}

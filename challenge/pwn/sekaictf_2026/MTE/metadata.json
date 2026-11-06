@@ -1,0 +1,65 @@
+{
+  "event_id": "CTF-3113",
+  "event_title": "SekaiCTF 2026",
+  "title": "MTE",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "kernel-exploitation",
+    "arm-mte",
+    "pointer-authentication",
+    "use-after-free (uaf)"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/sekaictf/2026/mte/",
+    "https://ctf42.online/ctfs/sekaictf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/pwn/MTE"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/Sekai-CTF-2026/tree/main/pwn/mte"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SekaiCTF/2026/pwn/MTE",
+    "https://ctf42.online/ctfs/sekaictf/2026/mte/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/sekaictf_2026/MTE/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/Sekai-CTF-2026/main/pwn/mte/README.md",
+      "bytes": 7147,
+      "sha256": "c8ed69195be8748f140266e5dbb7b149020271278112f2765c4402ba91da0f87",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/sekaictf_2026/MTE/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SekaiCTF/2026/pwn/MTE/README.md",
+      "bytes": 413,
+      "sha256": "9b576671508296b3340005870d41831c429850b269fb4ba43c9841313c1d1926",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/sekaictf_2026/MTE/attachments/upstream/pwn_mte.tar.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SekaiCTF/2026/pwn/MTE/pwn_mte.tar.gz",
+      "bytes": 75249279,
+      "sha256": "cda32b9e6ec85c6f301aa7067fadfdb93dce2364636662b10606b50ce3429197",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/sekaictf/2026/mte/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/sekaictf/2026/mte/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files",
+  "duplicate_of": "虚拟化/SekaiCTF_2026/MTE"
+}

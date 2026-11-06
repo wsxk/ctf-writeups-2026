@@ -1,0 +1,99 @@
+{
+  "event_id": "CTF-3095",
+  "event_title": "TAMUctf 2026",
+  "category": "逆向",
+  "title": "kitchen-sink",
+  "dirname": "TAMUctf_2026",
+  "source_urls": [
+    "https://github.com/tamuctf/tamuctf-2026/tree/HEAD/rev/kitchen-sink",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/TAMUctf/2026/rev/kitchen_sink"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/kitchen-sink/Makefile",
+      "local": "attachments/Makefile",
+      "size_expected": 2062,
+      "git_blob_sha": "29bd21c6c5e76b221398df6616d7276a72f83085",
+      "status": "downloaded",
+      "bytes": 2062,
+      "sha256": "14b1d4c5e80fdc9da05ba2caa6f7e5d72aded225250fe8e1215b42aa60f62c91"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/kitchen-sink/README.md",
+      "local": "attachments/README.md",
+      "size_expected": 504,
+      "git_blob_sha": "bedb67743f045dcf39e84ce9e858a0e1a0152ac6",
+      "status": "downloaded",
+      "bytes": 504,
+      "sha256": "00b3d6ab53f5bd9cda65d52fc2b9aff44cf45c105b197d9d7c3e838d4cdb2987"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/kitchen-sink/config.toml",
+      "local": "attachments/config.toml",
+      "size_expected": 159,
+      "git_blob_sha": "911b90443c4f1826f40162ee5bc79a128c1b7262",
+      "status": "downloaded",
+      "bytes": 159,
+      "sha256": "18317feca42848fbf0037c43542f4fb0465b263d60634fea0c1165af9eb04747"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/kitchen-sink/flag.txt",
+      "local": "attachments/flag.txt",
+      "size_expected": 52,
+      "git_blob_sha": "24e7803bbd8846eb476ade7526770bd9ef6b7990",
+      "status": "downloaded",
+      "bytes": 52,
+      "sha256": "856f1c8bae3a8a290ef26109e90eb87bd038263b3b5a5b886ffd1a48e1842e3e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/kitchen-sink/solve.py",
+      "local": "writeups/solve.py",
+      "size_expected": 402,
+      "git_blob_sha": "8f007f20a44384d92d9ff67a5287d67389ee98c1",
+      "status": "downloaded",
+      "bytes": 402,
+      "sha256": "2a38dd9d7338b53b5eee457acbb215bfa026073aff12b4f20b77555fe474f19e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/kitchen-sink/src/main.c",
+      "local": "attachments/src/main.c",
+      "size_expected": 8843,
+      "git_blob_sha": "802a0aea2bb874052261de7703c0c53e0abbbbc6",
+      "status": "downloaded",
+      "bytes": 8843,
+      "sha256": "230b477436fdc97487e248310dab7e3d3f5784c3d4df5eecc800701cfd8a6b0d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/kitchen_sink/README.md",
+      "local": "attachments/archived_handout/README.md",
+      "status": "downloaded",
+      "bytes": 117,
+      "sha256": "d04ab667722dce678e3c13f0fa180ff7dfa3bc372c26630725aae3b3745f434b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/kitchen_sink/kitchen-sink.tar.gz",
+      "local": "attachments/archived_handout/kitchen-sink.tar.gz",
+      "status": "downloaded",
+      "bytes": 10897,
+      "sha256": "44cc8f78b13b91951759ced7bfd64134b07611644405eec3114bfe227f0dff66"
+    }
+  ],
+  "notes": "官方仓库源码/构建材料及求解脚本，另从sajjadium/ctf-archives的2026目录配对下载原始题包（archived_handout）。未构建或执行。",
+  "attachment_kind": "original_package_and_official_source",
+  "directory": "逆向/TAMUctf_2026/kitchen-sink",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/kitchen-sink/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/kitchen-sink/Makefile",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/kitchen-sink/README.md",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/kitchen-sink/config.toml",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/kitchen-sink/flag.txt",
+    "https://raw.githubusercontent.com/tamuctf/tamuctf-2026/HEAD/rev/kitchen-sink/src/main.c",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/kitchen_sink/README.md",
+    "https://raw.githubusercontent.com/sajjadium/ctf-archives/main/ctfs/TAMUctf/2026/rev/kitchen_sink/kitchen-sink.tar.gz"
+  ],
+  "attachment_status": "downloaded"
+}

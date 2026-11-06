@@ -1,0 +1,131 @@
+{
+  "event_id": "CTF-3015",
+  "event_title": "LA CTF 2026",
+  "category": "pwn",
+  "title": "this-is-how-you-pwn-the-time-war",
+  "source_urls": [
+    "https://github.com/uclaacm/lactf-archive/tree/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war",
+    "https://ctftime.org/event/3015/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war/solve.py"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war/Dockerfile",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war/Makefile",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war/bf",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war/bf.c",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war/challenge.yaml",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war/flag.txt",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war/pwn_the_time_war",
+    "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war/pwn_the_time_war.c"
+  ],
+  "writeup_status": "已下载官方解题脚本（独立文字writeup未提供）",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "uclaacm/lactf-archive",
+  "repository_tree_sha": "3379d4a7b36680764a34e7dc817cc3c94c244764",
+  "artifacts": [
+    {
+      "path": "attachments/Dockerfile",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war/Dockerfile",
+      "bytes": 230,
+      "sha256": "d4f2ac324d9d159f285de76796eae8eeafd566816d21858608b5cfa94aed083e",
+      "git_blob_sha1": "5f72d4b22118e5fa37ca2eca67b055473da421f8",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/Makefile",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war/Makefile",
+      "bytes": 454,
+      "sha256": "1478b736bc8e5091e8b0ce0e5204826c3a6330147042e3a068c4f960d7431331",
+      "git_blob_sha1": "6fb0cd8c1db1b83e234c74063da858bbb45d7a8a",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/bf",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war/bf",
+      "bytes": 20576,
+      "sha256": "4bb1f23d85ee68ef94a6ac02118676e52e1700d5b700f19554ff66b7145a49dc",
+      "git_blob_sha1": "c27fc2b07a516e3e7cd4104ab75c65eadd31adc7",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/bf.c",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war/bf.c",
+      "bytes": 15094,
+      "sha256": "a3d5ebbfe563403bc28a0c9c0f7772dd6b259a6a0d9ee7dd4ce40023c914d419",
+      "git_blob_sha1": "21aaea8ea539571aace9362c68f08838d71396a5",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/challenge.yaml",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war/challenge.yaml",
+      "bytes": 373,
+      "sha256": "5ec8a1691a08a4cec5e92a375b1728e50fd1e24aa8350ef9a891af937ef53304",
+      "git_blob_sha1": "93d75c5bed99c33810de40707046140fc1dbbe51",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/flag.txt",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war/flag.txt",
+      "bytes": 67,
+      "sha256": "28204045c856d5b415ffb567e2658d8ca365e1b2e987d6a63cc30ab77896e4ab",
+      "git_blob_sha1": "da159352086d093e56c2d8e6e8c3d752d118180f",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/pwn_the_time_war",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war/pwn_the_time_war",
+      "bytes": 16360,
+      "sha256": "0fdc0f06e025020cf7d33ba88f1cb2a7bdf415f05a74a0928b69b0fa872d8af1",
+      "git_blob_sha1": "18b1406acc8b2c73ffe6e8f74273ea44aaf5e880",
+      "git_mode": "100755",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/pwn_the_time_war.c",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war/pwn_the_time_war.c",
+      "bytes": 851,
+      "sha256": "bbc1ba20b262e17bbe2f2a4c84c0914f7ea69c28359ad6a4fa8d316f414a1f38",
+      "git_blob_sha1": "af462f78012bb7841ce09454e4e288dc0700e54f",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/solve.py",
+      "url": "https://raw.githubusercontent.com/uclaacm/lactf-archive/HEAD/2026/pwn/this-is-how-you-pwn-the-time-war/solve.py",
+      "bytes": 1291,
+      "sha256": "4f02ef996c3e311e3ea645500ec38890898bbf5b85840ae0cc917de2156bbe2f",
+      "git_blob_sha1": "857957969dd14c45d81b7fde7d71c02ac9e6535f",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

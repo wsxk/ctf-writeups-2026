@@ -1,0 +1,455 @@
+{
+  "event_id": "CTF-3108",
+  "event_title": "BSidesSF CTF 2026",
+  "category": "android",
+  "title": "doremi",
+  "source_urls": [
+    "https://ctftime.org/event/3108/",
+    "https://github.com/BSidesSF/ctf-2026-release/tree/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/solution/.keep",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/solution/README",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/solution/original.png",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/solution/hook.js",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/solution/solution.py",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/solution/solved.png"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/.gitignore",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/build.gradle.kts",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/ic_launcher-playstore.png",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/proguard-rules.pro",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/java/com/bsidessf/doremi/MainActivity.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/java/com/bsidessf/doremi/FrameActivity.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/java/com/bsidessf/doremi/ui/theme/Color.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/AndroidManifest.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/aria_with_bg.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/java/com/bsidessf/doremi/ui/theme/Theme.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/java/com/bsidessf/doremi/ui/theme/Type.kt",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/aria.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/cadence.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/cadence_with_bg.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/frame.png",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/ic_launcher_background.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/lyra_with_bg.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/rhythm_with_bg.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/ic_launcher_foreground.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/rhythm.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/sonnet_with_bg.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/sonnet.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/lyra.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/tempo_with_bg.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/tempo.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/layout/activity_frame.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-mdpi/ic_launcher.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-hdpi/ic_launcher.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/layout/activity_main.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-xhdpi/ic_launcher.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/values/colors.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/values/ic_launcher_background.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/xml/backup_rules.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/values/themes.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/xml/data_extraction_rules.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/build.gradle.kts",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/gradle.properties",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/values/strings.xml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/gradle/libs.versions.toml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/settings.gradle.kts",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/local.properties",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/gradle/wrapper/gradle-wrapper.properties",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/gradlew",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/metadata.yml",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/gradlew.bat",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/distfiles/doremi.apk",
+    "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/gradle/wrapper/gradle-wrapper.jar"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": "BSidesSF 2026 官方 Android APK、源码及 solution 正文/脚本/图片。仓库内通用工具 frida-server 和 apktool JAR 未重复下载；题目APK与解题脚本已保存。",
+  "files": [
+    {
+      "path": "writeups/solution/.keep",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/solution/.keep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Git tree confirms this is an intentional empty upstream file"
+    },
+    {
+      "path": "attachments/challenge/Android/app/.gitignore",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/.gitignore",
+      "bytes": 6,
+      "sha256": "5c3174b74edc6f2b9e0743594b8bd3c7f31e4f4405758cc9872b3fe1de1d28b4"
+    },
+    {
+      "path": "attachments/challenge/Android/app/build.gradle.kts",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/build.gradle.kts",
+      "bytes": 1806,
+      "sha256": "f7f33bbe7ef84d4d18b715902bb00173644d054f5625d58f29665dc78aa9ccc7"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/ic_launcher-playstore.png",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/ic_launcher-playstore.png",
+      "bytes": 7279,
+      "sha256": "189447643cfb0c56e143660130003f72290f4a2ab363055441a5157c430feb55"
+    },
+    {
+      "path": "attachments/challenge/Android/app/proguard-rules.pro",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/proguard-rules.pro",
+      "bytes": 750,
+      "sha256": "56fd960cf225f6ca40f982b13a5dbb0d8bc3dfde13ff76422825c6070d0a1890"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/java/com/bsidessf/doremi/MainActivity.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/java/com/bsidessf/doremi/MainActivity.kt",
+      "bytes": 643,
+      "sha256": "e0c40d17c8965efaf48cff0067dd8fce4a0d4bbbb15cb073293c76bcf293028e"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/java/com/bsidessf/doremi/FrameActivity.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/java/com/bsidessf/doremi/FrameActivity.kt",
+      "bytes": 1513,
+      "sha256": "54d4fe2f7eb189766fb9269d71d3e6942356f8394f9f23cb6fee3fe9d1cc3406"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/java/com/bsidessf/doremi/ui/theme/Color.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/java/com/bsidessf/doremi/ui/theme/Color.kt",
+      "bytes": 283,
+      "sha256": "1f0b08e105879e92417ef6aa0141f2cb94a434f52a57cb05939e022d441875d3"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/AndroidManifest.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/AndroidManifest.xml",
+      "bytes": 1044,
+      "sha256": "33e5ac221f35e2c903057dae29b1d49e75dc28fd88c0a5066cf8879b6f8c37de"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/drawable/aria_with_bg.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/aria_with_bg.xml",
+      "bytes": 385,
+      "sha256": "ace0151f6fecc2de73d459f744dd1ccfa4cb2e1cf02a5667acbba0b975f2a156"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/java/com/bsidessf/doremi/ui/theme/Theme.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/java/com/bsidessf/doremi/ui/theme/Theme.kt",
+      "bytes": 1693,
+      "sha256": "5bd4dddb7df60a20cd4e5538bcf806b4e01f50c3b5f27a3bdb79e62b5a9ed62a"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/java/com/bsidessf/doremi/ui/theme/Type.kt",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/java/com/bsidessf/doremi/ui/theme/Type.kt",
+      "bytes": 988,
+      "sha256": "26e2c0b182698b5d7a0c7f7dc295930d48405c3ecb66efcef983ab0f63a19fb3"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/drawable/aria.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/aria.xml",
+      "bytes": 3229,
+      "sha256": "7e93eb67efba2f3cbda5c3602416e54264c8bb0bf602b75e81b6d5f2d499c55c"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/drawable/cadence.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/cadence.xml",
+      "bytes": 3780,
+      "sha256": "e3a9ab71e1776346d5cc933a600fa79f2a8af3e81aadadcf91b91ad752d09d16"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/drawable/cadence_with_bg.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/cadence_with_bg.xml",
+      "bytes": 388,
+      "sha256": "37c63c2a11ac668637abc6f0d4cc7ac5e495b7d78123fcff3d0276c882703fd8"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/drawable/frame.png",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/frame.png",
+      "bytes": 281757,
+      "sha256": "219332e18eb5cd70b770bbf777949b8db413fd0f25027bcd591ca2a46bd193dc"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/drawable/ic_launcher_background.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/ic_launcher_background.xml",
+      "bytes": 5606,
+      "sha256": "ed423c73a6f40a4d2909f0901e60527b3a807cd59e1b5593bcaae1808b1c6321"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/drawable/lyra_with_bg.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/lyra_with_bg.xml",
+      "bytes": 385,
+      "sha256": "8a0b32972f512e292096071d8e8882008431893b0c320414d59a623c9ef768f4"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/drawable/rhythm_with_bg.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/rhythm_with_bg.xml",
+      "bytes": 387,
+      "sha256": "a1c5aecc2cbb0fb6130deab385c6c3d43d64ab87d406c94da9fce5130b97e680"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/drawable/ic_launcher_foreground.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/ic_launcher_foreground.xml",
+      "bytes": 544,
+      "sha256": "a0df94e7de1bc22284f2d9239c503ea7d9430562ab567365f3c9f81b7e45b15f"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/drawable/rhythm.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/rhythm.xml",
+      "bytes": 10400,
+      "sha256": "9905b67fd747230c143f14bc435a57910b735bdff26a403c30aeac460831aac1"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/drawable/sonnet_with_bg.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/sonnet_with_bg.xml",
+      "bytes": 387,
+      "sha256": "1f89c95efbdde5528b72e0a83c47b50b68279a8210d900123afe4d77be42aab0"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/drawable/sonnet.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/sonnet.xml",
+      "bytes": 3466,
+      "sha256": "49fd348a1a8b389612c6057a7982cd60aacd1fa1345f5f2d117849f10ff4bff4"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/drawable/lyra.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/lyra.xml",
+      "bytes": 3051,
+      "sha256": "7f5e079033aa9ed711b8aa3874d15d07d5140addf564ac2f2c225e6c5cfa6327"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/drawable/tempo_with_bg.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/tempo_with_bg.xml",
+      "bytes": 386,
+      "sha256": "deb86028211edc63e38815d878224d6779dd5659b6116dc8f3f8e6a8ee3514c6"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/drawable/tempo.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/drawable/tempo.xml",
+      "bytes": 4679,
+      "sha256": "c3882d53d6a29eb322b0a20543335fbc3c0212aea1b2ddec209b0d6dc2350b4d"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/layout/activity_frame.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/layout/activity_frame.xml",
+      "bytes": 3230,
+      "sha256": "54afb3b0fd4f2e103aec20e379ad3d577187d2ce2724b83fd6cee960ec701a08"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp",
+      "bytes": 2500,
+      "sha256": "fe6d0f64e2928ce4f1fdb554ffc212c2c86eafad5a3677d798ae329573dab491"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+      "bytes": 267,
+      "sha256": "daf8d08484dc1c1d1f268c4e5a69f9a9597c6941dc199890008cffd29aae8c88"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/mipmap-mdpi/ic_launcher.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-mdpi/ic_launcher.webp",
+      "bytes": 616,
+      "sha256": "893b366f51d226e2caa733241a30d6cdabfe2d633d2822e100e684ef8f71a158"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+      "bytes": 267,
+      "sha256": "daf8d08484dc1c1d1f268c4e5a69f9a9597c6941dc199890008cffd29aae8c88"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/mipmap-hdpi/ic_launcher.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-hdpi/ic_launcher.webp",
+      "bytes": 704,
+      "sha256": "1513abfa75599132ada14afa2f840f89f231b1b6ccf2f3587328dd8debc04363"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/layout/activity_main.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/layout/activity_main.xml",
+      "bytes": 1250,
+      "sha256": "29bc3303bf98454892d4846e5c668318761866e33be3dc67bd000e0327b01972"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp",
+      "bytes": 1398,
+      "sha256": "fc1e27486dd7eb8712c446c3f48bfbfb9168dde8754b1be682c0643f394a89d0"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/mipmap-xhdpi/ic_launcher.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-xhdpi/ic_launcher.webp",
+      "bytes": 998,
+      "sha256": "3afdf3975782397220172bf0712c332d24513a736cf7926ea4f8f1a8dad2592f"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp",
+      "bytes": 2178,
+      "sha256": "3172781b7e951033eb13284eb7974f04450d82948bca9a7727bcd32b9a7ebaee"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/values/colors.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/values/colors.xml",
+      "bytes": 470,
+      "sha256": "4fde1692911b476d32025846723a5d62d1c2eeffae0e9602cad43816a369ec51"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp",
+      "bytes": 5480,
+      "sha256": "af3f2556246a0040db81f24caae436c9ce1af9461ad3d72a3f7273f2e8521d78"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp",
+      "bytes": 7734,
+      "sha256": "19dd6f7b0b01a060f3e0a0cc196bef2debb741d26897aa821abc17724012c4e8"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp",
+      "bytes": 1588,
+      "sha256": "f2abded66adadbb77858a5abaaae2716e41689328369f140bb1db4742e39221a"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp",
+      "bytes": 3468,
+      "sha256": "d9559d319b21a4e432f2c59c562f3b70ecdd54cfc9c14e19e17132b8356c6655"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/values/ic_launcher_background.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/values/ic_launcher_background.xml",
+      "bytes": 120,
+      "sha256": "31a5e536349cc2f10b44722a95ee7f003ba95916339a29a83c34ffbfbb13358e"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/xml/backup_rules.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/xml/backup_rules.xml",
+      "bytes": 478,
+      "sha256": "6cf1a27e6807b1d24e41d3fbe7ddc1bfe1f42226027964f6eaf477d71b43b283"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/values/themes.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/values/themes.xml",
+      "bytes": 148,
+      "sha256": "b285b784a3f283d02082c58e5c2ac1736bb5a1831eb1910c66ae608c2c529e1a"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/xml/data_extraction_rules.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/xml/data_extraction_rules.xml",
+      "bytes": 551,
+      "sha256": "cb1fc47ab4a984530ed60e0e6ee638929c3038290e7e7e0b4b03a3a30fbe7381"
+    },
+    {
+      "path": "attachments/challenge/Android/build.gradle.kts",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/build.gradle.kts",
+      "bytes": 218,
+      "sha256": "be7dbfa1841b18b020f744e203b995d3dac5709c2a6b8e310fbcfaed0364919a"
+    },
+    {
+      "path": "attachments/challenge/Android/gradle.properties",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/gradle.properties",
+      "bytes": 1346,
+      "sha256": "51e4b5a131eb01b1cdeb2f6f26aaba69d367a4a9d4ccd10c6d6f6d12fd545b66"
+    },
+    {
+      "path": "attachments/challenge/Android/app/src/main/res/values/strings.xml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/app/src/main/res/values/strings.xml",
+      "bytes": 365,
+      "sha256": "698183a5386fef91ca3d7667f7db2db4faeeb098cd329fd81f3f15bda5bc9967"
+    },
+    {
+      "path": "attachments/challenge/Android/gradle/libs.versions.toml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/gradle/libs.versions.toml",
+      "bytes": 1905,
+      "sha256": "c461b33b94e2cd7ab6fb70b96ba3657316b1e5c963980e67e04255d8fa796ef6"
+    },
+    {
+      "path": "attachments/challenge/Android/settings.gradle.kts",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/settings.gradle.kts",
+      "bytes": 530,
+      "sha256": "55805c3d6b8703124e6c36054214ad2be6f058a585ac28a9c2d3b29473a4df3c"
+    },
+    {
+      "path": "attachments/challenge/Android/local.properties",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/local.properties",
+      "bytes": 433,
+      "sha256": "647e0fd7879d01e5ea92a065f90aa4a2a248bbdd963e6603c6fa56e9adbc396d"
+    },
+    {
+      "path": "attachments/challenge/Android/gradle/wrapper/gradle-wrapper.properties",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 369,
+      "sha256": "7c073ab2c4ae14d89449badd0c57561d691d939b37f9ba67c650d070a8525cc2"
+    },
+    {
+      "path": "writeups/solution/README",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/solution/README",
+      "bytes": 1459,
+      "sha256": "965cec6aae7c3f7481756932b18a5c70533402634eb6ad4ca2b1b59919784119"
+    },
+    {
+      "path": "attachments/challenge/Android/gradlew",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/gradlew",
+      "bytes": 8728,
+      "sha256": "3238afb2aed5cb16eb7d6718077e7138059108f007b54179e9cc157c5a6e0e89"
+    },
+    {
+      "path": "attachments/metadata.yml",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/metadata.yml",
+      "bytes": 733,
+      "sha256": "86df8660045b75fec7cbe5ed573acca5b6c06b71f0e7068296561cd3647f608b"
+    },
+    {
+      "path": "writeups/solution/original.png",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/solution/original.png",
+      "bytes": 378862,
+      "sha256": "bfae71d9fdc31d9fce47c22df96b2b79043e7bbce805e647ec12331f60dce358"
+    },
+    {
+      "path": "attachments/challenge/Android/gradlew.bat",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/gradlew.bat",
+      "bytes": 2937,
+      "sha256": "1d297e00bd21de3ace22b4d7f2de1f9dfa858883d66bbf7c1ccbecccec8f4f3b"
+    },
+    {
+      "path": "writeups/solution/hook.js",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/solution/hook.js",
+      "bytes": 1771,
+      "sha256": "7dea842cce67cf8de11684e328cbc39334bca523766068b54e299dc1482af4fe"
+    },
+    {
+      "path": "writeups/solution/solution.py",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/solution/solution.py",
+      "bytes": 7416,
+      "sha256": "709073dddf524a354f72726a8fb6e7b11de4806a961bdd17bacb4d9dc5aefa18"
+    },
+    {
+      "path": "writeups/solution/solved.png",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/solution/solved.png",
+      "bytes": 176715,
+      "sha256": "64c7ea8f4eb6fd223fc4be3bddffc6507e2e1387076f16497d9bdeece76652e3"
+    },
+    {
+      "path": "attachments/distfiles/doremi.apk",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/distfiles/doremi.apk",
+      "bytes": 11382687,
+      "sha256": "7bfe7db7f414e2510704df08999be2afe9b5f3ea0131b48ead83b5eb8fdcbf44"
+    },
+    {
+      "path": "attachments/challenge/Android/gradle/wrapper/gradle-wrapper.jar",
+      "url": "https://raw.githubusercontent.com/BSidesSF/ctf-2026-release/68ee0e460eb572aaec17f082071f8ebf1d6f7330/doremi/challenge/Android/gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 45457,
+      "sha256": "76805e32c009c0cf0dd5d206bddc9fb22ea42e84db904b764f3047de095493f3"
+    }
+  ],
+  "errors": []
+}

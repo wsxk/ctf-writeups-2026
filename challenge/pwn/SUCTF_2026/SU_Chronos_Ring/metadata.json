@@ -1,0 +1,133 @@
+{
+  "event_id": "CTF-3161",
+  "event_title": "SUCTF 2026",
+  "category": "pwn",
+  "title": "SU_Chronos_Ring",
+  "source_urls": [
+    "https://github.com/team-su/SUCTF-2026/tree/HEAD/pwn/SU_Chronos_Ring",
+    "https://ctftime.org/event/3161/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Chronos_Ring/writeup/writeup.md"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Chronos_Ring/env/pwn_deploy/Dockerfile",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Chronos_Ring/env/pwn_deploy/bzImage",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Chronos_Ring/env/pwn_deploy/chronos_ring.ko",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Chronos_Ring/env/pwn_deploy/docker-compose.yml",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Chronos_Ring/env/pwn_deploy/flag",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Chronos_Ring/env/pwn_deploy/initramfs.cpio.gz",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Chronos_Ring/env/pwn_deploy/run.sh",
+    "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Chronos_Ring/sourcecode/sourcecode.zip"
+  ],
+  "writeup_status": "已下载正文",
+  "attachment_status": "已下载官方题目附件/源码",
+  "notes": [
+    "未执行题目、solver、容器或二进制。",
+    "attachments 保留公开仓库原目录；有dist/zip时为原始分发包，其余为官方公开源码/部署文件。",
+    "README可同时含题面与解答；纯solver与文字writeup在状态字段分别标记。"
+  ],
+  "repository": "team-su/SUCTF-2026",
+  "repository_tree_sha": "f52d0aec9aa6c7575795edeb317dcfd130d04d99",
+  "artifacts": [
+    {
+      "path": "attachments/env/pwn_deploy/Dockerfile",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Chronos_Ring/env/pwn_deploy/Dockerfile",
+      "bytes": 413,
+      "sha256": "40b611f44a34110472f352fc8608589d3e6d0cfa83ac0ae2c9d3fc236da055ef",
+      "git_blob_sha1": "695b71b4b1ed0d425e15f9d28d1fbf878d66be8e",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/pwn_deploy/bzImage",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Chronos_Ring/env/pwn_deploy/bzImage",
+      "bytes": 16782336,
+      "sha256": "1a6a699106d15b4ec47037ae9f4436586feacb76e5f5ef5bc16d741c022b6a29",
+      "git_blob_sha1": "617596b21b75f816f86f7ea8e3ea26f1c0465b9a",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/pwn_deploy/chronos_ring.ko",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Chronos_Ring/env/pwn_deploy/chronos_ring.ko",
+      "bytes": 27664,
+      "sha256": "0fe013bc3bafd67dfd62c907e6999bd77dace6debe398d31228806de6d4e3435",
+      "git_blob_sha1": "8ad68db7b30c9b5805838ee468f1b4ade7147d5b",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/pwn_deploy/docker-compose.yml",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Chronos_Ring/env/pwn_deploy/docker-compose.yml",
+      "bytes": 159,
+      "sha256": "892c3cb96fa8dbcf442c9135aec7a07e3bdbfe8e36ed898eb12dda7345d12d05",
+      "git_blob_sha1": "d90c164f0e07d2e53294c7ef6765287eae025a2d",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/pwn_deploy/flag",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Chronos_Ring/env/pwn_deploy/flag",
+      "bytes": 19,
+      "sha256": "7cdc623f21190705be7712abf357ac81326ca672f9c2b748129d541d8820780c",
+      "git_blob_sha1": "feaf94c210ec6ed4c39440df0e9c1f6964846b68",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/pwn_deploy/initramfs.cpio.gz",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Chronos_Ring/env/pwn_deploy/initramfs.cpio.gz",
+      "bytes": 707409,
+      "sha256": "904c15b565b1542ad23561f03bb224d1450a83e567c2eaa1a75ba5eae82a90b7",
+      "git_blob_sha1": "70cc18e2894031dc63c34abce589f2ab8fa17047",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/env/pwn_deploy/run.sh",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Chronos_Ring/env/pwn_deploy/run.sh",
+      "bytes": 965,
+      "sha256": "402b2ea96c22fe4a817b8106bf7ed2dc2b103c9b3a39126f3a8fc7cf3c1829f7",
+      "git_blob_sha1": "fdef858598d899de7592a8c7551fe442a6f73c72",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "attachments/sourcecode/sourcecode.zip",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Chronos_Ring/sourcecode/sourcecode.zip",
+      "bytes": 5351,
+      "sha256": "240dbde4d2dcbe859b5f7d4edccd749e8f48a1d3480c9acf81050949fb9757d2",
+      "git_blob_sha1": "6cd3ccfb0a9a74add6781758da125e4b165fb199",
+      "git_mode": "100644",
+      "kind": "attachments",
+      "lfs_resolved": false
+    },
+    {
+      "path": "writeups/writeup/writeup.md",
+      "url": "https://raw.githubusercontent.com/team-su/SUCTF-2026/HEAD/pwn/SU_Chronos_Ring/writeup/writeup.md",
+      "bytes": 3085,
+      "sha256": "0daa32c017334a1a9bcd486269bf3f6c73fb8e84950a968dc3b9a08acf0358ac",
+      "git_blob_sha1": "8346a7e1160b594f882c4d18c7b3669f7dcf860a",
+      "git_mode": "100644",
+      "kind": "writeups",
+      "lfs_resolved": false
+    }
+  ],
+  "download_errors": [],
+  "omitted_files": [],
+  "has_verified_solution": true,
+  "prose_files": [
+    "writeups/writeup/writeup.md"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06",
+  "attachment_complete": true
+}

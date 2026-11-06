@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background layer -->
+    <item
+        android:id="@+id/bg">
+        <shape android:shape="rectangle">
+            <solid android:color="#551F7A"/>
+        </shape>
+    </item>
+
+    <!-- Vector on top -->
+    <item android:drawable="@drawable/rhythm"/>
+</layer-list>

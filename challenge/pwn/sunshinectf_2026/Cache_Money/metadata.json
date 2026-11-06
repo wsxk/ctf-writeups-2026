@@ -1,0 +1,77 @@
+{
+  "event_id": "CTF-3399",
+  "event_title": "SunshineCTF 2026",
+  "title": "Cache_Money",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "use-after-free (uaf)",
+    "tcache-poisoning",
+    "safe-linking"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/sunshinectf/2026/cache_money/",
+    "https://ctf42.online/ctfs/sunshinectf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Cache_Money"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/SunshineCTF-2026/tree/main/pwn/cache-money"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/SunshineCTF/2026/pwn/Cache_Money",
+    "https://ctf42.online/ctfs/sunshinectf/2026/cache_money/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/sunshinectf_2026/Cache_Money/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/SunshineCTF-2026/main/pwn/cache-money/README.md",
+      "bytes": 4074,
+      "sha256": "cf5c82c67ef38ce451d9db0cfff4a4975c04082915a2460bc5950607ae3ca169",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/sunshinectf_2026/Cache_Money/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SunshineCTF/2026/pwn/Cache_Money/README.md",
+      "bytes": 134,
+      "sha256": "3e53247a4b4b9dc38df3dc2e58e333053dbe70ecb2f1279cff8a6f44ba284cb9",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/sunshinectf_2026/Cache_Money/attachments/upstream/cache_money",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SunshineCTF/2026/pwn/Cache_Money/cache_money",
+      "bytes": 14592,
+      "sha256": "f6b0c44221ac029f16f2d833178ee3747272930deca900b7525956b766676f23",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/sunshinectf_2026/Cache_Money/attachments/upstream/ld-linux-x86-64.so.2",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SunshineCTF/2026/pwn/Cache_Money/ld-linux-x86-64.so.2",
+      "bytes": 236616,
+      "sha256": "854a9eb45875e00f48e1e89d40251317931d2d82555ab612d6090beba0c9f972",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/sunshinectf_2026/Cache_Money/attachments/upstream/libc.so.6",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/SunshineCTF/2026/pwn/Cache_Money/libc.so.6",
+      "bytes": 2125328,
+      "sha256": "c1e50a701d3245c8c45a1ba40151efe414ac41d2c9ae604087b4875e0d85c4fb",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/sunshinectf/2026/cache_money/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/sunshinectf/2026/cache_money/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

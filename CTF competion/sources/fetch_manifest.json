@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://ctftime.org/api/v1/events/?limit=1000&start=1764547200&finish=1798848000",
+    "file": "ctftime_api_raw.json",
+    "fetched_at_utc": "2026-11-06T13:26:54.038990+00:00",
+    "bytes": 569169
+  },
+  {
+    "url": "https://ctftime.org/event/list/?year=2026",
+    "file": "ctftime_2026.html",
+    "fetched_at_utc": "2026-11-06T13:26:57.846840+00:00",
+    "bytes": 82893
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "event_id": "CTF-3314",
+  "event_title": "SCTF 2026",
+  "category": "逆向",
+  "title": "Zombie_progression",
+  "dirname": "SCTF_2026",
+  "source_urls": [
+    "https://github.com/SycloverTeam/SCTF-2026/tree/HEAD/Reverse/Zombie_progression"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Zombie_progression/WP.md",
+      "local": "writeups/WP.md",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 8563,
+      "sha256": "4b2743b9ac9f9d69d032e65e04b2314ec02770c76974c994ca2f67ba93d94fe8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Zombie_progression/Zombie_progression",
+      "local": "attachments/Zombie_progression",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 108760,
+      "sha256": "607b5b77dfbd587b293526efc6887583b18ea3fd27a6021f143f6d944c1c7e2e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Zombie_progression/exp/solve.py",
+      "local": "writeups/exp/solve.py",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 267122,
+      "sha256": "84bbe240fc536be212d363158771a2089a40c89fc8ead5cd795e40eedb0d9e39"
+    }
+  ],
+  "notes": "官方2026仓库题目附件和完整writeup。按题目实际内容归类：GuardMaster为APK；BrainfOok及babel_furnace使用自定义VM。",
+  "directory": "逆向/SCTF_2026/Zombie_progression",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Zombie_progression/WP.md",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Zombie_progression/exp/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/Zombie_progression/Zombie_progression"
+  ],
+  "attachment_status": "downloaded"
+}

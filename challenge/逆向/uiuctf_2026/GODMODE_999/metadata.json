@@ -1,0 +1,66 @@
+{
+  "event_id": "CTF-3148",
+  "event_title": "UIUCTF 2026",
+  "title": "GODMODE_999",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [],
+  "source_urls": [
+    "https://ctf42.online/ctfs/uiuctf/2026/godmode_999/",
+    "https://ctf42.online/ctfs/uiuctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/rev/GODMODE_999"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/uiuctf-2026-reverse-engineering-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UIUCTF/2026/rev/GODMODE_999",
+    "https://ctf42.online/ctfs/uiuctf/2026/godmode_999/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/uiuctf_2026/GODMODE_999/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/uiuctf-2026-reverse-engineering-writeup/",
+      "bytes": 167239,
+      "sha256": "623a9ef1a3b164fa37b30b1e333b99d775769a8d8103b9f76a0e4bddd2bba0bc",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/uiuctf_2026/GODMODE_999/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UIUCTF/2026/rev/GODMODE_999/README.md",
+      "bytes": 583,
+      "sha256": "0f044bab0d060815ab08ee6f678e2aa3151732861a69d37c168bd39644af03f1",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/uiuctf_2026/GODMODE_999/attachments/upstream/godmode.rom",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UIUCTF/2026/rev/GODMODE_999/godmode.rom",
+      "bytes": 13672,
+      "sha256": "7f95a0d723ce4452a8401d5ac24d11f495d9600d407129e5412416013a11652c",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/uiuctf_2026/GODMODE_999/attachments/upstream/ranked.img.xz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UIUCTF/2026/rev/GODMODE_999/ranked.img.xz",
+      "bytes": 16775480,
+      "sha256": "7a8845718655445fc11c8b7a0619d6f3d3c85a168deac8f55842dc1db6c5d3ad",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/uiuctf/2026/godmode_999/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/uiuctf/2026/godmode_999/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

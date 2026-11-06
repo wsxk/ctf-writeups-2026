@@ -1,0 +1,55 @@
+{
+  "records": [
+    {
+      "event_id": "CTF-3161",
+      "category": "iot",
+      "title": "SU_老年固件",
+      "path": "iot\\SUCTF_2026\\SU_老年固件",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3161",
+      "category": "android",
+      "title": "SU_flumel",
+      "path": "android\\SUCTF_2026\\SU_flumel",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3247",
+      "category": "android",
+      "title": "back_and_forth",
+      "path": "android\\BYUCTF 2026\\back_and_forth",
+      "writeup_status": "downloaded",
+      "attachment_status": "downloaded",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3201",
+      "category": "android",
+      "title": "d3llvm",
+      "path": "android\\D^3CTF 2026\\d3llvm",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "errors": []
+    },
+    {
+      "event_id": "CTF-3364",
+      "category": "android",
+      "title": "Backdrop",
+      "path": "android\\Securinets CTF Quals 2026\\Backdrop",
+      "writeup_status": "downloaded",
+      "attachment_status": "missing",
+      "errors": []
+    }
+  ],
+  "queries": [
+    "SUCTF 2026 SU_flumel SU_老年固件",
+    "BYUCTF 2026 back_and_forth",
+    "d3llvm 2026 APK",
+    "Backdrop Securinets 2026 APK writeup"
+  ]
+}

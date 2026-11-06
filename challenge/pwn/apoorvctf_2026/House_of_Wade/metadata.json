@@ -1,0 +1,53 @@
+{
+  "event_id": "CTF-3171",
+  "event_title": "ApoorvCTF 2026",
+  "title": "House_of_Wade",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "use-after-free (uaf)",
+    "tcache-poisoning"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/apoorvctf/2026/house_of_wade/",
+    "https://ctf42.online/ctfs/apoorvctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ApoorvCTF/2026/pwn/House_of_Wade"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/apoorvctf2026/tree/main/pwn/house-of-wade"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ApoorvCTF/2026/pwn/House_of_Wade",
+    "https://ctf42.online/ctfs/apoorvctf/2026/house_of_wade/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "unavailable",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/apoorvctf_2026/House_of_Wade/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/apoorvctf2026/main/pwn/house-of-wade/README.md",
+      "bytes": 1678,
+      "sha256": "383b7004d1f2cc0fab27df41a4713fc85d375f628728a49ae1c9e856030307ab",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/apoorvctf_2026/House_of_Wade/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/ApoorvCTF/2026/pwn/House_of_Wade/README.md",
+      "bytes": 283,
+      "sha256": "1ed092135dd417c771032012b0373f68115b4bee5ceb58bf8f052d76c0705845",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/apoorvctf/2026/house_of_wade/folder.zip?kind=files",
+      "error": "archive contains only documentation; no handout payload"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

@@ -1,0 +1,64 @@
+{
+  "event_id": "CTF-3153",
+  "event_title": "b01lers CTF 2026",
+  "title": "piano",
+  "category": "虚拟化",
+  "original_category": "Reverse",
+  "tags": [
+    "ptrace-vm",
+    "sigbus",
+    "linear-equations"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/b01lers/2026/piano/",
+    "https://ctf42.online/ctfs/b01lers/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/b01lers/2026/rev/piano"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/b01lers-ctf-2026/tree/main/rev/piano"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/b01lers/2026/rev/piano",
+    "https://ctf42.online/ctfs/b01lers/2026/piano/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "本题按标签归为虚拟机/字节码/虚拟化逆向或VM漏洞；不等同于宿主机/Hypervisor逃逸。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "虚拟化/b01lers_2026/piano/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/b01lers-ctf-2026/main/rev/piano/README.md",
+      "bytes": 12561,
+      "sha256": "fed842a1575ec8a70ac88f89c59f19f7c650e1e3d27311ebe9e446be5e5592b0",
+      "kind": "writeup"
+    },
+    {
+      "path": "虚拟化/b01lers_2026/piano/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/b01lers/2026/rev/piano/README.md",
+      "bytes": 28,
+      "sha256": "16846405df449b6edb7edd1d64a00021c3720bbc59ce30f29127b1c20418bff3",
+      "kind": "attachment"
+    },
+    {
+      "path": "虚拟化/b01lers_2026/piano/attachments/upstream/chal",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/b01lers/2026/rev/piano/chal",
+      "bytes": 4417144,
+      "sha256": "ec3f408af2a532b664b1a4a0dcf3885573110eb08d1af30baf1f08b9257bbfc5",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/b01lers/2026/piano/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/b01lers/2026/piano/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

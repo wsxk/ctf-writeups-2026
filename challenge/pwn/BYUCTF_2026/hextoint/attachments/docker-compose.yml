@@ -1,0 +1,9 @@
+services:
+  hex_to_int2:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "1365:5000"
+    privileged: true

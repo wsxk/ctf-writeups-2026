@@ -1,0 +1,62 @@
+{
+  "event_id": "CTF-3311",
+  "event_title": "VuwCTF 2026",
+  "title": "ilikewords",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "xor",
+    "kaprekar-constant"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/vuwctf/2026/ilikewords/",
+    "https://ctf42.online/ctfs/vuwctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/VuwCTF/2026/rev/ilikewords"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/vuwctf-2026-reverse-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/VuwCTF/2026/rev/ilikewords",
+    "https://ctf42.online/ctfs/vuwctf/2026/ilikewords/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/vuwctf_2026/ilikewords/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/vuwctf-2026-reverse-writeup/",
+      "bytes": 98639,
+      "sha256": "394d5ad2bd1c062cdf7e8877bdf5c8f30db626410eef4493e7668a8ee7f989af",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/vuwctf_2026/ilikewords/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/VuwCTF/2026/rev/ilikewords/README.md",
+      "bytes": 126,
+      "sha256": "c8c5db4e34841f6b9fd9adfac0f12dd859f27a9136134f35daeaf9c1ad223f6d",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/vuwctf_2026/ilikewords/attachments/upstream/ilikewords",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/VuwCTF/2026/rev/ilikewords/ilikewords",
+      "bytes": 14480,
+      "sha256": "b6c7ea91fb756978ebcdf3c0d136a259edff5622767420bd607dac6b1e813988",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/vuwctf/2026/ilikewords/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/vuwctf/2026/ilikewords/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

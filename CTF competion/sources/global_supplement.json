@@ -1,0 +1,242 @@
+{
+  "researched_on": "2026-11-06",
+  "scope": "全球CTF补充与CTFtime异常核验。仅列本次确认的补充项，不代表非CTFtime赛事已穷尽；不重复DEF CON预赛/决赛。",
+  "events": [
+    {
+      "title": "MITRE Embedded Capture the Flag (eCTF) 2026",
+      "ctftime_id": 2916,
+      "start": "2026-01-14",
+      "end": "2026-04-15",
+      "date_precision": "day",
+      "timezone": "来源未注明，未换算北京时间",
+      "format": "嵌入式安全设计与攻防",
+      "location": "线上",
+      "restrictions": "学术团队；具体资格以规则为准",
+      "url": "https://rules.ectf.mitre.org/index.html",
+      "source_url": "https://rules.ectf.mitre.org/index.html",
+      "notes": "官方规则站明确赛期1月14日—4月15日；4月24日为颁奖日，不计比赛结束日。"
+    },
+    {
+      "title": "Snyk Fetch the Flag 2026",
+      "start": "2026-02-13T01:00:00+08:00",
+      "end": "2026-02-14T01:00:00+08:00",
+      "date_precision": "minute",
+      "timezone": "Asia/Shanghai",
+      "format": "Jeopardy",
+      "location": "线上",
+      "restrictions": "个人或最多5人团队",
+      "url": "https://snyk.io/events/ctf/",
+      "source_url": "https://snyk.io/events/ctf/",
+      "notes": "官方公布2月12日12:00 ET—2月13日12:00 ET；按当日美国东部标准时间UTC−5换算。"
+    },
+    {
+      "title": "picoCTF 2026",
+      "start": "2026-03-09",
+      "end": "2026-03-19",
+      "date_precision": "day",
+      "timezone": "官方新闻日期，未换算北京时间",
+      "format": "Jeopardy",
+      "location": "线上",
+      "restrictions": "开放参赛；奖项资格以规则为准",
+      "url": "https://picoctf.org/competitions/2026-spring.html",
+      "source_url": "https://www.cylab.cmu.edu/news/2026/index.html",
+      "additional_sources": [
+        "https://www.cylab.cmu.edu/news/2026/02/26-picoctf.html",
+        "https://picoctf.org/competitions/2026-spring-rules.html"
+      ],
+      "notes": "CMU官方新闻索引明确3月9日至19日，新闻正文确认3月9日开始、历时10天；本次未从可读取官方页面核实钟点，保留日期精度。"
+    },
+    {
+      "title": "Google SecOps CTF @ O3C Oslo 2026",
+      "start": "2026-05-07T15:45:00+08:00",
+      "end": "2026-05-07T17:15:00+08:00",
+      "date_precision": "minute",
+      "timezone": "Asia/Shanghai",
+      "format": "防御/安全运营 CTF",
+      "location": "挪威奥斯陆 O3C Office",
+      "restrictions": "报名筛选；优先Google/O3 Cyber客户及潜在客户",
+      "url": "https://www.o3c.no/knowledge/google-secops-ctf",
+      "source_url": "https://www.o3c.no/knowledge/google-secops-ctf",
+      "notes": "主办方议程列5月7日CTF 09:45—11:15；按奥斯陆当地夏令时UTC+2换算。整个活动08:00—11:30，未把签到或介绍计为比赛时间。"
+    },
+    {
+      "title": "HTB Global Cyber Skills Benchmark CTF 2026: Project Nightfall",
+      "start": "2026-05-15T21:00:00+08:00",
+      "end": "2026-05-20T21:00:00+08:00",
+      "date_precision": "minute",
+      "timezone": "Asia/Shanghai",
+      "format": "Jeopardy & more",
+      "location": "线上",
+      "restrictions": "企业/组织团队，需匹配企业邮箱；不接受高校学生或教师团队",
+      "url": "https://www.hackthebox.com/events/global-cyber-skills-benchmark-2026",
+      "source_url": "https://www.hackthebox.com/events/global-cyber-skills-benchmark-2026",
+      "additional_sources": [
+        "https://enterprise-help.hackthebox.com/en/articles/14978539-hackthebox-annual-global-cyber-skills-benchmark-gcsb-ctf-business-ctf"
+      ],
+      "notes": "原HTB Business CTF；官网Timeline明确5月15日13:00 UTC—5月20日13:00 UTC。"
+    },
+    {
+      "title": "HTB Cyber Apocalypse CTF 2026: The Salt Crown",
+      "start": "2026-07-24T21:00:00+08:00",
+      "end": "2026-07-29T21:00:00+08:00",
+      "date_precision": "minute",
+      "timezone": "Asia/Shanghai",
+      "format": "Jeopardy & more",
+      "location": "线上",
+      "restrictions": "全球开放；1—30人团队",
+      "url": "https://www.hackthebox.com/events/cyber-apocalypse-2026",
+      "source_url": "https://www.hackthebox.com/events/cyber-apocalypse-2026",
+      "notes": "官网明确7月24日13:00 UTC—7月29日13:00 UTC。"
+    },
+    {
+      "title": "HTB Holmes CTF 2026: The Reichenbach Directive",
+      "start": "2026-09-17T21:00:00+08:00",
+      "end": "2026-09-21T21:00:00+08:00",
+      "date_precision": "minute",
+      "timezone": "Asia/Shanghai",
+      "format": "防御/取证 Jeopardy",
+      "location": "线上",
+      "restrictions": "全球开放；1—5人团队",
+      "url": "https://www.hackthebox.com/events/holmes-2026",
+      "source_url": "https://www.hackthebox.com/events/holmes-2026",
+      "notes": "官网Timeline明确9月17日13:00 UTC—9月21日13:00 UTC。官网同时写5天/120小时，与起止时间相差96小时冲突；此处采用明确起止值，不按120小时推算。"
+    },
+    {
+      "title": "FLARE-On 13 (2026)",
+      "start": "2026-09-25",
+      "end": "2026-10-23",
+      "date_precision": "day",
+      "timezone": "America/New_York；未统一换算北京时间",
+      "format": "逆向工程个人CTF",
+      "location": "线上",
+      "restrictions": "个人；资格以官方规则为准",
+      "url": "https://flare-on13.ctfd.io/",
+      "source_url": "https://flare-on13.ctfd.io/tos",
+      "additional_sources": [
+        "https://flare-on.com/"
+      ],
+      "notes": "官方规则起点为9月25日20:00 ET（北京时间9月26日08:00）；终点只写10月23日8:00 ET，未注明上午/下午，因此主清单仅采用官方日期，不编造结束钟点。"
+    },
+    {
+      "title": "Huntress CTF 2026",
+      "start": "2026-10-01",
+      "end": "2026-10-31",
+      "date_precision": "day",
+      "timezone": "来源未注明，未换算北京时间",
+      "format": "Jeopardy / 取证与威胁分析",
+      "location": "线上",
+      "restrictions": "全球开放，具体规则以官网为准",
+      "url": "https://ctf.huntress.com/",
+      "source_url": "https://ctf.huntress.com/",
+      "additional_sources": [
+        "https://www.huntress.com/cybersecurity-education/cybersecurity-awareness/capture-the-flag"
+      ],
+      "notes": "官网写整个2026年10月，并明确首题10月1日发布；10月31日由“整个10月”解释为月份末日，结束钟点未公布。"
+    },
+    {
+      "title": "Google Cloud × HTB: Operation Cymbal: Cold Room",
+      "start": "2026-10-30T00:00:00+08:00",
+      "end": "2026-11-02T00:00:00+08:00",
+      "date_precision": "minute",
+      "timezone": "Asia/Shanghai",
+      "format": "防御/取证 CTF",
+      "location": "线上",
+      "restrictions": "名额有限，需审批及活动密码；报名10月28日截止",
+      "url": "https://security.googlecloudcommunity.com/events/community-capture-the-flag-with-hack-the-box-operation-cymbal-cold-room-141",
+      "source_url": "https://security.googlecloudcommunity.com/events/community-capture-the-flag-with-hack-the-box-operation-cymbal-cold-room-141",
+      "notes": "官方活动窗口10月29日16:00 UTC—11月1日16:00 UTC；先介绍工具后开始挑战，官方称有72小时完成。"
+    }
+  ],
+  "overrides": [
+    {
+      "ctftime_id": 3112,
+      "status_override": "已取消",
+      "corrected_start": null,
+      "corrected_end": null,
+      "notes": "CTFtime名称和说明均写CANCELLED；主办方官方LinkedIn表示2026本年度暂停，期望2027再见。原7月赛期不可计作已举办。",
+      "source_url": "https://www.linkedin.com/posts/ductf_hey-ductf-community-were-sorry-to-announce-activity-7468567527250370560-rPjz",
+      "additional_sources": [
+        "https://ctftime.org/event/3112/"
+      ]
+    },
+    {
+      "ctftime_id": 3246,
+      "status_override": "延期／官网取消公告届次待核",
+      "corrected_start": null,
+      "corrected_end": null,
+      "notes": "CTFtime仍写BCACTF 7.0 postponed及POSTPONED TO JULY 3；官网首页已公告本年度取消，但标题为BCACTF 6.7，届次不同。未核实新的实际举办日期，保留原日程并明确不能据此认定已举办。",
+      "source_url": "https://www.bcactf.com/",
+      "additional_sources": [
+        "https://ctftime.org/event/3246/"
+      ]
+    },
+    {
+      "ctftime_id": 3222,
+      "status_override": "延期；公开资格赛新日期未核实",
+      "corrected_start": null,
+      "corrected_end": null,
+      "notes": "CTFtime明确POSTPONED；Google官网规则仍显示2025版本，本次未核实2026公开资格赛新日期。另有2026年10月Hackceler8新加坡决赛的官方代码库和参赛方报道，不可直接当作原公开资格赛的改期日期。",
+      "source_url": "https://ctftime.org/event/3222/",
+      "additional_sources": [
+        "https://capturetheflag.withgoogle.com/rules",
+        "https://github.com/google/google-ctf/blob/main/2026/hackceler8/README.md"
+      ]
+    },
+    {
+      "ctftime_id": 3205,
+      "status_override": null,
+      "corrected_start": "2026-05-23T05:30:00+08:00",
+      "corrected_end": "2026-05-25T05:30:00+08:00",
+      "notes": "主办方官网写May 22, 21:30 UTC onwards, for 48 hours，较CTFtime API起止时间均晚30分钟。修正结束时间为起点+48小时计算值；官网首页未单独标年，但由CTFtime 2026赛事直接链接至该主办站。",
+      "source_url": "https://bbbirds.org/",
+      "additional_sources": [
+        "https://ctftime.org/event/3205/"
+      ]
+    }
+  ],
+  "date_uncertain_events": [
+    {
+      "title": "Google CTF Hackceler8 Finals 2026",
+      "date_display": "2026年10月，新加坡；完整起止日期与钟点未核验",
+      "start": null,
+      "end": null,
+      "date_precision": "month",
+      "format": "Hackceler8 游戏漏洞利用/现场对抗",
+      "location": "新加坡",
+      "restrictions": "邀请赛",
+      "url": "https://github.com/google/google-ctf/tree/main/2026/hackceler8",
+      "source_url": "https://www.kalmarunionen.dk/news/2026/2026-10-hackceler8-finals/",
+      "additional_sources": [
+        "https://github.com/google/google-ctf/blob/main/2026/hackceler8/README.md",
+        "https://www.kalmarunionen.dk/news/2026/2026-10-hackceler8-semifinals/"
+      ],
+      "notes": "Google代码库确认2026赛事；参赛团队10月24日报道已完成两天小组赛并称次日半决赛，10月31日总结上周末决赛及季军。能确认10月比赛已举行；不自行推出完整赛期。"
+    }
+  ],
+  "watchlist": [
+    {
+      "title": "SANS Holiday Hack Challenge 2026: The Pyramid on the Ice",
+      "status": "已官宣，开赛日未公布",
+      "source_url": "https://www.sans.org/cyber-ranges/holiday-hack-challenge",
+      "notes": "官网仍为开赛通知订阅；报告截止2027-01-05（地球任意时区），获奖公布2027-01-20。不能用过往11/12月开赛规律填入2026具体日期。页面另有2025-11-26旧年份残留，未采用。"
+    },
+    {
+      "title": "HTB University CTF 2026",
+      "status": "本次未找到官方2026赛期",
+      "source_url": "https://ctf.hackthebox.com/events/upcoming",
+      "notes": "第三方参赛团队提到12月且TBA，未找到主办方明确赛程，因此不计入确认比赛总数。"
+    },
+    {
+      "title": "CyberSecurityRumble 2026",
+      "status": "本次未找到2026官方公告",
+      "source_url": "https://ctftime.org/",
+      "notes": "搜索主要返回2024旧赛事，不能把年度惯例当作2026已确认比赛。"
+    }
+  ],
+  "audit_notes": [
+    "CTFtime API说明支持limit/start/finish，但页面未声明events的默认或最大limit；主清单应检查数量是否触顶，并与2026年列表的赛事ID交叉比对：https://ctftime.org/api/ 。",
+    "HTB公开活动目录中还存在大量院校、企业、地区限定赛及私有/口令赛事；本补充仅重点核验公开旗舰赛事及有清楚赛期的官方活动，并未声称穷尽所有HTB托管活动。",
+    "HTB详情页经常写Based on your system's timezone；如无明确UTC或当地地点证据，应保留时间精度/时区未知，不能直接当UTC转换。",
+    "截至2026-11-06，2026年尚未结束；取消、延期、未公告赛事应独立标记，全年全球比赛全集无法保证绝对穷尽。"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "event_id": "CTF-3330",
+  "event_title": "Thryve CTF 2026",
+  "category": "pwn",
+  "title": "abyss-oracle",
+  "source_urls": [
+    "https://github.com/hax1ng/thryve-ctf-2026-writeups/tree/main/pwn/abyss-oracle",
+    "https://ctftime.org/event/3330/"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/abyss-oracle/README.md",
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/abyss-oracle/exploit.c",
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/abyss-oracle/module.asm",
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/abyss-oracle/patch-local.py",
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/abyss-oracle/probe.c",
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/abyss-oracle/solve.md",
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/abyss-oracle/struct_module.txt"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/abyss-oracle/run-qemu.sh"
+  ],
+  "writeup_status": "已下载正文及解题脚本",
+  "attachment_status": "部分：只有启动脚本；上游未提供bzImage/initramfs/vmlinux",
+  "attachment_complete": false,
+  "artifacts": [
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/abyss-oracle/README.md",
+      "kind": "writeups",
+      "bytes": 13867,
+      "sha256": "8f723c471663cae8fcf82310342a736d05a6d50ff389d4370186991cf4546cdc"
+    },
+    {
+      "path": "writeups/exploit.c",
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/abyss-oracle/exploit.c",
+      "kind": "writeups",
+      "bytes": 8173,
+      "sha256": "ae738057893953383a38b408d202e998e38552effe160ec7da1cc0f2fbe85f59"
+    },
+    {
+      "path": "writeups/module.asm",
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/abyss-oracle/module.asm",
+      "kind": "writeups",
+      "bytes": 50372,
+      "sha256": "037624bb1247ff3331aa1fb97f829e38df4ab3c1e5e6627c0276897a67b007d2"
+    },
+    {
+      "path": "writeups/patch-local.py",
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/abyss-oracle/patch-local.py",
+      "kind": "writeups",
+      "bytes": 2082,
+      "sha256": "7529610729297e8c60e83631dd4b34a30d50d4cf9f6b7fb0f5d572f3f7b0636b"
+    },
+    {
+      "path": "writeups/probe.c",
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/abyss-oracle/probe.c",
+      "kind": "writeups",
+      "bytes": 209,
+      "sha256": "3d67338f43cde93ad9f55140aa7eb7f8a82ab3db2650abc93c48069dec59ac28"
+    },
+    {
+      "path": "attachments/run-qemu.sh",
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/abyss-oracle/run-qemu.sh",
+      "kind": "attachments",
+      "bytes": 975,
+      "sha256": "b10a12c5012a7994ce8537afdd63862bb313f4f0c2e2e6a16b24e6292e273d9a"
+    },
+    {
+      "path": "writeups/solve.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/abyss-oracle/solve.md",
+      "kind": "writeups",
+      "bytes": 2386,
+      "sha256": "4f90c76833f10319d45031b157709c3780eca63b1f0d78612de72f9cd3078f90"
+    },
+    {
+      "path": "writeups/struct_module.txt",
+      "url": "https://raw.githubusercontent.com/hax1ng/thryve-ctf-2026-writeups/main/pwn/abyss-oracle/struct_module.txt",
+      "kind": "writeups",
+      "bytes": 6337,
+      "sha256": "361d6fcb7087f26bc21d1072d083807d8ead06a163bef2b808abcbeb13195cef"
+    }
+  ],
+  "has_verified_solution": true,
+  "notes": [
+    "参赛者仓库快照；只下载，未执行。",
+    "Abyss Oracle仓库README明确大镜像未提交，module.asm是解题者反汇编结果，不能当作原始模块附件。"
+  ],
+  "collector": "pwn_agent",
+  "retrieved_date": "2026-11-06"
+}

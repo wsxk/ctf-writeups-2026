@@ -1,0 +1,19 @@
+# Reference: https://github.com/project-sekai-ctf/konata
+challenges:
+  - category: misc
+    name: ufo
+    author: krauq
+    description: |
+      This app is pretty handy.
+      
+      > [!NOTE]
+      > Wrap the solved flag in SEKAI{}
+    tags:
+      - ⭐⭐
+      - Reverse
+    attachments:
+      files:
+        - "challenge/"
+      stripComponents: 1
+    flags:
+      rctf: 'SEKAI{clankedormiscgod}'

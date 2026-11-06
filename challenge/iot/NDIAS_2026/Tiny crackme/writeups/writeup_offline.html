@@ -1,0 +1,263 @@
+<!doctype html><meta charset="utf-8"><title>Tiny crackme</title><p>Source: https://yusuftas.net/posts/ndias-tiny-crackme-writeup/</p><article class="px-1" data-toc="true"><header><h1 data-toc-skip="">NDIAS Auto/IoT CTF: Tiny Crackme Writeup</h1><div class="post-meta text-muted"> <span> Posted <time data-bs-placement="bottom" data-bs-toggle="tooltip" data-df="ll" data-ts="1779062400"> May 18, 2026 </time> </span><div class="d-flex justify-content-between"> <span> By <em> <a href="https://twitter.com/yutasrobot">Yusuf Tas</a> </em> </span><div> <span> <em id="pageviews"> <i class="fas fa-spinner fa-spin small"></i> </em> views </span> <span class="readtime" data-bs-placement="bottom" data-bs-toggle="tooltip" title="1571 words"> <em>8 min</em> read</span></div></div></div></header><div class="d-flex align-items-center justify-content-between invisible" id="toc-bar"> <span class="label text-truncate">NDIAS Auto/IoT CTF: Tiny Crackme Writeup</span> <button class="toc-trigger btn me-1" type="button"> <i class="fa-solid fa-list-ul fa-fw"></i> </button></div><button class="toc-trigger btn btn-outline-secondary btn-sm" id="toc-solo-trigger" type="button"> <span class="label ps-2 pe-1">Contents</span> <i class="fa-solid fa-angle-right fa-fw"></i> </button> <dialog class="p-0" id="toc-popup"><div class="header d-flex flex-row align-items-center justify-content-between"><div class="label text-truncate py-2 ms-4">NDIAS Auto/IoT CTF: Tiny Crackme Writeup</div><button aria-label="Close" class="btn-close btn-sm mx-3" id="toc-popup-close" type="button"></button></div><div class="px-4 py-3 pb-4" id="toc-popup-content"></div></dialog><div class="content"><p>After the CTF ended I decided to see if I can solve the Reverse Engineering challenge. It was labelled, and I thought how hard could it be really. I was in for a surprise! This is my first writeup for a RE challenge, so I might be over simplifying or over complicating certain stuff. But since I am a beginner in RE, expect this writeup to be more catered towards beginners like me.</p><h2 id="first-look"><span class="me-2">First Look</span><a class="anchor text-muted" href="#first-look"><i class="fas fa-hashtag"></i></a></h2><p>We are given a binary and a run script. Just by looking at the run script we can see that it is an ARM binary:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre>qemu-system-arm \
+    -machine mps2-an385 \
+    -cpu cortex-m3 \
+    -kernel kernel \
+    -monitor none \
+    -nographic \
+    -serial stdio \
+    -semihosting \
+    -semihosting-config enable=on,target=native
+</pre></td></td></tr></tbody></table></code></div></div><p>Well it is an architecture I haven’t worked on before, this will be fun. Next, I loaded the binary to Ghidra and let it do its magic. There are hundreds of functions in the binary and they are stripped. But at least Ghidra managed to label the entry function:</p><p><a class="popup img-link shimmer" href="/assets/img/tiny_funcs.png"><img alt="Entry" loading="lazy" src="writeup_assets/000.png"/></a></p><p>Following the function calls <code class="language-plaintext highlighter-rouge">FUN_000120b4 -&gt; FUN_00012122 -&gt; FUN_0001336c</code> we end up in a function that looks like main:</p><p><a class="popup img-link shimmer" href="/assets/img/tiny_main.png"><img alt="Main" loading="lazy" src="writeup_assets/001.png"/></a></p><p>In this function, FUN_0000143e got my attention. It takes a pointer to a code address, and it is called twice with two different strings: ‘uart’ and ‘ctf’. At this point, I decided to use Claude to help me understand decompiled functions. After checking a couple of them, we reached to a conclusion that these functions was coming from Free RTOS and FUN_0000143e was a task create function. Something similar to this: <a href="https://www.freertos.org/Documentation/02-Kernel/04-API-references/01-Task-creation/01-xTaskCreate">https://www.freertos.org/Documentation/02-Kernel/04-API-references/01-Task-creation/01-xTaskCreate</a></p><p>So what this means is we have two separate tasks started in main, something like threads I would say. We can see the starting point of tasks in the function call: <code class="language-plaintext highlighter-rouge">&amp;LAB_00013270+1</code> and <code class="language-plaintext highlighter-rouge">0x132a5</code>. Ghidra is quite helpful that we can navigate to these points in code by simplying clicking them.</p><h2 id="ctf-task"><span class="me-2">CTF Task</span><a class="anchor text-muted" href="#ctf-task"><i class="fas fa-hashtag"></i></a></h2><p>Well given that task is named CTF, I decided to look into it first. Just by following function calls, we end up in this function:</p><p><a class="popup img-link shimmer" href="/assets/img/tiny_flag_ctf.png"><img alt="Flag CTF" loading="lazy" src="writeup_assets/002.png"/></a></p><p>We can easily see the expected flag format in the if checks: <code class="language-plaintext highlighter-rouge">FLAG{30chars}</code>. We can also see that the content of the flag - 30 characters is sent into a different function. Looking inside that function we can see three long strings of data:</p><p><a class="popup img-link shimmer" href="/assets/img/tiny_sha.png"><img alt="SHA" loading="lazy" src="writeup_assets/003.png"/></a></p><p>I used Claude to understand what was happening in that function and labelled functions accordingly. We come to the conclusion that this function is creating some kind of hash of the given input string. Long bytes of data seen in the decompilation is parameters of a eliptic curve crypto, to be more specific this one: <a href="https://std.neuromancer.sk/nist/B-283">https://std.neuromancer.sk/nist/B-283</a></p><p>Returned hash of this function is compared against a hash in the code stored in globals: <code class="language-plaintext highlighter-rouge">61d28525a11e985f95083043e6b04d99a891936d7d35304fac08cfb6c079a647</code> . Well if we could reverse that hash, it would be awesome :) But that is no easy task, not even something feasible. And now that I think about it, having parameters of a proper ECC should be an indication that this crypto isn’t weak. Looking around in the code, I can’t see a way to go back to flag from this hash.</p><p>At this point, I was stuck. Since the ctf was over, I reached out to organizers and they provided very big hints for the solution. Thanks to them, I was able to solve it. Now let’s continue.</p><h2 id="uart-task"><span class="me-2">UART Task</span><a class="anchor text-muted" href="#uart-task"><i class="fas fa-hashtag"></i></a></h2><p>Remember we had one more task running, uart task? Organizers pointed that I needed to dive deeper into the UART function. It actually didn’t look very interesting at first glance:</p><p><a class="popup img-link shimmer" href="/assets/img/tiny_uart.png"><img alt="UART" loading="lazy" src="writeup_assets/004.png"/></a></p><p>Since the hint was pointing to that, I checked each function here and followed this trail of functions:</p><p><code class="language-plaintext highlighter-rouge">00013270 -&gt; FUN_00010418 -&gt; FUN_00001128 -&gt; FUN_00005b7c -&gt; FUN_00005a50 -&gt; FUN_000121a4</code></p><p>That was a long line of functions! If I wasn’t told that solution was here, I probably wouldn’t be able to find this function. At the end of the pipe, we reach to a CRC32 calculation function:</p><p><a class="popup img-link shimmer" href="/assets/img/tiny_crc32.png"><img alt="CRC32" loading="lazy" src="writeup_assets/005.png"/></a></p><p>We can see the parameters of the CRC matches the description here: <a href="https://wiki.osdev.org/CRC32">https://wiki.osdev.org/CRC32</a> . I didn’t want to risk implementing this myself, so I got Claude to write the crc function for me:</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre><td class="rouge-code"><pre><span class="n">TABLE</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">256</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
+    <span class="n">crc</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+        <span class="n">crc</span> <span class="o">=</span> <span class="p">(</span><span class="n">crc</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="mh">0xEDB88320</span> <span class="k">if</span> <span class="n">crc</span> <span class="o">&amp;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">TABLE</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">crc</span>
+
+<span class="k">def</span> <span class="nf">crc32_byte</span><span class="p">(</span><span class="n">crc</span><span class="p">,</span> <span class="n">byte</span><span class="p">):</span>
+    <span class="nf">return </span><span class="p">(</span><span class="n">crc</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">^</span> <span class="n">TABLE</span><span class="p">[(</span><span class="n">crc</span> <span class="o">^</span> <span class="n">byte</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">crc32</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">crc</span> <span class="o">=</span> <span class="mh">0xFFFFFFFF</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">crc</span> <span class="o">=</span> <span class="nf">crc32_byte</span><span class="p">(</span><span class="n">crc</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="nf">return </span><span class="p">(</span><span class="o">~</span><span class="n">crc</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFFFFFFFF</span>
+</pre></td></td></tr></tbody></table></code></div></div><p>But why is this CRC important? Let’s go back to one previous function where the crc32 gets called:</p><p><a class="popup img-link shimmer" href="/assets/img/tiny_every5.png"><img alt="CRC results" loading="lazy" src="writeup_assets/006.png"/></a></p><p>CRC function is called after every 5 character is received. And we can see the expected CRC results in the code there. What this means is we know expected CRC of : <code class="language-plaintext highlighter-rouge">crc32(flag[n:n+5])</code> where n = 0, 5, 10, 15, 20, 25</p><p>What this means is we need to do some brute forcing of the expected CRC values to find what 5 characters would generate such values using this CRC32. If we can reverse all of them, we will get the flag’s 30 characters! I used a couple of tricks to make the search faster: using a pregenerated lookup table, going backwards from last byte and finding 4 byte candidates using the lookup table. Here is the solver:</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">itertools</span>
+<span class="kn">import</span> <span class="n">string</span>
+<span class="kn">from</span> <span class="n">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
+
+<span class="c1"># ── CRC-32 forward ───────────────────────────────────────────────────────────
+</span><span class="n">TABLE</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">256</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
+    <span class="n">crc</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+        <span class="n">crc</span> <span class="o">=</span> <span class="p">(</span><span class="n">crc</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="mh">0xEDB88320</span> <span class="k">if</span> <span class="n">crc</span> <span class="o">&amp;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">TABLE</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">crc</span>
+
+<span class="k">def</span> <span class="nf">crc32_byte</span><span class="p">(</span><span class="n">crc</span><span class="p">,</span> <span class="n">byte</span><span class="p">):</span>
+    <span class="nf">return </span><span class="p">(</span><span class="n">crc</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">^</span> <span class="n">TABLE</span><span class="p">[(</span><span class="n">crc</span> <span class="o">^</span> <span class="n">byte</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">crc32</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">crc</span> <span class="o">=</span> <span class="mh">0xFFFFFFFF</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">crc</span> <span class="o">=</span> <span class="nf">crc32_byte</span><span class="p">(</span><span class="n">crc</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="nf">return </span><span class="p">(</span><span class="o">~</span><span class="n">crc</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFFFFFFFF</span>
+
+<span class="c1"># ── CRC-32 reverse ───────────────────────────────────────────────────────────
+# Build reverse table: given output byte of CRC step, recover input CRC state
+</span><span class="n">REVERSE_TABLE</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">256</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
+    <span class="n">REVERSE_TABLE</span><span class="p">[</span><span class="n">TABLE</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="mi">24</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>  <span class="c1"># high byte of output maps back to input
+</span>
+<span class="k">def</span> <span class="nf">crc32_reverse_byte</span><span class="p">(</span><span class="n">crc_after</span><span class="p">,</span> <span class="n">byte_in</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">Given CRC state AFTER processing byte_in, recover CRC state BEFORE.</span><span class="sh">"""</span>
+    <span class="c1"># crc_after = (crc_before &gt;&gt; 8) ^ TABLE[(crc_before ^ byte_in) &amp; 0xFF]
+</span>    <span class="c1"># High byte of crc_after came purely from TABLE[...] &gt;&gt; 24 ... reconstruct:
+</span>    <span class="n">top</span> <span class="o">=</span> <span class="p">(</span><span class="n">crc_after</span> <span class="o">&gt;&gt;</span> <span class="mi">24</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">REVERSE_TABLE</span><span class="p">[</span><span class="n">top</span><span class="p">]</span>              <span class="c1"># recover the table index
+</span>    <span class="n">low_byte</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">^</span> <span class="n">byte_in</span>             <span class="c1"># (crc_before ^ byte_in) &amp; 0xFF = idx
+</span>    <span class="n">crc_before</span> <span class="o">=</span> <span class="p">((</span><span class="n">crc_after</span> <span class="o">^</span> <span class="n">TABLE</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="n">low_byte</span>
+    <span class="k">return</span> <span class="n">crc_before</span> <span class="o">&amp;</span> <span class="mh">0xFFFFFFFF</span>
+
+<span class="c1"># ── Build 4-byte CRC state → 4-byte string lookup ───────────────────────────
+</span><span class="k">def</span> <span class="nf">build_4byte_table</span><span class="p">(</span><span class="n">charset</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">Map every possible CRC state after 4 charset bytes → those 4 bytes.</span><span class="sh">"""</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Building 4-byte forward table...</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">lookup</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">combo</span> <span class="ow">in</span> <span class="n">itertools</span><span class="p">.</span><span class="nf">product</span><span class="p">(</span><span class="n">charset</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">crc</span> <span class="o">=</span> <span class="mh">0xFFFFFFFF</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">combo</span><span class="p">:</span>
+            <span class="n">crc</span> <span class="o">=</span> <span class="nf">crc32_byte</span><span class="p">(</span><span class="n">crc</span><span class="p">,</span> <span class="nf">ord</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+        <span class="n">lookup</span><span class="p">[</span><span class="n">crc</span><span class="p">]</span> <span class="o">=</span> <span class="n">combo</span>  <span class="c1"># crc_state_after_4_bytes → (c0,c1,c2,c3)
+</span>    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Table built: </span><span class="si">{</span><span class="nf">len</span><span class="p">(</span><span class="n">lookup</span><span class="p">)</span><span class="si">:</span><span class="p">,</span><span class="si">}</span><span class="s"> entries</span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">lookup</span>
+
+<span class="c1"># ── Solver ───────────────────────────────────────────────────────────────────
+</span><span class="k">def</span> <span class="nf">solve_chunk</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">idx</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="n">lookup</span><span class="p">,</span> <span class="n">charset</span> <span class="o">=</span> <span class="n">args</span>
+
+    <span class="c1"># Final CRC after ~: undo the final XOR to get raw CRC state after 5 bytes
+</span>    <span class="n">crc_after_5</span> <span class="o">=</span> <span class="p">(</span><span class="o">~</span><span class="n">expected</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFFFFFFFF</span>
+
+    <span class="k">for</span> <span class="n">last_byte</span> <span class="ow">in</span> <span class="n">charset</span><span class="p">:</span>
+        <span class="c1"># Reverse one CRC step: what was the CRC state after 4 bytes?
+</span>        <span class="n">crc_after_4</span> <span class="o">=</span> <span class="nf">crc32_reverse_byte</span><span class="p">(</span><span class="n">crc_after_5</span><span class="p">,</span> <span class="nf">ord</span><span class="p">(</span><span class="n">last_byte</span><span class="p">))</span>
+
+        <span class="c1"># Look up whether any 4-char combo produces this state
+</span>        <span class="k">if</span> <span class="n">crc_after_4</span> <span class="ow">in</span> <span class="n">lookup</span><span class="p">:</span>
+            <span class="n">first_four</span> <span class="o">=</span> <span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">lookup</span><span class="p">[</span><span class="n">crc_after_4</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">idx</span><span class="p">,</span> <span class="n">first_four</span> <span class="o">+</span> <span class="n">last_byte</span>
+
+    <span class="k">return</span> <span class="n">idx</span><span class="p">,</span> <span class="bp">None</span>
+
+<span class="c1"># Expected CRC results taken from Ghidra
+</span><span class="n">EXPECTED</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mh">0x80B0CEE1</span><span class="p">,</span>
+    <span class="mh">0x71F28109</span><span class="p">,</span>
+    <span class="mh">0xF38B1F2F</span><span class="p">,</span>
+    <span class="mh">0xFB2059C6</span><span class="p">,</span>
+    <span class="mh">0x334BD5E1</span><span class="p">,</span>
+    <span class="mh">0x8DD5DB45</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">CHARSET</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">string</span><span class="p">.</span><span class="n">ascii_letters</span> <span class="o">+</span> <span class="n">string</span><span class="p">.</span><span class="n">digits</span> <span class="o">+</span> <span class="sh">'</span><span class="s">_</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">lookup</span> <span class="o">=</span> <span class="nf">build_4byte_table</span><span class="p">(</span><span class="n">CHARSET</span><span class="p">)</span>
+
+<span class="n">args</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">lookup</span><span class="p">,</span> <span class="n">CHARSET</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">exp</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">EXPECTED</span><span class="p">)]</span>
+
+
+<span class="n">flag</span> <span class="o">=</span> <span class="sh">'</span><span class="s">FLAG{</span><span class="sh">'</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+    <span class="n">idx</span><span class="p">,</span> <span class="n">chunk</span> <span class="o">=</span> <span class="nf">solve_chunk</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">chunk</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Chunk </span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s">/6: </span><span class="sh">'</span><span class="si">{</span><span class="n">chunk</span><span class="si">}</span><span class="sh">'</span><span class="s">  CRC verify: 0x</span><span class="si">{</span><span class="nf">crc32</span><span class="p">(</span><span class="n">chunk</span><span class="p">.</span><span class="nf">encode</span><span class="p">())</span><span class="si">:</span><span class="mi">08</span><span class="n">X</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Chunk </span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s">/6: NOT FOUND — try expanding CHARSET</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">chunk</span> <span class="o">=</span> <span class="sh">'</span><span class="s">?????</span><span class="sh">'</span>
+    <span class="n">flag</span> <span class="o">+=</span> <span class="n">chunk</span>
+<span class="n">flag</span> <span class="o">+=</span> <span class="sh">'</span><span class="s">}</span><span class="sh">'</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="se">\n</span><span class="si">{</span><span class="n">flag</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+</pre></td></td></tr></tbody></table></code></div></div><p>It should take a couple of seconds to run and get the flag:</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre>Building 4-byte forward table...
+Table built: 15,752,961 entries
+Chunk 1/6: 'L0W_L'  CRC verify: 0x80B0CEE1
+Chunk 2/6: '4Y3R_'  CRC verify: 0x71F28109
+Chunk 3/6: 'SK1LL'  CRC verify: 0xF38B1F2F
+Chunk 4/6: 'S_M4Y'  CRC verify: 0xFB2059C6
+Chunk 5/6: '_H3LP'  CRC verify: 0x334BD5E1
+Chunk 6/6: 'S_Y0U'  CRC verify: 0x8DD5DB45
+
+FLAG{L0W_L4Y3R_SK1LLS_M4Y_H3LPS_Y0U}
+</pre></td></td></tr></tbody></table></code></div></div><h2 id="final-notes"><span class="me-2">Final Notes</span><a class="anchor text-muted" href="#final-notes"><i class="fas fa-hashtag"></i></a></h2><p>It was a really well designed challenge with a good red herring to catch players and LLMs off guard. I fell for the trick and assumed it was the ECC until I reread the challenge description. There was a good hint there that the heavy looking part may not be important. Thanks to the organizers, I managed to reach to the solution. I enjoyed this CTF a lot and learned quite a few things. Until next one, keep learning!</p></div><div class="post-tail-wrapper text-muted"><div class="d-flex justify-content-between align-items-center gap-3 mb-3"><div class="post-meta"> <i class="far fa-folder-open fa-fw me-1"></i> <a href="/categories/reverse-engineering/">reverse-engineering</a>, <a href="/categories/re/">re</a></div></div><div class="post-tags"> <i class="fa fa-tags fa-fw me-1"></i> <a class="post-tag no-text-decoration" href="/tags/reveng/">reveng</a> <a class="post-tag no-text-decoration" href="/tags/re/">re</a> <a class="post-tag no-text-decoration" href="/tags/ctf/">ctf</a> <a class="post-tag no-text-decoration" href="/tags/ndias-ctf/">ndias_ctf</a> <a class="post-tag no-text-decoration" href="/tags/iot-ctf/">iot_ctf</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper d-flex align-items-center"> <span class="share-label text-muted">Share</span> <span class="share-icons"> <a aria-label="Twitter" data-bs-placement="top" data-bs-toggle="tooltip" href="https://twitter.com/intent/tweet?text=NDIAS%20Auto/IoT%20CTF:%20Tiny%20Crackme%20Writeup%20-%20Yusuf%20Tas&amp;url=https%3A%2F%2Fyusuftas.net%2Fposts%2Fndias-tiny-crackme-writeup%2F" rel="noopener" target="_blank" title="Twitter"> <i class="fa-fw fa-brands fa-square-x-twitter"></i> </a> <a aria-label="Facebook" data-bs-placement="top" data-bs-toggle="tooltip" href="https://www.facebook.com/sharer/sharer.php?title=NDIAS%20Auto/IoT%20CTF:%20Tiny%20Crackme%20Writeup%20-%20Yusuf%20Tas&amp;u=https%3A%2F%2Fyusuftas.net%2Fposts%2Fndias-tiny-crackme-writeup%2F" rel="noopener" target="_blank" title="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a aria-label="Linkedin" data-bs-placement="top" data-bs-toggle="tooltip" href="https://www.linkedin.com/feed/?shareActive=true&amp;shareUrl=https%3A%2F%2Fyusuftas.net%2Fposts%2Fndias-tiny-crackme-writeup%2F" rel="noopener" target="_blank" title="Linkedin"> <i class="fa-fw fab fa-linkedin"></i> </a> <button aria-label="Copy link" class="btn small" data-bs-placement="top" data-bs-toggle="tooltip" data-title-succeed="Link copied successfully!" id="copy-link" title="Copy link"> <i class="fa-fw fas fa-link pe-none fs-6"></i> </button> </span></div></div></div></article>

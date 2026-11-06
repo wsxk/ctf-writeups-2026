@@ -1,0 +1,78 @@
+{
+  "event_id": "CTF-3056",
+  "event_title": "UMDCTF 2026",
+  "title": "the_akari",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "akari-puzzle",
+    "constraint-propagation",
+    "sat-solver",
+    "aes"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/umdctf/2026/the_akari/",
+    "https://ctf42.online/ctfs/umdctf/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/the_akari"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/UMDCTF-2026/tree/main/UMDCTF-2026/rev/the-akari"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/UMDCTF/2026/rev/the_akari",
+    "https://ctf42.online/ctfs/umdctf/2026/the_akari/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/umdctf_2026/the_akari/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/UMDCTF-2026/main/UMDCTF-2026/rev/the-akari/README.md",
+      "bytes": 13078,
+      "sha256": "329a8e9187ac8c23a9c0babcdeb922587902a82a5f71355b58fc6d3cf6dcb7d8",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/umdctf_2026/the_akari/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMDCTF/2026/rev/the_akari/README.md",
+      "bytes": 30,
+      "sha256": "299fc7611d47eed7853ffdebb90325811fd0cf2744abe5ebc407f71db3163502",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/umdctf_2026/the_akari/attachments/upstream/board.txt.gz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMDCTF/2026/rev/the_akari/board.txt.gz",
+      "bytes": 1314230,
+      "sha256": "987c90fa3639c2e56f47fdd650ba19b69438f9db418813a33a8daf435689e5b1",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/umdctf_2026/the_akari/attachments/upstream/challenge.py",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMDCTF/2026/rev/the_akari/challenge.py",
+      "bytes": 1690,
+      "sha256": "a89909fa8aa0c92fcb7c97044f17c85888494f61418e2c001759b7d1478c094a",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/umdctf_2026/the_akari/attachments/upstream/flag_enc.bin",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/UMDCTF/2026/rev/the_akari/flag_enc.bin",
+      "bytes": 64,
+      "sha256": "c70a982de32166307a56cfc5a0d168b1a1e6e39a292af245c90066e035fb7b0d",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/umdctf/2026/the_akari/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/umdctf/2026/the_akari/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

@@ -1,0 +1,27 @@
+INIT
+SET 84, gA     ; T
+STORE gA
+INC mW
+SET 101, gA   ; e
+STORE gA
+INC mW
+SET 115, gA    ; s
+STORE gA
+INC mW
+SET 116, gA    ; t
+STORE gA
+PRINT
+SET 0, gA
+SET 1, gD
+PLOOP:
+GETP 1, pA     ; Fetch the pixel at the current cursor
+XOR pA, gD, pA ; Toggle the pixel value
+SETP 1, pA     ; Redraw the pixel
+INC cX1        ; Move cursor to the right, this wraps at screen boundary
+CMP gA, cX1    ; Check if X == 0 meaning we wrapped
+JMPNE <SKIPY>  ; Skip over Y increment
+INC cY1        ; Move cursor down row
+SKIPY:
+DRAW           ; Draw the display
+SLEEP 10       ; Pause so we don't draw too fast
+JMP <PLOOP>    ; Move on to next pixel

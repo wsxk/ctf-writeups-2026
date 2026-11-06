@@ -1,0 +1,49 @@
+{
+  "event_id": "CTF-3349",
+  "event_title": "BDSec CTF 2026",
+  "title": "Easy_RE_Challenge",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [
+    "symbol-guided-static-analysis",
+    "xor-rol-inversion",
+    "decoy-path-elimination"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/bdsec/2026/easy_re_challenge/",
+    "https://ctf42.online/ctfs/bdsec/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/rev/Easy_RE_Challenge"
+  ],
+  "writeup_urls": [
+    "https://cybersecurityelite.com/ctf-writeups/bdsec-ctf-2026-reverse-writeup/"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/BDSec/2026/rev/Easy_RE_Challenge",
+    "https://ctf42.online/ctfs/bdsec/2026/easy_re_challenge/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/bdsec_2026/Easy_RE_Challenge/writeups/1_writeup.html",
+      "url": "https://cybersecurityelite.com/ctf-writeups/bdsec-ctf-2026-reverse-writeup/",
+      "bytes": 178018,
+      "sha256": "16e209cd76760cdd6e936d96b5f564167fe0bff4483140f9fd929450b1ab505e",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/bdsec_2026/Easy_RE_Challenge/attachments/handout_1.zip",
+      "url": "https://ctf42.online/ctfs/bdsec/2026/easy_re_challenge/folder.zip?kind=files",
+      "bytes": 4599,
+      "sha256": "ea904eac626339aca59978a774371800c99f0ea8a0e4b5b1f7c88ac839795ee8",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06"
+}

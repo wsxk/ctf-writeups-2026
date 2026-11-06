@@ -1,0 +1,103 @@
+{
+  "totals": {
+    "questions": 36,
+    "events": 8,
+    "categories": {
+      "android": 8,
+      "iot": 8,
+      "虚拟化": 2,
+      "车联网": 18
+    },
+    "attachment_status": {
+      "downloaded": 15,
+      "missing": 16,
+      "partial": 5
+    },
+    "writeup_status": {
+      "downloaded": 36
+    }
+  },
+  "validation": {
+    "hashes_checked": 388,
+    "bytes_checked": 1178081467,
+    "unique_zip_apk_crc_checks": 15,
+    "errors": []
+  },
+  "archives": [
+    {
+      "path": "android\\BSidesSF CTF 2026\\doremi\\attachments\\distfiles\\doremi.apk",
+      "members": 557,
+      "bad_member": null
+    },
+    {
+      "path": "android\\BSidesSF CTF 2026\\vinyl-drop\\attachments\\distfiles\\vinyl-drop.apk",
+      "members": 1138,
+      "bad_member": null
+    },
+    {
+      "path": "android\\BYUCTF 2026\\back_and_forth\\attachments\\bk_n_forth.apk",
+      "members": 948,
+      "bad_member": null
+    },
+    {
+      "path": "android\\SUCTF_2026\\SU_flumel\\attachments\\attachments\\attachment.zip",
+      "members": 2,
+      "bad_member": null
+    },
+    {
+      "path": "android\\SUCTF_2026\\SU_flumel\\attachments\\sourcecode\\sourcecode.zip",
+      "members": 535,
+      "bad_member": null
+    },
+    {
+      "path": "android\\Securinets CTF Quals 2026\\Backdrop\\attachments\\backdrop.zip",
+      "members": 77,
+      "bad_member": null
+    },
+    {
+      "path": "android\\SekaiCTF_2026\\SekaiID\\attachments\\challenge\\challenge\\Verifier.apk",
+      "members": 162,
+      "bad_member": null
+    },
+    {
+      "path": "android\\SekaiCTF_2026\\SekaiID\\attachments\\challenge\\challenge\\SekaiID.apk",
+      "members": 161,
+      "bad_member": null
+    },
+    {
+      "path": "android\\SekaiCTF_2026\\ufo\\attachments\\challenge\\app-release.apk",
+      "members": 628,
+      "bad_member": null
+    },
+    {
+      "path": "iot\\0xFUN_2026\\UART\\attachments\\0xFunCTF2026_UART.zip",
+      "members": 1,
+      "bad_member": null
+    },
+    {
+      "path": "iot\\NDIAS_2026\\Suspicious device 1\\attachments\\dist-suspicious_device.zip",
+      "members": 1,
+      "bad_member": null
+    },
+    {
+      "path": "iot\\NDIAS_2026\\Tiny crackme\\attachments\\dist-tiny_crackme.zip",
+      "members": 2,
+      "bad_member": null
+    },
+    {
+      "path": "iot\\SUCTF_2026\\SU_老年固件\\attachments\\attachments\\attachment.zip",
+      "members": 2,
+      "bad_member": null
+    },
+    {
+      "path": "车联网\\NDIAS_2026\\I Saw Our Time Pass\\attachments\\dist-I_saw_our_time_pass.zip",
+      "members": 1,
+      "bad_member": null
+    },
+    {
+      "path": "车联网\\NDIAS_2026\\RAMN ECU D\\attachments\\dist-ramn_ecu_d.zip",
+      "members": 8,
+      "bad_member": null
+    }
+  ]
+}

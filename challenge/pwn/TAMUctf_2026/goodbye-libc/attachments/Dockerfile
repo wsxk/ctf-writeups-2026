@@ -1,0 +1,27 @@
+FROM debian:bookworm-slim AS build
+
+ARG name
+
+RUN apt-get update -y; apt-get install build-essential -y
+ADD $name.c /tmp/$name.c
+ADD bye-libc.c /tmp/bye-libc.c
+ADD bye-libc.h /tmp/bye-libc.h
+ADD Makefile /tmp/Makefile
+RUN cd /tmp/; make all
+
+FROM debian:bookworm-slim
+
+ARG name
+ARG port
+
+RUN apt-get update -y; apt-get install socat -y
+COPY --from=build /tmp/$name /pwn/$name
+COPY --from=build /tmp/libbye-libc.so /pwn/libbye-libc.so
+COPY flag.txt /pwn/flag.txt
+WORKDIR /pwn
+
+EXPOSE $port
+
+RUN echo "exec socat -s TCP-LISTEN:$port,reuseaddr,fork EXEC:'timeout -k 1 60 /pwn/$name,stderr'" > /pwn/docker_entrypoint.sh
+
+ENTRYPOINT ["sh", "/pwn/docker_entrypoint.sh"]

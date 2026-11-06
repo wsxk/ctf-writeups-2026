@@ -1,0 +1,145 @@
+{
+  "event_id": "CTF-3113",
+  "event_title": "SekaiCTF 2026",
+  "category": "android",
+  "title": "SekaiID",
+  "source_urls": [
+    "https://ctftime.org/event/3113/",
+    "https://github.com/project-sekai-ctf/sekaictf-2026/tree/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid",
+    "https://github.com/Abdelkad3r/SekaiCTF-2026/tree/ef87965f07e32162595457285da138f181492f54/misc/sekaiid"
+  ],
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/Abdelkad3r/SekaiCTF-2026/ef87965f07e32162595457285da138f181492f54/misc/sekaiid/handout/tls_proxy.py",
+    "https://raw.githubusercontent.com/Abdelkad3r/SekaiCTF-2026/ef87965f07e32162595457285da138f181492f54/misc/sekaiid/exploit/run.sh",
+    "https://raw.githubusercontent.com/Abdelkad3r/SekaiCTF-2026/ef87965f07e32162595457285da138f181492f54/misc/sekaiid/artifacts/flag.txt",
+    "https://raw.githubusercontent.com/Abdelkad3r/SekaiCTF-2026/ef87965f07e32162595457285da138f181492f54/misc/sekaiid/handout/SekaiID-AndroidManifest.xml",
+    "https://raw.githubusercontent.com/Abdelkad3r/SekaiCTF-2026/ef87965f07e32162595457285da138f181492f54/misc/sekaiid/handout/Verifier-AndroidManifest.xml",
+    "https://raw.githubusercontent.com/Abdelkad3r/SekaiCTF-2026/ef87965f07e32162595457285da138f181492f54/misc/sekaiid/README.md"
+  ],
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/challenge/challenge/flag.txt",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/challenge/start.sh",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/challenge/challenge/README.txt",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/README.md",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/challenge/challenge/setup.sh",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/challenge/Dockerfile",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/challenge/tls_proxy.py",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/kona.yaml",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/challenge/challenge/Verifier.apk",
+    "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/challenge/challenge/SekaiID.apk"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": "官方 APK 与运行材料；第三方实际参赛 writeup 已另存，HTML 提供正文及离线图片副本。",
+  "files": [
+    {
+      "path": "attachments/challenge/challenge/flag.txt",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/challenge/challenge/flag.txt",
+      "bytes": 33,
+      "sha256": "67632dd74d971cd9d58d84ca04cb5a56f8a08436d2e336f088dbddce27634adf"
+    },
+    {
+      "path": "attachments/challenge/start.sh",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/challenge/start.sh",
+      "bytes": 9089,
+      "sha256": "615ee204622914213dac0b1e4996ac96906cda7cff9a767e3289e78125101f15"
+    },
+    {
+      "path": "attachments/challenge/challenge/README.txt",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/challenge/challenge/README.txt",
+      "bytes": 980,
+      "sha256": "e9455fbbfd571102ebfb2584680e13203b2ca6577161502abba3440ee5be923e"
+    },
+    {
+      "path": "attachments/README.md",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/README.md",
+      "bytes": 1177,
+      "sha256": "a024105739cc2f85459a7bb0414b6e8f78ddedebe45c372d5372944fae25a45e"
+    },
+    {
+      "path": "attachments/challenge/challenge/setup.sh",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/challenge/challenge/setup.sh",
+      "bytes": 2105,
+      "sha256": "abb44df8a583e7df56dcabea550f37b78da7398003f27a3813c64c0a4a5afeef"
+    },
+    {
+      "path": "attachments/challenge/Dockerfile",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/challenge/Dockerfile",
+      "bytes": 3909,
+      "sha256": "f720f778bbab0a7bf60eb1c5d4d98913a8ab37431d2525c9ab03aad0b50e5f2e"
+    },
+    {
+      "path": "attachments/challenge/tls_proxy.py",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/challenge/tls_proxy.py",
+      "bytes": 1906,
+      "sha256": "0e006aec508e7a6149237bf00b29d3ffec2f865b806809921091352f1f4b5edf"
+    },
+    {
+      "path": "attachments/kona.yaml",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/kona.yaml",
+      "bytes": 3055,
+      "sha256": "4f59e9ebe9b3012b27286a499e5ed30112d33a3620d99fe3a921e485e98d044b"
+    },
+    {
+      "path": "attachments/challenge/challenge/Verifier.apk",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/challenge/challenge/Verifier.apk",
+      "bytes": 31121189,
+      "sha256": "3bbdcd69078101eccb9b8e7f05ff6b76dfbfe4eca6ebda3b8b8238bccc33d5c1"
+    },
+    {
+      "path": "attachments/challenge/challenge/SekaiID.apk",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/misc/sekaiid/challenge/challenge/SekaiID.apk",
+      "bytes": 31049170,
+      "sha256": "9293f2f7be8bc1bb536995a2577d9aff56f2240ada4da59059f2d1c635145221"
+    },
+    {
+      "path": "licenses/LICENSE",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/LICENSE",
+      "bytes": 34523,
+      "sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef"
+    },
+    {
+      "path": "licenses/LICENSE.content.md",
+      "url": "https://raw.githubusercontent.com/project-sekai-ctf/sekaictf-2026/e35651f972e1c4f355c18427b3063a9ac98fb2cd/LICENSE.content.md",
+      "bytes": 19119,
+      "sha256": "14d2138e3a8bd9448254f171b8e17130bf7104d2fd843ab0b924bd105fd00d5a"
+    },
+    {
+      "path": "writeups/handout/tls_proxy.py",
+      "url": "https://raw.githubusercontent.com/Abdelkad3r/SekaiCTF-2026/ef87965f07e32162595457285da138f181492f54/misc/sekaiid/handout/tls_proxy.py",
+      "bytes": 1906,
+      "sha256": "0e006aec508e7a6149237bf00b29d3ffec2f865b806809921091352f1f4b5edf"
+    },
+    {
+      "path": "writeups/exploit/run.sh",
+      "url": "https://raw.githubusercontent.com/Abdelkad3r/SekaiCTF-2026/ef87965f07e32162595457285da138f181492f54/misc/sekaiid/exploit/run.sh",
+      "bytes": 1311,
+      "sha256": "b512b98a573fc87f9273e4a8fe859c3aed11cae63da8557f13826751c83dbf3a"
+    },
+    {
+      "path": "writeups/artifacts/flag.txt",
+      "url": "https://raw.githubusercontent.com/Abdelkad3r/SekaiCTF-2026/ef87965f07e32162595457285da138f181492f54/misc/sekaiid/artifacts/flag.txt",
+      "bytes": 34,
+      "sha256": "03efb3678ec3252aefd5eb18d8062bde4da2addd4880d907963d38802266db1e"
+    },
+    {
+      "path": "writeups/handout/SekaiID-AndroidManifest.xml",
+      "url": "https://raw.githubusercontent.com/Abdelkad3r/SekaiCTF-2026/ef87965f07e32162595457285da138f181492f54/misc/sekaiid/handout/SekaiID-AndroidManifest.xml",
+      "bytes": 5437,
+      "sha256": "cf89c1683ea165827ced1aa9a4dc1fd4bf98d8418b1300f47274168bf070a63f"
+    },
+    {
+      "path": "writeups/handout/Verifier-AndroidManifest.xml",
+      "url": "https://raw.githubusercontent.com/Abdelkad3r/SekaiCTF-2026/ef87965f07e32162595457285da138f181492f54/misc/sekaiid/handout/Verifier-AndroidManifest.xml",
+      "bytes": 4820,
+      "sha256": "70ccebc551d6b93c2ee34656b79183f714e73176d2b6e3c859ba61b5001fc2aa"
+    },
+    {
+      "path": "writeups/README.md",
+      "url": "https://raw.githubusercontent.com/Abdelkad3r/SekaiCTF-2026/ef87965f07e32162595457285da138f181492f54/misc/sekaiid/README.md",
+      "bytes": 10014,
+      "sha256": "79d8f121d09eaab524929500f8cb725d5e8c192254d893fa87561211bc471147"
+    }
+  ],
+  "errors": []
+}

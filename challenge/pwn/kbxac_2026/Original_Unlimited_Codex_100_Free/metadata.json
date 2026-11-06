@@ -1,0 +1,63 @@
+{
+  "event_id": "CTF-3456",
+  "event_title": "kBxAc CTF 2026",
+  "title": "Original_Unlimited_Codex_100_Free",
+  "category": "pwn",
+  "original_category": "Pwn",
+  "tags": [
+    "null-byte-poisoning",
+    "unsafe-unlink",
+    "heap-exploitation"
+  ],
+  "source_urls": [
+    "https://ctf42.online/ctfs/kbxac/2026/original_unlimited_codex_100_free/",
+    "https://ctf42.online/ctfs/kbxac/2026/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/pwn/Original_Unlimited_Codex_100_Free"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/kBxAc-CTF-2026/tree/main/pwn/original-unlimited-codex-100-free"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/KBxAc/2026/pwn/Original_Unlimited_Codex_100_Free",
+    "https://ctf42.online/ctfs/kbxac/2026/original_unlimited_codex_100_free/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "pwn/kbxac_2026/Original_Unlimited_Codex_100_Free/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/kBxAc-CTF-2026/main/pwn/original-unlimited-codex-100-free/README.md",
+      "bytes": 14344,
+      "sha256": "d8dfd0305650f9e5920318c040499172c27e523f4b86d1a386d305ee67a1e188",
+      "kind": "writeup"
+    },
+    {
+      "path": "pwn/kbxac_2026/Original_Unlimited_Codex_100_Free/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/KBxAc/2026/pwn/Original_Unlimited_Codex_100_Free/README.md",
+      "bytes": 44,
+      "sha256": "c9c98f023c3d40f0c009b3bb6041145c7550732ff40178d306a313fa48a7a004",
+      "kind": "attachment"
+    },
+    {
+      "path": "pwn/kbxac_2026/Original_Unlimited_Codex_100_Free/attachments/upstream/handout.7z",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/KBxAc/2026/pwn/Original_Unlimited_Codex_100_Free/handout.7z",
+      "bytes": 757389,
+      "sha256": "c14c6fecb0fbcd526fb1936d32c600f0438081f7d8b5bdd12cc789a1f1449796",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/kbxac/2026/original_unlimited_codex_100_free/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/kbxac/2026/original_unlimited_codex_100_free/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

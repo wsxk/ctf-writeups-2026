@@ -1,0 +1,59 @@
+{
+  "event_id": "CTF-3033",
+  "event_title": "ASIS CTF Quals 2026",
+  "title": "Collector",
+  "category": "逆向",
+  "original_category": "Reverse",
+  "tags": [],
+  "source_urls": [
+    "https://ctf42.online/ctfs/asis/2026-quals/collector/",
+    "https://ctf42.online/ctfs/asis/2026-quals/",
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Collector"
+  ],
+  "writeup_urls": [
+    "https://github.com/hax1ng/ASIS-CTF-Quals-2026/tree/main/rev/collector"
+  ],
+  "attachment_urls": [
+    "https://github.com/sajjadium/ctf-archives/tree/main/ctfs/ASIS/2026/Quals/rev/Collector",
+    "https://ctf42.online/ctfs/asis/2026-quals/collector/folder.zip?kind=files"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_status": "downloaded",
+  "notes": [
+    "来源为公开作者writeup及公开题目镜像；未经运行验证。",
+    "题目ZIP保留原目录；contents.json列出压缩包成员。",
+    "镜像下载失败后，已从其标明的GitHub题目源目录下载，固定到提交哈希。"
+  ],
+  "artifacts": [
+    {
+      "path": "逆向/asis_2026-quals/Collector/writeups/1_README.md",
+      "url": "https://raw.githubusercontent.com/hax1ng/ASIS-CTF-Quals-2026/main/rev/collector/README.md",
+      "bytes": 4629,
+      "sha256": "36b55cbb8a8dc668c18ce1949ca968d2976d19af16c8846c26c995df630015f8",
+      "kind": "writeup"
+    },
+    {
+      "path": "逆向/asis_2026-quals/Collector/attachments/upstream/Collector_74c92ebeb1228fa20a858574384df47c66656f89.txz",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/ASIS/2026/Quals/rev/Collector/Collector_74c92ebeb1228fa20a858574384df47c66656f89.txz",
+      "bytes": 267400,
+      "sha256": "68924f3b9181370e891a359d0869aa485477f160216a8e18a0befecdca63a719",
+      "kind": "attachment"
+    },
+    {
+      "path": "逆向/asis_2026-quals/Collector/attachments/upstream/README.md",
+      "url": "https://raw.githubusercontent.com/sajjadium/ctf-archives/74759114cd943c31143efaadebc33ca180ba9e9e/ctfs/ASIS/2026/Quals/rev/Collector/README.md",
+      "bytes": 142,
+      "sha256": "e2261fc272f6a9dfe8766a6da82070b6c63adf651a7ce9ef11b78c432f109872",
+      "kind": "attachment"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://ctf42.online/ctfs/asis/2026-quals/collector/folder.zip?kind=files",
+      "error": "429 Client Error: Too Many Requests for url: https://ctf42.online/ctfs/asis/2026-quals/collector/folder.zip?kind=files"
+    }
+  ],
+  "collector": "ctf42-public-index",
+  "retrieved_date": "2026-11-06",
+  "attachment_kind": "upstream_files"
+}

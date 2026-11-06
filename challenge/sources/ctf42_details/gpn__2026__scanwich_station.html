@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scanwich_Station · GPN 2026 (pwn) writeup · ctf42</title>
+  
+
+<meta name="description" content="Scanwich_Station: Pwn challenge from GPN 2026. Techniques: integer-overflow, qr-code, image-dimensions. Pwning Web by vurlo Finished by 8 tables A…">
+<link rel="canonical" href="https://ctf42.online/ctfs/gpn/2026/scanwich_station/">
+<meta property="og:site_name" content="ctf42">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctf42.online/ctfs/gpn/2026/scanwich_station/">
+<meta property="og:title" content="Scanwich_Station">
+<meta property="og:description" content="Scanwich_Station: Pwn challenge from GPN 2026. Techniques: integer-overflow, qr-code, image-dimensions. Pwning Web by vurlo Finished by 8 tables A…">
+<meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/static/favicon.b8d8ed0a3fc3.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.5c84b9a6eaab.css">
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4756391cee8e4ead92ec1d33cb26995b"}'></script>
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="prompt">$</span> ctf42</a>
+    <nav class="nav">
+      <a href="/ctfs/">CTFs</a>
+      <a href="/challenges/">Challenges</a>
+      <a href="/techniques/">Techniques</a>
+      <a href="/contributors/">Contributors</a>
+      <a href="/about/">About</a>
+      
+        <a href="/accounts/login/">Log in</a>
+        <a href="/accounts/signup/" class="btn btn-sm">Sign up</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  
+  
+
+<nav class="crumbs"><a href="/ctfs/">CTFs</a> / <a href="/ctfs/gpn/">GPN</a> / <a href="/ctfs/gpn/2026/">2026</a> / Scanwich_Station</nav>
+
+
+<div class="challenge-head">
+  <h1>Scanwich_Station
+    </h1>
+  <div class="badges">
+    <a class="cat cat-pwn" href="/category/pwn/">Pwn</a>
+    
+    
+    
+    <a class="tag" href="/techniques/integer-overflow/">#integer-overflow</a><a class="tag" href="/techniques/qr-code/">#qr-code</a><a class="tag" href="/techniques/image-dimensions/">#image-dimensions</a>
+    
+    
+  </div>
+  <div class="ratings">
+    <div class="rating">
+      <span class="rating-label">Difficulty</span>
+      
+        <span class="muted small">Not rated yet</span>
+      
+      
+    </div>
+    <div class="rating practice">
+      
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/gpn/2026/scanwich_station/" title="Free account: track what you solved">Mark solved</a>
+        <a class="btn btn-sm btn-ghost" href="/accounts/signup/?next=/ctfs/gpn/2026/scanwich_station/" title="Free account: build a to-do list">☆ Save for later</a>
+      
+    </div>
+    <div class="rating">
+      
+        <span class="like-btn muted" title="Log in to like">♡ 0</span>
+      
+    </div>
+  </div>
+  <p class="meta">Author: vurlo</p>
+  <p class="meta">Flag format: <code class="flag-format">GPNCTF{...}</code></p>
+  
+</div>
+
+
+
+<div class="layout-2">
+  <div>
+    <section class="prose description">
+      <p>Pwning
+Web
+by vurlo
+Finished by 8 tables
+A table-side QR reader for hungry guests and suspicious menus. One special order can make the scanner serve more than dinner.</p>
+      
+    </section>
+
+    <section>
+      <h2>Writeups</h2>
+
+      <h3>Official</h3>
+      
+        <p class="empty">No official writeup linked.</p>
+      
+
+      <h3>Community</h3>
+      
+<article class="writeup">
+  <header>
+    <b>Scanwich_Station — writeup</b>
+    
+    
+    <span class="muted">by hax1ng</span>
+  </header>
+  <p><a href="https://github.com/hax1ng/GPN-CTF-2026/tree/main/Scanwich%20Station" rel="noopener nofollow ugc" target="_blank">https://github.com/hax1ng/GPN-CTF-2026/tree/main/Scanwich%20Station</a></p>
+  
+</article>
+
+
+      
+        <p class="muted"><a href="/accounts/login/?next=/ctfs/gpn/2026/scanwich_station/">Log in</a> to add a community writeup.</p>
+      
+    </section>
+
+    
+    <section class="similar">
+      <h2>Similar challenges</h2>
+      <p class="muted small">Same category, sharing the most techniques with this one.</p>
+      <div class="table-scroll">
+        <table class="table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+
+      
+        <th>CTF</th>
+
+        <th class="num">Weight</th>
+
+      
+      
+      <th>Has</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/sekaictf/2026/echo_chamber/">echo_chamber</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/integer-overflow/">#integer-overflow</a><a class="tag tag-sm" href="/techniques/content-length/">#content-length</a><a class="tag tag-sm" href="/techniques/heap-overflow/">#heap-overflow</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/sekaictf/2026/">SekaiCTF 2026</a></td>
+        <td class="num">79.25</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/angstromctf/2024/exam/">exam</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/integer-overflow/">#integer-overflow</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/angstromctf/2024/">angstromCTF 2024</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        <span title="Source / Docker setup">src</span>
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/jerseyctf/2024/mathtest/">MathTest</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/integer-overflow/">#integer-overflow</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/jerseyctf/2024/">JerseyCTF 2024</a></td>
+        <td class="num">21.26</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/iron/2024/sortingserver/">SortingServer</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/integer-overflow/">#integer-overflow</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/iron/2024/">IRON 2024</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/sunshinectf/2023/robot_assembly_line/">Robot_Assembly_Line</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/integer-overflow/">#integer-overflow</a><a class="tag tag-sm" href="/techniques/heap-exploitation/">#heap-exploitation</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/sunshinectf/2023/">SunshineCTF 2023</a></td>
+        <td class="num">34.09</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>
+        
+<a href="/ctfs/hsctf/2023/doubler/">doubler</a>
+        
+        <div class="row-tags"><a class="tag tag-sm" href="/techniques/integer-overflow/">#integer-overflow</a></div>
+      </td>
+      
+        <td><a class="muted" href="/ctfs/hsctf/2023/">HSCTF 2023</a></td>
+        <td class="num">–</td>
+      
+      
+      <td class="has">
+        <span title="Handout files">files</span>
+        
+        <span title="Writeups">wu&nbsp;1</span>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+
+      </div>
+      
+        <p class="small">More practice: <a href="/techniques/integer-overflow/">#integer-overflow</a> · <a href="/techniques/qr-code/">#qr-code</a> · <a href="/techniques/image-dimensions/">#image-dimensions</a>
+          · <a href="/category/pwn/">all Pwn</a></p>
+      
+    </section>
+    
+  </div>
+
+  <aside class="files">
+    <h2>Files</h2>
+    
+      <a class="btn btn-block ext" href="https://github.com/sajjadium/ctf-archives/tree/main/ctfs/GPN/2026/pwn/Scanwich_Station" rel="noopener noreferrer nofollow ugc" target="_blank">
+        Handout files <span>↗ github.com</span></a>
+      
+        <a class="btn btn-ghost btn-block btn-sm" href="/ctfs/gpn/2026/scanwich_station/folder.zip?kind=files">⬇ Download handout (.zip)</a>
+      
+    
+    
+    
+      <p class="note note-warn small">⚠ Community-submitted, hosted off-site. Treat these files as <strong>untrusted</strong>.
+      Open the source on GitHub (the “↗” links above) to review it <strong>before</strong> downloading, and run anything
+      executable inside a VM or container.</p>
+    
+
+    
+    
+    
+    
+    
+
+    
+      <h3 class="side-h">More from GPN 2026</h3>
+      <ul class="side-list">
+        <li>
+<a href="/ctfs/gpn/2026/fruit_market/">fruit_market</a> <span class="cat cat-blockchain cat-xs">Blockchain</span></li><li>
+<a href="/ctfs/gpn/2026/competition/">COMpetition</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/gpn/2026/easy_dsa/">Easy_DSA</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/gpn/2026/fortune/">Fortune</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/gpn/2026/guess_the_taste/">Guess_the_Taste</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/gpn/2026/just_follow_the_recipe/">Just_Follow_the_Recipe</a> <span class="cat cat-crypto cat-xs">Crypto</span></li><li>
+<a href="/ctfs/gpn/2026/culinary_circles/">Culinary_Circles</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/gpn/2026/customer_service/">Customer_Service</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/gpn/2026/double_fried/">Double_Fried</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/gpn/2026/knitted_flag/">Knitted_Flag</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/gpn/2026/organized/">Organized</a> <span class="cat cat-misc cat-xs">Misc</span></li><li>
+<a href="/ctfs/gpn/2026/paradise_nut/">Paradise_Nut</a> <span class="cat cat-misc cat-xs">Misc</span></li>
+      </ul>
+      <a class="small" href="/ctfs/gpn/2026/">All GPN 2026 challenges →</a>
+    
+
+    
+  </aside>
+</div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="footer-credit">ctf42 · free and community-run ·
+    <a href="/accounts/signup/">Contribute</a></p>
+</footer>
+</body>
+</html>

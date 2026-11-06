@@ -1,0 +1,81 @@
+{
+  "event_id": "CTF-3314",
+  "event_title": "SCTF 2026",
+  "category": "虚拟化",
+  "title": "babel_furnace",
+  "dirname": "SCTF_2026",
+  "source_urls": [
+    "https://github.com/SycloverTeam/SCTF-2026/tree/HEAD/Reverse/babel_furnace"
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/WP.md",
+      "local": "writeups/WP.md",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 6117,
+      "sha256": "7838b9642cc396138e6ef12f8e009b8baf34f14b28544ae83946368492ae7b63"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/babel_furnace.exe",
+      "local": "attachments/babel_furnace.exe",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 6568960,
+      "sha256": "831be3673020007e25d9d03c4b2a881b515ff4e1c4382a52d5d8484f7c318276"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/bin/bridge.pyd",
+      "local": "attachments/bin/bridge.pyd",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 36352,
+      "sha256": "e1d1112cba6a23d76f04f91ad2bd3da8c77479668199ceb414bfee719306176c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/bin/engine.dll",
+      "local": "attachments/bin/engine.dll",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 209408,
+      "sha256": "4a11df4e3db50c6e18b00bb95dab16e083dec06ee56cb42c6ab99a5b786aeb8a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/bin/python_carrier.bin",
+      "local": "attachments/bin/python_carrier.bin",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 15704,
+      "sha256": "b6c9bb98dc957efe5513dd9cd926f14617beac0467336feb1a4c81926127aff8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/exp/solve.py",
+      "local": "writeups/exp/solve.py",
+      "size_expected": null,
+      "git_blob_sha": null,
+      "status": "downloaded",
+      "bytes": 25914,
+      "sha256": "30746c9700307bed98268282b6c36aece198957a0e8585d0ec47242774b82ea2"
+    }
+  ],
+  "notes": "官方2026仓库题目附件和完整writeup。按题目实际内容归类：GuardMaster为APK；BrainfOok及babel_furnace使用自定义VM。",
+  "directory": "虚拟化/SCTF_2026/babel_furnace",
+  "retrieved_date_beijing": "2026-11-06",
+  "writeup_urls": [
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/WP.md",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/exp/solve.py"
+  ],
+  "writeup_status": "downloaded",
+  "attachment_urls": [
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/babel_furnace.exe",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/bin/bridge.pyd",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/bin/engine.dll",
+    "https://raw.githubusercontent.com/SycloverTeam/SCTF-2026/HEAD/Reverse/babel_furnace/bin/python_carrier.bin"
+  ],
+  "attachment_status": "downloaded"
+}

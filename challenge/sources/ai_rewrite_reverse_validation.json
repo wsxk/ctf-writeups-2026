@@ -1,0 +1,530 @@
+{
+  "category": "逆向",
+  "expected": 104,
+  "written": 104,
+  "summary_records": 104,
+  "broken_links": [],
+  "validation": "coverage, local links, selected literal lengths; challenge programs and solvers not executed",
+  "files": [
+    {
+      "directory": "逆向/asis_2026-quals/Atarude",
+      "bytes": 2045,
+      "sha256": "e1947659023335761c28bd2b9ee1bb4e89e64d76ab7ca780804966560163ba34"
+    },
+    {
+      "directory": "逆向/asis_2026-quals/Beyond_the_fourth_wall",
+      "bytes": 2069,
+      "sha256": "48f6b33c5c02006b6e899cc2c2ef59e66e77f2506badd9ba818f7858c31b048e"
+    },
+    {
+      "directory": "逆向/asis_2026-quals/Collector",
+      "bytes": 1988,
+      "sha256": "4044b8c006dedc74efc7f89c5479cba10a3c53555fee609834d317a1c2cce93c"
+    },
+    {
+      "directory": "逆向/asis_2026-quals/LeakMeAk",
+      "bytes": 1940,
+      "sha256": "d3e44b6da6d0699fb7c7ee5a28b55edfc7bd61e0376b24742801e6b36a89e7ee"
+    },
+    {
+      "directory": "逆向/asis_2026-quals/Lesh",
+      "bytes": 1885,
+      "sha256": "ca0c9858421dfe7b4a770109c513560fef76e6dcd920fd90c84f065f65813b3e"
+    },
+    {
+      "directory": "逆向/asis_2026-quals/Mousa",
+      "bytes": 1923,
+      "sha256": "08efddaaf90b5341c15abd044bf790e2da13924f941497f89de0ab57fd204105"
+    },
+    {
+      "directory": "逆向/asis_2026-quals/NEON",
+      "bytes": 2077,
+      "sha256": "a511ffbf06b91eddc7600efb0de3f348bd03875df6bbef17f73811eb8fc89083"
+    },
+    {
+      "directory": "逆向/b01lers_CTF_2026/shakespeares-revenge",
+      "bytes": 2016,
+      "sha256": "5adc30f7c56df8a7247b78a4f0d5a6d3b9c0cdf83931a81db1fb7bb5d580438f"
+    },
+    {
+      "directory": "逆向/b01lers_CTF_2026/tiles--ai",
+      "bytes": 2057,
+      "sha256": "86d7e4bb6772ade01b8502b02cf68e5ce3730522650eda17f104ceb20f8675ef"
+    },
+    {
+      "directory": "逆向/bdsec_2026/Easy_RE_Challenge",
+      "bytes": 1862,
+      "sha256": "644814a8175874c82de9e41ce87a21cdabff97f750eab34c2e75fd24ace98be8"
+    },
+    {
+      "directory": "逆向/bdsec_2026/Night_Shift",
+      "bytes": 1919,
+      "sha256": "5f7895965f95ec26ea5a7c851ca09382d4bf5dbed537bd30de0ad65d6fdc2745"
+    },
+    {
+      "directory": "逆向/bearcat_2026/Captain_Morgan",
+      "bytes": 1817,
+      "sha256": "2444f548aa275c0b61359a51a50b6a91da30227afcad2701041d4d20980538b2"
+    },
+    {
+      "directory": "逆向/bearcat_2026/Missing_One_Piece",
+      "bytes": 1860,
+      "sha256": "e223c42b8938b2d2e2ac730337f92fe572959ce1057d6ab252de344cef1ef1df"
+    },
+    {
+      "directory": "逆向/bearcat_2026/Pollys_Key",
+      "bytes": 1947,
+      "sha256": "11d10c0501556dca3b2a4d34caff040becc88e64c07be81672b8a09ce0080786"
+    },
+    {
+      "directory": "逆向/bhackari_2026/Dont_unpack_me",
+      "bytes": 2007,
+      "sha256": "417222deeb83a1df25b8bf16a00525c29f98922603a1e77c7264a15431fa0619"
+    },
+    {
+      "directory": "逆向/bhackari_2026/Mystery",
+      "bytes": 1856,
+      "sha256": "74943a70d3701cd50ab9511557d3eeb831769b606f144ce9f44f5509caeb577e"
+    },
+    {
+      "directory": "逆向/boroctf_2026/AlphaCode",
+      "bytes": 1996,
+      "sha256": "f043e7608fcb9a665b4be05f1c2dec4583ea946100c2e835390e19255ad3826b"
+    },
+    {
+      "directory": "逆向/BYUCTF_2026/angr_management",
+      "bytes": 1910,
+      "sha256": "d53f62240e7abb8f463b1233759a42946d4afd2a86849a2b9b83bcf13419b3e2"
+    },
+    {
+      "directory": "逆向/BYUCTF_2026/picklerick",
+      "bytes": 1858,
+      "sha256": "15f724cd747c96aae4ae336cf32c99d3f83937de3606ad8fc52bb3b29671bc52"
+    },
+    {
+      "directory": "逆向/BYUCTF_2026/rcaas",
+      "bytes": 1949,
+      "sha256": "9e7c680d04ddb796e464515c64cc9f9191c15b0a664daca4c2317389b9a0bb6c"
+    },
+    {
+      "directory": "逆向/BYUCTF_2026/yara",
+      "bytes": 1859,
+      "sha256": "f04619773425be2665915e7c9a09ea5184f54af427e1ed1665d2d374f36dd8bf"
+    },
+    {
+      "directory": "逆向/compfest_2026/ITS_ME_BURHAN",
+      "bytes": 2038,
+      "sha256": "fe0b93f743bfe8ad5f8abf88ca6142d698e4961ab54e1c3ae2ee52cdb5dcd1c9"
+    },
+    {
+      "directory": "逆向/cryovault_2026-quals/rime_scrub",
+      "bytes": 2074,
+      "sha256": "b305b88f95effa250991f8cdc6d90f50fbc11f8243aa9887365fb724acdc9538"
+    },
+    {
+      "directory": "逆向/css_2026/FLAPPY_BOARD",
+      "bytes": 1979,
+      "sha256": "9bec4bfde2b4d3ab86f10cd40f7e441c695aaee844ed4b6cb1fd92534fb05450"
+    },
+    {
+      "directory": "逆向/DiceCTF_2026_Quals/another-onion",
+      "bytes": 2536,
+      "sha256": "2e679432a07135dcc89c251cce040842d89f23a21cdc8e9713d4729328947c62"
+    },
+    {
+      "directory": "逆向/DiceCTF_2026_Quals/bedtime",
+      "bytes": 1894,
+      "sha256": "658c19eaa9bc7dce2f7425ef53f5282a6f98dd3559cd8af039118417fb6f7b9f"
+    },
+    {
+      "directory": "逆向/DiceCTF_2026_Quals/explorer",
+      "bytes": 1817,
+      "sha256": "b27f9b16d21882da5df2232b1be60001c1dfd22048bffbb36a4ee38e579fe1c6"
+    },
+    {
+      "directory": "逆向/haruulzangi_2026-quals/Ehlel",
+      "bytes": 1855,
+      "sha256": "1bfb296989875ca215c1a1a845e025415b606a23f729bdf082da6c7305c7c73d"
+    },
+    {
+      "directory": "逆向/haruulzangi_2026-quals/Furnace",
+      "bytes": 1900,
+      "sha256": "fc50445e30ed36dbb5cf738386b5ace0bca490143854ecd1c82a38eaac0e8d41"
+    },
+    {
+      "directory": "逆向/haruulzangi_2026-quals/Trace",
+      "bytes": 1850,
+      "sha256": "c4a07c8a03a0c806ac19e3876f97b60587fa2d9520bedcf450683ff3018cd6e5"
+    },
+    {
+      "directory": "逆向/kbxac_2026/Patcher_1",
+      "bytes": 1956,
+      "sha256": "e4798a91fde56a8d3f4d5de4f7868b977dcb45d04d90c798745fd6dbe924b06c"
+    },
+    {
+      "directory": "逆向/kbxac_2026/Patcher_2",
+      "bytes": 1888,
+      "sha256": "411d353e77a1ab251c95c5eeed330943b99b8b5530cc4f87694e5fa82befbb1e"
+    },
+    {
+      "directory": "逆向/kbxac_2026/Shherrr",
+      "bytes": 1813,
+      "sha256": "58068fa6c7d37407d49fcf586124ecc99fc980a38aa49fe5582f0db461cd5630"
+    },
+    {
+      "directory": "逆向/kbxac_2026/simphell",
+      "bytes": 1793,
+      "sha256": "b1d31d3fbaec8e2455d87cd1f26e658b97dbed62a04bed32b48932c3f405f0cc"
+    },
+    {
+      "directory": "逆向/kubstu_2026/Ouroboros",
+      "bytes": 1875,
+      "sha256": "81d950b0b4a2d5f47585f65684fadce3712a9aee4fcd2f2d8544ead01d3a6648"
+    },
+    {
+      "directory": "逆向/kubstu_2026/RISC_V",
+      "bytes": 1925,
+      "sha256": "45a5d06c1b421d05d405cfaa1b3342f01d319fd37a3727b89aca0c9213f8a11a"
+    },
+    {
+      "directory": "逆向/LA_CTF_2026/flag-finder",
+      "bytes": 1868,
+      "sha256": "0c27ed1c5faa95b2c5a78e359cb05a65b72e1fed193a97f533e9540e54414d0e"
+    },
+    {
+      "directory": "逆向/LA_CTF_2026/lactf-1986",
+      "bytes": 1886,
+      "sha256": "0e584743be4016cdbfda73015915b7eecdf0750ec0cc3d9f8cc70195dda8f145"
+    },
+    {
+      "directory": "逆向/LA_CTF_2026/ooo",
+      "bytes": 2012,
+      "sha256": "3708c40ff9e121bf12554fac6cbc0b95b49291ecf6afd86f2075f1095f263a1a"
+    },
+    {
+      "directory": "逆向/LA_CTF_2026/starless-c",
+      "bytes": 1980,
+      "sha256": "27066d53820a2362a724e65834a3b64fd3104319270b29f63109eee04d422c45"
+    },
+    {
+      "directory": "逆向/LA_CTF_2026/the-fish",
+      "bytes": 1987,
+      "sha256": "79f3a434f468a0b2b68f9e1360c5009802f176cc7fd15942d726d824524a9ee3"
+    },
+    {
+      "directory": "逆向/LA_CTF_2026/the-three-sat-problem",
+      "bytes": 2177,
+      "sha256": "47a7c36afa3e1f1ca18bc063bdc9304519901936fb194b2b4ac59b9ec73e525e"
+    },
+    {
+      "directory": "逆向/lyknctf_2026/Control_Freak_1",
+      "bytes": 1838,
+      "sha256": "e1b743b61312463f9dfbcbacbbc9853bd9db00f8afbf8a3ba66a05d20c2e8736"
+    },
+    {
+      "directory": "逆向/lyknctf_2026/Control_Freak_2",
+      "bytes": 1883,
+      "sha256": "6a6d666fc7d4ef822265fae74db2e3b89706875ba4dc2cd241dcc11719da6829"
+    },
+    {
+      "directory": "逆向/lyknctf_2026/Waguri2",
+      "bytes": 1789,
+      "sha256": "23add95d8cd113daadd71360d14bfd08bb853e5ae4f60c77d7b64778c9e3ea29"
+    },
+    {
+      "directory": "逆向/NCTF_2026/No My Bank!",
+      "bytes": 2163,
+      "sha256": "5271fa3ea6f863774e4a3d9e56dfce19d6d050e59ba495991db4eb2d7754bb89"
+    },
+    {
+      "directory": "逆向/NCTF_2026/Pay For 2048",
+      "bytes": 2072,
+      "sha256": "f4ad8e82b7c8aa63492abe562611baf550329c56f9e240841e1f1fa142cba7f7"
+    },
+    {
+      "directory": "逆向/NCTF_2026/鸡爪流高手",
+      "bytes": 2104,
+      "sha256": "63f8d63d4f86990ef488df25c2e8994397a58796ae138739bfe07c55ea0cc168"
+    },
+    {
+      "directory": "逆向/NepCTF 2026/19_compile_me_maybe",
+      "bytes": 1780,
+      "sha256": "53c07e186ae0f4d476d29954a8603e83652b84904115c871d263c7a2e620be91"
+    },
+    {
+      "directory": "逆向/NepCTF 2026/70_【Game】共生（本地）",
+      "bytes": 1886,
+      "sha256": "0ab66f79d4aae30437534bd54db613d50e29a38c99ec6c73d75ae76424008442"
+    },
+    {
+      "directory": "逆向/NepCTF 2026/72_【Game】共生（联机）",
+      "bytes": 1869,
+      "sha256": "6ad9832184ccd6fe0a4eb9136a04a38a8df9a99474c0f087ea07381ce0f5d272"
+    },
+    {
+      "directory": "逆向/PascalCTF_2026/Albo delle Eccellenze",
+      "bytes": 1917,
+      "sha256": "38450e1aab5b346dff2c3e8b54799ab97268009efa83513e3d8f0b7953f87bb6"
+    },
+    {
+      "directory": "逆向/pwnsec_2026/Operation_Split_Horizon",
+      "bytes": 1929,
+      "sha256": "34de902b62c403818619dc8cc9ee2a36bfaed5ee763dcd395372fd2fb3fbef37"
+    },
+    {
+      "directory": "逆向/pwnsec_2026/Two_Worlds_One_Heart",
+      "bytes": 1859,
+      "sha256": "bfe4570154aef0f801106a5cd2fb29be3642ca51ab05e911737f9a00d048a038"
+    },
+    {
+      "directory": "逆向/ritsec_2026/Buried_Treasure",
+      "bytes": 1843,
+      "sha256": "133294e97cc720f8b2b4e2b5b91471d122427be6d3b8269ee7146171873a4b67"
+    },
+    {
+      "directory": "逆向/ritsec_2026/not_quite_optimal",
+      "bytes": 1940,
+      "sha256": "d34c46269fd3b1209e7360cdf3850e69bd2cf1b2f105ed7623296e5435f6feb6"
+    },
+    {
+      "directory": "逆向/ritsec_2026/obfpyscated",
+      "bytes": 1897,
+      "sha256": "cefcb02d1800bf0a40bf98a729754e19720952ec9fdba424185235d3a61a5294"
+    },
+    {
+      "directory": "逆向/ritsec_2026/T_reasure_Chest",
+      "bytes": 1893,
+      "sha256": "037285528ecb8b5aa958b8551c0630739e6011a0fa95db2f3f32ca124f746e24"
+    },
+    {
+      "directory": "逆向/scriptctf_2026/F_K",
+      "bytes": 1806,
+      "sha256": "da75a2f4bdf56f0ff6aa78b470060182c30400287062307165f8509d7bb27b56"
+    },
+    {
+      "directory": "逆向/SCTF_2026/Alice",
+      "bytes": 2036,
+      "sha256": "cec12cb2b4d7cbb47b0d712a3d5270919ec682aed291848891887b5317ae50a9"
+    },
+    {
+      "directory": "逆向/SCTF_2026/ghost_projection",
+      "bytes": 2217,
+      "sha256": "d32a62ec80f0d63cec1e4c7261497229e4ab378141aa76a005ec6e998eb84eea"
+    },
+    {
+      "directory": "逆向/SCTF_2026/Zombie_progression",
+      "bytes": 2032,
+      "sha256": "ca554c0fadd4a37afd8771397395e13a31c3ab617bb14c4198cfaac9f40d33ba"
+    },
+    {
+      "directory": "逆向/sekaictf_2026/Chibile",
+      "bytes": 1925,
+      "sha256": "718b7a0258af6a6758e3221bb34f8e2f1a00f9ea91534d72b4cb08c12695fc1e"
+    },
+    {
+      "directory": "逆向/sekaictf_2026/Untitled_Encore",
+      "bytes": 1869,
+      "sha256": "98677160806eab4b559d34ee07f83f7b30546befd0f81116f058b15deea8eb74"
+    },
+    {
+      "directory": "逆向/squ1rrel_2026/redactr",
+      "bytes": 1928,
+      "sha256": "a2c6bcd5a1103fafb4e8a1990e67e02831ec3a626ea2f0d025c36900dd82abeb"
+    },
+    {
+      "directory": "逆向/squ1rrel_2026/squ1rrel_o_tron",
+      "bytes": 1914,
+      "sha256": "c74cf91072b16c2c88680bcc7d8658dbc21580b5654a1254c7b7c11a60922852"
+    },
+    {
+      "directory": "逆向/Srdnlen_CTF_2026_Quals/Artistic warmup",
+      "bytes": 1899,
+      "sha256": "60cb53e5dae0500a611c655815e5d90acd954d398c7ecbdbe301dcababcaa6f8"
+    },
+    {
+      "directory": "逆向/Srdnlen_CTF_2026_Quals/Rev Juice",
+      "bytes": 2008,
+      "sha256": "b33131605a0b029c6a2aea0deb8cf40cd59e140b4c12c5d4ee0c871dcbe2b7b9"
+    },
+    {
+      "directory": "逆向/SUCTF_2026/SU_easygal",
+      "bytes": 1969,
+      "sha256": "284e2be5bd10c4a576edcb4e81d55c592c48ffe32a7e504cb9e7913ce800364c"
+    },
+    {
+      "directory": "逆向/SUCTF_2026/SU_Protocol",
+      "bytes": 2048,
+      "sha256": "49dc44fa4201dc05caa8a826f3a4ba4ac57680adf34e6c9b4950717de010c2f0"
+    },
+    {
+      "directory": "逆向/SUCTF_2026/SU_revird",
+      "bytes": 1995,
+      "sha256": "85bfd68a5f16509498e541706245a26687ba184a1990d851eabc2696b943a0d5"
+    },
+    {
+      "directory": "逆向/TAMUctf_2026/acidity",
+      "bytes": 2151,
+      "sha256": "bee0aec659ed29e6ccfd1daf4038963931c7a3cad63590c1ee5cc5c813ca94aa"
+    },
+    {
+      "directory": "逆向/TAMUctf_2026/challenge7",
+      "bytes": 2130,
+      "sha256": "961d7504cfa0d6630c885b8a892d744ceaab9f267fe3400c4040949bbe52d221"
+    },
+    {
+      "directory": "逆向/TAMUctf_2026/hyper-neighbor",
+      "bytes": 2057,
+      "sha256": "62407edcf32e907be9197fdbdae173cb47daf18a9c13e177023d3e086790000b"
+    },
+    {
+      "directory": "逆向/TAMUctf_2026/kitchen-sink",
+      "bytes": 1827,
+      "sha256": "4413a29db7ab187986587b7dd5a8c25ebf4f92b3c8051687ef93c804eda12f5f"
+    },
+    {
+      "directory": "逆向/TAMUctf_2026/nucleus",
+      "bytes": 1871,
+      "sha256": "4247625b1bdea98cbb2a24a7c9fe7f64453d6af89eb3eaf7d25e444aaea96aad"
+    },
+    {
+      "directory": "逆向/TAMUctf_2026/skretch",
+      "bytes": 1954,
+      "sha256": "b952d70d99e641e684c9f59245c5bfef1501cf50c5f69126e7acf4a3adaac527"
+    },
+    {
+      "directory": "逆向/TAMUctf_2026/sun-temple",
+      "bytes": 2134,
+      "sha256": "a32ec7a059cf9ad403b1037ea6946de0f766392aa900ad8357b41a81f6cd7ded"
+    },
+    {
+      "directory": "逆向/TAMUctf_2026/war-hymn",
+      "bytes": 2105,
+      "sha256": "8f4fcc7254b9ffd40d0a6e2725e5967c92b6859abc6efcb5251af8a0933254c2"
+    },
+    {
+      "directory": "逆向/Thryve_CTF_2026/black-blood",
+      "bytes": 2179,
+      "sha256": "fb98c9918e38505b6fa93e91b3f64715b37ce50644a572704f67cb12ef64b404"
+    },
+    {
+      "directory": "逆向/Thryve_CTF_2026/hell",
+      "bytes": 1910,
+      "sha256": "c49e2a7a5fef5eea54072c1d4907a925d2265fa3c4bac503f87ee1e468faedfb"
+    },
+    {
+      "directory": "逆向/Thryve_CTF_2026/redline",
+      "bytes": 1956,
+      "sha256": "4fa082adf884201ac2bcf7e14348cb23691f2af2ccfb40884cf7764293c75106"
+    },
+    {
+      "directory": "逆向/tjctf_2026/rotated",
+      "bytes": 1853,
+      "sha256": "8f6c8831f03bfaceeaf6827cf8b1e34ee1eaaf3842e385e6d9dc7bed459bbf43"
+    },
+    {
+      "directory": "逆向/trx_2026/faulty_road",
+      "bytes": 2038,
+      "sha256": "764ea1d219a9ed9d611def3173eda67c2d9d1140aa52cad9577e2e25a9f82710"
+    },
+    {
+      "directory": "逆向/uiuctf_2026/glyphs",
+      "bytes": 1988,
+      "sha256": "351b429621aa31a67405a6159a9320d799d5b7938175b82ef0cc5f0baaa8cf4a"
+    },
+    {
+      "directory": "逆向/uiuctf_2026/GODMODE_999",
+      "bytes": 2014,
+      "sha256": "19a0d579f3ce553c77b5eb22d7726f2e104a7cbf9bc2acf09f71210a4cf08575"
+    },
+    {
+      "directory": "逆向/uiuctf_2026/vector_cache",
+      "bytes": 1882,
+      "sha256": "8e19d85d1c8a4d7d2ae3cd1062934f976a54ffb5251d163fec6e813bdea00d6c"
+    },
+    {
+      "directory": "逆向/uiuctf_2026/Veil_of_Evernight",
+      "bytes": 1921,
+      "sha256": "7deaf6d14e73b2d0fb643a7644e1ce3b31ea9dab65e5dcacba7fcde0b708fdb1"
+    },
+    {
+      "directory": "逆向/umassctf_2026/Batcave_Bitflips",
+      "bytes": 1883,
+      "sha256": "125faeec91a98ae9f62d95f55686f65f85503b9a2673b6a0447bc07254a5eb07"
+    },
+    {
+      "directory": "逆向/umdctf_2026/nuclear_codes",
+      "bytes": 1983,
+      "sha256": "6cfb6fc1fd763ad65b1117bf15f132744385d4045b48490d346d1041ea1fb5ec"
+    },
+    {
+      "directory": "逆向/umdctf_2026/rainbet",
+      "bytes": 1925,
+      "sha256": "c5808c504184fadbb58bd32d24b3236f106c615c81689bfe04826d677c149280"
+    },
+    {
+      "directory": "逆向/umdctf_2026/the_akari",
+      "bytes": 1983,
+      "sha256": "986d857e97fe8a0020af65765e7194736b33dd8b0b1d3426a9feffa5923d45cc"
+    },
+    {
+      "directory": "逆向/UofTCTF_2026/Baby (Obfuscated) Flag Checker",
+      "bytes": 2125,
+      "sha256": "6c5ef51101912d79f89c7537f91528a642bcf4ce692e1174b081380525a21ff0"
+    },
+    {
+      "directory": "逆向/UofTCTF_2026/ML Connoisseur",
+      "bytes": 2170,
+      "sha256": "ebefc3b1d0ebb047df800c3bd164c274f3d5668ca9e21b73b636f1a5312894bc"
+    },
+    {
+      "directory": "逆向/UofTCTF_2026/Symbol of Hope",
+      "bytes": 1948,
+      "sha256": "1587e74e8bab1161681aafad1d6c3deff5e82b739da0a758594b6cdbb28f48d1"
+    },
+    {
+      "directory": "逆向/UofTCTF_2026/Will u Accept Some Magic_",
+      "bytes": 2028,
+      "sha256": "7d42390920ab8393521f430ed4b80f50230771fdbff5d55713fba04ff40fb89c"
+    },
+    {
+      "directory": "逆向/v1t_2026/Ducks_Ping_Pong",
+      "bytes": 1902,
+      "sha256": "db2139d84162db102c155074bfe1b987210e8b9344178dff118cbd511e3bae39"
+    },
+    {
+      "directory": "逆向/v1t_2026/Tiny",
+      "bytes": 1807,
+      "sha256": "d991f5514d8a7ca28a73e2c25426a28284de8a0bb569584082a420a6de36462f"
+    },
+    {
+      "directory": "逆向/vuwctf_2026/dotsbedashing",
+      "bytes": 1815,
+      "sha256": "97c87d80fe8f2a1c96c617d51522d05b827cf3c7fd71324e1229be5a278f97ef"
+    },
+    {
+      "directory": "逆向/vuwctf_2026/ilikewords",
+      "bytes": 1820,
+      "sha256": "edf704590469af8b0483b67ea3c53d4d66ffce56400c4caff4e500b10afd9674"
+    },
+    {
+      "directory": "逆向/z0d1ak_2026-quals/Black_Tide_Survey",
+      "bytes": 1866,
+      "sha256": "163704b7b22c88e45134e2af7790e893710695c17b1b836b3e9045bf2fe2bc3c"
+    },
+    {
+      "directory": "逆向/z0d1ak_2026-quals/pekpek_stadium_64",
+      "bytes": 1910,
+      "sha256": "00e6f43d88e4475d8b8b168a68b4fc0d56ba23b088b747a9291caffb295430d2"
+    },
+    {
+      "directory": "逆向/z0d1ak_2026-quals/rival_battle",
+      "bytes": 1958,
+      "sha256": "5da7773b2c1e710e6bcf060a1c90b947b05345f9ed163d997faa0b0e89eff47e"
+    },
+    {
+      "directory": "逆向/第十届“强网杯”全国网络安全挑战赛·线上赛/ELFStudy",
+      "bytes": 2053,
+      "sha256": "f48cedcdb4871f340f91122a0e217eed9536fee2627ce336daf0850e6c5bf9cd"
+    }
+  ]
+}
